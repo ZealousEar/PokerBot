@@ -91,6 +91,8 @@ kanban-plugin: basic
       - [x] `.venv` and `ext/` symlinked from main repo into each worktree (gitignored, shared source of truth)
       - [x] Both worktrees independently GREEN on import_audit + pytest + package + validator
       - [x] Both worktrees fast-forwarded to include this checkpoint so they share a single post-setup baseline
+      - [x] Launch path confirmed: **Claude Code's native `/goal`** in `PokerBot-claude`, **Codex CLI's `/goal`** in `PokerBot-codex`. `/ralph` is not part of this toolchain — persisted as feedback memory at `~/.claude/projects/-Users-farhad-Code/memory/pokerbot-uses-native-goal.md`
+      - [x] Infra summary (1960 chars) copied to clipboard for downstream genius-consult
 
 ## Bugs / Known Issues
 
