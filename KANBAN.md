@@ -91,7 +91,7 @@ kanban-plugin: basic
       - [x] `.venv` and `ext/` symlinked from main repo into each worktree (gitignored, shared source of truth)
       - [x] Both worktrees independently GREEN on import_audit + pytest + package + validator
       - [x] Both worktrees fast-forwarded to include this checkpoint so they share a single post-setup baseline
-      - [x] Launch path confirmed: **Claude Code's native `/goal`** in `PokerBot-claude`, **Codex CLI's `/goal`** in `PokerBot-codex`. `/ralph` is not part of this toolchain — persisted as feedback memory at `~/.claude/projects/-Users-farhad-Code/memory/pokerbot-uses-native-goal.md`
+      - [x] Launch path confirmed: **Claude Code's native `/goal`** in `PokerBot-claude`, **Codex CLI's `/goal`** in `PokerBot-codex`. `/ralph` is not part of this toolchain — persisted as feedback memory in the local Claude Code memory store under `pokerbot-uses-native-goal.md`
       - [x] Infra summary (1960 chars) copied to clipboard for downstream genius-consult
 
 ## Bugs / Known Issues
@@ -100,7 +100,7 @@ kanban-plugin: basic
 
 ## Open questions
 
-- [ ] Hackathon registration confirmed for `3000.farhad@gmail.com` — user confirmed 2026-05-22
+- [ ] Hackathon registration confirmed for the registered account — user confirmed 2026-05-22
 - [ ] Whether Codex CLI `/goal` is installed locally or whether `/ralph @PROMPT.md` is the path — user has `/ralph` skill; either works
 
 ***

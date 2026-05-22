@@ -13,6 +13,21 @@ dist/
 .idea/
 .vscode/
 
+# Secrets — never commit
+.env
+.env.*
+credentials*.json
+auth.json
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+id_rsa*
+id_ed25519*
+*.token
+*.secret
+
 # External engine clone (re-clone from upstream)
 ext/fullhouse-engine/
 

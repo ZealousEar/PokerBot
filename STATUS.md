@@ -26,7 +26,7 @@ Append-only audit log. Each gate appends a section with: id, GREEN/AMBER/RED, ex
 
 **Open items:**
 - Corpus build (`/research` + `/obsidian`) is user-invocable — not run during G0. Run before G2 if strategic decisions need backing.
-- Hackathon registration to confirm (account `3000.farhad@gmail.com`).
+- Hackathon registration to confirm (registered account).
 - `ref_bot_2` exists in `ext/fullhouse-engine/bots/` but is undocumented; treat as a wildcard during G3 benchmarks.
 
 **Next action:** Execute G1 — wire `src/bot.py` and `src/timeout_guard.py`, build `tools/self_play.py`, run 100-hand smoke test vs `template`, build `submissions/v0_wired.zip`, run engine validator.
@@ -45,7 +45,7 @@ Append-only audit log. Each gate appends a section with: id, GREEN/AMBER/RED, ex
 - `.venv/bin/python tools/import_audit.py` → cold import 0.000 s, RSS 11.0 MB, zero forbidden imports.
 
 **Corpus (vault notes):**
-Built 2026-05-22 via 7 parallel subagents writing into `/Users/farhad/Code/Agentic Obsidian Vault/Agentic/05 Research/PokerBot/`:
+Built 2026-05-22 via 7 parallel subagents writing into the external Obsidian vault under `Agentic/05 Research/PokerBot/`:
 - `CFR-Zinkevich-2007.md` (4768 B, 647 words)
 - `Libratus-Brown-Sandholm-2017.md` (4220 B, 619 words)
 - `Pluribus-Brown-Sandholm-2019.md` (4305 B, 583 words)

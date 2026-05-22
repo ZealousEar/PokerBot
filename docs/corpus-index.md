@@ -1,10 +1,10 @@
 # Corpus Index
 
-Wikilinks into the Obsidian vault at `/Users/farhad/Code/Agentic Obsidian Vault/Agentic/05 Research/PokerBot/`. Surfaced here so Codex can reach the deep references when implementing a technique. Cite with `# Source: [[note-name]]` in code.
+Wikilinks into the external Obsidian vault under `Agentic/05 Research/PokerBot/`. Surfaced here so Codex can reach the deep references when implementing a technique. Cite with `# Source: [[note-name]]` in code.
 
 ## Build status
 
-Notes built 2026-05-22 via parallel subagents (not the `/research` skill — concurrent slash-command invocations are blocked, so the build went DIY with WebFetch + WebSearch). Files live under `/Users/farhad/Code/Agentic Obsidian Vault/Agentic/05 Research/PokerBot/` and resolve to the wikilinks below.
+Notes built 2026-05-22 via parallel subagents (not the `/research` skill — concurrent slash-command invocations are blocked, so the build went DIY with WebFetch + WebSearch). Files live under the external Obsidian vault path `Agentic/05 Research/PokerBot/` and resolve to the wikilinks below.
 
 If you want a `/research`-shaped note for any source, run that skill manually with the URL and let it overwrite the corresponding file.
 
