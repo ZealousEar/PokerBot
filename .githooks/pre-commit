@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+# Pre-commit: protects the best_green.zip preservation invariant.
+#
+# Fires when a commit stages files under submissions/. Refuses the commit
+# if the working-tree versions of best_green.zip / v_final.zip do not pass
+# the validator, or if import_audit / edge_cases regress.
+#
+# Activated per-clone with `git config core.hooksPath .githooks`. Worktrees
+# share the main repo's config, so one set covers main + both worktrees.
+#
+# Override with `FORCE_COMMIT=1 git commit ...` only for explicit rollbacks
+# (e.g. restoring a previous best_green.zip after a regression).
+
+set -euo pipefail
+
+if [[ "${FORCE_COMMIT:-0}" == "1" ]]; then
+  echo "[pre-commit] FORCE_COMMIT=1 -- skipping artifact verification" >&2
+  exit 0
+fi
+
+# Only check if any submissions/ path is staged.
+if ! git diff --cached --name-only | grep -qE '^submissions/'; then
+  exit 0
+fi
+
+ROOT="$(git rev-parse --show-toplevel)"
+cd "$ROOT"
+
+echo "[pre-commit] submissions/ changed -- verifying artifact safety..." >&2
+
+PYTHON="${PYTHON:-python}"
+if [[ -x ".venv/bin/python" ]]; then
+  PYTHON=".venv/bin/python"
+elif [[ -x "../PokerBot/.venv/bin/python" ]]; then
+  # Worktrees symlink .venv -> ../PokerBot/.venv; this path lets us use it
+  # if the symlink is broken in CI but the canonical venv exists.
+  PYTHON="../PokerBot/.venv/bin/python"
+fi
+
+LOG_DIR="$(mktemp -d -t pokerbot-precommit.XXXXXX)"
+trap 'rm -rf "$LOG_DIR"' EXIT
+
+# 1. Import audit -- packaged bot code clears forbidden modules + patterns.
+if ! "$PYTHON" tools/import_audit.py >"$LOG_DIR/import_audit.log" 2>&1; then
+  echo "[pre-commit] FAIL import_audit" >&2
+  cat "$LOG_DIR/import_audit.log" >&2
+  echo "[pre-commit] FORCE_COMMIT=1 only for explicit rollbacks." >&2
+  exit 1
+fi
+
+# 2. Edge cases -- fast safety contract.
+if ! "$PYTHON" -m pytest tests/edge_cases -x --quiet >"$LOG_DIR/edge_cases.log" 2>&1; then
+  echo "[pre-commit] FAIL edge_cases" >&2
+  cat "$LOG_DIR/edge_cases.log" >&2
+  echo "[pre-commit] FORCE_COMMIT=1 only for explicit rollbacks." >&2
+  exit 1
+fi
+
+# 3. Validate any tracked-green submission artifacts that exist in the
+#    working tree. Skip artifacts that are absent (e.g. early-stage repo
+#    before best_green.zip is bootstrapped).
+VALIDATOR="ext/fullhouse-engine/sandbox/validator.py"
+for ZIP in submissions/best_green.zip submissions/v_final.zip; do
+  if [[ -f "$ZIP" ]]; then
+    if ! "$PYTHON" "$VALIDATOR" "$ZIP" >"$LOG_DIR/validator.log" 2>&1; then
+      echo "[pre-commit] FAIL validator on $ZIP" >&2
+      cat "$LOG_DIR/validator.log" >&2
+      echo "[pre-commit] FORCE_COMMIT=1 only for explicit rollbacks." >&2
+      exit 1
+    fi
+  fi
+done
+
+echo "[pre-commit] OK" >&2

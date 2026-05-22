@@ -15,10 +15,11 @@ Win the Fullhouse Hackathon 2026 by submitting `submissions/v_final.zip` that fi
 
 ## Build & verify commands
 - Self-play: `python tools/self_play.py --opponent <name> --hands <N>`
-- Benchmark vs all templates: `python tools/benchmark.py --all-templates --hands 10000`
+- Benchmark vs all templates: `python tools/benchmark.py --all-templates --hands 10000 --paired-seed-base 42`
 - Import audit: `python tools/import_audit.py`
 - Build submission: `python tools/package.py --output submissions/<name>.zip --strict`
-- Engine validator (authoritative): `python ext/fullhouse-engine/sandbox/validator.py submissions/<name>.zip`
+- Engine validator (authoritative, AST + size only): `python ext/fullhouse-engine/sandbox/validator.py submissions/<name>.zip`
+- Sandbox smoke run (runs the bot in a real container): `python tools/smoke_run.py --zip submissions/<name>.zip --hands 200`
 - Edge cases: `pytest tests/edge_cases -x`
 
 ## Sandbox invariants (HARD — sourced from `ext/fullhouse-engine/sandbox/{validator.py,Dockerfile,runner.py}`)
@@ -75,4 +76,23 @@ The architectural answer is the **blueprint + refinement** pattern from Brown & 
 - Every gate's STATUS.md entry names which corpus note drove its design choice.
 
 ## Status protocol
-Append a timestamped section to `STATUS.md` at every gate, with: gate id, GREEN/AMBER/RED, exact benchmark numbers, files changed, next action.
+Append a timestamped section to `STATUS.md` at every gate, with: gate id, GREEN/AMBER/RED, exact benchmark numbers, files changed, next action. Also surface the compact proof-of-green block (see `PROMPT.shared.md`) in the chat transcript — `/goal` evaluator only reads the transcript and auto-summarisation can erase STATUS.md evidence.
+
+## Artifact policy
+Always preserve `submissions/best_green.zip` — the latest validator-passing, edge-case-passing, smoke-run-passing artifact. After each gate, if the new build clears every check, promote it: `cp submissions/<new>.zip submissions/best_green.zip` (and commit). A `.githooks/pre-commit` hook refuses commits to `submissions/` that break verification; activate per-clone with `git config core.hooksPath .githooks`. Override with `FORCE_COMMIT=1 git commit ...` only for explicit rollbacks.
+
+Preserve all gate snapshots (`submissions/v{0..3}_*.zip`) — `tools/benchmark.py --self-play --vs-prior` depends on them.
+
+## Solver policy
+External-sampling MCCFR (G2) and CFR+ over flop buckets (G3) are conditional on benchmark improvement against `best_green.zip`. If two consecutive non-trivial training attempts fail to improve measured bb/100 against `best_green.zip`, halt solver work and ship deterministic hand-tuned ranges + exploit priors instead. Prefer compact tables built from existing charted solver outputs over from-scratch overnight training. Treat LBR (`tools/exploit_check.py`) as a regression guard, not a Nash quality claim.
+
+## Worktree policy
+`~/Code/PokerBot/` is canonical (`main`). `~/Code/PokerBot-claude/` (`claude`) and `~/Code/PokerBot-codex/` (`codex`) are isolated worktrees forked from tag `scaffold-baseline`. Each agent edits only its own worktree. No agent edits `ext/fullhouse-engine/`, `.venv/`, another agent's worktree, or `main` during overnight runs. No agent runs `pip install` unattended.
+
+## Benchmark variance policy
+At 10k hands, bb/100 variance is ~20 bb/100 (95 % CI). Single-run 10k benchmarks are valid for monitoring progress but not for acceptance. For G3 all-templates acceptance, G5 ratchet/ablation, and branch-arbitration comparisons, either use paired seeds (`tools/benchmark.py --paired-seed-base 42 --paired-seed-count 10`) or bump `--hands` to ≥ 50000.
+
+## Patch-window policy
+Before 2026-06-02: implement `tools/analyze_hand_histories.py` that introspects schema from the first JSON record (do not hardcode field names — the hackathon schema is unknown until release) and emits compact priors to `data/finals_priors.npz`: population VPIP/PFR/aggression, fold-to-c-bet, average sizing by street, common preflop action sequences, obvious bot-cluster fingerprints.
+
+On 2026-06-02: parse downloaded histories, update compact priors only, re-run the full validator + import + edge-case + smoke + benchmark suite. The patch-window bot must still pass every check. Keep the qualifier artifact preserved.

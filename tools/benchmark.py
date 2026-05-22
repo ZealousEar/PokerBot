@@ -7,6 +7,22 @@ Modes:
     All reference:     --all-templates --hands N --min-bb 15
     Overlay ablation:  --ablate-overlay --hands N --min-bb 3
     Self-play ratchet: --self-play --vs-prior --min-bb 3
+
+Variance and final selection
+============================
+At 10k hands, bb/100 variance is ~20 bb/100 (95 % CI). Selecting between
+candidate bots on a single 10k run selects noise. For ratchet, ablation,
+and branch-arbitration selection use paired seeds:
+
+  - Fix a seed schedule: seed = base, base+1, ... base+K-1 (default K=10).
+  - Both candidates play the same K matches against the same opponent
+    lineup; we compare paired EV deltas (variance drops ~5-10x).
+  - The --paired-seed-base flag activates this mode; pass through the
+    seed to ext/fullhouse-engine/sandbox/match.py.
+
+For G3 all-templates acceptance, either use --paired-seed-base K=10 with
+--hands 10000, OR bump --hands to >= 50000. Never declare a gate green
+on a single 10k run without paired-seed support.
 """
 import argparse
 import sys
@@ -41,6 +57,15 @@ def main() -> int:
     p.add_argument("--hands", type=int, default=10000)
     p.add_argument("--min-bb", type=float, default=0.0,
                    help="Exit nonzero if any margin falls below this threshold")
+    p.add_argument("--paired-seed-base", type=int, default=None,
+                   help="Activate paired-seed comparison. Runs K matches at "
+                        "seeds [base, base+1, ..., base+K-1]; the implementer "
+                        "must run both candidate bots against the same opponent "
+                        "lineup at each seed and compare paired EV deltas. "
+                        "Required for ratchet, ablation, and branch-arbitration "
+                        "comparisons -- see docstring.")
+    p.add_argument("--paired-seed-count", type=int, default=10,
+                   help="K for --paired-seed-base (default 10).")
     args = p.parse_args()
 
     if args.all_templates:

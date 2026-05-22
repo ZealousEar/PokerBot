@@ -129,3 +129,41 @@ Original success criteria were floor-oriented (validator passes, beats weak temp
 **Next action:** Launch `/goal @PROMPT.md` in `~/Code/PokerBot-claude` (Claude Code) and in `~/Code/PokerBot-codex` (Codex CLI). Both run concurrently. Compare gate progress, code volume, benchmarks, and cross-play in the morning.
 
 ---
+
+## G0.8 — Pre-launch hardening: differentiated prompts, pre-commit hook, smoke run, paired-seed benchmarks
+
+**Status:** GREEN (infrastructure; refines G0.7)
+**Timestamp:** 2026-05-22
+
+**What changed:**
+- `PROMPT.md` → `PROMPT.shared.md` (rename via `git mv`, preserves history). Added invariants: paired-seed benchmark for acceptance, smoke run before claiming gate green, `submissions/best_green.zip` preservation, compact proof-of-green format that survives `/goal` context summarisation.
+- `PROMPT.claude.md` (new, ~40 lines): claude branch search bias — harness, hardening, exploit overlay, tournament tooling (P0..P5). Differentiator only; references `PROMPT.shared.md` for the contract.
+- `PROMPT.codex.md` (new, ~40 lines): codex branch search bias — compact lookup tables, parameter sweeps, training pipelines, benchmark automation (P0..P5). Differentiator only.
+- `AGENTS.md` — appended sections: **Artifact policy**, **Solver policy**, **Worktree policy**, **Benchmark variance policy**, **Patch-window policy**. Added `tools/smoke_run.py` to Build & verify commands. `CLAUDE.md` inherits via symlink.
+- `.githooks/pre-commit` (new, executable): when a commit stages `submissions/`, runs `import_audit + edge_cases + validator(best_green.zip, v_final.zip)`; refuses on failure. `FORCE_COMMIT=1` overrides for explicit rollbacks. Activated via `git config core.hooksPath .githooks` (one config, applies to both worktrees via shared `.git`).
+- `tools/smoke_run.py` (new): wraps `USE_DOCKER=true ext/fullhouse-engine/sandbox/match.py` against a reference bot for N hands inside the real container (`--network none --memory 768m --cpus 0.5 --read-only --no-new-privileges --user 1000:1000`). Builds `fullhouse-sandbox:latest` if missing. Catches runtime issues (timeout, OOM, slow imports) the AST-only validator cannot detect.
+- `tools/benchmark.py` — docstring expanded with variance / paired-seed policy; `--paired-seed-base` and `--paired-seed-count` flags added (implementer wires the body during G2/G3).
+- `submissions/best_green.zip` — bootstrapped locally from `v0_scaffold.zip` (already validator-PASSED in G0). Gitignored by design; agents regenerate.
+
+**Why this matters (refines G0.7's launch infrastructure):**
+- Identical prompts to both agents waste their differentiation; the split biases each agent's search toward its comparative advantage without weakening the shared contract.
+- The validator is AST + size only; it does not run the bot. A bot can pass the validator and still timeout / OOM / crash in real matches. `smoke_run` closes that gap.
+- At 10k hands, bb/100 variance ~20 bb/100. Selecting between branches on a single 10k run is selecting noise. Paired seeds drop variance ~5-10×.
+- `/goal` evaluator reads only the chat transcript; auto-summarisation can erase STATUS.md evidence. The compact proof-of-green block survives summarisation.
+- best_green.zip preservation is the single most important invariant for overnight runs (avoids overwriting good work with broken work).
+
+**Verification (2026-05-22, in `~/Code/PokerBot/`):**
+- `.venv/bin/python tools/import_audit.py` → cold import 0.000 s, RSS 10.2 MB. PASS.
+- `.venv/bin/python -m pytest tests/edge_cases -x --quiet` → 4 passed in 0.07 s. PASS.
+- `.venv/bin/python ext/fullhouse-engine/sandbox/validator.py submissions/best_green.zip` → ✅ PASSED on all 4 TEST_STATES.
+- `git config --get core.hooksPath` → `.githooks`.
+- `.githooks/pre-commit` mode 0755.
+
+**Open items:**
+- Worktrees inherit these files via `git merge main` (fast-forward) once this commit lands. Bootstrap their `submissions/best_green.zip` after merge.
+- Both branches still need `findings/` directory created lazily by the first agent to write a finding.
+- `tools/promote_best_green.py` (a verified-promotion helper) deferred — agents currently follow the prose protocol in AGENTS.md → Artifact policy.
+
+**Next action:** Commit on `main`, fast-forward `claude` and `codex` branches, copy `best_green.zip` into each worktree, then launch `/goal` per branch-specific prompt.
+
+---
