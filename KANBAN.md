@@ -83,6 +83,14 @@ kanban-plugin: basic
       - [x] `tools/benchmark.py` — `--ablate-overlay`, `--self-play --vs-prior` modes; `--all-templates` covers all 5 reference bots
       - [x] `tools/exploit_check.py` — reframed as LBR (Lisý & Bowling 2017, arXiv:1612.07547) over 20-spot suite
       - [x] `CLAUDE.md` symlinked to `AGENTS.md`
+- [x] **G0.7 — Parallel run infrastructure** @{2026-05-22}
+      - [x] `git init -b main`, tag `scaffold-baseline`, branches `main` / `claude` / `codex`
+      - [x] `.gitignore` augmented: `data/*.npz`, `.mypy_cache/`, `.ruff_cache/`, swap files
+      - [x] `data/.gitkeep` + `submissions/.gitkeep` so dirs survive in fresh worktrees
+      - [x] `git worktree add ../PokerBot-claude claude` + `git worktree add ../PokerBot-codex codex`
+      - [x] `.venv` and `ext/` symlinked from main repo into each worktree (gitignored, shared source of truth)
+      - [x] Both worktrees independently GREEN on import_audit + pytest + package + validator
+      - [x] Both worktrees fast-forwarded to include this checkpoint so they share a single post-setup baseline
 
 ## Bugs / Known Issues
 

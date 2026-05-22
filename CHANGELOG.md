@@ -49,3 +49,11 @@ Append-only. Newest entries at the bottom.
 - **What:** Created this CHANGELOG.md and KANBAN.md; re-ran the four scaffold verifications.
 - **Why:** End-of-session housekeeping; gives a single page to scan before the overnight `/ralph @PROMPT.md` (or `codex /goal`) run.
 - **Verification:** `tools/import_audit.py` cold import 0.001 s / 10.5 MB; pytest 4 passed in 0.11 s; `tools/package.py --strict` built `submissions/v0_scaffold.zip`; engine validator PASSED.
+
+### G0.7 — Parallel run infrastructure (git init + isolated worktrees)
+
+- **What:** Initialized git repo on `main`, tagged `scaffold-baseline`, created `claude` and `codex` branches each in their own worktree (`~/Code/PokerBot-claude`, `~/Code/PokerBot-codex`). Each worktree symlinks the shared `.venv` and `ext/` from the main repo (both gitignored).
+- **Why:** Run Claude Code `/goal` and Codex CLI `/goal` independently overnight on the identical starting scaffold, then cross-compare in the morning. Same `PROMPT.md` in both branches so output variance is attributable to the platform, not the prompt.
+- **How:** Augmented `.gitignore` (added `data/*.npz`, swap files, mypy/ruff caches); added `data/.gitkeep` and `submissions/.gitkeep` so the dirs survive in fresh worktrees. `git init -b main` → `git add .` → initial commit. `git worktree add ../PokerBot-{claude,codex} {claude,codex}`. Both worktree branches fast-forwarded to include this entry so they share a single post-setup baseline. Engine clone (`ext/fullhouse-engine/`, itself a git repo) gitignored as before to avoid gitlink/submodule trap. CLAUDE.md committed as symlink (mode 120000) and preserved across worktrees.
+- **Files:** `.gitignore` (augmented), `data/.gitkeep`, `submissions/.gitkeep`, `CHANGELOG.md`, `KANBAN.md`, `STATUS.md`. New trees: `~/Code/PokerBot-claude/`, `~/Code/PokerBot-codex/`. Git: branches `main`/`claude`/`codex`, tag `scaffold-baseline`.
+- **Verification:** Both worktrees independently pass `import_audit` (cold 0.001-0.002 s, RSS 10.7 MB), `pytest tests/edge_cases -x -q` (4 passed in 0.06-0.08 s), `tools/package.py --strict`, and engine validator (all 4 TEST_STATES return legal actions). Symlink resolution confirmed: `~/Code/PokerBot-claude/ext/fullhouse-engine/sandbox/validator.py` and `~/Code/PokerBot-codex/.venv/bin/python` both exist.

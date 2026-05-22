@@ -94,3 +94,38 @@ Original success criteria were floor-oriented (validator passes, beats weak temp
 **Next action:** Start G1 — the architectural commitment is now load-bearing; gates execute against ceiling criteria.
 
 ---
+
+## G0.7 — Parallel run infrastructure (git init + isolated worktrees)
+
+**Status:** GREEN
+**Timestamp:** 2026-05-22
+
+**What changed:**
+- `git init -b main` in `~/Code/PokerBot`. Initial commit `scaffold: G0-G0.6 (initial)` (35 files, 1 symlink).
+- Tag `scaffold-baseline` marks the pre-divergence commit; both `claude` and `codex` branches forked from it.
+- `git worktree add ../PokerBot-claude claude` and `git worktree add ../PokerBot-codex codex`. Each is a fully-functional working tree on its own branch sharing the parent's `.git` dir.
+- `.venv/` and `ext/fullhouse-engine/` (both gitignored) symlinked from `~/Code/PokerBot/` into each worktree. Single source of truth; no duplication.
+- `.gitignore` augmented (data/*.npz, *.swp, .mypy_cache/, .ruff_cache/); `data/.gitkeep` + `submissions/.gitkeep` added so the dirs persist in worktrees.
+
+**Layout:**
+```
+~/Code/PokerBot/         [main]   ← canonical, hosts shared .venv + ext/
+~/Code/PokerBot-claude/  [claude] ← target for Claude Code /goal run
+~/Code/PokerBot-codex/   [codex]  ← target for Codex CLI /goal run
+```
+
+**Verification (run 2026-05-22, both worktrees):**
+- `import_audit.py` → cold import 0.001-0.002 s, RSS 10.7 MB (both GREEN).
+- `pytest tests/edge_cases -x -q` → 4 passed in 0.06-0.08 s (both GREEN).
+- `tools/package.py --strict` → `submissions/v0_scaffold.zip` built in both.
+- `validator.py submissions/v0_scaffold.zip` → ✅ PASSED on all 4 TEST_STATES in both.
+- Symlink resolution: `~/Code/PokerBot-claude/ext/fullhouse-engine/sandbox/validator.py` and `~/Code/PokerBot-codex/.venv/bin/python` both reachable.
+
+**Why this matters:**
+- Two independent overnight `/goal` runs share the identical starting scaffold; output variance is attributable to platform (Claude Code vs Codex CLI), not to prompt or scaffold drift.
+- Worktrees share `.git`, so commits in one branch are instantly visible from any other (good for morning comparison: `git diff scaffold-baseline..claude` vs `..codex`).
+- Engine clone (`ext/fullhouse-engine/`, itself a git repo) is gitignored — avoids the gitlink/submodule trap and keeps it as a pure read-only reference.
+
+**Next action:** Launch `/goal @PROMPT.md` in `~/Code/PokerBot-claude` (Claude Code) and in `~/Code/PokerBot-codex` (Codex CLI). Both run concurrently. Compare gate progress, code volume, benchmarks, and cross-play in the morning.
+
+---
