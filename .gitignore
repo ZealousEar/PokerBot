@@ -46,3 +46,6 @@ data/*.npy
 # Type / lint caches
 .mypy_cache/
 .ruff_cache/
+
+# Claude Code session state
+.claude/

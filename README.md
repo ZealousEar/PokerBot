@@ -178,6 +178,77 @@ Each gate appends a GREEN / AMBER / RED entry to `STATUS.md` with verification n
 
 ---
 
+## Internal Tournament Results — 2026-05-22 Snapshot
+
+Two agents — **Claude Code** in `~/Code/PokerBot-claude/` (branch `claude`) and **Codex CLI** in `~/Code/PokerBot-codex/` (branch `codex`) — executed G1 → G5 in parallel from the same `scaffold-baseline` tag, each writing to its own worktree only. Both posted `## FINAL SUBMITTED` on their `STATUS.md`. A paired-seed head-to-head between their `v_final.zip` artifacts via [`tools/h2h.py`](tools/h2h.py) decided the qualifier ship.
+
+### vs reference templates &nbsp;·&nbsp; bb/100 &nbsp;·&nbsp; paired-seed &nbsp;·&nbsp; n=10,000
+
+```
+                   claude     codex      ── bar (1 █ = 10 bb/100) ──
+                   bb/100     bb/100     claude            codex
+                   --------   --------   --------          ------------------
+template            +26.42     +71.82    ███               ███████
+aggressor*         +433.33    +178.09    wide CI ▶         ██████████████████
+mathematician       +31.69    +144.60    ███               ██████████████
+shark               +27.96     +70.16    ███               ███████
+ref_bot_2           +31.69    +144.60    ███               ██████████████
+```
+
+\* claude's +433.33 vs aggressor carries a 95 % CI of ±227 because aggressor busts in ~12 hands. Codex's +178.09 comes from longer matches and is the more trustworthy number.
+
+### Head-to-head &nbsp;·&nbsp; claude `v_final.zip` &nbsp;vs&nbsp; codex `v_final.zip`
+
+```
+╔════════════════════════════════════════════════════════════════════════╗
+║                                                                        ║
+║                        H E A D - T O - H E A D                         ║
+║                                                                        ║
+║                       ╭─────────────────────╮                          ║
+║                       │     CODEX  WINS     │                          ║
+║                       ╰─────────────────────╯                          ║
+║                                                                        ║
+║         50 matches  ·  paired-seed  ·  seat-swap  ·  8,379 hands       ║
+║                                                                        ║
+║         claude per-match BB delta :  −65.40 BB                         ║
+║         95 % CI                   :  [−77.63, −51.35]                  ║
+║         claude bb/100             :  −39.03                            ║
+║                                                                        ║
+║         claude busted in 24 / 50 matches  (48 %)                       ║
+║         codex never busted (0 / 50)                                    ║
+║                                                                        ║
+║         bot errors  :  claude 0    codex 0                             ║
+║                                                                        ║
+╚════════════════════════════════════════════════════════════════════════╝
+```
+
+### Local Best-Response exploitability &nbsp;·&nbsp; lower is closer to Nash &nbsp;·&nbsp; 20-spot suite
+
+```
+preflop
+  claude   ██████████████████                              35.5 mbb/g   (cap ≤ 100)
+  codex    ███████████                                     22.0 mbb/g   (cap ≤ 100)
+
+aggregate
+  claude   ████████████████████████████████████████████    87.4 mbb/g   (cap ≤ 200)
+  codex    ██████                                          12.8 mbb/g   (cap ≤ 200)
+```
+
+Codex's aggregate LBR of 12.8 mbb/g is striking — deep inside the safety band. Consistent with the head-to-head: codex's overlay extracts heavily *against* sophisticated opponents while leaving few exploitable holes itself on the LBR probe set.
+
+### Verdict
+
+```
+qualifier  2026-06-01   ──▶   ship  codex/v_final.zip   (sha 5d65561e…)
+finals     2026-06-05   ──▶   re-evaluate on 2026-06-02 patch window
+```
+
+Codex takes the qualifier slot decisively. Head-to-head, its frequency overlay exploits patterns in claude's blueprint and busts claude in roughly half the matches. The finals decision is deferred to the 2026-06-02 patch window: at that point we either re-tune codex's overlay frequencies against the actual finals field, or fall back to claude's safer blueprint if the field looks adaptive enough to counter-exploit codex's overlay.
+
+The runner used for the verdict is preserved at [`tools/h2h.py`](tools/h2h.py) for re-use after the patch window.
+
+---
+
 ## Worktree Layout
 
 The repo runs three parallel trees off a shared `.git`:
