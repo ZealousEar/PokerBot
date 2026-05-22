@@ -49,3 +49,6 @@ data/*.npy
 
 # Claude Code session state
 .claude/
+
+# Local consult prompts (may contain analysis intended for external models, not for the repo)
+consults/
