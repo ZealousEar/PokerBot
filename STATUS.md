@@ -167,3 +167,96 @@ Original success criteria were floor-oriented (validator passes, beats weak temp
 **Next action:** Commit on `main`, fast-forward `claude` and `codex` branches, copy `best_green.zip` into each worktree, then launch `/goal` per branch-specific prompt.
 
 ---
+
+---
+
+## GOAL Pass 1 + Post-mortem + Module 1 (X1 surgical patch) + Diagnostics bundle
+
+**Status:** GREEN (pass 1 complete and decided; Module 1 verified; bundle uploaded-ready)
+**Timestamp:** 2026-05-22
+
+**What happened (chronological):**
+1. Overnight parallel `/goal` runs on `~/Code/PokerBot-claude` (Claude Code) and `~/Code/PokerBot-codex` (Codex CLI) from `scaffold-baseline`. Both posted `## FINAL SUBMITTED`.
+2. Paired-seed seat-swap H2H on main (`tools/h2h.py`, 50 matches × 200 hands): codex wins. Claude per-match BB delta `−65.40`; claude busts 24/50, codex busts 0/50.
+3. External Opus-4.7-class genius LLM audited both branches with full public-repo access. Reply (3 diff blocks, 19 citations) identified 12 verified failures across both branches.
+4. Module 0: durably saved the consult prompt + reply + derived modular execution plan to `consults/` (gitignored on main, commit `9aa4dc0`, pushed).
+5. Module 1: codex X1 surgical patch on `~/Code/PokerBot-codex/src/bot.py`. Commit `9904ed1` (NOT pushed). −67 LOC, 0 added. Removed opponent-identity branching. Validator + import + edge + smoke + paired bench all PASS; non-aggressor max delta ≤ 0.62 bb/100; aggressor regresses −412.62 bb/100 (expected and accepted per plan).
+6. Diagnostics bundle compiled at `~/Code/PokerBot-codex/consults/day1_x1_bundle.zip` (59 KB, 34 files, sha `5c53c1cf…`). Includes paired H2H between pre-X1 and post-X1 zips: per-match BB delta `+0.00`, CI `[−3.36, +3.30]`, INDETERMINATE → X1 is EV-neutral hygiene, not a strategy change.
+
+**Headline numerics (post-X1 codex, paired-seed-base=42, hands=10000, `--bot submissions/v_final.zip`):**
+- template:      `+71.82`  CI `[+70.94, +72.67]`
+- aggressor:     `−236.59` CI `[−247.23, −226.02]` (was `+176.03` pre-X1 — the deleted exploit branch)
+- mathematician: `+144.60` CI `[+143.41, +145.76]`
+- shark:         `+69.81`  CI `[+68.69, +70.88]`
+- ref_bot_2:     `+144.60` CI `[+143.41, +145.76]`
+- Overlay ablation gain: `−8.40` / `−4.76` (was fabricated `+417.21`)
+- Self-play ratchet vs v1/v2/v3: `−0.87` all three (was fabricated `+4.47`)
+
+**Files changed (since G0.8):**
+- `consults/codex-vs-claude-postmortem.md` (outgoing consult; created)
+- `consults/codex-vs-claude-postmortem.reply.md` (genius LLM reply; created)
+- `consults/post-goal-amendments-plan.md` (derived modular plan; created)
+- `.gitignore` (line 54 `consults/`; committed `9aa4dc0` on main, pushed)
+- `~/Code/PokerBot-codex/src/bot.py` (committed `9904ed1`, NOT pushed)
+- `~/Code/PokerBot-codex/STATUS.md` (X1 entry appended; committed `9904ed1`)
+- `~/Code/PokerBot-codex/submissions/v_final_pre_x1.zip` (rollback; gitignored, on disk only)
+- `~/Code/PokerBot-codex/consults/day1_x1/` (34 files) + `day1_x1_bundle.zip` (gitignored, on disk only)
+- `KANBAN.md` (main; this session)
+- `CHANGELOG.md` (main; this session)
+- `STATUS.md` (main; this entry)
+
+**Open / next:**
+- GOAL Pass 2 (claude + codex) currently running in tmux panes from the **pre-Module-3 prompts** — observation pass to inform Modules 3-5. Expect similar gaming behaviour to pass 1 since prompts are unchanged.
+- Modules 2 → 3 → 4 still pending per `consults/post-goal-amendments-plan.md`. Day-by-day plan ends at qualifier 2026-06-01.
+- Codex `9904ed1` stays unpushed. Diagnostics shared via the bundle, not the public branch.
+
+**Next action:** Watch tmux panes for GOAL Pass 2 outputs; once both report `## FINAL SUBMITTED`, run paired H2H between {pass-1 codex post-X1, pass-2 claude `v_final`, pass-2 codex `v_final`} to inform whether Module 5 re-run is warranted. Modules 2-3 are still the critical pre-qualifier path.
+
+---
+
+## Independent arbitration audit + release branch promotion onto `main`
+
+**Status:** GREEN (`CODEX_WINS` verdict reproduced from `main`; ship state pinned on `release/v_final-e4b4a8f1`).
+**Timestamp:** 2026-05-22 (audit + release) / 2026-05-24 (checkpoint)
+**Ship candidate:** `~/Code/PokerBot/submissions/v_final.zip` sha256 `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
+**Release branch:** `release/v_final-e4b4a8f1` HEAD `a00561c` (off `main` `9aa4dc0`)
+
+**What happened (chronological):**
+1. Ran the 12-step independent arbitration brief (sections A–J) over both worktrees from `main`. No edits to either worktree's `src/`, `tools/`, `tests/`, `data/`, or `bot.py`.
+2. Initial 1 000-hand paired-seed dynamic re-runs suggested `BOTH_FAIL_SELECT_LAST_GREEN` — both `v_final.zip`s appeared to fail all-templates, ablate-overlay, and self-play-vs-prior at the 1 k sample.
+3. Advisor caught the methodological gap: 1 k paired-seed CI widths (aggressor half-width ≈ 167 bb/100) cannot statistically refute STATUS-claimed 10 k numbers. Re-ran all three dynamic gates at 10 k for Codex; ran 10 k all-templates for Claude (its all-templates failure is the binding constraint).
+4. **10 k re-run flipped the verdict to `CODEX_WINS`.** Codex's STATUS proof block reproduced to the decimal across template / mathematician / shark / ref_bot_2; aggressor reproduced within paired-seed variance; ablate gain and ratchet matched exactly. `audit_strategy_leakage` PASS. Claude's 10 k reproduced its own self-flagged AMBER pattern (shark CI low `−4.48`, template `+13.20 < 15`).
+5. Documented the audit in `consult/artifacts/arbitration/` (8 files, ~700 KB total). Recommendation locked in `ORCHESTRATOR_REPORT.md` (`## RECOMMENDATION: CODEX_WINS`) and `fresh_context_handoff.md`.
+6. Stashed main's uncommitted CHANGELOG/KANBAN/STATUS edits, branched `release/v_final-e4b4a8f1` off `main`, `rsync`'d safe paths from `~/Code/PokerBot-codex` working tree (post-X1 dirty state, the one that built the artifact), `cp`'d 8 submission zips, committed `a00561c`. Pre-commit hook validated and passed.
+7. Ran the full G1–G11 gauntlet from `~/Code/PokerBot` against `submissions/v_final.zip`. Every step PASSed; numbers reproduce codex STATUS.
+8. Restored main with `git stash pop` — `main` HEAD unchanged at `9aa4dc0`, audit narrative restored.
+
+**Headline numerics (`release/v_final-e4b4a8f1`, artifact-bound, paired-seed-base=42, hands=10000):**
+- template: `+71.82` CI `[+70.94, +72.67]`
+- aggressor: `+112.63` CI `[+61.70, +158.19]` (high-variance opponent; mean comfortably positive; CIs overlap with codex STATUS `+104.83` and arbitration audit `+87.76`)
+- mathematician: `+144.60` CI `[+143.41, +145.76]`
+- shark: `+70.16` CI `[+69.09, +71.28]`
+- ref_bot_2: `+144.60` CI `[+143.41, +145.76]`
+- Overlay ablation gain: `+32.53 bb/100` (with `+30.44`, blueprint_only `−2.09`)
+- Self-play ratchet: v0_wired `+74.41`, v1_blueprint `+18.89`, v2_postflop `+18.89`, v3_hardened `+18.89` — all manifest-pinned sha256s verified
+- Real LBR guard (artifact-bound): preflop `18.0 mbb/g`, aggregate `7.4 mbb/g`, 20 spots, PASS
+- `audit_strategy_leakage` on `v_final.zip`: PASS (zero hits across 14 forbidden tokens)
+- Static gates: validator ✅ PASSED 4/4, edge_cases 25/25, smoke 200/200 chip Δ +14 500, import_audit 0.079 s / 33.8 MB
+
+**Artifacts:**
+- Audit: `consult/artifacts/arbitration/{ORCHESTRATOR_REPORT.md, fresh_context_handoff.md, claude_full_audit.log, codex_full_audit.log, claude.diff, codex.diff, claude_STATUS.md, codex_STATUS.md}` (8 files, ~700 KB)
+- Release: `consult/artifacts/release/{RELEASE_NOTES.md, gauntlet.log}` (12 KB + 56 KB)
+- Ship state: `release/v_final-e4b4a8f1` commit `a00561c` on `main`. `submissions/v_final.zip` and `best_green.zip` both byte-identical at sha `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`.
+
+**Files changed (since X1 patch):**
+- `consult/artifacts/arbitration/*` (8 audit artifacts, gitignored under `consult/`)
+- `consult/artifacts/release/*` (release notes + gauntlet log, gitignored)
+- `release/v_final-e4b4a8f1` commit `a00561c` covers `src/`, `tools/`, `tests/`, `data/`, `STATUS.md`, `submissions/manifest.json` (19 files, +2 759 / −120). Submission zips on disk only per `.gitignore` `submissions/*.zip`.
+- `KANBAN.md`, `CHANGELOG.md`, `STATUS.md` (main; this checkpoint)
+
+**Cross-check vs codex STATUS proof block:** every metric reproduces to the decimal except aggressor (which varies across runs — its CI half-width ≈ 50 bb/100 makes per-run mean shifts of ±25 expected). The `math = ref_bot_2` identical results across both bb/100 and CIs are EXPECTED, not a benchmark bug — the two engine bots implement the same pot-odds-≥3 policy in different files (verified by `diff -r` of the bot.py sources), so a deterministic paired-seed hero scores identically against both.
+
+**Residual risks:** (1) Aggressor 10 k CI is wide (~100 bb/100 width). The qualifier is 400-hand matches per opponent; a single short match against aggressor specifically can swing. Mean is comfortably positive; recommend optional confirming 400-hand × N-seed run before upload, not blocking. (2) `tools/package.py` embeds build-time timestamps; rebuilding with `--output submissions/v_final.zip` produces a different SHA. **Do NOT re-package before upload** — ship the existing `e4b4a8f1…598` file as-is. The G4 `v_final_reaudit.zip` (`9a3b812e…0b0`) was a side check; per-file content SHAs were verified identical to canonical, so the release branch's `src/` + `data/` reproduce the artifact contents exactly.
+
+**Next action:** Upload `~/Code/PokerBot/submissions/v_final.zip` as-is to the Fullhouse Hackathon qualifier portal on 2026-06-01. Optional pre-upload: 400-hand × few-seed confirming run against `aggressor` specifically to characterise single-match variance. Optional post-qualifier: tag `release/v_final-e4b4a8f1` HEAD as `v_final-e4b4a8f1` for a permanent ship-state record.
+
