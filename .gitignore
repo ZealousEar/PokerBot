@@ -28,8 +28,9 @@ id_ed25519*
 *.token
 *.secret
 
-# External engine clone (re-clone from upstream)
-ext/fullhouse-engine/
+# External code (engine clone + downloaded public-bot sources;
+# re-clone/re-download upstream, do not commit third-party code).
+ext/
 
 # Build outputs
 submissions/*.zip
