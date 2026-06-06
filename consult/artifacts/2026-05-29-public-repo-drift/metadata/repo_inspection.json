@@ -1,0 +1,1228 @@
+[
+  {
+    "repo": "Pav1602/fullhouse-engine",
+    "path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/_clones/Pav1602_fullhouse-engine",
+    "exists": true,
+    "head_sha": "555c84f58d01952e025ec4b80c06da7f4ec6cced",
+    "head_short": "555c84f58d01",
+    "head_date": "2026-05-25T11:00:14+01:00",
+    "head_subject": "pool fix: 8 archetype bots were silently auto-folding (KeyError on state schema)",
+    "default_branch": "main",
+    "bots": [
+      {
+        "name": "aggressor",
+        "path": "bots/aggressor",
+        "bot_py": "bots/aggressor/bot.py",
+        "bot_py_size": 1143,
+        "bot_py_lines": 41,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "human_cli",
+        "path": "bots/human_cli",
+        "bot_py": "bots/human_cli/bot.py",
+        "bot_py_size": 5991,
+        "bot_py_lines": 137,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "mathematician",
+        "path": "bots/mathematician",
+        "bot_py": "bots/mathematician/bot.py",
+        "bot_py_size": 504,
+        "bot_py_lines": 21,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "ref_bot_2",
+        "path": "bots/ref_bot_2",
+        "bot_py": "bots/ref_bot_2/bot.py",
+        "bot_py_size": 401,
+        "bot_py_lines": 15,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "shark",
+        "path": "bots/shark",
+        "bot_py": "bots/shark/bot.py",
+        "bot_py_size": 2554,
+        "bot_py_lines": 82,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot",
+        "path": "bots/skantbot",
+        "bot_py": "bots/skantbot/bot.py",
+        "bot_py_size": 38917,
+        "bot_py_lines": 1007,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot2",
+        "path": "bots/skantbot2",
+        "bot_py": "bots/skantbot2/bot.py",
+        "bot_py_size": 45319,
+        "bot_py_lines": 1149,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot3",
+        "path": "bots/skantbot3",
+        "bot_py": null,
+        "bot_py_size": null,
+        "bot_py_lines": null,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot4",
+        "path": "bots/skantbot4",
+        "bot_py": "bots/skantbot4/bot.py",
+        "bot_py_size": 48997,
+        "bot_py_lines": 1227,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot6",
+        "path": "bots/skantbot6",
+        "bot_py": "bots/skantbot6/bot.py",
+        "bot_py_size": 64828,
+        "bot_py_lines": 1576,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot6_phase1",
+        "path": "bots/skantbot6_phase1",
+        "bot_py": "bots/skantbot6_phase1/bot.py",
+        "bot_py_size": 52442,
+        "bot_py_lines": 1288,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot6_phase4_baseline",
+        "path": "bots/skantbot6_phase4_baseline",
+        "bot_py": "bots/skantbot6_phase4_baseline/bot.py",
+        "bot_py_size": 57126,
+        "bot_py_lines": 1402,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot6_phase5_baseline",
+        "path": "bots/skantbot6_phase5_baseline",
+        "bot_py": "bots/skantbot6_phase5_baseline/bot.py",
+        "bot_py_size": 57478,
+        "bot_py_lines": 1411,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot6_phase6_baseline",
+        "path": "bots/skantbot6_phase6_baseline",
+        "bot_py": "bots/skantbot6_phase6_baseline/bot.py",
+        "bot_py_size": 60540,
+        "bot_py_lines": 1484,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot7",
+        "path": "bots/skantbot7",
+        "bot_py": "bots/skantbot7/bot.py",
+        "bot_py_size": 65504,
+        "bot_py_lines": 1590,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot7.1",
+        "path": "bots/skantbot7.1",
+        "bot_py": "bots/skantbot7.1/bot.py",
+        "bot_py_size": 66828,
+        "bot_py_lines": 1621,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot7.3",
+        "path": "bots/skantbot7.3",
+        "bot_py": "bots/skantbot7.3/bot.py",
+        "bot_py_size": 67675,
+        "bot_py_lines": 1653,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot7.4",
+        "path": "bots/skantbot7.4",
+        "bot_py": "bots/skantbot7.4/bot.py",
+        "bot_py_size": 69390,
+        "bot_py_lines": 1685,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot7.5",
+        "path": "bots/skantbot7.5",
+        "bot_py": "bots/skantbot7.5/bot.py",
+        "bot_py_size": 69636,
+        "bot_py_lines": 1688,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot7.6",
+        "path": "bots/skantbot7.6",
+        "bot_py": "bots/skantbot7.6/bot.py",
+        "bot_py_size": 71141,
+        "bot_py_lines": 1723,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot7.7",
+        "path": "bots/skantbot7.7",
+        "bot_py": "bots/skantbot7.7/bot.py",
+        "bot_py_size": 72446,
+        "bot_py_lines": 1753,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot7.8",
+        "path": "bots/skantbot7.8",
+        "bot_py": "bots/skantbot7.8/bot.py",
+        "bot_py_size": 73374,
+        "bot_py_lines": 1765,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "skantbot7.9",
+        "path": "bots/skantbot7.9",
+        "bot_py": "bots/skantbot7.9/bot.py",
+        "bot_py_size": 73385,
+        "bot_py_lines": 1765,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "template",
+        "path": "bots/template",
+        "bot_py": "bots/template/bot.py",
+        "bot_py_size": 4225,
+        "bot_py_lines": 87,
+        "data_files": [],
+        "data_bytes": 0
+      }
+    ],
+    "readme_mentions": [
+      {
+        "file": "README.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5000` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- 256 MB RAM, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "python3 sandbox/match.py bots/mybot/bot.py bots/shark/bot.py --hands 200",
+          "All bots play in a Swiss-system tournament (3 rounds, 200 hands each). Bots are paired by similar standing after each round. Top 32 qualify.",
+          "Submit an updated bot. Second qualification round runs. Standings update.",
+          "Top 32 bots, live-streamed bracket. Winner takes the prize pool.",
+          "## Reference bots",
+          "Four bots are included to test against:",
+          "| Bot | Strategy |",
+          "| `bots/template/bot.py` | Pocket pairs + basic pot odds |",
+          "| `bots/aggressor/bot.py` | Raises constantly regardless of hand |"
+        ]
+      },
+      {
+        "file": "readme.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5000` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- 256 MB RAM, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "python3 sandbox/match.py bots/mybot/bot.py bots/shark/bot.py --hands 200",
+          "All bots play in a Swiss-system tournament (3 rounds, 200 hands each). Bots are paired by similar standing after each round. Top 32 qualify.",
+          "Submit an updated bot. Second qualification round runs. Standings update.",
+          "Top 32 bots, live-streamed bracket. Winner takes the prize pool.",
+          "## Reference bots",
+          "Four bots are included to test against:",
+          "| Bot | Strategy |",
+          "| `bots/template/bot.py` | Pocket pairs + basic pot odds |",
+          "| `bots/aggressor/bot.py` | Raises constantly regardless of hand |"
+        ]
+      }
+    ]
+  },
+  {
+    "repo": "vladimirfilip/fullhouse-engine",
+    "path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/_clones/vladimirfilip_fullhouse-engine",
+    "exists": true,
+    "head_sha": "f8b8723ce324685429a5098d6b76586005010210",
+    "head_short": "f8b8723ce324",
+    "head_date": "2026-05-28T23:37:29+01:00",
+    "head_subject": "Checkpoint strategy net and always train 6-player",
+    "default_branch": "main",
+    "bots": [
+      {
+        "name": "aggressor",
+        "path": "bots/aggressor",
+        "bot_py": "bots/aggressor/bot.py",
+        "bot_py_size": 525,
+        "bot_py_lines": 19,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "mathematician",
+        "path": "bots/mathematician",
+        "bot_py": "bots/mathematician/bot.py",
+        "bot_py_size": 504,
+        "bot_py_lines": 21,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "ref_bot_2",
+        "path": "bots/ref_bot_2",
+        "bot_py": "bots/ref_bot_2/bot.py",
+        "bot_py_size": 401,
+        "bot_py_lines": 15,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "shark",
+        "path": "bots/shark",
+        "bot_py": "bots/shark/bot.py",
+        "bot_py_size": 1933,
+        "bot_py_lines": 60,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "template",
+        "path": "bots/template",
+        "bot_py": "bots/template/bot.py",
+        "bot_py_size": 5566,
+        "bot_py_lines": 117,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "vlad",
+        "path": "bots/vlad",
+        "bot_py": "bots/vlad/bot.py",
+        "bot_py_size": 30111,
+        "bot_py_lines": 729,
+        "data_files": [],
+        "data_bytes": 0
+      }
+    ],
+    "readme_mentions": [
+      {
+        "file": "README.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5000` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable.",
+          "- **No external compute.** You may not use the bot.py to call out to a server you control (it can't anyway, see point 1) or queue work to be done else"
+        ]
+      },
+      {
+        "file": "readme.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5000` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable.",
+          "- **No external compute.** You may not use the bot.py to call out to a server you control (it can't anyway, see point 1) or queue work to be done else"
+        ]
+      }
+    ]
+  },
+  {
+    "repo": "TobyCoad/fullhouse-engine",
+    "path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/_clones/TobyCoad_fullhouse-engine",
+    "exists": true,
+    "head_sha": "93516f33675d32beaeb3228a554c1323926cd71d",
+    "head_short": "93516f33675d",
+    "head_date": "2026-05-13T22:19:58+01:00",
+    "head_subject": "Merge pull request #1 from TobyCoad/claude/blissful-fermat-e6e19d",
+    "default_branch": "main",
+    "bots": [
+      {
+        "name": "aggressor",
+        "path": "bots/aggressor",
+        "bot_py": "bots/aggressor/bot.py",
+        "bot_py_size": 525,
+        "bot_py_lines": 19,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "bluff_heavy",
+        "path": "bots/bluff_heavy",
+        "bot_py": "bots/bluff_heavy/bot.py",
+        "bot_py_size": 1493,
+        "bot_py_lines": 47,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "loose_aggressive",
+        "path": "bots/loose_aggressive",
+        "bot_py": "bots/loose_aggressive/bot.py",
+        "bot_py_size": 4603,
+        "bot_py_lines": 127,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "loose_passive",
+        "path": "bots/loose_passive",
+        "bot_py": "bots/loose_passive/bot.py",
+        "bot_py_size": 3592,
+        "bot_py_lines": 129,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "master",
+        "path": "bots/master",
+        "bot_py": "bots/master/bot.py",
+        "bot_py_size": 15642,
+        "bot_py_lines": 421,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "mathematician",
+        "path": "bots/mathematician",
+        "bot_py": "bots/mathematician/bot.py",
+        "bot_py_size": 504,
+        "bot_py_lines": 21,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "position_exploiter",
+        "path": "bots/position_exploiter",
+        "bot_py": "bots/position_exploiter/bot.py",
+        "bot_py_size": 5091,
+        "bot_py_lines": 147,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "pure_pot_odds",
+        "path": "bots/pure_pot_odds",
+        "bot_py": "bots/pure_pot_odds/bot.py",
+        "bot_py_size": 2932,
+        "bot_py_lines": 96,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "random_bot",
+        "path": "bots/random_bot",
+        "bot_py": "bots/random_bot/bot.py",
+        "bot_py_size": 851,
+        "bot_py_lines": 32,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "ref_bot_2",
+        "path": "bots/ref_bot_2",
+        "bot_py": "bots/ref_bot_2/bot.py",
+        "bot_py_size": 401,
+        "bot_py_lines": 15,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "shark",
+        "path": "bots/shark",
+        "bot_py": "bots/shark/bot.py",
+        "bot_py_size": 1933,
+        "bot_py_lines": 60,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "stack_pressure",
+        "path": "bots/stack_pressure",
+        "bot_py": "bots/stack_pressure/bot.py",
+        "bot_py_size": 4946,
+        "bot_py_lines": 138,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "template",
+        "path": "bots/template",
+        "bot_py": "bots/template/bot.py",
+        "bot_py_size": 5566,
+        "bot_py_lines": 117,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "tight_aggressive",
+        "path": "bots/tight_aggressive",
+        "bot_py": "bots/tight_aggressive/bot.py",
+        "bot_py_size": 5031,
+        "bot_py_lines": 147,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "tight_passive",
+        "path": "bots/tight_passive",
+        "bot_py": "bots/tight_passive/bot.py",
+        "bot_py_size": 4105,
+        "bot_py_lines": 113,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "trap_slow_player",
+        "path": "bots/trap_slow_player",
+        "bot_py": "bots/trap_slow_player/bot.py",
+        "bot_py_size": 4916,
+        "bot_py_lines": 136,
+        "data_files": [],
+        "data_bytes": 0
+      }
+    ],
+    "readme_mentions": [
+      {
+        "file": "README.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5000` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable.",
+          "- **No external compute.** You may not use the bot.py to call out to a server you control (it can't anyway, see point 1) or queue work to be done else"
+        ]
+      },
+      {
+        "file": "readme.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5000` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable.",
+          "- **No external compute.** You may not use the bot.py to call out to a server you control (it can't anyway, see point 1) or queue work to be done else"
+        ]
+      }
+    ]
+  },
+  {
+    "repo": "MatusGib/fullhouse-engine",
+    "path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/_clones/MatusGib_fullhouse-engine",
+    "exists": true,
+    "head_sha": "a80b26957db5f5515d9273a15d1b73aadf8985db",
+    "head_short": "a80b26957db5",
+    "head_date": "2026-05-24T20:39:43+01:00",
+    "head_subject": "Merge branch 'fixes/schema-defaults'",
+    "default_branch": "main",
+    "bots": [
+      {
+        "name": "aggressor",
+        "path": "bots/aggressor",
+        "bot_py": "bots/aggressor/bot.py",
+        "bot_py_size": 525,
+        "bot_py_lines": 19,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "mathematician",
+        "path": "bots/mathematician",
+        "bot_py": "bots/mathematician/bot.py",
+        "bot_py_size": 504,
+        "bot_py_lines": 21,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "ref_bot_2",
+        "path": "bots/ref_bot_2",
+        "bot_py": "bots/ref_bot_2/bot.py",
+        "bot_py_size": 401,
+        "bot_py_lines": 15,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "shark",
+        "path": "bots/shark",
+        "bot_py": "bots/shark/bot.py",
+        "bot_py_size": 1933,
+        "bot_py_lines": 60,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "template",
+        "path": "bots/template",
+        "bot_py": "bots/template/bot.py",
+        "bot_py_size": 5719,
+        "bot_py_lines": 119,
+        "data_files": [],
+        "data_bytes": 0
+      }
+    ],
+    "readme_mentions": [
+      {
+        "file": "README.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5001` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable."
+        ]
+      },
+      {
+        "file": "readme.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5001` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable."
+        ]
+      }
+    ]
+  },
+  {
+    "repo": "stoppedtime24/fullhouse-engine",
+    "path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/_clones/stoppedtime24_fullhouse-engine",
+    "exists": true,
+    "head_sha": "52951cb7242eb1e3abc638ccd287a08ce37ff34a",
+    "head_short": "52951cb7242e",
+    "head_date": "2026-05-28T22:56:46+01:00",
+    "head_subject": "Claude code brrr",
+    "default_branch": "main",
+    "bots": [
+      {
+        "name": "aggressor",
+        "path": "bots/aggressor",
+        "bot_py": "bots/aggressor/bot.py",
+        "bot_py_size": 525,
+        "bot_py_lines": 19,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "mathematician",
+        "path": "bots/mathematician",
+        "bot_py": "bots/mathematician/bot.py",
+        "bot_py_size": 504,
+        "bot_py_lines": 21,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "mybot",
+        "path": "bots/mybot",
+        "bot_py": "bots/mybot/bot.py",
+        "bot_py_size": 13890,
+        "bot_py_lines": 333,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "ref_bot_2",
+        "path": "bots/ref_bot_2",
+        "bot_py": "bots/ref_bot_2/bot.py",
+        "bot_py_size": 401,
+        "bot_py_lines": 15,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "shark",
+        "path": "bots/shark",
+        "bot_py": "bots/shark/bot.py",
+        "bot_py_size": 1933,
+        "bot_py_lines": 60,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "template",
+        "path": "bots/template",
+        "bot_py": "bots/template/bot.py",
+        "bot_py_size": 5719,
+        "bot_py_lines": 119,
+        "data_files": [],
+        "data_bytes": 0
+      }
+    ],
+    "readme_mentions": [
+      {
+        "file": "README.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5001` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable."
+        ]
+      },
+      {
+        "file": "readme.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5001` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable."
+        ]
+      }
+    ]
+  },
+  {
+    "repo": "Benjamin-Yu-Sheng-Chang/fullhouse-hackathon",
+    "path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/_clones/Benjamin-Yu-Sheng-Chang_fullhouse-hackathon",
+    "exists": true,
+    "head_sha": "725e89876c967bbe567c7c88aa43e19b82a1bcdc",
+    "head_short": "725e89876c96",
+    "head_date": "2026-05-28T15:29:25+01:00",
+    "head_subject": "add ipynb notebooks from kaggle",
+    "default_branch": "main",
+    "bots": [
+      {
+        "name": "aggressor",
+        "path": "bots/aggressor",
+        "bot_py": "bots/aggressor/bot.py",
+        "bot_py_size": 525,
+        "bot_py_lines": 19,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "mathematician",
+        "path": "bots/mathematician",
+        "bot_py": "bots/mathematician/bot.py",
+        "bot_py_size": 504,
+        "bot_py_lines": 21,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "ref_bot_2",
+        "path": "bots/ref_bot_2",
+        "bot_py": "bots/ref_bot_2/bot.py",
+        "bot_py_size": 401,
+        "bot_py_lines": 15,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "shark",
+        "path": "bots/shark",
+        "bot_py": "bots/shark/bot.py",
+        "bot_py_size": 1933,
+        "bot_py_lines": 60,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "template",
+        "path": "bots/template",
+        "bot_py": "bots/template/bot.py",
+        "bot_py_size": 5719,
+        "bot_py_lines": 119,
+        "data_files": [],
+        "data_bytes": 0
+      }
+    ],
+    "readme_mentions": [
+      {
+        "file": "README.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5001` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable."
+        ]
+      },
+      {
+        "file": "readme.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5001` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable."
+        ]
+      }
+    ]
+  },
+  {
+    "repo": "Mehedi-dev-2404/fullhouse-engine",
+    "path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/_clones/Mehedi-dev-2404_fullhouse-engine",
+    "exists": true,
+    "head_sha": "aa14a35a4f185f8608ae962aef17a7c620909a4b",
+    "head_short": "aa14a35a4f18",
+    "head_date": "2026-05-28T00:44:05+01:00",
+    "head_subject": "Add Koda poker bot and demo entry",
+    "default_branch": "main",
+    "bots": [
+      {
+        "name": "aggressor",
+        "path": "bots/aggressor",
+        "bot_py": "bots/aggressor/bot.py",
+        "bot_py_size": 525,
+        "bot_py_lines": 19,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "mathematician",
+        "path": "bots/mathematician",
+        "bot_py": "bots/mathematician/bot.py",
+        "bot_py_size": 504,
+        "bot_py_lines": 21,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "mybot",
+        "path": "bots/mybot",
+        "bot_py": "bots/mybot/bot.py",
+        "bot_py_size": 25993,
+        "bot_py_lines": 733,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "ref_bot_2",
+        "path": "bots/ref_bot_2",
+        "bot_py": "bots/ref_bot_2/bot.py",
+        "bot_py_size": 401,
+        "bot_py_lines": 15,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "shark",
+        "path": "bots/shark",
+        "bot_py": "bots/shark/bot.py",
+        "bot_py_size": 1933,
+        "bot_py_lines": 60,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "template",
+        "path": "bots/template",
+        "bot_py": "bots/template/bot.py",
+        "bot_py_size": 5719,
+        "bot_py_lines": 119,
+        "data_files": [],
+        "data_bytes": 0
+      }
+    ],
+    "readme_mentions": [
+      {
+        "file": "README.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5001` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable."
+        ]
+      },
+      {
+        "file": "readme.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5001` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable."
+        ]
+      }
+    ]
+  },
+  {
+    "repo": "famadeo/fullhouse-engine(local)",
+    "path": "/Users/farhad/Code/PokerBot/ext/public-bots/famadeo",
+    "exists": true,
+    "head_sha": "c94dace1c6bf523aa49e9c149d897c6b71a19c5e",
+    "head_short": "c94dace1c6bf",
+    "head_date": "2026-05-22T14:59:01-03:00",
+    "head_subject": "Add benchmarked Hold'em risk gates and forensics",
+    "default_branch": "main",
+    "bots": [
+      {
+        "name": "aggressor",
+        "path": "bots/aggressor",
+        "bot_py": "bots/aggressor/bot.py",
+        "bot_py_size": 525,
+        "bot_py_lines": 19,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "codex_holdem",
+        "path": "bots/codex_holdem",
+        "bot_py": "bots/codex_holdem/bot.py",
+        "bot_py_size": 88634,
+        "bot_py_lines": 2359,
+        "data_files": [
+          "data/model.json"
+        ],
+        "data_bytes": 60987
+      },
+      {
+        "name": "mathematician",
+        "path": "bots/mathematician",
+        "bot_py": "bots/mathematician/bot.py",
+        "bot_py_size": 504,
+        "bot_py_lines": 21,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "ref_bot_2",
+        "path": "bots/ref_bot_2",
+        "bot_py": "bots/ref_bot_2/bot.py",
+        "bot_py_size": 401,
+        "bot_py_lines": 15,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "shark",
+        "path": "bots/shark",
+        "bot_py": "bots/shark/bot.py",
+        "bot_py_size": 1933,
+        "bot_py_lines": 60,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "template",
+        "path": "bots/template",
+        "bot_py": "bots/template/bot.py",
+        "bot_py_size": 5566,
+        "bot_py_lines": 117,
+        "data_files": [],
+        "data_bytes": 0
+      }
+    ],
+    "readme_mentions": [
+      {
+        "file": "README.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5000` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable.",
+          "- **No external compute.** You may not use the bot.py to call out to a server you control (it can't anyway, see point 1) or queue work to be done else"
+        ]
+      },
+      {
+        "file": "readme.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5000` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable.",
+          "- **No external compute.** You may not use the bot.py to call out to a server you control (it can't anyway, see point 1) or queue work to be done else"
+        ]
+      }
+    ]
+  },
+  {
+    "repo": "agrawalneel25/fullhouse-engine(neel-work local)",
+    "path": "/Users/farhad/Code/PokerBot/ext/public-bots/neel",
+    "exists": true,
+    "head_sha": "071d54c302cbd2d9d5fcc773260e7f5f894c642f",
+    "head_short": "071d54c302cb",
+    "head_date": "2026-05-12T17:52:21+01:00",
+    "head_subject": "Add poker bot collaboration tooling",
+    "default_branch": "neel-work",
+    "bots": [
+      {
+        "name": "aggressor",
+        "path": "bots/aggressor",
+        "bot_py": "bots/aggressor/bot.py",
+        "bot_py_size": 525,
+        "bot_py_lines": 19,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "mathematician",
+        "path": "bots/mathematician",
+        "bot_py": "bots/mathematician/bot.py",
+        "bot_py_size": 504,
+        "bot_py_lines": 21,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "neel",
+        "path": "bots/neel",
+        "bot_py": "bots/neel/bot.py",
+        "bot_py_size": 8132,
+        "bot_py_lines": 257,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "ref_bot_2",
+        "path": "bots/ref_bot_2",
+        "bot_py": "bots/ref_bot_2/bot.py",
+        "bot_py_size": 401,
+        "bot_py_lines": 15,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "shark",
+        "path": "bots/shark",
+        "bot_py": "bots/shark/bot.py",
+        "bot_py_size": 1933,
+        "bot_py_lines": 60,
+        "data_files": [],
+        "data_bytes": 0
+      },
+      {
+        "name": "template",
+        "path": "bots/template",
+        "bot_py": "bots/template/bot.py",
+        "bot_py_size": 5566,
+        "bot_py_lines": 117,
+        "data_files": [],
+        "data_bytes": 0
+      }
+    ],
+    "readme_mentions": [
+      {
+        "file": "README.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5000` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable.",
+          "- **No external compute.** You may not use the bot.py to call out to a server you control (it can't anyway, see point 1) or queue work to be done else"
+        ]
+      },
+      {
+        "file": "readme.md",
+        "mentions": [
+          "> The UK's first quantitative poker bot competition \u2014 1-5 June 2026, London",
+          "Build a Python bot that plays No-Limit Texas Hold'em. This repo has everything you need to write and test your bot locally \u2014 the full game engine, sandbox runner, reference bots, and validator.",
+          "You submit one file \u2014 `bot.py` \u2014 with one function:",
+          "Open `http://localhost:5000` \u2014 you'll see 6 reference bots playing each other live with a real-time leaderboard and hand replay.",
+          "## Writing your bot",
+          "cp -r bots/template bots/mybot",
+          "# edit bots/mybot/bot.py",
+          "**Game state your bot receives:**",
+          "- 2 seconds to return an action or your bot auto-folds",
+          "- **768 MB RAM**, 0.5 CPU core per bot",
+          "- Crashes and exceptions auto-fold for that hand \u2014 your bot stays in the tournament",
+          "### Not allowed (will get your bot disqualified)",
+          "- **No reading another bot's code or hole cards.** You only see what's in `state[\"your_cards\"]`. Don't try to access opponents' files, scrape `/proc`, or use reflection to peek at the runner's memory. The hole-card data isn't in your container's process memory \u2014 but trying counts as cheating.",
+          "- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.",
+          "- **No crypto-mining or resource abuse.** The 768 MB / 0.5 CPU limits will OOM-kill abusive bots, but doing it on purpose (e.g., to slow opponents) is bannable.",
+          "- **No external compute.** You may not use the bot.py to call out to a server you control (it can't anyway, see point 1) or queue work to be done else"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,986 @@
+{
+  "C0D_gate_pass": false,
+  "compositions": {
+    "C0D_DETERMINISTIC_SUBSET": {
+      "GATE_ROLE": "DECISION_GRADE",
+      "bust_rate_delta": 0.025,
+      "bust_regression": false,
+      "codex_bust": 1,
+      "codex_bust_rate": 0.025,
+      "codex_chip_delta": {
+        "max": 15012,
+        "mean": 9038.8,
+        "min": -10000,
+        "n": 40,
+        "p10": 4539.0,
+        "p25": 7793.8,
+        "p50": 10125.0,
+        "p75": 11765.0,
+        "p90": 13110.0,
+        "stdev": 4354.6
+      },
+      "locked_bust": 0,
+      "locked_bust_rate": 0.0,
+      "locked_chip_delta": {
+        "max": 14850,
+        "mean": 11423.8,
+        "min": 6600,
+        "n": 40,
+        "p10": 9040.0,
+        "p25": 10075.0,
+        "p50": 11500.0,
+        "p75": 13037.5,
+        "p90": 14155.0,
+        "stdev": 2117.5
+      },
+      "n": 40,
+      "n_differing": 40,
+      "p50_regression": true,
+      "paired_diff_codex_minus_locked": {
+        "max": 3562,
+        "mean": -2384.9,
+        "min": -20850,
+        "n": 40,
+        "p10": -7614.0,
+        "p25": -3012.5,
+        "p50": -1750.0,
+        "p75": -837.5,
+        "p90": 1169.5,
+        "stdev": 4059.9
+      },
+      "per_seed_when_differing": {
+        "900": {
+          "codex": 11020,
+          "codex_bust": 0,
+          "diff": 820,
+          "locked": 10200,
+          "locked_bust": 0
+        },
+        "901": {
+          "codex": 5250,
+          "codex_bust": 0,
+          "diff": -5150,
+          "locked": 10400,
+          "locked_bust": 0
+        },
+        "902": {
+          "codex": 8950,
+          "codex_bust": 0,
+          "diff": -2100,
+          "locked": 11050,
+          "locked_bust": 0
+        },
+        "903": {
+          "codex": 12500,
+          "codex_bust": 0,
+          "diff": -850,
+          "locked": 13350,
+          "locked_bust": 0
+        },
+        "904": {
+          "codex": 8250,
+          "codex_bust": 0,
+          "diff": -850,
+          "locked": 9100,
+          "locked_bust": 0
+        },
+        "905": {
+          "codex": 10250,
+          "codex_bust": 0,
+          "diff": -3050,
+          "locked": 13300,
+          "locked_bust": 0
+        },
+        "906": {
+          "codex": 10050,
+          "codex_bust": 0,
+          "diff": -1700,
+          "locked": 11750,
+          "locked_bust": 0
+        },
+        "907": {
+          "codex": 13100,
+          "codex_bust": 0,
+          "diff": -1750,
+          "locked": 14850,
+          "locked_bust": 0
+        },
+        "908": {
+          "codex": 10450,
+          "codex_bust": 0,
+          "diff": -3750,
+          "locked": 14200,
+          "locked_bust": 0
+        },
+        "909": {
+          "codex": 8740,
+          "codex_bust": 0,
+          "diff": 2140,
+          "locked": 6600,
+          "locked_bust": 0
+        },
+        "910": {
+          "codex": 13500,
+          "codex_bust": 0,
+          "diff": -1300,
+          "locked": 14800,
+          "locked_bust": 0
+        },
+        "911": {
+          "codex": 10050,
+          "codex_bust": 0,
+          "diff": -1350,
+          "locked": 11400,
+          "locked_bust": 0
+        },
+        "912": {
+          "codex": 11750,
+          "codex_bust": 0,
+          "diff": -1750,
+          "locked": 13500,
+          "locked_bust": 0
+        },
+        "913": {
+          "codex": 8250,
+          "codex_bust": 0,
+          "diff": -1750,
+          "locked": 10000,
+          "locked_bust": 0
+        },
+        "914": {
+          "codex": 6050,
+          "codex_bust": 0,
+          "diff": -1900,
+          "locked": 7950,
+          "locked_bust": 0
+        },
+        "915": {
+          "codex": 12225,
+          "codex_bust": 0,
+          "diff": -1925,
+          "locked": 14150,
+          "locked_bust": 0
+        },
+        "916": {
+          "codex": 10200,
+          "codex_bust": 0,
+          "diff": -1750,
+          "locked": 11950,
+          "locked_bust": 0
+        },
+        "917": {
+          "codex": 7775,
+          "codex_bust": 0,
+          "diff": -1475,
+          "locked": 9250,
+          "locked_bust": 0
+        },
+        "918": {
+          "codex": 9850,
+          "codex_bust": 0,
+          "diff": -2150,
+          "locked": 12000,
+          "locked_bust": 0
+        },
+        "919": {
+          "codex": 6750,
+          "codex_bust": 0,
+          "diff": -3350,
+          "locked": 10100,
+          "locked_bust": 0
+        },
+        "920": {
+          "codex": 3990,
+          "codex_bust": 0,
+          "diff": -7560,
+          "locked": 11550,
+          "locked_bust": 0
+        },
+        "921": {
+          "codex": 11300,
+          "codex_bust": 0,
+          "diff": -1500,
+          "locked": 12800,
+          "locked_bust": 0
+        },
+        "922": {
+          "codex": 2350,
+          "codex_bust": 0,
+          "diff": -8900,
+          "locked": 11250,
+          "locked_bust": 0
+        },
+        "923": {
+          "codex": 11810,
+          "codex_bust": 0,
+          "diff": 2060,
+          "locked": 9750,
+          "locked_bust": 0
+        },
+        "924": {
+          "codex": 7815,
+          "codex_bust": 0,
+          "diff": 1115,
+          "locked": 6700,
+          "locked_bust": 0
+        },
+        "925": {
+          "codex": 12150,
+          "codex_bust": 0,
+          "diff": -2150,
+          "locked": 14300,
+          "locked_bust": 0
+        },
+        "926": {
+          "codex": -10000,
+          "codex_bust": 1,
+          "diff": -20850,
+          "locked": 10850,
+          "locked_bust": 0
+        },
+        "927": {
+          "codex": 10750,
+          "codex_bust": 0,
+          "diff": -2200,
+          "locked": 12950,
+          "locked_bust": 0
+        },
+        "928": {
+          "codex": 13200,
+          "codex_bust": 0,
+          "diff": -800,
+          "locked": 14000,
+          "locked_bust": 0
+        },
+        "929": {
+          "codex": 4600,
+          "codex_bust": 0,
+          "diff": -8100,
+          "locked": 12700,
+          "locked_bust": 0
+        },
+        "930": {
+          "codex": 13060,
+          "codex_bust": 0,
+          "diff": 910,
+          "locked": 12150,
+          "locked_bust": 0
+        },
+        "931": {
+          "codex": 7980,
+          "codex_bust": 0,
+          "diff": -520,
+          "locked": 8500,
+          "locked_bust": 0
+        },
+        "932": {
+          "codex": 7800,
+          "codex_bust": 0,
+          "diff": -3000,
+          "locked": 10800,
+          "locked_bust": 0
+        },
+        "933": {
+          "codex": 15012,
+          "codex_bust": 0,
+          "diff": 3562,
+          "locked": 11450,
+          "locked_bust": 0
+        },
+        "934": {
+          "codex": 10300,
+          "codex_bust": 0,
+          "diff": 550,
+          "locked": 9750,
+          "locked_bust": 0
+        },
+        "935": {
+          "codex": 10400,
+          "codex_bust": 0,
+          "diff": -3550,
+          "locked": 13950,
+          "locked_bust": 0
+        },
+        "936": {
+          "codex": 13960,
+          "codex_bust": 0,
+          "diff": 1660,
+          "locked": 12300,
+          "locked_bust": 0
+        },
+        "937": {
+          "codex": 7625,
+          "codex_bust": 0,
+          "diff": -1475,
+          "locked": 9100,
+          "locked_bust": 0
+        },
+        "938": {
+          "codex": 10390,
+          "codex_bust": 0,
+          "diff": -1460,
+          "locked": 11850,
+          "locked_bust": 0
+        },
+        "939": {
+          "codex": 2100,
+          "codex_bust": 0,
+          "diff": -8250,
+          "locked": 10350,
+          "locked_bust": 0
+        }
+      },
+      "pod_pass": false,
+      "seeds_differing": [
+        900,
+        901,
+        902,
+        903,
+        904,
+        905,
+        906,
+        907,
+        908,
+        909,
+        910,
+        911,
+        912,
+        913,
+        914,
+        915,
+        916,
+        917,
+        918,
+        919,
+        920,
+        921,
+        922,
+        923,
+        924,
+        925,
+        926,
+        927,
+        928,
+        929,
+        930,
+        931,
+        932,
+        933,
+        934,
+        935,
+        936,
+        937,
+        938,
+        939
+      ],
+      "seeds_identical": 0
+    },
+    "C0_BASELINE": {
+      "GATE_ROLE": "DIRECTIONAL_ONLY",
+      "bust_rate_delta": -0.625,
+      "codex_bust": 5,
+      "codex_bust_rate": 0.125,
+      "codex_chip_delta": {
+        "max": 50000,
+        "mean": 16060.6,
+        "min": -10000,
+        "n": 40,
+        "p10": -10000.0,
+        "p25": 11270.0,
+        "p50": 18165.0,
+        "p75": 22972.5,
+        "p90": 27535.0,
+        "stdev": 13143.8
+      },
+      "locked_bust": 30,
+      "locked_bust_rate": 0.75,
+      "locked_chip_delta": {
+        "max": 13500,
+        "mean": -5568.9,
+        "min": -10000,
+        "n": 40,
+        "p10": -10000.0,
+        "p25": -10000.0,
+        "p50": -10000.0,
+        "p75": -7371.5,
+        "p90": 9238.0,
+        "stdev": 8030.7
+      },
+      "n": 40,
+      "n_differing": 36,
+      "paired_diff_codex_minus_locked": {
+        "max": 60000,
+        "mean": 21629.6,
+        "min": -19150,
+        "n": 40,
+        "p10": -10.6,
+        "p25": 11226.0,
+        "p50": 24385.0,
+        "p75": 32972.5,
+        "p90": 37535.0,
+        "stdev": 16260.7
+      },
+      "per_seed_when_differing": {
+        "900": {
+          "codex": 20982,
+          "codex_bust": 0,
+          "diff": 10932,
+          "locked": 10050,
+          "locked_bust": 0
+        },
+        "901": {
+          "codex": 15400,
+          "codex_bust": 0,
+          "diff": 25400,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "902": {
+          "codex": 12944,
+          "codex_bust": 0,
+          "diff": -106,
+          "locked": 13050,
+          "locked_bust": 0
+        },
+        "903": {
+          "codex": 11850,
+          "codex_bust": 0,
+          "diff": -1650,
+          "locked": 13500,
+          "locked_bust": 0
+        },
+        "904": {
+          "codex": 15150,
+          "codex_bust": 0,
+          "diff": 5120,
+          "locked": 10030,
+          "locked_bust": 0
+        },
+        "905": {
+          "codex": 32350,
+          "codex_bust": 0,
+          "diff": 42350,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "906": {
+          "codex": 20800,
+          "codex_bust": 0,
+          "diff": 14699,
+          "locked": 6101,
+          "locked_bust": 0
+        },
+        "908": {
+          "codex": 22358,
+          "codex_bust": 0,
+          "diff": 32358,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "909": {
+          "codex": 6290,
+          "codex_bust": 0,
+          "diff": -560,
+          "locked": 6850,
+          "locked_bust": 0
+        },
+        "910": {
+          "codex": 50000,
+          "codex_bust": 0,
+          "diff": 60000,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "911": {
+          "codex": 22080,
+          "codex_bust": 0,
+          "diff": 32080,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "912": {
+          "codex": 25380,
+          "codex_bust": 0,
+          "diff": 35380,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "913": {
+          "codex": 17800,
+          "codex_bust": 0,
+          "diff": 14653,
+          "locked": 3147,
+          "locked_bust": 0
+        },
+        "914": {
+          "codex": 31450,
+          "codex_bust": 0,
+          "diff": 41450,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "915": {
+          "codex": 1324,
+          "codex_bust": 0,
+          "diff": 11324,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "916": {
+          "codex": 25216,
+          "codex_bust": 0,
+          "diff": 35216,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "917": {
+          "codex": 20685,
+          "codex_bust": 0,
+          "diff": 30685,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "918": {
+          "codex": 20800,
+          "codex_bust": 0,
+          "diff": 20286,
+          "locked": 514,
+          "locked_bust": 0
+        },
+        "919": {
+          "codex": 18550,
+          "codex_bust": 0,
+          "diff": 28550,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "920": {
+          "codex": 22910,
+          "codex_bust": 0,
+          "diff": 32910,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "921": {
+          "codex": 35724,
+          "codex_bust": 0,
+          "diff": 45724,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "922": {
+          "codex": 14180,
+          "codex_bust": 0,
+          "diff": 24180,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "923": {
+          "codex": 26970,
+          "codex_bust": 0,
+          "diff": 36970,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "924": {
+          "codex": 15075,
+          "codex_bust": 0,
+          "diff": 25075,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "925": {
+          "codex": 23160,
+          "codex_bust": 0,
+          "diff": 33160,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "927": {
+          "codex": 18530,
+          "codex_bust": 0,
+          "diff": 28530,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "928": {
+          "codex": 24350,
+          "codex_bust": 0,
+          "diff": 34350,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "929": {
+          "codex": 27100,
+          "codex_bust": 0,
+          "diff": 37100,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "930": {
+          "codex": 14590,
+          "codex_bust": 0,
+          "diff": 24590,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "931": {
+          "codex": 9530,
+          "codex_bust": 0,
+          "diff": 19530,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "932": {
+          "codex": 21142,
+          "codex_bust": 0,
+          "diff": 16292,
+          "locked": 4850,
+          "locked_bust": 0
+        },
+        "935": {
+          "codex": 8880,
+          "codex_bust": 0,
+          "diff": 18880,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "936": {
+          "codex": -10000,
+          "codex_bust": 1,
+          "diff": -19150,
+          "locked": 9150,
+          "locked_bust": 0
+        },
+        "937": {
+          "codex": 17775,
+          "codex_bust": 0,
+          "diff": 27775,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "938": {
+          "codex": 8300,
+          "codex_bust": 0,
+          "diff": 18300,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "939": {
+          "codex": 12800,
+          "codex_bust": 0,
+          "diff": 22800,
+          "locked": -10000,
+          "locked_bust": 1
+        }
+      },
+      "seeds_differing": [
+        900,
+        901,
+        902,
+        903,
+        904,
+        905,
+        906,
+        908,
+        909,
+        910,
+        911,
+        912,
+        913,
+        914,
+        915,
+        916,
+        917,
+        918,
+        919,
+        920,
+        921,
+        922,
+        923,
+        924,
+        925,
+        927,
+        928,
+        929,
+        930,
+        931,
+        932,
+        935,
+        936,
+        937,
+        938,
+        939
+      ],
+      "seeds_identical": 4
+    },
+    "C1_SINGLE_TOBY_WEAK_FIELD": {
+      "GATE_ROLE": "DIRECTIONAL_ONLY",
+      "bust_rate_delta": 0.15,
+      "codex_bust": 21,
+      "codex_bust_rate": 0.525,
+      "codex_chip_delta": {
+        "max": 47150,
+        "mean": 4094.7,
+        "min": -10000,
+        "n": 40,
+        "p10": -10000.0,
+        "p25": -10000.0,
+        "p50": -10000.0,
+        "p75": 19454.2,
+        "p90": 24663.0,
+        "stdev": 16449.2
+      },
+      "locked_bust": 15,
+      "locked_bust_rate": 0.375,
+      "locked_chip_delta": {
+        "max": 50000,
+        "mean": 10976.0,
+        "min": -10000,
+        "n": 40,
+        "p10": -10000.0,
+        "p25": -10000.0,
+        "p50": 7545.0,
+        "p75": 24855.0,
+        "p90": 36946.4,
+        "stdev": 20810.3
+      },
+      "n": 40,
+      "n_differing": 26,
+      "paired_diff_codex_minus_locked": {
+        "max": 34471,
+        "mean": -6881.2,
+        "min": -60000,
+        "n": 40,
+        "p10": -33315.1,
+        "p25": -16839.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 12622.9,
+        "stdev": 19055.7
+      },
+      "per_seed_when_differing": {
+        "900": {
+          "codex": 24471,
+          "codex_bust": 0,
+          "diff": 34471,
+          "locked": -10000,
+          "locked_bust": 1
+        },
+        "901": {
+          "codex": -10000,
+          "codex_bust": 1,
+          "diff": -60000,
+          "locked": 50000,
+          "locked_bust": 0
+        },
+        "902": {
+          "codex": -10000,
+          "codex_bust": 1,
+          "diff": -45460,
+          "locked": 35460,
+          "locked_bust": 0
+        },
+        "903": {
+          "codex": 22300,
+          "codex_bust": 0,
+          "diff": -12766,
+          "locked": 35066,
+          "locked_bust": 0
+        },
+        "905": {
+          "codex": 21716,
+          "codex_bust": 0,
+          "diff": -13830,
+          "locked": 35546,
+          "locked_bust": 0
+        },
+        "906": {
+          "codex": 19467,
+          "codex_bust": 0,
+          "diff": 26856,
+          "locked": -7389,
+          "locked_bust": 0
+        },
+        "908": {
+          "codex": -10000,
+          "codex_bust": 1,
+          "diff": -32998,
+          "locked": 22998,
+          "locked_bust": 0
+        },
+        "909": {
+          "codex": 19910,
+          "codex_bust": 0,
+          "diff": -4700,
+          "locked": 24610,
+          "locked_bust": 0
+        },
+        "910": {
+          "codex": 26391,
+          "codex_bust": 0,
+          "diff": 12163,
+          "locked": 14228,
+          "locked_bust": 0
+        },
+        "913": {
+          "codex": 18650,
+          "codex_bust": 0,
+          "diff": -2910,
+          "locked": 21560,
+          "locked_bust": 0
+        },
+        "915": {
+          "codex": 19899,
+          "codex_bust": 0,
+          "diff": -337,
+          "locked": 20236,
+          "locked_bust": 0
+        },
+        "917": {
+          "codex": 4813,
+          "codex_bust": 0,
+          "diff": -2637,
+          "locked": 7450,
+          "locked_bust": 0
+        },
+        "918": {
+          "codex": 47150,
+          "codex_bust": 0,
+          "diff": -2400,
+          "locked": 49550,
+          "locked_bust": 0
+        },
+        "921": {
+          "codex": 9869,
+          "codex_bust": 0,
+          "diff": 386,
+          "locked": 9483,
+          "locked_bust": 0
+        },
+        "922": {
+          "codex": -10000,
+          "codex_bust": 1,
+          "diff": -22687,
+          "locked": 12687,
+          "locked_bust": 0
+        },
+        "923": {
+          "codex": 28292,
+          "codex_bust": 0,
+          "diff": 22337,
+          "locked": 5955,
+          "locked_bust": 0
+        },
+        "924": {
+          "codex": -10000,
+          "codex_bust": 1,
+          "diff": -35083,
+          "locked": 25083,
+          "locked_bust": 0
+        },
+        "926": {
+          "codex": -10000,
+          "codex_bust": 1,
+          "diff": -17640,
+          "locked": 7640,
+          "locked_bust": 0
+        },
+        "927": {
+          "codex": 15910,
+          "codex_bust": 0,
+          "diff": -34090,
+          "locked": 50000,
+          "locked_bust": 0
+        },
+        "928": {
+          "codex": -10000,
+          "codex_bust": 1,
+          "diff": -33229,
+          "locked": 23229,
+          "locked_bust": 0
+        },
+        "929": {
+          "codex": 16060,
+          "codex_bust": 0,
+          "diff": -16572,
+          "locked": 32632,
+          "locked_bust": 0
+        },
+        "930": {
+          "codex": 28670,
+          "codex_bust": 0,
+          "diff": -21330,
+          "locked": 50000,
+          "locked_bust": 0
+        },
+        "931": {
+          "codex": 112,
+          "codex_bust": 0,
+          "diff": -30697,
+          "locked": 30809,
+          "locked_bust": 0
+        },
+        "934": {
+          "codex": 18002,
+          "codex_bust": 0,
+          "diff": 16762,
+          "locked": 1240,
+          "locked_bust": 0
+        },
+        "937": {
+          "codex": 12657,
+          "codex_bust": 0,
+          "diff": 6470,
+          "locked": 6187,
+          "locked_bust": 0
+        },
+        "938": {
+          "codex": 19450,
+          "codex_bust": 0,
+          "diff": -5329,
+          "locked": 24779,
+          "locked_bust": 0
+        }
+      },
+      "seeds_differing": [
+        900,
+        901,
+        902,
+        903,
+        905,
+        906,
+        908,
+        909,
+        910,
+        913,
+        915,
+        917,
+        918,
+        921,
+        922,
+        923,
+        924,
+        926,
+        927,
+        928,
+        929,
+        930,
+        931,
+        934,
+        937,
+        938
+      ],
+      "seeds_identical": 14
+    }
+  },
+  "operating_point": {
+    "hands": 400,
+    "jobs": 1,
+    "seed_base": 900
+  },
+  "tolerances_C0D": {
+    "bust_tol": 0.05,
+    "p50_tol": 500.0
+  }
+}

@@ -1,0 +1,11 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.10.18, pytest-9.0.3, pluggy-1.6.0
+rootdir: /Users/farhad/Code/PokerBot
+plugins: hypothesis-6.152.9
+collected 14 items
+
+tests/edge_cases/test_package_and_harness_contracts.py ......            [ 42%]
+tests/edge_cases/test_runner_contract_extended.py ....                   [ 71%]
+tests/edge_cases/test_safe_fallback.py ....                              [100%]
+
+============================== 14 passed in 1.20s ==============================

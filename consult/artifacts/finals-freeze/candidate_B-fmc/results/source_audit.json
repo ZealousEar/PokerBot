@@ -1,0 +1,98 @@
+{
+  "data_references": [
+    {
+      "line": 25,
+      "path": "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/bot.py",
+      "text": "\"BOT_DATA_DIR\","
+    },
+    {
+      "line": 51,
+      "path": "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/opponent_model.py",
+      "text": "return os.environ.get(\"BOT_DATA_DIR\", os.path.join(os.path.dirname(here), \"data\"))"
+    },
+    {
+      "line": 77,
+      "path": "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/opponent_model.py",
+      "text": "path = os.path.join(_data_dir(), \"field_priors.npz\")"
+    },
+    {
+      "line": 79,
+      "path": "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/opponent_model.py",
+      "text": "with np.load(path, allow_pickle=False) as data:"
+    }
+  ],
+  "forbidden_clean": true,
+  "imports": {
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/bot.py": [
+      "from src.bot",
+      "os",
+      "sys"
+    ],
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/__init__.py": [],
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/bot.py": [
+      "from src.equity",
+      "from src.opponent_model",
+      "from src.postflop",
+      "from src.preflop_lookup",
+      "from src.sizing",
+      "from src.timeout_guard",
+      "os",
+      "sys",
+      "time"
+    ],
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/commitment.py": [
+      "from src.hand_features"
+    ],
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/equity.py": [
+      "eval7",
+      "from typing",
+      "hashlib",
+      "random"
+    ],
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/hand_features.py": [
+      "from typing"
+    ],
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/opponent_model.py": [
+      "from collections",
+      "from typing",
+      "numpy",
+      "os"
+    ],
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/postflop.py": [
+      "from src.commitment",
+      "from src.equity",
+      "from src.opponent_model",
+      "from src.sizing",
+      "from typing"
+    ],
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/preflop_lookup.py": [
+      "from src.ranges",
+      "from typing",
+      "os"
+    ],
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/ranges.py": [
+      "from typing"
+    ],
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/sizing.py": [],
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/timeout_guard.py": [
+      "from contextlib",
+      "from typing",
+      "time"
+    ]
+  },
+  "issues": [],
+  "python_files": [
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/bot.py",
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/__init__.py",
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/bot.py",
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/commitment.py",
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/equity.py",
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/hand_features.py",
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/opponent_model.py",
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/postflop.py",
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/preflop_lookup.py",
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/ranges.py",
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/sizing.py",
+    "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/timeout_guard.py"
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "all_in_maniac": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1113,
+        "file_size": 4333,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-finals-ship/ab_baseline/synthetic_opponents/zips/all_in_maniac.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "2ba26ee63d8b88649b23cb0ecb6ad30bbc9eceb2cea04dcd25ea512ebac4ce09",
+    "size_bytes": 1223,
+    "src_py_files": [],
+    "uncompressed_bytes": 4333
+  },
+  "loose_aggressive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1121,
+        "file_size": 4336,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-finals-ship/ab_baseline/synthetic_opponents/zips/loose_aggressive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "3b31b5f6ce28ff841a2704412129388483a9c2184345b44acaf440bcdb7c6bcc",
+    "size_bytes": 1231,
+    "src_py_files": [],
+    "uncompressed_bytes": 4336
+  },
+  "loose_passive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1117,
+        "file_size": 4333,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-finals-ship/ab_baseline/synthetic_opponents/zips/loose_passive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "307080adc30f89696e8f0fceda1f7b67aeae8e654e203a454064fdee977e4b35",
+    "size_bytes": 1227,
+    "src_py_files": [],
+    "uncompressed_bytes": 4333
+  },
+  "pot_odds_threshold": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1120,
+        "file_size": 4338,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-finals-ship/ab_baseline/synthetic_opponents/zips/pot_odds_threshold.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "9ad8512095773212a511e1b56c33981317854bdc520fd98171b34f44d73c9d81",
+    "size_bytes": 1230,
+    "src_py_files": [],
+    "uncompressed_bytes": 4338
+  },
+  "river_value_threshold": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1119,
+        "file_size": 4341,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-finals-ship/ab_baseline/synthetic_opponents/zips/river_value_threshold.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "26b42f152798fbe1978143ec68de11cdac58b9e14fca14318a1d4ac683b0ab53",
+    "size_bytes": 1229,
+    "src_py_files": [],
+    "uncompressed_bytes": 4341
+  },
+  "tight_aggressive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1119,
+        "file_size": 4336,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-finals-ship/ab_baseline/synthetic_opponents/zips/tight_aggressive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "e983540ead89f1e27aa8805a08728da2a72e1df8a2b57561162c4d7edde58247",
+    "size_bytes": 1229,
+    "src_py_files": [],
+    "uncompressed_bytes": 4336
+  },
+  "tight_passive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1115,
+        "file_size": 4333,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-finals-ship/ab_baseline/synthetic_opponents/zips/tight_passive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "fe499ff7f521d8450875f51cbbac3faa791ee4ed9416a03441d37f56939b1464",
+    "size_bytes": 1225,
+    "src_py_files": [],
+    "uncompressed_bytes": 4333
+  }
+}

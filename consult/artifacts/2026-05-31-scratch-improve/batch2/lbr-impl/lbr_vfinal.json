@@ -1,0 +1,33 @@
+{
+  "aggregate_detail": {
+    "hands": 400,
+    "hero_busts": 15,
+    "hero_net_chips": 113930.0,
+    "villain_busts": 30,
+    "villain_chips_per_hand": -284.825,
+    "villain_mbb_g": -2848.2499999999995,
+    "villain_net_chips": -113930.0
+  },
+  "aggregate_mbb_g": -2848.25,
+  "aggregate_pass": true,
+  "bot": "/Users/farhad/Code/PokerBot/submissions/v_final.zip",
+  "elapsed_aggregate_s": 1.8,
+  "elapsed_preflop_s": 2.5,
+  "max_aggregate_mbb": 200.0,
+  "max_preflop_mbb": 100.0,
+  "n_hands": 400,
+  "passed": true,
+  "preflop_detail": {
+    "hands": 400,
+    "hero_busts": 4,
+    "hero_net_chips": 3156.0,
+    "villain_busts": 5,
+    "villain_chips_per_hand": -7.89,
+    "villain_mbb_g": -78.89999999999999,
+    "villain_net_chips": -3156.0
+  },
+  "preflop_mbb_g": -78.9,
+  "preflop_pass": true,
+  "rollouts": 20,
+  "seed_base": 42
+}

@@ -1,0 +1,808 @@
+{
+  "baseline": {
+    "data_entries": [
+      "data/.gitkeep",
+      "data/field_priors.npz",
+      "data/flop_buckets.npz",
+      "data/flop_strategy.npz",
+      "data/preflop_blueprint.npz"
+    ],
+    "entries": [
+      {
+        "compress_size": 400,
+        "file_size": 654,
+        "is_dir": false,
+        "mode": 33152,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/.gitkeep"
+      },
+      {
+        "compress_size": 1290,
+        "file_size": 5394,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/field_priors.npz"
+      },
+      {
+        "compress_size": 463,
+        "file_size": 582,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_buckets.npz"
+      },
+      {
+        "compress_size": 16597,
+        "file_size": 17029,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_strategy.npz"
+      },
+      {
+        "compress_size": 1396,
+        "file_size": 2147,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/preflop_blueprint.npz"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 3241,
+        "file_size": 10088,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 1206,
+        "file_size": 2707,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/commitment.py"
+      },
+      {
+        "compress_size": 2945,
+        "file_size": 9719,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 2412,
+        "file_size": 7792,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/hand_features.py"
+      },
+      {
+        "compress_size": 3438,
+        "file_size": 10699,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 3020,
+        "file_size": 8129,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 1645,
+        "file_size": 4631,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 2389,
+        "file_size": 9110,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 1255,
+        "file_size": 3407,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      }
+    ],
+    "entry_count": 17,
+    "path": "submissions/v_final.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "b108eff59b46b713fdfb1530f73eaeaa924f5dd9cb5ed72d3e63512a9ce3c36b",
+    "size_bytes": 44274,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/commitment.py",
+      "src/equity.py",
+      "src/hand_features.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 93522
+  },
+  "bot": {
+    "data_entries": [
+      "data/.gitkeep",
+      "data/field_priors.npz",
+      "data/flop_buckets.npz",
+      "data/flop_strategy.npz",
+      "data/preflop_blueprint.npz"
+    ],
+    "entries": [
+      {
+        "compress_size": 319,
+        "file_size": 519,
+        "is_dir": false,
+        "mode": 384,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 3241,
+        "file_size": 10088,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 1206,
+        "file_size": 2707,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/commitment.py"
+      },
+      {
+        "compress_size": 2945,
+        "file_size": 9719,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 2412,
+        "file_size": 7792,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/hand_features.py"
+      },
+      {
+        "compress_size": 3438,
+        "file_size": 10699,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 3154,
+        "file_size": 8502,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 1645,
+        "file_size": 4631,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 2389,
+        "file_size": 9110,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 1255,
+        "file_size": 3407,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/.gitkeep"
+      },
+      {
+        "compress_size": 1290,
+        "file_size": 5394,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/field_priors.npz"
+      },
+      {
+        "compress_size": 463,
+        "file_size": 582,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_buckets.npz"
+      },
+      {
+        "compress_size": 16597,
+        "file_size": 17029,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_strategy.npz"
+      },
+      {
+        "compress_size": 1396,
+        "file_size": 2147,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/preflop_blueprint.npz"
+      }
+    ],
+    "entry_count": 17,
+    "path": "consult/artifacts/2026-06-04-finals-ship/candidates/candidate_B.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "ffde80dd1dc562ba6a65acb54e964041309110c700c26f6abd9f85df0be2a8a4",
+    "size_bytes": 44327,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/commitment.py",
+      "src/equity.py",
+      "src/hand_features.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 93760
+  },
+  "extracted_dir": "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B",
+  "match_config": {
+    "hands_per_opponent": 800,
+    "match_len": 200,
+    "paired_orientations": true,
+    "seed_base": 42
+  },
+  "match_results": {
+    "diagnostic_hands": [],
+    "summaries": []
+  },
+  "probe_results": [
+    {
+      "actions": [
+        {
+          "ok": true
+        }
+      ],
+      "description": "Runner warmup call should return ok without warmup_exception.",
+      "errors": [],
+      "latency_ms": {
+        "max": 111.13066598773003,
+        "mean": 111.13066598773003,
+        "min": 111.13066598773003
+      },
+      "name": "warmup_exception",
+      "repeat": 1,
+      "runner_stderr_tail": "",
+      "shape_ok": true,
+      "unique_actions": [
+        "{\"ok\": true}"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "action": "fold"
+        }
+      ],
+      "description": "Two pair on paired Broadway river facing a large bet; known Round-1 class.",
+      "errors": [],
+      "latency_ms": {
+        "max": 7.313000038266182,
+        "mean": 7.313000038266182,
+        "min": 7.313000038266182
+      },
+      "name": "near_drawing_dead_stackoff",
+      "repeat": 1,
+      "runner_stderr_tail": "",
+      "shape_ok": true,
+      "unique_actions": [
+        "{\"action\": \"fold\"}"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "action": "fold"
+        }
+      ],
+      "description": "Under-boat/full-house cooler class from the extended edge harness; large commit is unsafe.",
+      "errors": [],
+      "latency_ms": {
+        "max": 13.38733290322125,
+        "mean": 13.38733290322125,
+        "min": 13.38733290322125
+      },
+      "name": "dominated_underboat_near_dead_commitment",
+      "repeat": 1,
+      "runner_stderr_tail": "",
+      "shape_ok": true,
+      "unique_actions": [
+        "{\"action\": \"fold\"}"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "action": "call"
+        }
+      ],
+      "description": "Four-way wet monotone connected flop; tests HU-biased opponent seat selection.",
+      "errors": [],
+      "latency_ms": {
+        "max": 9.01466584764421,
+        "mean": 9.01466584764421,
+        "min": 9.01466584764421
+      },
+      "name": "multiway_wet_board",
+      "repeat": 1,
+      "runner_stderr_tail": "",
+      "shape_ok": true,
+      "unique_actions": [
+        "{\"action\": \"call\"}"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "action": "fold"
+        }
+      ],
+      "description": "Weak pair facing large river bet.",
+      "errors": [],
+      "latency_ms": {
+        "max": 12.008500052616,
+        "mean": 12.008500052616,
+        "min": 12.008500052616
+      },
+      "name": "river_facing_large_bet",
+      "repeat": 1,
+      "runner_stderr_tail": "",
+      "shape_ok": true,
+      "unique_actions": [
+        "{\"action\": \"fold\"}"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "action": "fold"
+        }
+      ],
+      "description": "Turn jam with overcards/no made hand and poor immediate pot odds.",
+      "errors": [],
+      "latency_ms": {
+        "max": 9.024417027831078,
+        "mean": 9.024417027831078,
+        "min": 9.024417027831078
+      },
+      "name": "turn_jam_poor_pot_odds",
+      "repeat": 1,
+      "runner_stderr_tail": "",
+      "shape_ok": true,
+      "unique_actions": [
+        "{\"action\": \"fold\"}"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "action": "fold"
+        }
+      ],
+      "description": "BB with dominated Kx facing a 3-bet.",
+      "errors": [],
+      "latency_ms": {
+        "max": 0.5167089402675629,
+        "mean": 0.5167089402675629,
+        "min": 0.5167089402675629
+      },
+      "name": "blind_defense_vs_3bet",
+      "repeat": 1,
+      "runner_stderr_tail": "",
+      "shape_ok": true,
+      "unique_actions": [
+        "{\"action\": \"fold\"}"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "action": "all_in"
+        }
+      ],
+      "description": "Side-pot style state with one all-in player and one active covering bettor.",
+      "errors": [],
+      "latency_ms": {
+        "max": 9.523249929770827,
+        "mean": 9.523249929770827,
+        "min": 9.523249929770827
+      },
+      "name": "all_in_side_pot_state",
+      "repeat": 1,
+      "runner_stderr_tail": "",
+      "shape_ok": true,
+      "unique_actions": [
+        "{\"action\": \"all_in\"}"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "action": "check"
+        }
+      ],
+      "description": "Contradictory state says can_check=True while amount_owed/current_bet are nonzero.",
+      "errors": [],
+      "latency_ms": {
+        "max": 6.708292057737708,
+        "mean": 6.708292057737708,
+        "min": 6.708292057737708
+      },
+      "name": "contradictory_legal_actions",
+      "repeat": 1,
+      "runner_stderr_tail": "",
+      "shape_ok": true,
+      "unique_actions": [
+        "{\"action\": \"check\"}"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "action": "all_in"
+        }
+      ],
+      "description": "Premium hand where min_raise_to exceeds remaining stack; should use all_in/call, not illegal raise.",
+      "errors": [],
+      "latency_ms": {
+        "max": 1.2100001331418753,
+        "mean": 1.2100001331418753,
+        "min": 1.2100001331418753
+      },
+      "name": "raise_amount_min_max_ambiguity",
+      "repeat": 1,
+      "runner_stderr_tail": "",
+      "shape_ok": true,
+      "unique_actions": [
+        "{\"action\": \"all_in\"}"
+      ]
+    },
+    {
+      "actions": [
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        },
+        {
+          "action": "call"
+        }
+      ],
+      "description": "Repeated flop facing-bet branch forces hand_strength plus equity_vs_range calls.",
+      "errors": [],
+      "latency_ms": {
+        "max": 19.96679208241403,
+        "mean": 10.738816655551394,
+        "min": 7.3688330594450235
+      },
+      "name": "timeout_expensive_equity_branch",
+      "repeat": 30,
+      "runner_stderr_tail": "",
+      "shape_ok": true,
+      "unique_actions": [
+        "{\"action\": \"call\"}"
+      ]
+    }
+  ],
+  "source_audit": {
+    "data_references": [
+      {
+        "line": 25,
+        "path": "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/bot.py",
+        "text": "\"BOT_DATA_DIR\","
+      },
+      {
+        "line": 51,
+        "path": "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/opponent_model.py",
+        "text": "return os.environ.get(\"BOT_DATA_DIR\", os.path.join(os.path.dirname(here), \"data\"))"
+      },
+      {
+        "line": 77,
+        "path": "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/opponent_model.py",
+        "text": "path = os.path.join(_data_dir(), \"field_priors.npz\")"
+      },
+      {
+        "line": 79,
+        "path": "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/opponent_model.py",
+        "text": "with np.load(path, allow_pickle=False) as data:"
+      }
+    ],
+    "forbidden_clean": true,
+    "imports": {
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/bot.py": [
+        "from src.bot",
+        "os",
+        "sys"
+      ],
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/__init__.py": [],
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/bot.py": [
+        "from src.equity",
+        "from src.opponent_model",
+        "from src.postflop",
+        "from src.preflop_lookup",
+        "from src.sizing",
+        "from src.timeout_guard",
+        "os",
+        "sys",
+        "time"
+      ],
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/commitment.py": [
+        "from src.hand_features"
+      ],
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/equity.py": [
+        "eval7",
+        "from typing",
+        "hashlib",
+        "random"
+      ],
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/hand_features.py": [
+        "from typing"
+      ],
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/opponent_model.py": [
+        "from collections",
+        "from typing",
+        "numpy",
+        "os"
+      ],
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/postflop.py": [
+        "from src.commitment",
+        "from src.equity",
+        "from src.opponent_model",
+        "from src.sizing",
+        "from typing"
+      ],
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/preflop_lookup.py": [
+        "from src.ranges",
+        "from typing",
+        "os"
+      ],
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/ranges.py": [
+        "from typing"
+      ],
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/sizing.py": [],
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/timeout_guard.py": [
+        "from contextlib",
+        "from typing",
+        "time"
+      ]
+    },
+    "issues": [],
+    "python_files": [
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/bot.py",
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/__init__.py",
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/bot.py",
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/commitment.py",
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/equity.py",
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/hand_features.py",
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/opponent_model.py",
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/postflop.py",
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/preflop_lookup.py",
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/ranges.py",
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/sizing.py",
+      "consult/artifacts/finals-freeze/candidate_B-fmc/extracted/candidate_B/src/timeout_guard.py"
+    ]
+  },
+  "started_at": "2026-06-04T16:42:30Z",
+  "synthetic_opponents": {
+    "all_in_maniac": "consult/artifacts/finals-freeze/candidate_B-fmc/synthetic_opponents/zips/all_in_maniac.zip",
+    "loose_aggressive": "consult/artifacts/finals-freeze/candidate_B-fmc/synthetic_opponents/zips/loose_aggressive.zip",
+    "loose_passive": "consult/artifacts/finals-freeze/candidate_B-fmc/synthetic_opponents/zips/loose_passive.zip",
+    "pot_odds_threshold": "consult/artifacts/finals-freeze/candidate_B-fmc/synthetic_opponents/zips/pot_odds_threshold.zip",
+    "river_value_threshold": "consult/artifacts/finals-freeze/candidate_B-fmc/synthetic_opponents/zips/river_value_threshold.zip",
+    "tight_aggressive": "consult/artifacts/finals-freeze/candidate_B-fmc/synthetic_opponents/zips/tight_aggressive.zip",
+    "tight_passive": "consult/artifacts/finals-freeze/candidate_B-fmc/synthetic_opponents/zips/tight_passive.zip"
+  },
+  "verification_commands": [
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot/.venv/bin/python",
+        "tools/import_audit.py"
+      ],
+      "duration_s": 0.04,
+      "label": "import_audit_canonical_src",
+      "returncode": 0,
+      "stderr_path": "consult/artifacts/finals-freeze/candidate_B-fmc/logs/import_audit_canonical_src.stderr.log",
+      "stderr_tail": "",
+      "stdout_path": "consult/artifacts/finals-freeze/candidate_B-fmc/logs/import_audit_canonical_src.stdout.log",
+      "stdout_tail": "cold import: 0.000s, RSS: 10.7 MB\n"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/edge_cases",
+        "-x"
+      ],
+      "duration_s": 1.31,
+      "label": "edge_cases_canonical_src",
+      "returncode": 0,
+      "stderr_path": "consult/artifacts/finals-freeze/candidate_B-fmc/logs/edge_cases_canonical_src.stderr.log",
+      "stderr_tail": "",
+      "stdout_path": "consult/artifacts/finals-freeze/candidate_B-fmc/logs/edge_cases_canonical_src.stdout.log",
+      "stdout_tail": "============================= test session starts ==============================\nplatform darwin -- Python 3.10.18, pytest-9.0.3, pluggy-1.6.0\nrootdir: /Users/farhad/Code/PokerBot\nplugins: hypothesis-6.152.9\ncollected 14 items\n\ntests/edge_cases/test_package_and_harness_contracts.py ......            [ 42%]\ntests/edge_cases/test_runner_contract_extended.py ....                   [ 71%]\ntests/edge_cases/test_safe_fallback.py ....                              [100%]\n\n============================== 14 passed in 1.18s ==============================\n"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot/.venv/bin/python",
+        "ext/fullhouse-engine/sandbox/validator.py",
+        "consult/artifacts/2026-06-04-finals-ship/candidates/candidate_B.zip",
+        "--json"
+      ],
+      "duration_s": 0.152,
+      "label": "validator_deployed_zip",
+      "returncode": 0,
+      "stderr_path": "consult/artifacts/finals-freeze/candidate_B-fmc/logs/validator_deployed_zip.stderr.log",
+      "stderr_tail": "",
+      "stdout_path": "consult/artifacts/finals-freeze/candidate_B-fmc/logs/validator_deployed_zip.stdout.log",
+      "stdout_tail": "{\n  \"bot_path\": \"consult/artifacts/2026-06-04-finals-ship/candidates/candidate_B.zip\",\n  \"passed\": true,\n  \"errors\": [],\n  \"warnings\": [],\n  \"tests\": [\n    {\n      \"test\": \"preflop_call_or_fold\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 250\n      },\n      \"elapsed\": 0.001\n    },\n    {\n      \"test\": \"postflop_can_check\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 150\n      },\n      \"elapsed\": 0.006\n    },\n    {\n      \"test\": \"river_facing_large_bet\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"fold\"\n      },\n      \"elapsed\": 0.009\n    },\n    {\n      \"test\": \"short_stack_all_in_decision\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"all_in\"\n      },\n      \"elapsed\": 0.001\n    }\n  ],\n  \"data_dir\": \"/tmp/claude-501/fhval_cxbi8dw1/data\"\n}\n"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot/.venv/bin/python",
+        "tools/audit_strategy_leakage.py",
+        "--zip",
+        "consult/artifacts/2026-06-04-finals-ship/candidates/candidate_B.zip"
+      ],
+      "duration_s": 0.028,
+      "label": "audit_strategy_leakage_deployed_zip",
+      "returncode": 1,
+      "stderr_path": "consult/artifacts/finals-freeze/candidate_B-fmc/logs/audit_strategy_leakage_deployed_zip.stderr.log",
+      "stderr_tail": "",
+      "stdout_path": "consult/artifacts/finals-freeze/candidate_B-fmc/logs/audit_strategy_leakage_deployed_zip.stdout.log",
+      "stdout_tail": "# zip: consult/artifacts/2026-06-04-finals-ship/candidates/candidate_B.zip\n# zip sha256: ffde80dd1dc562ba6a65acb54e964041309110c700c26f6abd9f85df0be2a8a4\nSTRATEGY LEAKAGE DETECTED:\n  src/bot.py:257: v0_wired\n  src/bot.py:257: snapshot\n  src/equity.py:15: seed\n  src/equity.py:16: seed\n  src/equity.py:17: seed\n  src/equity.py:193: seed\n  src/equity.py:195: seed\n  src/equity.py:229: seed\n  src/opponent_model.py:10: seed\n  src/preflop_lookup.py:65: v1_blueprint\n  src/preflop_lookup.py:65: snapshot\n  src/preflop_lookup.py:78: v_final\n  src/preflop_lookup.py:79: v3_hardened\n  src/preflop_lookup.py:79: snapshot\n  src/ranges.py:187: v1_blueprint\n  src/ranges.py:188: snapshot\n"
+    }
+  ]
+}

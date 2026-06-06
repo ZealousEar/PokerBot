@@ -1,0 +1,15 @@
+{
+  "label": "repo_rev_parse_famadeo__fullhouse_engine__main",
+  "cmd": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/famadeo__fullhouse_engine__main",
+  "started_at": "2026-05-29T15:14:50Z",
+  "finished_at": "2026-05-29T15:14:50Z",
+  "elapsed_s": 0.008,
+  "returncode": 0,
+  "stdout": "c94dace1c6bf523aa49e9c149d897c6b71a19c5e\n",
+  "stderr": ""
+}

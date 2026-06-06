@@ -1,0 +1,61 @@
+[
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "tools/import_audit.py"
+    ],
+    "duration_s": 0.042,
+    "label": "import_audit_canonical_src",
+    "returncode": 0,
+    "stderr_path": "consult/artifacts/2026-06-04-camp2-search/results/D-river/logs/import_audit_canonical_src.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-04-camp2-search/results/D-river/logs/import_audit_canonical_src.stdout.log",
+    "stdout_tail": "cold import: 0.000s, RSS: 10.7 MB\n"
+  },
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "-m",
+      "pytest",
+      "tests/edge_cases",
+      "-x"
+    ],
+    "duration_s": 1.317,
+    "label": "edge_cases_canonical_src",
+    "returncode": 0,
+    "stderr_path": "consult/artifacts/2026-06-04-camp2-search/results/D-river/logs/edge_cases_canonical_src.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-04-camp2-search/results/D-river/logs/edge_cases_canonical_src.stdout.log",
+    "stdout_tail": "============================= test session starts ==============================\nplatform darwin -- Python 3.10.18, pytest-9.0.3, pluggy-1.6.0\nrootdir: /Users/farhad/Code/PokerBot\nplugins: hypothesis-6.152.9\ncollected 14 items\n\ntests/edge_cases/test_package_and_harness_contracts.py ......            [ 42%]\ntests/edge_cases/test_runner_contract_extended.py ....                   [ 71%]\ntests/edge_cases/test_safe_fallback.py ....                              [100%]\n\n============================== 14 passed in 1.18s ==============================\n"
+  },
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "ext/fullhouse-engine/sandbox/validator.py",
+      "consult/artifacts/2026-06-04-camp2-search/zips/cand_D-river.zip",
+      "--json"
+    ],
+    "duration_s": 0.186,
+    "label": "validator_deployed_zip",
+    "returncode": 0,
+    "stderr_path": "consult/artifacts/2026-06-04-camp2-search/results/D-river/logs/validator_deployed_zip.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-04-camp2-search/results/D-river/logs/validator_deployed_zip.stdout.log",
+    "stdout_tail": "{\n  \"bot_path\": \"consult/artifacts/2026-06-04-camp2-search/zips/cand_D-river.zip\",\n  \"passed\": true,\n  \"errors\": [],\n  \"warnings\": [],\n  \"tests\": [\n    {\n      \"test\": \"preflop_call_or_fold\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 250\n      },\n      \"elapsed\": 0.0\n    },\n    {\n      \"test\": \"postflop_can_check\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 150\n      },\n      \"elapsed\": 0.006\n    },\n    {\n      \"test\": \"river_facing_large_bet\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"fold\"\n      },\n      \"elapsed\": 0.008\n    },\n    {\n      \"test\": \"short_stack_all_in_decision\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"all_in\"\n      },\n      \"elapsed\": 0.001\n    }\n  ],\n  \"data_dir\": \"/tmp/claude-501/fhval_r7ogu_tj/data\"\n}\n"
+  },
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "tools/audit_strategy_leakage.py",
+      "--zip",
+      "consult/artifacts/2026-06-04-camp2-search/zips/cand_D-river.zip"
+    ],
+    "duration_s": 0.03,
+    "label": "audit_strategy_leakage_deployed_zip",
+    "returncode": 1,
+    "stderr_path": "consult/artifacts/2026-06-04-camp2-search/results/D-river/logs/audit_strategy_leakage_deployed_zip.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-04-camp2-search/results/D-river/logs/audit_strategy_leakage_deployed_zip.stdout.log",
+    "stdout_tail": "# zip: consult/artifacts/2026-06-04-camp2-search/zips/cand_D-river.zip\n# zip sha256: fd92bed48f22427113265ccb66ef31f3dea23b66c9d7f5986b884e413786171b\nSTRATEGY LEAKAGE DETECTED:\n  src/bot.py:257: v0_wired\n  src/bot.py:257: snapshot\n  src/equity.py:15: seed\n  src/equity.py:16: seed\n  src/equity.py:17: seed\n  src/equity.py:193: seed\n  src/equity.py:195: seed\n  src/equity.py:229: seed\n  src/opponent_model.py:10: seed\n  src/preflop_lookup.py:65: v1_blueprint\n  src/preflop_lookup.py:65: snapshot\n  src/preflop_lookup.py:78: v_final\n  src/preflop_lookup.py:79: v3_hardened\n  src/preflop_lookup.py:79: snapshot\n  src/ranges.py:187: v1_blueprint\n  src/ranges.py:188: snapshot\n"
+  }
+]

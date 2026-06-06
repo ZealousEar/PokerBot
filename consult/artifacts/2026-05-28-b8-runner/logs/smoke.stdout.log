@@ -1,0 +1,10 @@
+{
+  "n_hands": 50,
+  "expected_hands": 50,
+  "chip_delta": {
+    "v_final": 3750,
+    "template": -3750
+  },
+  "errors": {},
+  "duration_s": 4.72
+}

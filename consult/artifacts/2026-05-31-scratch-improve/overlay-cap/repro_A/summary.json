@@ -1,0 +1,22 @@
+{
+  "compositions": {
+    "C1_SINGLE_TOBY_WEAK_FIELD": {
+      "bust_rate": 0.25,
+      "hero_action_errors": 0,
+      "hero_decisions": 1557,
+      "mean": 8826.2,
+      "n": 4,
+      "p10": -6441.099999999999,
+      "p25": -1102.75,
+      "p50": 10832.0,
+      "p75": 20761.0,
+      "p90": 22489.0
+    }
+  },
+  "generated_at": "2026-05-31T00:47:48Z",
+  "hands": 400,
+  "hero_sha": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+  "hero_zip": "/Users/farhad/Code/PokerBot/submissions/v_final.zip",
+  "seed_base": 142,
+  "seeds": 4
+}

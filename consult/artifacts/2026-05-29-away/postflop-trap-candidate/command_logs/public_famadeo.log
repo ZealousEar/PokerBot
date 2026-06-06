@@ -1,0 +1,21 @@
+public_famadeo_b142_k0_s142_o0 actual=157/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+63.69 hero_err=0 opp_err=0
+public_famadeo_b142_k0_s142_o1 actual=64/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-156.25 hero_err=0 opp_err=0
+public_famadeo_b142_k1_s1142_o0 actual=190/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-52.63 hero_err=0 opp_err=0
+public_famadeo_b142_k1_s1142_o1 actual=91/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-109.89 hero_err=0 opp_err=0
+public_famadeo_b142_k2_s2142_o0 actual=28/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-357.14 hero_err=0 opp_err=0
+public_famadeo_b142_k2_s2142_o1 actual=20/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-500.00 hero_err=0 opp_err=0
+public_famadeo_b142_k3_s3142_o0 actual=97/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+103.09 hero_err=0 opp_err=0
+public_famadeo_b142_k3_s3142_o1 actual=42/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+238.10 hero_err=0 opp_err=0
+public_famadeo_b142_k4_s4142_o0 actual=39/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+256.41 hero_err=0 opp_err=0
+public_famadeo_b142_k4_s4142_o1 actual=29/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-344.83 hero_err=0 opp_err=0
+public_famadeo_b142_k5_s5142_o0 actual=96/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-104.17 hero_err=0 opp_err=0
+public_famadeo_b142_k5_s5142_o1 actual=20/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+500.00 hero_err=0 opp_err=0
+public_famadeo_b142_k6_s6142_o0 actual=40/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+250.00 hero_err=0 opp_err=0
+public_famadeo_b142_k6_s6142_o1 actual=22/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+454.55 hero_err=0 opp_err=0
+public_famadeo_b142_k7_s7142_o0 actual=28/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-357.14 hero_err=0 opp_err=0
+public_famadeo_b142_k7_s7142_o1 actual=59/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+169.49 hero_err=0 opp_err=0
+public_famadeo_b142_k8_s8142_o0 actual=10/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+1000.00 hero_err=0 opp_err=0
+public_famadeo_b142_k8_s8142_o1 actual=16/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-625.00 hero_err=0 opp_err=0
+public_famadeo_b142_k9_s9142_o0 actual=75/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-133.33 hero_err=0 opp_err=0
+public_famadeo_b142_k9_s9142_o1 actual=18/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+555.56 hero_err=0 opp_err=0
+SUMMARY {"actual_hands": 1141, "base": 142, "hero_actual_bb100": 0.0, "hero_chip_delta": 0, "hero_errors": 0, "hero_scheduled_bb100": 0.0, "hero_scheduled_ci_high": 8.0, "hero_scheduled_ci_low": -8.0, "hero_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/postflop-trap-candidate/zips/v_postflop_trap_candidate.zip", "match_len": 500, "name": "public_famadeo", "opponent_errors": 0, "opponent_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/dominic_live_master.zip", "scheduled_hands": 10000, "seed_stride": 1000}

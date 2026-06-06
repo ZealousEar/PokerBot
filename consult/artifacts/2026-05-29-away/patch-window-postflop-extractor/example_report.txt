@@ -1,0 +1,48 @@
+# Postflop Trap Prevalence Report
+
+Input: /Users/farhad/Code/PokerBot/tests/integration/fixtures/postflop_trap_prevalence
+Total records found: 6
+Records successfully parsed: 6
+Postflop action records parsed: 10
+River action records parsed: 5
+Chip impact available: True
+
+## River can_check raise frequency
+- unpaired_two_tone_static: 2/2 = 1.000
+- wet_flush_draw: 1/1 = 1.000
+- paired_two_tone_static: 0/0 = 0.000
+
+## River facing-bet fold/call frequency
+- paired_two_tone_static: fold 1/1 = 1.000; call 0/1 = 0.000
+- unpaired_two_tone_static: fold 0/1 = 0.000; call 1/1 = 1.000
+
+## Top clusters by frequency
+- river__button__raise__5card_unpaired_two_tone_static: count=2 share=0.200
+- river__button__raise__5card_wet_flush_draw: count=1 share=0.100
+- flop__cutoff__raise__3card_unpaired_two_tone_static: count=1 share=0.100
+- turn__cutoff__raise__4card_unpaired_two_tone_static: count=1 share=0.100
+- river__big_blind__call__5card_unpaired_two_tone_static: count=1 share=0.100
+- flop__button__check__3card_unpaired_two_tone_static: count=1 share=0.100
+- turn__button__check__4card_unpaired_two_tone_static: count=1 share=0.100
+- flop__big_blind__check__3card_unpaired_two_tone_static: count=1 share=0.100
+- river__big_blind__fold__5card_paired_two_tone_static: count=1 share=0.100
+
+## Top clusters by chip impact
+- flop__button__check__3card_unpaired_two_tone_static: chip_impact=-2536.0 records=1
+- turn__button__check__4card_unpaired_two_tone_static: chip_impact=-2536.0 records=1
+- river__button__raise__5card_unpaired_two_tone_static: chip_impact=-2436.0 records=2
+- flop__big_blind__check__3card_unpaired_two_tone_static: chip_impact=-2400.0 records=1
+- river__big_blind__fold__5card_paired_two_tone_static: chip_impact=-2400.0 records=1
+- flop__cutoff__raise__3card_unpaired_two_tone_static: chip_impact=900.0 records=1
+- turn__cutoff__raise__4card_unpaired_two_tone_static: chip_impact=900.0 records=1
+- river__big_blind__call__5card_unpaired_two_tone_static: chip_impact=-900.0 records=1
+- river__button__raise__5card_wet_flush_draw: chip_impact=300.0 records=1
+
+## Toby/Mehedi-like fingerprints
+- mehedi_preflop_pressure_early_bust_like: count=1
+- toby_paired_board_river_facing_bet_fold_like: count=1
+- toby_river_can_check_unpaired_two_tone_static_raise_like: count=2
+- toby_river_can_check_wet_flush_draw_raise_like: count=1
+
+## Parse quality
+Failures: {"nonfinite_amounts_rejected": 1}

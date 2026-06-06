@@ -1,0 +1,38 @@
+full_name	classification	current_head_sha	baseline_sha	drifted_since_baseline	bot_files_changed	changed_bot_files
+vladimirfilip/fullhouse-engine	DRIFTED_BOT	0701e08097a2e7ad60b87581ad0b4be70ddbf90d	f8b8723ce324685429a5098d6b76586005010210	yes	1	bots/vlad/bot.py
+Mehedi-dev-2404/fullhouse-engine	DRIFTED_BOT	a30fd7730d715e26baeec343c3d44179fab604ee	aa14a35a4f185f8608ae962aef17a7c620909a4b	yes	1	bots/mybot/bot.py
+Pav1602/fullhouse-engine	DRIFTED_BOT	d512bf428ffcbae7ff036e2a7382dca1396dd2ce	555c84f58d01952e025ec4b80c06da7f4ec6cced	yes	6	bots/skantbot7.10/bot.py;bots/skantbot7.11/bot.py;bots/skantbot7.12/bot.py;bots/skantbot7.13/bot.py;bots/skantbot8/bot.py;bots/skantbot8.1/bot.py
+Benjamin-Yu-Sheng-Chang/fullhouse-hackathon	NEW_BOT	cd841b5e0fc37401f42b8be4acf944cbe8080a72	725e89876c967bbe567c7c88aa43e19b82a1bcdc	yes	12	bots/cfr/bot.py;bots/adaptive_hybrid/;bots/hybrid_mix/;bots/abstract_value/;bots/equity_position/;bots/trap_steal/;bots/position_bully/;bots/short_stack_survivor/;bots/anti_aggro/;bots/abstract_control/;bots/abstract_pressure/;bots/equity_guard/
+stoppedtime24/fullhouse-engine	UNCHANGED	52951cb7242eb1e3abc638ccd287a08ce37ff34a	52951cb7242eb1e3abc638ccd287a08ce37ff34a	no	0	
+Con-TI/fullhouse-engine	UNCHANGED	8c66033af4341c74a7f70bae0a1c21d40b73dcb3		no	0	
+famadeo/fullhouse-engine	UNCHANGED	c94dace1c6bf523aa49e9c149d897c6b71a19c5e	c94dace1c6bf523aa49e9c149d897c6b71a19c5e	no	0	
+agrawalneel25/fullhouse-engine	UNCHANGED	071d54c302cbd2d9d5fcc773260e7f5f894c642f	071d54c302cbd2d9d5fcc773260e7f5f894c642f	no	0	
+TobyCoad/fullhouse-engine	UNCHANGED	93516f33675d32beaeb3228a554c1323926cd71d	93516f33675d32beaeb3228a554c1323926cd71d	no	0	
+gonfdcg/fullhouse-engine	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+lucashsu007-create/fullhouse-engine	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+study9372/fullhouse-engine	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+joshmhc/fullhouse-engine	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+ds726/fullhouse-engine	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+avj26/fullhouse-engine	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+afinner/fullhouse-engine	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+abayojumumichael/fullhouse-engine	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+Yutongzhang20080108/fullhouse-engine	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+RemiSeg/fullhouse-engine	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+NovaIMario/fullhouse-engine	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+Hebobeb0/fullhouse-engine-fork	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+Amine0411/fullhouse-engine	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+Akash1Siva/fullhouse-engine-akash	MIRROR_NO_BOT	a80b26957db5f5515d9273a15d1b73aadf8985db		no	0	
+Littleguygabe/fullhouse-poker	LATENT_BOT	338f3ec29710d5217fa2a554668421f77860a4bc		no	present(no-change)	bots/aof/bot.py;bots/memoryTest/bot.py;bots/mybot/bot.py;bots/ranger/bot.py
+Ganto23/fullhouse-engine	MIRROR_NO_BOT	adc23b9813338d0e1e56e0158f18644b2b9ad234		no	0	
+BouillieAnonymous/fullhouse-engine	MIRROR_NO_BOT	adc23b9813338d0e1e56e0158f18644b2b9ad234		no	0	
+sundubu04/fullhouse-engine	MIRROR_NO_BOT	adc23b9813338d0e1e56e0158f18644b2b9ad234		no	0	
+jickzx/fullhouse-engine	MIRROR_NO_BOT	1c0ab1a3317b18de80b18d8009590abd3b1b8e01		no	0	
+Linglingletsgo/fullhouse-engine	MIRROR_NO_BOT	d2d1d1a02e2fed10a2ff0ef49d92ae1f6006dd9e		no	0	
+navaneetham-aicomputing/fullhouse-engine	MIRROR_NO_BOT	d2d1d1a02e2fed10a2ff0ef49d92ae1f6006dd9e		no	0	
+krishypatel2007/fullhouse-engine	MIRROR_NO_BOT	d2d1d1a02e2fed10a2ff0ef49d92ae1f6006dd9e		no	0	
+chunyang-w/fullhouse-engine	MIRROR_NO_BOT	d2d1d1a02e2fed10a2ff0ef49d92ae1f6006dd9e		no	0	
+AyushGupta05/fullhouse-engine	MIRROR_NO_BOT	d2d1d1a02e2fed10a2ff0ef49d92ae1f6006dd9e		no	0	
+rishabhkarwal/fullhouse	MIRROR_NO_BOT	eed445716e01804b6c67a9673d8056327eb02239		no	0	
+aemilani/fullhouse-engine	MIRROR_NO_BOT	eed445716e01804b6c67a9673d8056327eb02239		no	0	
+Blessing-Emmanuel/fullhouse-engine	MIRROR_NO_BOT	eed445716e01804b6c67a9673d8056327eb02239		no	0	
+MatusGib/fullhouse-engine	GONE		a80b26957db5f5515d9273a15d1b73aadf8985db	no	0	

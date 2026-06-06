@@ -1,0 +1,3 @@
+# zip: consult/artifacts/2026-05-31-scratch-improve/overlay-cap/cap015.zip
+# zip sha256: 61055f07dfb1a8f467578b11dc24edc7e3ad921b35923f8e844bbd0b5b855873
+audit_strategy_leakage PASS

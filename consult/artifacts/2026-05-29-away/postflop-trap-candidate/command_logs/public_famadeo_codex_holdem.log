@@ -1,0 +1,21 @@
+public_famadeo_codex_holdem_b142_k0_s142_o0 actual=109/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+91.74 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k0_s142_o1 actual=211/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-47.39 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k1_s1142_o0 actual=151/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-66.23 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k1_s1142_o1 actual=237/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+42.19 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k2_s2142_o0 actual=255/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+39.22 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k2_s2142_o1 actual=202/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+49.50 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k3_s3142_o0 actual=69/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+144.93 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k3_s3142_o1 actual=226/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+44.25 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k4_s4142_o0 actual=45/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+222.22 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k4_s4142_o1 actual=137/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-72.99 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k5_s5142_o0 actual=496/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-20.16 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k5_s5142_o1 actual=114/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-87.72 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k6_s6142_o0 actual=50/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+200.00 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k6_s6142_o1 actual=274/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+36.50 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k7_s7142_o0 actual=169/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+59.17 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k7_s7142_o1 actual=114/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-87.72 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k8_s8142_o0 actual=201/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-49.75 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k8_s8142_o1 actual=500/500 hero_chip=+3620 scheduled_bb100=+7.24 actual_bb100=+7.24 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k9_s9142_o0 actual=500/500 hero_chip=-4769 scheduled_bb100=-9.54 actual_bb100=-9.54 hero_err=0 opp_err=0
+public_famadeo_codex_holdem_b142_k9_s9142_o1 actual=150/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+66.67 hero_err=0 opp_err=0
+SUMMARY {"actual_hands": 4210, "base": 142, "hero_actual_bb100": 9.228266033254156, "hero_chip_delta": 38851, "hero_errors": 0, "hero_scheduled_bb100": 3.8851, "hero_scheduled_ci_high": 11.362, "hero_scheduled_ci_low": -4.0, "hero_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/postflop-trap-candidate/zips/v_postflop_trap_candidate.zip", "match_len": 500, "name": "public_famadeo_codex_holdem", "opponent_errors": 0, "opponent_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/opponent_zips/famadeo__fullhouse_engine__main__codex_holdem.zip", "scheduled_hands": 10000, "seed_stride": 1000}

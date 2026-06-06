@@ -1,0 +1,416 @@
+{
+  "authoritative_smoke": [
+    {
+      "contains_normal_bust": true,
+      "log": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/command_logs/authoritative_smoke_run_1.log",
+      "run": 1,
+      "status": "PASS"
+    },
+    {
+      "contains_normal_bust": true,
+      "log": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/command_logs/authoritative_smoke_run_2.log",
+      "run": 2,
+      "status": "PASS"
+    },
+    {
+      "contains_normal_bust": true,
+      "log": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/command_logs/authoritative_smoke_run_3.log",
+      "run": 3,
+      "status": "PASS"
+    },
+    {
+      "contains_normal_bust": true,
+      "log": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/command_logs/authoritative_smoke_run_4.log",
+      "run": 4,
+      "status": "PASS"
+    },
+    {
+      "contains_normal_bust": true,
+      "log": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/command_logs/authoritative_smoke_run_5.log",
+      "run": 5,
+      "status": "PASS"
+    }
+  ],
+  "candidate_sha256": "d042c977f7c29b01d3cc50f98d56edbf93c4de7b1e0ef7e73a76de1b6c6345bf",
+  "candidate_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneA-postflop-v2/zips/v_postflop_trap_v2_p2_already_clean.zip",
+  "generated_at": "2026-05-30T15:55:31Z",
+  "human_gate_line": "Human promotion gate required; locked v_final.zip remains upload target unless explicitly overridden.",
+  "protected_sha_end": {
+    "submissions/best_green.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "submissions/v_final.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "protected_sha_end_shasum_log": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/command_logs/end_shasum.log",
+  "protected_sha_expected": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+  "protected_sha_start_log": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/command_logs/start_sha_python.log",
+  "reason": "Candidate fails six-max C1 +Toby weak-field gate: p50 and bust rate worse than locked; no positive tournament-metric reason to replace locked artifact.",
+  "sixmax": {
+    "pods": {
+      "C0_BASELINE_RECHECK": {
+        "candidate": {
+          "actual_hands_total": 37456,
+          "bust_count": 65,
+          "bust_rate": 0.65,
+          "cumulative_chip_delta": -295809,
+          "hero_action_errors": 0,
+          "hero_bot_errors": 0,
+          "hero_decisions": 22897,
+          "max": 29133,
+          "mean": -2958.09,
+          "min": -10000,
+          "n": 100,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": -10000.0,
+          "p75": 5914.25,
+          "p90": 12215.0,
+          "p99_ms": 19.6
+        },
+        "locked_same_day": {
+          "actual_hands_total": 37522,
+          "bust_count": 70,
+          "bust_rate": 0.7,
+          "cumulative_chip_delta": -417324,
+          "hero_action_errors": 0,
+          "hero_bot_errors": 0,
+          "hero_decisions": 21082,
+          "max": 22660,
+          "mean": -4173.24,
+          "min": -10000,
+          "n": 100,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": -10000.0,
+          "p75": 2554.5,
+          "p90": 12309.7,
+          "p99_ms": 10.687
+        },
+        "paired_delta": {
+          "candidate_minus_locked_bust_rate": -0.05,
+          "candidate_minus_locked_cumulative_chip_delta": 121515,
+          "candidate_minus_locked_p50": 0.0,
+          "gate": "PASS_NO_WORSE_P50_BUST"
+        }
+      },
+      "C1_SINGLE_TOBY_WEAK_FIELD": {
+        "candidate": {
+          "actual_hands_total": 39313,
+          "bust_count": 49,
+          "bust_rate": 0.49,
+          "cumulative_chip_delta": 318026,
+          "hero_action_errors": 0,
+          "hero_bot_errors": 0,
+          "hero_decisions": 40014,
+          "max": 50000,
+          "mean": 3180.26,
+          "min": -10000,
+          "n": 100,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": -7361.5,
+          "p75": 17735.5,
+          "p90": 27411.6,
+          "p99_ms": 4.075
+        },
+        "locked_same_day": {
+          "actual_hands_total": 39450,
+          "bust_count": 40,
+          "bust_rate": 0.4,
+          "cumulative_chip_delta": 773177,
+          "hero_action_errors": 0,
+          "hero_bot_errors": 0,
+          "hero_decisions": 37664,
+          "max": 50000,
+          "mean": 7731.77,
+          "min": -10000,
+          "n": 100,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": 3686.0,
+          "p75": 20799.0,
+          "p90": 33964.6,
+          "p99_ms": 12.148
+        },
+        "paired_delta": {
+          "candidate_minus_locked_bust_rate": 0.09,
+          "candidate_minus_locked_cumulative_chip_delta": -455151,
+          "candidate_minus_locked_p50": -11047.5,
+          "gate": "FAIL"
+        }
+      },
+      "C3_TOBY_MEHEDI_WEAK_FIELD": {
+        "candidate": {
+          "actual_hands_total": 15577,
+          "bust_count": 16,
+          "bust_rate": 0.4,
+          "cumulative_chip_delta": -5914,
+          "hero_action_errors": 0,
+          "hero_bot_errors": 0,
+          "hero_decisions": 14738,
+          "max": 45846,
+          "mean": -147.85,
+          "min": -10000,
+          "n": 40,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": -3278.0,
+          "p75": 7436.5,
+          "p90": 16161.8,
+          "p99_ms": 18.152
+        },
+        "locked_same_day": {
+          "actual_hands_total": 31425,
+          "bust_count": 42,
+          "bust_rate": 0.525,
+          "cumulative_chip_delta": 16120,
+          "hero_action_errors": 0,
+          "hero_bot_errors": 0,
+          "hero_decisions": 26400,
+          "max": 50000,
+          "mean": 201.5,
+          "min": -10000,
+          "n": 80,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": -10000.0,
+          "p75": 8381.25,
+          "p90": 17084.5,
+          "p99_ms": 4.601
+        },
+        "note": "partial_or_skipped_after_fail_fast; not decision-grade"
+      },
+      "C4_PUBLIC_NIGHTMARE": {
+        "candidate": {
+          "actual_hands_total": 800,
+          "bust_count": 0,
+          "bust_rate": 0.0,
+          "cumulative_chip_delta": 3672,
+          "hero_action_errors": 0,
+          "hero_bot_errors": 0,
+          "hero_decisions": 981,
+          "max": 6398,
+          "mean": 1836,
+          "min": -2726,
+          "n": 2,
+          "p10": -1813.6,
+          "p25": -445.0,
+          "p50": 1836.0,
+          "p75": 4117.0,
+          "p90": 5485.6,
+          "p99_ms": 1.371
+        },
+        "locked_same_day": {
+          "actual_hands_total": 13753,
+          "bust_count": 17,
+          "bust_rate": 0.425,
+          "cumulative_chip_delta": 100543,
+          "hero_action_errors": 0,
+          "hero_bot_errors": 0,
+          "hero_decisions": 13396,
+          "max": 50000,
+          "mean": 2513.57,
+          "min": -10000,
+          "n": 40,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": 2067.0,
+          "p75": 10689.5,
+          "p90": 22449.6,
+          "p99_ms": 2.047
+        },
+        "note": "partial_or_skipped_after_fail_fast; not decision-grade"
+      }
+    },
+    "prior_locked_complete_reference": {
+      "C0_BASELINE_RECHECK": {
+        "actual_hands_total": 37974,
+        "bust_count": 68,
+        "bust_rate": 0.68,
+        "cumulative_chip_delta": -338666,
+        "hero_action_errors": 0,
+        "hero_bot_errors": 0,
+        "hero_decisions": 21211,
+        "max": 23600,
+        "mean": -3386.66,
+        "min": -10000,
+        "n": 100,
+        "p10": -10000.0,
+        "p25": -10000.0,
+        "p50": -10000.0,
+        "p75": 5462.0,
+        "p90": 13456.9,
+        "p99_ms": 23.752
+      },
+      "C1_SINGLE_TOBY_WEAK_FIELD": {
+        "actual_hands_total": 39268,
+        "bust_count": 36,
+        "bust_rate": 0.36,
+        "cumulative_chip_delta": 951959,
+        "hero_action_errors": 0,
+        "hero_bot_errors": 0,
+        "hero_decisions": 36961,
+        "max": 50000,
+        "mean": 9519.59,
+        "min": -10000,
+        "n": 100,
+        "p10": -10000.0,
+        "p25": -10000.0,
+        "p50": 10535.5,
+        "p75": 24786.5,
+        "p90": 32486.4,
+        "p99_ms": 18.108
+      },
+      "C3_TOBY_MEHEDI_WEAK_FIELD": {
+        "actual_hands_total": 39277,
+        "bust_count": 52,
+        "bust_rate": 0.52,
+        "cumulative_chip_delta": -30577,
+        "hero_action_errors": 0,
+        "hero_bot_errors": 0,
+        "hero_decisions": 32092,
+        "max": 50000,
+        "mean": -305.77,
+        "min": -10000,
+        "n": 100,
+        "p10": -10000.0,
+        "p25": -10000.0,
+        "p50": -10000.0,
+        "p75": 8184.5,
+        "p90": 15673.8,
+        "p99_ms": 26.848
+      },
+      "C4_PUBLIC_NIGHTMARE": {
+        "actual_hands_total": 34236,
+        "bust_count": 42,
+        "bust_rate": 0.42,
+        "cumulative_chip_delta": 66110,
+        "hero_action_errors": 0,
+        "hero_bot_errors": 0,
+        "hero_decisions": 33992,
+        "max": 50000,
+        "mean": 661.1,
+        "min": -10000,
+        "n": 100,
+        "p10": -10000.0,
+        "p25": -10000.0,
+        "p50": -1081.5,
+        "p75": 6062.25,
+        "p90": 17233.7,
+        "p99_ms": 7.748
+      }
+    }
+  },
+  "spot_check_unchanged_matchups": {
+    "status": "SKIPPED_AFTER_SIXMAX_FAIL_FAST"
+  },
+  "toby_h2h": {
+    "diffs": {
+      "142": {
+        "candidate_minus_locked_actual_hands": 3171,
+        "candidate_minus_locked_hero_bust_count": -39,
+        "candidate_minus_locked_raw_chip_delta": 780000,
+        "candidate_minus_locked_toby_bust_count": 39
+      },
+      "242": {
+        "candidate_minus_locked_actual_hands": 3719,
+        "candidate_minus_locked_hero_bust_count": -41,
+        "candidate_minus_locked_raw_chip_delta": 820000,
+        "candidate_minus_locked_toby_bust_count": 41
+      }
+    },
+    "rows": [
+      {
+        "actual_bb100": -285.1485148514852,
+        "actual_hands": 2525,
+        "artifact": "locked",
+        "base": 142,
+        "errors": {
+          "hero": 0,
+          "opponent": 0
+        },
+        "hero_bust_count": 86,
+        "hero_bust_rate": 0.86,
+        "hero_median_bust_hand": 22.5,
+        "raw_chip_delta": -720000,
+        "scheduled_bb100": -14.4,
+        "scheduled_ci": [
+          -16.8,
+          -12.0
+        ],
+        "scheduled_hands": 50000,
+        "toby_bust_count": 14,
+        "toby_bust_rate": 0.14,
+        "toby_median_bust_hand": 13.0
+      },
+      {
+        "actual_bb100": 10.53370786516854,
+        "actual_hands": 5696,
+        "artifact": "candidate",
+        "base": 142,
+        "errors": {
+          "hero": 0,
+          "opponent": 0
+        },
+        "hero_bust_count": 47,
+        "hero_bust_rate": 0.47,
+        "hero_median_bust_hand": 44,
+        "raw_chip_delta": 60000,
+        "scheduled_bb100": 1.2,
+        "scheduled_ci": [
+          -2.0,
+          4.4
+        ],
+        "scheduled_hands": 50000,
+        "toby_bust_count": 53,
+        "toby_bust_rate": 0.53,
+        "toby_median_bust_hand": 42
+      },
+      {
+        "actual_bb100": -341.1197626992955,
+        "actual_hands": 2697,
+        "artifact": "locked",
+        "base": 242,
+        "errors": {
+          "hero": 0,
+          "opponent": 0
+        },
+        "hero_bust_count": 96,
+        "hero_bust_rate": 0.96,
+        "hero_median_bust_hand": 24.5,
+        "raw_chip_delta": -920000,
+        "scheduled_bb100": -18.4,
+        "scheduled_ci": [
+          -19.6,
+          -16.8
+        ],
+        "scheduled_hands": 50000,
+        "toby_bust_count": 4,
+        "toby_bust_rate": 0.04,
+        "toby_median_bust_hand": 13.5
+      },
+      {
+        "actual_bb100": -15.586034912718205,
+        "actual_hands": 6416,
+        "artifact": "candidate",
+        "base": 242,
+        "errors": {
+          "hero": 0,
+          "opponent": 0
+        },
+        "hero_bust_count": 55,
+        "hero_bust_rate": 0.55,
+        "hero_median_bust_hand": 63,
+        "raw_chip_delta": -100000,
+        "scheduled_bb100": -2.0,
+        "scheduled_ci": [
+          -5.6,
+          1.6
+        ],
+        "scheduled_hands": 50000,
+        "toby_bust_count": 45,
+        "toby_bust_rate": 0.45,
+        "toby_median_bust_hand": 46
+      }
+    ]
+  },
+  "verdict": "SHIP_LOCKED"
+}

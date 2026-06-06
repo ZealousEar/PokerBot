@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+    "tools/benchmark.py",
+    "--all-templates",
+    "--hands",
+    "10000",
+    "--bot",
+    "submissions/v_final.zip",
+    "--paired-seed-base",
+    "42"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+  "duration_s": 1676.4907031059265,
+  "finished_utc": "2026-05-28T01:33:19Z",
+  "label": "benchmark_all_templates",
+  "log": "benchmark_all_templates.log",
+  "passed": true,
+  "returncode": 0,
+  "started_utc": "2026-05-28T01:05:23Z"
+}

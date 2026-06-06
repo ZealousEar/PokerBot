@@ -1,0 +1,772 @@
+{
+  "loose_passive_station": {
+    "count": 3,
+    "members": [
+      {
+        "bot_name": "BussBot",
+        "bot_id": "e9b9e43a-40f6-4079-bb19-9db7251c868c",
+        "vpip": 0.3934,
+        "pfr": 0.039,
+        "af": 0.831,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.024,
+        "hands": 333
+      },
+      {
+        "bot_name": "SummerSun",
+        "bot_id": "bb0b844a-5290-445b-9707-9063e1ceb016",
+        "vpip": 0.3438,
+        "pfr": 0.0391,
+        "af": 0.529,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0469,
+        "hands": 128
+      },
+      {
+        "bot_name": "elprofesoriqo",
+        "bot_id": "6c30940b-7d82-4fec-90c1-80ea5df1bf9e",
+        "vpip": 0.4947,
+        "pfr": 0.1285,
+        "af": 0.476,
+        "bust_rate": 0.5,
+        "big_commit_rate": 0.0222,
+        "hands": 1128
+      }
+    ]
+  },
+  "TAG": {
+    "count": 20,
+    "members": [
+      {
+        "bot_name": "ASD",
+        "bot_id": "d004af3d-7a5d-40f4-b8fd-17ec49e74037",
+        "vpip": 0.1468,
+        "pfr": 0.1043,
+        "af": 2.531,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0088,
+        "hands": 681
+      },
+      {
+        "bot_name": "CHI",
+        "bot_id": "1f9ab68c-33f6-42f7-9cf1-de50d6964c8c",
+        "vpip": 0.2425,
+        "pfr": 0.21,
+        "af": 5.455,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0013,
+        "hands": 800
+      },
+      {
+        "bot_name": "Croud",
+        "bot_id": "a2547f2f-b893-4dd2-a3c1-b4bc0e703ce8",
+        "vpip": 0.0413,
+        "pfr": 0.0248,
+        "af": 2.5,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0083,
+        "hands": 121
+      },
+      {
+        "bot_name": "Equity",
+        "bot_id": "a0dca67f-ea1d-485f-aff7-f57d1b1e5857",
+        "vpip": 0.0339,
+        "pfr": 0.0339,
+        "af": 2.188,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0149,
+        "hands": 737
+      },
+      {
+        "bot_name": "Fold Equity",
+        "bot_id": "2a6ee2ef-b476-4d68-8199-3245a1227dab",
+        "vpip": 0.1512,
+        "pfr": 0.125,
+        "af": 2.565,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0025,
+        "hands": 800
+      },
+      {
+        "bot_name": "HentaiVirus-v1",
+        "bot_id": "0e320459-d2d9-4d63-9780-849965b561d1",
+        "vpip": 0.1124,
+        "pfr": 0.0763,
+        "af": 2.643,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0281,
+        "hands": 249
+      },
+      {
+        "bot_name": "I'mDeffoCappin",
+        "bot_id": "5a46ad84-1683-44d9-a1af-938d70086414",
+        "vpip": 0.0765,
+        "pfr": 0.0765,
+        "af": 29.0,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0029,
+        "hands": 340
+      },
+      {
+        "bot_name": "IoloBot",
+        "bot_id": "fbdd5fe1-74ee-40f3-93cc-bc4053728597",
+        "vpip": 0.2108,
+        "pfr": 0.2042,
+        "af": 16.111,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0033,
+        "hands": 1200
+      },
+      {
+        "bot_name": "LastResortv4",
+        "bot_id": "6f96d012-8d21-403f-8887-8c27224fd920",
+        "vpip": 0.1175,
+        "pfr": 0.11,
+        "af": 4.8,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0075,
+        "hands": 400
+      },
+      {
+        "bot_name": "MXY1",
+        "bot_id": "89f8b4dc-2b68-4fad-a8af-c6bd4791b054",
+        "vpip": 0.0283,
+        "pfr": 0.0283,
+        "af": 6.5,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0057,
+        "hands": 707
+      },
+      {
+        "bot_name": "ManLike",
+        "bot_id": "a4f8b40b-fa79-4422-ae0f-7b20c75f6664",
+        "vpip": 0.0018,
+        "pfr": 0.0018,
+        "af": 4.0,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0009,
+        "hands": 1112
+      },
+      {
+        "bot_name": "Minginator mark 2",
+        "bot_id": "518e50cf-c0f1-4c7b-b749-d08e54365539",
+        "vpip": 0.2825,
+        "pfr": 0.245,
+        "af": 3.229,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.005,
+        "hands": 400
+      },
+      {
+        "bot_name": "SigmaRunner",
+        "bot_id": "2442df46-11fe-45cd-a722-bf38eef8c04a",
+        "vpip": 0.12,
+        "pfr": 0.1087,
+        "af": 8.417,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0075,
+        "hands": 800
+      },
+      {
+        "bot_name": "harvey",
+        "bot_id": "55122d40-9248-464e-9043-d96baecf5a8b",
+        "vpip": 0.1258,
+        "pfr": 0.1,
+        "af": 2.353,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0097,
+        "hands": 310
+      },
+      {
+        "bot_name": "jotaro",
+        "bot_id": "c2c04d09-8233-4e3d-ab4f-29c270b8fb5f",
+        "vpip": 0.213,
+        "pfr": 0.1846,
+        "af": 2.897,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0203,
+        "hands": 493
+      },
+      {
+        "bot_name": "panda",
+        "bot_id": "15d2bea0-a7ce-4b48-8b51-3d5f5cfafe14",
+        "vpip": 0.2213,
+        "pfr": 0.2125,
+        "af": 8.793,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0063,
+        "hands": 800
+      },
+      {
+        "bot_name": "speagle_1_13_1",
+        "bot_id": "b2418224-2311-435a-b9f4-62a52faa5b37",
+        "vpip": 0.2683,
+        "pfr": 0.2217,
+        "af": 3.211,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0017,
+        "hands": 1200
+      },
+      {
+        "bot_name": "switchface",
+        "bot_id": "9e5c7bf5-a596-43db-aca3-c2e290b0fb3d",
+        "vpip": 0.1775,
+        "pfr": 0.1613,
+        "af": 6.222,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0112,
+        "hands": 800
+      },
+      {
+        "bot_name": "v16ship2",
+        "bot_id": "87898a02-2630-4d3c-a959-ee9ff69688ce",
+        "vpip": 0.2727,
+        "pfr": 0.2576,
+        "af": 4.6,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0303,
+        "hands": 66
+      },
+      {
+        "bot_name": "wall-e",
+        "bot_id": "14d3c0f0-3573-45dc-af25-c4b81c02b8ad",
+        "vpip": 0.0117,
+        "pfr": 0.0117,
+        "af": 6.0,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0047,
+        "hands": 426
+      }
+    ]
+  },
+  "maniac_boombust": {
+    "count": 7,
+    "members": [
+      {
+        "bot_name": "00Kentbot00",
+        "bot_id": "089ea188-211d-420d-9d46-d14007998cd2",
+        "vpip": 0.06,
+        "pfr": 0.06,
+        "af": 24.0,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.06,
+        "hands": 400
+      },
+      {
+        "bot_name": "MartinY",
+        "bot_id": "4bbf03f3-d8f5-4375-82b5-3f855a2e7df1",
+        "vpip": 0.1895,
+        "pfr": 0.1053,
+        "af": 0.759,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0982,
+        "hands": 285
+      },
+      {
+        "bot_name": "PotBot",
+        "bot_id": "d77169ce-b5a1-470b-93d6-16e4e0a6765b",
+        "vpip": 0.3286,
+        "pfr": 0.0929,
+        "af": 0.452,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0643,
+        "hands": 140
+      },
+      {
+        "bot_name": "Thorp",
+        "bot_id": "1c0abfd8-c355-471b-8c7b-e5e75800ce04",
+        "vpip": 0.4914,
+        "pfr": 0.4787,
+        "af": 25.936,
+        "bust_rate": 0.4167,
+        "big_commit_rate": 0.0108,
+        "hands": 5208
+      },
+      {
+        "bot_name": "Worm Snatcher",
+        "bot_id": "c3825ee5-54a1-4989-a65b-51093e2b5126",
+        "vpip": 0.4333,
+        "pfr": 0.3952,
+        "af": 3.114,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.019,
+        "hands": 210
+      },
+      {
+        "bot_name": "codex_iterated_abstract_pressure",
+        "bot_id": "ffae508c-d5f4-47f8-a3ea-73bb0ea11cd0",
+        "vpip": 0.4532,
+        "pfr": 0.4496,
+        "af": 6.237,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0252,
+        "hands": 278
+      },
+      {
+        "bot_name": "talan",
+        "bot_id": "dd0f64ae-0b15-4f99-8938-bcce8b2b85ef",
+        "vpip": 0.4238,
+        "pfr": 0.3563,
+        "af": 5.609,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0112,
+        "hands": 800
+      }
+    ]
+  },
+  "nit_tight_passive": {
+    "count": 23,
+    "members": [
+      {
+        "bot_name": "BeginnersLuck",
+        "bot_id": "006f931e-c794-494f-9181-331bc6719df7",
+        "vpip": 0.174,
+        "pfr": 0.058,
+        "af": 0.649,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0497,
+        "hands": 362
+      },
+      {
+        "bot_name": "BlazingNinja",
+        "bot_id": "01fafe57-b2d3-4ac8-a6e4-a6b101d2a20d",
+        "vpip": 0.1952,
+        "pfr": 0.1441,
+        "af": 0.89,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.015,
+        "hands": 333
+      },
+      {
+        "bot_name": "Bob",
+        "bot_id": "4a429981-ba9c-49bc-87d6-d8bc850eeb60",
+        "vpip": 0.2238,
+        "pfr": 0.0912,
+        "af": 0.579,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0375,
+        "hands": 800
+      },
+      {
+        "bot_name": "Bot1",
+        "bot_id": "62c6a84f-e315-44f7-9be5-6f46678f8e67",
+        "vpip": 0.1469,
+        "pfr": 0.0991,
+        "af": 1.094,
+        "bust_rate": 0.6667,
+        "big_commit_rate": 0.0177,
+        "hands": 565
+      },
+      {
+        "bot_name": "El_Chameleon",
+        "bot_id": "46e88477-5239-435d-a9a8-5f88c5e83a89",
+        "vpip": 0.0571,
+        "pfr": 0.0121,
+        "af": 0.377,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0138,
+        "hands": 578
+      },
+      {
+        "bot_name": "EquityBot",
+        "bot_id": "46fc99e7-01c9-4837-afe5-a90dd53fb947",
+        "vpip": 0.0952,
+        "pfr": 0.0034,
+        "af": 0.083,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0102,
+        "hands": 294
+      },
+      {
+        "bot_name": "G-Forge",
+        "bot_id": "1335ca2f-c347-40b8-82a0-07721962f78a",
+        "vpip": 0.075,
+        "pfr": 0.0375,
+        "af": 0.952,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.005,
+        "hands": 400
+      },
+      {
+        "bot_name": "GoonMaxxer",
+        "bot_id": "14298108-4193-453f-b375-9e60b6910444",
+        "vpip": 0.2946,
+        "pfr": 0.1161,
+        "af": 0.608,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0208,
+        "hands": 336
+      },
+      {
+        "bot_name": "I_and_i",
+        "bot_id": "0c11f6b7-01c2-4085-ae79-78d2af851161",
+        "vpip": 0.1311,
+        "pfr": 0.0351,
+        "af": 0.625,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0046,
+        "hands": 656
+      },
+      {
+        "bot_name": "Lyra",
+        "bot_id": "88ca3641-1388-420f-8b5b-9c2e3fca2669",
+        "vpip": 0.0,
+        "pfr": 0.0,
+        "af": 0.0,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0,
+        "hands": 337
+      },
+      {
+        "bot_name": "NegativeEV",
+        "bot_id": "7e37facf-065c-467e-b081-31e236536de9",
+        "vpip": 0.1315,
+        "pfr": 0.0381,
+        "af": 0.31,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0277,
+        "hands": 289
+      },
+      {
+        "bot_name": "PleaseWorkINeedThis",
+        "bot_id": "a93f47b0-3193-4d0a-86de-e7ce304386bf",
+        "vpip": 0.2162,
+        "pfr": 0.0587,
+        "af": 0.642,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0112,
+        "hands": 800
+      },
+      {
+        "bot_name": "Seelie",
+        "bot_id": "2794ce07-8373-4900-8065-67984203e4e4",
+        "vpip": 0.2632,
+        "pfr": 0.1684,
+        "af": 1.0,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0211,
+        "hands": 95
+      },
+      {
+        "bot_name": "StrawHat",
+        "bot_id": "26f01311-4ab3-4126-967f-a38a5e59a538",
+        "vpip": 0.0,
+        "pfr": 0.0,
+        "af": 0.0,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0,
+        "hands": 374
+      },
+      {
+        "bot_name": "TheAngelWaiting",
+        "bot_id": "c2a32d51-4b09-47f5-a5f8-028bdb147b7e",
+        "vpip": 0.0801,
+        "pfr": 0.0314,
+        "af": 0.692,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0314,
+        "hands": 287
+      },
+      {
+        "bot_name": "TheQuantBot",
+        "bot_id": "dcabde87-9739-46ec-bc90-1edf2c792372",
+        "vpip": 0.0922,
+        "pfr": 0.0478,
+        "af": 0.963,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0137,
+        "hands": 293
+      },
+      {
+        "bot_name": "TheUnOrthodox",
+        "bot_id": "a0bf5efe-e2d9-4350-a3b5-343fe8356aad",
+        "vpip": 0.0819,
+        "pfr": 0.0319,
+        "af": 1.444,
+        "bust_rate": 0.5,
+        "big_commit_rate": 0.008,
+        "hands": 879
+      },
+      {
+        "bot_name": "TurkZAN",
+        "bot_id": "28b61628-9b08-4fd1-bf8d-e8018a0bb9d9",
+        "vpip": 0.0,
+        "pfr": 0.0,
+        "af": 0.0,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0,
+        "hands": 348
+      },
+      {
+        "bot_name": "V20e",
+        "bot_id": "b634d2d1-fae3-47db-a71d-fa55cba20e45",
+        "vpip": 0.0,
+        "pfr": 0.0,
+        "af": 0.0,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0,
+        "hands": 373
+      },
+      {
+        "bot_name": "XYZ-V4",
+        "bot_id": "c4a7cb0f-fa59-4ea1-8f93-f29d454c4700",
+        "vpip": 0.199,
+        "pfr": 0.0395,
+        "af": 0.702,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0148,
+        "hands": 608
+      },
+      {
+        "bot_name": "b23a",
+        "bot_id": "b98c80f9-6425-4815-b588-f7d4f889732f",
+        "vpip": 0.0282,
+        "pfr": 0.0161,
+        "af": 1.429,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0081,
+        "hands": 248
+      },
+      {
+        "bot_name": "rookie-v1",
+        "bot_id": "1c01075c-657e-47c8-871c-3641a5792a32",
+        "vpip": 0.1193,
+        "pfr": 0.0085,
+        "af": 0.06,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0057,
+        "hands": 352
+      },
+      {
+        "bot_name": "sigmagooner",
+        "bot_id": "d4c9c1a0-20ad-4712-8827-e9d6638fb527",
+        "vpip": 0.1111,
+        "pfr": 0.0412,
+        "af": 1.448,
+        "bust_rate": 0.5,
+        "big_commit_rate": 0.0082,
+        "hands": 243
+      }
+    ]
+  },
+  "LAG": {
+    "count": 9,
+    "members": [
+      {
+        "bot_name": "APEX",
+        "bot_id": "dd8d363c-21c0-4530-a1c4-7f0390267859",
+        "vpip": 0.3753,
+        "pfr": 0.257,
+        "af": 2.082,
+        "bust_rate": 0.5,
+        "big_commit_rate": 0.0022,
+        "hands": 922
+      },
+      {
+        "bot_name": "AniBot",
+        "bot_id": "1a086486-9a59-4ed9-89af-1383ba17737c",
+        "vpip": 0.4813,
+        "pfr": 0.2013,
+        "af": 0.863,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0037,
+        "hands": 800
+      },
+      {
+        "bot_name": "EigenJoker",
+        "bot_id": "b7d68bff-c778-4d82-9c0b-a816588b778a",
+        "vpip": 0.5762,
+        "pfr": 0.3476,
+        "af": 1.723,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0143,
+        "hands": 210
+      },
+      {
+        "bot_name": "FerdaBot",
+        "bot_id": "498bc9e1-d432-4817-9275-465df6a80581",
+        "vpip": 0.4238,
+        "pfr": 0.2637,
+        "af": 2.09,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0025,
+        "hands": 800
+      },
+      {
+        "bot_name": "NecessarySkew",
+        "bot_id": "2f5c5096-ed95-446e-a100-032a306f815e",
+        "vpip": 0.3175,
+        "pfr": 0.2587,
+        "af": 4.155,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0063,
+        "hands": 800
+      },
+      {
+        "bot_name": "Polaris",
+        "bot_id": "8be96d4d-1f0b-4418-b09b-4b4e562864a8",
+        "vpip": 0.3088,
+        "pfr": 0.2035,
+        "af": 1.913,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0175,
+        "hands": 285
+      },
+      {
+        "bot_name": "SevenDeuces",
+        "bot_id": "9943fed9-5eda-4156-8820-1a5e35250b21",
+        "vpip": 0.4703,
+        "pfr": 0.3189,
+        "af": 2.172,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0054,
+        "hands": 185
+      },
+      {
+        "bot_name": "simplytk",
+        "bot_id": "a9d53ccb-63fa-452d-809e-c05f9b415b12",
+        "vpip": 0.3613,
+        "pfr": 0.23,
+        "af": 1.326,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0088,
+        "hands": 800
+      },
+      {
+        "bot_name": "thousand-eyes",
+        "bot_id": "d66989f4-c02d-4ec1-a3d8-dba663361f0a",
+        "vpip": 0.3953,
+        "pfr": 0.2326,
+        "af": 0.532,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.0116,
+        "hands": 86
+      }
+    ]
+  },
+  "insufficient_data": {
+    "count": 12,
+    "members": [
+      {
+        "bot_name": "Axiom",
+        "bot_id": "780acb9c-753d-4c82-bc69-ca32a2b7f4dd",
+        "vpip": 0.3214,
+        "pfr": 0.1071,
+        "af": 0.375,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.25,
+        "hands": 28
+      },
+      {
+        "bot_name": "BBot2",
+        "bot_id": "d878c103-acc1-43eb-8d8f-a51ac9b5c0dc",
+        "vpip": 0.1818,
+        "pfr": 0.0,
+        "af": 0.0,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0909,
+        "hands": 22
+      },
+      {
+        "bot_name": "Beast mode",
+        "bot_id": "1170661f-874e-4bd9-898b-5429a9fb2618",
+        "vpip": 0.3846,
+        "pfr": 0.2308,
+        "af": 0.625,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0769,
+        "hands": 13
+      },
+      {
+        "bot_name": "Black Scythe",
+        "bot_id": "e6c321ed-8108-4086-9cd9-e9229672698e",
+        "vpip": 0.8571,
+        "pfr": 0.0204,
+        "af": 1.02,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.2653,
+        "hands": 49
+      },
+      {
+        "bot_name": "Darwinian_Alpha",
+        "bot_id": "c0cf34af-df43-4b9b-b155-01d827e6166c",
+        "vpip": 0.3214,
+        "pfr": 0.2143,
+        "af": 0.762,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.1071,
+        "hands": 56
+      },
+      {
+        "bot_name": "HydraData",
+        "bot_id": "cb0f0df2-d87a-4d84-93fb-5dc8b2e9786e",
+        "vpip": 0.4762,
+        "pfr": 0.2857,
+        "af": 0.667,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0476,
+        "hands": 42
+      },
+      {
+        "bot_name": "Jaames",
+        "bot_id": "baa298e6-be13-4053-9e1c-5f869a1a5a9c",
+        "vpip": 0.6111,
+        "pfr": 0.0833,
+        "af": 0.278,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0278,
+        "hands": 36
+      },
+      {
+        "bot_name": "Jeremy 2.0",
+        "bot_id": "94ebaec6-6d13-4375-9285-627439e40d31",
+        "vpip": 0.3333,
+        "pfr": 0.3333,
+        "af": 3.0,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.3333,
+        "hands": 3
+      },
+      {
+        "bot_name": "SuperExtraDeluxeMegaBot",
+        "bot_id": "cda5cd2d-5965-4599-b698-cb08f8008d65",
+        "vpip": 0.3333,
+        "pfr": 0.1667,
+        "af": 0.364,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.1111,
+        "hands": 18
+      },
+      {
+        "bot_name": "Taleto13",
+        "bot_id": "eeffdfc3-d587-4d0b-80be-5bd865edcdb7",
+        "vpip": 0.8333,
+        "pfr": 0.1667,
+        "af": 0.294,
+        "bust_rate": 0.0,
+        "big_commit_rate": 0.25,
+        "hands": 12
+      },
+      {
+        "bot_name": "UsedTheNormalDistributionFR",
+        "bot_id": "0bdd8423-a1fb-4484-a31b-fa6be707429e",
+        "vpip": 0.3429,
+        "pfr": 0.3429,
+        "af": 8.5,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.0571,
+        "hands": 35
+      },
+      {
+        "bot_name": "help",
+        "bot_id": "b221791e-6cdd-47ff-8f2b-23c3d5cb0344",
+        "vpip": 0.8889,
+        "pfr": 0.6667,
+        "af": 2.25,
+        "bust_rate": 1.0,
+        "big_commit_rate": 0.3333,
+        "hands": 9
+      }
+    ]
+  }
+}

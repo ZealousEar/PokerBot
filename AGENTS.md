@@ -5,6 +5,19 @@ Read this every turn. Pull deeper context from `docs/corpus-index.md`, `docs/tou
 ## Mission
 Win the Fullhouse Hackathon 2026 by submitting `submissions/v_final.zip` that finishes #1 by cumulative chip delta in the Swiss qualifier (2026-06-01) and #1 in the finals bracket (2026-06-05). Prize pool £4,000+, lead sponsor Quadrature Capital.
 
+## Finals FORMAT (updated 2026-06-04 20:00-deadline announcement — READ FIRST, overrides older finals notes)
+- **Finals are a FRESH competition. Q1/Q2 standings do NOT carry.** The "#57/64 underdog / bottom of bracket" framing below is OBSOLETE — every finalist starts equal. Ignore old combined rank for strategy.
+- **NOT single-elimination.** Phase 1 "The Bubble": ~40 Swiss-paired 6-max matches/bot, **800 hands** each, 6 bots/table, fresh 10k chips, ranked by **cumulative chip performance** (statistical shrinkage on the top-6 cut). Top 6 advance. Phase 2 "Final Table": top 6, up to 5000 hands/match, last bot standing wins £4,000.
+- **Regime = cumulative chip EXTRACTION over a Swiss field (like the qualifier), not a single-elim variance gamble.** Our exploit-overlay aggro bot fits Phase 1 (Q2 proof: #54, +1565 chip/100, near-identical 6-max Swiss conditions); 800-hand matches give the 30-hand exploit warmup more runway. Still ship b108eff5 as-is.
+- **DEADLINE EXTENDED to 20:00 UK today 2026-06-04 (= 19:00 UTC).** Whatever is on the portal at 20:00 UK plays finals.
+
+## Finals state (updated 2026-06-04 — read before any finals work)
+- **Thorp QUALIFIED for finals**: Q1 #85/289, Q2 #54/289, **combined #57/64** (HISTORICAL ONLY — finals reset to equal footing; see Finals FORMAT above).
+- **The live R2 artifact is the LEAK build** (`d54640e0`, portal id `7a7ad230`) — an overnight agent autonomously uploaded it; the leak (postflop near-dead stack-off) was NOT patched in the shipped bytes.
+- **FINALS BASELINE = `submissions/v_final.zip` == `v_finals_rc_patched.zip`, sha256 `b108eff5…`** (leak PATCHED). This is the bot to ship to finals, NOT the R2 build. Source is currently zip-only (not committed) — extract `consult/artifacts/2026-06-04-finals-recon/patched_src/` and commit before shipping.
+- **Strategy: ship `b108eff5` as-is, freeze code, verify (incl. deferred Docker smoke), human-gated SHA-verified upload.** Do NOT hand-tune in code (exploit overlay already ships) and do NOT chase Nash de-risk. Residual leaks + verification TODO + full finalist field: `docs/investigations/finals-prep-postmortem-2026-06-04.md` and `STATUS.md [FINALS-RECON]`.
+- Patch deadline was 18:00 UTC 2026-06-04.
+
 ## Repository map
 - `src/bot.py` — entry implementation. The shipped `bot.zip` has a small `bot.py` shim at archive root that re-exports `decide` from here.
 - `src/preflop_lookup.py`, `src/postflop.py`, `src/equity.py`, `src/opponent_model.py`, `src/ranges.py`, `src/sizing.py`, `src/timeout_guard.py` — strategy modules.
@@ -65,7 +78,7 @@ The architectural answer is the **blueprint + refinement** pattern from Brown & 
 
 **What we drop and why:**
 - Real-time subgame solving (Libratus 2017) — compute-prohibitive at 0.5 CPU / 2 s decision budget.
-- Deep CFR (Brown 2019) — no PyTorch/TF in the allowed library set.
+- Deep CFR (Brown 2019) as the SHIPPED policy — calendar/validation-bound, not infrastructure-bound (corrected 2026-05-27 consult). Runtime PyTorch is still forbidden, but `.npz` + numpy inference is proven feasible (vladimir ships a 274→9 numpy MLP forward pass loading `gto_strategy.npz`). The binding constraint is the 9-day calendar — training, integration, validator/leakage/LBR/all-templates/public-bot gauntlet, and statistically proving the new policy beats the locked artifact does not fit before finals close. Allowed adjacent use: SHADOW-CFR-1 red-team / sparring opponent (`docs/plans/qualifier-finals-rollout-2026-05-27.md` Phase D), never the promoted ship artifact.
 - Nested endgame solving — same compute reasons.
 
 ## Engineering conventions
@@ -83,6 +96,9 @@ Always preserve `submissions/best_green.zip` — the latest validator-passing, e
 
 Preserve all gate snapshots (`submissions/v{0..3}_*.zip`) — `tools/benchmark.py --self-play --vs-prior` depends on them.
 
+## Upload / submission policy (HUMAN-ONLY — hard rule, added 2026-06-03)
+Never upload, submit, deploy, or push a bot live to the Fullhouse portal (`portal.fullhousehackathon`, `fullhousehackathon.com`) or any external competition endpoint without Farhad's explicit, in-the-moment approval of that specific upload. No autonomous, overnight, or background agent may submit — ever. Default to having Farhad perform the upload himself; if he delegates a specific upload, get an explicit per-upload go-ahead first. Building and fully verifying ship zips locally is encouraged — taking one live is a human-gated action. Covers qualifier, patch-window, and finals submissions. (Context: an overnight agent self-uploaded the Qualifier II patch on 2026-06-03 with no human in the loop; that must not recur.)
+
 ## Solver policy
 External-sampling MCCFR (G2) and CFR+ over flop buckets (G3) are conditional on benchmark improvement against `best_green.zip`. If two consecutive non-trivial training attempts fail to improve measured bb/100 against `best_green.zip`, halt solver work and ship deterministic hand-tuned ranges + exploit priors instead. Prefer compact tables built from existing charted solver outputs over from-scratch overnight training. Treat LBR (`tools/exploit_check.py`) as a regression guard, not a Nash quality claim.
 
@@ -96,3 +112,9 @@ At 10k hands, bb/100 variance is ~20 bb/100 (95 % CI). Single-run 10k benchmarks
 Before 2026-06-02: implement `tools/analyze_hand_histories.py` that introspects schema from the first JSON record (do not hardcode field names — the hackathon schema is unknown until release) and emits compact priors to `data/finals_priors.npz`: population VPIP/PFR/aggression, fold-to-c-bet, average sizing by street, common preflop action sequences, obvious bot-cluster fingerprints.
 
 On 2026-06-02: parse downloaded histories, update compact priors only, re-run the full validator + import + edge-case + smoke + benchmark suite. The patch-window bot must still pass every check. Keep the qualifier artifact preserved.
+
+## Compute budget (updated 2026-05-27)
+- Claude Code plan: **20×** the base subscription rate (parallel sessions, higher token allotment, longer wall-clocks per turn).
+- Codex CLI plan: **20×** equivalent (parallel sandboxes, larger context budgets per lane).
+- Implication for overnight queues: the 21-lane queue used ~120 k Claude orchestrator tokens + aggregated codex across 22 lanes in ~70 min of wall, with ~7.8 h of the 9 h cap unused. Future lanes can fan out wider — push toward 35–50 narrow lanes per night with shorter per-lane budgets, rather than 20 broad lanes — and we can comfortably run 2–3 overnights between now and qualifier (2026-06-01).
+- Implication for finals patch window (2026-06-02): the analyzer + retune + full G1–G11 gauntlet fit inside a single 9-h window with budget to spare; we are compute-bound on architecture (no PyTorch / no C++ at submission time), not on subscription quota.

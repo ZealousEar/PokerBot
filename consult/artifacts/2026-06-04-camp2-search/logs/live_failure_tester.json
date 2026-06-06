@@ -1,0 +1,31 @@
+{
+  "zip": "/Users/farhad/Code/PokerBot/submissions/v_final.zip",
+  "sha256": "b108eff59b46b713fdfb1530f73eaeaa924f5dd9cb5ed72d3e63512a9ce3c36b",
+  "PASS": true,
+  "checks": {
+    "validator": {
+      "pass": true,
+      "rc": 0,
+      "tail": "e\",\n        \"amount\": 250\n      },\n      \"elapsed\": 0.016\n    },\n    {\n      \"test\": \"postflop_can_check\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 150\n      },\n      \"elapsed\": 0.014\n    },\n    {\n      \"test\": \"river_facing_large_bet\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"fold\"\n      },\n      \"elapsed\": 0.024\n    },\n    {\n      \"test\": \"short_stack_all_in_decision\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"all_in\"\n      },\n      \"elapsed\": 0.004\n    }\n  ],\n  \"data_dir\": \"/tmp/claude-501/fhval_pqqwkdxp/data\"\n}\n"
+    },
+    "forbidden_scan": {
+      "pass": true,
+      "issues": [],
+      "note": "skipped (no --src)"
+    },
+    "edge": {
+      "pass": true,
+      "rc": 0,
+      "tail": "..............                                                           [100%]\n14 passed in 1.69s\n"
+    },
+    "probes": {
+      "pass": true,
+      "detail": "11 probes clean"
+    },
+    "smoke": {
+      "pass": true,
+      "rc": 0,
+      "tail": "{\n  \"requested_hands\": 200,\n  \"actual_hands\": 200,\n  \"early_termination_reason\": \"requested_hands_completed\",\n  \"hero_id\": \"v_final\",\n  \"hero_errors\": [],\n  \"chip_delta\": {\n    \"v_final\": 5550,\n    \"template\": -5550\n  },\n  \"final_stacks\": {\n    \"v_final\": 15550,\n    \"template\": 4450\n  },\n  \"errors\": {},\n  \"duration_s\": 3.16\n}\n"
+    }
+  }
+}

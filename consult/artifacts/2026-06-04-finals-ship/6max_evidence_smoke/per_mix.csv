@@ -1,0 +1,2 @@
+mix,matches,hands_total,thorp_delta_sum,thorp_delta_avg_per_match,thorp_chip_per_100_hands,thorp_decisions,fold_defaults,illegal_action_names,timeouts,exceptions,busts,bust_rate,bust_streets
+reference_field,1,2,-250,-250.0,-12500.0,3,0,0,0,0,0,0.0,{}

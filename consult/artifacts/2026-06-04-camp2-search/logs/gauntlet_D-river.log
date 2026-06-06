@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "results": "consult/artifacts/2026-06-04-camp2-search/results/D-river/results/deployed_gauntlet_results.json",
+  "bot_sha256": "fd92bed48f22427113265ccb66ef31f3dea23b66c9d7f5986b884e413786171b",
+  "opponents": 12,
+  "probes": 0,
+  "match_summaries": 12
+}

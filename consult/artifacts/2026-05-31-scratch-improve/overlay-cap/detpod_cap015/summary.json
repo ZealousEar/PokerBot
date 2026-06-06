@@ -1,0 +1,22 @@
+{
+  "compositions": {
+    "C0D_DETERMINISTIC_SUBSET": {
+      "bust_rate": 0.0417,
+      "hero_action_errors": 0,
+      "hero_decisions": 10882,
+      "mean": 11163.2,
+      "n": 24,
+      "p10": 9715.1,
+      "p25": 10625.0,
+      "p50": 11925.0,
+      "p75": 12962.5,
+      "p90": 14330.0
+    }
+  },
+  "generated_at": "2026-05-31T01:42:39Z",
+  "hands": 400,
+  "hero_sha": "61055f07dfb1a8f467578b11dc24edc7e3ad921b35923f8e844bbd0b5b855873",
+  "hero_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/overlay-cap/cap015.zip",
+  "seed_base": 700,
+  "seeds": 24
+}

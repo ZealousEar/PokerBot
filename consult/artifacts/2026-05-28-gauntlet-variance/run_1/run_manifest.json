@@ -1,0 +1,219 @@
+{
+  "commands": [
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+        "tools/audit_strategy_leakage.py",
+        "--zip",
+        "submissions/v_final.zip"
+      ],
+      "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+      "duration_s": 1.0091609954833984,
+      "finished_utc": "2026-05-28T01:05:22Z",
+      "label": "audit_strategy_leakage",
+      "log": "audit_strategy_leakage.log",
+      "passed": true,
+      "returncode": 0,
+      "started_utc": "2026-05-28T01:05:21Z"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+        "tools/benchmark.py",
+        "--ablate-overlay",
+        "--hands",
+        "10000",
+        "--bot",
+        "submissions/v_final.zip",
+        "--paired-seed-base",
+        "42"
+      ],
+      "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+      "duration_s": 723.7508363723755,
+      "finished_utc": "2026-05-28T01:45:23Z",
+      "label": "benchmark_ablate_overlay",
+      "log": "benchmark_ablate_overlay.log",
+      "passed": true,
+      "returncode": 0,
+      "started_utc": "2026-05-28T01:33:19Z"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+        "tools/benchmark.py",
+        "--all-templates",
+        "--hands",
+        "10000",
+        "--bot",
+        "submissions/v_final.zip",
+        "--paired-seed-base",
+        "42"
+      ],
+      "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+      "duration_s": 1676.4907031059265,
+      "finished_utc": "2026-05-28T01:33:19Z",
+      "label": "benchmark_all_templates",
+      "log": "benchmark_all_templates.log",
+      "passed": true,
+      "returncode": 0,
+      "started_utc": "2026-05-28T01:05:23Z"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+        "tools/benchmark.py",
+        "--self-play",
+        "--vs-prior",
+        "--hands",
+        "10000",
+        "--bot",
+        "submissions/v_final.zip",
+        "--paired-seed-base",
+        "42"
+      ],
+      "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+      "duration_s": 518.3607096672058,
+      "finished_utc": "2026-05-28T01:54:01Z",
+      "label": "benchmark_self_play_vs_prior",
+      "log": "benchmark_self_play_vs_prior.log",
+      "passed": true,
+      "returncode": 0,
+      "started_utc": "2026-05-28T01:45:23Z"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/edge_cases",
+        "-x"
+      ],
+      "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+      "duration_s": 2.0133140087127686,
+      "finished_utc": "2026-05-28T01:05:10Z",
+      "label": "edge_cases",
+      "log": "edge_cases.log",
+      "passed": true,
+      "returncode": 0,
+      "started_utc": "2026-05-28T01:05:08Z"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+        "tools/exploit_check.py",
+        "--bot",
+        "submissions/v_final.zip",
+        "--max-preflop-mbb",
+        "100",
+        "--max-aggregate-mbb",
+        "200"
+      ],
+      "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+      "duration_s": 1.003326177597046,
+      "finished_utc": "2026-05-28T01:05:23Z",
+      "label": "exploit_check",
+      "log": "exploit_check.log",
+      "passed": true,
+      "returncode": 0,
+      "started_utc": "2026-05-28T01:05:22Z"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+        "tools/import_audit.py"
+      ],
+      "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+      "duration_s": 1.0030152797698975,
+      "finished_utc": "2026-05-28T01:05:08Z",
+      "label": "import_audit",
+      "log": "import_audit.log",
+      "passed": true,
+      "returncode": 0,
+      "started_utc": "2026-05-28T01:05:07Z"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+        "tools/smoke_run.py",
+        "--zip",
+        "submissions/v_final.zip",
+        "--hands",
+        "200"
+      ],
+      "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+      "duration_s": 7.026355266571045,
+      "finished_utc": "2026-05-28T01:05:17Z",
+      "label": "smoke",
+      "log": "smoke.log",
+      "passed": true,
+      "returncode": 0,
+      "started_utc": "2026-05-28T01:05:10Z"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+        "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-28-gauntlet-variance/timed_smoke.py",
+        "--repo",
+        "/Users/farhad/Code/PokerBot-gauntlet",
+        "--zip",
+        "submissions/v_final.zip",
+        "--hands",
+        "200",
+        "--seed",
+        "42"
+      ],
+      "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+      "duration_s": 3.011828899383545,
+      "finished_utc": "2026-05-28T02:28:49Z",
+      "label": "smoke_timed",
+      "log": "smoke_timed.log",
+      "passed": true,
+      "returncode": 0,
+      "started_utc": "2026-05-28T02:28:46Z"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+        "ext/fullhouse-engine/sandbox/validator.py",
+        "submissions/v_final.zip",
+        "--json"
+      ],
+      "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+      "duration_s": 1.0080881118774414,
+      "finished_utc": "2026-05-28T01:05:07Z",
+      "label": "validator",
+      "log": "validator.log",
+      "passed": true,
+      "returncode": 0,
+      "started_utc": "2026-05-28T01:05:06Z"
+    }
+  ],
+  "finished_guardrails": {
+    "bad_hashes": {},
+    "canonical_head": "050b058d733b17418f68d3b846948b27caa13c40",
+    "engine_commit": "adc23b9813338d0e1e56e0158f18644b2b9ad234",
+    "gauntlet_head": "a00561cfadf18d3bc2b03ef2403e55346207670c",
+    "hashes": {
+      "canonical_best_green": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+      "canonical_v_final": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+      "gauntlet_best_green": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+      "gauntlet_v_final": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+    },
+    "hashes_ok": true
+  },
+  "passed": true,
+  "run": 1,
+  "started_guardrails": {
+    "bad_hashes": {},
+    "canonical_head": "050b058d733b17418f68d3b846948b27caa13c40",
+    "engine_commit": "adc23b9813338d0e1e56e0158f18644b2b9ad234",
+    "gauntlet_head": "a00561cfadf18d3bc2b03ef2403e55346207670c",
+    "hashes": {
+      "canonical_best_green": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+      "canonical_v_final": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+      "gauntlet_best_green": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+      "gauntlet_v_final": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+    },
+    "hashes_ok": true
+  }
+}

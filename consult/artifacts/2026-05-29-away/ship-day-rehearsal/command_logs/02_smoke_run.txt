@@ -1,0 +1,12 @@
+[smoke_run] docker shim: translating --no-new-privileges to --security-opt no-new-privileges
+[smoke_run] FAIL: only 136/200 hands played
+{
+  "n_hands": 136,
+  "expected_hands": 200,
+  "chip_delta": {
+    "v_final": 10000,
+    "template": -10000
+  },
+  "errors": {},
+  "duration_s": 3.21
+}

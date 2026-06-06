@@ -1,0 +1,15 @@
+{
+  "label": "repo_rev_parse_Benjamin_Yu_Sheng_Chang__fullhouse_hackathon__main",
+  "cmd": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/Benjamin_Yu_Sheng_Chang__fullhouse_hackathon__main",
+  "started_at": "2026-05-29T15:14:40Z",
+  "finished_at": "2026-05-29T15:14:40Z",
+  "elapsed_s": 0.006,
+  "returncode": 0,
+  "stdout": "67147615c3c00023148a568afe6ea306b8685548\n",
+  "stderr": ""
+}

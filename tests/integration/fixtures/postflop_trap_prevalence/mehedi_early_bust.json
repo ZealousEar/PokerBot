@@ -1,0 +1,10 @@
+{
+  "hand_id": "mehedi_bust_001",
+  "players": ["hero", "villain"],
+  "chip_delta": {"hero": -9800},
+  "actions": [
+    {"street": "preflop", "actor": "hero", "action": "raise", "amount": 200, "position": "big_blind"},
+    {"street": "preflop", "actor": "villain", "action": "raise", "amount": 600, "position": "button"},
+    {"street": "pf", "actor": "hero", "action": "all_in", "amount": 9800, "toCall": 400, "canCheck": false, "position": "big_blind"}
+  ]
+}

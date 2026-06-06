@@ -1,0 +1,43 @@
+{
+  "bot_path": "submissions/v_final.zip",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "tests": [
+    {
+      "test": "preflop_call_or_fold",
+      "passed": true,
+      "action": {
+        "action": "raise",
+        "amount": 200
+      },
+      "elapsed": 0.0
+    },
+    {
+      "test": "postflop_can_check",
+      "passed": true,
+      "action": {
+        "action": "raise",
+        "amount": 200
+      },
+      "elapsed": 0.0
+    },
+    {
+      "test": "river_facing_large_bet",
+      "passed": true,
+      "action": {
+        "action": "fold"
+      },
+      "elapsed": 0.0
+    },
+    {
+      "test": "short_stack_all_in_decision",
+      "passed": true,
+      "action": {
+        "action": "all_in"
+      },
+      "elapsed": 0.0
+    }
+  ],
+  "data_dir": "/var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/fhval_09u4kmla/data"
+}

@@ -1,0 +1,46 @@
+{
+  "compositions": {
+    "C0D_DETERMINISTIC_SUBSET": {
+      "bust_rate": 0.025,
+      "hero_action_errors": 0,
+      "hero_decisions": 21055,
+      "mean": 9038.8,
+      "n": 40,
+      "p10": 4539.0,
+      "p25": 7793.75,
+      "p50": 10125.0,
+      "p75": 11765.0,
+      "p90": 13110.0
+    },
+    "C0_BASELINE": {
+      "bust_rate": 0.125,
+      "hero_action_errors": 0,
+      "hero_decisions": 19287,
+      "mean": 16060.6,
+      "n": 40,
+      "p10": -10000.0,
+      "p25": 11270.0,
+      "p50": 18165.0,
+      "p75": 22972.5,
+      "p90": 27535.000000000007
+    },
+    "C1_SINGLE_TOBY_WEAK_FIELD": {
+      "bust_rate": 0.525,
+      "hero_action_errors": 0,
+      "hero_decisions": 12527,
+      "mean": 4094.7,
+      "n": 40,
+      "p10": -10000.0,
+      "p25": -10000.0,
+      "p50": -10000.0,
+      "p75": 19454.25,
+      "p90": 24663.000000000004
+    }
+  },
+  "generated_at": "2026-05-31T02:25:34Z",
+  "hands": 400,
+  "hero_sha": "e2ba542b79ca6a026fdbad30274e818d71ad75d0e2cfdef499afaa0b4e5fa296",
+  "hero_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/sibling-gate/codex.zip",
+  "seed_base": 900,
+  "seeds": 40
+}

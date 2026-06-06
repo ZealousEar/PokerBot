@@ -1,0 +1,17 @@
+{
+  "label": "commit_date_Mehedi_dev_2404__fullhouse_engine__main",
+  "cmd": [
+    "git",
+    "show",
+    "-s",
+    "--format=%cI",
+    "HEAD"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/Mehedi_dev_2404__fullhouse_engine__main",
+  "started_at": "2026-05-29T15:14:41Z",
+  "finished_at": "2026-05-29T15:14:41Z",
+  "elapsed_s": 0.006,
+  "returncode": 0,
+  "stdout": "2026-05-29T15:46:55+01:00\n",
+  "stderr": ""
+}

@@ -1,0 +1,27 @@
+[pods] hero=v_final.zip sha=e4b4a8f11f80 out=detpod_locked comps=C0D_DETERMINISTIC_SUBSET hands=400 seeds=700..723 jobs=1 pending=24 resumed=0
+[pods] C0D_DETERMINISTIC_SUBSET s700 hands=400 delta=+16250 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s701 hands=400 delta=+12150 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s702 hands=400 delta=+13300 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s703 hands=400 delta=+11100 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s704 hands=400 delta=+10500 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s705 hands=400 delta=+11100 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s706 hands=400 delta=+12200 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s707 hands=400 delta=+14950 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s708 hands=400 delta=+9867 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s709 hands=400 delta=+8750 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s710 hands=400 delta=+10600 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s711 hands=400 delta=+10700 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s712 hands=400 delta=+12100 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s713 hands=400 delta=+12800 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s714 hands=400 delta=+14450 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s715 hands=400 delta=+12250 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s716 hands=400 delta=-10000 bust=1
+[pods] C0D_DETERMINISTIC_SUBSET s717 hands=400 delta=+10650 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s718 hands=400 delta=+10550 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s719 hands=400 delta=+11900 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s720 hands=400 delta=+12900 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s721 hands=400 delta=+14850 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s722 hands=400 delta=+11700 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s723 hands=400 delta=+27600 bust=0
+[pods] wrote /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/batch2/claude-rescrub/detpod_locked/summary.json
+[pods] C0D_DETERMINISTIC_SUBSET n=24 p50=12000.0 bust=0.0417 mean=11800.7 err=0/10904

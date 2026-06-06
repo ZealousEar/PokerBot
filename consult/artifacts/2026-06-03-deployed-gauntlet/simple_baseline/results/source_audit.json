@@ -1,0 +1,141 @@
+{
+  "data_references": [
+    {
+      "line": 19,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/bot.py",
+      "text": "\"BOT_DATA_DIR\","
+    },
+    {
+      "line": 3,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/postflop.py",
+      "text": "Flop: bucket lookup from `data/flop_strategy.npz`."
+    },
+    {
+      "line": 13,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/postflop.py",
+      "text": "_DATA_DIR = Path(os.environ.get("
+    },
+    {
+      "line": 14,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/postflop.py",
+      "text": "\"BOT_DATA_DIR\","
+    },
+    {
+      "line": 15,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/postflop.py",
+      "text": "Path(__file__).resolve().parent.parent / \"data\","
+    },
+    {
+      "line": 20,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/postflop.py",
+      "text": "_buckets_path = _DATA_DIR / \"flop_buckets.npz\""
+    },
+    {
+      "line": 21,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/postflop.py",
+      "text": "_strategy_path = _DATA_DIR / \"flop_strategy.npz\""
+    },
+    {
+      "line": 23,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/postflop.py",
+      "text": "with np.load(_buckets_path, allow_pickle=False) as data:"
+    },
+    {
+      "line": 26,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/postflop.py",
+      "text": "with np.load(_strategy_path, allow_pickle=False) as data:"
+    },
+    {
+      "line": 3,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/preflop_lookup.py",
+      "text": "Loads `data/preflop_blueprint.npz` eagerly at module import (covered by the"
+    },
+    {
+      "line": 19,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/preflop_lookup.py",
+      "text": "_DATA_DIR = Path(os.environ.get("
+    },
+    {
+      "line": 20,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/preflop_lookup.py",
+      "text": "\"BOT_DATA_DIR\","
+    },
+    {
+      "line": 21,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/preflop_lookup.py",
+      "text": "Path(__file__).resolve().parent.parent / \"data\","
+    },
+    {
+      "line": 23,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/preflop_lookup.py",
+      "text": "_BLUEPRINT_PATH = _DATA_DIR / \"preflop_blueprint.npz\""
+    },
+    {
+      "line": 27,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/preflop_lookup.py",
+      "text": "with np.load(_BLUEPRINT_PATH, allow_pickle=False) as data:"
+    }
+  ],
+  "forbidden_clean": true,
+  "imports": {
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/bot.py": [
+      "from src.bot",
+      "os",
+      "sys"
+    ],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/__init__.py": [],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/bot.py": [
+      "from opponent_model",
+      "from postflop",
+      "from preflop_lookup",
+      "from ranges",
+      "from sizing",
+      "from src.opponent_model",
+      "from src.postflop",
+      "from src.preflop_lookup",
+      "from src.ranges",
+      "from src.sizing",
+      "from src.timeout_guard",
+      "from timeout_guard",
+      "os",
+      "sys"
+    ],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/equity.py": [
+      "eval7",
+      "random"
+    ],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/opponent_model.py": [],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/postflop.py": [
+      "from pathlib",
+      "numpy",
+      "os"
+    ],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/preflop_lookup.py": [
+      "from pathlib",
+      "from ranges",
+      "from src.ranges",
+      "numpy",
+      "os"
+    ],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/ranges.py": [],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/sizing.py": [],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/timeout_guard.py": [
+      "from contextlib",
+      "from typing",
+      "time"
+    ]
+  },
+  "issues": [],
+  "python_files": [
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/bot.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/__init__.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/bot.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/equity.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/opponent_model.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/postflop.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/preflop_lookup.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/ranges.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/sizing.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/simple_baseline/extracted/v_final/src/timeout_guard.py"
+  ]
+}

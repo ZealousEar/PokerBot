@@ -1,0 +1,20 @@
+{
+  "label": "clone_lucashsu007-create/fullhouse-engine_main",
+  "cmd": [
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "--branch",
+    "main",
+    "https://github.com/lucashsu007-create/fullhouse-engine.git",
+    "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/lucashsu007_create__fullhouse_engine__main"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot",
+  "started_at": "2026-05-29T15:14:53Z",
+  "finished_at": "2026-05-29T15:14:53Z",
+  "elapsed_s": 0.911,
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "Cloning into '/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/lucashsu007_create__fullhouse_engine__main'...\n"
+}

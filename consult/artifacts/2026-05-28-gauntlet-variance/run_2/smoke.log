@@ -1,0 +1,20 @@
+# label=smoke
+# cwd=/Users/farhad/Code/PokerBot-gauntlet
+# started_utc=2026-05-28T01:54:05Z
+# command=/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200
+
+[smoke_run] OK
+{
+  "n_hands": 200,
+  "expected_hands": 200,
+  "chip_delta": {
+    "v_final": 14500,
+    "template": -14500
+  },
+  "errors": {},
+  "duration_s": 8.03
+}
+
+# finished_utc=2026-05-28T01:54:14Z
+# returncode=0
+# duration_s=9.076

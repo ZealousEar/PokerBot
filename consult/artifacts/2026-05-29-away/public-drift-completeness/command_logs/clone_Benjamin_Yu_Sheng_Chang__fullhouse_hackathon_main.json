@@ -1,0 +1,20 @@
+{
+  "label": "clone_Benjamin-Yu-Sheng-Chang/fullhouse-hackathon_main",
+  "cmd": [
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "--branch",
+    "main",
+    "https://github.com/Benjamin-Yu-Sheng-Chang/fullhouse-hackathon.git",
+    "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/Benjamin_Yu_Sheng_Chang__fullhouse_hackathon__main"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot",
+  "started_at": "2026-05-29T15:14:39Z",
+  "finished_at": "2026-05-29T15:14:40Z",
+  "elapsed_s": 0.82,
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "Cloning into '/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/Benjamin_Yu_Sheng_Chang__fullhouse_hackathon__main'...\n"
+}

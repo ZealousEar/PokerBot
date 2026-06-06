@@ -1,0 +1,1195 @@
+[
+  {
+    "data_entries": [
+      "data/.gitkeep",
+      "data/flop_buckets.npz",
+      "data/flop_strategy.npz",
+      "data/preflop_blueprint.npz"
+    ],
+    "entries": [
+      {
+        "compress_size": 319,
+        "file_size": 519,
+        "is_dir": false,
+        "mode": 384,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 2031,
+        "file_size": 6935,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 904,
+        "file_size": 2363,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 1153,
+        "file_size": 3687,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 803,
+        "file_size": 1940,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 915,
+        "file_size": 2124,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 890,
+        "file_size": 2019,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 504,
+        "file_size": 1575,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/.gitkeep"
+      },
+      {
+        "compress_size": 463,
+        "file_size": 582,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_buckets.npz"
+      },
+      {
+        "compress_size": 16597,
+        "file_size": 17029,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_strategy.npz"
+      },
+      {
+        "compress_size": 1396,
+        "file_size": 2147,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/preflop_blueprint.npz"
+      }
+    ],
+    "entry_count": 14,
+    "path": "submissions/best_green.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "size_bytes": 28208,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/equity.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 42354
+  },
+  {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 319,
+        "file_size": 519,
+        "is_dir": false,
+        "mode": 384,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 744,
+        "file_size": 1561,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 296,
+        "file_size": 428,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 506,
+        "file_size": 933,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 433,
+        "file_size": 708,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 438,
+        "file_size": 717,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 219,
+        "file_size": 282,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 380,
+        "file_size": 821,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      }
+    ],
+    "entry_count": 10,
+    "path": "submissions/v0_scaffold.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "7df4e70240f18338860b03a4b87c3b09ba810609d815e2509ba23e14b986ffb3",
+    "size_bytes": 5098,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/equity.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 7403
+  },
+  {
+    "data_entries": [
+      "data/.gitkeep"
+    ],
+    "entries": [
+      {
+        "compress_size": 319,
+        "file_size": 519,
+        "is_dir": false,
+        "mode": 384,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 1224,
+        "file_size": 3452,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 296,
+        "file_size": 428,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 506,
+        "file_size": 933,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 433,
+        "file_size": 708,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 438,
+        "file_size": 717,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 219,
+        "file_size": 282,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 380,
+        "file_size": 821,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/.gitkeep"
+      }
+    ],
+    "entry_count": 11,
+    "path": "submissions/v0_wired.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "0792be72e472c5a36608d3e9fafcada3b0a6a80da3f7f55c9b21fa4972c38112",
+    "size_bytes": 5682,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/equity.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 9294
+  },
+  {
+    "data_entries": [
+      "data/.gitkeep",
+      "data/preflop_blueprint.npz"
+    ],
+    "entries": [
+      {
+        "compress_size": 319,
+        "file_size": 519,
+        "is_dir": false,
+        "mode": 384,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 1764,
+        "file_size": 5909,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 296,
+        "file_size": 428,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 506,
+        "file_size": 933,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 704,
+        "file_size": 1603,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 915,
+        "file_size": 2124,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 890,
+        "file_size": 2019,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 504,
+        "file_size": 1575,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/.gitkeep"
+      },
+      {
+        "compress_size": 1396,
+        "file_size": 2147,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/preflop_blueprint.npz"
+      }
+    ],
+    "entry_count": 12,
+    "path": "submissions/v1_blueprint.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "f729b9ad311f6a5dc9b276f41302c5fcb7c16f288976d271be3d5764c5bede3c",
+    "size_bytes": 9289,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/equity.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 18691
+  },
+  {
+    "data_entries": [
+      "data/.gitkeep",
+      "data/flop_buckets.npz",
+      "data/flop_strategy.npz",
+      "data/preflop_blueprint.npz"
+    ],
+    "entries": [
+      {
+        "compress_size": 319,
+        "file_size": 519,
+        "is_dir": false,
+        "mode": 384,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 1979,
+        "file_size": 6771,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 904,
+        "file_size": 2363,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 1107,
+        "file_size": 3419,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 803,
+        "file_size": 1940,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 915,
+        "file_size": 2124,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 890,
+        "file_size": 2019,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 504,
+        "file_size": 1575,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/.gitkeep"
+      },
+      {
+        "compress_size": 463,
+        "file_size": 582,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_buckets.npz"
+      },
+      {
+        "compress_size": 16597,
+        "file_size": 17029,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_strategy.npz"
+      },
+      {
+        "compress_size": 1396,
+        "file_size": 2147,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/preflop_blueprint.npz"
+      }
+    ],
+    "entry_count": 14,
+    "path": "submissions/v2_postflop.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "348723049f8ba3e99e36c01ec703681c0bc41289431d956def393ef2e8da6b57",
+    "size_bytes": 28110,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/equity.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 41922
+  },
+  {
+    "data_entries": [
+      "data/.gitkeep",
+      "data/flop_buckets.npz",
+      "data/flop_strategy.npz",
+      "data/preflop_blueprint.npz"
+    ],
+    "entries": [
+      {
+        "compress_size": 319,
+        "file_size": 519,
+        "is_dir": false,
+        "mode": 384,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 1979,
+        "file_size": 6771,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 904,
+        "file_size": 2363,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 1107,
+        "file_size": 3419,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 803,
+        "file_size": 1940,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 915,
+        "file_size": 2124,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 890,
+        "file_size": 2019,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 504,
+        "file_size": 1575,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/.gitkeep"
+      },
+      {
+        "compress_size": 463,
+        "file_size": 582,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_buckets.npz"
+      },
+      {
+        "compress_size": 16597,
+        "file_size": 17029,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_strategy.npz"
+      },
+      {
+        "compress_size": 1396,
+        "file_size": 2147,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/preflop_blueprint.npz"
+      }
+    ],
+    "entry_count": 14,
+    "path": "submissions/v3_hardened.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "7caa4f6346f76191c83e8716a2ab4a3a516033f069d0a1058341ef2bc21dbec5",
+    "size_bytes": 28110,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/equity.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 41922
+  },
+  {
+    "data_entries": [
+      "data/.gitkeep",
+      "data/flop_buckets.npz",
+      "data/flop_strategy.npz",
+      "data/preflop_blueprint.npz"
+    ],
+    "entries": [
+      {
+        "compress_size": 319,
+        "file_size": 519,
+        "is_dir": false,
+        "mode": 384,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 2031,
+        "file_size": 6935,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 904,
+        "file_size": 2363,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 1153,
+        "file_size": 3687,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 803,
+        "file_size": 1940,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 915,
+        "file_size": 2124,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 890,
+        "file_size": 2019,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 504,
+        "file_size": 1575,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/.gitkeep"
+      },
+      {
+        "compress_size": 463,
+        "file_size": 582,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_buckets.npz"
+      },
+      {
+        "compress_size": 16597,
+        "file_size": 17029,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_strategy.npz"
+      },
+      {
+        "compress_size": 1396,
+        "file_size": 2147,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/preflop_blueprint.npz"
+      }
+    ],
+    "entry_count": 14,
+    "path": "submissions/v_final.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "size_bytes": 28208,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/equity.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 42354
+  },
+  {
+    "data_entries": [
+      "data/.gitkeep",
+      "data/flop_buckets.npz",
+      "data/flop_strategy.npz",
+      "data/preflop_blueprint.npz"
+    ],
+    "entries": [
+      {
+        "compress_size": 319,
+        "file_size": 519,
+        "is_dir": false,
+        "mode": 384,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 2403,
+        "file_size": 8966,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 904,
+        "file_size": 2363,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 1107,
+        "file_size": 3419,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 803,
+        "file_size": 1940,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 915,
+        "file_size": 2124,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 890,
+        "file_size": 2019,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 504,
+        "file_size": 1575,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/.gitkeep"
+      },
+      {
+        "compress_size": 463,
+        "file_size": 582,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_buckets.npz"
+      },
+      {
+        "compress_size": 16597,
+        "file_size": 17029,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_strategy.npz"
+      },
+      {
+        "compress_size": 1396,
+        "file_size": 2147,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/preflop_blueprint.npz"
+      }
+    ],
+    "entry_count": 14,
+    "path": "submissions/v_final_pre_x1.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "5d65561e522f595173408bd9a8ffbbd3246646edf36c897f30baab9776eb7cef",
+    "size_bytes": 28534,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/equity.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 44117
+  },
+  {
+    "data_entries": [
+      "data/.gitkeep",
+      "data/flop_buckets.npz",
+      "data/flop_strategy.npz",
+      "data/preflop_blueprint.npz"
+    ],
+    "entries": [
+      {
+        "compress_size": 319,
+        "file_size": 519,
+        "is_dir": false,
+        "mode": 384,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 2031,
+        "file_size": 6935,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 904,
+        "file_size": 2363,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 1153,
+        "file_size": 3687,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 803,
+        "file_size": 1940,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 915,
+        "file_size": 2124,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 890,
+        "file_size": 2019,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 504,
+        "file_size": 1575,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/.gitkeep"
+      },
+      {
+        "compress_size": 463,
+        "file_size": 582,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_buckets.npz"
+      },
+      {
+        "compress_size": 16597,
+        "file_size": 17029,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_strategy.npz"
+      },
+      {
+        "compress_size": 1396,
+        "file_size": 2147,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/preflop_blueprint.npz"
+      }
+    ],
+    "entry_count": 14,
+    "path": "submissions/v_final_reaudit.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "9a3b812ec8f44b55d6d2f7dfee0a89d7d187de3b572e55932bbcd89d1dacc0b0",
+    "size_bytes": 28208,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/equity.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 42354
+  },
+  {
+    "data_entries": [
+      "data/.gitkeep"
+    ],
+    "entries": [
+      {
+        "compress_size": 400,
+        "file_size": 654,
+        "is_dir": false,
+        "mode": 384,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 2669,
+        "file_size": 8735,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 2326,
+        "file_size": 7298,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 3101,
+        "file_size": 9214,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 3155,
+        "file_size": 8656,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 1520,
+        "file_size": 4531,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 2389,
+        "file_size": 9110,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 1065,
+        "file_size": 2602,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/.gitkeep"
+      }
+    ],
+    "entry_count": 11,
+    "path": "submissions/v_qual2_ship_d54640e0.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "d54640e081eb6d1113ab70238c3b6f37e3d8457898b9e80cdc28d7c2a71f4421",
+    "size_bytes": 18492,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/equity.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 52234
+  }
+]

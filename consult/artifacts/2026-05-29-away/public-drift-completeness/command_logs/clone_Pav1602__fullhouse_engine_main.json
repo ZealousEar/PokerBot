@@ -1,0 +1,20 @@
+{
+  "label": "clone_Pav1602/fullhouse-engine_main",
+  "cmd": [
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "--branch",
+    "main",
+    "https://github.com/Pav1602/fullhouse-engine.git",
+    "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/Pav1602__fullhouse_engine__main"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot",
+  "started_at": "2026-05-29T15:14:42Z",
+  "finished_at": "2026-05-29T15:14:46Z",
+  "elapsed_s": 3.706,
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "Cloning into '/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/Pav1602__fullhouse_engine__main'...\n"
+}

@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+    "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-28-gauntlet-variance/timed_smoke.py",
+    "--repo",
+    "/Users/farhad/Code/PokerBot-gauntlet",
+    "--zip",
+    "submissions/v_final.zip",
+    "--hands",
+    "200",
+    "--seed",
+    "42"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+  "duration_s": 4.031749725341797,
+  "finished_utc": "2026-05-28T02:06:31Z",
+  "label": "smoke_timed",
+  "log": "smoke_timed.log",
+  "passed": true,
+  "returncode": 0,
+  "started_utc": "2026-05-28T02:06:27Z"
+}

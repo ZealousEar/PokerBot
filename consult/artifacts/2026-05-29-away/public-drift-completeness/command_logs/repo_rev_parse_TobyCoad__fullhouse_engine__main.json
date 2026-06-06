@@ -1,0 +1,15 @@
+{
+  "label": "repo_rev_parse_TobyCoad__fullhouse_engine__main",
+  "cmd": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/TobyCoad__fullhouse_engine__main",
+  "started_at": "2026-05-29T15:14:47Z",
+  "finished_at": "2026-05-29T15:14:47Z",
+  "elapsed_s": 0.006,
+  "returncode": 0,
+  "stdout": "93516f33675d32beaeb3228a554c1323926cd71d\n",
+  "stderr": ""
+}

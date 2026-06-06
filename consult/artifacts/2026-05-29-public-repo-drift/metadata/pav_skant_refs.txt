@@ -1,0 +1,123 @@
+git log skant mentions
+
+file refs
+./bots/skantbot7.5/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot7.5/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot7.5/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot7.4/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot7.4/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot7.4/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot7.3/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot7.3/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot7.3/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot6_phase5_baseline/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot6_phase5_baseline/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot6_phase5_baseline/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot6_phase5_baseline/bot.py:198:    For sweep-time env injection, use harness/skantbot_dev/bot.py instead."""
+./bots/skantbot6_phase4_baseline/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot6_phase4_baseline/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot6_phase4_baseline/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot6_phase4_baseline/bot.py:194:    For sweep-time env injection, use harness/skantbot_dev/bot.py instead."""
+./bots/skantbot4/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot4/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot4/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot4/bot.py:182:    For sweep-time env injection, use harness/skantbot_dev/bot.py instead."""
+./bots/skantbot6_phase1/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot6_phase1/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot6_phase1/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot6_phase1/bot.py:182:    For sweep-time env injection, use harness/skantbot_dev/bot.py instead."""
+./bots/skantbot7.8/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot7.8/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot7.8/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot7.6/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot7.6/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot7.6/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot7.1/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot7.1/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot7.1/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot7.1/bot_diagnostic_logging.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot7.1/bot_diagnostic_logging.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot7.1/bot_diagnostic_logging.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot7.7/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot7.7/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot7.7/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot7.9/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot7.9/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot7.9/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot6_phase6_baseline/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot6_phase6_baseline/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot6_phase6_baseline/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot6_phase6_baseline/bot.py:207:    For sweep-time env injection, use harness/skantbot_dev/bot.py instead."""
+./bots/skantbot7/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot7/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot7/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./bots/skantbot6/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./bots/skantbot6/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./bots/skantbot6/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./trial_318_unseen.log:2:  bot_a: bots/skantbot6/bot.py
+./trial_318_unseen.log:3:  bot_b: bots/skantbot4/bot.py
+./trial_179_unseen.log:2:  bot_a: bots/skantbot6/bot.py
+./trial_179_unseen.log:3:  bot_b: bots/skantbot4/bot.py
+./trial_106_train.log:2:  bot_a: bots/skantbot6/bot.py
+./trial_106_train.log:3:  bot_b: bots/skantbot4/bot.py
+./BOT_BUGS.md:8:## [CRITICAL] skantbot3 fails tournament validator
+./BOT_BUGS.md:10:**File:** `bots/skantbot3/bot (1).py`  
+./BOT_BUGS.md:11:**Detected:** `python3 sandbox/validator.py "bots/skantbot3/bot (1).py"`
+./BOT_BUGS.md:15:❌ FAILED  —  bots/skantbot3/bot (1).py
+./BOT_BUGS.md:24:**Impact:** If submitted as-is, skantbot3 will be **rejected at validation**
+./BOT_BUGS.md:31:   values, and remove `import os`. The harness shim (`harness/skantbot_tunable/bot.py`)
+./BOT_BUGS.md:70:  real hand 20 from pav_skantbot_7_bust.txt (real board was 8h 2c Jd | 2h, not 2s Js Qs | 3c).
+./BOT_BUGS.md:80:- Result: skantbot7.5 CALLS hand 38 (the catastrophic call). 7.3 and 7.4 fold it.
+./BOT_BUGS.md:103:skantbot7.6 (`bots/skantbot7.6/bot.py`, branch `skantbot7.6/dev`) fixes both
+./tests/test_pav_bust_regression.py:19:        bot_ids=["human", "skantbot7"],
+./tests/test_pav_bust_regression.py:20:        starting_stacks={"human": stacks[0], "skantbot7": stacks[1]},
+./tests/test_pav_bust_regression.py:45:    bot = _load_bot("bots/skantbot7.4/bot.py")
+./tests/test_hand_38_leak.py:3:Source: pav_skantbot_7_bust.txt, hand human_vs_skantbot7_hu_h0038.
+./tests/test_hand_38_leak.py:48:        hand_id="human_vs_skantbot7_hu_h0038",
+./tests/test_hand_38_leak.py:49:        bot_ids=["human", "skantbot7"],
+./tests/test_hand_38_leak.py:50:        starting_stacks={"human": 17566, "skantbot7": 2434},
+./tests/test_hand_38_leak.py:92:    bot = _load_bot("bots/skantbot7.3/bot.py")
+./tests/test_hand_38_leak.py:116:    spec = importlib.util.spec_from_file_location("bot", "bots/skantbot7.3/bot.py")
+./tests/test_hand_38_leak.py:163:    bot = _load_bot("bots/skantbot7.3/bot.py")
+./tests/test_hand_38_leak.py:165:    print(f"\n[overall] skantbot7.3 decision: {decision}")
+./tests/test_hand_38_leak.py:174:def test_hand_38_skantbot7_3_same_leak():
+./tests/test_hand_38_leak.py:175:    """skantbot7.3 folds hand 38 — but via bug-cancellation, not a real fix.
+./tests/test_hand_38_leak.py:183:    bot = _load_bot("bots/skantbot7.3/bot.py")
+./tests/test_hand_38_leak.py:187:        f"skantbot7.3 must fold hand 38, got: {decision}"
+./tests/test_hand_38_leak.py:193:    """skantbot7.4 must fold hand 38."""
+./tests/test_hand_38_leak.py:198:    spec = importlib.util.spec_from_file_location("bot74", "bots/skantbot7.4/bot.py")
+./tests/test_hand_38_leak.py:205:        f"skantbot7.4 must fold hand 38, got: {decision}"
+./tests/test_hand_38_leak.py:215:        test_hand_38_skantbot7_3_same_leak,
+./tests/test_hand_38_leak.py:227:    """skantbot7.6 must fold hand 38 — for sound reasons (both leaks fixed).
+./tests/test_hand_38_leak.py:239:    bot = _load_bot("bots/skantbot7.6/bot.py")
+./tests/test_hand_38_leak.py:243:        f"skantbot7.6 must fold hand 38 on every run, got: {decisions}"
+./tests/diagnose_hand_20.py:18:        bot_ids=["human", "skantbot7"],
+./tests/diagnose_hand_20.py:19:        starting_stacks={"human": 17236, "skantbot7": 2764},
+./tests/diagnose_hand_20.py:51:    mod = _load_bot("bots/skantbot7.4/bot.py")
+./play_human_hu.py:10:parser = argparse.ArgumentParser(description="Play heads-up against a skantbot")
+./play_human_hu.py:11:parser.add_argument("--bot", default="skantbot7.9",
+./play_human_hu.py:12:                    help="Bot to play against (default: skantbot7.9). Examples: skantbot7, skantbot7.3, skantbot4")
+./TRACE_2B_v77.md:1:# skantbot 7.7 Phase 2b — preflop 4-bet-range gate (trace table)
+./trial_158_unseen.log:2:  bot_a: bots/skantbot6/bot.py
+./trial_158_unseen.log:3:  bot_b: bots/skantbot4/bot.py
+./Tournament analysis.md:514:here is what pav has done so far \[11:24 pm, 28/04/2026\] pavan kumar: alright some bugs with postflop logic i think \[11:24 pm, 28/04/2026\] guneet: interestin \[11:24 pm, 28/04/2026\] pavan kumar: i think i got it \[11:25 pm, 28/04/2026\] pavan kumar: its tryna be aggresive with the agressor \[11:25 pm, 28/04/2026\] pavan kumar: and also keeps raising the mathematicians checks \[11:25 pm, 28/04/2026\] pavan kumar: but the mathematician usually dosent bluff \[11:25 pm, 28/04/2026\] pavan kumar: so need to alter code to only raise with a monster hand \[11:26 pm, 28/04/2026\] guneet: yeah we can add in that \[11:26 pm, 28/04/2026\] pavan kumar: lemme push ts \[11:26 pm, 28/04/2026\] pavan kumar: i think the pre flop shi is sorted tho \[11:26 pm, 28/04/2026\] guneet: ok lit \[11:34 pm, 28/04/2026\] guneet: claude link still doesnt work \[11:36 pm, 28/04/2026\] pavan kumar: one sec \[11:45 pm, 28/04/2026\] pavan kumar: alrigt \[11:45 pm, 28/04/2026\] pavan kumar: its there in teh repo \[11:46 pm, 28/04/2026\] pavan kumar: skantbot2 is the latest one \[11:46 pm, 28/04/2026\] pavan kumar: lowk its got a 44% winrate \[11:46 pm, 28/04/2026\] pavan kumar: and variane is huge \[11:46 pm, 28/04/2026\] pavan kumar: see what u can do with it but decent start i think
+./Tournament analysis.md:546:Clone the repo into your WSL2 home directory. `pip install eval7 flask numpy scipy optuna`. Run `python3 demo.py` to confirm the reference bots play each other without errors. Run `python3 sandbox/match.py bots/skantbot2/bot.py bots/shark/bot.py --hands 1000 --verbose` and confirm skantbot2 doesn't crash and produces sensible chip deltas. Run `python3 sandbox/validator.py bots/skantbot2/bot.py` and confirm it passes. If any of these fail, fix before going further — there's no point optimising a broken setup.
+./Tournament analysis.md:558:Test it by comparing skantbot2 to itself — paired delta should be near zero, stderr should be small. If it's not, the harness is broken.
+./Tournament analysis.md:569:Run skantbot2 against the full pool with the harness. Save the per-opponent breakdown — this is your baseline. Any future change has to beat this on the held-out set, not just the training set.
+./Tournament analysis.md:575:Trick for plumbing the Config through to the bot: since the bot runs in a subprocess and can't read files in production, but _can_ during local testing, write a wrapper bot in `harness/skantbot_tunable/bot.py` that imports skantbot2's logic and reads its Config from environment variables. Optuna sets the env vars before each trial.
+./Tournament analysis.md:585:*   A per-opponent breakdown showing where skantbot2 is bleeding chips. His "aggressive with the aggressor" intuition will either be confirmed by the data (specific spots where vs. high-VPIP-PFR opponents skantbot2 loses big) or refuted. Either way he can iterate with evidence.
+./Tournament analysis.md:634:You're building the test infrastructure for a poker bot competition. The bot itself (`bots/skantbot2/bot.py`) is owned by another collaborator — **do not modify it**. Your job is to build harness, opponent pool, and parameter sweep so the bot author has fast, low-noise feedback. If you find what looks like a bug in the bot, write it to a file called `BOT_BUGS.md` in the repo root and keep moving. Don't fix it.
+./Tournament analysis.md:643:4.  Sanity check the engine: `python3 sandbox/match.py bots/skantbot2/bot.py bots/shark/bot.py --hands 100 --verbose`. Confirm it runs to completion, prints chip deltas, no errors.
+./Tournament analysis.md:644:5.  Run validator on skantbot2: `python3 sandbox/validator.py bots/skantbot2/bot.py`. Should pass all 4 tests under 2s each.
+./Tournament analysis.md:656:*   Acceptance test: comparing skantbot2 to itself should give paired\_diff\_mean ≈ 0 with stderr small (< 50 chips for 100 seeds). If not, harness is broken.
+./Tournament analysis.md:683:Create `harness/baseline.py`. Runs skantbot2 against the full pool (excluding heldout), prints a per-opponent breakdown sorted by chip delta. Output:
+./Tournament analysis.md:706:Plumbing: the bot runs in a subprocess and can't read files. Solution — write a wrapper bot at `harness/skantbot_tunable/bot.py` that imports `bots.skantbot2.bot` and overrides `CONFIG` from environment variables at module load. Optuna sets the env vars before each trial via the subprocess env.
+./Tournament analysis.md:712:Acceptance test: best config from sweep should beat default skantbot2 by a measurable margin (paired diff > 200 chips) on the _training pool_, and roughly preserve that edge on the _held-out pool_. If held-out is much worse, pool wasn't diverse enough — flag it, don't claim victory.
+./Tournament analysis.md:716:*   Don't modify `bots/skantbot2/bot.py` or any file under `bots/`. Bot logic is owned elsewhere.
+./Tournament analysis.md:863:Before shipping v0.3, run `python3 sandbox/match.py bots/skantbot3/bot.py bots/skantbot2/bot.py --hands 5000`. With default Config, v0.3 should be within ~200 chips of v0.2 (paired delta ≈ 0). If it's not, the refactor changed behaviour somewhere. Find it before committing.
+./harness/skantbot7_9_dev/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./harness/skantbot7_9_dev/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./harness/skantbot7_9_dev/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py
+./harness/skantbot7_8_dev/bot.py:37:# NOTE: This is the SUBMISSION version of skantbot. It does NOT import os
+./harness/skantbot7_8_dev/bot.py:41:# For tuning, use harness/skantbot_dev/bot.py which keeps load_config_from_env().
+./harness/skantbot7_8_dev/bot.py:43:# and re-validate this file with python sandbox/validator.py bots/skantbot4/bot.py

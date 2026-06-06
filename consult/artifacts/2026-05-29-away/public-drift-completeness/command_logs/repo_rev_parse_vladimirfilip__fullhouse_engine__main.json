@@ -1,0 +1,15 @@
+{
+  "label": "repo_rev_parse_vladimirfilip__fullhouse_engine__main",
+  "cmd": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/vladimirfilip__fullhouse_engine__main",
+  "started_at": "2026-05-29T15:14:56Z",
+  "finished_at": "2026-05-29T15:14:56Z",
+  "elapsed_s": 0.006,
+  "returncode": 0,
+  "stdout": "d3e48d5ed86e20012826612eeffc15b0f982d0a6\n",
+  "stderr": ""
+}

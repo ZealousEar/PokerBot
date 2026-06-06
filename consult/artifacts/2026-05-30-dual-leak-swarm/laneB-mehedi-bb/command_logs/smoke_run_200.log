@@ -1,0 +1,19 @@
+[smoke_run] docker shim: translating --no-new-privileges to --security-opt no-new-privileges
+[smoke_run] OK: normal_bust: fewer than two bots remain; busted=template
+{
+  "requested_hands": 200,
+  "actual_hands": 136,
+  "early_termination_reason": "normal_bust: fewer than two bots remain; busted=template",
+  "hero_id": "v_mehedi_bb_defense_laneB",
+  "hero_errors": [],
+  "chip_delta": {
+    "v_mehedi_bb_defense_laneB": 10000,
+    "template": -10000
+  },
+  "final_stacks": {
+    "v_mehedi_bb_defense_laneB": 20000,
+    "template": 0
+  },
+  "errors": {},
+  "duration_s": 2.91
+}

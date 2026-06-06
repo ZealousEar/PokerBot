@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+    "tools/benchmark.py",
+    "--ablate-overlay",
+    "--hands",
+    "10000",
+    "--bot",
+    "submissions/v_final.zip",
+    "--paired-seed-base",
+    "42"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+  "duration_s": 723.7508363723755,
+  "finished_utc": "2026-05-28T01:45:23Z",
+  "label": "benchmark_ablate_overlay",
+  "log": "benchmark_ablate_overlay.log",
+  "passed": true,
+  "returncode": 0,
+  "started_utc": "2026-05-28T01:33:19Z"
+}

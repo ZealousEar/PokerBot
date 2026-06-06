@@ -1,0 +1,482 @@
+[
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "abayojumumichael/fullhouse-engine",
+    "html_url": "https://github.com/abayojumumichael/fullhouse-engine",
+    "pushed_at": "2026-05-24T20:04:02Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-28T23:27:23Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "MatusGib/fullhouse-engine",
+    "html_url": "https://github.com/MatusGib/fullhouse-engine",
+    "pushed_at": "2026-05-28T21:58:34Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-28T21:40:51Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "study9372/fullhouse-engine",
+    "html_url": "https://github.com/study9372/fullhouse-engine",
+    "pushed_at": "2026-05-24T20:04:02Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-28T15:51:45Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "Benjamin-Yu-Sheng-Chang/fullhouse-hackathon",
+    "html_url": "https://github.com/Benjamin-Yu-Sheng-Chang/fullhouse-hackathon",
+    "pushed_at": "2026-05-28T14:39:04Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-28T14:40:36Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "Mehedi-dev-2404/fullhouse-engine",
+    "html_url": "https://github.com/Mehedi-dev-2404/fullhouse-engine",
+    "pushed_at": "2026-05-27T23:44:07Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-27T23:44:11Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "mybot",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": [
+      "mybot"
+    ]
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "RemiSeg/fullhouse-engine",
+    "html_url": "https://github.com/RemiSeg/fullhouse-engine",
+    "pushed_at": "2026-05-24T20:04:02Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-27T19:33:59Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "ds726/fullhouse-engine",
+    "html_url": "https://github.com/ds726/fullhouse-engine",
+    "pushed_at": "2026-05-24T20:04:02Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-27T16:05:58Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "Amine0411/fullhouse-engine",
+    "html_url": "https://github.com/Amine0411/fullhouse-engine",
+    "pushed_at": "2026-05-24T20:04:02Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-26T00:05:30Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "NovaIMario/fullhouse-engine",
+    "html_url": "https://github.com/NovaIMario/fullhouse-engine",
+    "pushed_at": "2026-05-24T20:04:02Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-25T19:52:51Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "Con-TI/fullhouse-engine",
+    "html_url": "https://github.com/Con-TI/fullhouse-engine",
+    "pushed_at": "2026-05-25T18:17:42Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-25T18:17:45Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "mybot",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": [
+      "mybot"
+    ]
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "afinner/fullhouse-engine",
+    "html_url": "https://github.com/afinner/fullhouse-engine",
+    "pushed_at": "2026-05-24T20:04:02Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-25T10:18:47Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "Yutongzhang20080108/fullhouse-engine",
+    "html_url": "https://github.com/Yutongzhang20080108/fullhouse-engine",
+    "pushed_at": "2026-05-24T20:04:02Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-25T05:24:23Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "lucashsu007-create/fullhouse-engine",
+    "html_url": "https://github.com/lucashsu007-create/fullhouse-engine",
+    "pushed_at": "2026-05-26T16:15:41Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-26T16:16:21Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "Ganto23/fullhouse-engine",
+    "html_url": "https://github.com/Ganto23/fullhouse-engine",
+    "pushed_at": "2026-05-21T21:46:41Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-23T16:32:41Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "BouillieAnonymous/fullhouse-engine",
+    "html_url": "https://github.com/BouillieAnonymous/fullhouse-engine",
+    "pushed_at": "2026-05-21T21:46:41Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-22T14:50:03Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "famadeo/fullhouse-engine",
+    "html_url": "https://github.com/famadeo/fullhouse-engine",
+    "pushed_at": "2026-05-22T18:04:14Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-22T18:04:19Z",
+    "bot_dirs": [
+      "aggressor",
+      "codex_holdem",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": [
+      "codex_holdem"
+    ]
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "sundubu04/fullhouse-engine",
+    "html_url": "https://github.com/sundubu04/fullhouse-engine",
+    "pushed_at": "2026-05-19T21:17:35Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-20T15:21:08Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "jickzx/fullhouse-engine",
+    "html_url": "https://github.com/jickzx/fullhouse-engine",
+    "pushed_at": "2026-05-19T13:55:30Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-19T13:59:46Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "AyushGupta05/fullhouse-engine",
+    "html_url": "https://github.com/AyushGupta05/fullhouse-engine",
+    "pushed_at": "2026-05-14T12:20:27Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-17T18:27:01Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "chunyang-w/fullhouse-engine",
+    "html_url": "https://github.com/chunyang-w/fullhouse-engine",
+    "pushed_at": "2026-05-14T12:20:27Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-17T16:49:20Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "navaneetham-aicomputing/fullhouse-engine",
+    "html_url": "https://github.com/navaneetham-aicomputing/fullhouse-engine",
+    "pushed_at": "2026-05-14T12:20:27Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-16T13:51:31Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "stoppedtime24/fullhouse-engine",
+    "html_url": "https://github.com/stoppedtime24/fullhouse-engine",
+    "pushed_at": "2026-05-28T21:58:10Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-28T21:58:14Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "mybot",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": [
+      "mybot"
+    ]
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "Linglingletsgo/fullhouse-engine",
+    "html_url": "https://github.com/Linglingletsgo/fullhouse-engine",
+    "pushed_at": "2026-05-15T12:03:28Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-15T11:51:10Z",
+    "bot_dirs": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "shark",
+      "template"
+    ],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "krishypatel2007/fullhouse-engine",
+    "html_url": "https://github.com/krishypatel2007/fullhouse-engine",
+    "pushed_at": "2026-05-14T12:20:27Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-14T13:38:35Z",
+    "bot_dirs": [],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "vladimirfilip/fullhouse-engine",
+    "html_url": "https://github.com/vladimirfilip/fullhouse-engine",
+    "pushed_at": "2026-05-28T22:37:32Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-28T22:37:36Z",
+    "bot_dirs": [],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "rishabhkarwal/fullhouse",
+    "html_url": "https://github.com/rishabhkarwal/fullhouse",
+    "pushed_at": "2026-05-07T19:22:11Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-13T14:17:29Z",
+    "bot_dirs": [],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "aemilani/fullhouse-engine",
+    "html_url": "https://github.com/aemilani/fullhouse-engine",
+    "pushed_at": "2026-05-07T19:22:11Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-12T13:04:01Z",
+    "bot_dirs": [],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "Littleguygabe/fullhouse-poker",
+    "html_url": "https://github.com/Littleguygabe/fullhouse-poker",
+    "pushed_at": "2026-05-22T08:06:32Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-22T08:06:36Z",
+    "bot_dirs": [],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "agrawalneel25/fullhouse-engine",
+    "html_url": "https://github.com/agrawalneel25/fullhouse-engine",
+    "pushed_at": "2026-05-12T16:52:28Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-10T16:25:25Z",
+    "bot_dirs": [],
+    "non_template_bot_dirs": []
+  },
+  {
+    "default_branch": "main",
+    "forks_count": 0,
+    "full_name": "Blessing-Emmanuel/fullhouse-engine",
+    "html_url": "https://github.com/Blessing-Emmanuel/fullhouse-engine",
+    "pushed_at": "2026-05-07T19:22:11Z",
+    "stargazers_count": 0,
+    "updated_at": "2026-05-09T17:00:51Z",
+    "bot_dirs": [],
+    "non_template_bot_dirs": []
+  }
+]

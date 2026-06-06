@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+    "tools/benchmark.py",
+    "--self-play",
+    "--vs-prior",
+    "--hands",
+    "10000",
+    "--bot",
+    "submissions/v_final.zip",
+    "--paired-seed-base",
+    "42"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+  "duration_s": 143.0760998725891,
+  "finished_utc": "2026-05-28T02:06:17Z",
+  "label": "benchmark_self_play_vs_prior",
+  "log": "benchmark_self_play_vs_prior.log",
+  "passed": true,
+  "returncode": 0,
+  "started_utc": "2026-05-28T02:03:54Z"
+}

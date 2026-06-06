@@ -1,0 +1,12 @@
+{
+  "handId": "toby_can_check_001",
+  "players": ["hero", "villain"],
+  "bigBlind": 100,
+  "actions": [
+    {"street": "pf", "actor": "hero", "action": "raise", "amountBB": 2.0, "position": "button"},
+    {"street": "f", "actor": "hero", "action": "check", "board": ["As", "7s", "2d"], "canCheck": true, "position": "button"},
+    {"street": "t", "actor": "hero", "action": "check", "board": ["As", "7s", "2d", "4c"], "canCheck": true, "position": "button"},
+    {"street": "r", "actor": "hero", "action": "bet", "amountBB": 18.13, "board": ["As", "7s", "2d", "4c", "9h"], "canCheck": true, "position": "button"}
+  ],
+  "chipDeltas": {"hero": -2536}
+}

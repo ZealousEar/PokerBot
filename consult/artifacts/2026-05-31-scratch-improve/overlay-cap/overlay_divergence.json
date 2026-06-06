@@ -1,0 +1,146 @@
+{
+  "fields": {
+    "F_DETERMINISTIC": [
+      "template",
+      "aggressor",
+      "mathematician",
+      "shark",
+      "ref_bot_2"
+    ],
+    "F_PUBLIC": [
+      "toby_master",
+      "mehedi_mybot",
+      "famadeo",
+      "neel",
+      "pav_skantbot7_9"
+    ],
+    "F_TOBY_MEHEDI": [
+      "toby_master",
+      "mehedi_mybot",
+      "template",
+      "shark",
+      "ref_bot_2"
+    ],
+    "F_TOBY_WEAK": [
+      "toby_master",
+      "template",
+      "mathematician",
+      "shark",
+      "ref_bot_2"
+    ]
+  },
+  "hands_per_match": 400,
+  "hero_zip": "/Users/farhad/Code/PokerBot/submissions/v_final.zip",
+  "results": {
+    "F_DETERMINISTIC": {
+      "cap010_change_breakdown": {
+        "all_in->fold": 1
+      },
+      "cap010_changed_per_1000": 1.02,
+      "cap010_changed_vs_locked": 1,
+      "cap015_change_breakdown": {
+        "all_in->fold": 1
+      },
+      "cap015_changed_per_1000": 1.02,
+      "cap015_changed_vs_locked": 1,
+      "locked_action_distribution": {
+        "all_in": 1
+      },
+      "overlay_fired_locked": 1,
+      "overlay_fired_locked_per_1000": 1.02,
+      "preflop_hero_decisions": 983,
+      "trigger_detected": 2,
+      "trigger_detected_per_1000": 2.03,
+      "trigger_distribution": {
+        "fold_prone_only": 1,
+        "high_pressure": 1
+      }
+    },
+    "F_PUBLIC": {
+      "cap010_change_breakdown": {
+        "all_in->fold": 5
+      },
+      "cap010_changed_per_1000": 2.05,
+      "cap010_changed_vs_locked": 5,
+      "cap015_change_breakdown": {
+        "all_in->fold": 5
+      },
+      "cap015_changed_per_1000": 2.05,
+      "cap015_changed_vs_locked": 5,
+      "locked_action_distribution": {
+        "all_in": 5,
+        "call": 6,
+        "fold": 17
+      },
+      "overlay_fired_locked": 28,
+      "overlay_fired_locked_per_1000": 11.49,
+      "preflop_hero_decisions": 2437,
+      "trigger_detected": 41,
+      "trigger_detected_per_1000": 16.82,
+      "trigger_distribution": {
+        "fold_prone_only": 19,
+        "high_pressure": 22
+      }
+    },
+    "F_TOBY_MEHEDI": {
+      "cap010_change_breakdown": {
+        "all_in->fold": 1
+      },
+      "cap010_changed_per_1000": 0.48,
+      "cap010_changed_vs_locked": 1,
+      "cap015_change_breakdown": {
+        "all_in->fold": 1
+      },
+      "cap015_changed_per_1000": 0.48,
+      "cap015_changed_vs_locked": 1,
+      "locked_action_distribution": {
+        "all_in": 1,
+        "fold": 2
+      },
+      "overlay_fired_locked": 3,
+      "overlay_fired_locked_per_1000": 1.45,
+      "preflop_hero_decisions": 2062,
+      "trigger_detected": 3,
+      "trigger_detected_per_1000": 1.45,
+      "trigger_distribution": {
+        "high_pressure": 3
+      }
+    },
+    "F_TOBY_WEAK": {
+      "cap010_change_breakdown": {
+        "all_in->fold": 1
+      },
+      "cap010_changed_per_1000": 0.33,
+      "cap010_changed_vs_locked": 1,
+      "cap015_change_breakdown": {
+        "all_in->fold": 1
+      },
+      "cap015_changed_per_1000": 0.33,
+      "cap015_changed_vs_locked": 1,
+      "locked_action_distribution": {
+        "all_in": 1,
+        "fold": 2
+      },
+      "overlay_fired_locked": 3,
+      "overlay_fired_locked_per_1000": 1.0,
+      "preflop_hero_decisions": 2998,
+      "trigger_detected": 3,
+      "trigger_detected_per_1000": 1.0,
+      "trigger_distribution": {
+        "high_pressure": 3
+      }
+    }
+  },
+  "seeds": [
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "label": "commit_date_vladimirfilip__fullhouse_engine__main",
+  "cmd": [
+    "git",
+    "show",
+    "-s",
+    "--format=%cI",
+    "HEAD"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/vladimirfilip__fullhouse_engine__main",
+  "started_at": "2026-05-29T15:14:56Z",
+  "finished_at": "2026-05-29T15:14:56Z",
+  "elapsed_s": 0.006,
+  "returncode": 0,
+  "stdout": "2026-05-29T10:13:56+01:00\n",
+  "stderr": ""
+}

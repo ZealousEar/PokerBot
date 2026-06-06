@@ -1,0 +1,30 @@
+{
+  "zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-06-04-camp2-search/zips/cand_B-cbet.zip",
+  "sha256": "c569cd3388057eaf39df38c40d75fa759250eeb2a12cccf650acdd967ccc823b",
+  "PASS": true,
+  "checks": {
+    "validator": {
+      "pass": true,
+      "rc": 0,
+      "tail": "ise\",\n        \"amount\": 250\n      },\n      \"elapsed\": 0.001\n    },\n    {\n      \"test\": \"postflop_can_check\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 150\n      },\n      \"elapsed\": 0.005\n    },\n    {\n      \"test\": \"river_facing_large_bet\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"fold\"\n      },\n      \"elapsed\": 0.012\n    },\n    {\n      \"test\": \"short_stack_all_in_decision\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"all_in\"\n      },\n      \"elapsed\": 0.0\n    }\n  ],\n  \"data_dir\": \"/tmp/claude-501/fhval_45icwrde/data\"\n}\n"
+    },
+    "forbidden_scan": {
+      "pass": true,
+      "issues": []
+    },
+    "edge": {
+      "pass": true,
+      "rc": 0,
+      "tail": "..............                                                           [100%]\n14 passed in 1.68s\n"
+    },
+    "probes": {
+      "pass": true,
+      "detail": "11 probes clean"
+    },
+    "smoke": {
+      "pass": true,
+      "rc": 0,
+      "tail": "{\n  \"requested_hands\": 200,\n  \"actual_hands\": 200,\n  \"early_termination_reason\": \"requested_hands_completed\",\n  \"hero_id\": \"cand_B-cbet\",\n  \"hero_errors\": [],\n  \"chip_delta\": {\n    \"cand_B-cbet\": 5550,\n    \"template\": -5550\n  },\n  \"final_stacks\": {\n    \"cand_B-cbet\": 15550,\n    \"template\": 4450\n  },\n  \"errors\": {},\n  \"duration_s\": 3.27\n}\n"
+    }
+  }
+}

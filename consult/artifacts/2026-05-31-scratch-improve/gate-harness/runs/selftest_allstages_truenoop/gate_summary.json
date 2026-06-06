@@ -1,0 +1,208 @@
+{
+  "candidate": {
+    "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/true_noop_candidate.zip",
+    "sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "config": {
+    "allow_small_seeds": true,
+    "bust_tol": 0.0,
+    "hands": 400,
+    "jobs": 1,
+    "p50_tol": 0.0,
+    "pods": [
+      "C0"
+    ],
+    "pythonhashseed": "0",
+    "seed_base": 142,
+    "seeds": 2,
+    "skip_stage1": false,
+    "skip_stage2": false,
+    "use_docker": false
+  },
+  "died_at_stage": null,
+  "expected_protected_sha": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+  "generated_at": "2026-05-31T01:17:13Z",
+  "locked": {
+    "path": "submissions/v_final.zip",
+    "sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "opponent_zips": {
+    "aggressor": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/aggressor.zip",
+      "sha256": "62db39f64a8121e860c718c6e9ddbb3119e7ced4dc2fd6a7d8e0dd9d2687b7c8",
+      "source": "ext/fullhouse-engine/bots/aggressor"
+    },
+    "mathematician": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/mathematician.zip",
+      "sha256": "4fd347a4a46efbc7c3de79bca7333109462ceb4d16e456e1e5b3ad3703dae664",
+      "source": "ext/fullhouse-engine/bots/mathematician"
+    },
+    "ref_bot_2": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/ref_bot_2.zip",
+      "sha256": "88bf4ad82cba016ada5ee7d9508b9d18066c478569d31ee8b73f4670318af635",
+      "source": "ext/fullhouse-engine/bots/ref_bot_2"
+    },
+    "shark": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/shark.zip",
+      "sha256": "6f1301cbc36c8696ba0ac56ac30509adcb2cc9b8d6001bb5c4d04d63752eb5bd",
+      "source": "ext/fullhouse-engine/bots/shark"
+    },
+    "template": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/template.zip",
+      "sha256": "f06ebf9bae229f3854d61b6d13e321f9cd63f79455c664cc32c6dbf06dee1087",
+      "source": "ext/fullhouse-engine/bots/template"
+    }
+  },
+  "pods": {
+    "all_pods_pass": true,
+    "any_incomplete": false,
+    "compositions": {
+      "C0": {
+        "bust_rate_delta_candidate_minus_locked": -0.5,
+        "bust_regression": false,
+        "candidate_bust_rate": 0.0,
+        "candidate_busts": 0,
+        "candidate_chip_delta": {
+          "count": 2,
+          "max": 13484.0,
+          "mean": 12827.0,
+          "min": 12170.0,
+          "p10": 12301.4,
+          "p25": 12498.5,
+          "p50": 12827.0,
+          "p75": 13155.5,
+          "p90": 13352.6,
+          "stdev": 929.14
+        },
+        "candidate_hero_action_errors": 0,
+        "candidate_hero_decisions": 958,
+        "candidate_hero_p99_decide_latency_ms": 0.936,
+        "complete": true,
+        "locked_bust_rate": 0.5,
+        "locked_busts": 1,
+        "locked_chip_delta": {
+          "count": 2,
+          "max": 8120.0,
+          "mean": -940.0,
+          "min": -10000.0,
+          "p10": -8188.0,
+          "p25": -5470.0,
+          "p50": -940.0,
+          "p75": 3590.0,
+          "p90": 6308.0,
+          "stdev": 12812.77
+        },
+        "marginal_p50_delta_candidate_minus_locked": 13767.0,
+        "missing_candidate_seeds": [],
+        "missing_locked_seeds": [],
+        "p50_regression": false,
+        "paired_count": 2,
+        "paired_diff_candidate_minus_locked": {
+          "count": 2,
+          "max": 23484.0,
+          "mean": 13767.0,
+          "min": 4050.0,
+          "p10": 5993.4,
+          "p25": 8908.5,
+          "p50": 13767.0,
+          "p75": 18625.5,
+          "p90": 21540.6,
+          "stdev": 13741.91
+        },
+        "pod_pass": true,
+        "scheduled_count": 2
+      }
+    }
+  },
+  "protected_sha_after": {
+    "submissions/best_green.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "submissions/v_final.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "protected_sha_before": {
+    "submissions/best_green.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "submissions/v_final.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "protected_sha_ok": true,
+  "stages": [
+    {
+      "cmd": [
+        "/Users/farhad/Code/PokerBot/.venv/bin/python",
+        "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/sandbox/validator.py",
+        "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/gate-harness/true_noop_candidate.zip"
+      ],
+      "name": "validator",
+      "passed": true,
+      "returncode": 0,
+      "stage": 1,
+      "stderr_tail": "",
+      "stdout_tail": "\u2705 PASSED  \u2014  /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/gate-harness/true_noop_candidate.zip\n\n\nTest results:\n  \u2713 [0.002s] preflop_call_or_fold: {'action': 'raise', 'amount': 200}\n  \u2713 [0.001s] postflop_can_check: {'action': 'raise', 'amount': 200}\n  \u2713 [0.000s] river_facing_large_bet: {'action': 'fold'}\n  \u2713 [0.001s] short_stack_all_in_decision: {'action': 'all_in'}"
+    },
+    {
+      "cmd": [
+        "/Users/farhad/Code/PokerBot/.venv/bin/python",
+        "/Users/farhad/Code/PokerBot/tools/import_audit.py"
+      ],
+      "name": "import_audit",
+      "passed": true,
+      "returncode": 0,
+      "stage": 1,
+      "stderr_tail": "",
+      "stdout_tail": "cold import: 0.001s, RSS: 10.3 MB"
+    },
+    {
+      "cmd": [
+        "/Users/farhad/Code/PokerBot/.venv/bin/python",
+        "/Users/farhad/Code/PokerBot/tools/audit_strategy_leakage.py",
+        "--zip",
+        "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/gate-harness/true_noop_candidate.zip"
+      ],
+      "name": "leakage_audit",
+      "passed": true,
+      "returncode": 0,
+      "stage": 1,
+      "stderr_tail": "",
+      "stdout_tail": "# zip: consult/artifacts/2026-05-31-scratch-improve/gate-harness/true_noop_candidate.zip\n# zip sha256: e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598\naudit_strategy_leakage PASS"
+    },
+    {
+      "cmd": [
+        "/Users/farhad/Code/PokerBot/.venv/bin/python",
+        "-m",
+        "pytest",
+        "/Users/farhad/Code/PokerBot/tests/edge_cases",
+        "-x",
+        "-q"
+      ],
+      "name": "edge_tests",
+      "passed": true,
+      "returncode": 0,
+      "stage": 2,
+      "stderr_tail": "",
+      "stdout_tail": "....                                                                     [100%]\n4 passed in 0.08s"
+    },
+    {
+      "cmd": [
+        "/Users/farhad/Code/PokerBot/.venv/bin/python",
+        "/Users/farhad/Code/PokerBot/tools/smoke_run.py",
+        "--zip",
+        "consult/artifacts/2026-05-31-scratch-improve/gate-harness/true_noop_candidate.zip",
+        "--opponent",
+        "template",
+        "--hands",
+        "60"
+      ],
+      "name": "smoke_run",
+      "passed": true,
+      "returncode": 0,
+      "stage": 2,
+      "stderr_tail": "[smoke_run] docker shim: translating --no-new-privileges to --security-opt no-new-privileges\n[smoke_run] OK: requested_hands_completed",
+      "stdout_tail": "  \"hero_errors\": [],\n  \"chip_delta\": {\n    \"true_noop_candidate\": 4500,\n    \"template\": -4500\n  },\n  \"final_stacks\": {\n    \"true_noop_candidate\": 14500,\n    \"template\": 5500\n  },\n  \"errors\": {},\n  \"duration_s\": 1.51\n}"
+    }
+  ],
+  "verdict": "GATE_CLEAR_FLAG_FOR_HUMAN_MODIFY",
+  "verdict_note": "NOTHING AUTO-PROMOTES. GATE_CLEAR only FLAGS the candidate for a human MODIFY decision; submissions/v_final.zip stays the upload target unless a human explicitly overrides."
+}

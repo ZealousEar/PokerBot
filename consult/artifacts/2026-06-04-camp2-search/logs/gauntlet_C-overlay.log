@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "results": "consult/artifacts/2026-06-04-camp2-search/results/C-overlay/results/deployed_gauntlet_results.json",
+  "bot_sha256": "c6421705607778b23efdac963a2de73bb94aef261299a12c77dff27cfaa32293",
+  "opponents": 12,
+  "probes": 0,
+  "match_summaries": 12
+}

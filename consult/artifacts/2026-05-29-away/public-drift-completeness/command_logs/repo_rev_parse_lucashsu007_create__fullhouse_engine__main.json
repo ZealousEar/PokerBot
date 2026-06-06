@@ -1,0 +1,15 @@
+{
+  "label": "repo_rev_parse_lucashsu007_create__fullhouse_engine__main",
+  "cmd": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/lucashsu007_create__fullhouse_engine__main",
+  "started_at": "2026-05-29T15:14:53Z",
+  "finished_at": "2026-05-29T15:14:54Z",
+  "elapsed_s": 0.01,
+  "returncode": 0,
+  "stdout": "a80b26957db5f5515d9273a15d1b73aadf8985db\n",
+  "stderr": ""
+}

@@ -1,0 +1,121 @@
+[
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "tools/import_audit.py"
+    ],
+    "duration_s": 0.042,
+    "label": "import_audit_canonical_src",
+    "returncode": 0,
+    "stderr_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/import_audit_canonical_src.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/import_audit_canonical_src.stdout.log",
+    "stdout_tail": "cold import: 0.000s, RSS: 10.3 MB\n"
+  },
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "-m",
+      "pytest",
+      "tests/edge_cases",
+      "-x"
+    ],
+    "duration_s": 0.449,
+    "label": "edge_cases_canonical_src",
+    "returncode": 1,
+    "stderr_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/edge_cases_canonical_src.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/edge_cases_canonical_src.stdout.log",
+    "stdout_tail": "============================= test session starts ==============================\nplatform darwin -- Python 3.10.18, pytest-9.0.3, pluggy-1.6.0\nrootdir: /Users/farhad/Code/PokerBot\nplugins: hypothesis-6.152.9\ncollected 14 items\n\ntests/edge_cases/test_package_and_harness_contracts.py ......            [ 42%]\ntests/edge_cases/test_runner_contract_extended.py .F\n\n=================================== FAILURES ===================================\n__________ test_subjects_do_not_large_commit_near_dead_postflop_spots __________\n\nbot_subjects = [BotSpec(name='canonical_src', path=PosixPath('/private/var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/pytest-of-farh...l2_d54640e0', path=PosixPath('/Users/farhad/Code/PokerBot/submissions/v_qual2_ship_d54640e0.zip'), lineage='DEPLOYED')]\n\n    def test_subjects_do_not_large_commit_near_dead_postflop_spots(bot_subjects):\n        vulnerable = [\n            (name, state)\n            for name, state in expensive_edge_states()\n            if name in LARGE_COMMITMENT_GUARD_STATES\n        ]\n        failures = []\n    \n        for spec in bot_subjects:\n            with RunnerClient(spec.path) as runner:\n                warmup = runner.send({\"type\": \"warmup\"})\n                if warmup.payload.get(\"ok\") is not True:\n                    failures.append(f\"{spec.name}:warmup_failed:{warmup.payload}\")\n                    continue\n                for name, state in vulnerable:\n                    result = runner.send(state)\n                    action = result.payload\n                    if is_large_commit(action, state, threshold=0.40):\n                        failures.append(\n                            f\"{spec.name}:{name}:large_commit:\"\n                            f\"{commitment_fraction(action, state):.3f}:action={action}\"\n                        )\n    \n>       assert failures == []\nE       assert [\"deployed_qu...': 'all_in'}\"] == []\nE         \nE         Left contains one more item: \"deployed_qual2_d54640e0:near_dead_postflop_commitment:large_commit:1.000:action={'action': 'all_in'}\"\nE         Use -v to get more diff\n\ntests/edge_cases/test_runner_contract_extended.py:74: AssertionError\n=========================== short test summary info ============================\nFAILED tests/edge_cases/test_runner_contract_extended.py::test_subjects_do_not_large_commit_near_dead_postflop_spots\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n========================= 1 failed, 7 passed in 0.32s ==========================\n"
+  },
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "ext/fullhouse-engine/sandbox/validator.py",
+      "submissions/v_qual2_ship_d54640e0.zip",
+      "--json"
+    ],
+    "duration_s": 0.066,
+    "label": "validator_deployed_zip",
+    "returncode": 0,
+    "stderr_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/validator_deployed_zip.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/validator_deployed_zip.stdout.log",
+    "stdout_tail": "{\n  \"bot_path\": \"submissions/v_qual2_ship_d54640e0.zip\",\n  \"passed\": true,\n  \"errors\": [],\n  \"warnings\": [],\n  \"tests\": [\n    {\n      \"test\": \"preflop_call_or_fold\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 250\n      },\n      \"elapsed\": 0.0\n    },\n    {\n      \"test\": \"postflop_can_check\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 150\n      },\n      \"elapsed\": 0.002\n    },\n    {\n      \"test\": \"river_facing_large_bet\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"call\"\n      },\n      \"elapsed\": 0.004\n    },\n    {\n      \"test\": \"short_stack_all_in_decision\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"all_in\"\n      },\n      \"elapsed\": 0.0\n    }\n  ],\n  \"data_dir\": \"/var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/fhval_zog2imnp/data\"\n}\n"
+  },
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "tools/audit_strategy_leakage.py",
+      "--zip",
+      "submissions/v_qual2_ship_d54640e0.zip"
+    ],
+    "duration_s": 0.024,
+    "label": "audit_strategy_leakage_deployed_zip",
+    "returncode": 1,
+    "stderr_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/audit_strategy_leakage_deployed_zip.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/audit_strategy_leakage_deployed_zip.stdout.log",
+    "stdout_tail": "# zip: submissions/v_qual2_ship_d54640e0.zip\n# zip sha256: d54640e081eb6d1113ab70238c3b6f37e3d8457898b9e80cdc28d7c2a71f4421\nSTRATEGY LEAKAGE DETECTED:\n  bot.py:8: snapshot\n  src/bot.py:221: branch\n  src/equity.py:15: seed\n  src/equity.py:16: seed\n  src/equity.py:17: seed\n  src/equity.py:136: seed\n  src/equity.py:138: seed\n  src/equity.py:172: seed\n  src/opponent_model.py:19: seed\n  src/opponent_model.py:158: aggressor\n  src/ranges.py:187: v1_blueprint\n  src/ranges.py:188: snapshot\n"
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "tools/smoke_run.py",
+      "--zip",
+      "submissions/v_qual2_ship_d54640e0.zip",
+      "--hands",
+      "200",
+      "--opponent",
+      "template",
+      "--seed",
+      "42"
+    ],
+    "label": "smoke_deployed_zip",
+    "returncode": 0,
+    "stderr_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/smoke_deployed_zip.stderr.log",
+    "stderr_tail": "[smoke_run] docker shim: translating --no-new-privileges to --security-opt no-new-privileges\n[smoke_run] OK: requested_hands_completed\n",
+    "stdout_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/smoke_deployed_zip.stdout.log",
+    "stdout_tail": "{\n  \"requested_hands\": 200,\n  \"actual_hands\": 200,\n  \"early_termination_reason\": \"requested_hands_completed\",\n  \"hero_id\": \"v_qual2_ship_d54640e0\",\n  \"hero_errors\": [],\n  \"chip_delta\": {\n    \"v_qual2_ship_d54640e0\": 4050,\n    \"template\": -4050\n  },\n  \"final_stacks\": {\n    \"v_qual2_ship_d54640e0\": 14050,\n    \"template\": 5950\n  },\n  \"errors\": {},\n  \"duration_s\": 2.95\n}\n"
+  },
+  {
+    "command": [
+      ".venv/bin/python",
+      "tools/h2h.py",
+      "--bot-a",
+      "submissions/v_qual2_ship_d54640e0.zip",
+      "--bot-b",
+      "submissions/v_final.zip",
+      "--hands",
+      "10000",
+      "--paired-seed-base",
+      "42",
+      "--match-len",
+      "200",
+      "--label-a",
+      "deployed_d54640e0",
+      "--label-b",
+      "simple_e4b4a8f1"
+    ],
+    "label": "h2h_deployed_vs_simple",
+    "returncode": 0,
+    "stderr_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/h2h_deployed_vs_simple.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/h2h_deployed_vs_simple.stdout.log",
+    "stdout_tail": "0.0 err={'b': 0, 'a': 0} dur=0.39s\n  seed=52 o=0 hands=192 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.34s\n  seed=52 o=1 hands=200 chip_a=  -9500 bb_a=  -95.0 err={'b': 0, 'a': 0} dur=0.37s\n  seed=53 o=0 hands=183 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.36s\n  seed=53 o=1 hands=200 chip_a=  -7277 bb_a=  -72.8 err={'b': 0, 'a': 0} dur=0.37s\n  seed=54 o=0 hands=160 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.37s\n  seed=54 o=1 hands=196 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.4s\n  seed=55 o=0 hands=200 chip_a=  -3434 bb_a=  -34.3 err={'a': 0, 'b': 0} dur=0.42s\n  seed=55 o=1 hands=127 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.33s\n  seed=56 o=0 hands=161 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.34s\n  seed=56 o=1 hands=178 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.38s\n  seed=57 o=0 hands=162 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.33s\n  seed=57 o=1 hands=200 chip_a=  -9077 bb_a=  -90.8 err={'b': 0, 'a': 0} dur=0.36s\n  seed=58 o=0 hands=200 chip_a=  -9077 bb_a=  -90.8 err={'a': 0, 'b': 0} dur=0.4s\n  seed=58 o=1 hands=137 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.38s\n  seed=59 o=0 hands=200 chip_a=  -9750 bb_a=  -97.5 err={'a': 0, 'b': 0} dur=0.34s\n  seed=59 o=1 hands=200 chip_a=  -9750 bb_a=  -97.5 err={'b': 0, 'a': 0} dur=0.35s\n  seed=60 o=0 hands=200 chip_a=  -9900 bb_a=  -99.0 err={'a': 0, 'b': 0} dur=0.35s\n  seed=60 o=1 hands=191 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.38s\n  seed=61 o=0 hands=187 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.34s\n  seed=61 o=1 hands=200 chip_a=  -8501 bb_a=  -85.0 err={'b': 0, 'a': 0} dur=0.36s\n  seed=62 o=0 hands=200 chip_a=  -8167 bb_a=  -81.7 err={'a': 0, 'b': 0} dur=0.38s\n  seed=62 o=1 hands=200 chip_a=  -9450 bb_a=  -94.5 err={'b': 0, 'a': 0} dur=0.35s\n  seed=63 o=0 hands=200 chip_a=  -9984 bb_a=  -99.8 err={'a': 0, 'b': 0} dur=0.4s\n  seed=63 o=1 hands=199 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.38s\n  seed=64 o=0 hands=200 chip_a=  -6931 bb_a=  -69.3 err={'a': 0, 'b': 0} dur=0.38s\n  seed=64 o=1 hands=141 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.33s\n  seed=65 o=0 hands=159 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.33s\n  seed=65 o=1 hands=136 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.35s\n  seed=66 o=0 hands=200 chip_a=  -3594 bb_a=  -35.9 err={'a': 0, 'b': 0} dur=0.37s\n  seed=66 o=1 hands=188 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.39s\n\n======================================================================\nH2H summary: deployed_d54640e0 (a) vs simple_e4b4a8f1 (b)\n  matches: 50\n  hands played total: 8954\n  deployed_d54640e0 per-match BB delta: -92.31 (95% CI [-96.08, -88.02])\n  deployed_d54640e0 bb/100: -51.54\n  deployed_d54640e0 errors: 0\n  simple_e4b4a8f1 errors: 0\n  verdict: deployed_d54640e0 loses to simple_e4b4a8f1 (CI excludes 0)\n======================================================================\n"
+  },
+  {
+    "command": [
+      "BOT_DATA_DIR=<extracted>/data",
+      ".venv/bin/python",
+      "-c",
+      "import bot from extracted mount"
+    ],
+    "label": "import_deployed_extracted",
+    "returncode": 0,
+    "stderr_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/import_deployed_extracted.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/import_deployed_extracted.stdout.log",
+    "stdout_tail": "cold import deployed extracted: 0.0431s, RSS: 22.3 MB\nbot module: /Users/farhad/Code/PokerBot/consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/bot.py\nhas decide: True\n"
+  }
+]

@@ -1,0 +1,51 @@
+[trap-sixmax] output=/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate comps=C4_PUBLIC_NIGHTMARE hands=400 seeds=142..181 jobs=3 pending=40 resumed=240
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=144 hands=400/400 delta=-2726 bust=0 hero_err=0/559 opp_err=0/1056 p99_ms=0.495 dur=16.29s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=142 hands=400/400 delta=+6398 bust=0 hero_err=0/422 opp_err=0/1250 p99_ms=1.380 dur=19.25s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=143 hands=400/400 delta=+11877 bust=0 hero_err=0/565 opp_err=0/1043 p99_ms=0.556 dur=25.49s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=147 hands=321/400 delta=-10000 bust=1 hero_err=0/164 opp_err=0/1953 p99_ms=0.612 dur=4.19s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=146 hands=400/400 delta=+2373 bust=0 hero_err=0/448 opp_err=0/1411 p99_ms=1.173 dur=31.59s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=145 hands=400/400 delta=-10000 bust=1 hero_err=0/199 opp_err=0/1883 p99_ms=1.114 dur=41.44s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=150 hands=400/400 delta=+1703 bust=0 hero_err=0/488 opp_err=0/1305 p99_ms=0.496 dur=36.37s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=151 hands=118/400 delta=-10000 bust=1 hero_err=0/2 opp_err=0/635 p99_ms=0.400 dur=3.23s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=152 hands=246/400 delta=-10000 bust=1 hero_err=0/224 opp_err=0/1666 p99_ms=0.827 dur=3.75s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=149 hands=400/400 delta=+9948 bust=0 hero_err=0/526 opp_err=0/1369 p99_ms=0.733 dur=55.19s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=148 hands=400/400 delta=+6845 bust=0 hero_err=0/663 opp_err=0/1784 p99_ms=0.882 dur=77.27s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=155 hands=400/400 delta=-10000 bust=1 hero_err=0/140 opp_err=0/1944 p99_ms=1.029 dur=3.64s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=153 hands=400/400 delta=-10000 bust=1 hero_err=0/15 opp_err=0/2341 p99_ms=0.345 dur=11.35s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=156 hands=400/400 delta=+122 bust=0 hero_err=0/383 opp_err=0/1708 p99_ms=1.009 dur=19.13s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=158 hands=400/400 delta=+12967 bust=0 hero_err=0/452 opp_err=0/1092 p99_ms=0.445 dur=2.47s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=154 hands=400/400 delta=+34138 bust=0 hero_err=0/432 opp_err=0/954 p99_ms=0.527 dur=27.75s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=160 hands=400/400 delta=+13438 bust=0 hero_err=0/404 opp_err=0/1677 p99_ms=0.455 dur=3.23s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=157 hands=400/400 delta=+3958 bust=0 hero_err=0/418 opp_err=0/1389 p99_ms=0.905 dur=25.84s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=161 hands=400/400 delta=+2960 bust=0 hero_err=0/438 opp_err=0/941 p99_ms=0.790 dur=2.44s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=163 hands=400/400 delta=-10000 bust=1 hero_err=0/413 opp_err=0/1245 p99_ms=0.558 dur=6.03s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=164 hands=400/400 delta=+11242 bust=0 hero_err=0/467 opp_err=0/1105 p99_ms=0.447 dur=10.01s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=165 hands=400/400 delta=+6482 bust=0 hero_err=0/402 opp_err=0/1569 p99_ms=0.457 dur=4.96s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=166 hands=400/400 delta=-10000 bust=1 hero_err=0/14 opp_err=0/2729 p99_ms=2.023 dur=20.67s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=162 hands=400/400 delta=+31958 bust=0 hero_err=0/439 opp_err=0/842 p99_ms=2.756 dur=43.13s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=168 hands=400/400 delta=+2636 bust=0 hero_err=0/399 opp_err=0/1843 p99_ms=0.647 dur=15.48s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=169 hands=400/400 delta=+6577 bust=0 hero_err=0/506 opp_err=0/870 p99_ms=0.486 dur=1.6s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=167 hands=400/400 delta=-2641 bust=0 hero_err=0/384 opp_err=0/1159 p99_ms=0.846 dur=17.51s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=159 hands=400/400 delta=-10000 bust=1 hero_err=0/81 opp_err=0/2114 p99_ms=1.083 dur=71.3s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=172 hands=172/400 delta=-10000 bust=1 hero_err=0/33 opp_err=0/1123 p99_ms=0.508 dur=7.93s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=171 hands=202/400 delta=-10000 bust=1 hero_err=0/25 opp_err=0/1116 p99_ms=4.293 dur=27.29s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=173 hands=387/400 delta=-10000 bust=1 hero_err=0/146 opp_err=0/1887 p99_ms=0.526 dur=19.17s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=174 hands=400/400 delta=-537 bust=0 hero_err=0/401 opp_err=0/1702 p99_ms=0.488 dur=13.63s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=175 hands=243/400 delta=-10000 bust=1 hero_err=0/142 opp_err=0/1254 p99_ms=0.492 dur=9.83s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=176 hands=400/400 delta=+23373 bust=0 hero_err=0/535 opp_err=0/870 p99_ms=0.456 dur=9.54s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=170 hands=184/400 delta=-10000 bust=1 hero_err=0/162 opp_err=0/823 p99_ms=1.148 dur=51.52s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=177 hands=400/400 delta=-1880 bust=0 hero_err=0/510 opp_err=0/1073 p99_ms=0.861 dur=15.92s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=179 hands=400/400 delta=+3602 bust=0 hero_err=0/481 opp_err=0/976 p99_ms=0.493 dur=6.4s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=181 hands=400/400 delta=+29562 bust=0 hero_err=0/651 opp_err=0/1087 p99_ms=0.490 dur=3.72s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=178 hands=400/400 delta=+11634 bust=0 hero_err=0/502 opp_err=0/1155 p99_ms=1.076 dur=13.63s
+[trap-sixmax] C4_PUBLIC_NIGHTMARE seed=180 hands=400/400 delta=-4779 bust=0 hero_err=0/569 opp_err=0/1129 p99_ms=0.603 dur=9.62s
+Traceback (most recent call last):
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/run_pods.py", line 908, in <module>
+    raise SystemExit(main())
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/run_pods.py", line 867, in main
+    summary = write_outputs(
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/run_pods.py", line 759, in write_outputs
+    summary["comparison"] = compare(summary)
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/run_pods.py", line 554, in compare
+    base = comps["C0_BASELINE_RECHECK"]["chip_delta_stats"]["p50"]
+KeyError: 'C0_BASELINE_RECHECK'

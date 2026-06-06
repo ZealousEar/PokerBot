@@ -1,0 +1,111 @@
+[trap-sixmax] output=/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate comps=C1_SINGLE_TOBY_WEAK_FIELD hands=400 seeds=142..241 jobs=3 pending=100 resumed=111
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=143 hands=400/400 delta=+17545 bust=0 hero_err=0/533 opp_err=0/2185 p99_ms=1.133 dur=2.51s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=144 hands=400/400 delta=-10000 bust=1 hero_err=0/531 opp_err=0/2534 p99_ms=1.330 dur=3.17s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=145 hands=400/400 delta=+19326 bust=0 hero_err=0/480 opp_err=0/1998 p99_ms=1.258 dur=1.55s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=142 hands=400/400 delta=-10000 bust=1 hero_err=0/127 opp_err=0/3487 p99_ms=1.189 dur=4.69s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=148 hands=400/400 delta=+20650 bust=0 hero_err=0/471 opp_err=0/1847 p99_ms=1.221 dur=1.16s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=146 hands=400/400 delta=-10000 bust=1 hero_err=0/368 opp_err=0/2317 p99_ms=1.846 dur=3.15s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=147 hands=400/400 delta=-7393 bust=0 hero_err=0/549 opp_err=0/2915 p99_ms=1.892 dur=3.59s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=150 hands=400/400 delta=-10000 bust=1 hero_err=0/494 opp_err=0/2525 p99_ms=1.685 dur=3.02s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=151 hands=337/400 delta=-10000 bust=1 hero_err=0/228 opp_err=0/1993 p99_ms=1.928 dur=2.59s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=149 hands=400/400 delta=-10000 bust=1 hero_err=0/22 opp_err=0/3517 p99_ms=2.455 dur=4.61s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=152 hands=347/400 delta=-10000 bust=1 hero_err=0/393 opp_err=0/1995 p99_ms=2.306 dur=2.65s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=153 hands=400/400 delta=-234 bust=0 hero_err=0/508 opp_err=0/2328 p99_ms=1.961 dur=2.75s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=154 hands=400/400 delta=+18067 bust=0 hero_err=0/521 opp_err=0/2688 p99_ms=1.598 dur=3.22s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=155 hands=400/400 delta=-10000 bust=1 hero_err=0/188 opp_err=0/3426 p99_ms=1.871 dur=3.88s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=156 hands=400/400 delta=+20651 bust=0 hero_err=0/604 opp_err=0/2253 p99_ms=1.664 dur=3.22s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=157 hands=400/400 delta=-10000 bust=1 hero_err=0/176 opp_err=0/2937 p99_ms=1.058 dur=3.8s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=159 hands=392/400 delta=-10000 bust=1 hero_err=0/326 opp_err=0/2512 p99_ms=2.913 dur=3.04s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=160 hands=400/400 delta=+22326 bust=0 hero_err=0/435 opp_err=0/2109 p99_ms=0.833 dur=1.85s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=158 hands=400/400 delta=-10000 bust=1 hero_err=0/3 opp_err=0/3361 p99_ms=0.472 dur=4.91s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=161 hands=349/400 delta=-10000 bust=1 hero_err=0/323 opp_err=0/2144 p99_ms=4.022 dur=2.81s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=162 hands=400/400 delta=+6191 bust=0 hero_err=0/542 opp_err=0/2372 p99_ms=2.419 dur=3.19s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=163 hands=354/400 delta=-10000 bust=1 hero_err=0/414 opp_err=0/1964 p99_ms=5.072 dur=2.89s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=164 hands=400/400 delta=+23921 bust=0 hero_err=0/553 opp_err=0/2498 p99_ms=1.932 dur=3.32s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=165 hands=400/400 delta=+27427 bust=0 hero_err=0/580 opp_err=0/2463 p99_ms=1.557 dur=3.43s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=166 hands=399/400 delta=-10000 bust=1 hero_err=0/432 opp_err=0/2295 p99_ms=1.606 dur=2.81s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=167 hands=379/400 delta=-10000 bust=1 hero_err=0/463 opp_err=0/2308 p99_ms=1.662 dur=2.72s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=169 hands=400/400 delta=+7190 bust=0 hero_err=0/574 opp_err=0/2901 p99_ms=1.867 dur=3.65s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=168 hands=400/400 delta=-10000 bust=1 hero_err=0/113 opp_err=0/3898 p99_ms=3.318 dur=4.96s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=170 hands=400/400 delta=+28514 bust=0 hero_err=0/579 opp_err=0/2208 p99_ms=4.065 dur=3.39s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=171 hands=400/400 delta=+34153 bust=0 hero_err=0/474 opp_err=0/1949 p99_ms=2.775 dur=2.02s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=174 hands=400/400 delta=+17168 bust=0 hero_err=0/492 opp_err=0/2185 p99_ms=0.893 dur=1.59s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=173 hands=400/400 delta=-7330 bust=0 hero_err=0/527 opp_err=0/2155 p99_ms=1.689 dur=2.79s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=172 hands=400/400 delta=-10000 bust=1 hero_err=0/199 opp_err=0/2883 p99_ms=2.767 dur=3.91s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=175 hands=400/400 delta=-10000 bust=1 hero_err=0/248 opp_err=0/2800 p99_ms=1.908 dur=3.25s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=176 hands=400/400 delta=-3742 bust=0 hero_err=0/539 opp_err=0/2620 p99_ms=1.391 dur=3.06s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=179 hands=400/400 delta=+4188 bust=0 hero_err=0/479 opp_err=0/1986 p99_ms=1.043 dur=1.34s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=177 hands=400/400 delta=-10000 bust=1 hero_err=0/150 opp_err=0/3521 p99_ms=2.322 dur=4.74s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=180 hands=400/400 delta=+15736 bust=0 hero_err=0/479 opp_err=0/1964 p99_ms=1.683 dur=1.76s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=178 hands=400/400 delta=-5286 bust=0 hero_err=0/517 opp_err=0/2555 p99_ms=2.426 dur=3.71s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=181 hands=400/400 delta=-5418 bust=0 hero_err=0/556 opp_err=0/2440 p99_ms=1.489 dur=3.02s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=182 hands=400/400 delta=-10000 bust=1 hero_err=0/215 opp_err=0/3015 p99_ms=1.101 dur=3.43s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=183 hands=400/400 delta=-10000 bust=1 hero_err=0/155 opp_err=0/3392 p99_ms=1.081 dur=3.73s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=184 hands=400/400 delta=-10000 bust=1 hero_err=0/467 opp_err=0/2435 p99_ms=2.360 dur=3.04s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=187 hands=400/400 delta=+25825 bust=0 hero_err=0/473 opp_err=0/2070 p99_ms=0.968 dur=1.44s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=186 hands=400/400 delta=-5915 bust=0 hero_err=0/564 opp_err=0/2403 p99_ms=1.554 dur=3.06s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=185 hands=399/400 delta=-10000 bust=1 hero_err=0/229 opp_err=0/2905 p99_ms=2.008 dur=4.01s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=188 hands=349/400 delta=-10000 bust=1 hero_err=0/205 opp_err=0/1716 p99_ms=1.569 dur=2.5s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=190 hands=400/400 delta=-10000 bust=1 hero_err=0/266 opp_err=0/2663 p99_ms=0.981 dur=3.01s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=189 hands=400/400 delta=-10000 bust=1 hero_err=0/172 opp_err=0/3097 p99_ms=1.992 dur=4.22s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=191 hands=360/400 delta=-10000 bust=1 hero_err=0/667 opp_err=0/2087 p99_ms=1.891 dur=3.12s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=192 hands=377/400 delta=-10000 bust=1 hero_err=0/236 opp_err=0/2475 p99_ms=1.561 dur=3.01s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=194 hands=400/400 delta=+29455 bust=0 hero_err=0/452 opp_err=0/2021 p99_ms=1.351 dur=2.2s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=193 hands=400/400 delta=-10000 bust=1 hero_err=0/54 opp_err=0/3401 p99_ms=1.483 dur=4.7s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=195 hands=400/400 delta=-6471 bust=0 hero_err=0/561 opp_err=0/2634 p99_ms=2.291 dur=3.36s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=197 hands=228/400 delta=+50000 bust=0 hero_err=0/246 opp_err=0/1012 p99_ms=1.418 dur=1.44s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=196 hands=400/400 delta=-10000 bust=1 hero_err=0/287 opp_err=0/2961 p99_ms=1.491 dur=3.85s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=198 hands=400/400 delta=+1980 bust=0 hero_err=0/551 opp_err=0/2270 p99_ms=1.346 dur=2.98s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=199 hands=400/400 delta=-10000 bust=1 hero_err=0/345 opp_err=0/2975 p99_ms=1.648 dur=3.6s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=200 hands=400/400 delta=+1082 bust=0 hero_err=0/545 opp_err=0/2774 p99_ms=1.558 dur=3.19s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=202 hands=400/400 delta=+15310 bust=0 hero_err=0/469 opp_err=0/1937 p99_ms=1.680 dur=1.76s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=201 hands=400/400 delta=-10000 bust=1 hero_err=0/401 opp_err=0/2204 p99_ms=1.802 dur=3.07s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=204 hands=400/400 delta=+12807 bust=0 hero_err=0/465 opp_err=0/1930 p99_ms=1.265 dur=1.4s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=203 hands=400/400 delta=+13487 bust=0 hero_err=0/554 opp_err=0/2413 p99_ms=3.065 dur=3.68s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=205 hands=359/400 delta=-10000 bust=1 hero_err=0/538 opp_err=0/2232 p99_ms=1.728 dur=3.37s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=206 hands=400/400 delta=+14500 bust=0 hero_err=0/542 opp_err=0/2408 p99_ms=1.708 dur=3.13s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=208 hands=400/400 delta=+17401 bust=0 hero_err=0/484 opp_err=0/2152 p99_ms=2.050 dur=1.85s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=207 hands=400/400 delta=+24850 bust=0 hero_err=0/565 opp_err=0/2828 p99_ms=1.583 dur=3.57s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=209 hands=400/400 delta=+17625 bust=0 hero_err=0/626 opp_err=0/2167 p99_ms=1.596 dur=3.34s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=210 hands=400/400 delta=+25234 bust=0 hero_err=0/540 opp_err=0/2411 p99_ms=2.499 dur=2.91s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=211 hands=400/400 delta=-10000 bust=1 hero_err=0/429 opp_err=0/2893 p99_ms=1.471 dur=3.28s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=213 hands=400/400 delta=+8702 bust=0 hero_err=0/546 opp_err=0/2711 p99_ms=1.747 dur=3.31s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=214 hands=400/400 delta=+28064 bust=0 hero_err=0/545 opp_err=0/2405 p99_ms=3.234 dur=3.16s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=212 hands=400/400 delta=-10000 bust=1 hero_err=0/32 opp_err=0/3608 p99_ms=1.048 dur=5.39s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=216 hands=400/400 delta=+27518 bust=0 hero_err=0/476 opp_err=0/1915 p99_ms=1.422 dur=1.48s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=215 hands=400/400 delta=+30253 bust=0 hero_err=0/570 opp_err=0/2527 p99_ms=2.075 dur=3.78s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=219 hands=400/400 delta=+18690 bust=0 hero_err=0/465 opp_err=0/1978 p99_ms=0.838 dur=1.3s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=217 hands=400/400 delta=+31281 bust=0 hero_err=0/589 opp_err=0/2474 p99_ms=1.697 dur=3.49s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=218 hands=400/400 delta=+27411 bust=0 hero_err=0/764 opp_err=0/2295 p99_ms=2.003 dur=3.95s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=220 hands=400/400 delta=+10588 bust=0 hero_err=0/458 opp_err=0/1770 p99_ms=1.883 dur=1.91s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=222 hands=400/400 delta=+23274 bust=0 hero_err=0/470 opp_err=0/1978 p99_ms=1.540 dur=1.59s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=221 hands=400/400 delta=-10000 bust=1 hero_err=0/282 opp_err=0/3198 p99_ms=2.042 dur=4.13s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=223 hands=400/400 delta=-10000 bust=1 hero_err=0/303 opp_err=0/2593 p99_ms=1.560 dur=3.07s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=224 hands=400/400 delta=-10000 bust=1 hero_err=0/200 opp_err=0/3536 p99_ms=1.102 dur=3.79s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=225 hands=400/400 delta=+9865 bust=0 hero_err=0/511 opp_err=0/2396 p99_ms=1.457 dur=2.91s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=226 hands=400/400 delta=-10000 bust=1 hero_err=0/48 opp_err=0/3179 p99_ms=1.444 dur=3.69s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=227 hands=400/400 delta=+21325 bust=0 hero_err=0/553 opp_err=0/2498 p99_ms=1.371 dur=3.29s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=228 hands=400/400 delta=-10000 bust=1 hero_err=0/201 opp_err=0/2351 p99_ms=1.131 dur=3.09s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=229 hands=400/400 delta=+27417 bust=0 hero_err=0/729 opp_err=0/2337 p99_ms=1.769 dur=3.71s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=231 hands=400/400 delta=-10000 bust=1 hero_err=0/244 opp_err=0/2614 p99_ms=1.994 dur=3.07s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=230 hands=400/400 delta=-10000 bust=1 hero_err=0/86 opp_err=0/4245 p99_ms=1.725 dur=5.03s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=232 hands=400/400 delta=-10000 bust=1 hero_err=0/485 opp_err=0/2637 p99_ms=1.775 dur=3.11s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=234 hands=400/400 delta=+10550 bust=0 hero_err=0/467 opp_err=0/1937 p99_ms=1.657 dur=1.51s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=233 hands=400/400 delta=-10000 bust=1 hero_err=0/131 opp_err=0/3103 p99_ms=0.918 dur=3.94s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=235 hands=400/400 delta=+24190 bust=0 hero_err=0/582 opp_err=0/2433 p99_ms=1.293 dur=3.48s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=236 hands=400/400 delta=+18078 bust=0 hero_err=0/550 opp_err=0/2663 p99_ms=2.176 dur=3.46s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=237 hands=400/400 delta=-10000 bust=1 hero_err=0/175 opp_err=0/2545 p99_ms=1.468 dur=3.49s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=240 hands=284/400 delta=-10000 bust=1 hero_err=0/165 opp_err=0/1600 p99_ms=0.802 dur=1.77s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=239 hands=400/400 delta=-10000 bust=1 hero_err=0/350 opp_err=0/2094 p99_ms=1.777 dur=2.69s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=238 hands=400/400 delta=-10000 bust=1 hero_err=0/401 opp_err=0/2985 p99_ms=2.217 dur=3.86s
+[trap-sixmax] C1_SINGLE_TOBY_WEAK_FIELD seed=241 hands=400/400 delta=-10000 bust=1 hero_err=0/143 opp_err=0/3436 p99_ms=0.817 dur=3.22s
+Traceback (most recent call last):
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/run_pods.py", line 908, in <module>
+    raise SystemExit(main())
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/run_pods.py", line 867, in main
+    summary = write_outputs(
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/run_pods.py", line 759, in write_outputs
+    summary["comparison"] = compare(summary)
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/run_pods.py", line 554, in compare
+    base = comps["C0_BASELINE_RECHECK"]["chip_delta_stats"]["p50"]
+KeyError: 'C0_BASELINE_RECHECK'

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+    "tools/import_audit.py"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+  "duration_s": 1.0030152797698975,
+  "finished_utc": "2026-05-28T01:05:08Z",
+  "label": "import_audit",
+  "log": "import_audit.log",
+  "passed": true,
+  "returncode": 0,
+  "started_utc": "2026-05-28T01:05:07Z"
+}

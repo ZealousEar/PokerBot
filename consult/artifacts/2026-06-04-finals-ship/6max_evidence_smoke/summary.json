@@ -1,0 +1,98 @@
+{
+  "created_at_epoch": 1780595634.541387,
+  "duration_s": 0.32,
+  "hands": 2,
+  "python": "/Users/farhad/Code/PokerBot/.venv/bin/python",
+  "rows": [
+    {
+      "bot_errors_all": {
+        "aggressor": [],
+        "mathematician": [],
+        "ref_bot_2": [],
+        "shark": [],
+        "template": [],
+        "thorp": []
+      },
+      "bot_ids": [
+        "thorp",
+        "aggressor",
+        "mathematician",
+        "ref_bot_2",
+        "shark",
+        "template"
+      ],
+      "bust_hand": null,
+      "bust_street": null,
+      "busted": false,
+      "chip_delta_all": {
+        "aggressor": 500,
+        "mathematician": -150,
+        "ref_bot_2": -100,
+        "shark": 0,
+        "template": 0,
+        "thorp": -250
+      },
+      "decisions": 3,
+      "duration_s": 0.31,
+      "exceptions": 0,
+      "fold_defaults": 0,
+      "hands_played": 2,
+      "hands_requested": 2,
+      "illegal_action_names": 0,
+      "load_failed": 0,
+      "mix": "reference_field",
+      "protocol_coercions": {
+        "amount_parse_error": 0,
+        "check_when_owed": 0,
+        "raise_below_min": 0,
+        "raise_to_nonpositive": 0,
+        "raise_without_amount": 0
+      },
+      "runner_errors": {},
+      "seed": 42,
+      "thorp_delta": -250,
+      "thorp_final_stack": 9750,
+      "thorp_seat": 0,
+      "timeouts": 0,
+      "warmup_exception": 0,
+      "warmup_timeout": 0
+    }
+  ],
+  "seed_base": 42,
+  "sha256": "b108eff59b46b713fdfb1530f73eaeaa924f5dd9cb5ed72d3e63512a9ce3c36b",
+  "sha_prefix_expected": "b108eff5",
+  "sha_prefix_match": true,
+  "summaries": [
+    {
+      "bust_rate": 0.0,
+      "bust_streets": {},
+      "busts": 0,
+      "exceptions": 0,
+      "fold_defaults": 0,
+      "hands_total": 2,
+      "illegal_action_names": 0,
+      "matches": 1,
+      "mix": "reference_field",
+      "protocol_coercions": {
+        "amount_parse_error": 0,
+        "check_when_owed": 0,
+        "raise_below_min": 0,
+        "raise_to_nonpositive": 0,
+        "raise_without_amount": 0
+      },
+      "runner_errors": {},
+      "seats": [
+        0
+      ],
+      "seeds": [
+        42
+      ],
+      "thorp_chip_per_100_hands": -12500.0,
+      "thorp_decisions": 3,
+      "thorp_delta_avg_per_match": -250.0,
+      "thorp_delta_sum": -250,
+      "timeouts": 0
+    }
+  ],
+  "v_final_zip": "/Users/farhad/Code/PokerBot/submissions/v_final.zip"
+}

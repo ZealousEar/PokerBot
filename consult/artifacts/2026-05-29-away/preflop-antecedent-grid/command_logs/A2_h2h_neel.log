@@ -1,0 +1,83 @@
+{
+  "target": "neel",
+  "opponent_path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-28-public-saturation/opponent_zips/neel.zip",
+  "requested_hands": 1000,
+  "scheduled_hands": 1200,
+  "actual_hands": 1084,
+  "scheduled_bb_per_100": 6.011666666666667,
+  "actual_bb_per_100": 6.654981549815499,
+  "ci_low": -21.55811808118081,
+  "ci_high": 36.193726937269375,
+  "chip_delta": 7214,
+  "early_bust_rate": 0.3333333333333333,
+  "hero_errors": 0,
+  "opponent_errors": 0,
+  "duration_s": 4.51,
+  "p99_latency_s": null,
+  "p99_latency_note": "engine run_match does not expose per-decision latency",
+  "p99_match_seconds_per_hand_proxy": 0.004786324786324787,
+  "hu_button_open_opportunities": 542,
+  "hu_button_opens": 394,
+  "hu_button_open_frequency": 0.7269372693726938,
+  "river_trap_entries": null,
+  "river_trap_note": "decision logs do not label traps; river losing commit is a proxy",
+  "river_losing_commit_hands": 64,
+  "river_commit_hands": 160,
+  "river_losing_commit_frequency": 0.4,
+  "matches": [
+    {
+      "seed": 142,
+      "orientation": 0,
+      "hands": 117,
+      "chip_delta": 10000,
+      "duration_s": 0.56,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 142,
+      "orientation": 1,
+      "hands": 200,
+      "chip_delta": 1328,
+      "duration_s": 0.84,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 143,
+      "orientation": 0,
+      "hands": 200,
+      "chip_delta": 4154,
+      "duration_s": 0.77,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 143,
+      "orientation": 1,
+      "hands": 167,
+      "chip_delta": -10000,
+      "duration_s": 0.7,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 144,
+      "orientation": 0,
+      "hands": 200,
+      "chip_delta": -3051,
+      "duration_s": 0.82,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 144,
+      "orientation": 1,
+      "hands": 200,
+      "chip_delta": 4783,
+      "duration_s": 0.82,
+      "hero_errors": 0,
+      "opp_errors": 0
+    }
+  ]
+}

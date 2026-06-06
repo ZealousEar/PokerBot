@@ -1,0 +1,86 @@
+=== b108eff5 H2H @ finals match-len 800, paired seeds (base 42), both orientations ===
+bot-a = thorp_b108 (submissions/archive/finals-ship-b108eff5-editable-source)
+Thu Jun  4 17:23:54 UTC 2026
+
+########## vs aggressor ##########
+H2H: thorp_b108 (a) vs aggressor (b)
+  bot-a: /Users/farhad/Code/PokerBot/submissions/archive/finals-ship-b108eff5-editable-source
+  bot-b: /Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/aggressor
+  schedule: 1 seeds × 2 orientations × 800 hands = up to 1600 hands
+
+  seed=42 o=0 hands= 11 chip_a= +10000 bb_a= +100.0 err={'a': 0, 'b': 0} dur=0.34s
+  seed=42 o=1 hands=  5 chip_a= +10000 bb_a= +100.0 err={'b': 0, 'a': 0} dur=0.27s
+
+======================================================================
+H2H summary: thorp_b108 (a) vs aggressor (b)
+  matches: 2
+  hands played total: 16
+  thorp_b108 per-match BB delta: +100.00 (95% CI [+100.00, +100.00])
+  thorp_b108 bb/100: +1250.00
+  thorp_b108 errors: 0
+  aggressor errors: 0
+  verdict: thorp_b108 BEATS aggressor (CI excludes 0)
+======================================================================
+
+########## vs shark ##########
+H2H: thorp_b108 (a) vs shark (b)
+  bot-a: /Users/farhad/Code/PokerBot/submissions/archive/finals-ship-b108eff5-editable-source
+  bot-b: /Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/shark
+  schedule: 1 seeds × 2 orientations × 800 hands = up to 1600 hands
+
+  seed=42 o=0 hands= 63 chip_a= +10000 bb_a= +100.0 err={'a': 0, 'b': 0} dur=0.2s
+  seed=42 o=1 hands=800 chip_a=  +9150 bb_a=  +91.5 err={'b': 0, 'a': 0} dur=0.58s
+
+======================================================================
+H2H summary: thorp_b108 (a) vs shark (b)
+  matches: 2
+  hands played total: 863
+  thorp_b108 per-match BB delta: +95.75 (95% CI [+91.50, +100.00])
+  thorp_b108 bb/100: +22.19
+  thorp_b108 errors: 0
+  shark errors: 0
+  verdict: thorp_b108 BEATS shark (CI excludes 0)
+======================================================================
+
+########## vs mathematician ##########
+H2H: thorp_b108 (a) vs mathematician (b)
+  bot-a: /Users/farhad/Code/PokerBot/submissions/archive/finals-ship-b108eff5-editable-source
+  bot-b: /Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/mathematician
+  schedule: 1 seeds × 2 orientations × 800 hands = up to 1600 hands
+
+  seed=42 o=0 hands=286 chip_a= +10000 bb_a= +100.0 err={'a': 0, 'b': 0} dur=1.14s
+  seed=42 o=1 hands=467 chip_a= +10000 bb_a= +100.0 err={'b': 0, 'a': 0} dur=1.56s
+
+======================================================================
+H2H summary: thorp_b108 (a) vs mathematician (b)
+  matches: 2
+  hands played total: 753
+  thorp_b108 per-match BB delta: +100.00 (95% CI [+100.00, +100.00])
+  thorp_b108 bb/100: +26.56
+  thorp_b108 errors: 0
+  mathematician errors: 0
+  verdict: thorp_b108 BEATS mathematician (CI excludes 0)
+======================================================================
+
+########## vs ref_bot_2 ##########
+H2H: thorp_b108 (a) vs ref_bot_2 (b)
+  bot-a: /Users/farhad/Code/PokerBot/submissions/archive/finals-ship-b108eff5-editable-source
+  bot-b: /Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/ref_bot_2
+  schedule: 1 seeds × 2 orientations × 800 hands = up to 1600 hands
+
+  seed=42 o=0 hands=286 chip_a= +10000 bb_a= +100.0 err={'a': 0, 'b': 0} dur=1.12s
+  seed=42 o=1 hands=467 chip_a= +10000 bb_a= +100.0 err={'b': 0, 'a': 0} dur=1.55s
+
+======================================================================
+H2H summary: thorp_b108 (a) vs ref_bot_2 (b)
+  matches: 2
+  hands played total: 753
+  thorp_b108 per-match BB delta: +100.00 (95% CI [+100.00, +100.00])
+  thorp_b108 bb/100: +26.56
+  thorp_b108 errors: 0
+  ref_bot_2 errors: 0
+  verdict: thorp_b108 BEATS ref_bot_2 (CI excludes 0)
+======================================================================
+
+=== DONE ===
+Thu Jun  4 17:24:01 UTC 2026

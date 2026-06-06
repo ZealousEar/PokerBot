@@ -1,0 +1,65 @@
+{
+  "target": "ref_template",
+  "opponent_path": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/template",
+  "requested_hands": 600,
+  "scheduled_hands": 800,
+  "actual_hands": 552,
+  "scheduled_bb_per_100": 50.0,
+  "actual_bb_per_100": 72.46376811594203,
+  "ci_low": 69.7463768115942,
+  "ci_high": 75.27173913043478,
+  "chip_delta": 40000,
+  "early_bust_rate": 1.0,
+  "hero_errors": 0,
+  "opponent_errors": 0,
+  "duration_s": 1.49,
+  "p99_latency_s": null,
+  "p99_latency_note": "engine run_match does not expose per-decision latency",
+  "p99_match_seconds_per_hand_proxy": 0.003582089552238806,
+  "hu_button_open_opportunities": 276,
+  "hu_button_opens": 274,
+  "hu_button_open_frequency": 0.9927536231884058,
+  "river_trap_entries": null,
+  "river_trap_note": "decision logs do not label traps; river losing commit is a proxy",
+  "river_losing_commit_hands": 2,
+  "river_commit_hands": 2,
+  "river_losing_commit_frequency": 1.0,
+  "matches": [
+    {
+      "seed": 142,
+      "orientation": 0,
+      "hands": 140,
+      "chip_delta": 10000,
+      "duration_s": 0.33,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 142,
+      "orientation": 1,
+      "hands": 140,
+      "chip_delta": 10000,
+      "duration_s": 0.4,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 143,
+      "orientation": 0,
+      "hands": 138,
+      "chip_delta": 10000,
+      "duration_s": 0.28,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 143,
+      "orientation": 1,
+      "hands": 134,
+      "chip_delta": 10000,
+      "duration_s": 0.48,
+      "hero_errors": 0,
+      "opp_errors": 0
+    }
+  ]
+}

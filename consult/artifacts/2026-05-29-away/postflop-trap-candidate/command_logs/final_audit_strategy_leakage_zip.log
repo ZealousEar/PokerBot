@@ -1,0 +1,3 @@
+# zip: consult/artifacts/2026-05-29-away/postflop-trap-candidate/zips/v_postflop_trap_candidate.zip
+# zip sha256: 136c8cde3258995bde89eb14e91b678c329c3af2a5b16806c453a4c4d68d8571
+audit_strategy_leakage PASS

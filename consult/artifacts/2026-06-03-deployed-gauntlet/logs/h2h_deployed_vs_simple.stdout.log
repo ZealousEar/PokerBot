@@ -1,0 +1,66 @@
+H2H: deployed_d54640e0 (a) vs simple_e4b4a8f1 (b)
+  bot-a: /Users/farhad/Code/PokerBot/submissions/v_qual2_ship_d54640e0.zip
+  bot-b: /Users/farhad/Code/PokerBot/submissions/v_final.zip
+  schedule: 25 seeds × 2 orientations × 200 hands = up to 10000 hands
+
+  seed=42 o=0 hands= 70 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.34s
+  seed=42 o=1 hands=148 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.35s
+  seed=43 o=0 hands=200 chip_a=  -5727 bb_a=  -57.3 err={'a': 0, 'b': 0} dur=0.42s
+  seed=43 o=1 hands=140 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.33s
+  seed=44 o=0 hands=200 chip_a=  -9500 bb_a=  -95.0 err={'a': 0, 'b': 0} dur=0.36s
+  seed=44 o=1 hands=147 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.34s
+  seed=45 o=0 hands=178 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.38s
+  seed=45 o=1 hands=200 chip_a=  -7583 bb_a=  -75.8 err={'b': 0, 'a': 0} dur=0.4s
+  seed=46 o=0 hands=200 chip_a=  -8490 bb_a=  -84.9 err={'a': 0, 'b': 0} dur=0.41s
+  seed=46 o=1 hands=199 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.37s
+  seed=47 o=0 hands=180 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.39s
+  seed=47 o=1 hands=185 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.43s
+  seed=48 o=0 hands=200 chip_a=  -8700 bb_a=  -87.0 err={'a': 0, 'b': 0} dur=0.35s
+  seed=48 o=1 hands=200 chip_a=  -8287 bb_a=  -82.9 err={'b': 0, 'a': 0} dur=0.37s
+  seed=49 o=0 hands=200 chip_a=  -8850 bb_a=  -88.5 err={'a': 0, 'b': 0} dur=0.38s
+  seed=49 o=1 hands=169 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.31s
+  seed=50 o=0 hands=170 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.37s
+  seed=50 o=1 hands=165 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.36s
+  seed=51 o=0 hands=122 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.35s
+  seed=51 o=1 hands=184 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.39s
+  seed=52 o=0 hands=192 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.34s
+  seed=52 o=1 hands=200 chip_a=  -9500 bb_a=  -95.0 err={'b': 0, 'a': 0} dur=0.37s
+  seed=53 o=0 hands=183 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.36s
+  seed=53 o=1 hands=200 chip_a=  -7277 bb_a=  -72.8 err={'b': 0, 'a': 0} dur=0.37s
+  seed=54 o=0 hands=160 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.37s
+  seed=54 o=1 hands=196 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.4s
+  seed=55 o=0 hands=200 chip_a=  -3434 bb_a=  -34.3 err={'a': 0, 'b': 0} dur=0.42s
+  seed=55 o=1 hands=127 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.33s
+  seed=56 o=0 hands=161 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.34s
+  seed=56 o=1 hands=178 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.38s
+  seed=57 o=0 hands=162 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.33s
+  seed=57 o=1 hands=200 chip_a=  -9077 bb_a=  -90.8 err={'b': 0, 'a': 0} dur=0.36s
+  seed=58 o=0 hands=200 chip_a=  -9077 bb_a=  -90.8 err={'a': 0, 'b': 0} dur=0.4s
+  seed=58 o=1 hands=137 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.38s
+  seed=59 o=0 hands=200 chip_a=  -9750 bb_a=  -97.5 err={'a': 0, 'b': 0} dur=0.34s
+  seed=59 o=1 hands=200 chip_a=  -9750 bb_a=  -97.5 err={'b': 0, 'a': 0} dur=0.35s
+  seed=60 o=0 hands=200 chip_a=  -9900 bb_a=  -99.0 err={'a': 0, 'b': 0} dur=0.35s
+  seed=60 o=1 hands=191 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.38s
+  seed=61 o=0 hands=187 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.34s
+  seed=61 o=1 hands=200 chip_a=  -8501 bb_a=  -85.0 err={'b': 0, 'a': 0} dur=0.36s
+  seed=62 o=0 hands=200 chip_a=  -8167 bb_a=  -81.7 err={'a': 0, 'b': 0} dur=0.38s
+  seed=62 o=1 hands=200 chip_a=  -9450 bb_a=  -94.5 err={'b': 0, 'a': 0} dur=0.35s
+  seed=63 o=0 hands=200 chip_a=  -9984 bb_a=  -99.8 err={'a': 0, 'b': 0} dur=0.4s
+  seed=63 o=1 hands=199 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.38s
+  seed=64 o=0 hands=200 chip_a=  -6931 bb_a=  -69.3 err={'a': 0, 'b': 0} dur=0.38s
+  seed=64 o=1 hands=141 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.33s
+  seed=65 o=0 hands=159 chip_a= -10000 bb_a= -100.0 err={'a': 0, 'b': 0} dur=0.33s
+  seed=65 o=1 hands=136 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.35s
+  seed=66 o=0 hands=200 chip_a=  -3594 bb_a=  -35.9 err={'a': 0, 'b': 0} dur=0.37s
+  seed=66 o=1 hands=188 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=0.39s
+
+======================================================================
+H2H summary: deployed_d54640e0 (a) vs simple_e4b4a8f1 (b)
+  matches: 50
+  hands played total: 8954
+  deployed_d54640e0 per-match BB delta: -92.31 (95% CI [-96.08, -88.02])
+  deployed_d54640e0 bb/100: -51.54
+  deployed_d54640e0 errors: 0
+  simple_e4b4a8f1 errors: 0
+  verdict: deployed_d54640e0 loses to simple_e4b4a8f1 (CI excludes 0)
+======================================================================

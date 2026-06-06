@@ -1,0 +1,22 @@
+{
+  "compositions": {
+    "C0D_DETERMINISTIC_SUBSET": {
+      "bust_rate": 0.0833,
+      "hero_action_errors": 0,
+      "hero_decisions": 12491,
+      "mean": 12357.2,
+      "n": 24,
+      "p10": 5715.0,
+      "p25": 10712.5,
+      "p50": 13900.0,
+      "p75": 15912.5,
+      "p90": 20604.999999999996
+    }
+  },
+  "generated_at": "2026-05-31T02:14:30Z",
+  "hands": 400,
+  "hero_sha": "2d1288da0c127b68e157e893c8fe8232b34b16a90cde846bd1f641c4977f37a3",
+  "hero_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/batch2/claude-rescrub/claude_rescrubbed.zip",
+  "seed_base": 700,
+  "seeds": 24
+}

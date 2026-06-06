@@ -1,0 +1,15 @@
+{
+  "label": "repo_rev_parse_Pav1602__fullhouse_engine__main",
+  "cmd": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/Pav1602__fullhouse_engine__main",
+  "started_at": "2026-05-29T15:14:46Z",
+  "finished_at": "2026-05-29T15:14:46Z",
+  "elapsed_s": 0.008,
+  "returncode": 0,
+  "stdout": "1ca89cf6d716cbb5092ac5e70fcc18a47c39bdd6\n",
+  "stderr": ""
+}

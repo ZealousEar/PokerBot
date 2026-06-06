@@ -1,0 +1,19 @@
+[smoke_run] docker shim: translating --no-new-privileges to --security-opt no-new-privileges
+[smoke_run] OK: requested_hands_completed
+{
+  "requested_hands": 200,
+  "actual_hands": 200,
+  "early_termination_reason": "requested_hands_completed",
+  "hero_id": "claude_rescrubbed",
+  "hero_errors": [],
+  "chip_delta": {
+    "claude_rescrubbed": 5700,
+    "template": -5700
+  },
+  "final_stacks": {
+    "claude_rescrubbed": 15700,
+    "template": 4300
+  },
+  "errors": {},
+  "duration_s": 3.3
+}

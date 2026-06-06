@@ -1,0 +1,51 @@
+[trap-sixmax] output=/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate comps=C3_TOBY_MEHEDI_WEAK_FIELD hands=400 seeds=142..181 jobs=3 pending=40 resumed=0
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=143 hands=400/400 delta=+8563 bust=0 hero_err=0/469 opp_err=0/1606 p99_ms=1.800 dur=11.71s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=144 hands=400/400 delta=-8694 bust=0 hero_err=0/545 opp_err=0/2421 p99_ms=8.455 dur=15.24s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=145 hands=400/400 delta=-1594 bust=0 hero_err=0/417 opp_err=0/1491 p99_ms=15.465 dur=18.34s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=146 hands=400/400 delta=-172 bust=0 hero_err=0/431 opp_err=0/1503 p99_ms=17.253 dur=34.04s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=147 hands=400/400 delta=+18123 bust=0 hero_err=0/500 opp_err=0/1553 p99_ms=12.242 dur=27.42s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=148 hands=316/400 delta=-10000 bust=1 hero_err=0/342 opp_err=0/1801 p99_ms=1.262 dur=14.74s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=150 hands=400/400 delta=+8866 bust=0 hero_err=0/435 opp_err=0/1510 p99_ms=0.482 dur=29.96s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=151 hands=400/400 delta=-10000 bust=1 hero_err=0/268 opp_err=0/2939 p99_ms=0.458 dur=7.33s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=142 hands=400/400 delta=-10000 bust=1 hero_err=0/123 opp_err=0/3337 p99_ms=8.932 dur=108.67s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=152 hands=400/400 delta=-3257 bust=0 hero_err=0/542 opp_err=0/2117 p99_ms=0.473 dur=14.1s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=153 hands=400/400 delta=-10000 bust=1 hero_err=0/386 opp_err=0/2600 p99_ms=0.710 dur=16.82s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=149 hands=400/400 delta=-10000 bust=1 hero_err=0/66 opp_err=0/2420 p99_ms=1.305 dur=74.4s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=154 hands=400/400 delta=-1387 bust=0 hero_err=0/390 opp_err=0/1612 p99_ms=1.746 dur=23.9s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=156 hands=400/400 delta=+11927 bust=0 hero_err=0/583 opp_err=0/2116 p99_ms=1.445 dur=16.11s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=158 hands=400/400 delta=+21695 bust=0 hero_err=0/602 opp_err=0/1686 p99_ms=1.542 dur=3.88s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=159 hands=400/400 delta=+45846 bust=0 hero_err=0/358 opp_err=0/1083 p99_ms=2.748 dur=2.38s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=157 hands=400/400 delta=+7289 bust=0 hero_err=0/487 opp_err=0/1641 p99_ms=4.423 dur=20.75s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=160 hands=352/400 delta=-10000 bust=1 hero_err=0/429 opp_err=0/2013 p99_ms=1.394 dur=7.53s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=162 hands=400/400 delta=+4779 bust=0 hero_err=0/467 opp_err=0/1615 p99_ms=11.357 dur=8.53s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=163 hands=400/400 delta=+17960 bust=0 hero_err=0/391 opp_err=0/1446 p99_ms=2.913 dur=16.34s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=164 hands=400/400 delta=+15962 bust=0 hero_err=0/483 opp_err=0/1398 p99_ms=1.864 dur=7.34s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=165 hands=400/400 delta=+8967 bust=0 hero_err=0/476 opp_err=0/1209 p99_ms=1.434 dur=2.72s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=166 hands=329/400 delta=-10000 bust=1 hero_err=0/239 opp_err=0/2063 p99_ms=11.192 dur=8.61s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=161 hands=400/400 delta=+270 bust=0 hero_err=0/483 opp_err=0/2021 p99_ms=18.726 dur=46.84s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=168 hands=400/400 delta=+4160 bust=0 hero_err=0/428 opp_err=0/1552 p99_ms=1.435 dur=15.83s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=167 hands=400/400 delta=-1241 bust=0 hero_err=0/479 opp_err=0/1886 p99_ms=1.838 dur=25.58s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=169 hands=400/400 delta=-3299 bust=0 hero_err=0/431 opp_err=0/1448 p99_ms=1.366 dur=15.93s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=155 hands=400/400 delta=-10000 bust=1 hero_err=0/209 opp_err=0/2347 p99_ms=1.211 dur=135.58s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=172 hands=317/400 delta=-10000 bust=1 hero_err=0/273 opp_err=0/1658 p99_ms=0.529 dur=2.57s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=170 hands=400/400 delta=-10000 bust=1 hero_err=0/37 opp_err=0/2217 p99_ms=1.294 dur=71.93s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=171 hands=400/400 delta=-10000 bust=1 hero_err=0/83 opp_err=0/2018 p99_ms=0.469 dur=65.45s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=174 hands=367/400 delta=-10000 bust=1 hero_err=0/365 opp_err=0/2155 p99_ms=0.488 dur=32.08s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=173 hands=400/400 delta=+7879 bust=0 hero_err=0/504 opp_err=0/2338 p99_ms=0.975 dur=77.03s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=177 hands=400/400 delta=-4287 bust=0 hero_err=0/414 opp_err=0/1104 p99_ms=0.727 dur=30.09s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=175 hands=296/400 delta=-10000 bust=1 hero_err=0/167 opp_err=0/1977 p99_ms=0.849 dur=76.03s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=178 hands=400/400 delta=-854 bust=0 hero_err=0/430 opp_err=0/1461 p99_ms=0.681 dur=23.82s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=180 hands=400/400 delta=-10000 bust=1 hero_err=0/249 opp_err=0/3159 p99_ms=0.475 dur=4.61s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=176 hands=400/400 delta=-10000 bust=1 hero_err=0/19 opp_err=0/2001 p99_ms=0.580 dur=71.12s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=181 hands=400/400 delta=-3415 bust=0 hero_err=0/477 opp_err=0/1622 p99_ms=0.482 dur=16.95s
+[trap-sixmax] C3_TOBY_MEHEDI_WEAK_FIELD seed=179 hands=400/400 delta=-10000 bust=1 hero_err=0/261 opp_err=0/1960 p99_ms=0.692 dur=42.8s
+Traceback (most recent call last):
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/run_pods.py", line 908, in <module>
+    raise SystemExit(main())
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/run_pods.py", line 867, in main
+    summary = write_outputs(
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/run_pods.py", line 759, in write_outputs
+    summary["comparison"] = compare(summary)
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/run_pods.py", line 554, in compare
+    base = comps["C0_BASELINE_RECHECK"]["chip_delta_stats"]["p50"]
+KeyError: 'C0_BASELINE_RECHECK'

@@ -1,0 +1,70 @@
+{
+  "data_references": [
+    {
+      "line": 24,
+      "path": "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/bot.py",
+      "text": "\"BOT_DATA_DIR\","
+    }
+  ],
+  "forbidden_clean": true,
+  "imports": {
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/bot.py": [
+      "from src.bot",
+      "os",
+      "sys"
+    ],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/__init__.py": [],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/bot.py": [
+      "from src.equity",
+      "from src.opponent_model",
+      "from src.postflop",
+      "from src.preflop_lookup",
+      "from src.sizing",
+      "from src.timeout_guard",
+      "os",
+      "sys"
+    ],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/equity.py": [
+      "eval7",
+      "from typing",
+      "hashlib",
+      "random"
+    ],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/opponent_model.py": [
+      "from collections",
+      "from typing"
+    ],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/postflop.py": [
+      "from src.equity",
+      "from src.opponent_model",
+      "from src.sizing",
+      "from typing"
+    ],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/preflop_lookup.py": [
+      "from src.ranges",
+      "from typing"
+    ],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/ranges.py": [
+      "from typing"
+    ],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/sizing.py": [],
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/timeout_guard.py": [
+      "from contextlib",
+      "from typing",
+      "time"
+    ]
+  },
+  "issues": [],
+  "python_files": [
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/bot.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/__init__.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/bot.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/equity.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/opponent_model.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/postflop.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/preflop_lookup.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/ranges.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/sizing.py",
+    "consult/artifacts/2026-06-03-deployed-gauntlet/extracted/v_qual2_ship_d54640e0/src/timeout_guard.py"
+  ]
+}

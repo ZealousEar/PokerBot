@@ -1,0 +1,22 @@
+{
+  "compositions": {
+    "C0D_DETERMINISTIC_SUBSET": {
+      "bust_rate": 0.0417,
+      "hero_action_errors": 0,
+      "hero_decisions": 10904,
+      "mean": 11800.7,
+      "n": 24,
+      "p10": 10056.9,
+      "p25": 10637.5,
+      "p50": 12000.0,
+      "p75": 13000.0,
+      "p90": 14920.0
+    }
+  },
+  "generated_at": "2026-05-31T02:14:24Z",
+  "hands": 400,
+  "hero_sha": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+  "hero_zip": "/Users/farhad/Code/PokerBot/submissions/v_final.zip",
+  "seed_base": 700,
+  "seeds": 24
+}

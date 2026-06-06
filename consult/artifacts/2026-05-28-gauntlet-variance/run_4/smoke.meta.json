@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+    "tools/smoke_run.py",
+    "--zip",
+    "submissions/v_final.zip",
+    "--hands",
+    "200"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+  "duration_s": 4.034243106842041,
+  "finished_utc": "2026-05-28T02:14:28Z",
+  "label": "smoke",
+  "log": "smoke.log",
+  "passed": true,
+  "returncode": 0,
+  "started_utc": "2026-05-28T02:14:24Z"
+}

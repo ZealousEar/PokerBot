@@ -1,0 +1,46 @@
+{
+  "compositions": {
+    "C0D_DETERMINISTIC_SUBSET": {
+      "bust_rate": 0.0,
+      "hero_action_errors": 0,
+      "hero_decisions": 18739,
+      "mean": 11423.8,
+      "n": 40,
+      "p10": 9040.0,
+      "p25": 10075.0,
+      "p50": 11500.0,
+      "p75": 13037.5,
+      "p90": 14155.0
+    },
+    "C0_BASELINE": {
+      "bust_rate": 0.75,
+      "hero_action_errors": 0,
+      "hero_decisions": 8199,
+      "mean": -5568.9,
+      "n": 40,
+      "p10": -10000.0,
+      "p25": -10000.0,
+      "p50": -10000.0,
+      "p75": -7371.5,
+      "p90": 9238.000000000002
+    },
+    "C1_SINGLE_TOBY_WEAK_FIELD": {
+      "bust_rate": 0.375,
+      "hero_action_errors": 0,
+      "hero_decisions": 14197,
+      "mean": 10976.0,
+      "n": 40,
+      "p10": -10000.0,
+      "p25": -10000.0,
+      "p50": 7545.0,
+      "p75": 24855.0,
+      "p90": 36946.40000000002
+    }
+  },
+  "generated_at": "2026-05-31T02:22:36Z",
+  "hands": 400,
+  "hero_sha": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+  "hero_zip": "/Users/farhad/Code/PokerBot/submissions/v_final.zip",
+  "seed_base": 900,
+  "seeds": 40
+}

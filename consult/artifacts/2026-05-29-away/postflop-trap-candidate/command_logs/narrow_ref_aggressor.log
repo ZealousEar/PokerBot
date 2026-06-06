@@ -1,0 +1,21 @@
+narrow_ref_aggressor_b42_k0_s42_o0 actual=5/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-2000.00 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k0_s42_o1 actual=25/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-400.00 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k1_s1042_o0 actual=9/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+1111.11 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k1_s1042_o1 actual=20/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+500.00 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k2_s2042_o0 actual=23/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+434.78 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k2_s2042_o1 actual=9/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+1111.11 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k3_s3042_o0 actual=13/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+769.23 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k3_s3042_o1 actual=8/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-1250.00 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k4_s4042_o0 actual=42/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-238.10 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k4_s4042_o1 actual=4/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-2500.00 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k5_s5042_o0 actual=9/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-1111.11 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k5_s5042_o1 actual=11/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-909.09 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k6_s6042_o0 actual=6/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-1666.67 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k6_s6042_o1 actual=11/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+909.09 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k7_s7042_o0 actual=4/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-2500.00 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k7_s7042_o1 actual=20/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+500.00 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k8_s8042_o0 actual=18/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+555.56 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k8_s8042_o1 actual=5/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-2000.00 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k9_s9042_o0 actual=11/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+909.09 hero_err=0 opp_err=0
+narrow_ref_aggressor_b42_k9_s9042_o1 actual=9/500 hero_chip=+10000 scheduled_bb100=+20.00 actual_bb100=+1111.11 hero_err=0 opp_err=0
+SUMMARY {"actual_hands": 262, "base": 42, "hero_actual_bb100": 0.0, "hero_chip_delta": 0, "hero_errors": 0, "hero_scheduled_bb100": 0.0, "hero_scheduled_ci_high": 10.0, "hero_scheduled_ci_low": -10.0, "hero_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/postflop-trap-candidate/zips/v_postflop_trap_candidate.zip", "match_len": 500, "name": "narrow_ref_aggressor", "opponent_errors": 0, "opponent_zip": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/aggressor", "scheduled_hands": 10000, "seed_stride": 1000}

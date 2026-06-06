@@ -1,0 +1,34 @@
+{
+  "compositions": {
+    "C0_BASELINE": {
+      "bust_rate": 0.8,
+      "hero_action_errors": 0,
+      "hero_decisions": 968,
+      "mean": -5078.4,
+      "n": 5,
+      "p10": -10000.0,
+      "p25": -10000.0,
+      "p50": -10000.0,
+      "p75": -10000.0,
+      "p90": 4764.800000000003
+    },
+    "C1_SINGLE_TOBY_WEAK_FIELD": {
+      "bust_rate": 0.4,
+      "hero_action_errors": 0,
+      "hero_decisions": 2049,
+      "mean": 20042,
+      "n": 5,
+      "p10": -10000.0,
+      "p25": -10000.0,
+      "p50": 28110.0,
+      "p75": 42100.0,
+      "p90": 46840.0
+    }
+  },
+  "generated_at": "2026-05-31T00:46:45Z",
+  "hands": 400,
+  "hero_sha": "14894c2662cac5cd160fea51e16de84133ea2fa36edc52c5c44c8b8e571b0e78",
+  "hero_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/overlay-cap/rebuild_nochange.zip",
+  "seed_base": 142,
+  "seeds": 5
+}

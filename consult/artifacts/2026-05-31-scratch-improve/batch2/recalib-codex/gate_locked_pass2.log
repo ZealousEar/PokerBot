@@ -1,0 +1,43 @@
+[pods] hero=v_final.zip sha=e4b4a8f11f80 out=gate_locked_pass2 comps=C0D_DETERMINISTIC_SUBSET hands=400 seeds=900..939 jobs=1 pending=40 resumed=0
+[pods] C0D_DETERMINISTIC_SUBSET s900 hands=400 delta=+10200 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s901 hands=400 delta=+10400 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s902 hands=400 delta=+11050 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s903 hands=400 delta=+13350 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s904 hands=400 delta=+9100 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s905 hands=400 delta=+13300 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s906 hands=400 delta=+11750 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s907 hands=400 delta=+14850 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s908 hands=400 delta=+14200 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s909 hands=400 delta=+8500 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s910 hands=400 delta=+14800 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s911 hands=400 delta=+11400 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s912 hands=400 delta=+12150 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s913 hands=400 delta=+10000 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s914 hands=400 delta=+7950 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s915 hands=400 delta=+14150 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s916 hands=400 delta=+11950 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s917 hands=400 delta=+7900 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s918 hands=400 delta=+12000 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s919 hands=400 delta=+10100 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s920 hands=400 delta=+11550 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s921 hands=400 delta=+12800 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s922 hands=400 delta=+11250 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s923 hands=400 delta=+11600 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s924 hands=400 delta=+6700 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s925 hands=400 delta=+14300 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s926 hands=400 delta=+10850 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s927 hands=400 delta=+12950 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s928 hands=400 delta=+14000 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s929 hands=400 delta=+12700 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s930 hands=400 delta=+14000 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s931 hands=400 delta=+8500 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s932 hands=400 delta=+10800 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s933 hands=400 delta=+11450 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s934 hands=400 delta=+11600 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s935 hands=400 delta=+13950 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s936 hands=400 delta=+14150 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s937 hands=400 delta=+9100 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s938 hands=400 delta=+11850 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s939 hands=400 delta=+10350 bust=0
+[pods] wrote /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/batch2/recalib-codex/gate_locked_pass2/summary.json
+[pods] C0D_DETERMINISTIC_SUBSET n=40 p50=11600.0 bust=0.0 mean=11588.8 err=0/18739

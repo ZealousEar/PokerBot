@@ -1,0 +1,65 @@
+{
+  "target": "ref_mathematician",
+  "opponent_path": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/mathematician",
+  "requested_hands": 600,
+  "scheduled_hands": 800,
+  "actual_hands": 293,
+  "scheduled_bb_per_100": 50.0,
+  "actual_bb_per_100": 136.51877133105802,
+  "ci_low": 128.1569965870307,
+  "ci_high": 144.88054607508533,
+  "chip_delta": 40000,
+  "early_bust_rate": 1.0,
+  "hero_errors": 0,
+  "opponent_errors": 0,
+  "duration_s": 1.5600000000000003,
+  "p99_latency_s": null,
+  "p99_latency_note": "engine run_match does not expose per-decision latency",
+  "p99_match_seconds_per_hand_proxy": 0.007333333333333334,
+  "hu_button_open_opportunities": 147,
+  "hu_button_opens": 141,
+  "hu_button_open_frequency": 0.9591836734693877,
+  "river_trap_entries": null,
+  "river_trap_note": "decision logs do not label traps; river losing commit is a proxy",
+  "river_losing_commit_hands": 8,
+  "river_commit_hands": 12,
+  "river_losing_commit_frequency": 0.6666666666666666,
+  "matches": [
+    {
+      "seed": 142,
+      "orientation": 0,
+      "hands": 81,
+      "chip_delta": 10000,
+      "duration_s": 0.34,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 142,
+      "orientation": 1,
+      "hands": 70,
+      "chip_delta": 10000,
+      "duration_s": 0.33,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 143,
+      "orientation": 0,
+      "hands": 75,
+      "chip_delta": 10000,
+      "duration_s": 0.55,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 143,
+      "orientation": 1,
+      "hands": 67,
+      "chip_delta": 10000,
+      "duration_s": 0.34,
+      "hero_errors": 0,
+      "opp_errors": 0
+    }
+  ]
+}

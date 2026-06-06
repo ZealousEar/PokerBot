@@ -1,0 +1,163 @@
+{
+  "all_in_maniac": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1113,
+        "file_size": 4333,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/finals-freeze/v_final-fmc/synthetic_opponents/zips/all_in_maniac.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "9c63d5d7d9beda92d65dfe37dde66a0741ce8087a51942b8ec91cda0e8cf37bd",
+    "size_bytes": 1223,
+    "src_py_files": [],
+    "uncompressed_bytes": 4333
+  },
+  "loose_aggressive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1121,
+        "file_size": 4336,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/finals-freeze/v_final-fmc/synthetic_opponents/zips/loose_aggressive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "1fe8c426f449c556df679f51329a4f5812b5c48f63efc4cdb4f8e19ec5df5b16",
+    "size_bytes": 1231,
+    "src_py_files": [],
+    "uncompressed_bytes": 4336
+  },
+  "loose_passive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1117,
+        "file_size": 4333,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/finals-freeze/v_final-fmc/synthetic_opponents/zips/loose_passive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "5a19b79f071c8ac417abb9c131a57d2079c38261d6b3267b0d03d7df734edfb5",
+    "size_bytes": 1227,
+    "src_py_files": [],
+    "uncompressed_bytes": 4333
+  },
+  "pot_odds_threshold": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1120,
+        "file_size": 4338,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/finals-freeze/v_final-fmc/synthetic_opponents/zips/pot_odds_threshold.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "4fd3b4391da9258b8687690af6f41073d0aa0b43aa307962da387eab75c269ae",
+    "size_bytes": 1230,
+    "src_py_files": [],
+    "uncompressed_bytes": 4338
+  },
+  "river_value_threshold": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1119,
+        "file_size": 4341,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/finals-freeze/v_final-fmc/synthetic_opponents/zips/river_value_threshold.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "5ec468de9e1182c513dad5fb821dc6f3f9687c22068012767e08949223ee3551",
+    "size_bytes": 1229,
+    "src_py_files": [],
+    "uncompressed_bytes": 4341
+  },
+  "tight_aggressive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1119,
+        "file_size": 4336,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/finals-freeze/v_final-fmc/synthetic_opponents/zips/tight_aggressive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "55f45d738be5465449690ecc80607176f3592567372e3af451b3bb39c5776ee2",
+    "size_bytes": 1229,
+    "src_py_files": [],
+    "uncompressed_bytes": 4336
+  },
+  "tight_passive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1115,
+        "file_size": 4333,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/finals-freeze/v_final-fmc/synthetic_opponents/zips/tight_passive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "9b7cda105af50cede4bf42c7de90c893477fa066973648663966721b3476a89e",
+    "size_bytes": 1225,
+    "src_py_files": [],
+    "uncompressed_bytes": 4333
+  }
+}

@@ -1,0 +1,18 @@
+H2H: v_final (a) vs neel (b)
+  bot-a: /Users/farhad/Code/PokerBot/submissions/v_final.zip
+  bot-b: /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-28-public-saturation/opponent_zips/neel.zip
+  schedule: 1 seeds × 2 orientations × 100 hands = up to 200 hands
+
+  seed=142 o=0 hands= 88 chip_a= +10000 bb_a= +100.0 err={'a': 0, 'b': 0} dur=3.16s
+  seed=142 o=1 hands=100 chip_a=  +3771 bb_a=  +37.7 err={'b': 0, 'a': 0} dur=3.09s
+
+======================================================================
+H2H summary: v_final (a) vs neel (b)
+  matches: 2
+  hands played total: 188
+  v_final per-match BB delta: +68.86 (95% CI [+37.71, +100.00])
+  v_final bb/100: +73.25
+  v_final errors: 0
+  neel errors: 0
+  verdict: v_final BEATS neel (CI excludes 0)
+======================================================================

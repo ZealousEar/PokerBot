@@ -1,0 +1,35 @@
+{
+  "download": {
+    "payload": {
+      "hands": [
+        {
+          "id": "toby_paired_fold_001",
+          "seats": [{"playerId": "hero"}, {"playerId": "villain"}],
+          "outcomes": {"hero": -2400},
+          "streets": [
+            {
+              "name": "pf",
+              "events": [
+                {"actor": "hero", "move": "call", "amount": 100, "position": "big_blind"}
+              ]
+            },
+            {
+              "name": "f",
+              "board": ["Ks", "7s", "2d"],
+              "events": [
+                {"actor": "hero", "move": "check", "canCheck": true, "position": "big_blind"}
+              ]
+            },
+            {
+              "name": "r",
+              "board": ["Ks", "Kd", "7s", "2h", "3c"],
+              "events": [
+                {"actor": "hero", "move": "pass", "toCall": 2400, "canCheck": false, "position": "big_blind"}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

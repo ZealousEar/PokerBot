@@ -1,0 +1,11 @@
+[bot] GTO model not available ([Errno 2] No such file or directory: '/var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/fhval_q4scrbr3/data/gto_strategy.npz'); using Monte Carlo fallback.
+
+✅ PASSED  —  consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/vladimir_live_vlad.zip
+
+
+Test results:
+  ✓ [0.500s] preflop_call_or_fold: {'action': 'raise', 'amount': 200}
+  ✓ [0.500s] postflop_can_check: {'action': 'raise', 'amount': 103}
+  ✓ [0.500s] river_facing_large_bet: {'action': 'call'}
+  ✓ [0.500s] short_stack_all_in_decision: {'action': 'all_in'}
+

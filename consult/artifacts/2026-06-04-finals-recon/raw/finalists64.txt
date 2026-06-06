@@ -1,0 +1,64 @@
+Zaahir|2968|57|54
+50CentRaise|2443|37|35
+72o|1788|36|36
+alan|1760|36|28
+ant-bot|3404|37|32
+APEX|2020|62|40
+BATNEEC|2019|36|36
+𝐛𝐚𝐯|2276|36|42
+BeginnersLuck V3|1384|38|26
+Bot2|1389|37|30
+BussBot-v3|4070|37|43
+CallMeMaybe|4921|37|41
+chimera_fusion|1811|63|29
+CrimsonBot|3883|39|39
+durak|3177|35|37
+elprofesoriqo|1744|38|29
+FerdaBot|3812|33|61
+Foldilocks|1379|38|26
+Freelo|1958|39|28
+G-Forge|1604|62|42
+gems_VC2|2832|60|42
+goku|1846|36|33
+GrandSlam|1650|61|30
+Hyperion|3593|61|57
+I hate arsenal|2120|36|31
+Inefficiency|2618|37|43
+IveyBot|2764|61|56
+Javis|1989|36|25
+jew|6000|36|56
+jotaroZAWARUDO|3155|38|34
+Khan’t Fold|3644|33|36
+Lekemog|3456|36|42
+Looper257|4309|36|44
+Lyra|1705|37|38
+make_no_mistakes|2934|60|42
+NecessarySkew|4437|36|58
+NEMESIS|1430|37|46
+never played poker|1619|37|27
+not_so_simple_bot|1711|39|28
+Overfitted|2929|36|42
+Oxvard|4231|38|34
+Pantheon|2545|37|49
+pavan kumar|2188|37|41
+PhoonTooMuchForPoker|1569|36|28
+poker? I barely know her|2270|37|30
+RODBOTv2|2100|38|45
+sam_bot_lfg_2|2508|35|49
+SaviourBot|1689|36|33
+SevenDeuces|4519|34|62
+SummerSun|1645|58|28
+Super2Trooper|1925|38|42
+SuperExtraDeluxeMegaBot|1433|36|28
+talan|2988|36|44
+Taleto13|4069|38|34
+TheCrystalline|1994|61|38
+TheHouse|1684|39|28
+TheQuantBot|3105|35|40
+TheUnknown|1317|60|23
+Thorp|1565|35|37
+Tumble-Weed-Dutch-v2|3457|36|33
+twader|2863|61|31
+VolatileNeuron|1624|39|26
+winning|2546|65|35
+Worm|1252|34|27

@@ -1,0 +1,17 @@
+{
+  "label": "commit_date_gonfdcg__fullhouse_engine__main",
+  "cmd": [
+    "git",
+    "show",
+    "-s",
+    "--format=%cI",
+    "HEAD"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/gonfdcg__fullhouse_engine__main",
+  "started_at": "2026-05-29T15:14:05Z",
+  "finished_at": "2026-05-29T15:14:05Z",
+  "elapsed_s": 0.006,
+  "returncode": 0,
+  "stdout": "2026-05-24T20:39:43+01:00\n",
+  "stderr": ""
+}

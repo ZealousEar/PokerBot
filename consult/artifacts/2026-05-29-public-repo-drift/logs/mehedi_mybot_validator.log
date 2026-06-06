@@ -1,0 +1,10 @@
+
+✅ PASSED  —  consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/mehedi_mybot.zip
+
+
+Test results:
+  ✓ [0.000s] preflop_call_or_fold: {'action': 'raise', 'amount': 250}
+  ✓ [0.400s] postflop_can_check: {'action': 'call'}
+  ✓ [0.400s] river_facing_large_bet: {'action': 'all_in'}
+  ✓ [0.000s] short_stack_all_in_decision: {'action': 'all_in'}
+

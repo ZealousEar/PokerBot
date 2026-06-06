@@ -1,0 +1,162 @@
+{
+  "all_action_error_records": [],
+  "compact_result": {
+    "bot_errors": {
+      "aggressor": [],
+      "mathematician": [],
+      "ref_bot_2": [],
+      "shark": [],
+      "template": [],
+      "thorp": []
+    },
+    "bot_ids": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "thorp",
+      "shark",
+      "template"
+    ],
+    "chip_delta": {
+      "aggressor": -10000,
+      "mathematician": 450,
+      "ref_bot_2": -10000,
+      "shark": 24950,
+      "template": 4600,
+      "thorp": -10000
+    },
+    "duration_s": 1.52,
+    "final_stacks": {
+      "aggressor": 0,
+      "mathematician": 10450,
+      "ref_bot_2": 0,
+      "shark": 34950,
+      "template": 14600,
+      "thorp": 0
+    },
+    "match_id": "reference_field_seat3_seed45",
+    "n_hands": 800,
+    "seed": 45
+  },
+  "row": {
+    "bot_errors_all": {
+      "aggressor": [],
+      "mathematician": [],
+      "ref_bot_2": [],
+      "shark": [],
+      "template": [],
+      "thorp": []
+    },
+    "bot_ids": [
+      "aggressor",
+      "mathematician",
+      "ref_bot_2",
+      "thorp",
+      "shark",
+      "template"
+    ],
+    "bust_hand": 0,
+    "bust_street": "river",
+    "busted": true,
+    "chip_delta_all": {
+      "aggressor": -10000,
+      "mathematician": 450,
+      "ref_bot_2": -10000,
+      "shark": 24950,
+      "template": 4600,
+      "thorp": -10000
+    },
+    "decisions": 3,
+    "duration_s": 1.52,
+    "exceptions": 0,
+    "fold_defaults": 0,
+    "hands_played": 800,
+    "hands_requested": 800,
+    "illegal_action_names": 0,
+    "load_failed": 0,
+    "mix": "reference_field",
+    "protocol_coercions": {
+      "amount_parse_error": 0,
+      "check_when_owed": 0,
+      "raise_below_min": 0,
+      "raise_to_nonpositive": 0,
+      "raise_without_amount": 0
+    },
+    "runner_errors": {},
+    "seed": 45,
+    "thorp_delta": -10000,
+    "thorp_final_stack": 0,
+    "thorp_seat": 3,
+    "timeouts": 0,
+    "warmup_exception": 0,
+    "warmup_timeout": 0
+  },
+  "thorp_action_records": [
+    {
+      "amount_owed": 100,
+      "amount_parse_error": false,
+      "bot_id": "thorp",
+      "can_check": false,
+      "check_when_owed": false,
+      "current_bet": 100,
+      "fold_default": false,
+      "hand_id": "reference_field_seat3_seed45_h0000",
+      "invalid_name": false,
+      "min_raise_to": 200,
+      "raise_below_min": false,
+      "raise_to_nonpositive": false,
+      "raise_without_amount": false,
+      "raw_action": "raise",
+      "raw_amount": 300,
+      "runner_error": null,
+      "seat": 3,
+      "street": "preflop",
+      "your_bet_this_street": 0,
+      "your_stack": 10000
+    },
+    {
+      "amount_owed": 700,
+      "amount_parse_error": false,
+      "bot_id": "thorp",
+      "can_check": false,
+      "check_when_owed": false,
+      "current_bet": 1000,
+      "fold_default": false,
+      "hand_id": "reference_field_seat3_seed45_h0000",
+      "invalid_name": false,
+      "min_raise_to": 1700,
+      "raise_below_min": false,
+      "raise_to_nonpositive": false,
+      "raise_without_amount": false,
+      "raw_action": "raise",
+      "raw_amount": 3500,
+      "runner_error": null,
+      "seat": 3,
+      "street": "preflop",
+      "your_bet_this_street": 300,
+      "your_stack": 9700
+    },
+    {
+      "amount_owed": 6500,
+      "amount_parse_error": false,
+      "bot_id": "thorp",
+      "can_check": false,
+      "check_when_owed": false,
+      "current_bet": 10000,
+      "fold_default": false,
+      "hand_id": "reference_field_seat3_seed45_h0000",
+      "invalid_name": false,
+      "min_raise_to": 16500,
+      "raise_below_min": false,
+      "raise_to_nonpositive": false,
+      "raise_without_amount": false,
+      "raw_action": "call",
+      "raw_amount": null,
+      "runner_error": null,
+      "seat": 3,
+      "street": "preflop",
+      "your_bet_this_street": 3500,
+      "your_stack": 6500
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "candidate": {
+    "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/true_noop_candidate.zip",
+    "sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "config": {
+    "allow_small_seeds": false,
+    "bust_tol": 0.15,
+    "hands": 400,
+    "jobs": 1,
+    "p50_tol": 6000.0,
+    "pods": [
+      "C0",
+      "C1"
+    ],
+    "pythonhashseed": "0",
+    "seed_base": 142,
+    "seeds": 40,
+    "skip_stage1": true,
+    "skip_stage2": true,
+    "use_docker": false
+  },
+  "died_at_stage": null,
+  "expected_protected_sha": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+  "generated_at": "2026-05-31T01:16:48Z",
+  "locked": {
+    "path": "submissions/v_final.zip",
+    "sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "opponent_zips": {
+    "aggressor": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/aggressor.zip",
+      "sha256": "62db39f64a8121e860c718c6e9ddbb3119e7ced4dc2fd6a7d8e0dd9d2687b7c8",
+      "source": "ext/fullhouse-engine/bots/aggressor"
+    },
+    "mathematician": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/mathematician.zip",
+      "sha256": "4fd347a4a46efbc7c3de79bca7333109462ceb4d16e456e1e5b3ad3703dae664",
+      "source": "ext/fullhouse-engine/bots/mathematician"
+    },
+    "ref_bot_2": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/ref_bot_2.zip",
+      "sha256": "88bf4ad82cba016ada5ee7d9508b9d18066c478569d31ee8b73f4670318af635",
+      "source": "ext/fullhouse-engine/bots/ref_bot_2"
+    },
+    "shark": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/shark.zip",
+      "sha256": "6f1301cbc36c8696ba0ac56ac30509adcb2cc9b8d6001bb5c4d04d63752eb5bd",
+      "source": "ext/fullhouse-engine/bots/shark"
+    },
+    "template": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/template.zip",
+      "sha256": "f06ebf9bae229f3854d61b6d13e321f9cd63f79455c664cc32c6dbf06dee1087",
+      "source": "ext/fullhouse-engine/bots/template"
+    },
+    "toby_master": {
+      "kind": "copied_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/toby_master.zip",
+      "sha256": "d09ad23f6f76a3f8e05cc57561af6a75bd554da73c67c476307689842f8b3508",
+      "source": "consult/artifacts/2026-05-29-public-drift-patch/opponent_zips/toby_master.zip"
+    }
+  },
+  "pods": {
+    "all_pods_pass": true,
+    "any_incomplete": false,
+    "compositions": {
+      "C0": {
+        "bust_rate_delta_candidate_minus_locked": 0.025,
+        "bust_regression": false,
+        "candidate_bust_rate": 0.75,
+        "candidate_busts": 30,
+        "candidate_chip_delta": {
+          "count": 40,
+          "max": 17800.0,
+          "mean": -5549.98,
+          "min": -10000.0,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": -10000.0,
+          "p75": -7450.75,
+          "p90": 6806.5,
+          "stdev": 8387.37
+        },
+        "candidate_hero_action_errors": 0,
+        "candidate_hero_decisions": 7241,
+        "candidate_hero_p99_decide_latency_ms": 3.797,
+        "complete": true,
+        "locked_bust_rate": 0.725,
+        "locked_busts": 29,
+        "locked_chip_delta": {
+          "count": 40,
+          "max": 26951.0,
+          "mean": -4250.57,
+          "min": -10000.0,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": -10000.0,
+          "p75": 2856.0,
+          "p90": 10935.7,
+          "stdev": 10131.65
+        },
+        "marginal_p50_delta_candidate_minus_locked": 0.0,
+        "missing_candidate_seeds": [],
+        "missing_locked_seeds": [],
+        "p50_regression": false,
+        "paired_count": 40,
+        "paired_diff_candidate_minus_locked": {
+          "count": 40,
+          "max": 21950.0,
+          "mean": -1299.4,
+          "min": -27250.0,
+          "p10": -15066.9,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 2372.4,
+          "stdev": 9115.29
+        },
+        "pod_pass": true,
+        "scheduled_count": 40
+      },
+      "C1": {
+        "bust_rate_delta_candidate_minus_locked": 0.1,
+        "bust_regression": false,
+        "candidate_bust_rate": 0.375,
+        "candidate_busts": 15,
+        "candidate_chip_delta": {
+          "count": 40,
+          "max": 47310.0,
+          "mean": 7430.93,
+          "min": -10000.0,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": 261.5,
+          "p75": 25149.0,
+          "p90": 39329.9,
+          "stdev": 19831.28
+        },
+        "candidate_hero_action_errors": 0,
+        "candidate_hero_decisions": 15276,
+        "candidate_hero_p99_decide_latency_ms": 2.369,
+        "complete": true,
+        "locked_bust_rate": 0.275,
+        "locked_busts": 11,
+        "locked_chip_delta": {
+          "count": 40,
+          "max": 50000.0,
+          "mean": 12831.9,
+          "min": -10000.0,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": 15059.5,
+          "p75": 25232.0,
+          "p90": 35837.4,
+          "stdev": 18359.61
+        },
+        "marginal_p50_delta_candidate_minus_locked": -14798.0,
+        "missing_candidate_seeds": [],
+        "missing_locked_seeds": [],
+        "p50_regression": false,
+        "paired_count": 40,
+        "paired_diff_candidate_minus_locked": {
+          "count": 40,
+          "max": 40672.0,
+          "mean": -5400.98,
+          "min": -36777.0,
+          "p10": -28188.9,
+          "p25": -12881.75,
+          "p50": -2310.5,
+          "p75": 0.0,
+          "p90": 10341.2,
+          "stdev": 15988.58
+        },
+        "pod_pass": true,
+        "scheduled_count": 40
+      }
+    }
+  },
+  "protected_sha_after": {
+    "submissions/best_green.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "submissions/v_final.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "protected_sha_before": {
+    "submissions/best_green.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "submissions/v_final.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "protected_sha_ok": true,
+  "stages": [],
+  "verdict": "GATE_CLEAR_FLAG_FOR_HUMAN_MODIFY",
+  "verdict_note": "NOTHING AUTO-PROMOTES. GATE_CLEAR only FLAGS the candidate for a human MODIFY decision; submissions/v_final.zip stays the upload target unless a human explicitly overrides."
+}

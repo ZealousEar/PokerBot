@@ -1,0 +1,1121 @@
+{
+  "asOf": "2026-06-01",
+  "upstream": "uzlez/fullhouse-engine",
+  "priorRunDir": "consult/artifacts/2026-05-29-public-repo-drift",
+  "outDir": "consult/artifacts/2026-06-01-public-repo-drift",
+  "baselines": {
+    "Pav1602/fullhouse-engine": {
+      "head_sha": "555c84f58d01952e025ec4b80c06da7f4ec6cced",
+      "default_branch": "main",
+      "bots": [
+        {
+          "name": "aggressor",
+          "path": "bots/aggressor",
+          "bot_py": "bots/aggressor/bot.py",
+          "bot_py_size": 1143,
+          "bot_py_lines": 41,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "human_cli",
+          "path": "bots/human_cli",
+          "bot_py": "bots/human_cli/bot.py",
+          "bot_py_size": 5991,
+          "bot_py_lines": 137,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "mathematician",
+          "path": "bots/mathematician",
+          "bot_py": "bots/mathematician/bot.py",
+          "bot_py_size": 504,
+          "bot_py_lines": 21,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "ref_bot_2",
+          "path": "bots/ref_bot_2",
+          "bot_py": "bots/ref_bot_2/bot.py",
+          "bot_py_size": 401,
+          "bot_py_lines": 15,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "shark",
+          "path": "bots/shark",
+          "bot_py": "bots/shark/bot.py",
+          "bot_py_size": 2554,
+          "bot_py_lines": 82,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot",
+          "path": "bots/skantbot",
+          "bot_py": "bots/skantbot/bot.py",
+          "bot_py_size": 38917,
+          "bot_py_lines": 1007,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot2",
+          "path": "bots/skantbot2",
+          "bot_py": "bots/skantbot2/bot.py",
+          "bot_py_size": 45319,
+          "bot_py_lines": 1149,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot3",
+          "path": "bots/skantbot3",
+          "bot_py": null,
+          "bot_py_size": null,
+          "bot_py_lines": null,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot4",
+          "path": "bots/skantbot4",
+          "bot_py": "bots/skantbot4/bot.py",
+          "bot_py_size": 48997,
+          "bot_py_lines": 1227,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot6",
+          "path": "bots/skantbot6",
+          "bot_py": "bots/skantbot6/bot.py",
+          "bot_py_size": 64828,
+          "bot_py_lines": 1576,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot6_phase1",
+          "path": "bots/skantbot6_phase1",
+          "bot_py": "bots/skantbot6_phase1/bot.py",
+          "bot_py_size": 52442,
+          "bot_py_lines": 1288,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot6_phase4_baseline",
+          "path": "bots/skantbot6_phase4_baseline",
+          "bot_py": "bots/skantbot6_phase4_baseline/bot.py",
+          "bot_py_size": 57126,
+          "bot_py_lines": 1402,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot6_phase5_baseline",
+          "path": "bots/skantbot6_phase5_baseline",
+          "bot_py": "bots/skantbot6_phase5_baseline/bot.py",
+          "bot_py_size": 57478,
+          "bot_py_lines": 1411,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot6_phase6_baseline",
+          "path": "bots/skantbot6_phase6_baseline",
+          "bot_py": "bots/skantbot6_phase6_baseline/bot.py",
+          "bot_py_size": 60540,
+          "bot_py_lines": 1484,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot7",
+          "path": "bots/skantbot7",
+          "bot_py": "bots/skantbot7/bot.py",
+          "bot_py_size": 65504,
+          "bot_py_lines": 1590,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot7.1",
+          "path": "bots/skantbot7.1",
+          "bot_py": "bots/skantbot7.1/bot.py",
+          "bot_py_size": 66828,
+          "bot_py_lines": 1621,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot7.3",
+          "path": "bots/skantbot7.3",
+          "bot_py": "bots/skantbot7.3/bot.py",
+          "bot_py_size": 67675,
+          "bot_py_lines": 1653,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot7.4",
+          "path": "bots/skantbot7.4",
+          "bot_py": "bots/skantbot7.4/bot.py",
+          "bot_py_size": 69390,
+          "bot_py_lines": 1685,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot7.5",
+          "path": "bots/skantbot7.5",
+          "bot_py": "bots/skantbot7.5/bot.py",
+          "bot_py_size": 69636,
+          "bot_py_lines": 1688,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot7.6",
+          "path": "bots/skantbot7.6",
+          "bot_py": "bots/skantbot7.6/bot.py",
+          "bot_py_size": 71141,
+          "bot_py_lines": 1723,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot7.7",
+          "path": "bots/skantbot7.7",
+          "bot_py": "bots/skantbot7.7/bot.py",
+          "bot_py_size": 72446,
+          "bot_py_lines": 1753,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot7.8",
+          "path": "bots/skantbot7.8",
+          "bot_py": "bots/skantbot7.8/bot.py",
+          "bot_py_size": 73374,
+          "bot_py_lines": 1765,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "skantbot7.9",
+          "path": "bots/skantbot7.9",
+          "bot_py": "bots/skantbot7.9/bot.py",
+          "bot_py_size": 73385,
+          "bot_py_lines": 1765,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "template",
+          "path": "bots/template",
+          "bot_py": "bots/template/bot.py",
+          "bot_py_size": 4225,
+          "bot_py_lines": 87,
+          "data_files": [],
+          "data_bytes": 0
+        }
+      ],
+      "head_date": "2026-05-25T11:00:14+01:00"
+    },
+    "vladimirfilip/fullhouse-engine": {
+      "head_sha": "f8b8723ce324685429a5098d6b76586005010210",
+      "default_branch": "main",
+      "bots": [
+        {
+          "name": "aggressor",
+          "path": "bots/aggressor",
+          "bot_py": "bots/aggressor/bot.py",
+          "bot_py_size": 525,
+          "bot_py_lines": 19,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "mathematician",
+          "path": "bots/mathematician",
+          "bot_py": "bots/mathematician/bot.py",
+          "bot_py_size": 504,
+          "bot_py_lines": 21,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "ref_bot_2",
+          "path": "bots/ref_bot_2",
+          "bot_py": "bots/ref_bot_2/bot.py",
+          "bot_py_size": 401,
+          "bot_py_lines": 15,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "shark",
+          "path": "bots/shark",
+          "bot_py": "bots/shark/bot.py",
+          "bot_py_size": 1933,
+          "bot_py_lines": 60,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "template",
+          "path": "bots/template",
+          "bot_py": "bots/template/bot.py",
+          "bot_py_size": 5566,
+          "bot_py_lines": 117,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "vlad",
+          "path": "bots/vlad",
+          "bot_py": "bots/vlad/bot.py",
+          "bot_py_size": 30111,
+          "bot_py_lines": 729,
+          "data_files": [],
+          "data_bytes": 0
+        }
+      ],
+      "head_date": "2026-05-28T23:37:29+01:00"
+    },
+    "TobyCoad/fullhouse-engine": {
+      "head_sha": "93516f33675d32beaeb3228a554c1323926cd71d",
+      "default_branch": "main",
+      "bots": [
+        {
+          "name": "aggressor",
+          "path": "bots/aggressor",
+          "bot_py": "bots/aggressor/bot.py",
+          "bot_py_size": 525,
+          "bot_py_lines": 19,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "bluff_heavy",
+          "path": "bots/bluff_heavy",
+          "bot_py": "bots/bluff_heavy/bot.py",
+          "bot_py_size": 1493,
+          "bot_py_lines": 47,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "loose_aggressive",
+          "path": "bots/loose_aggressive",
+          "bot_py": "bots/loose_aggressive/bot.py",
+          "bot_py_size": 4603,
+          "bot_py_lines": 127,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "loose_passive",
+          "path": "bots/loose_passive",
+          "bot_py": "bots/loose_passive/bot.py",
+          "bot_py_size": 3592,
+          "bot_py_lines": 129,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "master",
+          "path": "bots/master",
+          "bot_py": "bots/master/bot.py",
+          "bot_py_size": 15642,
+          "bot_py_lines": 421,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "mathematician",
+          "path": "bots/mathematician",
+          "bot_py": "bots/mathematician/bot.py",
+          "bot_py_size": 504,
+          "bot_py_lines": 21,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "position_exploiter",
+          "path": "bots/position_exploiter",
+          "bot_py": "bots/position_exploiter/bot.py",
+          "bot_py_size": 5091,
+          "bot_py_lines": 147,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "pure_pot_odds",
+          "path": "bots/pure_pot_odds",
+          "bot_py": "bots/pure_pot_odds/bot.py",
+          "bot_py_size": 2932,
+          "bot_py_lines": 96,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "random_bot",
+          "path": "bots/random_bot",
+          "bot_py": "bots/random_bot/bot.py",
+          "bot_py_size": 851,
+          "bot_py_lines": 32,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "ref_bot_2",
+          "path": "bots/ref_bot_2",
+          "bot_py": "bots/ref_bot_2/bot.py",
+          "bot_py_size": 401,
+          "bot_py_lines": 15,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "shark",
+          "path": "bots/shark",
+          "bot_py": "bots/shark/bot.py",
+          "bot_py_size": 1933,
+          "bot_py_lines": 60,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "stack_pressure",
+          "path": "bots/stack_pressure",
+          "bot_py": "bots/stack_pressure/bot.py",
+          "bot_py_size": 4946,
+          "bot_py_lines": 138,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "template",
+          "path": "bots/template",
+          "bot_py": "bots/template/bot.py",
+          "bot_py_size": 5566,
+          "bot_py_lines": 117,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "tight_aggressive",
+          "path": "bots/tight_aggressive",
+          "bot_py": "bots/tight_aggressive/bot.py",
+          "bot_py_size": 5031,
+          "bot_py_lines": 147,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "tight_passive",
+          "path": "bots/tight_passive",
+          "bot_py": "bots/tight_passive/bot.py",
+          "bot_py_size": 4105,
+          "bot_py_lines": 113,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "trap_slow_player",
+          "path": "bots/trap_slow_player",
+          "bot_py": "bots/trap_slow_player/bot.py",
+          "bot_py_size": 4916,
+          "bot_py_lines": 136,
+          "data_files": [],
+          "data_bytes": 0
+        }
+      ],
+      "head_date": "2026-05-13T22:19:58+01:00"
+    },
+    "MatusGib/fullhouse-engine": {
+      "head_sha": "a80b26957db5f5515d9273a15d1b73aadf8985db",
+      "default_branch": "main",
+      "bots": [
+        {
+          "name": "aggressor",
+          "path": "bots/aggressor",
+          "bot_py": "bots/aggressor/bot.py",
+          "bot_py_size": 525,
+          "bot_py_lines": 19,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "mathematician",
+          "path": "bots/mathematician",
+          "bot_py": "bots/mathematician/bot.py",
+          "bot_py_size": 504,
+          "bot_py_lines": 21,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "ref_bot_2",
+          "path": "bots/ref_bot_2",
+          "bot_py": "bots/ref_bot_2/bot.py",
+          "bot_py_size": 401,
+          "bot_py_lines": 15,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "shark",
+          "path": "bots/shark",
+          "bot_py": "bots/shark/bot.py",
+          "bot_py_size": 1933,
+          "bot_py_lines": 60,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "template",
+          "path": "bots/template",
+          "bot_py": "bots/template/bot.py",
+          "bot_py_size": 5719,
+          "bot_py_lines": 119,
+          "data_files": [],
+          "data_bytes": 0
+        }
+      ],
+      "head_date": "2026-05-24T20:39:43+01:00"
+    },
+    "stoppedtime24/fullhouse-engine": {
+      "head_sha": "52951cb7242eb1e3abc638ccd287a08ce37ff34a",
+      "default_branch": "main",
+      "bots": [
+        {
+          "name": "aggressor",
+          "path": "bots/aggressor",
+          "bot_py": "bots/aggressor/bot.py",
+          "bot_py_size": 525,
+          "bot_py_lines": 19,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "mathematician",
+          "path": "bots/mathematician",
+          "bot_py": "bots/mathematician/bot.py",
+          "bot_py_size": 504,
+          "bot_py_lines": 21,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "mybot",
+          "path": "bots/mybot",
+          "bot_py": "bots/mybot/bot.py",
+          "bot_py_size": 13890,
+          "bot_py_lines": 333,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "ref_bot_2",
+          "path": "bots/ref_bot_2",
+          "bot_py": "bots/ref_bot_2/bot.py",
+          "bot_py_size": 401,
+          "bot_py_lines": 15,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "shark",
+          "path": "bots/shark",
+          "bot_py": "bots/shark/bot.py",
+          "bot_py_size": 1933,
+          "bot_py_lines": 60,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "template",
+          "path": "bots/template",
+          "bot_py": "bots/template/bot.py",
+          "bot_py_size": 5719,
+          "bot_py_lines": 119,
+          "data_files": [],
+          "data_bytes": 0
+        }
+      ],
+      "head_date": "2026-05-28T22:56:46+01:00"
+    },
+    "Benjamin-Yu-Sheng-Chang/fullhouse-hackathon": {
+      "head_sha": "725e89876c967bbe567c7c88aa43e19b82a1bcdc",
+      "default_branch": "main",
+      "bots": [
+        {
+          "name": "aggressor",
+          "path": "bots/aggressor",
+          "bot_py": "bots/aggressor/bot.py",
+          "bot_py_size": 525,
+          "bot_py_lines": 19,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "mathematician",
+          "path": "bots/mathematician",
+          "bot_py": "bots/mathematician/bot.py",
+          "bot_py_size": 504,
+          "bot_py_lines": 21,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "ref_bot_2",
+          "path": "bots/ref_bot_2",
+          "bot_py": "bots/ref_bot_2/bot.py",
+          "bot_py_size": 401,
+          "bot_py_lines": 15,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "shark",
+          "path": "bots/shark",
+          "bot_py": "bots/shark/bot.py",
+          "bot_py_size": 1933,
+          "bot_py_lines": 60,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "template",
+          "path": "bots/template",
+          "bot_py": "bots/template/bot.py",
+          "bot_py_size": 5719,
+          "bot_py_lines": 119,
+          "data_files": [],
+          "data_bytes": 0
+        }
+      ],
+      "head_date": "2026-05-28T15:29:25+01:00"
+    },
+    "Mehedi-dev-2404/fullhouse-engine": {
+      "head_sha": "aa14a35a4f185f8608ae962aef17a7c620909a4b",
+      "default_branch": "main",
+      "bots": [
+        {
+          "name": "aggressor",
+          "path": "bots/aggressor",
+          "bot_py": "bots/aggressor/bot.py",
+          "bot_py_size": 525,
+          "bot_py_lines": 19,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "mathematician",
+          "path": "bots/mathematician",
+          "bot_py": "bots/mathematician/bot.py",
+          "bot_py_size": 504,
+          "bot_py_lines": 21,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "mybot",
+          "path": "bots/mybot",
+          "bot_py": "bots/mybot/bot.py",
+          "bot_py_size": 25993,
+          "bot_py_lines": 733,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "ref_bot_2",
+          "path": "bots/ref_bot_2",
+          "bot_py": "bots/ref_bot_2/bot.py",
+          "bot_py_size": 401,
+          "bot_py_lines": 15,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "shark",
+          "path": "bots/shark",
+          "bot_py": "bots/shark/bot.py",
+          "bot_py_size": 1933,
+          "bot_py_lines": 60,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "template",
+          "path": "bots/template",
+          "bot_py": "bots/template/bot.py",
+          "bot_py_size": 5719,
+          "bot_py_lines": 119,
+          "data_files": [],
+          "data_bytes": 0
+        }
+      ],
+      "head_date": "2026-05-28T00:44:05+01:00"
+    },
+    "famadeo/fullhouse-engine(local)": {
+      "head_sha": "c94dace1c6bf523aa49e9c149d897c6b71a19c5e",
+      "default_branch": "main",
+      "bots": [
+        {
+          "name": "aggressor",
+          "path": "bots/aggressor",
+          "bot_py": "bots/aggressor/bot.py",
+          "bot_py_size": 525,
+          "bot_py_lines": 19,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "codex_holdem",
+          "path": "bots/codex_holdem",
+          "bot_py": "bots/codex_holdem/bot.py",
+          "bot_py_size": 88634,
+          "bot_py_lines": 2359,
+          "data_files": [
+            "data/model.json"
+          ],
+          "data_bytes": 60987
+        },
+        {
+          "name": "mathematician",
+          "path": "bots/mathematician",
+          "bot_py": "bots/mathematician/bot.py",
+          "bot_py_size": 504,
+          "bot_py_lines": 21,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "ref_bot_2",
+          "path": "bots/ref_bot_2",
+          "bot_py": "bots/ref_bot_2/bot.py",
+          "bot_py_size": 401,
+          "bot_py_lines": 15,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "shark",
+          "path": "bots/shark",
+          "bot_py": "bots/shark/bot.py",
+          "bot_py_size": 1933,
+          "bot_py_lines": 60,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "template",
+          "path": "bots/template",
+          "bot_py": "bots/template/bot.py",
+          "bot_py_size": 5566,
+          "bot_py_lines": 117,
+          "data_files": [],
+          "data_bytes": 0
+        }
+      ],
+      "head_date": "2026-05-22T14:59:01-03:00"
+    },
+    "agrawalneel25/fullhouse-engine(neel-work local)": {
+      "head_sha": "071d54c302cbd2d9d5fcc773260e7f5f894c642f",
+      "default_branch": "neel-work",
+      "bots": [
+        {
+          "name": "aggressor",
+          "path": "bots/aggressor",
+          "bot_py": "bots/aggressor/bot.py",
+          "bot_py_size": 525,
+          "bot_py_lines": 19,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "mathematician",
+          "path": "bots/mathematician",
+          "bot_py": "bots/mathematician/bot.py",
+          "bot_py_size": 504,
+          "bot_py_lines": 21,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "neel",
+          "path": "bots/neel",
+          "bot_py": "bots/neel/bot.py",
+          "bot_py_size": 8132,
+          "bot_py_lines": 257,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "ref_bot_2",
+          "path": "bots/ref_bot_2",
+          "bot_py": "bots/ref_bot_2/bot.py",
+          "bot_py_size": 401,
+          "bot_py_lines": 15,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "shark",
+          "path": "bots/shark",
+          "bot_py": "bots/shark/bot.py",
+          "bot_py_size": 1933,
+          "bot_py_lines": 60,
+          "data_files": [],
+          "data_bytes": 0
+        },
+        {
+          "name": "template",
+          "path": "bots/template",
+          "bot_py": "bots/template/bot.py",
+          "bot_py_size": 5566,
+          "bot_py_lines": 117,
+          "data_files": [],
+          "data_bytes": 0
+        }
+      ],
+      "head_date": "2026-05-12T17:52:21+01:00"
+    }
+  },
+  "priorInventory": {
+    "abayojumumichael/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-24T20:04:02Z"
+    },
+    "MatusGib/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-28T21:58:34Z"
+    },
+    "study9372/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-24T20:04:02Z"
+    },
+    "Benjamin-Yu-Sheng-Chang/fullhouse-hackathon": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-28T14:39:04Z"
+    },
+    "Mehedi-dev-2404/fullhouse-engine": {
+      "non_template_bot_dirs": "mybot",
+      "pushed_at": "2026-05-27T23:44:07Z"
+    },
+    "RemiSeg/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-24T20:04:02Z"
+    },
+    "ds726/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-24T20:04:02Z"
+    },
+    "Amine0411/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-24T20:04:02Z"
+    },
+    "NovaIMario/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-24T20:04:02Z"
+    },
+    "Con-TI/fullhouse-engine": {
+      "non_template_bot_dirs": "mybot",
+      "pushed_at": "2026-05-25T18:17:42Z"
+    },
+    "afinner/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-24T20:04:02Z"
+    },
+    "Yutongzhang20080108/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-24T20:04:02Z"
+    },
+    "lucashsu007-create/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-26T16:15:41Z"
+    },
+    "Ganto23/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-21T21:46:41Z"
+    },
+    "BouillieAnonymous/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-21T21:46:41Z"
+    },
+    "famadeo/fullhouse-engine": {
+      "non_template_bot_dirs": "codex_holdem",
+      "pushed_at": "2026-05-22T18:04:14Z"
+    },
+    "sundubu04/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-19T21:17:35Z"
+    },
+    "jickzx/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-19T13:55:30Z"
+    },
+    "AyushGupta05/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-14T12:20:27Z"
+    },
+    "chunyang-w/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-14T12:20:27Z"
+    },
+    "navaneetham-aicomputing/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-14T12:20:27Z"
+    },
+    "stoppedtime24/fullhouse-engine": {
+      "non_template_bot_dirs": "mybot",
+      "pushed_at": "2026-05-28T21:58:10Z"
+    },
+    "Linglingletsgo/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-15T12:03:28Z"
+    },
+    "krishypatel2007/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-14T12:20:27Z"
+    },
+    "vladimirfilip/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-28T22:37:32Z"
+    },
+    "rishabhkarwal/fullhouse": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-07T19:22:11Z"
+    },
+    "aemilani/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-07T19:22:11Z"
+    },
+    "Littleguygabe/fullhouse-poker": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-22T08:06:32Z"
+    },
+    "agrawalneel25/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-12T16:52:28Z"
+    },
+    "Blessing-Emmanuel/fullhouse-engine": {
+      "non_template_bot_dirs": "",
+      "pushed_at": "2026-05-07T19:22:11Z"
+    }
+  },
+  "currentForks": [
+    {
+      "full_name": "vladimirfilip/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-31T21:30:19Z",
+      "html_url": "https://github.com/vladimirfilip/fullhouse-engine"
+    },
+    {
+      "full_name": "Benjamin-Yu-Sheng-Chang/fullhouse-hackathon",
+      "default_branch": "main",
+      "pushed_at": "2026-05-31T19:43:21Z",
+      "html_url": "https://github.com/Benjamin-Yu-Sheng-Chang/fullhouse-hackathon"
+    },
+    {
+      "full_name": "Mehedi-dev-2404/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-31T13:40:59Z",
+      "html_url": "https://github.com/Mehedi-dev-2404/fullhouse-engine"
+    },
+    {
+      "full_name": "gonfdcg/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-29T14:18:32Z",
+      "html_url": "https://github.com/gonfdcg/fullhouse-engine"
+    },
+    {
+      "full_name": "stoppedtime24/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-28T21:58:10Z",
+      "html_url": "https://github.com/stoppedtime24/fullhouse-engine"
+    },
+    {
+      "full_name": "lucashsu007-create/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-26T16:15:41Z",
+      "html_url": "https://github.com/lucashsu007-create/fullhouse-engine"
+    },
+    {
+      "full_name": "Con-TI/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-25T18:17:42Z",
+      "html_url": "https://github.com/Con-TI/fullhouse-engine"
+    },
+    {
+      "full_name": "Hebobeb0/fullhouse-engine-fork",
+      "default_branch": "main",
+      "pushed_at": "2026-05-24T20:04:02Z",
+      "html_url": "https://github.com/Hebobeb0/fullhouse-engine-fork"
+    },
+    {
+      "full_name": "avj26/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-24T20:04:02Z",
+      "html_url": "https://github.com/avj26/fullhouse-engine"
+    },
+    {
+      "full_name": "joshmhc/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-24T20:04:02Z",
+      "html_url": "https://github.com/joshmhc/fullhouse-engine"
+    },
+    {
+      "full_name": "Akash1Siva/fullhouse-engine-akash",
+      "default_branch": "main",
+      "pushed_at": "2026-05-24T20:04:02Z",
+      "html_url": "https://github.com/Akash1Siva/fullhouse-engine-akash"
+    },
+    {
+      "full_name": "abayojumumichael/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-24T20:04:02Z",
+      "html_url": "https://github.com/abayojumumichael/fullhouse-engine"
+    },
+    {
+      "full_name": "study9372/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-24T20:04:02Z",
+      "html_url": "https://github.com/study9372/fullhouse-engine"
+    },
+    {
+      "full_name": "RemiSeg/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-24T20:04:02Z",
+      "html_url": "https://github.com/RemiSeg/fullhouse-engine"
+    },
+    {
+      "full_name": "ds726/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-24T20:04:02Z",
+      "html_url": "https://github.com/ds726/fullhouse-engine"
+    },
+    {
+      "full_name": "Amine0411/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-24T20:04:02Z",
+      "html_url": "https://github.com/Amine0411/fullhouse-engine"
+    },
+    {
+      "full_name": "NovaIMario/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-24T20:04:02Z",
+      "html_url": "https://github.com/NovaIMario/fullhouse-engine"
+    },
+    {
+      "full_name": "afinner/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-24T20:04:02Z",
+      "html_url": "https://github.com/afinner/fullhouse-engine"
+    },
+    {
+      "full_name": "Yutongzhang20080108/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-24T20:04:02Z",
+      "html_url": "https://github.com/Yutongzhang20080108/fullhouse-engine"
+    },
+    {
+      "full_name": "famadeo/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-22T18:04:14Z",
+      "html_url": "https://github.com/famadeo/fullhouse-engine"
+    },
+    {
+      "full_name": "Littleguygabe/fullhouse-poker",
+      "default_branch": "main",
+      "pushed_at": "2026-05-22T08:06:32Z",
+      "html_url": "https://github.com/Littleguygabe/fullhouse-poker"
+    },
+    {
+      "full_name": "Ganto23/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-21T21:46:41Z",
+      "html_url": "https://github.com/Ganto23/fullhouse-engine"
+    },
+    {
+      "full_name": "BouillieAnonymous/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-21T21:46:41Z",
+      "html_url": "https://github.com/BouillieAnonymous/fullhouse-engine"
+    },
+    {
+      "full_name": "sundubu04/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-19T21:17:35Z",
+      "html_url": "https://github.com/sundubu04/fullhouse-engine"
+    },
+    {
+      "full_name": "jickzx/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-19T13:55:30Z",
+      "html_url": "https://github.com/jickzx/fullhouse-engine"
+    },
+    {
+      "full_name": "Linglingletsgo/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-15T12:03:28Z",
+      "html_url": "https://github.com/Linglingletsgo/fullhouse-engine"
+    },
+    {
+      "full_name": "AyushGupta05/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-14T12:20:27Z",
+      "html_url": "https://github.com/AyushGupta05/fullhouse-engine"
+    },
+    {
+      "full_name": "chunyang-w/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-14T12:20:27Z",
+      "html_url": "https://github.com/chunyang-w/fullhouse-engine"
+    },
+    {
+      "full_name": "navaneetham-aicomputing/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-14T12:20:27Z",
+      "html_url": "https://github.com/navaneetham-aicomputing/fullhouse-engine"
+    },
+    {
+      "full_name": "krishypatel2007/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-14T12:20:27Z",
+      "html_url": "https://github.com/krishypatel2007/fullhouse-engine"
+    },
+    {
+      "full_name": "agrawalneel25/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-12T16:52:28Z",
+      "html_url": "https://github.com/agrawalneel25/fullhouse-engine"
+    },
+    {
+      "full_name": "rishabhkarwal/fullhouse",
+      "default_branch": "main",
+      "pushed_at": "2026-05-07T19:22:11Z",
+      "html_url": "https://github.com/rishabhkarwal/fullhouse"
+    },
+    {
+      "full_name": "aemilani/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-07T19:22:11Z",
+      "html_url": "https://github.com/aemilani/fullhouse-engine"
+    },
+    {
+      "full_name": "Blessing-Emmanuel/fullhouse-engine",
+      "default_branch": "main",
+      "pushed_at": "2026-05-07T19:22:11Z",
+      "html_url": "https://github.com/Blessing-Emmanuel/fullhouse-engine"
+    }
+  ]
+}

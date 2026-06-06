@@ -1,0 +1,83 @@
+{
+  "target": "pav_skantbot7_6",
+  "opponent_path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/pav_skantbot7_6.zip",
+  "requested_hands": 1000,
+  "scheduled_hands": 1200,
+  "actual_hands": 900,
+  "scheduled_bb_per_100": -19.285,
+  "actual_bb_per_100": -25.71333333333333,
+  "ci_low": -63.961111111111116,
+  "ci_high": 7.539999999999999,
+  "chip_delta": -23142,
+  "early_bust_rate": 0.3333333333333333,
+  "hero_errors": 0,
+  "opponent_errors": 0,
+  "duration_s": 2.85,
+  "p99_latency_s": null,
+  "p99_latency_note": "engine run_match does not expose per-decision latency",
+  "p99_match_seconds_per_hand_proxy": 0.006296296296296296,
+  "hu_button_open_opportunities": 451,
+  "hu_button_opens": 222,
+  "hu_button_open_frequency": 0.49223946784922396,
+  "river_trap_entries": null,
+  "river_trap_note": "decision logs do not label traps; river losing commit is a proxy",
+  "river_losing_commit_hands": 4,
+  "river_commit_hands": 21,
+  "river_losing_commit_frequency": 0.19047619047619047,
+  "matches": [
+    {
+      "seed": 142,
+      "orientation": 0,
+      "hands": 27,
+      "chip_delta": -10000,
+      "duration_s": 0.17,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 142,
+      "orientation": 1,
+      "hands": 200,
+      "chip_delta": -4479,
+      "duration_s": 0.66,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 143,
+      "orientation": 0,
+      "hands": 200,
+      "chip_delta": 5790,
+      "duration_s": 0.58,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 143,
+      "orientation": 1,
+      "hands": 200,
+      "chip_delta": 1423,
+      "duration_s": 0.6,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 144,
+      "orientation": 0,
+      "hands": 73,
+      "chip_delta": -10000,
+      "duration_s": 0.25,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 144,
+      "orientation": 1,
+      "hands": 200,
+      "chip_delta": -5876,
+      "duration_s": 0.59,
+      "hero_errors": 0,
+      "opp_errors": 0
+    }
+  ]
+}

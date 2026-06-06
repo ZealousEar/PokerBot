@@ -1,0 +1,17 @@
+{
+  "requested_hands": 200,
+  "actual_hands": 200,
+  "early_termination_reason": "requested_hands_completed",
+  "hero_id": "v_qual2_ship_d54640e0",
+  "hero_errors": [],
+  "chip_delta": {
+    "v_qual2_ship_d54640e0": 4050,
+    "template": -4050
+  },
+  "final_stacks": {
+    "v_qual2_ship_d54640e0": 14050,
+    "template": 5950
+  },
+  "errors": {},
+  "duration_s": 2.95
+}

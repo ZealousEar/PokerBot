@@ -1,0 +1,60 @@
+file,hand_num,start_stack,invested,commit_frac,pf_invested,flop_invested,turn_invested,river_invested,role,origin,went_all_in,reached_showdown,board,street_ended,delta,won,busted,final_pot
+0c18615c,5,10000,4050,0.405,150,433,1010,2357,pf_caller,none,0,0,4h 9d Kc 5c Ac,river,1843,1,0,5893
+0c18615c,81,14091,7988,0.567,179,1145,1984,4630,pf_caller,postflop-escalation,0,1,8d Ah 2h 7c 3h,river,-7988,0,0,16205
+0c18615c,133,7003,3413,0.487,200,366,854,1993,pf_raiser,postflop-escalation,0,0,6c 9h 8h 5c 5s,river,1570,1,0,4983
+0c18615c,140,9223,3710,0.402,100,400,933,2177,pf_raiser,none,0,0,Qc 9d 8c 4h Td,river,1733,1,0,5443
+0c18615c,173,11406,6213,0.545,420,660,1540,3593,pf_raiser,postflop-escalation,0,0,Jh 8s Ah 6d 3c,river,2770,1,0,8983
+0c18615c,300,13481,13481,1.0,13431,0,0,0,pf_raiser,preflop-raise,1,0,,preflop,678,1,0,14159
+0c18615c,555,10611,10611,1.0,10511,0,0,0,pf_caller,preflop-flat,1,1,7s 3c Ac 4c 2s,river,-10611,0,1,60000
+35272026,143,10162,10162,1.0,10112,0,0,0,pf_raiser,preflop-raise,1,1,9h 8s Kc Ah 7h,river,-8966,0,1,19428
+35272026,145,1196,500,0.418,200,300,0,0,pf_raiser,postflop-escalation,0,0,9s Js 2h,flop,250,1,0,750
+35272026,162,596,500,0.839,200,300,0,0,pf_raiser,postflop-escalation,0,0,Js 3d Kc,flop,250,1,0,750
+35272026,170,696,533,0.766,200,333,0,0,pf_raiser,postflop-escalation,0,0,4s Kd 4d,flop,300,1,0,833
+35272026,174,846,500,0.591,200,300,0,0,pf_raiser,postflop-escalation,0,0,Qs 5s 8h Ac,turn,-500,0,0,1753
+35272026,178,346,200,0.578,100,0,0,0,pf_raiser,none,0,0,,preflop,100,1,0,300
+35272026,188,246,200,0.813,200,0,0,0,pf_raiser,preflop-raise,0,0,,preflop,-200,0,0,1200
+35272026,189,46,46,1.0,46,0,0,0,pf_raiser,preflop-raise,1,1,8s Qh Qs Ac Jc,river,-46,0,1,1215
+3f055acd,170,26104,13833,0.53,700,1500,3500,8133,pf_raiser,postflop-escalation,0,1,Qd Tc As 3h 8d,river,-5650,0,0,20333
+3f055acd,223,24161,14101,0.584,200,1082,4690,8129,pf_raiser,postflop-escalation,0,1,Kh Qs Tc Td Ah,river,-11500,0,0,25851
+3f055acd,344,18085,18085,1.0,17985,0,0,0,pf_raiser,preflop-raise,1,1,2d Qs 7c 4h 7d,river,125,1,0,23290
+55a52ba6,16,6168,3123,0.506,200,333,777,1813,pf_raiser,postflop-escalation,0,1,Ts Ad 3s As 9d,river,-3123,0,0,6346
+55a52ba6,20,2895,1643,0.568,200,433,1010,0,pf_raiser,postflop-escalation,0,0,2s 9d Th Qh,turn,883,1,0,2526
+55a52ba6,25,3228,2833,0.878,200,300,700,1633,pf_raiser,postflop-escalation,0,0,Ts 6c Jh Qh 7h,river,1250,1,0,4083
+55a52ba6,35,3578,2833,0.792,200,300,700,1633,pf_raiser,postflop-escalation,0,0,6c Jd Th 5d 9c,river,1250,1,0,4083
+55a52ba6,43,3535,2536,0.717,150,266,621,1449,pf_raiser,postflop-escalation,0,1,9h Qc Qs 6c 4s,river,2536,1,0,5072
+55a52ba6,51,5588,4879,0.873,200,533,1244,2902,pf_raiser,postflop-escalation,0,1,Ac 9d Ad 5c 6s,river,5279,1,0,10158
+55a52ba6,145,10475,4637,0.443,200,500,1166,2721,pf_caller,postflop-escalation,0,1,9d 8c 4h Js Kh,river,-4637,0,0,9524
+55a52ba6,149,5688,3710,0.652,200,400,933,2177,pf_raiser,postflop-escalation,0,1,Kh Ah 8s 9h Ac,river,-3710,0,0,7620
+55a52ba6,157,2178,2178,1.0,150,266,621,1091,pf_raiser,postflop-escalation,1,1,Tc Ks 6h 4s 6c,river,-2178,0,1,4356
+5ff29149,43,8800,8800,1.0,8750,0,0,0,pf_raiser,preflop-raise,1,1,Jd 3d 5c 4d 8c,river,9110,1,0,19879
+5ff29149,100,20931,11438,0.546,150,874,3764,6550,pf_caller,postflop-escalation,0,1,4d 3s Tc 7d Ts,river,11488,1,0,22926
+60875d32,314,9519,9519,1.0,8787,732,0,0,pf_raiser,preflop-raise,1,1,4h Kc 9c 4d 6d,river,-8787,0,1,18356
+60875d32,317,582,582,1.0,200,382,0,0,pf_raiser,postflop-escalation,1,0,3s Kh Td,flop,400,1,0,982
+60875d32,339,832,466,0.56,150,266,0,0,pf_raiser,postflop-escalation,0,0,Ah Jc 6s,flop,200,1,0,666
+60875d32,348,982,466,0.475,150,266,0,0,pf_raiser,postflop-escalation,0,0,6c 4s 8d,flop,200,1,0,666
+60875d32,354,682,466,0.683,150,266,0,0,pf_raiser,postflop-escalation,0,0,2s 2h 3s,flop,200,1,0,666
+60875d32,355,882,533,0.604,200,333,0,0,pf_raiser,postflop-escalation,0,0,Qs Ac 6c,flop,300,1,0,833
+60875d32,382,2132,1116,0.523,200,250,666,0,pf_raiser,postflop-escalation,0,0,5c Kc Ks 4s,turn,550,1,0,1666
+b03aa014,75,12704,7863,0.619,550,833,1944,4536,pf_raiser,postflop-escalation,0,1,5d 2c 6s Js Th,river,-7863,0,0,15876
+b03aa014,100,5280,3413,0.646,200,366,854,1993,pf_raiser,postflop-escalation,0,0,2s 8s 3h Jh 7h,river,1570,1,0,4983
+b03aa014,114,7733,3123,0.404,200,333,777,1813,pf_raiser,postflop-escalation,0,1,7d Th Qd 5s 7h,river,-3123,0,0,6346
+b03aa014,121,5060,3463,0.684,150,366,854,1993,pf_caller,postflop-escalation,0,1,5d Kd 9d Qd Ah,river,3513,1,0,6976
+b03aa014,150,6160,4000,0.649,200,433,1010,2357,pf_raiser,postflop-escalation,0,1,Th 8d 9s As 5c,river,-4000,0,0,8250
+b03aa014,163,2410,2410,1.0,200,300,700,1210,pf_raiser,postflop-escalation,1,1,Th 7d 4h 7c 5s,river,-2410,0,1,4870
+d717930b,29,9116,3855,0.423,200,375,937,2343,pf_raiser,postflop-escalation,0,1,Qs Jc 4s 2s Kh,river,5517,1,0,9372
+e2272b43,2,9305,4100,0.441,200,433,1010,2357,pf_caller,postflop-escalation,0,0,Qc 8d Qh Kh 9h,river,-4100,0,0,14150
+e2272b43,5,5155,2064,0.4,200,466,1398,0,pf_raiser,postflop-escalation,0,0,8c Kd 6h 7h 3c,river,-2064,0,0,26064
+e2272b43,6,3091,1420,0.459,200,366,854,0,pf_raiser,postflop-escalation,0,0,3h Jh 4h 3c,turn,716,1,0,2136
+e2272b43,9,3857,2536,0.658,150,266,621,1449,pf_raiser,postflop-escalation,0,0,3d Td 4h 9s Jh,river,1087,1,0,3623
+e2272b43,13,5244,3413,0.651,200,366,854,1993,pf_raiser,postflop-escalation,0,1,Jd Td 7d Ac 6s,river,3563,1,0,6976
+e2272b43,27,5958,4204,0.706,150,684,1245,2075,pf_raiser,postflop-escalation,0,1,Qc Jh 2c Ac 8h,river,984,1,0,5188
+e2272b43,56,9188,9188,1.0,8250,838,0,0,pf_caller,preflop-flat,1,1,As Ad 2h 8d 8h,river,-8350,0,1,17588
+e2272b43,65,1188,1188,1.0,200,433,555,0,pf_raiser,postflop-escalation,1,1,Qd Kd Td Qh Ah,river,-1188,0,1,22535
+f5a45e55,247,8509,3413,0.401,200,366,854,1993,pf_raiser,postflop-escalation,0,0,5s Th 8d Tc Jc,river,-3413,0,0,12557
+f5a45e55,251,4946,3123,0.631,200,333,777,1813,pf_raiser,postflop-escalation,0,0,3c 4h 5c Ah 5h,river,1410,1,0,4533
+f5a45e55,253,6506,4357,0.67,220,460,1073,2504,pf_caller,postflop-escalation,0,0,2h Qc Th Ks 7s,river,1903,1,0,6260
+f5a45e55,355,3754,3123,0.832,150,333,777,1813,pf_raiser,postflop-escalation,0,0,5c 3h 6c 4c 8d,river,1410,1,0,4533
+f5a45e55,373,5164,3123,0.605,200,333,777,1813,pf_raiser,postflop-escalation,0,0,9d Qc Th 6c 8h,river,1410,1,0,4533
+f5a45e55,410,4958,3123,0.63,150,333,777,1813,pf_raiser,postflop-escalation,0,0,4c 8s 9s Kd 4h,river,1410,1,0,4533
+f5a45e55,560,3248,3248,1.0,450,666,1554,528,pf_raiser,postflop-escalation,1,1,Jc Ad Jd 4h 6c,river,3248,1,0,6496
+f5a45e55,581,6166,3173,0.515,150,333,777,1813,pf_caller,postflop-escalation,0,0,Js 4d Qd 9h 3h,river,1360,1,0,4533

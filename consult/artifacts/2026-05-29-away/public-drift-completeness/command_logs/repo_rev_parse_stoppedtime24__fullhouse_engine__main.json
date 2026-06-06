@@ -1,0 +1,15 @@
+{
+  "label": "repo_rev_parse_stoppedtime24__fullhouse_engine__main",
+  "cmd": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/stoppedtime24__fullhouse_engine__main",
+  "started_at": "2026-05-29T15:14:55Z",
+  "finished_at": "2026-05-29T15:14:55Z",
+  "elapsed_s": 0.006,
+  "returncode": 0,
+  "stdout": "52951cb7242eb1e3abc638ccd287a08ce37ff34a\n",
+  "stderr": ""
+}

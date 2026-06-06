@@ -1,0 +1,101 @@
+{
+  "900": {
+    "base": 900,
+    "bust_rate": 0.5,
+    "busts": 7,
+    "hero_action_errors": 0,
+    "max": 14310,
+    "mean": -626.4,
+    "min": -10000,
+    "n": 14,
+    "p50": -2756.5,
+    "p50_off_floor": true,
+    "per_seed": [
+      {
+        "bust": 0,
+        "delta": 11350,
+        "opp_errs": {},
+        "seed": 900
+      },
+      {
+        "bust": 1,
+        "delta": -10000,
+        "opp_errs": {},
+        "seed": 901
+      },
+      {
+        "bust": 0,
+        "delta": 14310,
+        "opp_errs": {},
+        "seed": 902
+      },
+      {
+        "bust": 0,
+        "delta": 13500,
+        "opp_errs": {},
+        "seed": 903
+      },
+      {
+        "bust": 0,
+        "delta": 6850,
+        "opp_errs": {},
+        "seed": 904
+      },
+      {
+        "bust": 1,
+        "delta": -10000,
+        "opp_errs": {},
+        "seed": 905
+      },
+      {
+        "bust": 0,
+        "delta": 4487,
+        "opp_errs": {},
+        "seed": 906
+      },
+      {
+        "bust": 1,
+        "delta": -10000,
+        "opp_errs": {},
+        "seed": 907
+      },
+      {
+        "bust": 1,
+        "delta": -10000,
+        "opp_errs": {},
+        "seed": 908
+      },
+      {
+        "bust": 0,
+        "delta": 4517,
+        "opp_errs": {},
+        "seed": 909
+      },
+      {
+        "bust": 1,
+        "delta": -10000,
+        "opp_errs": {},
+        "seed": 910
+      },
+      {
+        "bust": 1,
+        "delta": -10000,
+        "opp_errs": {},
+        "seed": 911
+      },
+      {
+        "bust": 1,
+        "delta": -10000,
+        "opp_errs": {},
+        "seed": 912
+      },
+      {
+        "bust": 0,
+        "delta": 6217,
+        "opp_errs": {},
+        "seed": 913
+      }
+    ],
+    "seeds": 14
+  }
+}

@@ -1,0 +1,492 @@
+{
+  "action_sequence_fingerprints": {
+    "mehedi_preflop_pressure_early_bust_like": {
+      "count": 1,
+      "examples": [
+        {
+          "action": "all_in",
+          "actor": "hero",
+          "amount": 9800.0,
+          "board_texture_bucket": "unknown",
+          "chip_delta": -9800.0,
+          "hand_id": "mehedi_bust_001",
+          "position": "big_blind",
+          "street": "preflop"
+        }
+      ]
+    },
+    "toby_paired_board_river_facing_bet_fold_like": {
+      "count": 1,
+      "examples": [
+        {
+          "action": "fold",
+          "actor": "hero",
+          "amount": null,
+          "board_texture_bucket": "5card_paired_two_tone_static",
+          "chip_delta": -2400.0,
+          "hand_id": "toby_paired_fold_001",
+          "position": "big_blind",
+          "street": "river"
+        }
+      ]
+    },
+    "toby_river_can_check_unpaired_two_tone_static_raise_like": {
+      "count": 2,
+      "examples": [
+        {
+          "action": "raise",
+          "actor": "p1",
+          "amount": null,
+          "board_texture_bucket": "5card_unpaired_two_tone_static",
+          "chip_delta": 100.0,
+          "hand_id": "jsonl_nan_001",
+          "position": "button",
+          "street": "river"
+        },
+        {
+          "action": "raise",
+          "actor": "hero",
+          "amount": 1813.0,
+          "board_texture_bucket": "5card_unpaired_two_tone_static",
+          "chip_delta": -2536.0,
+          "hand_id": "toby_can_check_001",
+          "position": "button",
+          "street": "river"
+        }
+      ]
+    },
+    "toby_river_can_check_wet_flush_draw_raise_like": {
+      "count": 1,
+      "examples": [
+        {
+          "action": "raise",
+          "actor": "p0",
+          "amount": 600.0,
+          "board_texture_bucket": "5card_wet_flush_draw",
+          "chip_delta": 300.0,
+          "hand_id": "jsonl_wet_001",
+          "position": "button",
+          "street": "river"
+        }
+      ]
+    }
+  },
+  "amount_records_parsed": 11,
+  "chip_impact_available": true,
+  "chip_impact_records": 15,
+  "input": "/Users/farhad/Code/PokerBot/tests/integration/fixtures/postflop_trap_prevalence",
+  "parse_quality": {
+    "failures": {
+      "nonfinite_amounts_rejected": 1
+    },
+    "schema_keys": {
+      "action_keys": [
+        "Actor",
+        "AmountBB",
+        "CanCheck",
+        "Decision",
+        "POSITION",
+        "_inferred_board",
+        "_inferred_street",
+        "action",
+        "actor",
+        "amount",
+        "amountBB",
+        "board",
+        "boardTextureBucket",
+        "canCheck",
+        "can_check",
+        "move",
+        "position",
+        "street",
+        "toCall",
+        "to_call"
+      ],
+      "top_level_keys": [
+        "BlindStructure",
+        "HANDID",
+        "ROUNDS",
+        "Results",
+        "action_log",
+        "actions",
+        "bigBlind",
+        "big_blind",
+        "chipDeltas",
+        "chip_delta",
+        "chip_deltas",
+        "handId",
+        "hand_id",
+        "id",
+        "outcomes",
+        "players",
+        "seats",
+        "streets"
+      ]
+    },
+    "source_quality": {}
+  },
+  "postflop_action_records": 10,
+  "records_successfully_parsed": 6,
+  "river_action_records": 5,
+  "river_can_check_raise_frequency": {
+    "paired_two_tone_static": {
+      "call": 0,
+      "call_frequency": 0.0,
+      "fold": 0,
+      "fold_frequency": 0.0,
+      "raise": 0,
+      "raise_frequency": 0.0,
+      "total": 0
+    },
+    "unpaired_two_tone_static": {
+      "call": 0,
+      "call_frequency": 0.0,
+      "fold": 0,
+      "fold_frequency": 0.0,
+      "raise": 2,
+      "raise_frequency": 1.0,
+      "total": 2
+    },
+    "wet_flush_draw": {
+      "call": 0,
+      "call_frequency": 0.0,
+      "fold": 0,
+      "fold_frequency": 0.0,
+      "raise": 1,
+      "raise_frequency": 1.0,
+      "total": 1
+    }
+  },
+  "river_facing_bet_fold_call_frequency": {
+    "paired_two_tone_static": {
+      "call": 0,
+      "call_frequency": 0.0,
+      "fold": 1,
+      "fold_frequency": 1.0,
+      "raise": 0,
+      "raise_frequency": 0.0,
+      "total": 1
+    },
+    "unpaired_two_tone_static": {
+      "call": 1,
+      "call_frequency": 1.0,
+      "fold": 0,
+      "fold_frequency": 0.0,
+      "raise": 0,
+      "raise_frequency": 0.0,
+      "total": 1
+    }
+  },
+  "top_clusters_by_chip_impact": [
+    {
+      "average_chip_impact": -2536.0,
+      "board_texture_bucket": "3card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "chip_impact": -2536.0,
+      "cluster_key": "flop__button__check__3card_unpaired_two_tone_static",
+      "examples": [
+        {
+          "action": "check",
+          "actor": "hero",
+          "amount": null,
+          "board_texture_bucket": "3card_unpaired_two_tone_static",
+          "chip_delta": -2536.0,
+          "hand_id": "toby_can_check_001",
+          "position": "button",
+          "street": "flop"
+        }
+      ],
+      "hero_action": "check",
+      "impact_records": 1,
+      "position": "button",
+      "street": "flop"
+    },
+    {
+      "average_chip_impact": -2536.0,
+      "board_texture_bucket": "4card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "chip_impact": -2536.0,
+      "cluster_key": "turn__button__check__4card_unpaired_two_tone_static",
+      "examples": [
+        {
+          "action": "check",
+          "actor": "hero",
+          "amount": null,
+          "board_texture_bucket": "4card_unpaired_two_tone_static",
+          "chip_delta": -2536.0,
+          "hand_id": "toby_can_check_001",
+          "position": "button",
+          "street": "turn"
+        }
+      ],
+      "hero_action": "check",
+      "impact_records": 1,
+      "position": "button",
+      "street": "turn"
+    },
+    {
+      "average_chip_impact": -1218.0,
+      "board_texture_bucket": "5card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "chip_impact": -2436.0,
+      "cluster_key": "river__button__raise__5card_unpaired_two_tone_static",
+      "examples": [
+        {
+          "action": "raise",
+          "actor": "p1",
+          "amount": null,
+          "board_texture_bucket": "5card_unpaired_two_tone_static",
+          "chip_delta": 100.0,
+          "hand_id": "jsonl_nan_001",
+          "position": "button",
+          "street": "river"
+        },
+        {
+          "action": "raise",
+          "actor": "hero",
+          "amount": 1813.0,
+          "board_texture_bucket": "5card_unpaired_two_tone_static",
+          "chip_delta": -2536.0,
+          "hand_id": "toby_can_check_001",
+          "position": "button",
+          "street": "river"
+        }
+      ],
+      "hero_action": "raise",
+      "impact_records": 2,
+      "position": "button",
+      "street": "river"
+    },
+    {
+      "average_chip_impact": -2400.0,
+      "board_texture_bucket": "3card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "chip_impact": -2400.0,
+      "cluster_key": "flop__big_blind__check__3card_unpaired_two_tone_static",
+      "examples": [
+        {
+          "action": "check",
+          "actor": "hero",
+          "amount": null,
+          "board_texture_bucket": "3card_unpaired_two_tone_static",
+          "chip_delta": -2400.0,
+          "hand_id": "toby_paired_fold_001",
+          "position": "big_blind",
+          "street": "flop"
+        }
+      ],
+      "hero_action": "check",
+      "impact_records": 1,
+      "position": "big_blind",
+      "street": "flop"
+    },
+    {
+      "average_chip_impact": -2400.0,
+      "board_texture_bucket": "5card_paired_two_tone_static",
+      "board_texture_category": "paired_two_tone_static",
+      "chip_impact": -2400.0,
+      "cluster_key": "river__big_blind__fold__5card_paired_two_tone_static",
+      "examples": [
+        {
+          "action": "fold",
+          "actor": "hero",
+          "amount": null,
+          "board_texture_bucket": "5card_paired_two_tone_static",
+          "chip_delta": -2400.0,
+          "hand_id": "toby_paired_fold_001",
+          "position": "big_blind",
+          "street": "river"
+        }
+      ],
+      "hero_action": "fold",
+      "impact_records": 1,
+      "position": "big_blind",
+      "street": "river"
+    },
+    {
+      "average_chip_impact": 900.0,
+      "board_texture_bucket": "3card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "chip_impact": 900.0,
+      "cluster_key": "flop__cutoff__raise__3card_unpaired_two_tone_static",
+      "examples": [
+        {
+          "action": "raise",
+          "actor": "anon_3",
+          "amount": 700.0,
+          "board_texture_bucket": "3card_unpaired_two_tone_static",
+          "chip_delta": 900.0,
+          "hand_id": "sixmax_multiway_001",
+          "position": "cutoff",
+          "street": "flop"
+        }
+      ],
+      "hero_action": "raise",
+      "impact_records": 1,
+      "position": "cutoff",
+      "street": "flop"
+    },
+    {
+      "average_chip_impact": 900.0,
+      "board_texture_bucket": "4card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "chip_impact": 900.0,
+      "cluster_key": "turn__cutoff__raise__4card_unpaired_two_tone_static",
+      "examples": [
+        {
+          "action": "raise",
+          "actor": "anon_3",
+          "amount": 1300.0,
+          "board_texture_bucket": "4card_unpaired_two_tone_static",
+          "chip_delta": 900.0,
+          "hand_id": "sixmax_multiway_001",
+          "position": "cutoff",
+          "street": "turn"
+        }
+      ],
+      "hero_action": "raise",
+      "impact_records": 1,
+      "position": "cutoff",
+      "street": "turn"
+    },
+    {
+      "average_chip_impact": -900.0,
+      "board_texture_bucket": "5card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "chip_impact": -900.0,
+      "cluster_key": "river__big_blind__call__5card_unpaired_two_tone_static",
+      "examples": [
+        {
+          "action": "call",
+          "actor": "anon_5",
+          "amount": null,
+          "board_texture_bucket": "5card_unpaired_two_tone_static",
+          "chip_delta": -900.0,
+          "hand_id": "sixmax_multiway_001",
+          "position": "big_blind",
+          "street": "river"
+        }
+      ],
+      "hero_action": "call",
+      "impact_records": 1,
+      "position": "big_blind",
+      "street": "river"
+    },
+    {
+      "average_chip_impact": 300.0,
+      "board_texture_bucket": "5card_wet_flush_draw",
+      "board_texture_category": "wet_flush_draw",
+      "chip_impact": 300.0,
+      "cluster_key": "river__button__raise__5card_wet_flush_draw",
+      "examples": [
+        {
+          "action": "raise",
+          "actor": "p0",
+          "amount": 600.0,
+          "board_texture_bucket": "5card_wet_flush_draw",
+          "chip_delta": 300.0,
+          "hand_id": "jsonl_wet_001",
+          "position": "button",
+          "street": "river"
+        }
+      ],
+      "hero_action": "raise",
+      "impact_records": 1,
+      "position": "button",
+      "street": "river"
+    }
+  ],
+  "top_clusters_by_frequency": [
+    {
+      "board_texture_bucket": "5card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "cluster_key": "river__button__raise__5card_unpaired_two_tone_static",
+      "count": 2,
+      "hero_action": "raise",
+      "position": "button",
+      "share_of_postflop_actions": 0.2,
+      "street": "river"
+    },
+    {
+      "board_texture_bucket": "5card_wet_flush_draw",
+      "board_texture_category": "wet_flush_draw",
+      "cluster_key": "river__button__raise__5card_wet_flush_draw",
+      "count": 1,
+      "hero_action": "raise",
+      "position": "button",
+      "share_of_postflop_actions": 0.1,
+      "street": "river"
+    },
+    {
+      "board_texture_bucket": "3card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "cluster_key": "flop__cutoff__raise__3card_unpaired_two_tone_static",
+      "count": 1,
+      "hero_action": "raise",
+      "position": "cutoff",
+      "share_of_postflop_actions": 0.1,
+      "street": "flop"
+    },
+    {
+      "board_texture_bucket": "4card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "cluster_key": "turn__cutoff__raise__4card_unpaired_two_tone_static",
+      "count": 1,
+      "hero_action": "raise",
+      "position": "cutoff",
+      "share_of_postflop_actions": 0.1,
+      "street": "turn"
+    },
+    {
+      "board_texture_bucket": "5card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "cluster_key": "river__big_blind__call__5card_unpaired_two_tone_static",
+      "count": 1,
+      "hero_action": "call",
+      "position": "big_blind",
+      "share_of_postflop_actions": 0.1,
+      "street": "river"
+    },
+    {
+      "board_texture_bucket": "3card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "cluster_key": "flop__button__check__3card_unpaired_two_tone_static",
+      "count": 1,
+      "hero_action": "check",
+      "position": "button",
+      "share_of_postflop_actions": 0.1,
+      "street": "flop"
+    },
+    {
+      "board_texture_bucket": "4card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "cluster_key": "turn__button__check__4card_unpaired_two_tone_static",
+      "count": 1,
+      "hero_action": "check",
+      "position": "button",
+      "share_of_postflop_actions": 0.1,
+      "street": "turn"
+    },
+    {
+      "board_texture_bucket": "3card_unpaired_two_tone_static",
+      "board_texture_category": "unpaired_two_tone_static",
+      "cluster_key": "flop__big_blind__check__3card_unpaired_two_tone_static",
+      "count": 1,
+      "hero_action": "check",
+      "position": "big_blind",
+      "share_of_postflop_actions": 0.1,
+      "street": "flop"
+    },
+    {
+      "board_texture_bucket": "5card_paired_two_tone_static",
+      "board_texture_category": "paired_two_tone_static",
+      "cluster_key": "river__big_blind__fold__5card_paired_two_tone_static",
+      "count": 1,
+      "hero_action": "fold",
+      "position": "big_blind",
+      "share_of_postflop_actions": 0.1,
+      "street": "river"
+    }
+  ],
+  "total_records_found": 6
+}

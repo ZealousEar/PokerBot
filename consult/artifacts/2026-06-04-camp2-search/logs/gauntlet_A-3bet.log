@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "results": "consult/artifacts/2026-06-04-camp2-search/results/A-3bet/results/deployed_gauntlet_results.json",
+  "bot_sha256": "0a3a1180a014d28d90c296f6dad58537a019101d8f279b77344978ecc67c83f6",
+  "opponents": 12,
+  "probes": 0,
+  "match_summaries": 12
+}

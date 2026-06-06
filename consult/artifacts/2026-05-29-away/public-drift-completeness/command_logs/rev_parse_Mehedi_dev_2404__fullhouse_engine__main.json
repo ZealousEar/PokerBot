@@ -1,0 +1,15 @@
+{
+  "label": "rev_parse_Mehedi_dev_2404__fullhouse_engine__main",
+  "cmd": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/Mehedi_dev_2404__fullhouse_engine__main",
+  "started_at": "2026-05-29T15:14:41Z",
+  "finished_at": "2026-05-29T15:14:41Z",
+  "elapsed_s": 0.007,
+  "returncode": 0,
+  "stdout": "c2a1ea854acd0c1a093c1481fdd70bb566c007d8\n",
+  "stderr": ""
+}

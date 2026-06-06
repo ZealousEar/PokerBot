@@ -1,0 +1,2 @@
+{"HANDID":"jsonl_wet_001","BlindStructure":{"BigBlind":50},"ROUNDS":[{"Phase":"R","BoardCards":["Ah","Kh","8h","2c","4d"],"Moves":[{"Actor":"p0","POSITION":"BTN","Decision":"raises","AmountBB":"12","CanCheck":true}]}],"Results":{"p0":300}}
+{"hand_id":"jsonl_nan_001","actions":[{"street":"river","actor":"p1","action":"raise","amountBB":"NaN","boardTextureBucket":"5card_unpaired_two_tone_static","can_check":true,"position":"button"}],"chipDeltas":{"p1":100}}

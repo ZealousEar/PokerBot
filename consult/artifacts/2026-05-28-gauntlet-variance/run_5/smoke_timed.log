@@ -1,0 +1,44 @@
+# label=smoke_timed
+# cwd=/Users/farhad/Code/PokerBot-gauntlet
+# started_utc=2026-05-28T02:21:45Z
+# command=/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-28-gauntlet-variance/timed_smoke.py --repo /Users/farhad/Code/PokerBot-gauntlet --zip submissions/v_final.zip --hands 200 --seed 42
+
+{
+  "chip_delta": {
+    "template": -10000,
+    "v_final": 10000
+  },
+  "duration_s": 2.61,
+  "errors": {},
+  "expected_hands": 200,
+  "measurement_only": true,
+  "n_hands": 136,
+  "passed": true,
+  "sandbox_image": "fullhouse-sandbox:latest",
+  "seed": 42,
+  "short_hands": true,
+  "timings_ms": {
+    "template": {
+      "count": 135,
+      "max_ms": 19.094042014330626,
+      "mean_ms": 8.704074686048207,
+      "p50_ms": 9.930916130542755,
+      "p95_ms": 17.552874982357025,
+      "p99_ms": 18.282667035236955
+    },
+    "v_final": {
+      "count": 71,
+      "max_ms": 18.14391603693366,
+      "mean_ms": 9.529049914907402,
+      "p50_ms": 14.994833851233125,
+      "p95_ms": 17.398541094735265,
+      "p99_ms": 17.701165983453393
+    }
+  },
+  "use_docker": true
+}
+timed_smoke PASS
+
+# finished_utc=2026-05-28T02:21:48Z
+# returncode=0
+# duration_s=3.020

@@ -1,0 +1,4 @@
+mix,matches,hands_total,thorp_delta_sum,thorp_delta_avg_per_match,thorp_chip_per_100_hands,thorp_decisions,fold_defaults,illegal_action_names,timeouts,exceptions,busts,bust_rate,bust_streets
+reference_field,6,4800,70730,11788.33,1473.54,2592,0,0,0,0,3,0.5,{'river': 3}
+aggro_collision,6,2047,60000,10000.0,2931.12,1220,0,0,0,0,4,0.6667,{'river': 4}
+balanced_heavy,6,4800,73950,12325.0,1540.62,3385,0,0,0,0,2,0.3333,{'river': 2}

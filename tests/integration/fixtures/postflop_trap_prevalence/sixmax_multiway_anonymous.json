@@ -1,0 +1,14 @@
+{
+  "hand_id": "sixmax_multiway_001",
+  "players": ["anon_0", "anon_1", "anon_2", "anon_3", "anon_4", "anon_5"],
+  "big_blind": 100,
+  "chip_deltas": {"anon_3": 900, "anon_5": -900},
+  "action_log": [
+    {"street": "preflop", "actor": "anon_0", "action": "fold", "position": "early"},
+    {"street": "preflop", "actor": "anon_1", "action": "call", "amount": 100, "position": "middle"},
+    {"street": "preflop", "actor": "anon_3", "action": "raise", "amount": 400, "position": "cutoff"},
+    {"street": "flop", "actor": "anon_3", "action": "raise", "amount": 700, "board": ["Qh", "8h", "2c"], "can_check": true, "position": "cutoff"},
+    {"street": "turn", "actor": "anon_3", "action": "raise", "amount": 1300, "board": ["Qh", "8h", "2c", "3d"], "can_check": true, "position": "cutoff"},
+    {"street": "river", "actor": "anon_5", "action": "call", "to_call": 900, "board": ["Qh", "8h", "2c", "3d", "7s"], "can_check": false, "position": "big_blind"}
+  ]
+}

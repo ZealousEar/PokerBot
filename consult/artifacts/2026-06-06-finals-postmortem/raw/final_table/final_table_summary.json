@@ -1,0 +1,74 @@
+{
+  "tournament_id": "e620db39-3b35-48ba-98f4-2bcbd5a6706c",
+  "phase": "Final Table (Phase 2)",
+  "matches": 59,
+  "hands_per_match": 5000,
+  "seats": 354,
+  "zero_sum_violations": 0,
+  "completed_window": [
+    "2026-06-05T07:05:08Z",
+    "2026-06-05T11:23:26Z"
+  ],
+  "standings": [
+    {
+      "bot": "CallMeMaybe",
+      "bot_id": "7db3d107-275b-4f5b-9d98-4c557ad6db81",
+      "delta": 790000,
+      "matches": 59,
+      "bust_pct": 61.0,
+      "err_matches": 0,
+      "leaderboard_delta": 790000,
+      "leaderboard_rank": 1
+    },
+    {
+      "bot": "Oxvard",
+      "bot_id": "402a2dbb-d447-4e31-9493-198a39d75e0c",
+      "delta": 190000,
+      "matches": 59,
+      "bust_pct": 78.0,
+      "err_matches": 0,
+      "leaderboard_delta": 190000,
+      "leaderboard_rank": 2
+    },
+    {
+      "bot": "Hyperion",
+      "bot_id": "7ff6d6c5-7738-403f-b53d-50fb500f9c2d",
+      "delta": -170000,
+      "matches": 59,
+      "bust_pct": 88.1,
+      "err_matches": 0,
+      "leaderboard_delta": -170000,
+      "leaderboard_rank": 3
+    },
+    {
+      "bot": "goku",
+      "bot_id": "214c37f3-e275-4519-a0d7-7747f7eb7c12",
+      "delta": -230000,
+      "matches": 59,
+      "bust_pct": 89.8,
+      "err_matches": 0,
+      "leaderboard_delta": -230000,
+      "leaderboard_rank": 4
+    },
+    {
+      "bot": "jotaroZAWARUDO",
+      "bot_id": "2440325e-7dca-41e1-8dd0-fc6694063d5d",
+      "delta": -230000,
+      "matches": 59,
+      "bust_pct": 89.8,
+      "err_matches": 0,
+      "leaderboard_delta": -230000,
+      "leaderboard_rank": 4
+    },
+    {
+      "bot": "Lekemog",
+      "bot_id": "8faca3c0-55df-421c-892d-317dc9363461",
+      "delta": -350000,
+      "matches": 59,
+      "bust_pct": 93.2,
+      "err_matches": 0,
+      "leaderboard_delta": -350000,
+      "leaderboard_rank": 5
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "target": "famadeo",
+  "opponent_path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-28-public-saturation/opponent_zips/famadeo.zip",
+  "requested_hands": 1000,
+  "scheduled_hands": 1200,
+  "actual_hands": 410,
+  "scheduled_bb_per_100": 0.0,
+  "actual_bb_per_100": 0.0,
+  "ci_low": -92.30731707317074,
+  "ci_high": 92.22926829268293,
+  "chip_delta": 0,
+  "early_bust_rate": 1.0,
+  "hero_errors": 0,
+  "opponent_errors": 0,
+  "duration_s": 3.48,
+  "p99_latency_s": null,
+  "p99_latency_note": "engine run_match does not expose per-decision latency",
+  "p99_match_seconds_per_hand_proxy": 0.013720930232558139,
+  "hu_button_open_opportunities": 204,
+  "hu_button_opens": 200,
+  "hu_button_open_frequency": 0.9803921568627451,
+  "river_trap_entries": null,
+  "river_trap_note": "decision logs do not label traps; river losing commit is a proxy",
+  "river_losing_commit_hands": 37,
+  "river_commit_hands": 123,
+  "river_losing_commit_frequency": 0.3008130081300813,
+  "matches": [
+    {
+      "seed": 142,
+      "orientation": 0,
+      "hands": 43,
+      "chip_delta": 10000,
+      "duration_s": 0.59,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 142,
+      "orientation": 1,
+      "hands": 59,
+      "chip_delta": -10000,
+      "duration_s": 0.45,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 143,
+      "orientation": 0,
+      "hands": 122,
+      "chip_delta": 10000,
+      "duration_s": 0.69,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 143,
+      "orientation": 1,
+      "hands": 39,
+      "chip_delta": -10000,
+      "duration_s": 0.4,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 144,
+      "orientation": 0,
+      "hands": 78,
+      "chip_delta": -10000,
+      "duration_s": 0.75,
+      "hero_errors": 0,
+      "opp_errors": 0
+    },
+    {
+      "seed": 144,
+      "orientation": 1,
+      "hands": 69,
+      "chip_delta": 10000,
+      "duration_s": 0.6,
+      "hero_errors": 0,
+      "opp_errors": 0
+    }
+  ]
+}

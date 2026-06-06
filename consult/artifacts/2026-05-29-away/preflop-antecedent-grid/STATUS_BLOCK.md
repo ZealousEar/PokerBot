@@ -1,0 +1,9 @@
+[P3 PREFLOP ANTECEDENT GRID 2026-05-29T15:17:16Z]
+verdict=NOT_PROMOTABLE selected=A4
+protected_v_final_sha_before=e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598
+protected_v_final_sha_after=e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598
+protected_best_green_sha_before=e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598
+protected_best_green_sha_after=e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598
+results=/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/preflop-antecedent-grid/RESULTS.json
+report=/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/preflop-antecedent-grid/PREFLOP_ANTECEDENT_GRID_REPORT.md
+Locked v_final.zip remains upload target unless human explicitly opens MODIFY gate.

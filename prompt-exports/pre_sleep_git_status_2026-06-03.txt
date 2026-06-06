@@ -1,0 +1,65 @@
+ M AGENTS.md
+ M KANBAN.md
+ M STATUS.md
+ M docs/corpus-index.md
+ M docs/playbooks/patch-window.md
+ M tools/smoke_run.py
+?? POKERBOT_CONTEXT_REFRESH_2026-06-03.md
+?? consult/artifacts/2026-05-27-qualifier-brainstorm/
+?? consult/artifacts/2026-05-27-worktree-audit/
+?? consult/artifacts/2026-05-28-b8-runner/
+?? consult/artifacts/2026-05-28-gauntlet-variance/
+?? consult/artifacts/2026-05-28-pods/
+?? consult/artifacts/2026-05-28-pre-qualifier-review/
+?? consult/artifacts/2026-05-28-public-saturation/
+?? consult/artifacts/2026-05-29-away/
+?? consult/artifacts/2026-05-29-mehedi-cluster/
+?? consult/artifacts/2026-05-29-pre-qualifier-triage/
+?? consult/artifacts/2026-05-29-public-drift-patch/
+?? consult/artifacts/2026-05-29-public-refresh-design/
+?? consult/artifacts/2026-05-29-public-repo-drift/
+?? consult/artifacts/2026-05-29-ship-lock-audit/
+?? consult/artifacts/2026-05-30-dual-leak-swarm/
+?? consult/artifacts/2026-05-31-finals-infra-scratch/
+?? consult/artifacts/2026-05-31-scratch-improve/
+?? consult/artifacts/2026-05-31-ship-lock/
+?? consult/artifacts/2026-06-01-public-repo-drift/
+?? consult/artifacts/2026-06-03-context-refresh/
+?? consult/artifacts/2026-06-03-overnight-candidate/
+?? consult/artifacts/2026-06-03-overnight-recon/
+?? consult/artifacts/2026-06-03-qual2-patch/
+?? consult/artifacts/2026-06-03-v2-release-evidence/
+?? consult/artifacts/verify_thorp_independent.py
+?? data/portal_histories/
+?? docs/designs/
+?? docs/finals-strategy-2026-05-27.md
+?? docs/investigations/
+?? docs/morning-promotion-checklist.md
+?? docs/plans/finals-ev-brainstorm-2026-05-27.md
+?? docs/plans/overnight-2-2026-05-28.md
+?? docs/plans/overnight-thorp-v2-2026-06-03.md
+?? docs/plans/qualifier-finals-rollout-2026-05-27.md
+?? docs/plans/qualifier-upload-and-worktree-map-2026-06-01.md
+?? docs/reviews/critique-overnight-thorp-v2-2026-06-03.md
+?? docs/reviews/finals-ev-brainstorm-critique-2026-05-28.md
+?? docs/reviews/patch-2a-design-critique-2026-05-28.md
+?? docs/reviews/qualifier-finals-rollout-2026-05-27-critique.md
+?? docs/reviews/qualifier-upload-runbook-critique-2026-06-01.md
+?? prompt-exports/2026-05-27-194500-plan-definitive-way-forward-five-decisions.md
+?? prompt-exports/2026-05-27-202554-plan-5day-qualifier-path-forward-post-worktree-drift.md
+?? prompt-exports/2026-05-27-220455-plan-beat-vladimir-and-rethink-deep-cfr.md
+?? prompt-exports/2026-05-28-040000-plan-qualifier-overnight-review-and-next-steps.md
+?? prompt-exports/2026-05-31-011359-plan-ship-lock-verification.md
+?? prompt-exports/2026-06-03-014500-plan-qual2-stackoff-fix-review.md
+?? prompt-exports/2026-06-03-022102-question-qual2-opponents-supplement.md
+?? prompt-exports/POKERBOT_CONTEXT_REFRESH_2026-06-03.SHA256.txt
+?? prompt-exports/POKERBOT_CONTEXT_REFRESH_2026-06-03.md
+?? prompt-exports/pre_sleep_git_status_2026-06-03.txt
+?? tests/integration/
+?? tools/analyze_postflop_trap_prevalence.py
+?? tools/audit_strategy_leakage.py
+?? tools/b8_gauntlet.py
+?? tools/field_recon.py
+?? tools/preflop_sizing_audit.py
+?? tools/public_saturation.py
+?? tools/qualifier_pods.py

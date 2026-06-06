@@ -1,0 +1,43 @@
+{
+  "bot_path": "submissions/v_final.zip",
+  "passed": true,
+  "errors": [],
+  "warnings": [],
+  "tests": [
+    {
+      "test": "preflop_call_or_fold",
+      "passed": true,
+      "action": {
+        "action": "raise",
+        "amount": 250
+      },
+      "elapsed": 0.0
+    },
+    {
+      "test": "postflop_can_check",
+      "passed": true,
+      "action": {
+        "action": "raise",
+        "amount": 150
+      },
+      "elapsed": 0.004
+    },
+    {
+      "test": "river_facing_large_bet",
+      "passed": true,
+      "action": {
+        "action": "fold"
+      },
+      "elapsed": 0.006
+    },
+    {
+      "test": "short_stack_all_in_decision",
+      "passed": true,
+      "action": {
+        "action": "all_in"
+      },
+      "elapsed": 0.0
+    }
+  ],
+  "data_dir": "/tmp/claude-501/fhval__m38ov_k/data"
+}

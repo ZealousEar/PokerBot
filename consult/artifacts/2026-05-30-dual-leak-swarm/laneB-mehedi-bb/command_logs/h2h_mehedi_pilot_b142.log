@@ -1,0 +1,9 @@
+mehedi_pilot_b142 seed=142 o=0 locked=+10000/211 cand=-10000/204 delta_bb100=-50.00 err_locked=0/0 err_cand=0/0
+mehedi_pilot_b142 seed=142 o=1 locked=-10000/48 cand=-10000/48 delta_bb100=+0.00 err_locked=0/0 err_cand=0/0
+mehedi_pilot_b142 seed=1142 o=0 locked=-10000/58 cand=+10000/228 delta_bb100=+50.00 err_locked=0/0 err_cand=0/0
+mehedi_pilot_b142 seed=1142 o=1 locked=-10000/143 cand=-10000/143 delta_bb100=+0.00 err_locked=0/0 err_cand=0/0
+mehedi_pilot_b142 seed=2142 o=0 locked=+10000/51 cand=+10000/51 delta_bb100=+0.00 err_locked=0/0 err_cand=0/0
+mehedi_pilot_b142 seed=2142 o=1 locked=-10000/6 cand=-10000/6 delta_bb100=+0.00 err_locked=0/0 err_cand=0/0
+mehedi_pilot_b142 seed=3142 o=0 locked=-10000/128 cand=-10000/272 delta_bb100=+0.00 err_locked=0/0 err_cand=0/0
+mehedi_pilot_b142 seed=3142 o=1 locked=+10000/34 cand=+10000/86 delta_bb100=+0.00 err_locked=0/0 err_cand=0/0
+mehedi_pilot_b142 seed=4142 o=0 locked=+10000/7 cand=+10000/7 delta_bb100=+0.00 err_locked=0/0 err_cand=0/0

@@ -1,0 +1,1456 @@
+{
+  "label": "B-cbet",
+  "aggregate_margin_bb100": -5.107,
+  "paired_ci95": [
+    -9.623,
+    -0.945
+  ],
+  "n_paired_samples": 264,
+  "total_paired_hands": 32048,
+  "worst_bucket": {
+    "opponent": "loose_passive",
+    "margin_bb100": -120.968
+  },
+  "drop_best_opp_margin_bb100": -6.656,
+  "candidate_runner_errors": 0,
+  "baseline_runner_errors": 0,
+  "missing_opponents": [],
+  "per_opponent": [
+    {
+      "opponent": "loose_passive",
+      "n_pairs": 22,
+      "paired_chip_delta": -60000,
+      "hands": 496,
+      "margin_bb100": -120.968,
+      "per_pair_chip": [
+        {
+          "seed": 42,
+          "orient": 0,
+          "dchip": -20000
+        },
+        {
+          "seed": 42,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 0,
+          "dchip": -20000
+        },
+        {
+          "seed": 44,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 1,
+          "dchip": -20000
+        },
+        {
+          "seed": 51,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 1,
+          "dchip": 0
+        }
+      ]
+    },
+    {
+      "opponent": "loose_aggressive",
+      "n_pairs": 22,
+      "paired_chip_delta": -40000,
+      "hands": 718,
+      "margin_bb100": -55.71,
+      "per_pair_chip": [
+        {
+          "seed": 42,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 42,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 1,
+          "dchip": -20000
+        },
+        {
+          "seed": 48,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 1,
+          "dchip": 20000
+        },
+        {
+          "seed": 49,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 0,
+          "dchip": -20000
+        },
+        {
+          "seed": 50,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 0,
+          "dchip": -20000
+        },
+        {
+          "seed": 51,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 1,
+          "dchip": 0
+        }
+      ]
+    },
+    {
+      "opponent": "mathematician",
+      "n_pairs": 22,
+      "paired_chip_delta": -44000,
+      "hands": 4400,
+      "margin_bb100": -10.0,
+      "per_pair_chip": [
+        {
+          "seed": 42,
+          "orient": 0,
+          "dchip": -2600
+        },
+        {
+          "seed": 42,
+          "orient": 1,
+          "dchip": -1300
+        },
+        {
+          "seed": 43,
+          "orient": 0,
+          "dchip": -4000
+        },
+        {
+          "seed": 43,
+          "orient": 1,
+          "dchip": -2800
+        },
+        {
+          "seed": 44,
+          "orient": 0,
+          "dchip": -200
+        },
+        {
+          "seed": 44,
+          "orient": 1,
+          "dchip": -5400
+        },
+        {
+          "seed": 45,
+          "orient": 0,
+          "dchip": -4900
+        },
+        {
+          "seed": 45,
+          "orient": 1,
+          "dchip": -500
+        },
+        {
+          "seed": 46,
+          "orient": 0,
+          "dchip": -1800
+        },
+        {
+          "seed": 46,
+          "orient": 1,
+          "dchip": -1300
+        },
+        {
+          "seed": 47,
+          "orient": 0,
+          "dchip": -700
+        },
+        {
+          "seed": 47,
+          "orient": 1,
+          "dchip": -2000
+        },
+        {
+          "seed": 48,
+          "orient": 0,
+          "dchip": 1600
+        },
+        {
+          "seed": 48,
+          "orient": 1,
+          "dchip": -2100
+        },
+        {
+          "seed": 49,
+          "orient": 0,
+          "dchip": 1200
+        },
+        {
+          "seed": 49,
+          "orient": 1,
+          "dchip": -1000
+        },
+        {
+          "seed": 50,
+          "orient": 0,
+          "dchip": -500
+        },
+        {
+          "seed": 50,
+          "orient": 1,
+          "dchip": -900
+        },
+        {
+          "seed": 51,
+          "orient": 0,
+          "dchip": -1100
+        },
+        {
+          "seed": 51,
+          "orient": 1,
+          "dchip": -4900
+        },
+        {
+          "seed": 52,
+          "orient": 0,
+          "dchip": -7300
+        },
+        {
+          "seed": 52,
+          "orient": 1,
+          "dchip": -1500
+        }
+      ]
+    },
+    {
+      "opponent": "ref_bot_2",
+      "n_pairs": 22,
+      "paired_chip_delta": -44000,
+      "hands": 4400,
+      "margin_bb100": -10.0,
+      "per_pair_chip": [
+        {
+          "seed": 42,
+          "orient": 0,
+          "dchip": -2600
+        },
+        {
+          "seed": 42,
+          "orient": 1,
+          "dchip": -1300
+        },
+        {
+          "seed": 43,
+          "orient": 0,
+          "dchip": -4000
+        },
+        {
+          "seed": 43,
+          "orient": 1,
+          "dchip": -2800
+        },
+        {
+          "seed": 44,
+          "orient": 0,
+          "dchip": -200
+        },
+        {
+          "seed": 44,
+          "orient": 1,
+          "dchip": -5400
+        },
+        {
+          "seed": 45,
+          "orient": 0,
+          "dchip": -4900
+        },
+        {
+          "seed": 45,
+          "orient": 1,
+          "dchip": -500
+        },
+        {
+          "seed": 46,
+          "orient": 0,
+          "dchip": -1800
+        },
+        {
+          "seed": 46,
+          "orient": 1,
+          "dchip": -1300
+        },
+        {
+          "seed": 47,
+          "orient": 0,
+          "dchip": -700
+        },
+        {
+          "seed": 47,
+          "orient": 1,
+          "dchip": -2000
+        },
+        {
+          "seed": 48,
+          "orient": 0,
+          "dchip": 1600
+        },
+        {
+          "seed": 48,
+          "orient": 1,
+          "dchip": -2100
+        },
+        {
+          "seed": 49,
+          "orient": 0,
+          "dchip": 1200
+        },
+        {
+          "seed": 49,
+          "orient": 1,
+          "dchip": -1000
+        },
+        {
+          "seed": 50,
+          "orient": 0,
+          "dchip": -500
+        },
+        {
+          "seed": 50,
+          "orient": 1,
+          "dchip": -900
+        },
+        {
+          "seed": 51,
+          "orient": 0,
+          "dchip": -1100
+        },
+        {
+          "seed": 51,
+          "orient": 1,
+          "dchip": -4900
+        },
+        {
+          "seed": 52,
+          "orient": 0,
+          "dchip": -7300
+        },
+        {
+          "seed": 52,
+          "orient": 1,
+          "dchip": -1500
+        }
+      ]
+    },
+    {
+      "opponent": "shark",
+      "n_pairs": 22,
+      "paired_chip_delta": -800,
+      "hands": 4016,
+      "margin_bb100": -0.199,
+      "per_pair_chip": [
+        {
+          "seed": 42,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 42,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 1,
+          "dchip": -800
+        },
+        {
+          "seed": 49,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 1,
+          "dchip": 0
+        }
+      ]
+    },
+    {
+      "opponent": "template",
+      "n_pairs": 22,
+      "paired_chip_delta": -450,
+      "hands": 4400,
+      "margin_bb100": -0.102,
+      "per_pair_chip": [
+        {
+          "seed": 42,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 42,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 1,
+          "dchip": -450
+        },
+        {
+          "seed": 51,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 1,
+          "dchip": 0
+        }
+      ]
+    },
+    {
+      "opponent": "aggressor",
+      "n_pairs": 22,
+      "paired_chip_delta": 0,
+      "hands": 323,
+      "margin_bb100": 0.0,
+      "per_pair_chip": [
+        {
+          "seed": 42,
+          "orient": 0,
+          "dchip": 20000
+        },
+        {
+          "seed": 42,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 0,
+          "dchip": -20000
+        },
+        {
+          "seed": 49,
+          "orient": 1,
+          "dchip": -20000
+        },
+        {
+          "seed": 50,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 1,
+          "dchip": 20000
+        }
+      ]
+    },
+    {
+      "opponent": "all_in_maniac",
+      "n_pairs": 22,
+      "paired_chip_delta": 0,
+      "hands": 189,
+      "margin_bb100": 0.0,
+      "per_pair_chip": [
+        {
+          "seed": 42,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 42,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 1,
+          "dchip": 0
+        }
+      ]
+    },
+    {
+      "opponent": "pot_odds_threshold",
+      "n_pairs": 22,
+      "paired_chip_delta": 0,
+      "hands": 1049,
+      "margin_bb100": 0.0,
+      "per_pair_chip": [
+        {
+          "seed": 42,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 42,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 1,
+          "dchip": 0
+        }
+      ]
+    },
+    {
+      "opponent": "river_value_threshold",
+      "n_pairs": 22,
+      "paired_chip_delta": 0,
+      "hands": 4400,
+      "margin_bb100": 0.0,
+      "per_pair_chip": [
+        {
+          "seed": 42,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 42,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 1,
+          "dchip": 0
+        }
+      ]
+    },
+    {
+      "opponent": "tight_aggressive",
+      "n_pairs": 22,
+      "paired_chip_delta": 750,
+      "hands": 3928,
+      "margin_bb100": 0.191,
+      "per_pair_chip": [
+        {
+          "seed": 42,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 42,
+          "orient": 1,
+          "dchip": 250
+        },
+        {
+          "seed": 43,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 43,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 44,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 1,
+          "dchip": -250
+        },
+        {
+          "seed": 46,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 46,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 48,
+          "orient": 1,
+          "dchip": 250
+        },
+        {
+          "seed": 49,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 49,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 50,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 51,
+          "orient": 0,
+          "dchip": 500
+        },
+        {
+          "seed": 51,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 1,
+          "dchip": 0
+        }
+      ]
+    },
+    {
+      "opponent": "tight_passive",
+      "n_pairs": 22,
+      "paired_chip_delta": 24817,
+      "hands": 3729,
+      "margin_bb100": 6.655,
+      "per_pair_chip": [
+        {
+          "seed": 42,
+          "orient": 0,
+          "dchip": 708
+        },
+        {
+          "seed": 42,
+          "orient": 1,
+          "dchip": -10182
+        },
+        {
+          "seed": 43,
+          "orient": 0,
+          "dchip": 3917
+        },
+        {
+          "seed": 43,
+          "orient": 1,
+          "dchip": 3450
+        },
+        {
+          "seed": 44,
+          "orient": 0,
+          "dchip": 2036
+        },
+        {
+          "seed": 44,
+          "orient": 1,
+          "dchip": 60
+        },
+        {
+          "seed": 45,
+          "orient": 0,
+          "dchip": 0
+        },
+        {
+          "seed": 45,
+          "orient": 1,
+          "dchip": 2207
+        },
+        {
+          "seed": 46,
+          "orient": 0,
+          "dchip": 4400
+        },
+        {
+          "seed": 46,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 47,
+          "orient": 0,
+          "dchip": 4100
+        },
+        {
+          "seed": 47,
+          "orient": 1,
+          "dchip": 1164
+        },
+        {
+          "seed": 48,
+          "orient": 0,
+          "dchip": 900
+        },
+        {
+          "seed": 48,
+          "orient": 1,
+          "dchip": 2750
+        },
+        {
+          "seed": 49,
+          "orient": 0,
+          "dchip": 3836
+        },
+        {
+          "seed": 49,
+          "orient": 1,
+          "dchip": 750
+        },
+        {
+          "seed": 50,
+          "orient": 0,
+          "dchip": 4496
+        },
+        {
+          "seed": 50,
+          "orient": 1,
+          "dchip": 1579
+        },
+        {
+          "seed": 51,
+          "orient": 0,
+          "dchip": -1654
+        },
+        {
+          "seed": 51,
+          "orient": 1,
+          "dchip": 0
+        },
+        {
+          "seed": 52,
+          "orient": 0,
+          "dchip": -700
+        },
+        {
+          "seed": 52,
+          "orient": 1,
+          "dchip": 1000
+        }
+      ]
+    }
+  ],
+  "promotion_checks": {
+    "aggregate_ge_5": false,
+    "lower_ci_gt_0": false,
+    "no_bucket_below_-8": false,
+    "zero_candidate_errors": true,
+    "not_single_opp_driven": false
+  },
+  "PROMOTE": false
+}

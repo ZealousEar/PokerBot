@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+    "ext/fullhouse-engine/sandbox/validator.py",
+    "submissions/v_final.zip",
+    "--json"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+  "duration_s": 1.0035500526428223,
+  "finished_utc": "2026-05-28T02:21:38Z",
+  "label": "validator",
+  "log": "validator.log",
+  "passed": true,
+  "returncode": 0,
+  "started_utc": "2026-05-28T02:21:37Z"
+}

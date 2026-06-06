@@ -1,0 +1,9 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.10.18, pytest-9.0.3, pluggy-1.6.0
+rootdir: /Users/farhad/Code/PokerBot
+plugins: hypothesis-6.152.9
+collected 4 items
+
+tests/edge_cases/test_safe_fallback.py ....                              [100%]
+
+============================== 4 passed in 0.09s ===============================

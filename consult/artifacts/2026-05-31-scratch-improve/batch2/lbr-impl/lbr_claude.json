@@ -1,0 +1,33 @@
+{
+  "aggregate_detail": {
+    "hands": 400,
+    "hero_busts": 14,
+    "hero_net_chips": 121125.0,
+    "villain_busts": 30,
+    "villain_chips_per_hand": -302.8125,
+    "villain_mbb_g": -3028.125,
+    "villain_net_chips": -121125.0
+  },
+  "aggregate_mbb_g": -3028.12,
+  "aggregate_pass": true,
+  "bot": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/batch2/claude-rescrub/claude_rescrubbed.zip",
+  "elapsed_aggregate_s": 71.5,
+  "elapsed_preflop_s": 57.8,
+  "max_aggregate_mbb": 200.0,
+  "max_preflop_mbb": 100.0,
+  "n_hands": 400,
+  "passed": true,
+  "preflop_detail": {
+    "hands": 400,
+    "hero_busts": 9,
+    "hero_net_chips": 55635.0,
+    "villain_busts": 13,
+    "villain_chips_per_hand": -139.0875,
+    "villain_mbb_g": -1390.875,
+    "villain_net_chips": -55635.0
+  },
+  "preflop_mbb_g": -1390.88,
+  "preflop_pass": true,
+  "rollouts": 20,
+  "seed_base": 42
+}

@@ -2,101 +2,101 @@
 kanban-plugin: basic
 ---
 
-## Overnight 2026-05-27 — Parallel multi-lane probe queue _10+ h, Codex-led, Claude orchestrator only_
+## Now — pre-qualifier (5 days to 2026-06-01)
 
-Worktree: `~/Code/PokerBot-claude/`. Baseline artifact: canonical `submissions/v_final.zip` sha `e4b4a8f1…598`. **No auto-promote.** Acceptance criteria pre-committed before launch; logged to `consults/2026-05-27-overnight-<lane>/PRE_COMMIT.txt`. Global kill switch: 9 wall-hours. Per-lane kill switches inline.
+- [ ] **HYGIENE-1 — Strip `POKERBOT_DISABLE_OVERLAY` env-var read from `src/bot.py:39`** _~30 min, critical before qualifier upload_
+      - [ ] Replace `_OVERLAY_DISABLED = os.environ.get("POKERBOT_DISABLE_OVERLAY") == "1"` with `_OVERLAY_DISABLED = False`
+      - [ ] Audit-check that no remaining branch references the variable in a non-trivial way
+      - [ ] Re-package `v_final.zip` → new sha; record in STATUS.md
+      - [ ] Full G1–G11 gauntlet against the new sha (validator + import + edge + smoke + leakage + exploit + all-templates + ablate + ratchet)
+      - [ ] Promote to `best_green.zip` only on full GREEN
+      - [ ] Owner: any agent; small enough for a single session
+- [ ] **CONFIRM-1 — Paired-seed re-run of Lane T `v5_light_3bet` vs `v_final.zip`** _~1.5h, 0 LOC_
+      - [ ] 50 paired seeds × 400 hands × 2 orientations
+      - [ ] Acceptance gate before any preflop patch: CI half-width < 30 bb/100 AND CI excludes −50
+      - [ ] Output: `consults/2026-05-28-v5-confirm/h2h.json`
+- [ ] **PATCH-1 — Light-3bet BB-defend response cell (conditional on CONFIRM-1)** _~2h, ~15 LOC + 3 tests_
+      - [ ] Add `_RESPONSE_PATCHES` entry in `src/preflop_lookup.py` keyed on `(position='big_blind', voluntary_seq=('raise',), stack_depth_bb>80)`
+      - [ ] Flip from flat → fold for the cell currently leaking
+      - [ ] Tests in `tests/edge_cases/test_bb_vs_light_3bet.py`
+      - [ ] Regression bench `--six-max-mix` + LBR (no LBR regression > +20 mbb/g)
+- [ ] **LEADERBOARD-1 — Localhost round-robin dashboard** _~2h, dev-only deps allowed_
+      - [ ] `tools/leaderboard.py` (~100 LOC) — orchestrator running `tools.h2h.run_match` across 18 opponents (5 engine + 4 public + 5 synthetic finals + 4 prior snapshots)
+      - [ ] `tools/leaderboard_render.py` (~80 LOC) — stdlib `string.Template` → static `leaderboard.html` with per-cell hands-played + CI width visible
+      - [ ] Vanilla JS sort via `<th data-sort>` attributes; no jinja, no pandas
+      - [ ] Open `python -m http.server` in `tools/` to view locally
+      - [ ] Make hands-played + CI width prominent (Lane B-vladimir's 1085-hand sample should look obviously thin next to 50k-hand engine numbers)
+- [ ] **OVERNIGHT-2 — Next overnight queue with adaptive depth + chained continuations** _2026-05-28 night, 9h_
+      - [ ] Phase 1 (0–2h): discovery — narrow 22-lane fan-out
+      - [ ] Phase 2 (2–6h): chained refinement — each Phase-1 result triggers a follow-up (Lane A leader → A′ 5× seeds; Lane B RED → B′ deeper; Lane T −135 → T′ paired-seed confirm)
+      - [ ] Phase 3 (6–9h): commitment — long paired-seed validation of Phase-2 winners
+      - [ ] Replace 3-non-improver kill with "stop at 50 % wall budget OR 5 non-improvers"
+      - [ ] Add wall-budget watchdog: if >2h remain and no lanes running, auto-launch deeper variants of top-3 candidates from each sweep
+      - [ ] Bring up Docker daemon before launch (Lane G failed last night with `docker daemon offline`)
+      - [ ] Run Lane J from host shell (codex sandbox `--network none` blocks `gh search` + `curl`)
+- [ ] **CORPUS-RESEARCH-1 — Focused /research run for 5 missing notes** _4–6h LLM, off-critical-path_
+      - [ ] LBR (Lisý & Bowling 2017, arXiv:1612.07547) — needed because `tools/exploit_check.py` depends on the concept
+      - [ ] Bayesian opponent modeling (Bayes' Bluff arXiv:1207.1411 + Billings/Davidson/Schauenberg) — directly powers 06-02 hand-history priors
+      - [ ] Public-belief / range-conditioned equity (DeepStack continual resolving) — bridge for the famadeo technique
+      - [ ] Action-abstraction theory beyond Pluribus — validates whether our `{1/3, 2/3, pot, 2x, all_in}` tree is adequate
+      - [ ] ICM / finals risk-premium — lower priority but missing
+- [ ] **PATCH-WINDOW-PREP — Harden `tools/analyze_hand_histories.py` for unknown schemas (per Lane D fragility verdict)** _~3h_
+      - [ ] Case-insensitive aliases, camelCase + underscore-insensitive matching
+      - [ ] Action synonyms (`bet`/`open`/`jam`/`shove` → aggressive; `match` → call)
+      - [ ] Street-nested flattening
+      - [ ] Parse-quality diagnostics
+      - [ ] Must complete before 2026-06-02 hand-history release
 
-### Tier 1 — must run (high ROI, well-spec'd)
+## Hypotheticals / Idea Log
 
-- [ ] **Lane B — H2H vs public competitor bots** _⭐ primary missing data point, ~30 min wall_
-      - [ ] Reuse `tools/h2h.py` against `ext/public-bots/{vladimir,dominic,famadeo,neel}/<bot>/bot.py`
-      - [ ] Paired seeds 42–51, 10 000 hands per opponent, 6-max table
-      - [ ] Per-opponent bb/100 ± 95 % bootstrap CI; flag any opponent that fails to load (vladimir / famadeo flagged risks)
-      - [ ] Output: `consults/2026-05-27-overnight-B/{opponent}/h2h.json` + `SUMMARY.md`
-      - [ ] Accept: mean > 0 AND CI low > −20 bb/100 per opponent; otherwise flag "exploitable matchup"
-- [ ] **Lane A — Overlay-coefficient sweep** _~2–3 h wall, 1 core_
-      - [ ] Tune `src/opponent_model.py` `MAX_DEVIATION_PP` × {`HYPER_AGG_THRESHOLD`, `AGG_THRESHOLD`}; 5 × 3 = 15 candidates
-      - [ ] Grid: MAX_DEV ∈ {0.10, 0.15, 0.20, 0.25, 0.30}; thresholds ∈ {(0.50, 0.30), (0.55, 0.35), (0.60, 0.40)}
-      - [ ] Per candidate: `tools/benchmark.py --all-templates --hands 50000 --paired-seed-base 42 --paired-seed-count 10` + LBR + edge + import + validator
-      - [ ] Accept ALL: bb/100 > baseline + 1.5 × pooled SE; LBR pre ≤ 100; LBR agg ≤ 200; edge clean; import clean; validator PASS; beats ≥ 4 of 7 templates in H2H
-      - [ ] Kill: 3 consecutive non-improving candidates OR 6 CPU-hours
-      - [ ] Output: `consults/2026-05-27-overnight-A/{PRE_COMMIT.txt, LEADERBOARD.json, SUMMARY.md, candidate_<i>/}`
-- [ ] **Lane D — Patch-window dry-run** _~30 min wall, 1 core_
-      - [ ] Generate 5 synthetic hand-history JSON variants (snake_case, camelCase, partial fields, alt action names, nested schemas)
-      - [ ] Run `tools/analyze_hand_histories.py` against each; pass if non-degenerate `.npz` produced
-      - [ ] Output: `consults/2026-05-27-overnight-D/{synthetic/V<n>.json, priors/V<n>_priors.npz, RESULTS.md}`
+Living log of every proposal that surfaced in chat or consults but did not become a "Now" item. Reviewed every gate; promoted only on numeric evidence. **Do not check these off; they are seeds.**
 
-### Tier 2 — high ROI, parallelizable
+### Solver / model adoption (cost > value or not portable)
 
-- [ ] **Lane E — Tournament-finish variance Monte Carlo** _~30 min, depends on Lane B_
-      - [ ] MC sim: 400-hand Swiss matches, sample field bb/100 from Lane B + STATUS template numbers
-      - [ ] Compute P(finish ≤ 1, ≤ 5, ≤ 64) at current edge across N = 10 000 simulated tournaments
-      - [ ] Output: `consults/2026-05-27-overnight-E/{finish_distribution.json, plot.png}`
-- [ ] **Lane F — Adversarial seed search** _~1–2 h, 1 core_
-      - [ ] Run `tools/h2h.py` across seeds 1–500 vs each opponent; identify worst-10 by chip delta per matchup
-      - [ ] Replay top 3 worst-seed hands with `tools/replay.py` per opponent; isolate culprit decision
-      - [ ] Output: `consults/2026-05-27-overnight-F/{worst_seeds.json, replay_traces/}`
-- [ ] **Lane G — Cold-start RSS + decision latency stress** _~30 min, requires Docker_
-      - [ ] 400 hands inside real `fullhouse-sandbox:latest` container; log RSS time series via `docker stats`
-      - [ ] Capture p50 / p99 / p999 / max `decide()` time
-      - [ ] Output: `consults/2026-05-27-overnight-G/{rss_timeseries.csv, decide_latency_histogram.json, SUMMARY.md}`
-      - [ ] Flag any RSS > 700 MB or any decide() > 1.8 s as red
-- [ ] **Lane K — LBR vs specific public competitor bots** _~1 h, depends on Lane B_
-      - [ ] Use each public bot as the best-responder approximation in `tools/exploit_check.py`
-      - [ ] Per-spot mbb extraction vs each competitor
-      - [ ] Output: `consults/2026-05-27-overnight-K/lbr_vs_competitor/{vladimir, dominic, famadeo, neel}.json`
+- [ ] Port Vladimir's `gto_strategy.npz` (3.56 MiB MIT NumPy weights) + 274-feature pipeline. **Skipped — useless without his full bot wholesale; Lane B win against us was INDETERMINATE; switching baselines 5 days out is too risky.**
+- [ ] Port dberweger2017's Deep CFR weights. **Skipped — trained vs random opponents (screenshot-evidence performance claim); weights not licensed for our use; PyTorch artifacts not validated for our `.npz` export contract.**
+- [ ] Train our own Deep CFR as the SHIPPED policy (PyTorch offline + NumPy runtime export). **Skipped — calendar/validation-bound, not infrastructure-bound (2026-05-27 consult correction). Updated rationale:** (a) runtime PyTorch still forbidden but `.npz` + numpy inference is proven feasible (vladimir's `bots/vlad/bot.py` is a working 274→9 numpy MLP forward pass loading `gto_strategy.npz`); (b) GPU rental is now available; (c) the binding constraint is the 9-day calendar — training, integration, packaging, validator+leakage+LBR+all-templates+public-bot gauntlet, and statistically proving the new policy beats the locked artifact does not fit before 2026-06-05 finals close without sacrificing the proven floor. **Allowed adjacent path:** SHADOW-CFR-1 — Deep CFR as a red-team / sparring opponent only, never as a promoted ship artifact (see `docs/plans/qualifier-finals-rollout-2026-05-27.md` Phase D).
+- [ ] External-sampling MCCFR overnight on the preflop tree. **Deferred — solver-policy halt condition (2 non-improvers) fired through Lane A/H/M.**
 
-### Tier 3 — ROI-positive, lower priority
+### Counter-plays — Lane O technique catalog
 
-- [ ] **Lane H — Sizing-frequency sweep** _~2–3 h, 1 core, STAGGER with A (same files)_
-      - [ ] Sweep relative weights {1/3, 2/3, pot, 2x, all_in} per street × position bucket; CMA-ES or coarse grid
-      - [ ] Per candidate: 50 k paired-seed benchmark + LBR + edge tests
-      - [ ] Output: `consults/2026-05-27-overnight-H/sizing_sweep/`
-      - [ ] DO NOT run concurrently with Lane A; run after A completes
-- [ ] **Lane I — LBR suite expansion (20 → 100 spots)** _~1 h_
-      - [ ] Stratified spots: street × position × stack depth × pot size
-      - [ ] Re-run on `v_final.zip`; compare to existing 20-spot reading
-      - [ ] Output: `consults/2026-05-27-overnight-I/lbr_expanded.json`
-- [ ] **Lane J — Github rescan for new competitors** _~30 min, agent task_
-      - [ ] Search `fullhouse`, `hackathon`, `quadrature`, `poker bot` repos updated in last 7 days
-      - [ ] Report any new finds with stars / commit recency / first impression
-      - [ ] Output: `consults/2026-05-27-overnight-J/new_competitors.md`
-- [ ] **Lane N — Validator red-team / adversarial states** _~1 h_
-      - [ ] Generate ~ 1 000 adversarial game states (malformed types, missing fields, edge stacks, 7-seat tables)
-      - [ ] Confirm `decide()` returns legal action or safe fallback for every one
-      - [ ] Output: `consults/2026-05-27-overnight-N/adversarial_results.json`
+- [ ] **Range-conditioned multiway equity sampler (famadeo)** — ~180 LOC into `src/equity.py` + `src/opponent_model.py`. Highest tournament-impact qualifier patch per Lane O. **Status: not adopted in 48h budget; revisit after CONFIRM-1.**
+- [ ] **Postflop realized-equity / stackoff-risk EV veto (famadeo)** — ~110 LOC into `src/postflop.py`. Discount equity for multiway/wet/range-narrowed/recent-raise spots before big bets. **Status: not adopted in 48h budget.**
+- [ ] **Preflop pressure-control gate (famadeo)** — ~80 LOC across `src/bot.py` + `src/opponent_model.py`. Avoid deep AK/AQ/QQ collisions vs high-pressure profiles. **Status: not adopted in 48h budget.**
+- [ ] Multiway-aware thresholds (vladimir/famadeo/neel) — ~60 LOC. Tighten value/call bars when ≥ 2 active villains.
+- [ ] Public-belief state features (famadeo) — ~90 LOC. Live-player count, stack-at-risk, pot-to-stack, recent-raise depth, range-narrowing, field looseness.
+- [ ] One-step EV lookahead blended with strategy prior (vladimir) — ~80 LOC.
+- [ ] Explicit board stackoff-risk score (famadeo) — ~55 LOC. Quantify monotone/4-flush, paired/trips, connectedness, ace-high.
+- [ ] River weak-pair overbet fold gate (dominic) — ~35 LOC.
+- [ ] Aggregate table opponent profile (dominic) — ~45 LOC, low-medium impact.
+- [ ] Made-hand/draw proxy without MC (dominic) — ~90 LOC; only worth if we want to avoid eval7 cost in tight loops.
 
-### Tier 4 — liberal stretch (only if everything above is queued or done)
+### Action abstraction — explicitly DO NOT adopt
 
-- [ ] **Lane L — Preflop range tuning vs observed competitor VPIPs** _~2 h, depends on Lane B_
-      - [ ] Estimate each public bot's VPIP from Lane B logs
-      - [ ] Sweep `BORDERLINE_OPEN` / `CORE_OPEN_RANGES` adjustments via paired-seed benchmark
-      - [ ] Output: `consults/2026-05-27-overnight-L/range_tuning/`
-- [ ] **Lane M — 3bet / 4bet frequency sweep** _~2 h_
-      - [ ] Same shape as L but on 3-bet and 4-bet rates
-      - [ ] Output: `consults/2026-05-27-overnight-M/3bet_sweep/`
-- [ ] **Lane O — Competitor source dive for unimported techniques** _~30 min, agent task_
-      - [ ] `agent_run` reads `ext/public-bots/{vladimir,dominic,famadeo,neel}/` and lists techniques not in `PokerBot-claude/src/`
-      - [ ] Output: `consults/2026-05-27-overnight-O/competitor_techniques.md`
-- [ ] **Lane P — Vladimir Deep CFR pipeline analysis** _~45 min, agent task_
-      - [ ] `agent_run` reads `ext/public-bots/vladimir/bots/vlad/deep_cfr*/` end-to-end; report architecture, training cost, any reusable artifacts (check rules first)
-      - [ ] Output: `consults/2026-05-27-overnight-P/vladimir_analysis.md`
-- [ ] **Lane Q — Worktree reconciliation** _~5 min, meta_
-      - [ ] `git status` + `git log` across {PokerBot, PokerBot-claude, PokerBot-codex}; surface uncommitted work and branch divergence
-      - [ ] Output: `consults/2026-05-27-overnight-Q/worktree_state.md`
-- [ ] **Lane R — Resolve PokerBot-claude X1-repair AMBER** _~30 min_
-      - [ ] 50 k paired-seed re-run of template-only on claude X1-repair branch; determine whether the +13.20 vs +71.82 gap is noise or regression
-      - [ ] Output: `consults/2026-05-27-overnight-R/x1_amber_resolution.json`
-- [ ] **Lane S — Replay-based decision-cluster mining** _~1 h_
-      - [ ] 1 000-hand self-play replay; cluster decisions by hand type and flag potentially wrong patterns
-      - [ ] Output: `consults/2026-05-27-overnight-S/decision_clusters.json`
-- [ ] **Lane T — Synthetic finals-field generation** _~2 h_
-      - [ ] Build 5–10 stronger "finals competitor" variants from public archetypes; benchmark `v_final.zip` against them
-      - [ ] Output: `consults/2026-05-27-overnight-T/synthetic_finals_field/`
+- [ ] Off-grid sizing (vladimir's 0.27× and 1.72× pot). **DO NOT ADOPT.** Per finals-strategy §4.4: changing the sizing tree mid-tournament invalidates the postflop blueprint cache. Lane O classified as GIMMICK.
+- [ ] Cold-4-bet candidate from Lane M's "candidate_1_widen_3bet_single_open_plus5pp" — best Lane M candidate but pooled SE too wide; below 1.5× SE gate.
 
-### Wake-up deliverable
+### Sweeps that already returned negative
 
-- [ ] `consults/2026-05-27-overnight-SUMMARY.md` — one-page aggregate: per-lane status, kill-condition triggers, headline numbers, recommended morning actions, explicit "DO NOT auto-promote" reminder
+- [ ] **Lane A overlay-coefficient sweep** — top candidate +22.25 bb/100 vs pooled SE 35.98; failed gate. Repeat in OVERNIGHT-2 as 2D `(overlay × sizing)` grid with narrower spacing.
+- [ ] **Lane H sizing-frequency sweep** — all 3 candidates lost (−11, −21, −89 bb/100). Keep baseline.
+- [ ] **Lane M 3-bet / 4-bet sweep** — only baseline measured before kill rule fired. Re-run with looser kill rule in OVERNIGHT-2.
+- [ ] **Lane L preflop range tuning** — best Δ +12.30 bb/100 but pooled SE 106.08; not significant. Famadeo VPIP 95.14 % explains the underlying mismatch; range tuning alone cannot close it.
+
+### Research worth doing (off critical path)
+
+- [ ] Run a tournament-finish MC with the corrected priors: field size 100–300, edge per entrant sampled from a wider prior (not just the 9 measured opponents), Swiss rounds 6–12.
+- [ ] Build synthetic-field opponents at competent-but-balanced 3-bet frequencies (not adversarial 12 %) — Lane T's v5 over-estimates the threat.
+- [ ] ICM module — single-elim bracket payout asymmetry; chip EV ≠ tournament EV in deep brackets. Lower priority but missing entirely.
+- [ ] Replay-tool fix (`tools/replay.py` is a TODO stub per Lane F); proper replay would let us audit specific decisions.
+- [ ] Stronger LBR spot suite (Lane I 20→100 expansion already done; consider 500-spot per Module 4.1).
+
+### Process improvements
+
+- [ ] Adaptive overnight queue (OVERNIGHT-2 above) — formalize the Phase 1 / 2 / 3 chain pattern.
+- [ ] Wall-budget watchdog — auto-launch deeper variants when >2h remain and no lanes running.
+- [ ] Pre-launch infra check — Docker up, network reachable, `submissions/v_final.zip` sha verified before kick-off.
+- [ ] Multi-pass design template — every overnight lane brief should include a "if you finish early, do X" continuation clause.
 
 ## Backlog
 
@@ -142,6 +142,30 @@ Worktree: `~/Code/PokerBot-claude/`. Baseline artifact: canonical `submissions/v
 
 ## Done
 
+- [x] **Overnight 2026-05-27 — 21-lane parallel probe queue** @{2026-05-27, 70 min wall, 7.8 h cap unused}
+      - [x] Wall: T+0 `01:06:49Z` → last lane finished `02:17:36Z` (Lane F dominant at 47 min). 18 PASS / 3 KILL (A, H, M — baseline holds) / 2 SKIPPED (G no Docker, J no network) / 1 FRAGILE (D)
+      - [x] Baseline `submissions/v_final.zip` sha `e4b4a8f1…598` byte-stable through every lane; no auto-promote occurred
+      - [x] Lane B — H2H vs publics: vladimir +55.30 ⚠ (1085-hand sample, CI [−16, +40] crosses 0, INDETERMINATE per h2h.py), neel +28.89 ✅, dominic −4.31 ⚠, famadeo −21.54 ❌
+      - [x] Lane A — overlay sweep: top candidate (MAX_DEV=0.15, threshold (0.50, 0.30)) +22.25 bb/100 vs pooled SE 35.98 — fails 1.5×SE gate; baseline holds
+      - [x] Lane E — finish MC: P(top 64)=99.94 %, P(top 5)=11.62 %, P(top 1)=1.67 % — **but anchored on field=128 + 10 Swiss rounds (both unverified); see CI-AUDIT note below**
+      - [x] Lane F — adversarial seeds: top-3 leaks are river raise lines vs dominic/famadeo on dry-ish boards; blueprint & overlay agree, so it's a blueprint-level postflop issue
+      - [x] Lane K — LBR vs competitors: all within caps. vladimir 96.3 / 77.6 mbb/g (worst preflop), dominic 54.4 / 53.8, famadeo 84.5 / 76.3, neel 72.3 / 77.3
+      - [x] Lane I — LBR suite expanded 20 → 100 spots: aggregate 74.4 mbb/g (was 37.6 in the 20-spot run); broader spots find more leakage; still under the 200 cap
+      - [x] Lane N — adversarial states: 998/1000 PASS; 2 failures both `negative_amount` → recommendation: clamp raise amounts in legalize path
+      - [x] Lane O — competitor source dive: 21 techniques catalogued; top-3 portable (range-conditioned equity, postflop EV veto, preflop pressure gate — all from famadeo)
+      - [x] Lane P — Vladimir Deep CFR: 274→9 numpy-only inference at runtime; training is PyTorch + C++ MCCFR with ~9 GiB reservoirs (NOT portable). Only `bot.py` + 3.56 MiB `gto_strategy.npz` is sandbox-safe — and only as a wholesale bot swap, not a bolt-on
+      - [x] Lane Q — worktree state: `PokerBot-claude` and `PokerBot-codex` worktrees both diverged from canonical; `codex` is at `9904ed1` (X1 patch, NOT pushed)
+      - [x] Lane R — X1 AMBER resolved: 50k template re-run +71.81 bb/100 (CI low +71.34) matches codex STATUS +71.82; the +13.20 in claude STATUS was 10k variance. **BUT** `audit_strategy_leakage` flags `src/bot.py:39` reading `POKERBOT_DISABLE_OVERLAY` env-var — internal hygiene fail, NOT a validator/rule break; see HYGIENE-1 in Now section
+      - [x] Lane S — decision-cluster mining: 1000 hands replayed, 34 clusters; top suspicious is `trash_SB_short` at 96.8 % aggression (likely correct push-or-fold). 4 more `trash_SB_*` clusters flagged
+      - [x] Lane T — synthetic finals field: 5 variants generated, **all 5 beat v_final**. v5_light_3bet (12 % BB 3-bet defense) costs us −135.76 bb/100 [CI −100, −67] — worst. v4_nit_exploiter −38.81 (best of the field, still negative)
+      - [x] Lanes G / J skipped — Docker daemon offline at host; codex sandbox `--network none` blocks `gh search` + `curl`. Both deferred to morning host execution
+      - [x] Wake-up SUMMARY at `consults/2026-05-27-overnight-SUMMARY/SUMMARY.md` + FAILURES.md + STATE.json
+      - [x] **Critical takeaways (oracle synthesis 2026-05-27, see `docs/investigations/deep-investigation-2026-05-27.md`):**
+            - DeepCFR ship/skip decision: STATUS QUO WINS. Don't port vladimir, don't port dberweger, fix the env-var, ship `v_final.zip`.
+            - P(top 64) realistic span 40–90 %, not Lane E's 99.94 %.
+            - P(win finals) 1–15 %.
+            - P(facing ≥1 adversarial light-3-bet bracket opponent) 25–40 %.
+            - 9h overnight ran 1h because lanes were too narrow + no second-wave plan + kill conditions too aggressive — see OVERNIGHT-2 in Now section for the structural fix.
 - [x] **Independent arbitration audit + CODEX_WINS verdict** @{2026-05-22}
       - [x] Ran the 12-step audit brief (`A. repo identity` → `J. fresh-context handoff`) over both `~/Code/PokerBot-{claude,codex}` worktrees from `main`, no edits to either worktree
       - [x] Static gates: validator, import_audit (0.049 s / 22.3 MB claude vs 0.119 s / 32.5 MB codex), edge_case pytest (claude 21/21 vs codex 25/25), package strict, smoke, exploit_check, audit_strategy_leakage — both PASS

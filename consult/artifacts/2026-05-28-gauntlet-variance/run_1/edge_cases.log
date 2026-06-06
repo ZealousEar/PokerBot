@@ -1,0 +1,20 @@
+# label=edge_cases
+# cwd=/Users/farhad/Code/PokerBot-gauntlet
+# started_utc=2026-05-28T01:05:08Z
+# command=/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python -m pytest tests/edge_cases -x
+
+============================= test session starts ==============================
+platform darwin -- Python 3.10.18, pytest-9.0.3, pluggy-1.6.0
+rootdir: /Users/farhad/Code/PokerBot-gauntlet
+plugins: hypothesis-6.152.9
+collected 25 items
+
+tests/edge_cases/test_hardening_cases.py ......                          [ 24%]
+tests/edge_cases/test_legal_actions.py ...............                   [ 84%]
+tests/edge_cases/test_safe_fallback.py ....                              [100%]
+
+============================== 25 passed in 0.94s ==============================
+
+# finished_utc=2026-05-28T01:05:10Z
+# returncode=0
+# duration_s=2.013

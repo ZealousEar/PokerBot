@@ -1,0 +1,1670 @@
+=== LANE ship-day-rehearsal START 2026-05-29T14:57:40Z ===
+PROMPT: /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/_prompts/P6_ship.md
+WORKDIR: /Users/farhad/Code/PokerBot
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = "C.UTF-8",
+	LC_CTYPE = "C.UTF-8",
+	LANG = "en_GB.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_GB.UTF-8").
+e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  /Users/farhad/Code/PokerBot/submissions/v_final.zip
+e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  /Users/farhad/Code/PokerBot/submissions/best_green.zip
+OpenAI Codex v0.134.0
+--------
+workdir: /Users/farhad/Code/PokerBot
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 019e743d-b200-7690-b2e5-2386883c2cc6
+--------
+user
+Hard invariant:
+- Do not modify, rebuild, repackage, copy over, or replace:
+  submissions/v_final.zip
+  submissions/best_green.zip
+- Both must remain sha256:
+  e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598
+- Do not edit ext/fullhouse-engine/.
+- Do not edit ext/public-bots/ snapshots.
+- Do not infer ship behavior from current main src/. Main may be scaffold/stub.
+- If strategy source is needed, use release/v_final-e4b4a8f1 or extract the locked zip.
+- Any candidate artifact must have a new name and must never replace v_final.zip or best_green.zip.
+- All commands must use .venv/bin/python, not host python.
+- Record protected artifact SHA before and after the run.
+- Write all outputs under consult/artifacts/2026-05-29-away/<lane-name>/ unless explicitly told otherwise.
+
+Task: P6 Ship-day rehearsal and contamination sentinel, no edits except report.
+
+Use the global Hard Invariant above.
+
+Goal:
+Run the 2026-06-01 ship-day verification sequence now and produce a GO/NO-GO report for the locked artifact.
+
+Output directory:
+consult/artifacts/2026-05-29-away/ship-day-rehearsal/
+
+No source edits.
+No candidate zip.
+No package.py against v_final.zip.
+Do not touch submissions/v_final.zip or submissions/best_green.zip.
+Note: the orchestrator has already chmod 444'd both protected zips; do not chmod them back.
+
+Commands:
+1. cd ~/Code/PokerBot
+2. shasum -a 256 submissions/v_final.zip submissions/best_green.zip
+   Expected both:
+   e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598
+
+3. .venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200
+   Expected: 200/200, 0 hero errors, positive or non-catastrophic chip delta.
+
+4. .venv/bin/python ext/fullhouse-engine/sandbox/validator.py submissions/v_final.zip
+   Expected: PASSED, 4/4 TEST_STATES.
+
+5. .venv/bin/python tools/import_audit.py --max-seconds 1.5 --max-mb 400
+   Expected: cold < 1.5s, RSS < 400 MB, forbidden imports 0.
+
+6. .venv/bin/python tools/audit_strategy_leakage.py --zip submissions/v_final.zip
+   Expected: PASS, zero hits.
+
+7. du -h submissions/v_final.zip
+8. unzip -l submissions/v_final.zip | tail -20
+   Expected:
+   total <= 250 MB,
+   bot.py at root <= 5 MB,
+   data/ <= 200 MB,
+   no other .py at root,
+   no .py inside data/,
+   no symlinks.
+
+9. git status --short
+10. git branch --show-current
+11. git rev-parse HEAD
+12. git show-ref --heads release/v_final-e4b4a8f1 || true
+
+Outputs:
+- SHIP_DAY_REHEARSAL.md
+- command_logs/
+- GO_NO_GO.txt
+- STATUS_BLOCK.md
+
+GO_NO_GO.txt must be exactly one of:
+GO_UPLOAD_LOCKED_V_FINAL
+NO_GO_SHA_MISMATCH
+NO_GO_VALIDATOR_FAIL
+NO_GO_SMOKE_FAIL
+NO_GO_IMPORT_FAIL
+NO_GO_LEAKAGE_FAIL
+NO_GO_SIZE_LAYOUT_FAIL
+NO_GO_WORKTREE_CONTAMINATION
+
+If any command fails:
+- Do not attempt repair.
+- Do not copy best_green.
+- Do not run package.py.
+- Record exact failure and stop.
+
+Verify protected SHAs after the run.
+
+codex
+I’ll run the rehearsal as a read-only verification lane: create only the requested report/log directory, record protected hashes before and after, and stop at the first failing required check without repair or packaging.
+exec
+/bin/zsh -lc "sed -n '1,260p' AGENTS.md" in /Users/farhad/Code/PokerBot
+ succeeded in 0ms:
+# PokerBot — Codex Project Brief
+
+Read this every turn. Pull deeper context from `docs/corpus-index.md`, `docs/tournament-spec.md`, `docs/api-cheatsheet.md`, and `PLAN.md` before editing strategy code.
+
+## Mission
+Win the Fullhouse Hackathon 2026 by submitting `submissions/v_final.zip` that finishes #1 by cumulative chip delta in the Swiss qualifier (2026-06-01) and #1 in the finals bracket (2026-06-05). Prize pool £4,000+, lead sponsor Quadrature Capital.
+
+## Repository map
+- `src/bot.py` — entry implementation. The shipped `bot.zip` has a small `bot.py` shim at archive root that re-exports `decide` from here.
+- `src/preflop_lookup.py`, `src/postflop.py`, `src/equity.py`, `src/opponent_model.py`, `src/ranges.py`, `src/sizing.py`, `src/timeout_guard.py` — strategy modules.
+- `data/*.npz` — precomputed blueprints; load eagerly at module import (covered by the engine's 30 s warmup budget).
+- `tools/` — training, benchmarking, packaging, import auditing.
+- `tests/{unit,integration,edge_cases,property}/` — verification surface.
+- `ext/fullhouse-engine/` — local engine clone for testing; **do not modify**.
+
+## Build & verify commands
+- Self-play: `python tools/self_play.py --opponent <name> --hands <N>`
+- Benchmark vs all templates: `python tools/benchmark.py --all-templates --hands 10000 --paired-seed-base 42`
+- Import audit: `python tools/import_audit.py`
+- Build submission: `python tools/package.py --output submissions/<name>.zip --strict`
+- Engine validator (authoritative, AST + size only): `python ext/fullhouse-engine/sandbox/validator.py submissions/<name>.zip`
+- Sandbox smoke run (runs the bot in a real container): `python tools/smoke_run.py --zip submissions/<name>.zip --hands 200`
+- Edge cases: `pytest tests/edge_cases -x`
+
+## Sandbox invariants (HARD — sourced from `ext/fullhouse-engine/sandbox/{validator.py,Dockerfile,runner.py}`)
+- Runtime: **Python 3.10**. eval7 0.1.7 does not build on 3.11+ (uses pre-generated C against pre-3.11 `longintrepr.h`).
+- Pinned libraries: `eval7==0.1.7`, `numpy==1.26.4`, `scipy==1.13.0`, `treys==0.1.8`, `scikit-learn==1.5.2`.
+- Container flags: `--network none --memory 768m --cpus 0.5 --read-only --no-new-privileges --user 1000:1000`.
+- 2 s per `decide()`. One warmup call (`type=="warmup"`) before hand 1 with 30 s budget — load blueprints there.
+- File reads from `data/` only at import time via `os.environ["BOT_DATA_DIR"]` (engine sets it; fall back to `os.path.dirname(__file__)/data`).
+- Submission size: `bot.py` ≤ 5 MB, `data/` ≤ 200 MB, total ≤ 250 MB. `bot.py` at archive root; no other `.py` at root; no `.py` inside `data/`; no symlinks; no path traversal.
+
+## Forbidden modules (validator `FORBIDDEN_MODULES`)
+`socket`, `urllib`, `urllib2`, `urllib3`, `requests`, `httpx`, `aiohttp`, `http`, `ftplib`, `smtplib`, `telnetlib`, `xmlrpc`, `subprocess`, `multiprocessing`, `pickle`, `shelve`, `threading`, `ctypes`, `runpy`, `importlib`.
+
+## Forbidden call patterns (validator AST scan)
+`__import__(`, `eval(`, `exec(`, `compile(`, `getattr(__builtins__`, `__builtins__[…]`, `globals()[`, `locals()[`, any `subprocess.*`, any `os.{system,popen,exec*,spawn*,fork,kill,remove,unlink,rmdir,removedirs,chmod,chown,replace,rename}`.
+
+## Valid actions (validator `VALID_ACTIONS`)
+- `{"action": "fold"}`
+- `{"action": "check"}`  — only when `can_check` is True
+- `{"action": "call"}`
+- `{"action": "raise", "amount": N}`  — `amount` is the **total** chips put in, not the increment; below `min_raise_to` is snapped up
+- `{"action": "all_in"}`  — distinct from raise-to-stack
+
+Invalid actions default to fold; the runner emits `{"action": "fold", "error": ...}` on exception or timeout.
+
+## Game-theoretic frame (the architectural commitment)
+
+Two-regime tournament dictates a two-layer strategy.
+
+- **Qualifier (Swiss, 400-hand matches vs mostly weak field):** maximum chip extraction wins → bias toward best-response against the inferred opponent type.
+- **Finals (single-elim bracket of top 64):** survivors include sharp opponents who will counter-exploit naive max-exploit play → need a near-Nash baseline that bounds our downside.
+
+The architectural answer is the **blueprint + refinement** pattern from Brown & Sandholm:
+
+- **Blueprint** (`src/preflop_lookup.py` + `src/postflop.py`): an approximation of Nash over the abstracted game, computed offline via external-sampling MCCFR for preflop and CFR+ over flop buckets for postflop. This is the floor — even if our opponent fingerprinting fails completely, the blueprint guarantees we play near-equilibrium on the abstracted game.
+- **Refinement / overlay** (`src/opponent_model.py`): live deviation from the blueprint toward best-response against the inferred opponent type. Magnitude is bounded — a large deviation is exploitable in return; the bound is set so a worst-case counter-exploit costs us less than the expected overlay gain. We replace Libratus-style real-time subgame solving (compute-prohibitive here) with this frequency-based overlay.
+
+**Abstraction is the leverage point.** We cannot solve 6-max NLHE; we can solve a coarsened version. The two coarsenings:
+- **Action abstraction** — discrete sizing tree `{1/3 pot, 2/3 pot, pot, 2× pot, all_in}` per Pluribus 2019.
+- **State abstraction** — flop bucketing (≤ 200 buckets) and hand-strength bins (≤ 50 per bucket) per Cepheus 2015.
+
+**Exploitability is the safety metric.** Local best-response (Lisý & Bowling 2017 LBR) over a fixed 20-spot suite reports how much a best-responding opponent could extract against us. Cap: ≤ 100 mbb/g preflop, ≤ 200 mbb/g aggregate. Higher = more exploit power but more counter-exploit risk; lower = closer to Nash but less exploit edge. G5 verifies this stays in the band.
+
+**What we drop and why:**
+- Real-time subgame solving (Libratus 2017) — compute-prohibitive at 0.5 CPU / 2 s decision budget.
+- Deep CFR (Brown 2019) as the SHIPPED policy — calendar/validation-bound, not infrastructure-bound (corrected 2026-05-27 consult). Runtime PyTorch is still forbidden, but `.npz` + numpy inference is proven feasible (vladimir ships a 274→9 numpy MLP forward pass loading `gto_strategy.npz`). The binding constraint is the 9-day calendar — training, integration, validator/leakage/LBR/all-templates/public-bot gauntlet, and statistically proving the new policy beats the locked artifact does not fit before finals close. Allowed adjacent use: SHADOW-CFR-1 red-team / sparring opponent (`docs/plans/qualifier-finals-rollout-2026-05-27.md` Phase D), never the promoted ship artifact.
+- Nested endgame solving — same compute reasons.
+
+## Engineering conventions
+- Decide first, refine second: every code path returns a legal action; correctness before strategic strength.
+- Anchor architectural decisions in `docs/corpus-index.md` references.
+- Add a `# Source: [[note-name]]` comment when implementing a technique from the corpus.
+- Tests are mandatory at each gate; no merge without numeric verification logged to `STATUS.md`.
+- Every gate's STATUS.md entry names which corpus note drove its design choice.
+
+## Status protocol
+Append a timestamped section to `STATUS.md` at every gate, with: gate id, GREEN/AMBER/RED, exact benchmark numbers, files changed, next action. Also surface the compact proof-of-green block (see `PROMPT.shared.md`) in the chat transcript — `/goal` evaluator only reads the transcript and auto-summarisation can erase STATUS.md evidence.
+
+## Artifact policy
+Always preserve `submissions/best_green.zip` — the latest validator-passing, edge-case-passing, smoke-run-passing artifact. After each gate, if the new build clears every check, promote it: `cp submissions/<new>.zip submissions/best_green.zip` (and commit). A `.githooks/pre-commit` hook refuses commits to `submissions/` that break verification; activate per-clone with `git config core.hooksPath .githooks`. Override with `FORCE_COMMIT=1 git commit ...` only for explicit rollbacks.
+
+Preserve all gate snapshots (`submissions/v{0..3}_*.zip`) — `tools/benchmark.py --self-play --vs-prior` depends on them.
+
+## Solver policy
+External-sampling MCCFR (G2) and CFR+ over flop buckets (G3) are conditional on benchmark improvement against `best_green.zip`. If two consecutive non-trivial training attempts fail to improve measured bb/100 against `best_green.zip`, halt solver work and ship deterministic hand-tuned ranges + exploit priors instead. Prefer compact tables built from existing charted solver outputs over from-scratch overnight training. Treat LBR (`tools/exploit_check.py`) as a regression guard, not a Nash quality claim.
+
+## Worktree policy
+`~/Code/PokerBot/` is canonical (`main`). `~/Code/PokerBot-claude/` (`claude`) and `~/Code/PokerBot-codex/` (`codex`) are isolated worktrees forked from tag `scaffold-baseline`. Each agent edits only its own worktree. No agent edits `ext/fullhouse-engine/`, `.venv/`, another agent's worktree, or `main` during overnight runs. No agent runs `pip install` unattended.
+
+## Benchmark variance policy
+At 10k hands, bb/100 variance is ~20 bb/100 (95 % CI). Single-run 10k benchmarks are valid for monitoring progress but not for acceptance. For G3 all-templates acceptance, G5 ratchet/ablation, and branch-arbitration comparisons, either use paired seeds (`tools/benchmark.py --paired-seed-base 42 --paired-seed-count 10`) or bump `--hands` to ≥ 50000.
+
+## Patch-window policy
+Before 2026-06-02: implement `tools/analyze_hand_histories.py` that introspects schema from the first JSON record (do not hardcode field names — the hackathon schema is unknown until release) and emits compact priors to `data/finals_priors.npz`: population VPIP/PFR/aggression, fold-to-c-bet, average sizing by street, common preflop action sequences, obvious bot-cluster fingerprints.
+
+On 2026-06-02: parse downloaded histories, update compact priors only, re-run the full validator + import + edge-case + smoke + benchmark suite. The patch-window bot must still pass every check. Keep the qualifier artifact preserved.
+
+## Compute budget (updated 2026-05-27)
+- Claude Code plan: **20×** the base subscription rate (parallel sessions, higher token allotment, longer wall-clocks per turn).
+- Codex CLI plan: **20×** equivalent (parallel sandboxes, larger context budgets per lane).
+- Implication for overnight queues: the 21-lane queue used ~120 k Claude orchestrator tokens + aggregated codex across 22 lanes in ~70 min of wall, with ~7.8 h of the 9 h cap unused. Future lanes can fan out wider — push toward 35–50 narrow lanes per night with shorter per-lane budgets, rather than 20 broad lanes — and we can comfortably run 2–3 overnights between now and qualifier (2026-06-01).
+- Implication for finals patch window (2026-06-02): the analyzer + retune + full G1–G11 gauntlet fit inside a single 9-h window with budget to spare; we are compute-bound on architecture (no PyTorch / no C++ at submission time), not on subscription quota.
+
+hook: PostToolUse
+exec
+/bin/zsh -lc 'rg -n "PokerBot|v_final|best_green|artifact|evaluator|ship" /Users/farhad/.codex/memories/MEMORY.md' in /Users/farhad/Code/PokerBot
+ succeeded in 0ms:
+76:# Task Group: PokerBot competitor research and central-report artifacts
+77:scope: use this for public-source competitive-intel, fork/stargazer threat modeling, and requests to write a report into the central PokerBot tree
+78:applies_to: cwd=/Users/farhad/Code/PokerBot-codex with artifact writes sometimes redirected to /Users/farhad/Code/PokerBot; reuse_rule=reuse for similar Fullhouse public-recon/reporting work, but keep conclusions tied to public evidence at the time of the rollout
+84:- rollout_summaries/2026-05-24T21-16-40-kahG-fullhouse_public_competitor_intel_and_central_report.md (cwd=/Users/farhad/Code/PokerBot-codex, rollout_path=/Users/farhad/.codex/sessions/2026/05/24/rollout-2026-05-24T22-16-40-019e5bd8-e1fd-79b1-ac59-cf2178111e50.jsonl, updated_at=2026-05-24T21:49:36+00:00, thread_id=019e5bd8-e1fd-79b1-ac59-cf2178111e50, public-source GitHub reconnaissance plus local validator/smoke triage)
+90:## Task 2: Write the report under the central PokerBot folder and show the file path, success
+94:- rollout_summaries/2026-05-24T21-16-40-kahG-fullhouse_public_competitor_intel_and_central_report.md (cwd=/Users/farhad/Code/PokerBot-codex, rollout_path=/Users/farhad/.codex/sessions/2026/05/24/rollout-2026-05-24T22-16-40-019e5bd8-e1fd-79b1-ac59-cf2178111e50.jsonl, updated_at=2026-05-24T21:49:36+00:00, thread_id=019e5bd8-e1fd-79b1-ac59-cf2178111e50, report was written into the central tree and path returned)
+98:- central PokerBot folder, docs/public-competitor-intel-2026-05-24.md, show file path after, /Users/farhad/Code/PokerBot, report artifact, dirty central tree
+105:- When the user says “Make a report of these under the central PokerBot folder. Show me file path after,” write the artifact into `/Users/farhad/Code/PokerBot` and return the exact absolute path in the reply [Task 2]
+111:- Multiple public bots beat the bundled reference field in short paired-seed smoke tests, so “beats bundled refs” is not a meaningful acceptance bar for PokerBot [Task 1]
+113:- The central shared tree is `/Users/farhad/Code/PokerBot`; when the user asks for a report artifact there, adding one markdown file under `docs/` is the least invasive default [Task 2]
+114:- The created report path was `/Users/farhad/Code/PokerBot/docs/public-competitor-intel-2026-05-24.md` [Task 2]
+121:- symptom: central-tree report work risks unrelated churn -> cause: `/Users/farhad/Code/PokerBot` already had dirty files -> fix: add only the requested report file and avoid touching tracked docs unless the user explicitly asks [Task 2]
+123:# Task Group: PokerBot-codex artifact verification, repair, and checkpointing
+124:scope: use this for `v_final.zip` acceptance, artifact-bound benchmarking, leakage/manifest checks, promotion rules, and checkpoint updates after strategy repairs
+125:applies_to: cwd=/Users/farhad/Code/PokerBot-codex; reuse_rule=reuse for this worktree and closely matching Fullhouse submission flows, but revalidate metrics and hashes on any new checkout state or artifact revision
+127:## Task 1: Complete G5 and ship freshly built `v_final.zip`, success
+131:- rollout_summaries/2026-05-22T12-41-46-oPm3-pokerbot_g5_final_submission_and_concurrent_checkpoint.md (cwd=/Users/farhad/Code/PokerBot-codex, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T13-41-46-019e4fb4-c233-7483-982f-d53de3954a83.jsonl, updated_at=2026-05-22T13:24:53+00:00, thread_id=019e4fb4-c233-7483-982f-d53de3954a83, final G5 artifact-level verification on `submissions/v_final.zip`)
+135:- PokerBot-codex, G5, v_final.zip, best_green.zip, benchmark.py, smoke_run.py, exploit_check.py, --bot submissions/v_final.zip, logs/g5, FINAL SUBMITTED
+141:- rollout_summaries/2026-05-22T12-41-46-oPm3-pokerbot_g5_final_submission_and_concurrent_checkpoint.md (cwd=/Users/farhad/Code/PokerBot-codex, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T13-41-46-019e4fb4-c233-7483-982f-d53de3954a83.jsonl, updated_at=2026-05-22T13:24:53+00:00, thread_id=019e4fb4-c233-7483-982f-d53de3954a83, tracking-doc sync on top of concurrent Claude work)
+145:- concurrent worktree, claude is also writing, KANBAN.md, CHANGELOG.md, STATUS.md, git log, best_green.zip, artifact_match=yes, checkpoint
+147:## Task 3: Post-X1 repair pass for clean artifact-bound verification, success
+151:- rollout_summaries/2026-05-22T13-28-57-YJKn-pokerbot_codex_x1_repair_and_checkpoint.md (cwd=/Users/farhad/Code/PokerBot-codex, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T14-28-57-019e4fdf-f2f0-74d0-8f9a-6b97f3f2524f.jsonl, updated_at=2026-05-22T18:45:31+00:00, thread_id=019e4fdf-f2f0-74d0-8f9a-6b97f3f2524f, repaired identity leakage and promotion tooling around `v_final.zip`)
+155:- post-X1 repair, audit_strategy_leakage.py, promote_artifact.py, manifest.json, identity leakage, opponent_model.py, behavior overlay, zip sha256, anonymized benchmarks, LBR
+161:- rollout_summaries/2026-05-22T13-28-57-YJKn-pokerbot_codex_x1_repair_and_checkpoint.md (cwd=/Users/farhad/Code/PokerBot-codex, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T14-28-57-019e4fdf-f2f0-74d0-8f9a-6b97f3f2524f.jsonl, updated_at=2026-05-22T18:45:31+00:00, thread_id=019e4fdf-f2f0-74d0-8f9a-6b97f3f2524f, synchronized `STATUS.md`/`CHANGELOG.md`/`KANBAN.md` after the repair)
+165:- session-checkpoint, STATUS.md, CHANGELOG.md, KANBAN.md, git diff --check, py_compile, promote_artifact --check-only, sha256 comparison
+169:- When the acceptance target is G5 or later, the user requires every criterion to pass on a freshly built `v_final.zip`; future verification should target the artifact itself, not just source-tree behavior [Task 1][Task 3]
+173:- When a benchmark claims to evaluate a zip, the user expects artifact-bound evidence plus the zip sha256, not source-tree-only numbers [Task 3]
+178:- Final G5 verification sequence that worked: package `submissions/v_final.zip`, run import audit, `pytest tests/edge_cases -x`, validator, real Docker smoke, `tools/benchmark.py --all-templates`, `--ablate-overlay`, `--self-play --vs-prior`, then `tools/exploit_check.py` against the final zip [Task 1]
+179:- For G5, `tools/benchmark.py` must receive `--bot submissions/v_final.zip`; otherwise it benchmarks the live source-tree mount instead of the shipped artifact [Task 1]
+181:- `submissions/*.zip` are gitignored, so durable proof lives in `STATUS.md` plus run logs (`logs/g5/` or `logs/x1_repair/`), not in git-tracked artifact diffs [Task 1][Task 3]
+183:- `tools/promote_artifact.py --check-only` validates immutable snapshot pins before promotion; `--promote` then updates `best_green.zip` and the manifest through the verified path [Task 3]
+184:- `tools/audit_strategy_leakage.py` is the failure shield for forbidden identity strings inside shipped strategy code and comments/docstrings [Task 3]
+185:- `tools/exploit_check.py` was repaired to load `submissions/v_final.zip`, import `decide()`, and score 20 deterministic held-out spots from actual actions rather than a static table [Task 3]
+191:- symptom: final acceptance looks green but does not actually prove the shipped artifact -> cause: `tools/benchmark.py` defaulted to a source-tree mount because `--bot` was omitted -> fix: pass `--bot submissions/v_final.zip` for artifact-bound acceptance [Task 1]
+193:- symptom: tracking docs drift from the already-verified artifact -> cause: `KANBAN.md` or `CHANGELOG.md` lagged behind `STATUS.md` -> fix: do a consistency sweep across all three trackers before checkpointing, especially under concurrent edits [Task 2][Task 4]
+196:- symptom: leakage audit still fails after logic cleanup -> cause: forbidden branch-name strings remained in comments/docstrings that ship inside the zip -> fix: audit non-code strings too, not just executable branches [Task 3]
+197:- symptom: stale G5/X1 evidence is reused after a repair -> cause: `STATUS.md` proof from the earlier artifact was treated as current -> fix: re-establish the final proof block on the current zip and record the new hash [Task 3]
+199:# Task Group: PokerBot-codex G1/G2 worktree execution
+200:scope: use this for `/Users/farhad/Code/PokerBot-codex` gate work touching legal-action wiring, self-play, compact preflop baselines, benchmark automation, and transcript-visible proof-of-green requirements
+201:applies_to: cwd=/Users/farhad/Code/PokerBot-codex; reuse_rule=reuse for this worktree and closely matching PokerBot engine tasks, but treat benchmark numbers and gate status as rollout-time evidence that may need revalidation
+207:- rollout_summaries/2026-05-22T03-15-53-aRTG-pokerbot_codex_g1_g2_wiring_and_benchmark_harness.md (cwd=/Users/farhad/Code/PokerBot-codex, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T04-15-53-019e4dae-acf1-78b2-9046-402135e122d0.jsonl, updated_at=2026-05-22T12:26:41+00:00, thread_id=019e4dae-acf1-78b2-9046-402135e122d0, completed G1 with validator/package/import/self-play proof but smoke remained unverified in transcript)
+211:- PokerBot-codex, G1, proof-of-green, tools/self_play.py, load_failed, timeout_guard.run_with_budget, _legalize_action, validator, smoke=UNVERIFIED_DOCKER_DAEMON_DOWN
+217:- rollout_summaries/2026-05-22T03-15-53-aRTG-pokerbot_codex_g1_g2_wiring_and_benchmark_harness.md (cwd=/Users/farhad/Code/PokerBot-codex, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T04-15-53-019e4dae-acf1-78b2-9046-402135e122d0.jsonl, updated_at=2026-05-22T12:26:41+00:00, thread_id=019e4dae-acf1-78b2-9046-402135e122d0, passing 10k benchmark captured but smoke/promotion and full gate recording were interrupted)
+221:- PokerBot-codex, G2, data/preflop_blueprint.npz, tools/train_preflop.py, tools/benchmark.py, run_match, bootstrap CI, BIG_BLIND, bb/100=+72.16, v1_blueprint.zip
+223:## Task 3: PokerBot-codex environment and toolchain observations, useful context
+227:- rollout_summaries/2026-05-22T03-15-53-aRTG-pokerbot_codex_g1_g2_wiring_and_benchmark_harness.md (cwd=/Users/farhad/Code/PokerBot-codex, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T04-15-53-019e4dae-acf1-78b2-9046-402135e122d0.jsonl, updated_at=2026-05-22T12:26:41+00:00, thread_id=019e4dae-acf1-78b2-9046-402135e122d0, environment notes support smoke and benchmark reruns)
+231:- PokerBot-codex, .venv/bin/python, eval7, treys, python 3.11.13, docker info 23.0.5, tools/smoke_run.py, ext/fullhouse-engine/sandbox/Dockerfile
+235:- When working PokerBot gates, the user repeatedly required that after every gate the agent must “surface the proof-of-green block” in chat because “the evaluator reads only the transcript” [Task 1][Task 2]
+248:- `tools/train_preflop.py` can emit `data/preflop_blueprint.npz` as a deterministic compact baseline artifact with 169 canonical hands [Task 2]
+254:- symptom: a gate looks green in files but the evaluator cannot see it -> cause: proof-of-green stayed in `STATUS.md` instead of the chat transcript -> fix: paste the compact proof block into the reply after each gate [Task 1][Task 2]
+261:applies_to: cwd=/Users/farhad/Code/PokerBot with edits landing under /Users/farhad/.agents or /Users/farhad/.codex; reuse_rule=reuse for this local machine’s Codex setup, but re-check current config and runtime output before assuming values still match
+267:- rollout_summaries/2026-05-22T01-43-54-3jkG-codex_startup_warnings_global_skill_frontmatter_vercel_auth.md (cwd=/Users/farhad/Code/PokerBot, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T02-43-54-019e4d5a-73b9-73e2-a5e2-2c61af505fa6.jsonl, updated_at=2026-05-22T01:47:15+00:00, thread_id=019e4d5a-73b9-73e2-a5e2-2c61af505fa6, startup parsing fixed in `~/.agents/skills`)
+277:- rollout_summaries/2026-05-22T01-43-54-3jkG-codex_startup_warnings_global_skill_frontmatter_vercel_auth.md (cwd=/Users/farhad/Code/PokerBot, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T02-43-54-019e4d5a-73b9-73e2-a5e2-2c61af505fa6.jsonl, updated_at=2026-05-22T01:47:15+00:00, thread_id=019e4d5a-73b9-73e2-a5e2-2c61af505fa6, plugin-injected `vercel` MCP warning removed)
+287:- rollout_summaries/2026-05-22T01-47-16-baRA-codex_autocompact_550k_local_config.md (cwd=/Users/farhad/Code/PokerBot, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T02-47-16-019e4d5d-8ad1-7400-960e-62a0be65f14a.jsonl, updated_at=2026-05-22T01:54:20+00:00, thread_id=019e4d5d-8ad1-7400-960e-62a0be65f14a, lowered config and model-catalog override to `550000`)
+319:applies_to: cwd=/Users/farhad/Code/PokerBot and broader Codex usage; reuse_rule=reuse for similar Codex `/goal` guidance questions, but recheck official OpenAI docs if the user asks for latest behavior
+325:- rollout_summaries/2026-05-22T01-54-24-hMbQ-codex_goal_mode_prompt_principles_official_docs.md (cwd=/Users/farhad/Code/PokerBot, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T02-54-24-019e4d64-11eb-7b72-9db6-dd215af7f486.jsonl, updated_at=2026-05-22T01:56:02+00:00, thread_id=019e4d64-11eb-7b72-9db6-dd215af7f486, docs lookup succeeded and confirmed local `goals = true`)
+464:- When the user asks for an “optimal /goal prompt” and wants it copied to clipboard, produce the artifact and verify the clipboard copy rather than only describing it [Task 1]
+517:- path_simulator_v1, synthetic_envelope_v0, trades.jsonl, first-passage replay, Brownian bridge, daily-loss reset 00:30:00 UTC, static_from_initial, trailing_from_hwm, artifact_refs.artifact_type='trades'
+534:- When the user said “replace both with a real path-dependent simulator and wire the dashboard to it” and to stop before Phase 4/5, respect the phase boundary and prove simulator changes against concrete runs/artifacts rather than only code inspection [Task 3]
+540:- Phase 0 established the repo’s durable honesty rules: `backtester/confidence.py` classifies synthetic/fixture datasets as `synthetic_no_evidence`, `backtest_runs` stores `signal_version` and `fill_model_version`, and the dashboard/API already expose provenance anchors back to `market_data_artifacts` [Task 1]
+545:- Phase 3 moved the repo’s “real” quick-run path to `backtester/run_backtest.py` plus the path simulator on `kraken_spot_v1`, kept the old Gaussian path only behind explicit synthetic mode, and persisted per-run `trades.jsonl` artifacts plus simulator metadata for debugging [Task 3]
+546:- The canonical path-simulator rule geometry on this checkout uses daily-loss reset `00:30:00` UTC and `max_drawdown_type` values `static_from_initial` or `trailing_from_hwm`; future harness debugging should inspect `artifact_refs` and `metrics` JSON, not just top-line pass/fail fields [Task 3]
+555:- symptom: a path-simulator migration bloats persisted metrics -> cause: barrier/equity curves are stuffed directly into summary metrics -> fix: keep the canonical bar-resolution curve in the simulator/artifact payload instead of inflating DB metrics [Task 3]
+561:applies_to: cwd=/Users/farhad/Code/Trades; reuse_rule=reuse for this repo and similar slice-based Tier-B strategy work, but re-check live `market_data_artifacts`, watchlist specs, and harness code before assuming the same blockers still apply
+581:- altmom_tier_b_returns, Polars, StrategyReturnFrame, _strategy_frame, tests/test_altmom_tier_b_signal.py, missing market_data_artifacts, kraken_spot_v1 1d, smoke_summary.jsonl
+609:- The user explicitly wanted slash-format canonical symbols (`ADA/USD`, `DOGE/USD`, `DOT/USD`, `LTC/USD`, `SOL/USD`, `XRP/USD`) -> future Tier-B spot code, tests, and artifacts should default to slash symbols [Task 3]
+618:- Before Slice 17 ingestion, the correct smoke outcome for this strategy was a blocker summary: `smoke_test.jsonl` empty and `smoke_summary.jsonl` reporting `No persisted kraken_spot_v1 1d bar artifacts are registered for the full six-symbol Tier-B basket.` [Task 2]
+622:- After Slice 17, `market_data_artifacts` for `kraken_spot_v1` at `1d` contained 8 rows total: BTC/USD, ETH/USD, plus the six Tier-B symbols [Task 3]
+623:- The validation runner needed strategy-aware Tier-B wiring: six-symbol 1d artifact lookup, an `equal_weight_liquid_basket` benchmark, and holdout observation counting keyed to the alt basket rather than BTC/ETH only [Task 4]
+630:- symptom: the intended smoke test has zero rows before ingestion -> cause: the registry has no persisted `kraken_spot_v1` 1d bars for ADA/DOGE/DOT/LTC/SOL/XRP -> fix: check `market_data_artifacts` first and fail fast with a missing-symbol summary rather than silently substituting BTC/ETH data [Task 2]
+679:## Task 5: Realign provenance after root-artifact review and log the Han-Kang-Ryu blocker honestly, partial
+719:applies_to: cwd=/Users/farhad/Code/Trades; reuse_rule=reuse for this repo’s current-harness validation audits, but re-run the suite and inspect live DB/artifacts before assuming the same metrics or policy call still hold
+746:- When the user says “Pull from DB” the exact split metrics, prefer persisted DB evidence plus linked artifacts over reconstructed estimates [Task 1]
+747:- The user said “I implement; I audit your self-reports with parallel subagents before approving” -> future validation reporting should default to audit-friendly artifacts, explicit hashes, and concrete suite IDs [Task 1]
+756:- The suite run that mattered here was `31d435b3-241d-4d87-9eea-4e53c532937c`; base candidate metrics recovered from DB/artifacts were IS `trade_count=116`, `net_sharpe=-0.288944`, `fee_drag_pct=8.109032`, OOS `trade_count=36`, `net_sharpe=-0.617058`, `fee_drag_pct=2.312449` [Task 1]
+766:- symptom: requested fields look “missing” from the DB surface -> cause: some metrics such as `exit_reason_counts` live only in linked trade artifacts -> fix: combine `validation_suite_runs.metrics` with trades JSONL instead of inventing placeholders [Task 1]
+767:- symptom: the harness looks benchmark-conflated -> cause: benchmark rows are being mentally mixed with candidate stress rows -> fix: decompose the persisted rows and separate candidate stress contributors from benchmark comparison artifacts [Task 2]
+778:- rollout_summaries/2026-05-16T14-32-04-EXL0-phase_7_slice_1_reject_cascade_diagnostic_and_honest_insuffi.md (cwd=/Users/farhad/Code/Trades, rollout_path=/Users/farhad/.codex/sessions/2026/05/16/rollout-2026-05-16T15-32-04-019e3133-94a7-7932-ae8e-dca039d4741e.jsonl, updated_at=2026-05-16T15:15:54+00:00, thread_id=019e3133-94a7-7932-ae8e-dca039d4741e, diagnostic artifacts and a first path-simulator-only fix were produced)
+807:- When the user asks for a named verdict among bug classes, preserve the concrete verdict and supporting artifacts instead of a vague diagnosis [Task 1]
+819:- The original audited suite `c68b418d-8546-4c46-8d5f-6498cf8dc9b2` was based on `historical_iid_bootstrap`, so the replay had to be reconstructed because no persisted trade artifact existed for that suite [Task 1]
+830:- symptom: a diagnostic README overstates bar coverage -> cause: it blended suite-linked artifact rows with nearby local artifacts -> fix: tie coverage claims to the exact artifact rows linked to the suite [Task 1]
+831:- symptom: a coverage query fails on `dataset_version` -> cause: `market_data_artifacts` stores that value under `metadata->>'dataset_version'`, not as a top-level column -> fix: query the metadata field directly [Task 2]
+836:applies_to: cwd=/Users/farhad/Code/Trades; reuse_rule=reuse for this repo’s trend-strategy debugging and measurement work, but re-run metrics and inspect live artifacts before assuming the same Sharpe/cadence numbers still apply
+885:- When the user later asks to call out path-day shrinkage as a caveat, put the caveat directly into the artifact and comparison summary [Task 3][Task 4]
+895:- Reconstructing before/after using persisted trade artifacts is a good way to compare cadence honestly [Task 3]
+956:- `.gitignore` needed `.DS_Store` and `data/downloads/**`; `data/artifacts/**` was already ignored except for `data/artifacts/.gitkeep` [Task 2]
+957:- `backtester/job_runner.py` is the main lifecycle surface for SKIP LOCKED claiming, heartbeat writes, timeout/cancel enforcement, stdout/stderr artifacts, startup orphan recovery, and drain behavior; future dispatcher fixes should start there [Task 3]
+965:- symptom: a baseline commit would scoop up runtime noise -> cause: `git add -A` would include large downloads/artifacts/output trees -> fix: inspect `git status --ignored` and `git ls-files --others --exclude-standard`, add ignore rules, then stage [Task 2]
+
+hook: PostToolUse
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+Success means the locked artifact passes every required check, both protected zips keep the expected SHA before and after, and only the requested report/log files are created under the rehearsal directory.
+  → Set up report directory and log harness
+  • Run protected SHA precheck and stop if mismatch
+  • Run smoke, validator, import, leakage, size/layout, and contamination checks in order
+  • Record post-run SHAs and write GO/NO-GO report files
+codex
+I verified the local project brief matches the hard constraints: artifact-bound checks matter, `ext/fullhouse-engine/` is off limits, and source-tree behavior must not be substituted for the locked zip. Next I’m creating only the requested report/log directory.
+exec
+/bin/zsh -lc 'mkdir -p consult/artifacts/2026-05-29-away/ship-day-rehearsal/command_logs' in /Users/farhad/Code/PokerBot
+ succeeded in 0ms:
+hook: PostToolUse
+hook: PostToolUse Completed
+  ✓ Set up report directory and log harness
+  → Run protected SHA precheck and stop if mismatch
+  • Run smoke, validator, import, leakage, size/layout, and contamination checks in order
+  • Record post-run SHAs and write GO/NO-GO report files
+exec
+/bin/zsh -lc 'shasum -a 256 submissions/v_final.zip submissions/best_green.zip > consult/artifacts/2026-05-29-away/ship-day-rehearsal/command_logs/01_sha_pre.txt 2>&1' in /Users/farhad/Code/PokerBot
+ succeeded in 0ms:
+hook: PostToolUse
+hook: PostToolUse Completed
+exec
+/bin/zsh -lc "sed -n '1,20p' consult/artifacts/2026-05-29-away/ship-day-rehearsal/command_logs/01_sha_pre.txt" in /Users/farhad/Code/PokerBot
+ succeeded in 0ms:
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = "C.UTF-8",
+	LC_CTYPE = "C.UTF-8",
+	LANG = "en_GB.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_GB.UTF-8").
+e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  submissions/v_final.zip
+e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  submissions/best_green.zip
+
+hook: PostToolUse
+hook: PostToolUse Completed
+codex
+The protected SHA precheck matches the expected hash for both `v_final.zip` and `best_green.zip`. I’m moving to the locked-artifact smoke run now; this is the first check that may take a bit because it exercises the sandbox path.
+exec
+/bin/zsh -lc '.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200 > consult/artifacts/2026-05-29-away/ship-day-rehearsal/command_logs/02_smoke_run.txt 2>&1' in /Users/farhad/Code/PokerBot
+hook: PostToolUse
+hook: PostToolUse Completed
+ exited 1 in 3621ms:
+codex
+The smoke command exited nonzero. I’m stopping the verification sequence per your rule, reading that log, then I’ll record the post-run protected SHAs and write the NO-GO report without running the remaining checks.
+exec
+/bin/zsh -lc "sed -n '1,240p' consult/artifacts/2026-05-29-away/ship-day-rehearsal/command_logs/02_smoke_run.txt" in /Users/farhad/Code/PokerBot
+ succeeded in 0ms:
+[smoke_run] docker shim: translating --no-new-privileges to --security-opt no-new-privileges
+[smoke_run] FAIL: only 136/200 hands played
+{
+  "n_hands": 136,
+  "expected_hands": 200,
+  "chip_delta": {
+    "v_final": 10000,
+    "template": -10000
+  },
+  "errors": {},
+  "duration_s": 3.21
+}
+
+hook: PostToolUse
+hook: PostToolUse Completed
+exec
+/bin/zsh -lc 'shasum -a 256 submissions/v_final.zip submissions/best_green.zip > consult/artifacts/2026-05-29-away/ship-day-rehearsal/command_logs/99_sha_post.txt 2>&1' in /Users/farhad/Code/PokerBot
+ succeeded in 0ms:
+hook: PostToolUse
+hook: PostToolUse Completed
+exec
+/bin/zsh -lc "sed -n '1,20p' consult/artifacts/2026-05-29-away/ship-day-rehearsal/command_logs/99_sha_post.txt" in /Users/farhad/Code/PokerBot
+ succeeded in 0ms:
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = "C.UTF-8",
+	LC_CTYPE = "C.UTF-8",
+	LANG = "en_GB.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_GB.UTF-8").
+e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  submissions/v_final.zip
+e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  submissions/best_green.zip
+
+hook: PostToolUse
+hook: PostToolUse Completed
+exec
+/bin/zsh -lc "date '+%Y-%m-%d %H:%M:%S %Z'" in /Users/farhad/Code/PokerBot
+ succeeded in 0ms:
+2026-05-29 18:04:18 EEST
+
+hook: PostToolUse
+hook: PostToolUse Completed
+codex
+I’m writing the requested report files now with `NO_GO_SMOKE_FAIL`. The reports will state exactly which checks ran, which were skipped because of the stop rule, and the before/after protected hashes.
+apply patch
+patch: completed
+/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..66aa6317d2146cfae5d4b52362798e3cc7c580cc
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+@@ -0,0 +1 @@
++NO_GO_SMOKE_FAIL
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..3b0352f9dec54fb4599d9b240b5c560d0a5ae9c4
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+@@ -0,0 +1,113 @@
++# P6 Ship-Day Rehearsal and Contamination Sentinel
++
++Timestamp: 2026-05-29 18:04:18 EEST
++Workdir: `/Users/farhad/Code/PokerBot`
++Output directory: `consult/artifacts/2026-05-29-away/ship-day-rehearsal/`
++
++## Verdict
++
++`NO_GO_SMOKE_FAIL`
++
++The locked artifact did not complete the required 200-hand sandbox smoke run. Per the stop rule, the remaining verification sequence was not run and no repair, copy, rebuild, repackage, or candidate artifact step was attempted.
++
++## Protected Artifact Integrity
++
++Expected SHA for both protected artifacts:
++
++`e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Pre-run SHA check:
++
++| Artifact | SHA | Match |
++| --- | --- | --- |
++| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++
++Post-run SHA check:
++
++| Artifact | SHA | Match |
++| --- | --- | --- |
++| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++
++`shasum` emitted locale warnings in both SHA logs, but returned exit code 0 and printed the expected hashes.
++
++## Commands Run
++
++### 1. Protected SHA precheck
++
++Command:
++
++```sh
++shasum -a 256 submissions/v_final.zip submissions/best_green.zip
++```
++
++Result: PASS.
++
++Log: `command_logs/01_sha_pre.txt`
++
++### 2. Sandbox smoke run
++
++Command:
++
++```sh
++.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200
++```
++
++Result: FAIL, exit code 1.
++
++Observed output:
++
++```json
++{
++  "n_hands": 136,
++  "expected_hands": 200,
++  "chip_delta": {
++    "v_final": 10000,
++    "template": -10000
++  },
++  "errors": {},
++  "duration_s": 3.21
++}
++```
++
++Failure reason: only `136/200` hands played. The expected condition was `200/200` hands.
++
++Log: `command_logs/02_smoke_run.txt`
++
++### 3. Protected SHA postcheck
++
++Command:
++
++```sh
++shasum -a 256 submissions/v_final.zip submissions/best_green.zip
++```
++
++Result: PASS.
++
++Log: `command_logs/99_sha_post.txt`
++
++## Commands Not Run
++
++The following required checks were skipped because the smoke command failed and the task required stopping on first failure:
++
++- `.venv/bin/python ext/fullhouse-engine/sandbox/validator.py submissions/v_final.zip`
++- `.venv/bin/python tools/import_audit.py --max-seconds 1.5 --max-mb 400`
++- `.venv/bin/python tools/audit_strategy_leakage.py --zip submissions/v_final.zip`
++- `du -h submissions/v_final.zip`
++- `unzip -l submissions/v_final.zip | tail -20`
++- `git status --short`
++- `git branch --show-current`
++- `git rev-parse HEAD`
++- `git show-ref --heads release/v_final-e4b4a8f1 || true`
++
++## Invariant Compliance
++
++- No source files edited.
++- No candidate zip created.
++- `tools/package.py` not run.
++- `submissions/v_final.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
++- `submissions/best_green.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
++- `ext/fullhouse-engine/` not edited.
++- `ext/public-bots/` snapshots not edited.
++- Strategy behavior was tested from the locked zip, not inferred from `src/`.
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..1cf069d32762de4ec79536b3f827abfe9bc119f6
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+@@ -0,0 +1,33 @@
++## P6 Ship-Day Rehearsal - NO-GO
++
++Verdict: `NO_GO_SMOKE_FAIL`
++Timestamp: 2026-05-29 18:04:18 EEST
++Artifact under test: `submissions/v_final.zip`
++
++Protected SHA pre-run:
++- `submissions/v_final.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++- `submissions/best_green.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Smoke run:
++- Command: `.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200`
++- Result: FAIL, command exit code 1
++- Observed: only `136/200` hands played
++- Chip delta: `v_final=10000`, `template=-10000`
++- Errors: `{}`
++- Duration: `3.21s`
++
++Stop rule applied:
++- Validator, import audit, leakage audit, size/layout checks, and git contamination commands were not run after the smoke failure.
++- No repair attempted.
++- No candidate zip created.
++- `tools/package.py` not run.
++- `submissions/v_final.zip` and `submissions/best_green.zip` were not copied, replaced, rebuilt, repackaged, or chmod-modified.
++
++Protected SHA post-run:
++- `submissions/v_final.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++- `submissions/best_green.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Command logs:
++- `command_logs/01_sha_pre.txt`
++- `command_logs/02_smoke_run.txt`
++- `command_logs/99_sha_post.txt`
+
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..66aa6317d2146cfae5d4b52362798e3cc7c580cc
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+@@ -0,0 +1 @@
++NO_GO_SMOKE_FAIL
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..3b0352f9dec54fb4599d9b240b5c560d0a5ae9c4
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+@@ -0,0 +1,113 @@
++# P6 Ship-Day Rehearsal and Contamination Sentinel
++
++Timestamp: 2026-05-29 18:04:18 EEST
++Workdir: `/Users/farhad/Code/PokerBot`
++Output directory: `consult/artifacts/2026-05-29-away/ship-day-rehearsal/`
++
++## Verdict
++
++`NO_GO_SMOKE_FAIL`
++
++The locked artifact did not complete the required 200-hand sandbox smoke run. Per the stop rule, the remaining verification sequence was not run and no repair, copy, rebuild, repackage, or candidate artifact step was attempted.
++
++## Protected Artifact Integrity
++
++Expected SHA for both protected artifacts:
++
++`e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Pre-run SHA check:
++
++| Artifact | SHA | Match |
++| --- | --- | --- |
++| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++
++Post-run SHA check:
++
++| Artifact | SHA | Match |
++| --- | --- | --- |
++| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++
++`shasum` emitted locale warnings in both SHA logs, but returned exit code 0 and printed the expected hashes.
++
++## Commands Run
++
++### 1. Protected SHA precheck
++
++Command:
++
++```sh
++shasum -a 256 submissions/v_final.zip submissions/best_green.zip
++```
++
++Result: PASS.
++
++Log: `command_logs/01_sha_pre.txt`
++
++### 2. Sandbox smoke run
++
++Command:
++
++```sh
++.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200
++```
++
++Result: FAIL, exit code 1.
++
++Observed output:
++
++```json
++{
++  "n_hands": 136,
++  "expected_hands": 200,
++  "chip_delta": {
++    "v_final": 10000,
++    "template": -10000
++  },
++  "errors": {},
++  "duration_s": 3.21
++}
++```
++
++Failure reason: only `136/200` hands played. The expected condition was `200/200` hands.
++
++Log: `command_logs/02_smoke_run.txt`
++
++### 3. Protected SHA postcheck
++
++Command:
++
++```sh
++shasum -a 256 submissions/v_final.zip submissions/best_green.zip
++```
++
++Result: PASS.
++
++Log: `command_logs/99_sha_post.txt`
++
++## Commands Not Run
++
++The following required checks were skipped because the smoke command failed and the task required stopping on first failure:
++
++- `.venv/bin/python ext/fullhouse-engine/sandbox/validator.py submissions/v_final.zip`
++- `.venv/bin/python tools/import_audit.py --max-seconds 1.5 --max-mb 400`
++- `.venv/bin/python tools/audit_strategy_leakage.py --zip submissions/v_final.zip`
++- `du -h submissions/v_final.zip`
++- `unzip -l submissions/v_final.zip | tail -20`
++- `git status --short`
++- `git branch --show-current`
++- `git rev-parse HEAD`
++- `git show-ref --heads release/v_final-e4b4a8f1 || true`
++
++## Invariant Compliance
++
++- No source files edited.
++- No candidate zip created.
++- `tools/package.py` not run.
++- `submissions/v_final.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
++- `submissions/best_green.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
++- `ext/fullhouse-engine/` not edited.
++- `ext/public-bots/` snapshots not edited.
++- Strategy behavior was tested from the locked zip, not inferred from `src/`.
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..1cf069d32762de4ec79536b3f827abfe9bc119f6
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+@@ -0,0 +1,33 @@
++## P6 Ship-Day Rehearsal - NO-GO
++
++Verdict: `NO_GO_SMOKE_FAIL`
++Timestamp: 2026-05-29 18:04:18 EEST
++Artifact under test: `submissions/v_final.zip`
++
++Protected SHA pre-run:
++- `submissions/v_final.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++- `submissions/best_green.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Smoke run:
++- Command: `.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200`
++- Result: FAIL, command exit code 1
++- Observed: only `136/200` hands played
++- Chip delta: `v_final=10000`, `template=-10000`
++- Errors: `{}`
++- Duration: `3.21s`
++
++Stop rule applied:
++- Validator, import audit, leakage audit, size/layout checks, and git contamination commands were not run after the smoke failure.
++- No repair attempted.
++- No candidate zip created.
++- `tools/package.py` not run.
++- `submissions/v_final.zip` and `submissions/best_green.zip` were not copied, replaced, rebuilt, repackaged, or chmod-modified.
++
++Protected SHA post-run:
++- `submissions/v_final.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++- `submissions/best_green.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Command logs:
++- `command_logs/01_sha_pre.txt`
++- `command_logs/02_smoke_run.txt`
++- `command_logs/99_sha_post.txt`
+
+exec
+/bin/zsh -lc "sed -n '1,5p' consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt" in /Users/farhad/Code/PokerBot
+ succeeded in 0ms:
+NO_GO_SMOKE_FAIL
+
+exec
+/bin/zsh -lc 'find consult/artifacts/2026-05-29-away/ship-day-rehearsal -maxdepth 2 -type f | sort' in /Users/farhad/Code/PokerBot
+ succeeded in 0ms:
+consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+consult/artifacts/2026-05-29-away/ship-day-rehearsal/codex_run.log
+consult/artifacts/2026-05-29-away/ship-day-rehearsal/codex_start.txt
+consult/artifacts/2026-05-29-away/ship-day-rehearsal/command_logs/01_sha_pre.txt
+consult/artifacts/2026-05-29-away/ship-day-rehearsal/command_logs/02_smoke_run.txt
+consult/artifacts/2026-05-29-away/ship-day-rehearsal/command_logs/99_sha_post.txt
+
+hook: PostToolUse
+hook: PostToolUse
+hook: PostToolUse Completed
+hook: PostToolUse Completed
+exec
+/bin/zsh -lc "sed -n '1,220p' consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md" in /Users/farhad/Code/PokerBot
+ succeeded in 0ms:
+# P6 Ship-Day Rehearsal and Contamination Sentinel
+
+Timestamp: 2026-05-29 18:04:18 EEST
+Workdir: `/Users/farhad/Code/PokerBot`
+Output directory: `consult/artifacts/2026-05-29-away/ship-day-rehearsal/`
+
+## Verdict
+
+`NO_GO_SMOKE_FAIL`
+
+The locked artifact did not complete the required 200-hand sandbox smoke run. Per the stop rule, the remaining verification sequence was not run and no repair, copy, rebuild, repackage, or candidate artifact step was attempted.
+
+## Protected Artifact Integrity
+
+Expected SHA for both protected artifacts:
+
+`e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
+
+Pre-run SHA check:
+
+| Artifact | SHA | Match |
+| --- | --- | --- |
+| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
+| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
+
+Post-run SHA check:
+
+| Artifact | SHA | Match |
+| --- | --- | --- |
+| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
+| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
+
+`shasum` emitted locale warnings in both SHA logs, but returned exit code 0 and printed the expected hashes.
+
+## Commands Run
+
+### 1. Protected SHA precheck
+
+Command:
+
+```sh
+shasum -a 256 submissions/v_final.zip submissions/best_green.zip
+```
+
+Result: PASS.
+
+Log: `command_logs/01_sha_pre.txt`
+
+### 2. Sandbox smoke run
+
+Command:
+
+```sh
+.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200
+```
+
+Result: FAIL, exit code 1.
+
+Observed output:
+
+```json
+{
+  "n_hands": 136,
+  "expected_hands": 200,
+  "chip_delta": {
+    "v_final": 10000,
+    "template": -10000
+  },
+  "errors": {},
+  "duration_s": 3.21
+}
+```
+
+Failure reason: only `136/200` hands played. The expected condition was `200/200` hands.
+
+Log: `command_logs/02_smoke_run.txt`
+
+### 3. Protected SHA postcheck
+
+Command:
+
+```sh
+shasum -a 256 submissions/v_final.zip submissions/best_green.zip
+```
+
+Result: PASS.
+
+Log: `command_logs/99_sha_post.txt`
+
+## Commands Not Run
+
+The following required checks were skipped because the smoke command failed and the task required stopping on first failure:
+
+- `.venv/bin/python ext/fullhouse-engine/sandbox/validator.py submissions/v_final.zip`
+- `.venv/bin/python tools/import_audit.py --max-seconds 1.5 --max-mb 400`
+- `.venv/bin/python tools/audit_strategy_leakage.py --zip submissions/v_final.zip`
+- `du -h submissions/v_final.zip`
+- `unzip -l submissions/v_final.zip | tail -20`
+- `git status --short`
+- `git branch --show-current`
+- `git rev-parse HEAD`
+- `git show-ref --heads release/v_final-e4b4a8f1 || true`
+
+## Invariant Compliance
+
+- No source files edited.
+- No candidate zip created.
+- `tools/package.py` not run.
+- `submissions/v_final.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
+- `submissions/best_green.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
+- `ext/fullhouse-engine/` not edited.
+- `ext/public-bots/` snapshots not edited.
+- Strategy behavior was tested from the locked zip, not inferred from `src/`.
+
+hook: PostToolUse
+hook: PostToolUse Completed
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..66aa6317d2146cfae5d4b52362798e3cc7c580cc
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+@@ -0,0 +1 @@
++NO_GO_SMOKE_FAIL
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..3b0352f9dec54fb4599d9b240b5c560d0a5ae9c4
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+@@ -0,0 +1,113 @@
++# P6 Ship-Day Rehearsal and Contamination Sentinel
++
++Timestamp: 2026-05-29 18:04:18 EEST
++Workdir: `/Users/farhad/Code/PokerBot`
++Output directory: `consult/artifacts/2026-05-29-away/ship-day-rehearsal/`
++
++## Verdict
++
++`NO_GO_SMOKE_FAIL`
++
++The locked artifact did not complete the required 200-hand sandbox smoke run. Per the stop rule, the remaining verification sequence was not run and no repair, copy, rebuild, repackage, or candidate artifact step was attempted.
++
++## Protected Artifact Integrity
++
++Expected SHA for both protected artifacts:
++
++`e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Pre-run SHA check:
++
++| Artifact | SHA | Match |
++| --- | --- | --- |
++| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++
++Post-run SHA check:
++
++| Artifact | SHA | Match |
++| --- | --- | --- |
++| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++
++`shasum` emitted locale warnings in both SHA logs, but returned exit code 0 and printed the expected hashes.
++
++## Commands Run
++
++### 1. Protected SHA precheck
++
++Command:
++
++```sh
++shasum -a 256 submissions/v_final.zip submissions/best_green.zip
++```
++
++Result: PASS.
++
++Log: `command_logs/01_sha_pre.txt`
++
++### 2. Sandbox smoke run
++
++Command:
++
++```sh
++.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200
++```
++
++Result: FAIL, exit code 1.
++
++Observed output:
++
++```json
++{
++  "n_hands": 136,
++  "expected_hands": 200,
++  "chip_delta": {
++    "v_final": 10000,
++    "template": -10000
++  },
++  "errors": {},
++  "duration_s": 3.21
++}
++```
++
++Failure reason: only `136/200` hands played. The expected condition was `200/200` hands.
++
++Log: `command_logs/02_smoke_run.txt`
++
++### 3. Protected SHA postcheck
++
++Command:
++
++```sh
++shasum -a 256 submissions/v_final.zip submissions/best_green.zip
++```
++
++Result: PASS.
++
++Log: `command_logs/99_sha_post.txt`
++
++## Commands Not Run
++
++The following required checks were skipped because the smoke command failed and the task required stopping on first failure:
++
++- `.venv/bin/python ext/fullhouse-engine/sandbox/validator.py submissions/v_final.zip`
++- `.venv/bin/python tools/import_audit.py --max-seconds 1.5 --max-mb 400`
++- `.venv/bin/python tools/audit_strategy_leakage.py --zip submissions/v_final.zip`
++- `du -h submissions/v_final.zip`
++- `unzip -l submissions/v_final.zip | tail -20`
++- `git status --short`
++- `git branch --show-current`
++- `git rev-parse HEAD`
++- `git show-ref --heads release/v_final-e4b4a8f1 || true`
++
++## Invariant Compliance
++
++- No source files edited.
++- No candidate zip created.
++- `tools/package.py` not run.
++- `submissions/v_final.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
++- `submissions/best_green.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
++- `ext/fullhouse-engine/` not edited.
++- `ext/public-bots/` snapshots not edited.
++- Strategy behavior was tested from the locked zip, not inferred from `src/`.
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..1cf069d32762de4ec79536b3f827abfe9bc119f6
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+@@ -0,0 +1,33 @@
++## P6 Ship-Day Rehearsal - NO-GO
++
++Verdict: `NO_GO_SMOKE_FAIL`
++Timestamp: 2026-05-29 18:04:18 EEST
++Artifact under test: `submissions/v_final.zip`
++
++Protected SHA pre-run:
++- `submissions/v_final.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++- `submissions/best_green.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Smoke run:
++- Command: `.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200`
++- Result: FAIL, command exit code 1
++- Observed: only `136/200` hands played
++- Chip delta: `v_final=10000`, `template=-10000`
++- Errors: `{}`
++- Duration: `3.21s`
++
++Stop rule applied:
++- Validator, import audit, leakage audit, size/layout checks, and git contamination commands were not run after the smoke failure.
++- No repair attempted.
++- No candidate zip created.
++- `tools/package.py` not run.
++- `submissions/v_final.zip` and `submissions/best_green.zip` were not copied, replaced, rebuilt, repackaged, or chmod-modified.
++
++Protected SHA post-run:
++- `submissions/v_final.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++- `submissions/best_green.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Command logs:
++- `command_logs/01_sha_pre.txt`
++- `command_logs/02_smoke_run.txt`
++- `command_logs/99_sha_post.txt`
+
+The ordered sequence stopped at the smoke-run failure as required; post-run protected SHA verification and report files are complete.
+  ✓ Set up report directory and log harness
+  ✓ Run protected SHA precheck and stop if mismatch
+  ✓ Run smoke, validator, import, leakage, size/layout, and contamination checks in order
+  ✓ Record post-run SHAs and write GO/NO-GO report files
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..66aa6317d2146cfae5d4b52362798e3cc7c580cc
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+@@ -0,0 +1 @@
++NO_GO_SMOKE_FAIL
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..3b0352f9dec54fb4599d9b240b5c560d0a5ae9c4
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+@@ -0,0 +1,113 @@
++# P6 Ship-Day Rehearsal and Contamination Sentinel
++
++Timestamp: 2026-05-29 18:04:18 EEST
++Workdir: `/Users/farhad/Code/PokerBot`
++Output directory: `consult/artifacts/2026-05-29-away/ship-day-rehearsal/`
++
++## Verdict
++
++`NO_GO_SMOKE_FAIL`
++
++The locked artifact did not complete the required 200-hand sandbox smoke run. Per the stop rule, the remaining verification sequence was not run and no repair, copy, rebuild, repackage, or candidate artifact step was attempted.
++
++## Protected Artifact Integrity
++
++Expected SHA for both protected artifacts:
++
++`e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Pre-run SHA check:
++
++| Artifact | SHA | Match |
++| --- | --- | --- |
++| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++
++Post-run SHA check:
++
++| Artifact | SHA | Match |
++| --- | --- | --- |
++| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++
++`shasum` emitted locale warnings in both SHA logs, but returned exit code 0 and printed the expected hashes.
++
++## Commands Run
++
++### 1. Protected SHA precheck
++
++Command:
++
++```sh
++shasum -a 256 submissions/v_final.zip submissions/best_green.zip
++```
++
++Result: PASS.
++
++Log: `command_logs/01_sha_pre.txt`
++
++### 2. Sandbox smoke run
++
++Command:
++
++```sh
++.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200
++```
++
++Result: FAIL, exit code 1.
++
++Observed output:
++
++```json
++{
++  "n_hands": 136,
++  "expected_hands": 200,
++  "chip_delta": {
++    "v_final": 10000,
++    "template": -10000
++  },
++  "errors": {},
++  "duration_s": 3.21
++}
++```
++
++Failure reason: only `136/200` hands played. The expected condition was `200/200` hands.
++
++Log: `command_logs/02_smoke_run.txt`
++
++### 3. Protected SHA postcheck
++
++Command:
++
++```sh
++shasum -a 256 submissions/v_final.zip submissions/best_green.zip
++```
++
++Result: PASS.
++
++Log: `command_logs/99_sha_post.txt`
++
++## Commands Not Run
++
++The following required checks were skipped because the smoke command failed and the task required stopping on first failure:
++
++- `.venv/bin/python ext/fullhouse-engine/sandbox/validator.py submissions/v_final.zip`
++- `.venv/bin/python tools/import_audit.py --max-seconds 1.5 --max-mb 400`
++- `.venv/bin/python tools/audit_strategy_leakage.py --zip submissions/v_final.zip`
++- `du -h submissions/v_final.zip`
++- `unzip -l submissions/v_final.zip | tail -20`
++- `git status --short`
++- `git branch --show-current`
++- `git rev-parse HEAD`
++- `git show-ref --heads release/v_final-e4b4a8f1 || true`
++
++## Invariant Compliance
++
++- No source files edited.
++- No candidate zip created.
++- `tools/package.py` not run.
++- `submissions/v_final.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
++- `submissions/best_green.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
++- `ext/fullhouse-engine/` not edited.
++- `ext/public-bots/` snapshots not edited.
++- Strategy behavior was tested from the locked zip, not inferred from `src/`.
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..1cf069d32762de4ec79536b3f827abfe9bc119f6
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+@@ -0,0 +1,33 @@
++## P6 Ship-Day Rehearsal - NO-GO
++
++Verdict: `NO_GO_SMOKE_FAIL`
++Timestamp: 2026-05-29 18:04:18 EEST
++Artifact under test: `submissions/v_final.zip`
++
++Protected SHA pre-run:
++- `submissions/v_final.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++- `submissions/best_green.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Smoke run:
++- Command: `.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200`
++- Result: FAIL, command exit code 1
++- Observed: only `136/200` hands played
++- Chip delta: `v_final=10000`, `template=-10000`
++- Errors: `{}`
++- Duration: `3.21s`
++
++Stop rule applied:
++- Validator, import audit, leakage audit, size/layout checks, and git contamination commands were not run after the smoke failure.
++- No repair attempted.
++- No candidate zip created.
++- `tools/package.py` not run.
++- `submissions/v_final.zip` and `submissions/best_green.zip` were not copied, replaced, rebuilt, repackaged, or chmod-modified.
++
++Protected SHA post-run:
++- `submissions/v_final.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++- `submissions/best_green.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Command logs:
++- `command_logs/01_sha_pre.txt`
++- `command_logs/02_smoke_run.txt`
++- `command_logs/99_sha_post.txt`
+
+exec
+/bin/zsh -lc "nl -ba /Users/farhad/.codex/memories/MEMORY.md | sed -n '123,185p'" in /Users/farhad/Code/PokerBot
+ succeeded in 0ms:
+   123	# Task Group: PokerBot-codex artifact verification, repair, and checkpointing
+   124	scope: use this for `v_final.zip` acceptance, artifact-bound benchmarking, leakage/manifest checks, promotion rules, and checkpoint updates after strategy repairs
+   125	applies_to: cwd=/Users/farhad/Code/PokerBot-codex; reuse_rule=reuse for this worktree and closely matching Fullhouse submission flows, but revalidate metrics and hashes on any new checkout state or artifact revision
+   126	
+   127	## Task 1: Complete G5 and ship freshly built `v_final.zip`, success
+   128	
+   129	### rollout_summary_files
+   130	
+   131	- rollout_summaries/2026-05-22T12-41-46-oPm3-pokerbot_g5_final_submission_and_concurrent_checkpoint.md (cwd=/Users/farhad/Code/PokerBot-codex, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T13-41-46-019e4fb4-c233-7483-982f-d53de3954a83.jsonl, updated_at=2026-05-22T13:24:53+00:00, thread_id=019e4fb4-c233-7483-982f-d53de3954a83, final G5 artifact-level verification on `submissions/v_final.zip`)
+   132	
+   133	### keywords
+   134	
+   135	- PokerBot-codex, G5, v_final.zip, best_green.zip, benchmark.py, smoke_run.py, exploit_check.py, --bot submissions/v_final.zip, logs/g5, FINAL SUBMITTED
+   136	
+   137	## Task 2: Allow concurrent Claude work and checkpoint tracking docs, success
+   138	
+   139	### rollout_summary_files
+   140	
+   141	- rollout_summaries/2026-05-22T12-41-46-oPm3-pokerbot_g5_final_submission_and_concurrent_checkpoint.md (cwd=/Users/farhad/Code/PokerBot-codex, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T13-41-46-019e4fb4-c233-7483-982f-d53de3954a83.jsonl, updated_at=2026-05-22T13:24:53+00:00, thread_id=019e4fb4-c233-7483-982f-d53de3954a83, tracking-doc sync on top of concurrent Claude work)
+   142	
+   143	### keywords
+   144	
+   145	- concurrent worktree, claude is also writing, KANBAN.md, CHANGELOG.md, STATUS.md, git log, best_green.zip, artifact_match=yes, checkpoint
+   146	
+   147	## Task 3: Post-X1 repair pass for clean artifact-bound verification, success
+   148	
+   149	### rollout_summary_files
+   150	
+   151	- rollout_summaries/2026-05-22T13-28-57-YJKn-pokerbot_codex_x1_repair_and_checkpoint.md (cwd=/Users/farhad/Code/PokerBot-codex, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T14-28-57-019e4fdf-f2f0-74d0-8f9a-6b97f3f2524f.jsonl, updated_at=2026-05-22T18:45:31+00:00, thread_id=019e4fdf-f2f0-74d0-8f9a-6b97f3f2524f, repaired identity leakage and promotion tooling around `v_final.zip`)
+   152	
+   153	### keywords
+   154	
+   155	- post-X1 repair, audit_strategy_leakage.py, promote_artifact.py, manifest.json, identity leakage, opponent_model.py, behavior overlay, zip sha256, anonymized benchmarks, LBR
+   156	
+   157	## Task 4: Session checkpoint after post-X1 repair, success
+   158	
+   159	### rollout_summary_files
+   160	
+   161	- rollout_summaries/2026-05-22T13-28-57-YJKn-pokerbot_codex_x1_repair_and_checkpoint.md (cwd=/Users/farhad/Code/PokerBot-codex, rollout_path=/Users/farhad/.codex/sessions/2026/05/22/rollout-2026-05-22T14-28-57-019e4fdf-f2f0-74d0-8f9a-6b97f3f2524f.jsonl, updated_at=2026-05-22T18:45:31+00:00, thread_id=019e4fdf-f2f0-74d0-8f9a-6b97f3f2524f, synchronized `STATUS.md`/`CHANGELOG.md`/`KANBAN.md` after the repair)
+   162	
+   163	### keywords
+   164	
+   165	- session-checkpoint, STATUS.md, CHANGELOG.md, KANBAN.md, git diff --check, py_compile, promote_artifact --check-only, sha256 comparison
+   166	
+   167	## User preferences
+   168	
+   169	- When the acceptance target is G5 or later, the user requires every criterion to pass on a freshly built `v_final.zip`; future verification should target the artifact itself, not just source-tree behavior [Task 1][Task 3]
+   170	- When the user asks for cheapest-first checks and concise logs in `logs/g5/`, write raw long-run output to disk and summarize only the key numbers in `STATUS.md` and chat [Task 1]
+   171	- When the user says “claude is also writing on its end, allow for that,” assume concurrent edits are live state; avoid broad shared-file churn and checkpoint on top of the other agent’s work [Task 2]
+   172	- When the objective says strategy code must not branch on `bot_id`, opponent names, archive names, labels, snapshot names, path stems, or seed, default to behavior-only logic and refuse identity-based shortcuts [Task 3]
+   173	- When a benchmark claims to evaluate a zip, the user expects artifact-bound evidence plus the zip sha256, not source-tree-only numbers [Task 3]
+   174	- A bare `$session-checkpoint` invocation in this repo implies a full wrap-up across existing trackers, not a new feature task [Task 4]
+   175	
+   176	## Reusable knowledge
+   177	
+   178	- Final G5 verification sequence that worked: package `submissions/v_final.zip`, run import audit, `pytest tests/edge_cases -x`, validator, real Docker smoke, `tools/benchmark.py --all-templates`, `--ablate-overlay`, `--self-play --vs-prior`, then `tools/exploit_check.py` against the final zip [Task 1]
+   179	- For G5, `tools/benchmark.py` must receive `--bot submissions/v_final.zip`; otherwise it benchmarks the live source-tree mount instead of the shipped artifact [Task 1]
+   180	- Final verified G5 numbers on the submitted zip were all-template `template=+71.82`, `aggressor=+178.09`, `mathematician=+144.60`, `shark=+70.16`, `ref_bot_2=+144.60`; overlay gain `+417.21 bb/100`; self-play ratchet means `+74.41`, `+4.47`, `+4.47`, `+4.47`; exploit check `22.0 / 12.8 mbb/g` [Task 1]
+   181	- `submissions/*.zip` are gitignored, so durable proof lives in `STATUS.md` plus run logs (`logs/g5/` or `logs/x1_repair/`), not in git-tracked artifact diffs [Task 1][Task 3]
+   182	- In concurrent branch work, inspect `git log` first and treat new commits from the other agent as live state to preserve; in the successful rollout the checkpoint commit `c94c7a8` was made on top of Claude’s `ef64db5` [Task 2]
+   183	- `tools/promote_artifact.py --check-only` validates immutable snapshot pins before promotion; `--promote` then updates `best_green.zip` and the manifest through the verified path [Task 3]
+   184	- `tools/audit_strategy_leakage.py` is the failure shield for forbidden identity strings inside shipped strategy code and comments/docstrings [Task 3]
+   185	- `tools/exploit_check.py` was repaired to load `submissions/v_final.zip`, import `decide()`, and score 20 deterministic held-out spots from actual actions rather than a static table [Task 3]
+
+hook: PostToolUse
+hook: PostToolUse Completed
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..66aa6317d2146cfae5d4b52362798e3cc7c580cc
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+@@ -0,0 +1 @@
++NO_GO_SMOKE_FAIL
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..3b0352f9dec54fb4599d9b240b5c560d0a5ae9c4
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+@@ -0,0 +1,113 @@
++# P6 Ship-Day Rehearsal and Contamination Sentinel
++
++Timestamp: 2026-05-29 18:04:18 EEST
++Workdir: `/Users/farhad/Code/PokerBot`
++Output directory: `consult/artifacts/2026-05-29-away/ship-day-rehearsal/`
++
++## Verdict
++
++`NO_GO_SMOKE_FAIL`
++
++The locked artifact did not complete the required 200-hand sandbox smoke run. Per the stop rule, the remaining verification sequence was not run and no repair, copy, rebuild, repackage, or candidate artifact step was attempted.
++
++## Protected Artifact Integrity
++
++Expected SHA for both protected artifacts:
++
++`e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Pre-run SHA check:
++
++| Artifact | SHA | Match |
++| --- | --- | --- |
++| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++
++Post-run SHA check:
++
++| Artifact | SHA | Match |
++| --- | --- | --- |
++| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++
++`shasum` emitted locale warnings in both SHA logs, but returned exit code 0 and printed the expected hashes.
++
++## Commands Run
++
++### 1. Protected SHA precheck
++
++Command:
++
++```sh
++shasum -a 256 submissions/v_final.zip submissions/best_green.zip
++```
++
++Result: PASS.
++
++Log: `command_logs/01_sha_pre.txt`
++
++### 2. Sandbox smoke run
++
++Command:
++
++```sh
++.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200
++```
++
++Result: FAIL, exit code 1.
++
++Observed output:
++
++```json
++{
++  "n_hands": 136,
++  "expected_hands": 200,
++  "chip_delta": {
++    "v_final": 10000,
++    "template": -10000
++  },
++  "errors": {},
++  "duration_s": 3.21
++}
++```
++
++Failure reason: only `136/200` hands played. The expected condition was `200/200` hands.
++
++Log: `command_logs/02_smoke_run.txt`
++
++### 3. Protected SHA postcheck
++
++Command:
++
++```sh
++shasum -a 256 submissions/v_final.zip submissions/best_green.zip
++```
++
++Result: PASS.
++
++Log: `command_logs/99_sha_post.txt`
++
++## Commands Not Run
++
++The following required checks were skipped because the smoke command failed and the task required stopping on first failure:
++
++- `.venv/bin/python ext/fullhouse-engine/sandbox/validator.py submissions/v_final.zip`
++- `.venv/bin/python tools/import_audit.py --max-seconds 1.5 --max-mb 400`
++- `.venv/bin/python tools/audit_strategy_leakage.py --zip submissions/v_final.zip`
++- `du -h submissions/v_final.zip`
++- `unzip -l submissions/v_final.zip | tail -20`
++- `git status --short`
++- `git branch --show-current`
++- `git rev-parse HEAD`
++- `git show-ref --heads release/v_final-e4b4a8f1 || true`
++
++## Invariant Compliance
++
++- No source files edited.
++- No candidate zip created.
++- `tools/package.py` not run.
++- `submissions/v_final.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
++- `submissions/best_green.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
++- `ext/fullhouse-engine/` not edited.
++- `ext/public-bots/` snapshots not edited.
++- Strategy behavior was tested from the locked zip, not inferred from `src/`.
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..1cf069d32762de4ec79536b3f827abfe9bc119f6
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+@@ -0,0 +1,33 @@
++## P6 Ship-Day Rehearsal - NO-GO
++
++Verdict: `NO_GO_SMOKE_FAIL`
++Timestamp: 2026-05-29 18:04:18 EEST
++Artifact under test: `submissions/v_final.zip`
++
++Protected SHA pre-run:
++- `submissions/v_final.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++- `submissions/best_green.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Smoke run:
++- Command: `.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200`
++- Result: FAIL, command exit code 1
++- Observed: only `136/200` hands played
++- Chip delta: `v_final=10000`, `template=-10000`
++- Errors: `{}`
++- Duration: `3.21s`
++
++Stop rule applied:
++- Validator, import audit, leakage audit, size/layout checks, and git contamination commands were not run after the smoke failure.
++- No repair attempted.
++- No candidate zip created.
++- `tools/package.py` not run.
++- `submissions/v_final.zip` and `submissions/best_green.zip` were not copied, replaced, rebuilt, repackaged, or chmod-modified.
++
++Protected SHA post-run:
++- `submissions/v_final.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++- `submissions/best_green.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Command logs:
++- `command_logs/01_sha_pre.txt`
++- `command_logs/02_smoke_run.txt`
++- `command_logs/99_sha_post.txt`
+
+codex
+`NO_GO_SMOKE_FAIL`.
+
+The run stopped at the smoke check as instructed. `tools/smoke_run.py` returned exit code 1 because the locked artifact played only `136/200` hands, despite chip delta showing `v_final=10000` and no reported hero errors.
+
+Protected artifact SHAs matched before and after:
+`e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
+
+Reports written:
+- [SHIP_DAY_REHEARSAL.md](/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md)
+- [GO_NO_GO.txt](/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt)
+- [STATUS_BLOCK.md](/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md)
+
+No repair, packaging, candidate zip, or protected artifact modification was performed. Validator/import/leakage/size/git checks were not run because the stop-on-first-failure rule triggered.
+
+
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..66aa6317d2146cfae5d4b52362798e3cc7c580cc
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt
+@@ -0,0 +1 @@
++NO_GO_SMOKE_FAIL
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..3b0352f9dec54fb4599d9b240b5c560d0a5ae9c4
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md
+@@ -0,0 +1,113 @@
++# P6 Ship-Day Rehearsal and Contamination Sentinel
++
++Timestamp: 2026-05-29 18:04:18 EEST
++Workdir: `/Users/farhad/Code/PokerBot`
++Output directory: `consult/artifacts/2026-05-29-away/ship-day-rehearsal/`
++
++## Verdict
++
++`NO_GO_SMOKE_FAIL`
++
++The locked artifact did not complete the required 200-hand sandbox smoke run. Per the stop rule, the remaining verification sequence was not run and no repair, copy, rebuild, repackage, or candidate artifact step was attempted.
++
++## Protected Artifact Integrity
++
++Expected SHA for both protected artifacts:
++
++`e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Pre-run SHA check:
++
++| Artifact | SHA | Match |
++| --- | --- | --- |
++| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++
++Post-run SHA check:
++
++| Artifact | SHA | Match |
++| --- | --- | --- |
++| `submissions/v_final.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++| `submissions/best_green.zip` | `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` | yes |
++
++`shasum` emitted locale warnings in both SHA logs, but returned exit code 0 and printed the expected hashes.
++
++## Commands Run
++
++### 1. Protected SHA precheck
++
++Command:
++
++```sh
++shasum -a 256 submissions/v_final.zip submissions/best_green.zip
++```
++
++Result: PASS.
++
++Log: `command_logs/01_sha_pre.txt`
++
++### 2. Sandbox smoke run
++
++Command:
++
++```sh
++.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200
++```
++
++Result: FAIL, exit code 1.
++
++Observed output:
++
++```json
++{
++  "n_hands": 136,
++  "expected_hands": 200,
++  "chip_delta": {
++    "v_final": 10000,
++    "template": -10000
++  },
++  "errors": {},
++  "duration_s": 3.21
++}
++```
++
++Failure reason: only `136/200` hands played. The expected condition was `200/200` hands.
++
++Log: `command_logs/02_smoke_run.txt`
++
++### 3. Protected SHA postcheck
++
++Command:
++
++```sh
++shasum -a 256 submissions/v_final.zip submissions/best_green.zip
++```
++
++Result: PASS.
++
++Log: `command_logs/99_sha_post.txt`
++
++## Commands Not Run
++
++The following required checks were skipped because the smoke command failed and the task required stopping on first failure:
++
++- `.venv/bin/python ext/fullhouse-engine/sandbox/validator.py submissions/v_final.zip`
++- `.venv/bin/python tools/import_audit.py --max-seconds 1.5 --max-mb 400`
++- `.venv/bin/python tools/audit_strategy_leakage.py --zip submissions/v_final.zip`
++- `du -h submissions/v_final.zip`
++- `unzip -l submissions/v_final.zip | tail -20`
++- `git status --short`
++- `git branch --show-current`
++- `git rev-parse HEAD`
++- `git show-ref --heads release/v_final-e4b4a8f1 || true`
++
++## Invariant Compliance
++
++- No source files edited.
++- No candidate zip created.
++- `tools/package.py` not run.
++- `submissions/v_final.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
++- `submissions/best_green.zip` not modified, rebuilt, repackaged, copied over, replaced, or chmod-modified.
++- `ext/fullhouse-engine/` not edited.
++- `ext/public-bots/` snapshots not edited.
++- Strategy behavior was tested from the locked zip, not inferred from `src/`.
+diff --git a/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..1cf069d32762de4ec79536b3f827abfe9bc119f6
+--- /dev/null
++++ b/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md
+@@ -0,0 +1,33 @@
++## P6 Ship-Day Rehearsal - NO-GO
++
++Verdict: `NO_GO_SMOKE_FAIL`
++Timestamp: 2026-05-29 18:04:18 EEST
++Artifact under test: `submissions/v_final.zip`
++
++Protected SHA pre-run:
++- `submissions/v_final.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++- `submissions/best_green.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Smoke run:
++- Command: `.venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200`
++- Result: FAIL, command exit code 1
++- Observed: only `136/200` hands played
++- Chip delta: `v_final=10000`, `template=-10000`
++- Errors: `{}`
++- Duration: `3.21s`
++
++Stop rule applied:
++- Validator, import audit, leakage audit, size/layout checks, and git contamination commands were not run after the smoke failure.
++- No repair attempted.
++- No candidate zip created.
++- `tools/package.py` not run.
++- `submissions/v_final.zip` and `submissions/best_green.zip` were not copied, replaced, rebuilt, repackaged, or chmod-modified.
++
++Protected SHA post-run:
++- `submissions/v_final.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++- `submissions/best_green.zip`: `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
++
++Command logs:
++- `command_logs/01_sha_pre.txt`
++- `command_logs/02_smoke_run.txt`
++- `command_logs/99_sha_post.txt`
+
+hook: Stop
+hook: Stop Completed
+tokens used
+82,615
+`NO_GO_SMOKE_FAIL`.
+
+The run stopped at the smoke check as instructed. `tools/smoke_run.py` returned exit code 1 because the locked artifact played only `136/200` hands, despite chip delta showing `v_final=10000` and no reported hero errors.
+
+Protected artifact SHAs matched before and after:
+`e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598`
+
+Reports written:
+- [SHIP_DAY_REHEARSAL.md](/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/ship-day-rehearsal/SHIP_DAY_REHEARSAL.md)
+- [GO_NO_GO.txt](/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/ship-day-rehearsal/GO_NO_GO.txt)
+- [STATUS_BLOCK.md](/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/ship-day-rehearsal/STATUS_BLOCK.md)
+
+No repair, packaging, candidate zip, or protected artifact modification was performed. Validator/import/leakage/size/git checks were not run because the stop-on-first-failure rule triggered.
+
+
+=== LANE ship-day-rehearsal END 2026-05-29T15:05:34Z exit=0 ===
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = "C.UTF-8",
+	LC_CTYPE = "C.UTF-8",
+	LANG = "en_GB.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_GB.UTF-8").
+e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  /Users/farhad/Code/PokerBot/submissions/v_final.zip
+e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  /Users/farhad/Code/PokerBot/submissions/best_green.zip

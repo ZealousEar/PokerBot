@@ -1,0 +1,26 @@
+{
+  "audit": "strategy_leakage",
+  "zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/sibling-gate/claude.zip",
+  "zip_sha256": "a5a52d973e4f1191c74082cf0848dd30f8f98b3ed423f55d7d62cae2c1d97387",
+  "src": null,
+  "files_scanned": 10,
+  "n_hits": 0,
+  "hits": [],
+  "forbidden_tokens": [
+    "template",
+    "aggressor",
+    "mathematician",
+    "shark",
+    "ref_bot_2",
+    "ref_bot",
+    "v0_wired",
+    "v1_blueprint",
+    "v2_postflop",
+    "v3_hardened",
+    "v_final",
+    "best_green",
+    "claude_bot",
+    "codex_bot"
+  ]
+}
+PASS: no forbidden identity tokens in packaged strategy code

@@ -1,0 +1,19 @@
+command: /Users/farhad/Code/PokerBot/.venv/bin/python /Users/farhad/Code/PokerBot/ext/fullhouse-engine/sandbox/validator.py /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/preflop-antecedent-grid/zips/preflop_antecedent_A1.zip
+cwd: /Users/farhad/Code/PokerBot
+exit_code: 0
+elapsed_s: 0.145
+
+[stdout]
+
+✅ PASSED  —  /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/preflop-antecedent-grid/zips/preflop_antecedent_A1.zip
+
+
+Test results:
+  ✓ [0.010s] preflop_call_or_fold: {'action': 'raise', 'amount': 200}
+  ✓ [0.005s] postflop_can_check: {'action': 'raise', 'amount': 200}
+  ✓ [0.006s] river_facing_large_bet: {'action': 'fold'}
+  ✓ [0.007s] short_stack_all_in_decision: {'action': 'all_in'}
+
+
+
+[stderr]

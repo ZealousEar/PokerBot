@@ -1,0 +1,351 @@
+{
+  "candidate": {
+    "content_identity_with_prior_p2_zip": true,
+    "diff_patch": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneA-postflop-v2/DIFF.patch",
+    "prior_p2_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/postflop-trap-candidate/zips/v_postflop_trap_candidate.zip",
+    "zip_path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneA-postflop-v2/zips/v_postflop_trap_v2_p2_already_clean.zip",
+    "zip_sha256": "d042c977f7c29b01d3cc50f98d56edbf93c4de7b1e0ef7e73a76de1b6c6345bf"
+  },
+  "ci_excluding_bad_regressions": [],
+  "full_eval_h2h_candidate_zip": {
+    "full_public_famadeo_codex_holdem": {
+      "actual_bb100": -3.015059788862761,
+      "actual_hands": 19987,
+      "base": 142,
+      "chip_delta": -60262,
+      "ci95": [
+        -4.20026,
+        1.70356
+      ],
+      "hero_errors": 0,
+      "name": "full_public_famadeo_codex_holdem",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/opponent_zips/famadeo__fullhouse_engine__main__codex_holdem.zip",
+      "rc": 0,
+      "scheduled_bb100": -1.20524,
+      "scheduled_hands": 50000
+    },
+    "full_public_neel_actual": {
+      "actual_bb100": 40.25447025401069,
+      "actual_hands": 23936,
+      "base": 142,
+      "chip_delta": 963531,
+      "ci95": [
+        18.57914,
+        19.823240000000002
+      ],
+      "hero_errors": 0,
+      "name": "full_public_neel_actual",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/opponent_zips/agrawalneel25__fullhouse_engine__neel_work__neel.zip",
+      "rc": 0,
+      "scheduled_bb100": 19.270619999999997,
+      "scheduled_hands": 50000
+    },
+    "full_public_pav_7_6": {
+      "actual_bb100": 6.660223953261927,
+      "actual_hands": 41080,
+      "base": 142,
+      "chip_delta": 273602,
+      "ci95": [
+        2.9723800000000002,
+        7.89118
+      ],
+      "hero_errors": 0,
+      "name": "full_public_pav_7_6",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/pav_skantbot7_6.zip",
+      "rc": 0,
+      "scheduled_bb100": 5.47204,
+      "scheduled_hands": 50000
+    },
+    "full_public_pav_7_9": {
+      "actual_bb100": -0.6198320708223055,
+      "actual_hands": 43828,
+      "base": 142,
+      "chip_delta": -27166,
+      "ci95": [
+        -2.3842800000000004,
+        1.2836800000000002
+      ],
+      "hero_errors": 0,
+      "name": "full_public_pav_7_9",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/pav_skantbot7_9.zip",
+      "rc": 0,
+      "scheduled_bb100": -0.54332,
+      "scheduled_hands": 50000
+    },
+    "full_public_stoppedtime24": {
+      "actual_bb100": 47.29446769882496,
+      "actual_hands": 19829,
+      "base": 142,
+      "chip_delta": 937802,
+      "ci95": [
+        17.2,
+        19.95604
+      ],
+      "hero_errors": 0,
+      "name": "full_public_stoppedtime24",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/stoppedtime24_mybot.zip",
+      "rc": 0,
+      "scheduled_bb100": 18.756040000000002,
+      "scheduled_hands": 50000
+    },
+    "full_ref_aggressor": {
+      "actual_bb100": 51.41388174807198,
+      "actual_hands": 1945,
+      "base": 42,
+      "chip_delta": 100000,
+      "ci95": [
+        -2.0,
+        6.0
+      ],
+      "hero_errors": 0,
+      "name": "full_ref_aggressor",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/aggressor",
+      "rc": 0,
+      "scheduled_bb100": 2.0,
+      "scheduled_hands": 50000
+    },
+    "full_ref_mathematician": {
+      "actual_bb100": 144.92753623188406,
+      "actual_hands": 6900,
+      "base": 42,
+      "chip_delta": 1000000,
+      "ci95": [
+        20.0,
+        20.0
+      ],
+      "hero_errors": 0,
+      "name": "full_ref_mathematician",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/mathematician",
+      "rc": 0,
+      "scheduled_bb100": 20.0,
+      "scheduled_hands": 50000
+    },
+    "full_ref_ref_bot_2": {
+      "actual_bb100": 144.92753623188406,
+      "actual_hands": 6900,
+      "base": 42,
+      "chip_delta": 1000000,
+      "ci95": [
+        20.0,
+        20.0
+      ],
+      "hero_errors": 0,
+      "name": "full_ref_ref_bot_2",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/ref_bot_2",
+      "rc": 0,
+      "scheduled_bb100": 20.0,
+      "scheduled_hands": 50000
+    },
+    "full_ref_shark": {
+      "actual_bb100": 70.08690776562938,
+      "actual_hands": 14268,
+      "base": 42,
+      "chip_delta": 1000000,
+      "ci95": [
+        20.0,
+        20.0
+      ],
+      "hero_errors": 0,
+      "name": "full_ref_shark",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/shark",
+      "rc": 0,
+      "scheduled_bb100": 20.0,
+      "scheduled_hands": 50000
+    },
+    "full_ref_template": {
+      "actual_bb100": 71.1288142826659,
+      "actual_hands": 14059,
+      "base": 42,
+      "chip_delta": 1000000,
+      "ci95": [
+        20.0,
+        20.0
+      ],
+      "hero_errors": 0,
+      "name": "full_ref_template",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/template",
+      "rc": 0,
+      "scheduled_bb100": 20.0,
+      "scheduled_hands": 50000
+    },
+    "full_toby_b142": {
+      "actual_bb100": -6.529546196539341,
+      "actual_hands": 6126,
+      "base": 142,
+      "chip_delta": -40000,
+      "ci95": [
+        -4.4,
+        2.8
+      ],
+      "hero_errors": 0,
+      "name": "full_toby_b142",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-drift-patch/opponent_zips/toby_master.zip",
+      "rc": 0,
+      "scheduled_bb100": -0.8,
+      "scheduled_hands": 50000
+    },
+    "full_toby_b242": {
+      "actual_bb100": -9.705596894208993,
+      "actual_hands": 6182,
+      "base": 242,
+      "chip_delta": -60000,
+      "ci95": [
+        -4.8,
+        2.4
+      ],
+      "hero_errors": 0,
+      "name": "full_toby_b242",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-drift-patch/opponent_zips/toby_master.zip",
+      "rc": 0,
+      "scheduled_bb100": -1.2,
+      "scheduled_hands": 50000
+    }
+  },
+  "locked_prior_toby_evidence": {
+    "base_142_100k_scheduled_bb100": -14.0,
+    "base_142_ci95": [
+      -16.0,
+      -12.0
+    ],
+    "base_242_100k_scheduled_bb100": -16.6,
+    "base_242_ci95": [
+      -18.0,
+      -15.0
+    ],
+    "source": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/logs/dominic_live_master_100k_b{142,242}_s{142,242}.json"
+  },
+  "protected_artifacts": {
+    "end": [
+      "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  /Users/farhad/Code/PokerBot/submissions/v_final.zip",
+      "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  /Users/farhad/Code/PokerBot/submissions/best_green.zip"
+    ],
+    "expected_sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "start": [
+      "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  /Users/farhad/Code/PokerBot/submissions/v_final.zip",
+      "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  /Users/farhad/Code/PokerBot/submissions/best_green.zip"
+    ],
+    "unchanged": true
+  },
+  "source_minimization_or_new_patch": "SKIPPED; existing P2 diff applied unchanged after blocker CIs failed to exclude zero.",
+  "static_gates": {
+    "edge_cases": {
+      "log": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneA-postflop-v2/command_logs/final_pytest_edge_cases.log",
+      "rc": 0,
+      "status": "PASS",
+      "tests_passed": 28
+    },
+    "exploit_check": {
+      "aggregate_mbb_g": 5.65,
+      "log": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneA-postflop-v2/command_logs/final_exploit_check.log",
+      "preflop_mbb_g": 18.0,
+      "rc": 0,
+      "status": "PASS"
+    },
+    "import_audit": {
+      "cold_import_s": 0.063,
+      "log": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneA-postflop-v2/command_logs/final_import_audit.log",
+      "rc": 0,
+      "rss_mb": 33.6,
+      "status": "PASS"
+    },
+    "leakage_zip": {
+      "log": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneA-postflop-v2/command_logs/final_audit_strategy_leakage_zip.log",
+      "rc": 0,
+      "status": "PASS"
+    },
+    "smoke_200": {
+      "candidate": {
+        "actual_hands": 136,
+        "chip_delta": {
+          "template": -10000,
+          "v_postflop_trap_v2_p2_already_clean": 10000
+        },
+        "duration_s": 2.88,
+        "early_termination_reason": "normal_bust: fewer than two bots remain; busted=template",
+        "errors": {},
+        "final_stacks": {
+          "template": 0,
+          "v_postflop_trap_v2_p2_already_clean": 20000
+        },
+        "hero_errors": [],
+        "hero_id": "v_postflop_trap_v2_p2_already_clean",
+        "requested_hands": 200
+      },
+      "locked_baseline": {
+        "actual_hands": 136,
+        "chip_delta": {
+          "template": -10000,
+          "v_final": 10000
+        },
+        "duration_s": 2.55,
+        "early_termination_reason": "normal_bust: fewer than two bots remain; busted=template",
+        "errors": {},
+        "final_stacks": {
+          "template": 0,
+          "v_final": 20000
+        },
+        "hero_errors": [],
+        "hero_id": "v_final",
+        "requested_hands": 200
+      },
+      "log": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneA-postflop-v2/command_logs/final_smoke_run_200.log",
+      "rc": 0,
+      "status": "PASS"
+    },
+    "validator": {
+      "log": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneA-postflop-v2/command_logs/final_validator.log",
+      "rc": 0,
+      "status": "PASS"
+    }
+  },
+  "step1_blocker_retests_prior_p2_zip": {
+    "step1_p2_pav_7_9_50k": {
+      "actual_bb100": -0.90948670944088,
+      "actual_hands": 43640,
+      "base": 142,
+      "chip_delta": -39690,
+      "ci95": [
+        -2.89648,
+        1.3519
+      ],
+      "hero_errors": 0,
+      "name": "step1_p2_pav_7_9_50k",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/pav_skantbot7_9.zip",
+      "rc": null,
+      "scheduled_bb100": -0.7938,
+      "scheduled_hands": 50000
+    },
+    "step1_p2_ref_aggressor_50k": {
+      "actual_bb100": 124.50481041312959,
+      "actual_hands": 1767,
+      "base": 42,
+      "chip_delta": 220000,
+      "ci95": [
+        0.4,
+        8.4
+      ],
+      "hero_errors": 0,
+      "name": "step1_p2_ref_aggressor_50k",
+      "opponent_errors": 0,
+      "opponent_zip": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/aggressor",
+      "rc": null,
+      "scheduled_bb100": 4.4,
+      "scheduled_hands": 50000
+    }
+  },
+  "step1_short_circuited": true,
+  "verdict": "P2_ALREADY_CLEAN"
+}

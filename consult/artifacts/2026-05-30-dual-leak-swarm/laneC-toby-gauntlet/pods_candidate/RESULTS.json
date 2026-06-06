@@ -1,0 +1,3383 @@
+{
+  "artifact": {
+    "expected_locked_sha": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "hero_path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneA-postflop-v2/zips/v_postflop_trap_v2_p2_already_clean.zip",
+    "protected_sha_after": {
+      "submissions/best_green.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+      "submissions/v_final.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+    },
+    "protected_sha_before": {
+      "submissions/best_green.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+      "submissions/v_final.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+    }
+  },
+  "comparison": {
+    "baseline_color": "CRITICAL",
+    "baseline_p50": -10000.0,
+    "danger_compositions": [
+      "C0_BASELINE_RECHECK"
+    ],
+    "danger_driver": "early_busts",
+    "flip_interpretation": "baseline_already_non_positive",
+    "single_mehedi_color": null,
+    "single_mehedi_flips_pod": null,
+    "single_toby_color": null,
+    "single_toby_flips_pod": null,
+    "toby_mehedi_color": null,
+    "toby_mehedi_together_flips_pod": null
+  },
+  "compositions": {
+    "C0_BASELINE_RECHECK": {
+      "actual_hands_total": 37456,
+      "bust_causes": [
+        {
+          "hand_num": 32,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 4300,
+            "pot_after": 11650,
+            "street": "river"
+          },
+          "pot": 15950,
+          "seed": 142,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 15600,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 159,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": null,
+          "pot": 1038,
+          "seed": 143,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 76,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 1
+            },
+            {
+              "amount": 962,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 1
+            }
+          ]
+        },
+        {
+          "hand_num": 27,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 184,
+            "pot_after": 334,
+            "street": "preflop"
+          },
+          "pot": 1786,
+          "seed": 144,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 168,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1268,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 115,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "call",
+            "amount": 84,
+            "pot_after": 2184,
+            "street": "turn"
+          },
+          "pot": 2784,
+          "seed": 145,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 1752,
+              "bot_id": "mathematician",
+              "pot_type": "main",
+              "seat": 3
+            },
+            {
+              "amount": 1032,
+              "bot_id": "mathematician",
+              "pot_type": "side",
+              "seat": 3
+            }
+          ]
+        },
+        {
+          "hand_num": 88,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 420,
+            "pot_after": 2220,
+            "street": "turn"
+          },
+          "pot": 3900,
+          "seed": 146,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 1800,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 840,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1260,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 46,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": null,
+          "pot": 1405,
+          "seed": 147,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 2,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1253,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 28,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "call",
+            "amount": 68,
+            "pot_after": 2368,
+            "street": "river"
+          },
+          "pot": 2368,
+          "seed": 149,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 300,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 1736,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 332,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 35,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": null,
+          "pot": 927,
+          "seed": 150,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 81,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 146,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 700,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 69,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 198,
+            "pot_after": 848,
+            "street": "flop"
+          },
+          "pot": 2044,
+          "seed": 152,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 1044,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 800,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 21,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "call",
+            "amount": 3338,
+            "pot_after": 23248,
+            "street": "river"
+          },
+          "pot": 23248,
+          "seed": 154,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 5646,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 14470,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 2932,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 39,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 401,
+            "pot_after": 1751,
+            "street": "flop"
+          },
+          "pot": 3955,
+          "seed": 157,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1802,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1803,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 75,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 2118,
+            "pot_after": 6668,
+            "street": "turn"
+          },
+          "pot": 22430,
+          "seed": 158,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 8436,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 13644,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 85,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 4684,
+            "pot_after": 11534,
+            "street": "preflop"
+          },
+          "pot": 27670,
+          "seed": 159,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 400,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 13752,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 4104,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 9414,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            }
+          ]
+        },
+        {
+          "hand_num": 99,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 264,
+            "pot_after": 914,
+            "street": "flop"
+          },
+          "pot": 2370,
+          "seed": 160,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 450,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 528,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1192,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 70,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "call",
+            "amount": 68,
+            "pot_after": 2468,
+            "street": "turn"
+          },
+          "pot": 3268,
+          "seed": 161,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 2004,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 1264,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 68,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "call",
+            "amount": 200,
+            "pot_after": 1750,
+            "street": "preflop"
+          },
+          "pot": 2350,
+          "seed": 162,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 600,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1400,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 83,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": null,
+          "pot": 1048,
+          "seed": 163,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 32,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 866,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 161,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 70,
+            "pot_after": 220,
+            "street": "preflop"
+          },
+          "pot": 570,
+          "seed": 164,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 210,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 60,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 300,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 45,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 57,
+            "pot_after": 207,
+            "street": "preflop"
+          },
+          "pot": 2107,
+          "seed": 165,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 21,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 86,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1800,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 11,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 8617,
+            "pot_after": 26500,
+            "street": "preflop"
+          },
+          "pot": 31200,
+          "seed": 166,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 25851,
+              "bot_id": "template",
+              "pot_type": "main",
+              "seat": 1
+            },
+            {
+              "amount": 2366,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            },
+            {
+              "amount": 2983,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 98,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 152,
+            "pot_after": 302,
+            "street": "preflop"
+          },
+          "pot": 26400,
+          "seed": 167,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 250,
+              "bot_id": "template",
+              "pot_type": "main",
+              "seat": 1
+            },
+            {
+              "amount": 200,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            },
+            {
+              "amount": 156,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            },
+            {
+              "amount": 23292,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            },
+            {
+              "amount": 2502,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            }
+          ]
+        },
+        {
+          "hand_num": 85,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 36,
+            "pot_after": 186,
+            "street": "preflop"
+          },
+          "pot": 936,
+          "seed": 168,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 108,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 128,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 700,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 58,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": null,
+          "pot": 963,
+          "seed": 170,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 39,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 74,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 850,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 40,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 386,
+            "pot_after": 1636,
+            "street": "flop"
+          },
+          "pot": 3780,
+          "seed": 173,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 1872,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1758,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 21,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 17,
+            "pot_after": 167,
+            "street": "preflop"
+          },
+          "pot": 1167,
+          "seed": 175,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 68,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 99,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 100,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 900,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 34,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 718,
+            "pot_after": 1968,
+            "street": "flop"
+          },
+          "pot": 5340,
+          "seed": 177,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 2536,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 2654,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 39,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 850,
+            "pot_after": 3400,
+            "street": "flop"
+          },
+          "pot": 7200,
+          "seed": 178,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 3900,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 2950,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 48,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 40,
+            "pot_after": 190,
+            "street": "preflop"
+          },
+          "pot": 690,
+          "seed": 180,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 120,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 20,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 550,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 77,
+          "hero_hand_strength": "Trips",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 112,
+            "pot_after": 312,
+            "street": "preflop"
+          },
+          "pot": 14242,
+          "seed": 181,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 336,
+              "bot_id": "template",
+              "pot_type": "main",
+              "seat": 1
+            },
+            {
+              "amount": 11736,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            },
+            {
+              "amount": 2170,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            }
+          ]
+        },
+        {
+          "hand_num": 93,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": null,
+          "pot": 508,
+          "seed": 182,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 24,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 84,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 400,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 33,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 4350,
+            "pot_after": 12250,
+            "street": "preflop"
+          },
+          "pot": 21760,
+          "seed": 183,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 400,
+              "bot_id": "shark",
+              "pot_type": "main",
+              "seat": 4
+            },
+            {
+              "amount": 7350,
+              "bot_id": "shark",
+              "pot_type": "side",
+              "seat": 4
+            },
+            {
+              "amount": 3600,
+              "bot_id": "shark",
+              "pot_type": "side",
+              "seat": 4
+            },
+            {
+              "amount": 10410,
+              "bot_id": "shark",
+              "pot_type": "side",
+              "seat": 4
+            }
+          ]
+        },
+        {
+          "hand_num": 50,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 52,
+            "pot_after": 202,
+            "street": "preflop"
+          },
+          "pot": 1302,
+          "seed": 185,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 6,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 96,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1000,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 119,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "call",
+            "amount": 350,
+            "pot_after": 1100,
+            "street": "preflop"
+          },
+          "pot": 47900,
+          "seed": 186,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 1200,
+              "bot_id": "template",
+              "pot_type": "main",
+              "seat": 1
+            },
+            {
+              "amount": 26740,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            },
+            {
+              "amount": 19960,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 6,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 3,
+            "pot_after": 153,
+            "street": "preflop"
+          },
+          "pot": 1453,
+          "seed": 188,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 9,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 94,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1350,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 79,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 1705,
+            "pot_after": 4737,
+            "street": "turn"
+          },
+          "pot": 6642,
+          "seed": 190,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 300,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 6142,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 68,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 119,
+            "pot_after": 269,
+            "street": "preflop"
+          },
+          "pot": 2057,
+          "seed": 191,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 400,
+              "bot_id": "mathematician",
+              "pot_type": "main",
+              "seat": 3
+            },
+            {
+              "amount": 57,
+              "bot_id": "mathematician",
+              "pot_type": "side",
+              "seat": 3
+            },
+            {
+              "amount": 1600,
+              "bot_id": "mathematician",
+              "pot_type": "side",
+              "seat": 3
+            }
+          ]
+        },
+        {
+          "hand_num": 107,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 72,
+            "pot_after": 222,
+            "street": "preflop"
+          },
+          "pot": 1622,
+          "seed": 193,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 66,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 56,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1300,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 31,
+          "hero_hand_strength": "Straight",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 3268,
+            "pot_after": 17018,
+            "street": "preflop"
+          },
+          "pot": 33400,
+          "seed": 194,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 400,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 9504,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 11964,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 11532,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 87,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 1001,
+            "pot_after": 3551,
+            "street": "flop"
+          },
+          "pot": 4852,
+          "seed": 195,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 4202,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 300,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 44,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 501,
+            "pot_after": 3433,
+            "street": "turn"
+          },
+          "pot": 5737,
+          "seed": 198,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 2932,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 1002,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1803,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 58,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 151,
+            "pot_after": 1951,
+            "street": "turn"
+          },
+          "pot": 3159,
+          "seed": 201,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 2253,
+              "bot_id": "ref_bot_2",
+              "pot_type": "main",
+              "seat": 5
+            },
+            {
+              "amount": 906,
+              "bot_id": "ref_bot_2",
+              "pot_type": "side",
+              "seat": 5
+            }
+          ]
+        },
+        {
+          "hand_num": 102,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 186,
+            "pot_after": 336,
+            "street": "preflop"
+          },
+          "pot": 1322,
+          "seed": 203,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 272,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 900,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 38,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 5167,
+            "pot_after": 10917,
+            "street": "preflop"
+          },
+          "pot": 34050,
+          "seed": 204,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 15351,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 7666,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 10833,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 201,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 78,
+            "pot_after": 228,
+            "street": "preflop"
+          },
+          "pot": 1428,
+          "seed": 205,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 84,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 44,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1100,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 144,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 120,
+            "pot_after": 270,
+            "street": "preflop"
+          },
+          "pot": 890,
+          "seed": 206,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 140,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 600,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 70,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": null,
+          "pot": 30946,
+          "seed": 209,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "template",
+              "pot_type": "main",
+              "seat": 1
+            },
+            {
+              "amount": 93,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            },
+            {
+              "amount": 16264,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            },
+            {
+              "amount": 14389,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 182,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 83,
+            "pot_after": 183,
+            "street": "preflop"
+          },
+          "pot": 683,
+          "seed": 212,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 166,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 1
+            },
+            {
+              "amount": 517,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 1
+            }
+          ]
+        },
+        {
+          "hand_num": 67,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 120,
+            "pot_after": 270,
+            "street": "preflop"
+          },
+          "pot": 2100,
+          "seed": 213,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 300,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 40,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1760,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 222,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 438,
+            "pot_after": 1095,
+            "street": "flop"
+          },
+          "pot": 3147,
+          "seed": 216,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 228,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 429,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 876,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1614,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 107,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 188,
+            "pot_after": 338,
+            "street": "preflop"
+          },
+          "pot": 1802,
+          "seed": 217,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 176,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1276,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 74,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": null,
+          "pot": 736,
+          "seed": 218,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 108,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 128,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 500,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 56,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 40,
+            "pot_after": 190,
+            "street": "preflop"
+          },
+          "pot": 940,
+          "seed": 219,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 120,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 120,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 700,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 4,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 10000,
+            "pot_after": 15350,
+            "street": "preflop"
+          },
+          "pot": 30350,
+          "seed": 222,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "shark",
+              "pot_type": "main",
+              "seat": 4
+            },
+            {
+              "amount": 29400,
+              "bot_id": "shark",
+              "pot_type": "side",
+              "seat": 4
+            },
+            {
+              "amount": 300,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 450,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 44,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 318,
+            "pot_after": 1668,
+            "street": "flop"
+          },
+          "pot": 2940,
+          "seed": 223,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1636,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 954,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 62,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 418,
+            "pot_after": 3350,
+            "street": "turn"
+          },
+          "pot": 6258,
+          "seed": 225,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 2932,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 836,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 2490,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 42,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 6067,
+            "pot_after": 14867,
+            "street": "preflop"
+          },
+          "pot": 42850,
+          "seed": 228,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 250,
+              "bot_id": "template",
+              "pot_type": "main",
+              "seat": 1
+            },
+            {
+              "amount": 200,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            },
+            {
+              "amount": 17901,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            },
+            {
+              "amount": 23466,
+              "bot_id": "template",
+              "pot_type": "side",
+              "seat": 1
+            },
+            {
+              "amount": 1033,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 63,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": null,
+          "pot": 1258,
+          "seed": 229,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 24,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 84,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1150,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 80,
+          "hero_hand_strength": "Two Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 425,
+            "pot_after": 2523,
+            "street": "turn"
+          },
+          "pot": 4173,
+          "seed": 232,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 400,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 2973,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 800,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 46,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "call",
+            "amount": 163,
+            "pot_after": 1113,
+            "street": "preflop"
+          },
+          "pot": 1713,
+          "seed": 233,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 426,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1137,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 27,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 1215,
+            "pot_after": 3164,
+            "street": "turn"
+          },
+          "pot": 12884,
+          "seed": 234,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 1749,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 2430,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 8505,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 62,
+          "hero_hand_strength": "High Card",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 3967,
+            "pot_after": 8967,
+            "street": "preflop"
+          },
+          "pot": 40317,
+          "seed": 237,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 250,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 200,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 11601,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 27366,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 900,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 97,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": {
+            "action": "all_in",
+            "amount": 116,
+            "pot_after": 266,
+            "street": "preflop"
+          },
+          "pot": 1564,
+          "seed": 238,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 300,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 32,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1232,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 94,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": null,
+          "pot": 1094,
+          "seed": 239,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 132,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 12,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 950,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 34,
+          "hero_hand_strength": "Pair",
+          "last_hero_action": null,
+          "pot": 1154,
+          "seed": 240,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 150,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 2,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 1002,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        },
+        {
+          "hand_num": 54,
+          "hero_hand_strength": "Trips",
+          "last_hero_action": null,
+          "pot": 1001,
+          "seed": 241,
+          "showdown": true,
+          "street": "river",
+          "winners": [
+            {
+              "amount": 3,
+              "bot_id": "aggressor",
+              "pot_type": "main",
+              "seat": 2
+            },
+            {
+              "amount": 198,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            },
+            {
+              "amount": 800,
+              "bot_id": "aggressor",
+              "pot_type": "side",
+              "seat": 2
+            }
+          ]
+        }
+      ],
+      "bust_rate": 0.65,
+      "chip_delta_stats": {
+        "max": 29133,
+        "mean": -2958.09,
+        "min": -10000,
+        "p10": -10000.0,
+        "p25": -10000.0,
+        "p50": -10000.0,
+        "p75": 5914.25,
+        "p90": 12215.0,
+        "stdev": 10440.03
+      },
+      "color": "CRITICAL",
+      "completed_matches": 100,
+      "hero_action_errors": 0,
+      "hero_bot_errors": 0,
+      "hero_decisions": 22897,
+      "hero_error_rate": 0.0,
+      "hero_p99_decide_latency_ms": 19.6,
+      "opponent_action_errors": 0,
+      "opponent_decisions": 193588,
+      "opponent_error_rate": 0.0,
+      "per_seat_mean_chip_delta": {
+        "aggressor": 6763.76,
+        "hero": -2958.09,
+        "mathematician": -7816.76,
+        "ref_bot_2": -4835.31,
+        "shark": 5616.15,
+        "template": 3230.25
+      },
+      "runs": [
+        {
+          "actual_hands": 200,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 5.035,
+          "seed": 142
+        },
+        {
+          "actual_hands": 235,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 11.054,
+          "seed": 143
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 29.969,
+          "seed": 144
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.296,
+          "seed": 145
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.502,
+          "seed": 146
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.662,
+          "seed": 147
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 8500,
+          "hero_final_stack": 18500,
+          "hero_p99_decide_latency_ms": 3.343,
+          "seed": 148
+        },
+        {
+          "actual_hands": 228,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 3.48,
+          "seed": 149
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 3.666,
+          "seed": 150
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 12200,
+          "hero_final_stack": 22200,
+          "hero_p99_decide_latency_ms": 1.748,
+          "seed": 151
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.935,
+          "seed": 152
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 1268,
+          "hero_final_stack": 11268,
+          "hero_p99_decide_latency_ms": 2.586,
+          "seed": 153
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.001,
+          "seed": 154
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 16300,
+          "hero_final_stack": 26300,
+          "hero_p99_decide_latency_ms": 2.46,
+          "seed": 155
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 17301,
+          "hero_final_stack": 27301,
+          "hero_p99_decide_latency_ms": 2.13,
+          "seed": 156
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.767,
+          "seed": 157
+        },
+        {
+          "actual_hands": 329,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 0.782,
+          "seed": 158
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.436,
+          "seed": 159
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.671,
+          "seed": 160
+        },
+        {
+          "actual_hands": 321,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.886,
+          "seed": 161
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 4.894,
+          "seed": 162
+        },
+        {
+          "actual_hands": 277,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 3.82,
+          "seed": 163
+        },
+        {
+          "actual_hands": 372,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.786,
+          "seed": 164
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.929,
+          "seed": 165
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 4.34,
+          "seed": 166
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.493,
+          "seed": 167
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.527,
+          "seed": 168
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 6634,
+          "hero_final_stack": 16634,
+          "hero_p99_decide_latency_ms": 2.131,
+          "seed": 169
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.521,
+          "seed": 170
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 12050,
+          "hero_final_stack": 22050,
+          "hero_p99_decide_latency_ms": 1.921,
+          "seed": 171
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 23650,
+          "hero_final_stack": 33650,
+          "hero_p99_decide_latency_ms": 1.359,
+          "seed": 172
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.921,
+          "seed": 173
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 20950,
+          "hero_final_stack": 30950,
+          "hero_p99_decide_latency_ms": 2.486,
+          "seed": 174
+        },
+        {
+          "actual_hands": 288,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.487,
+          "seed": 175
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 3050,
+          "hero_final_stack": 13050,
+          "hero_p99_decide_latency_ms": 2.905,
+          "seed": 176
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.805,
+          "seed": 177
+        },
+        {
+          "actual_hands": 266,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 3.527,
+          "seed": 178
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 200,
+          "hero_final_stack": 10200,
+          "hero_p99_decide_latency_ms": 2.006,
+          "seed": 179
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.631,
+          "seed": 180
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.068,
+          "seed": 181
+        },
+        {
+          "actual_hands": 311,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.842,
+          "seed": 182
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.546,
+          "seed": 183
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 550,
+          "hero_final_stack": 10550,
+          "hero_p99_decide_latency_ms": 2.248,
+          "seed": 184
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.743,
+          "seed": 185
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.46,
+          "seed": 186
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 9267,
+          "hero_final_stack": 19267,
+          "hero_p99_decide_latency_ms": 2.203,
+          "seed": 187
+        },
+        {
+          "actual_hands": 300,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.529,
+          "seed": 188
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 8400,
+          "hero_final_stack": 18400,
+          "hero_p99_decide_latency_ms": 4.328,
+          "seed": 189
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 5.583,
+          "seed": 190
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.131,
+          "seed": 191
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 11550,
+          "hero_final_stack": 21550,
+          "hero_p99_decide_latency_ms": 6.259,
+          "seed": 192
+        },
+        {
+          "actual_hands": 378,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 4.685,
+          "seed": 193
+        },
+        {
+          "actual_hands": 331,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.345,
+          "seed": 194
+        },
+        {
+          "actual_hands": 377,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 15.121,
+          "seed": 195
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 12550,
+          "hero_final_stack": 22550,
+          "hero_p99_decide_latency_ms": 1.93,
+          "seed": 196
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 6417,
+          "hero_final_stack": 16417,
+          "hero_p99_decide_latency_ms": 2.21,
+          "seed": 197
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.781,
+          "seed": 198
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 6056,
+          "hero_final_stack": 16056,
+          "hero_p99_decide_latency_ms": 3.048,
+          "seed": 199
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 7984,
+          "hero_final_stack": 17984,
+          "hero_p99_decide_latency_ms": 2.089,
+          "seed": 200
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.349,
+          "seed": 201
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 13750,
+          "hero_final_stack": 23750,
+          "hero_p99_decide_latency_ms": 1.974,
+          "seed": 202
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.01,
+          "seed": 203
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.168,
+          "seed": 204
+        },
+        {
+          "actual_hands": 323,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.003,
+          "seed": 205
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.399,
+          "seed": 206
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 22500,
+          "hero_final_stack": 32500,
+          "hero_p99_decide_latency_ms": 1.838,
+          "seed": 207
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 11350,
+          "hero_final_stack": 21350,
+          "hero_p99_decide_latency_ms": 1.806,
+          "seed": 208
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.149,
+          "seed": 209
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 3660,
+          "hero_final_stack": 13660,
+          "hero_p99_decide_latency_ms": 1.738,
+          "seed": 210
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 29133,
+          "hero_final_stack": 39133,
+          "hero_p99_decide_latency_ms": 3.883,
+          "seed": 211
+        },
+        {
+          "actual_hands": 183,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.831,
+          "seed": 212
+        },
+        {
+          "actual_hands": 246,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.832,
+          "seed": 213
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 4850,
+          "hero_final_stack": 14850,
+          "hero_p99_decide_latency_ms": 2.755,
+          "seed": 214
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 9750,
+          "hero_final_stack": 19750,
+          "hero_p99_decide_latency_ms": 5.991,
+          "seed": 215
+        },
+        {
+          "actual_hands": 375,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.214,
+          "seed": 216
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 14.004,
+          "seed": 217
+        },
+        {
+          "actual_hands": 278,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 4.83,
+          "seed": 218
+        },
+        {
+          "actual_hands": 351,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.64,
+          "seed": 219
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 4750,
+          "hero_final_stack": 14750,
+          "hero_p99_decide_latency_ms": 2.267,
+          "seed": 220
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 10650,
+          "hero_final_stack": 20650,
+          "hero_p99_decide_latency_ms": 2.401,
+          "seed": 221
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.088,
+          "seed": 222
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 19.495,
+          "seed": 223
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 10950,
+          "hero_final_stack": 20950,
+          "hero_p99_decide_latency_ms": 2.687,
+          "seed": 224
+        },
+        {
+          "actual_hands": 316,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.799,
+          "seed": 225
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 12350,
+          "hero_final_stack": 22350,
+          "hero_p99_decide_latency_ms": 3.596,
+          "seed": 226
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 5867,
+          "hero_final_stack": 15867,
+          "hero_p99_decide_latency_ms": 1.898,
+          "seed": 227
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.079,
+          "seed": 228
+        },
+        {
+          "actual_hands": 316,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.384,
+          "seed": 229
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 1847,
+          "hero_final_stack": 11847,
+          "hero_p99_decide_latency_ms": 2.273,
+          "seed": 230
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 8752,
+          "hero_final_stack": 18752,
+          "hero_p99_decide_latency_ms": 2.724,
+          "seed": 231
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 3.227,
+          "seed": 232
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 6.014,
+          "seed": 233
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.07,
+          "seed": 234
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 15925,
+          "hero_final_stack": 25925,
+          "hero_p99_decide_latency_ms": 1.98,
+          "seed": 235
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": false,
+          "hero_chip_delta": 3230,
+          "hero_final_stack": 13230,
+          "hero_p99_decide_latency_ms": 2.195,
+          "seed": 236
+        },
+        {
+          "actual_hands": 179,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 0.984,
+          "seed": 237
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.999,
+          "seed": 238
+        },
+        {
+          "actual_hands": 276,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 2.197,
+          "seed": 239
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.515,
+          "seed": 240
+        },
+        {
+          "actual_hands": 400,
+          "hero_busted": true,
+          "hero_chip_delta": -10000,
+          "hero_final_stack": 0,
+          "hero_p99_decide_latency_ms": 1.163,
+          "seed": 241
+        }
+      ],
+      "scheduled_hands_per_match": 400,
+      "scheduled_hands_total": 40000,
+      "scheduled_matches": 100,
+      "seats": [
+        "hero",
+        "template",
+        "aggressor",
+        "mathematician",
+        "shark",
+        "ref_bot_2"
+      ]
+    }
+  },
+  "generated_at": "2026-05-30T15:41:50Z",
+  "opponent_zips": {
+    "aggressor": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/aggressor.zip",
+      "sha256": "9fdd5196c0a3e89a7bb3fe83e6a298ca5a730ccaa15697954b1454f68a8d51a2",
+      "source": "ext/fullhouse-engine/bots/aggressor"
+    },
+    "famadeo": {
+      "kind": "copied_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/famadeo.zip",
+      "sha256": "aa14124b4b7456155a8528573d653d0fa2e5c5816ca08b127bfef7af8fd3a531",
+      "source": "consult/artifacts/2026-05-28-public-saturation/opponent_zips/famadeo.zip"
+    },
+    "mathematician": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/mathematician.zip",
+      "sha256": "54017da099f4e415b68e82da76b85a6a7f75aeb78071c88a370da73d1ee5e4fb",
+      "source": "ext/fullhouse-engine/bots/mathematician"
+    },
+    "mehedi_mybot": {
+      "kind": "copied_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/mehedi_mybot.zip",
+      "sha256": "7653f3dff423c6940acffdecf0cdc63e9412c793d5eb89646b7ca97d29faaefc",
+      "source": "consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/mehedi_mybot.zip"
+    },
+    "neel": {
+      "kind": "copied_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/neel.zip",
+      "sha256": "32ce33e28aecf2f72a41c83efbbda4b36e415f1134ae32a96c0c8a611dce4a4f",
+      "source": "consult/artifacts/2026-05-28-public-saturation/opponent_zips/neel.zip"
+    },
+    "old_dominic": {
+      "kind": "copied_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/old_dominic.zip",
+      "sha256": "4d96cf393962e6c5ff45b8cf95ba45dbfb64153aaeeb75bd5ccdebc0649aa950",
+      "source": "consult/artifacts/2026-05-28-public-saturation/opponent_zips/dominic.zip"
+    },
+    "pav_skantbot7_6": {
+      "kind": "copied_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/pav_skantbot7_6.zip",
+      "sha256": "6d23983de7efaf14d370501a6d71cf6800c0a31e65d8b43964d4571b98113f7d",
+      "source": "consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/pav_skantbot7_6.zip"
+    },
+    "pav_skantbot7_9": {
+      "kind": "copied_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/pav_skantbot7_9.zip",
+      "sha256": "9dca305656b5f4c9d463dca8605ba0a176de8f4c096163eeb4ddacd4c2982562",
+      "source": "consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/pav_skantbot7_9.zip"
+    },
+    "ref_bot_2": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/ref_bot_2.zip",
+      "sha256": "66618e6dc9a91473d8a77a74a42695c05df6ac581d91cbe62d16c06e06c64f6a",
+      "source": "ext/fullhouse-engine/bots/ref_bot_2"
+    },
+    "shark": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/shark.zip",
+      "sha256": "deb905abf13851ecbedede93dafab104da8852d8e0d007b168887a3df9eb8cbd",
+      "source": "ext/fullhouse-engine/bots/shark"
+    },
+    "stoppedtime24_mybot": {
+      "kind": "copied_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/stoppedtime24_mybot.zip",
+      "sha256": "43b922347791c3a106259d1de5cc4ad5f7f314c062c20b9610d28e54b66b1ae7",
+      "source": "consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/stoppedtime24_mybot.zip"
+    },
+    "template": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/template.zip",
+      "sha256": "b3b0800db592d6a3742cc84274aac1f4e594f5ac2691d3fcdbcd6883b99a00cf",
+      "source": "ext/fullhouse-engine/bots/template"
+    },
+    "toby_master": {
+      "kind": "copied_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/toby_master.zip",
+      "sha256": "d09ad23f6f76a3f8e05cc57561af6a75bd554da73c67c476307689842f8b3508",
+      "source": "consult/artifacts/2026-05-29-public-drift-patch/opponent_zips/toby_master.zip"
+    },
+    "toby_master_clone1": {
+      "kind": "copied_clone_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/toby_master_clone1.zip",
+      "sha256": "d09ad23f6f76a3f8e05cc57561af6a75bd554da73c67c476307689842f8b3508",
+      "source": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/toby_master.zip"
+    },
+    "toby_master_clone2": {
+      "kind": "copied_clone_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/toby_master_clone2.zip",
+      "sha256": "d09ad23f6f76a3f8e05cc57561af6a75bd554da73c67c476307689842f8b3508",
+      "source": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/toby_master.zip"
+    },
+    "vladimir": {
+      "kind": "copied_zip",
+      "path": "consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_candidate/opponent_zips/vladimir.zip",
+      "sha256": "7264dbca80ebcbad755c19b9d84ab054658299090d582a5ca0fcd7fe30de7473",
+      "source": "consult/artifacts/2026-05-28-public-saturation/opponent_zips/vladimir.zip"
+    }
+  },
+  "run": {
+    "duplicate_toby_clones": "SUPPORTED_LOCAL_SIMULATION",
+    "hands_per_match": 400,
+    "seed_base": 142,
+    "seed_count": 100,
+    "seeds": [
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241
+    ],
+    "starting_stack": 10000,
+    "use_docker": false
+  },
+  "top_line_verdict": "TRAP_PREVALENCE_DANGEROUS"
+}

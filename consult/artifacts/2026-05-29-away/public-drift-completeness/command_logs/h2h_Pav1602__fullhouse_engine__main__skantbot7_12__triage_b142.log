@@ -1,0 +1,47 @@
+H2H triage_b142 2026-05-29T15:50:01Z
+repo=Pav1602/fullhouse-engine branch=main bot=bots/skantbot7.12/bot.py
+hero=/Users/farhad/Code/PokerBot/submissions/v_final.zip sha256=e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598
+opponent_zip=/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/opponent_zips/Pav1602__fullhouse_engine__main__skantbot7_12.zip sha256=9a7bcc3ef6e1b2313b048f409160549a1898b8dbd07a4105a1db164d5c4299f6
+target_scheduled_hands=20000 base=142 match_len=500 seed_stride=1000
+seed=142 o=0 hands= 500/500 hero_chip=   -7538 sched_bb100=  -15.08 actual_bb100=-15.075999999999999 hero_err=0 opp_err=0 dur=1.27s
+seed=142 o=1 hands= 500/500 hero_chip=   +5049 sched_bb100=  +10.10 actual_bb100=10.098 hero_err=0 opp_err=0 dur=1.29s
+seed=1142 o=0 hands= 500/500 hero_chip=   +3221 sched_bb100=   +6.44 actual_bb100=6.442 hero_err=0 opp_err=0 dur=1.30s
+seed=1142 o=1 hands= 500/500 hero_chip=   +4972 sched_bb100=   +9.94 actual_bb100=9.943999999999999 hero_err=0 opp_err=0 dur=1.29s
+seed=2142 o=0 hands= 500/500 hero_chip=   +4867 sched_bb100=   +9.73 actual_bb100=9.734 hero_err=0 opp_err=0 dur=1.18s
+seed=2142 o=1 hands=   7/500 hero_chip=  -10000 sched_bb100=  -20.00 actual_bb100=-1428.5714285714284 hero_err=0 opp_err=0 dur=0.18s
+seed=3142 o=0 hands= 500/500 hero_chip=   +6528 sched_bb100=  +13.06 actual_bb100=13.056000000000001 hero_err=0 opp_err=0 dur=1.30s
+seed=3142 o=1 hands= 500/500 hero_chip=   -5011 sched_bb100=  -10.02 actual_bb100=-10.022 hero_err=0 opp_err=0 dur=1.27s
+seed=4142 o=0 hands= 500/500 hero_chip=   +5851 sched_bb100=  +11.70 actual_bb100=11.702 hero_err=0 opp_err=0 dur=1.25s
+seed=4142 o=1 hands= 500/500 hero_chip=    -285 sched_bb100=   -0.57 actual_bb100=-0.5700000000000001 hero_err=0 opp_err=0 dur=1.23s
+seed=5142 o=0 hands= 233/500 hero_chip=  +10000 sched_bb100=  +20.00 actual_bb100=42.918454935622314 hero_err=0 opp_err=0 dur=0.69s
+seed=5142 o=1 hands= 500/500 hero_chip=   +5516 sched_bb100=  +11.03 actual_bb100=11.032 hero_err=0 opp_err=0 dur=1.28s
+seed=6142 o=0 hands= 500/500 hero_chip=   +1119 sched_bb100=   +2.24 actual_bb100=2.238 hero_err=0 opp_err=0 dur=1.31s
+seed=6142 o=1 hands= 500/500 hero_chip=    -462 sched_bb100=   -0.92 actual_bb100=-0.924 hero_err=0 opp_err=0 dur=1.31s
+seed=7142 o=0 hands= 500/500 hero_chip=   +3009 sched_bb100=   +6.02 actual_bb100=6.018 hero_err=0 opp_err=0 dur=1.28s
+seed=7142 o=1 hands= 500/500 hero_chip=   +1822 sched_bb100=   +3.64 actual_bb100=3.6439999999999997 hero_err=0 opp_err=0 dur=1.10s
+seed=8142 o=0 hands= 500/500 hero_chip=   +5146 sched_bb100=  +10.29 actual_bb100=10.292 hero_err=0 opp_err=0 dur=1.25s
+seed=8142 o=1 hands= 500/500 hero_chip=   -3180 sched_bb100=   -6.36 actual_bb100=-6.36 hero_err=0 opp_err=0 dur=1.27s
+seed=9142 o=0 hands= 500/500 hero_chip=   +1969 sched_bb100=   +3.94 actual_bb100=3.938 hero_err=0 opp_err=0 dur=1.25s
+seed=9142 o=1 hands= 500/500 hero_chip=   -6922 sched_bb100=  -13.84 actual_bb100=-13.844 hero_err=0 opp_err=0 dur=1.31s
+seed=10142 o=0 hands= 409/500 hero_chip=  -10000 sched_bb100=  -20.00 actual_bb100=-24.449877750611247 hero_err=0 opp_err=0 dur=1.11s
+seed=10142 o=1 hands=  82/500 hero_chip=  +10000 sched_bb100=  +20.00 actual_bb100=121.95121951219512 hero_err=0 opp_err=0 dur=0.30s
+seed=11142 o=0 hands= 500/500 hero_chip=   +1053 sched_bb100=   +2.11 actual_bb100=2.106 hero_err=0 opp_err=0 dur=1.25s
+seed=11142 o=1 hands=  34/500 hero_chip=  -10000 sched_bb100=  -20.00 actual_bb100=-294.11764705882354 hero_err=0 opp_err=0 dur=0.15s
+seed=12142 o=0 hands= 457/500 hero_chip=  +10000 sched_bb100=  +20.00 actual_bb100=21.88183807439825 hero_err=0 opp_err=0 dur=1.19s
+seed=12142 o=1 hands= 500/500 hero_chip=   -2632 sched_bb100=   -5.26 actual_bb100=-5.264 hero_err=0 opp_err=0 dur=1.28s
+seed=13142 o=0 hands= 500/500 hero_chip=   -6053 sched_bb100=  -12.11 actual_bb100=-12.106 hero_err=0 opp_err=0 dur=1.26s
+seed=13142 o=1 hands= 500/500 hero_chip=   +7366 sched_bb100=  +14.73 actual_bb100=14.732 hero_err=0 opp_err=0 dur=1.28s
+seed=14142 o=0 hands= 500/500 hero_chip=   +4253 sched_bb100=   +8.51 actual_bb100=8.506 hero_err=0 opp_err=0 dur=1.27s
+seed=14142 o=1 hands= 500/500 hero_chip=    -565 sched_bb100=   -1.13 actual_bb100=-1.1300000000000001 hero_err=0 opp_err=0 dur=1.28s
+seed=15142 o=0 hands= 500/500 hero_chip=   -3887 sched_bb100=   -7.77 actual_bb100=-7.773999999999999 hero_err=0 opp_err=0 dur=1.28s
+seed=15142 o=1 hands= 500/500 hero_chip=   -3939 sched_bb100=   -7.88 actual_bb100=-7.878 hero_err=0 opp_err=0 dur=1.29s
+seed=16142 o=0 hands= 411/500 hero_chip=  +10000 sched_bb100=  +20.00 actual_bb100=24.330900243309 hero_err=0 opp_err=0 dur=1.12s
+seed=16142 o=1 hands= 500/500 hero_chip=    +913 sched_bb100=   +1.83 actual_bb100=1.826 hero_err=0 opp_err=0 dur=1.27s
+seed=17142 o=0 hands= 500/500 hero_chip=   +1773 sched_bb100=   +3.55 actual_bb100=3.5460000000000003 hero_err=0 opp_err=0 dur=1.39s
+seed=17142 o=1 hands= 162/500 hero_chip=  +10000 sched_bb100=  +20.00 actual_bb100=61.72839506172839 hero_err=0 opp_err=0 dur=0.56s
+seed=18142 o=0 hands= 500/500 hero_chip=   -8675 sched_bb100=  -17.35 actual_bb100=-17.35 hero_err=0 opp_err=0 dur=1.21s
+seed=18142 o=1 hands= 500/500 hero_chip=   -6728 sched_bb100=  -13.46 actual_bb100=-13.456 hero_err=0 opp_err=0 dur=1.25s
+seed=19142 o=0 hands=  25/500 hero_chip=  -10000 sched_bb100=  -20.00 actual_bb100=-400.0 hero_err=0 opp_err=0 dur=0.14s
+seed=19142 o=1 hands=  26/500 hero_chip=  +10000 sched_bb100=  +20.00 actual_bb100=384.6153846153846 hero_err=0 opp_err=0 dur=0.28s
+
+SUMMARY {"actual_to_scheduled_ratio": 0.8423, "attempted_hands": 20000, "base": 142, "ci_half_width": 3.30785, "ci_high": 4.70755, "ci_low": -1.90815, "early_bust_matches": 10, "early_bust_rate": 0.25, "hands_played": 16846, "hero_chip_delta": 28550, "hero_errors": 0, "hero_p99_latency_s": 0.0010200000833719969, "log_path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/command_logs/h2h_Pav1602__fullhouse_engine__main__skantbot7_12__triage_b142.log", "match_count": 40, "mean_bb100_actual": 1.6947643357473583, "mean_bb100_scheduled": 1.4275, "opponent_errors": 0, "opponent_p99_latency_s": 0.005003624828532338, "phase": "triage_b142", "stdout_noise": {}, "stdout_noise_examples": {}, "target_scheduled_hands": 20000, "timeboxed": false}

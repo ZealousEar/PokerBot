@@ -1,0 +1,12 @@
+# label=audit_strategy_leakage
+# cwd=/Users/farhad/Code/PokerBot-gauntlet
+# started_utc=2026-05-28T02:21:48Z
+# command=/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python tools/audit_strategy_leakage.py --zip submissions/v_final.zip
+
+# zip: submissions/v_final.zip
+# zip sha256: e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598
+audit_strategy_leakage PASS
+
+# finished_utc=2026-05-28T02:21:49Z
+# returncode=0
+# duration_s=1.011

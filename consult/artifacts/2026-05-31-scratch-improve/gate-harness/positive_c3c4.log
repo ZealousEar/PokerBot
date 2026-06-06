@@ -1,0 +1,37 @@
+[gate] candidate=consult/artifacts/2026-05-31-scratch-improve/gate-harness/scaffold_candidate.zip sha=8266cb49fd6c run_dir=consult/artifacts/2026-05-31-scratch-improve/gate-harness/runs/positive_control_scaffold_40seed
+[gate] Stage 1 SKIPPED (--skip-stage1)
+[gate] Stage 2 SKIPPED (--skip-stage2)
+[gate:candidate] hero=consult/artifacts/2026-05-31-scratch-improve/gate-harness/scaffold_candidate.zip comps=C3,C4 hands=400 seeds=142..181 jobs=1 pending=80 resumed=80
+[gate:candidate] C3 seed=142 hands=400/400 delta=-10000 bust=1 hero_err=0/509 p99_ms=0.590 dur=39.17s
+[gate:candidate] C3 seed=143 hands=400/400 delta=-6000 bust=0 hero_err=0/598 p99_ms=0.335 dur=1.94s
+[gate:candidate] C3 seed=144 hands=400/400 delta=-10000 bust=1 hero_err=0/518 p99_ms=0.585 dur=18.91s
+[gate:candidate] C3 seed=145 hands=400/400 delta=-4900 bust=0 hero_err=0/593 p99_ms=0.371 dur=7.75s
+[gate:candidate] C3 seed=146 hands=400/400 delta=-5250 bust=0 hero_err=0/591 p99_ms=0.367 dur=23.62s
+[gate:candidate] C3 seed=147 hands=400/400 delta=-10000 bust=1 hero_err=0/516 p99_ms=0.356 dur=11.21s
+[gate:candidate] C3 seed=148 hands=400/400 delta=-10000 bust=1 hero_err=0/512 p99_ms=0.391 dur=17.77s
+[gate:candidate] C3 seed=149 hands=400/400 delta=-4900 bust=0 hero_err=0/609 p99_ms=0.341 dur=11.73s
+[gate:candidate] C3 seed=150 hands=400/400 delta=-7300 bust=0 hero_err=0/632 p99_ms=0.352 dur=8.44s
+[gate:candidate] C3 seed=151 hands=400/400 delta=-10000 bust=1 hero_err=0/492 p99_ms=0.337 dur=7.54s
+[gate:candidate] C3 seed=152 hands=400/400 delta=-10000 bust=1 hero_err=0/522 p99_ms=0.365 dur=25.99s
+[gate:candidate] C3 seed=153 hands=400/400 delta=-7753 bust=0 hero_err=0/564 p99_ms=0.362 dur=19.6s
+[gate:candidate] C3 seed=154 hands=400/400 delta=-5400 bust=0 hero_err=0/603 p99_ms=0.717 dur=4.44s
+[gate:candidate] C3 seed=155 hands=400/400 delta=-10000 bust=1 hero_err=0/411 p99_ms=0.964 dur=64.27s
+[gate:candidate] C3 seed=156 hands=400/400 delta=-9900 bust=0 hero_err=0/524 p99_ms=0.819 dur=41.81s
+[gate:candidate] C3 seed=157 hands=400/400 delta=-6600 bust=0 hero_err=0/599 p99_ms=0.850 dur=7.96s
+[gate:candidate] C3 seed=158 hands=400/400 delta=-10000 bust=1 hero_err=0/514 p99_ms=0.360 dur=3.81s
+[gate:candidate] C3 seed=159 hands=400/400 delta=-9284 bust=0 hero_err=0/431 p99_ms=0.389 dur=63.7s
+[gate:candidate] C3 seed=160 hands=400/400 delta=-10000 bust=1 hero_err=0/492 p99_ms=0.371 dur=4.7s
+[gate:candidate] C3 seed=161 hands=400/400 delta=-10000 bust=1 hero_err=0/497 p99_ms=0.623 dur=89.57s
+[gate:candidate] C3 seed=162 hands=400/400 delta=-5450 bust=0 hero_err=0/605 p99_ms=1.460 dur=5.92s
+[gate:candidate] C3 seed=163 hands=400/400 delta=-4950 bust=0 hero_err=0/572 p99_ms=0.367 dur=14.31s
+[gate:candidate] C3 seed=164 hands=400/400 delta=-6150 bust=0 hero_err=0/633 p99_ms=0.711 dur=3.61s
+[gate:candidate] C3 seed=165 hands=400/400 delta=-7400 bust=0 hero_err=0/690 p99_ms=0.340 dur=2.26s
+[gate:candidate] C3 seed=166 hands=400/400 delta=-10000 bust=1 hero_err=0/469 p99_ms=0.399 dur=8.27s
+[gate:candidate] C3 seed=167 hands=400/400 delta=-5750 bust=0 hero_err=0/585 p99_ms=0.358 dur=23.49s
+[gate:candidate] C3 seed=168 hands=400/400 delta=-5650 bust=0 hero_err=0/596 p99_ms=0.363 dur=8.89s
+[gate:candidate] C3 seed=169 hands=400/400 delta=-5950 bust=0 hero_err=0/596 p99_ms=0.360 dur=3.62s
+[gate:candidate] C3 seed=170 hands=400/400 delta=-9500 bust=0 hero_err=0/492 p99_ms=1.151 dur=106.79s
+[gate:candidate] C3 seed=171 hands=319/400 delta=-10000 bust=1 hero_err=0/507 p99_ms=0.800 dur=17.43s
+[gate:candidate] C3 seed=172 hands=400/400 delta=-10000 bust=1 hero_err=0/609 p99_ms=0.742 dur=3.79s
+[gate:candidate] C3 seed=173 hands=400/400 delta=-9150 bust=0 hero_err=0/495 p99_ms=0.394 dur=95.34s
+[gate:candidate] C3 seed=174 hands=365/400 delta=-10000 bust=1 hero_err=0/503 p99_ms=0.583 dur=37.3s

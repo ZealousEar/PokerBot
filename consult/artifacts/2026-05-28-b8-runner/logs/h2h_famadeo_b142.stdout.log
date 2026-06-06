@@ -1,0 +1,18 @@
+H2H: v_final (a) vs famadeo (b)
+  bot-a: /Users/farhad/Code/PokerBot/submissions/v_final.zip
+  bot-b: /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-28-public-saturation/opponent_zips/famadeo.zip
+  schedule: 1 seeds × 2 orientations × 100 hands = up to 200 hands
+
+  seed=142 o=0 hands= 45 chip_a= +10000 bb_a= +100.0 err={'a': 0, 'b': 0} dur=2.34s
+  seed=142 o=1 hands= 46 chip_a= -10000 bb_a= -100.0 err={'b': 0, 'a': 0} dur=2.12s
+
+======================================================================
+H2H summary: v_final (a) vs famadeo (b)
+  matches: 2
+  hands played total: 91
+  v_final per-match BB delta: +0.00 (95% CI [-100.00, +100.00])
+  v_final bb/100: +0.00
+  v_final errors: 0
+  famadeo errors: 0
+  verdict: v_final vs famadeo INDETERMINATE (CI crosses 0)
+======================================================================

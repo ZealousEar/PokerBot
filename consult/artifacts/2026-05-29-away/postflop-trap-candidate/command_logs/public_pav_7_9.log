@@ -1,0 +1,21 @@
+public_pav_7_9_b142_k0_s142_o0 actual=500/500 hero_chip=-7466 scheduled_bb100=-14.93 actual_bb100=-14.93 hero_err=0 opp_err=0
+public_pav_7_9_b142_k0_s142_o1 actual=500/500 hero_chip=+2487 scheduled_bb100=+4.97 actual_bb100=+4.97 hero_err=0 opp_err=0
+public_pav_7_9_b142_k1_s1142_o0 actual=500/500 hero_chip=+5619 scheduled_bb100=+11.24 actual_bb100=+11.24 hero_err=0 opp_err=0
+public_pav_7_9_b142_k1_s1142_o1 actual=500/500 hero_chip=-3226 scheduled_bb100=-6.45 actual_bb100=-6.45 hero_err=0 opp_err=0
+public_pav_7_9_b142_k2_s2142_o0 actual=500/500 hero_chip=+4100 scheduled_bb100=+8.20 actual_bb100=+8.20 hero_err=0 opp_err=0
+public_pav_7_9_b142_k2_s2142_o1 actual=7/500 hero_chip=-10000 scheduled_bb100=-20.00 actual_bb100=-1428.57 hero_err=0 opp_err=0
+public_pav_7_9_b142_k3_s3142_o0 actual=500/500 hero_chip=+978 scheduled_bb100=+1.96 actual_bb100=+1.96 hero_err=0 opp_err=0
+public_pav_7_9_b142_k3_s3142_o1 actual=500/500 hero_chip=-5741 scheduled_bb100=-11.48 actual_bb100=-11.48 hero_err=0 opp_err=0
+public_pav_7_9_b142_k4_s4142_o0 actual=500/500 hero_chip=+2214 scheduled_bb100=+4.43 actual_bb100=+4.43 hero_err=0 opp_err=0
+public_pav_7_9_b142_k4_s4142_o1 actual=500/500 hero_chip=-999 scheduled_bb100=-2.00 actual_bb100=-2.00 hero_err=0 opp_err=0
+public_pav_7_9_b142_k5_s5142_o0 actual=500/500 hero_chip=+5641 scheduled_bb100=+11.28 actual_bb100=+11.28 hero_err=0 opp_err=0
+public_pav_7_9_b142_k5_s5142_o1 actual=500/500 hero_chip=+2106 scheduled_bb100=+4.21 actual_bb100=+4.21 hero_err=0 opp_err=0
+public_pav_7_9_b142_k6_s6142_o0 actual=500/500 hero_chip=+758 scheduled_bb100=+1.52 actual_bb100=+1.52 hero_err=0 opp_err=0
+public_pav_7_9_b142_k6_s6142_o1 actual=500/500 hero_chip=+1735 scheduled_bb100=+3.47 actual_bb100=+3.47 hero_err=0 opp_err=0
+public_pav_7_9_b142_k7_s7142_o0 actual=500/500 hero_chip=-2706 scheduled_bb100=-5.41 actual_bb100=-5.41 hero_err=0 opp_err=0
+public_pav_7_9_b142_k7_s7142_o1 actual=500/500 hero_chip=-3777 scheduled_bb100=-7.55 actual_bb100=-7.55 hero_err=0 opp_err=0
+public_pav_7_9_b142_k8_s8142_o0 actual=500/500 hero_chip=+1144 scheduled_bb100=+2.29 actual_bb100=+2.29 hero_err=0 opp_err=0
+public_pav_7_9_b142_k8_s8142_o1 actual=500/500 hero_chip=-7447 scheduled_bb100=-14.89 actual_bb100=-14.89 hero_err=0 opp_err=0
+public_pav_7_9_b142_k9_s9142_o0 actual=500/500 hero_chip=+675 scheduled_bb100=+1.35 actual_bb100=+1.35 hero_err=0 opp_err=0
+public_pav_7_9_b142_k9_s9142_o1 actual=500/500 hero_chip=-5663 scheduled_bb100=-11.33 actual_bb100=-11.33 hero_err=0 opp_err=0
+SUMMARY {"actual_hands": 9507, "base": 142, "hero_actual_bb100": -2.058272851583044, "hero_chip_delta": -19568, "hero_errors": 0, "hero_scheduled_bb100": -1.9568, "hero_scheduled_ci_high": 1.1908, "hero_scheduled_ci_low": -4.6761, "hero_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/postflop-trap-candidate/zips/v_postflop_trap_candidate.zip", "match_len": 500, "name": "public_pav_7_9", "opponent_errors": 0, "opponent_zip": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/pav_skantbot7_9.zip", "scheduled_hands": 10000, "seed_stride": 1000}

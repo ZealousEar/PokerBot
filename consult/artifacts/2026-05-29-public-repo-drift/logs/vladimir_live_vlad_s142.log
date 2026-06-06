@@ -1,0 +1,11 @@
+PUBLIC REPO DRIFT H2H 2026-05-29T00:34:13Z
+name=vladimir_live_vlad repo=vladimirfilip/fullhouse-engine head_sha=f8b8723ce324685429a5098d6b76586005010210 bot_path=bots/vlad/bot.py
+hero=/Users/farhad/Code/PokerBot/submissions/v_final.zip sha256=e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598
+opponent_src=consult/artifacts/2026-05-29-public-repo-drift/_clones/vladimirfilip_fullhouse-engine/bots/vlad
+opponent_zip=/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/vladimir_live_vlad.zip sha256=b552afa121df6d7ef6ef693e4f4ed0f6a9e8ffb8d484b1e1449f64b15e975a60
+target_scheduled_hands=20000 match_len=500 seed_stride=1000
+seed schedule: seed = base + k * seed_stride; each seed runs two seat orientations
+
+seed=142 o=0 hands=  41/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -243.90 hero_err=0 opp_err=0 dur=33.26s
+seed=142 o=1 hands= 197/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=  -50.76 hero_err=0 opp_err=0 dur=127.00s
+seed=1142 o=0 hands=  32/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +312.50 hero_err=0 opp_err=0 dur=28.74s

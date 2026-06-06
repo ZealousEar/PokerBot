@@ -1,0 +1,211 @@
+PUBLIC SATURATION 2026-05-28T01:09:02Z
+opponent=vladimir base=142
+hero=/Users/farhad/Code/PokerBot/submissions/v_final.zip sha256=e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598
+opponent_zip=/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-28-public-saturation/opponent_zips/vladimir.zip sha256=7264dbca80ebcbad755c19b9d84ab054658299090d582a5ca0fcd7fe30de7473
+claimed_zip=/Users/farhad/Code/PokerBot/ext/public-bots/vladimir/bots/vlad.zip root_bot_py=False
+target_scheduled_hands=100000 match_len=500 seed_stride=1000
+seed schedule: seed = base + k * seed_stride; each seed runs two seat orientations
+
+seed=142 o=0 hands=  27/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -370.37 hero_err=0 opp_err=0 dur=17.00s
+seed=142 o=1 hands= 102/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=  +98.04 hero_err=0 opp_err=0 dur=40.10s
+seed=1142 o=0 hands=   7/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-1428.57 hero_err=0 opp_err=0 dur=3.48s
+seed=1142 o=1 hands=   2/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-5000.00 hero_err=0 opp_err=0 dur=2.56s
+seed=2142 o=0 hands=  25/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +400.00 hero_err=0 opp_err=0 dur=14.28s
+seed=2142 o=1 hands=  20/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -500.00 hero_err=0 opp_err=0 dur=17.76s
+seed=3142 o=0 hands=  27/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +370.37 hero_err=0 opp_err=0 dur=11.14s
+seed=3142 o=1 hands=  18/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +555.56 hero_err=0 opp_err=0 dur=7.67s
+seed=4142 o=0 hands=  21/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +476.19 hero_err=0 opp_err=0 dur=12.45s
+seed=4142 o=1 hands=   5/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-2000.00 hero_err=0 opp_err=0 dur=6.17s
+seed=5142 o=0 hands=  78/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +128.21 hero_err=0 opp_err=0 dur=13.84s
+seed=5142 o=1 hands=  38/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +263.16 hero_err=0 opp_err=0 dur=6.50s
+seed=6142 o=0 hands=  18/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +555.56 hero_err=0 opp_err=0 dur=5.65s
+seed=6142 o=1 hands=   4/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+2500.00 hero_err=0 opp_err=0 dur=5.69s
+seed=7142 o=0 hands=  36/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +277.78 hero_err=0 opp_err=0 dur=16.49s
+seed=7142 o=1 hands=  47/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -212.77 hero_err=0 opp_err=0 dur=16.20s
+seed=8142 o=0 hands=  34/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +294.12 hero_err=0 opp_err=0 dur=7.60s
+seed=8142 o=1 hands=  16/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -625.00 hero_err=0 opp_err=0 dur=2.40s
+seed=9142 o=0 hands=   7/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+1428.57 hero_err=0 opp_err=0 dur=2.68s
+seed=9142 o=1 hands=  18/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +555.56 hero_err=0 opp_err=0 dur=6.85s
+seed=10142 o=0 hands=  50/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -200.00 hero_err=0 opp_err=0 dur=17.26s
+seed=10142 o=1 hands=  12/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +833.33 hero_err=0 opp_err=0 dur=5.07s
+seed=11142 o=0 hands=   7/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-1428.57 hero_err=0 opp_err=0 dur=3.78s
+seed=11142 o=1 hands=   4/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-2500.00 hero_err=0 opp_err=0 dur=3.35s
+seed=12142 o=0 hands=  25/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +400.00 hero_err=0 opp_err=0 dur=2.66s
+seed=12142 o=1 hands=   3/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+3333.33 hero_err=0 opp_err=0 dur=1.12s
+seed=13142 o=0 hands=  27/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +370.37 hero_err=0 opp_err=0 dur=5.58s
+seed=13142 o=1 hands=  15/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +666.67 hero_err=0 opp_err=0 dur=3.69s
+seed=14142 o=0 hands=   4/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-2500.00 hero_err=0 opp_err=0 dur=1.94s
+seed=14142 o=1 hands=  12/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +833.33 hero_err=0 opp_err=0 dur=3.12s
+seed=15142 o=0 hands=  50/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +200.00 hero_err=0 opp_err=0 dur=13.37s
+seed=15142 o=1 hands=  15/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -666.67 hero_err=0 opp_err=0 dur=7.08s
+seed=16142 o=0 hands=  14/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -714.29 hero_err=0 opp_err=0 dur=8.56s
+seed=16142 o=1 hands=  17/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +588.24 hero_err=0 opp_err=0 dur=7.06s
+seed=17142 o=0 hands=  11/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +909.09 hero_err=0 opp_err=0 dur=2.72s
+seed=17142 o=1 hands=  41/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -243.90 hero_err=0 opp_err=0 dur=13.47s
+seed=18142 o=0 hands=  54/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -185.19 hero_err=0 opp_err=0 dur=17.91s
+seed=18142 o=1 hands=   4/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+2500.00 hero_err=0 opp_err=0 dur=2.43s
+seed=19142 o=0 hands=  43/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +232.56 hero_err=0 opp_err=0 dur=11.96s
+seed=19142 o=1 hands=   6/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-1666.67 hero_err=0 opp_err=0 dur=2.25s
+seed=20142 o=0 hands=  37/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +270.27 hero_err=0 opp_err=0 dur=14.21s
+seed=20142 o=1 hands=  18/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +555.56 hero_err=0 opp_err=0 dur=7.14s
+seed=21142 o=0 hands=  53/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +188.68 hero_err=0 opp_err=0 dur=12.03s
+seed=21142 o=1 hands=   7/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-1428.57 hero_err=0 opp_err=0 dur=6.24s
+seed=22142 o=0 hands=  14/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +714.29 hero_err=0 opp_err=0 dur=8.10s
+seed=22142 o=1 hands=  19/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -526.32 hero_err=0 opp_err=0 dur=5.15s
+seed=23142 o=0 hands=  14/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +714.29 hero_err=0 opp_err=0 dur=5.50s
+seed=23142 o=1 hands=   6/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-1666.67 hero_err=0 opp_err=0 dur=1.47s
+seed=24142 o=0 hands=  18/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -555.56 hero_err=0 opp_err=0 dur=4.12s
+seed=24142 o=1 hands=  73/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +136.99 hero_err=0 opp_err=0 dur=11.79s
+seed=25142 o=0 hands=   7/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+1428.57 hero_err=0 opp_err=0 dur=2.26s
+seed=25142 o=1 hands=   5/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-2000.00 hero_err=0 opp_err=0 dur=1.78s
+seed=26142 o=0 hands=  50/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +200.00 hero_err=0 opp_err=0 dur=36.16s
+seed=26142 o=1 hands=  40/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +250.00 hero_err=0 opp_err=0 dur=18.25s
+seed=27142 o=0 hands=  21/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +476.19 hero_err=0 opp_err=0 dur=15.52s
+seed=27142 o=1 hands=  22/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -454.55 hero_err=0 opp_err=0 dur=10.13s
+seed=28142 o=0 hands=  25/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +400.00 hero_err=0 opp_err=0 dur=14.59s
+seed=28142 o=1 hands=  54/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +185.19 hero_err=0 opp_err=0 dur=23.07s
+seed=29142 o=0 hands=  37/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +270.27 hero_err=0 opp_err=0 dur=25.92s
+seed=29142 o=1 hands=  21/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +476.19 hero_err=0 opp_err=0 dur=9.96s
+seed=30142 o=0 hands=  18/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -555.56 hero_err=0 opp_err=0 dur=10.82s
+seed=30142 o=1 hands=  38/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +263.16 hero_err=0 opp_err=0 dur=20.09s
+seed=31142 o=0 hands=   3/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-3333.33 hero_err=0 opp_err=0 dur=3.02s
+seed=31142 o=1 hands=  15/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +666.67 hero_err=0 opp_err=0 dur=7.93s
+seed=32142 o=0 hands=  37/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -270.27 hero_err=0 opp_err=0 dur=23.63s
+seed=32142 o=1 hands=  13/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -769.23 hero_err=0 opp_err=0 dur=8.79s
+seed=33142 o=0 hands= 109/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=  +91.74 hero_err=0 opp_err=0 dur=42.92s
+seed=33142 o=1 hands=   4/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-2500.00 hero_err=0 opp_err=0 dur=5.27s
+seed=34142 o=0 hands=  39/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +256.41 hero_err=0 opp_err=0 dur=31.54s
+seed=34142 o=1 hands=   2/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-5000.00 hero_err=0 opp_err=0 dur=3.37s
+seed=35142 o=0 hands= 105/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=  -95.24 hero_err=0 opp_err=0 dur=49.54s
+seed=35142 o=1 hands=  24/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +416.67 hero_err=0 opp_err=0 dur=10.01s
+seed=36142 o=0 hands=  32/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +312.50 hero_err=0 opp_err=0 dur=18.05s
+seed=36142 o=1 hands=   4/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+2500.00 hero_err=0 opp_err=0 dur=3.88s
+seed=37142 o=0 hands=  13/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +769.23 hero_err=0 opp_err=0 dur=9.43s
+seed=37142 o=1 hands=  53/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -188.68 hero_err=0 opp_err=0 dur=30.77s
+seed=38142 o=0 hands=   9/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-1111.11 hero_err=0 opp_err=0 dur=10.10s
+seed=38142 o=1 hands=  13/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +769.23 hero_err=0 opp_err=0 dur=8.39s
+seed=39142 o=0 hands=  21/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +476.19 hero_err=0 opp_err=0 dur=11.17s
+seed=39142 o=1 hands=  10/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-1000.00 hero_err=0 opp_err=0 dur=5.39s
+seed=40142 o=0 hands=  85/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -117.65 hero_err=0 opp_err=0 dur=50.98s
+seed=40142 o=1 hands=  34/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +294.12 hero_err=0 opp_err=0 dur=15.39s
+seed=41142 o=0 hands=  48/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +208.33 hero_err=0 opp_err=0 dur=25.62s
+seed=41142 o=1 hands=   5/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-2000.00 hero_err=0 opp_err=0 dur=4.87s
+seed=42142 o=0 hands=  47/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -212.77 hero_err=0 opp_err=0 dur=32.06s
+seed=42142 o=1 hands=   5/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-2000.00 hero_err=0 opp_err=0 dur=3.88s
+seed=43142 o=0 hands=  42/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +238.10 hero_err=0 opp_err=0 dur=24.78s
+seed=43142 o=1 hands=  18/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +555.56 hero_err=0 opp_err=0 dur=10.15s
+seed=44142 o=0 hands=  21/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -476.19 hero_err=0 opp_err=0 dur=16.78s
+seed=44142 o=1 hands=   7/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+1428.57 hero_err=0 opp_err=0 dur=6.57s
+seed=45142 o=0 hands=  21/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -476.19 hero_err=0 opp_err=0 dur=17.90s
+seed=45142 o=1 hands=   9/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+1111.11 hero_err=0 opp_err=0 dur=7.30s
+seed=46142 o=0 hands=  49/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +204.08 hero_err=0 opp_err=0 dur=23.29s
+seed=46142 o=1 hands=  28/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +357.14 hero_err=0 opp_err=0 dur=16.84s
+seed=47142 o=0 hands=  48/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +208.33 hero_err=0 opp_err=0 dur=27.87s
+seed=47142 o=1 hands=  25/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +400.00 hero_err=0 opp_err=0 dur=13.51s
+seed=48142 o=0 hands=  49/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +204.08 hero_err=0 opp_err=0 dur=26.54s
+seed=48142 o=1 hands=  24/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +416.67 hero_err=0 opp_err=0 dur=11.09s
+seed=49142 o=0 hands=  19/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -526.32 hero_err=0 opp_err=0 dur=12.06s
+seed=49142 o=1 hands=  13/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +769.23 hero_err=0 opp_err=0 dur=8.96s
+seed=50142 o=0 hands=  56/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +178.57 hero_err=0 opp_err=0 dur=30.09s
+seed=50142 o=1 hands=   6/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+1666.67 hero_err=0 opp_err=0 dur=3.83s
+seed=51142 o=0 hands=  30/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +333.33 hero_err=0 opp_err=0 dur=14.16s
+seed=51142 o=1 hands=   4/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-2500.00 hero_err=0 opp_err=0 dur=4.34s
+seed=52142 o=0 hands=  20/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +500.00 hero_err=0 opp_err=0 dur=12.55s
+seed=52142 o=1 hands=  21/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +476.19 hero_err=0 opp_err=0 dur=12.59s
+seed=53142 o=0 hands=  64/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +156.25 hero_err=0 opp_err=0 dur=28.06s
+seed=53142 o=1 hands=  18/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +555.56 hero_err=0 opp_err=0 dur=10.66s
+seed=54142 o=0 hands=   8/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+1250.00 hero_err=0 opp_err=0 dur=5.20s
+seed=54142 o=1 hands=   2/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-5000.00 hero_err=0 opp_err=0 dur=3.13s
+seed=55142 o=0 hands=  50/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +200.00 hero_err=0 opp_err=0 dur=28.14s
+seed=55142 o=1 hands=   2/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-5000.00 hero_err=0 opp_err=0 dur=2.92s
+seed=56142 o=0 hands=   2/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-5000.00 hero_err=0 opp_err=0 dur=2.75s
+seed=56142 o=1 hands=   9/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+1111.11 hero_err=0 opp_err=0 dur=6.29s
+seed=57142 o=0 hands=  10/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+1000.00 hero_err=0 opp_err=0 dur=8.46s
+seed=57142 o=1 hands=  20/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -500.00 hero_err=0 opp_err=0 dur=11.27s
+seed=58142 o=0 hands=  15/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +666.67 hero_err=0 opp_err=0 dur=8.88s
+seed=58142 o=1 hands=  14/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -714.29 hero_err=0 opp_err=0 dur=8.19s
+seed=59142 o=0 hands=  24/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +416.67 hero_err=0 opp_err=0 dur=15.17s
+seed=59142 o=1 hands=   1/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+10000.00 hero_err=0 opp_err=0 dur=4.13s
+seed=60142 o=0 hands=  21/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -476.19 hero_err=0 opp_err=0 dur=11.31s
+seed=60142 o=1 hands=  80/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +125.00 hero_err=0 opp_err=0 dur=42.70s
+seed=61142 o=0 hands=  37/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +270.27 hero_err=0 opp_err=0 dur=17.57s
+seed=61142 o=1 hands=  18/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -555.56 hero_err=0 opp_err=0 dur=7.20s
+seed=62142 o=0 hands=  11/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +909.09 hero_err=0 opp_err=0 dur=7.72s
+seed=62142 o=1 hands=  18/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -555.56 hero_err=0 opp_err=0 dur=9.31s
+seed=63142 o=0 hands=  83/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -120.48 hero_err=0 opp_err=0 dur=38.65s
+seed=63142 o=1 hands=   4/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-2500.00 hero_err=0 opp_err=0 dur=3.62s
+seed=64142 o=0 hands=  21/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -476.19 hero_err=0 opp_err=0 dur=11.93s
+seed=64142 o=1 hands=  30/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +333.33 hero_err=0 opp_err=0 dur=16.79s
+seed=65142 o=0 hands=   4/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+2500.00 hero_err=0 opp_err=0 dur=2.90s
+seed=65142 o=1 hands=  17/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +588.24 hero_err=0 opp_err=0 dur=8.66s
+seed=66142 o=0 hands=  29/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +344.83 hero_err=0 opp_err=0 dur=13.70s
+seed=66142 o=1 hands=  13/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -769.23 hero_err=0 opp_err=0 dur=5.97s
+seed=67142 o=0 hands=  14/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +714.29 hero_err=0 opp_err=0 dur=9.34s
+seed=67142 o=1 hands=  18/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +555.56 hero_err=0 opp_err=0 dur=7.93s
+seed=68142 o=0 hands=  78/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -128.21 hero_err=0 opp_err=0 dur=38.85s
+seed=68142 o=1 hands=  28/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +357.14 hero_err=0 opp_err=0 dur=12.03s
+seed=69142 o=0 hands=  38/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +263.16 hero_err=0 opp_err=0 dur=23.47s
+seed=69142 o=1 hands=  36/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +277.78 hero_err=0 opp_err=0 dur=14.74s
+seed=70142 o=0 hands=  18/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +555.56 hero_err=0 opp_err=0 dur=11.75s
+seed=70142 o=1 hands=  13/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -769.23 hero_err=0 opp_err=0 dur=6.53s
+seed=71142 o=0 hands=  21/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +476.19 hero_err=0 opp_err=0 dur=12.83s
+seed=71142 o=1 hands=   5/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+2000.00 hero_err=0 opp_err=0 dur=3.66s
+seed=72142 o=0 hands=  33/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -303.03 hero_err=0 opp_err=0 dur=22.32s
+seed=72142 o=1 hands=  36/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +277.78 hero_err=0 opp_err=0 dur=16.27s
+seed=73142 o=0 hands=  14/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -714.29 hero_err=0 opp_err=0 dur=9.38s
+seed=73142 o=1 hands=  27/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +370.37 hero_err=0 opp_err=0 dur=14.15s
+seed=74142 o=0 hands=  25/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -400.00 hero_err=0 opp_err=0 dur=19.64s
+seed=74142 o=1 hands=  12/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +833.33 hero_err=0 opp_err=0 dur=6.88s
+seed=75142 o=0 hands=  18/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +555.56 hero_err=0 opp_err=0 dur=9.12s
+seed=75142 o=1 hands=   6/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-1666.67 hero_err=0 opp_err=0 dur=4.52s
+seed=76142 o=0 hands=  44/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +227.27 hero_err=0 opp_err=0 dur=14.62s
+seed=76142 o=1 hands=  42/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +238.10 hero_err=0 opp_err=0 dur=21.57s
+seed=77142 o=0 hands=  23/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +434.78 hero_err=0 opp_err=0 dur=11.75s
+seed=77142 o=1 hands=  15/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +666.67 hero_err=0 opp_err=0 dur=7.72s
+seed=78142 o=0 hands=  21/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +476.19 hero_err=0 opp_err=0 dur=11.40s
+seed=78142 o=1 hands=  46/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +217.39 hero_err=0 opp_err=0 dur=21.72s
+seed=79142 o=0 hands=  29/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +344.83 hero_err=0 opp_err=0 dur=15.16s
+seed=79142 o=1 hands=   5/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-2000.00 hero_err=0 opp_err=0 dur=3.59s
+seed=80142 o=0 hands=  42/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +238.10 hero_err=0 opp_err=0 dur=19.65s
+seed=80142 o=1 hands=   4/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-2500.00 hero_err=0 opp_err=0 dur=3.38s
+seed=81142 o=0 hands=  58/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -172.41 hero_err=0 opp_err=0 dur=44.78s
+seed=81142 o=1 hands=  27/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -370.37 hero_err=0 opp_err=0 dur=13.13s
+seed=82142 o=0 hands=  37/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +270.27 hero_err=0 opp_err=0 dur=20.14s
+seed=82142 o=1 hands=  43/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +232.56 hero_err=0 opp_err=0 dur=18.74s
+seed=83142 o=0 hands=  34/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +294.12 hero_err=0 opp_err=0 dur=19.20s
+seed=83142 o=1 hands=  42/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -238.10 hero_err=0 opp_err=0 dur=22.70s
+seed=84142 o=0 hands=  18/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +555.56 hero_err=0 opp_err=0 dur=10.03s
+seed=84142 o=1 hands=   8/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-1250.00 hero_err=0 opp_err=0 dur=5.26s
+seed=85142 o=0 hands=   3/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-3333.33 hero_err=0 opp_err=0 dur=3.31s
+seed=85142 o=1 hands=  12/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +833.33 hero_err=0 opp_err=0 dur=8.54s
+seed=86142 o=0 hands=  17/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -588.24 hero_err=0 opp_err=0 dur=8.35s
+seed=86142 o=1 hands=   2/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-5000.00 hero_err=0 opp_err=0 dur=2.92s
+seed=87142 o=0 hands=  84/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +119.05 hero_err=0 opp_err=0 dur=37.73s
+seed=87142 o=1 hands=   2/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-5000.00 hero_err=0 opp_err=0 dur=1.65s
+seed=88142 o=0 hands=   7/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-1428.57 hero_err=0 opp_err=0 dur=4.07s
+seed=88142 o=1 hands=  25/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +400.00 hero_err=0 opp_err=0 dur=9.68s
+seed=89142 o=0 hands=  13/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +769.23 hero_err=0 opp_err=0 dur=5.44s
+seed=89142 o=1 hands=   5/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+2000.00 hero_err=0 opp_err=0 dur=3.29s
+seed=90142 o=0 hands=   7/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-1428.57 hero_err=0 opp_err=0 dur=3.52s
+seed=90142 o=1 hands=   3/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-3333.33 hero_err=0 opp_err=0 dur=2.60s
+seed=91142 o=0 hands=  36/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +277.78 hero_err=0 opp_err=0 dur=11.52s
+seed=91142 o=1 hands=  30/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +333.33 hero_err=0 opp_err=0 dur=9.49s
+seed=92142 o=0 hands=  19/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -526.32 hero_err=0 opp_err=0 dur=6.31s
+seed=92142 o=1 hands=   2/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-5000.00 hero_err=0 opp_err=0 dur=1.23s
+seed=93142 o=0 hands=  15/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +666.67 hero_err=0 opp_err=0 dur=2.91s
+seed=93142 o=1 hands=  48/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +208.33 hero_err=0 opp_err=0 dur=7.83s
+seed=94142 o=0 hands=  57/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +175.44 hero_err=0 opp_err=0 dur=9.79s
+seed=94142 o=1 hands=  20/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -500.00 hero_err=0 opp_err=0 dur=5.34s
+seed=95142 o=0 hands=  31/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +322.58 hero_err=0 opp_err=0 dur=10.74s
+seed=95142 o=1 hands=  24/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +416.67 hero_err=0 opp_err=0 dur=6.03s
+seed=96142 o=0 hands=   4/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+2500.00 hero_err=0 opp_err=0 dur=1.14s
+seed=96142 o=1 hands= 119/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=  +84.03 hero_err=0 opp_err=0 dur=13.10s
+seed=97142 o=0 hands=  21/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +476.19 hero_err=0 opp_err=0 dur=2.60s
+seed=97142 o=1 hands=  12/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +833.33 hero_err=0 opp_err=0 dur=1.25s
+seed=98142 o=0 hands=  37/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual= +270.27 hero_err=0 opp_err=0 dur=3.40s
+seed=98142 o=1 hands=   7/500 hero_chip= +10000 hero_bb100_sched=  +20.00 hero_bb100_actual=+1428.57 hero_err=0 opp_err=0 dur=0.97s
+seed=99142 o=0 hands=  23/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual= -434.78 hero_err=0 opp_err=0 dur=3.72s
+seed=99142 o=1 hands=   2/500 hero_chip= -10000 hero_bb100_sched=  -20.00 hero_bb100_actual=-5000.00 hero_err=0 opp_err=0 dur=0.79s
+
+SUMMARY_JSON {"attempted_hands": 100000, "base": 142, "ci_half_width": 2.4000000000000004, "ci_high": 7.2, "ci_low": 2.4, "created_at": "2026-05-28T01:53:49Z", "early_bust_matches": 200, "early_bust_rate": 1.0, "hands_played": 5091, "hero_actual_bb_per_100": 94.28403064230997, "hero_bb_per_100": 4.8, "hero_chip_delta": 480000, "hero_errors": 0, "hero_max_decide_latency_s": 0.18505929200910032, "hero_p99_decide_latency_s": 0.01780066592618823, "hero_zip": {"data_bytes": 19758, "has_root_bot_py": true, "path": "/Users/farhad/Code/PokerBot/submissions/v_final.zip", "sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598", "size_bytes": 28208}, "json_path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-28-public-saturation/vladimir_s142.json", "log_path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-28-public-saturation/vladimir_s142.log", "match_len": 500, "matches": 200, "opponent": "vladimir", "opponent_errors": 0, "opponent_p99_decide_latency_s": 0.9978964999318123, "opponent_zip": {"data_bytes": 57998864, "has_root_bot_py": true, "path": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-28-public-saturation/opponent_zips/vladimir.zip", "sha256": "7264dbca80ebcbad755c19b9d84ab054658299090d582a5ca0fcd7fe30de7473", "size_bytes": 53569829}, "seed_pairs": 100, "seed_stride": 1000, "stdout_noise": {"opp": 200}, "stdout_noise_examples": {"opp": ["[bot] Loaded GTO model (5 layers, 9 actions) from /var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/fhbot_2wyz6gg8/data/gto_strategy.npz", "[bot] Loaded GTO model (5 layers, 9 actions) from /var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/fhbot_06zvyyb1/data/gto_strategy.npz", "[bot] Loaded GTO model (5 layers, 9 actions) from /var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/fhbot_mhy3aq4i/data/gto_strategy.npz", "[bot] Loaded GTO model (5 layers, 9 actions) from /var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/fhbot_7upsufo6/data/gto_strategy.npz", "[bot] Loaded GTO model (5 layers, 9 actions) from /var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/fhbot_02b74hyh/data/gto_strategy.npz"]}, "target_scheduled_hands": 100000, "verdict": "GREEN"}
+SUMMARY opponent=vladimir base=142 verdict=GREEN bb100=+4.80 ci=[+2.40,+7.20] half_width=2.40 scheduled=100000 actual_hands=5091 early_bust_rate=1.000 hero_errors=0 hero_p99_latency_s=0.0178

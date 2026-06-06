@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/farhad/Code/PokerBot-gauntlet/.venv/bin/python",
+    "-m",
+    "pytest",
+    "tests/edge_cases",
+    "-x"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot-gauntlet",
+  "duration_s": 1.0124030113220215,
+  "finished_utc": "2026-05-28T02:14:24Z",
+  "label": "edge_cases",
+  "log": "edge_cases.log",
+  "passed": true,
+  "returncode": 0,
+  "started_utc": "2026-05-28T02:14:23Z"
+}

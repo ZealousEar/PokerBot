@@ -1,0 +1,55 @@
+{
+  "target": "ref_sixmax_mix",
+  "opponent_paths": {
+    "ref_template": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/template",
+    "ref_aggressor": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/aggressor",
+    "ref_mathematician": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/mathematician",
+    "ref_shark": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/shark",
+    "ref_ref_bot_2": "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/bots/ref_bot_2"
+  },
+  "requested_hands": 600,
+  "scheduled_hands": 600,
+  "actual_hands": 600,
+  "scheduled_bb_per_100": -50.0,
+  "actual_bb_per_100": -50.0,
+  "ci_low": -86.67833333333333,
+  "ci_high": -10.596666666666666,
+  "chip_delta": -30000,
+  "early_bust_rate": 0.0,
+  "hero_errors": 0,
+  "duration_s": 2.04,
+  "p99_latency_s": null,
+  "p99_latency_note": "engine run_match does not expose per-decision latency",
+  "p99_match_seconds_per_hand_proxy": 0.0034999999999999996,
+  "hu_button_open_opportunities": null,
+  "hu_button_opens": null,
+  "hu_button_open_frequency": null,
+  "river_trap_entries": null,
+  "river_trap_note": "decision logs do not label traps; river losing commit is a proxy",
+  "river_losing_commit_hands": 3,
+  "river_commit_hands": 7,
+  "river_losing_commit_frequency": 0.42857142857142855,
+  "matches": [
+    {
+      "seed": 142,
+      "hands": 200,
+      "chip_delta": -10000,
+      "duration_s": 0.68,
+      "hero_errors": 0
+    },
+    {
+      "seed": 143,
+      "hands": 200,
+      "chip_delta": -10000,
+      "duration_s": 0.66,
+      "hero_errors": 0
+    },
+    {
+      "seed": 144,
+      "hands": 200,
+      "chip_delta": -10000,
+      "duration_s": 0.7,
+      "hero_errors": 0
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "all_in_maniac": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1113,
+        "file_size": 4333,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/C-overlay/synthetic_opponents/zips/all_in_maniac.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "dfaa486f8a2aa5f293f5728fcb9fd3ce3e0b67b89a503ae40488c5cfa26f25af",
+    "size_bytes": 1223,
+    "src_py_files": [],
+    "uncompressed_bytes": 4333
+  },
+  "loose_aggressive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1121,
+        "file_size": 4336,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/C-overlay/synthetic_opponents/zips/loose_aggressive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "5b990b8c6c073657003574e573188630a6e8c3fec3befa121bb803083b7c0c7e",
+    "size_bytes": 1231,
+    "src_py_files": [],
+    "uncompressed_bytes": 4336
+  },
+  "loose_passive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1117,
+        "file_size": 4333,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/C-overlay/synthetic_opponents/zips/loose_passive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "c92b9bde804787284aae49882e2ff867f53701c96f28c61b1003a3fa6a4f61f8",
+    "size_bytes": 1227,
+    "src_py_files": [],
+    "uncompressed_bytes": 4333
+  },
+  "pot_odds_threshold": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1120,
+        "file_size": 4338,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/C-overlay/synthetic_opponents/zips/pot_odds_threshold.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "475b2d1dfcab396a42ade71424a65da14692b4d4e3ada39eaa8477380914aa40",
+    "size_bytes": 1230,
+    "src_py_files": [],
+    "uncompressed_bytes": 4338
+  },
+  "river_value_threshold": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1119,
+        "file_size": 4341,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/C-overlay/synthetic_opponents/zips/river_value_threshold.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "fac7d880e40ad0a0e74e740e5cbc3c78b1b9d244fd2bd9eda4b986afacc5dfd8",
+    "size_bytes": 1229,
+    "src_py_files": [],
+    "uncompressed_bytes": 4341
+  },
+  "tight_aggressive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1119,
+        "file_size": 4336,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/C-overlay/synthetic_opponents/zips/tight_aggressive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "adb707597a7d7821c723d996ac41dcdf34cd3f912a2f604f9e2c7da73718ad34",
+    "size_bytes": 1229,
+    "src_py_files": [],
+    "uncompressed_bytes": 4336
+  },
+  "tight_passive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1115,
+        "file_size": 4333,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/C-overlay/synthetic_opponents/zips/tight_passive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "590ce5dce88a64898a0484c4ceeebe81c37b7e2840f56da89762bbea1670739b",
+    "size_bytes": 1225,
+    "src_py_files": [],
+    "uncompressed_bytes": 4333
+  }
+}

@@ -870,3 +870,35 @@ Farhad — SHA-verified **human-gated** upload of `submissions/v_final.zip` (b10
 - **Source committed:** b108eff5 editable source preserved under `submissions/archive/finals-ship-b108eff5-editable-source/` (incl. `src/commitment.py`, `src/hand_features.py`) so shipped bytes are reproducible (was zip-only).
 - **Read-only validation in flight:** `tools/h2h.py` b108eff5 vs aggressor/shark/mathematician/ref_bot_2 at 800-hand match length, paired seeds → `consult/artifacts/2026-06-04-finals-h2h/`. Early signal: busts full stack vs pure-maniac `aggressor` heads-up (pathological HU matchup; not 6-max representative) — flag for analysis, NOT a ship blocker (bot frozen + live).
 - No bot-code edits. Code frozen.
+
+## [FINALS-EXEC-6MAX] 2026-06-04 17:59 UTC — GREEN (SHIP-AS-IS)
+Gate: finals execution / two-lane orchestration (read-only 6-max evidence + gated data-only candidate). Decision cutoff 18:30 UTC honored; both lanes finished by 17:58.
+
+**DECISION: SHIP-AS-IS.** Finals artifact = `submissions/v_final.zip` sha256 `b108eff59b46b713fdfb1530f73eaeaa924f5dd9cb5ed72d3e63512a9ce3c36b` (already LIVE on portal). No re-ship. No upload performed (human-only rule observed).
+
+**Lane A — read-only 6-max Phase-1-shaped evidence** (corpus: Pluribus 6-max multiway != HU; cumulative-chip Swiss). Tool `tools/quick_6max_eval.py` (local-only, not packaged) over engine `run_match` with 6 bot paths. 3 mixes × 6 Thorp seat rotations × 800 hands, seeds 42–47, `.venv/bin/python`. Artifacts: `consult/artifacts/2026-06-04-finals-ship/6max_evidence/`.
+- reference_field: +1473.54 chip/100 (Δsum +70,730 / 6 matches); errors 0, timeouts 0, illegal 0, fold-defaults 0.
+- aggro_collision: +2931.12 chip/100 (Δsum +60,000); errors 0, timeouts 0, illegal 0, fold-defaults 0.
+- balanced_heavy: +1540.62 chip/100 (Δsum +73,950); errors 0, timeouts 0, illegal 0, fold-defaults 0.
+- Total Thorp decisions 7197; ZERO deterministic crash/illegal/timeout/exception. → No code fix justified.
+
+**Lane B — data-only `field_priors.npz` candidate (isolated worktree)** REJECTED on A/B acceptance.
+- Candidate `consult/artifacts/2026-06-04-finals-ship/candidates/data_only_field_priors_shrinkage_01.zip` sha256 `efea73cb…`; diff vs b108eff5 = ONLY `data/field_priors.npz` (max abs prior delta 0.04, conservative shrinkage).
+- Paired A/B vs live b108eff5 (`tools/h2h.py`, 31 seeds × 2 orientations × 800, 22,808 hands played): candidate **+0.00 bb/100, 95% CI [-25.82, +22.97] BB/match**. Lower bound NOT > 0 → INDETERMINATE → REJECT. Full gate not run (A/B failed first). 0 errors both sides.
+
+Files changed: `tools/quick_6max_eval.py` (new, local eval only), this STATUS entry. No edits to canonical `src/`, `data/`, or `ext/fullhouse-engine/`.
+Next action: NONE pre-deadline. Live b108eff5 plays finals. Human upload already done; no further upload required.
+
+## [FINALS-EXEC-RIVER-TRIAGE] 2026-06-04 18:25 UTC — GREEN (SHIP-AS-IS confirmed)
+Gate: read-only diagnostic — classify Lane A 6-max river busts as avoidable river-overcommit leak vs unavoidable coolers/early-street variance. Code-patch reship was already out-of-window (18:15 start, no full-gate + upload-buffer time); triage run as confidence/diagnostic only.
+
+**FINDING: No avoidable river-overcommit leak exists.** The Lane A `bust_street=river` label meant chips RESOLVED at showdown, not that Thorp made a river commit.
+- 9 river-resolved Thorp bust hands; Thorp river DECISIONS in them: 0.
+- Actual final commitment street: preflop 6, flop 2, no-action 1, river 0.
+- Large river call-off/raise/all-in candidates: 0.
+- Busts are preflop-dominated (consistent with Thorp's polarized aggro preflop style); bot still net-positive in aggregate across all mixes.
+- Limitation: `tools/quick_6max_eval.py` persisted only compact summaries + Thorp action records (no boards/cards/pots), and ref bots use unseeded RNG → board/made-hand buckets not recoverable. Commitment-street data alone is sufficient to reject the river-overcommit hypothesis.
+
+Artifacts: `consult/artifacts/2026-06-04-finals-ship/river_triage_report.md`; tools-only `tools/analyze_river_busts.py` (not packaged). No edits to src/, data/, submissions/. No patch. No upload.
+
+**FINAL DECISION: SHIP-AS-IS.** Finals artifact remains `submissions/v_final.zip` sha256 `b108eff5…` (live). No re-ship candidate cleared (none was buildable in-window; none warranted). Conditional river-veto NOT triggered — diagnosed pattern does not exist.

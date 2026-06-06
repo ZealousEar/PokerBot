@@ -1,0 +1,98 @@
+Toby refs
+./bots/template/bot.py:39:    - Total submission (bot.py + data/) <= 250 MB
+./README.md:12:You submit one file — `bot.py` — with one function:
+./README.md:100:- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.
+./README.md:102:- **No reflection escape attempts.** `__import__('socket')`, `getattr(__builtins__, 'open')`, `eval()`, `exec()`, `compile()` are all flagged by the validator and rejected. Don't try clever obfuscation either — `__import__('so'+'cket')` etc. fails the AST check at submission time.
+./README.md:153:Hand histories from your D1 matches are downloadable as JSON. You can submit one updated bot before D5.
+./sandbox/validator.py:42:# Imports that are not allowed in submitted bots.
+./sandbox/validator.py:414:def _resolve_submission(bot_path):
+./sandbox/validator.py:499:    return None, None, cleanup_dir, ["Unsupported submission (must be .py, .zip, or directory): " + bot_path]
+./sandbox/validator.py:503:    """Full validation of a bot submission (.py file, directory, or .zip).
+./sandbox/validator.py:515:    bot_py, data_dir, cleanup_dir, package_errors = _resolve_submission(bot_path)
+./sandbox/validator.py:565:    parser = argparse.ArgumentParser(description="Validate a Fullhouse bot submission")
+./db/schema.sql:55:  submitted_at  timestamptz not null default now(),
+
+log
+93516f3 Merge pull request #1 from TobyCoad/claude/blissful-fermat-e6e19d
+
+master head
+"""
+# STRATEGY NOTES — FullHouseMaster
+
+## The LLM-Convergence Meta
+Most competitors at a hackathon will use LLMs (Claude, GPT-4, etc.) to help design
+their bots. This creates a strong convergence towards:
+  - TAG-adjacent play: tight preflop selection, position-aware
+  - Pot-odds decision-making: call when equity > pot_odds
+  - "AI-default" bet sizing: 50-66% pot on every street
+  - C-bet heavy: fire flop, check-fold turn without improvement
+
+These bots are PREDICTABLE. Predictable bots are exploitable bots.
+
+## Exploitation Plan
+1. vs TAG/GTO-bots: Their range is face-up. Steal relentlessly preflop.
+   Float their c-bets and take pots away when they check turn. Their
+   "give up on turn" pattern is extremely exploitable.
+
+2. vs Passive bots (calling stations): Never bluff. Value-bet every
+   street with top pair+. Use small bets (25-33%) to keep them calling.
+   They can't fold, so charge them maximum streets.
+
+3. vs Bluff-heavy bots: Widen calling range substantially. Check strong
+   hands and let them bluff into us. Raise river with disguised monsters.
+
+4. vs Tight bots: Attack any weakness. Steal blinds 3x normal frequency.
+   3-bet their opens to take pots preflop. Fold to their resistance.
+
+## Bet Sizing Philosophy
+- Avoid the AI default of 50-60% pot. Mix:
+  - 25-33% pot: thin value, probing, keeping fish in
+  - 66-75% pot: standard value, charging draws
+  - 100%+ pot: polarised river bets, overbets vs capped ranges
+- Non-standard sizing is harder for opponents (human or AI) to exploit
+
+## Calling Threshold
+Never auto-fold to pressure. Adjust call range based on opponent type:
+  - vs aggro: call with equity > pot_odds - 0.05
+  - vs tight: call with equity > pot_odds + 0.05
+  - vs balanced: call with equity > pot_odds
+"""
+
+import eval7
+import random
+
+BOT_NAME = "FullHouseMaster"
+BOT_AVATAR = "robot_2"
+
+RANKS = "23456789TJQKA"
+ALL_CARDS = [r + s for r in RANKS for s in "shdc"]
+
+# ── Preflop ranges ────────────────────────────────────────────────────────────
+
+PREMIUM = {"AA", "KK", "QQ", "JJ"}
+STRONG_BROADWAY = {"AKs", "AKo", "AQs", "AQo", "AJs", "ATs", "KQs", "KQo"}
+STRONG_PAIRS = {"TT", "99", "88"}
+PLAYABLE_IP = {
+    "77", "66", "55", "44", "33", "22",
+    "AJo", "ATo", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s",
+    "KJs", "KJo", "KTs", "KTo", "K9s",
+    "QJs", "QJo", "QTs", "Q9s",
+    "JTs", "JTo", "J9s", "J8s",
+    "T9s", "T8s", "98s", "97s", "87s", "86s", "76s", "75s", "65s", "54s",
+}
+
+# ── Helpers ───────────────────────────────────────────────────────────────────
+
+def _hand_key(cards):
+    r1, s1 = cards[0][0], cards[0][1]
+    r2, s2 = cards[1][0], cards[1][1]
+    if RANKS.index(r1) < RANKS.index(r2):
+        r1, r2, s1, s2 = r2, r1, s2, s1
+    if r1 == r2:
+        return r1 + r2
+    return r1 + r2 + ("s" if s1 == s2 else "o")
+
+
+def _preflop_tier(key):
+    """4=premium, 3=strong, 2=playable, 1=marginal, 0=trash."""
+    if key in PREMIUM:

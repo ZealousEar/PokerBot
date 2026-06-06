@@ -1,0 +1,10 @@
+
+✅ PASSED  —  consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/dominic_live_master.zip
+
+
+Test results:
+  ✓ [0.000s] preflop_call_or_fold: {'action': 'raise', 'amount': 475}
+  ✓ [0.004s] postflop_can_check: {'action': 'check'}
+  ✓ [0.002s] river_facing_large_bet: {'action': 'call'}
+  ✓ [0.000s] short_stack_all_in_decision: {'action': 'all_in'}
+

@@ -1,0 +1,163 @@
+{
+  "all_in_maniac": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1113,
+        "file_size": 4333,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/A-3bet/synthetic_opponents/zips/all_in_maniac.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "b3bf8a25c6caedddd15cbc7a5737e80661873b4cc996e718667b28a81291474c",
+    "size_bytes": 1223,
+    "src_py_files": [],
+    "uncompressed_bytes": 4333
+  },
+  "loose_aggressive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1121,
+        "file_size": 4336,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/A-3bet/synthetic_opponents/zips/loose_aggressive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "1b16b4956e5db1438f1147a7d3e6d63c4155373aacc1080288625a704c33a389",
+    "size_bytes": 1231,
+    "src_py_files": [],
+    "uncompressed_bytes": 4336
+  },
+  "loose_passive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1117,
+        "file_size": 4333,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/A-3bet/synthetic_opponents/zips/loose_passive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "f67a7267a3114f4f59e856a79478144290c152f9352bffb7f428ffbfd1de4a9b",
+    "size_bytes": 1227,
+    "src_py_files": [],
+    "uncompressed_bytes": 4333
+  },
+  "pot_odds_threshold": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1120,
+        "file_size": 4338,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/A-3bet/synthetic_opponents/zips/pot_odds_threshold.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "7fe8e2cbec4d3eb14395abbb21751ce9afeb797f2a5c1dfab00a628a333a99da",
+    "size_bytes": 1230,
+    "src_py_files": [],
+    "uncompressed_bytes": 4338
+  },
+  "river_value_threshold": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1119,
+        "file_size": 4341,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/A-3bet/synthetic_opponents/zips/river_value_threshold.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "f97acaf77c9802dd6fa00503109373a801811e1c3241f04a081fa5c1c86b6698",
+    "size_bytes": 1229,
+    "src_py_files": [],
+    "uncompressed_bytes": 4341
+  },
+  "tight_aggressive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1119,
+        "file_size": 4336,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/A-3bet/synthetic_opponents/zips/tight_aggressive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "c6615f28ea0819994c89141aa325e4e9fb07c617fe32bf887f0235705d639420",
+    "size_bytes": 1229,
+    "src_py_files": [],
+    "uncompressed_bytes": 4336
+  },
+  "tight_passive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1115,
+        "file_size": 4333,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-04-camp2-search/results/A-3bet/synthetic_opponents/zips/tight_passive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "c2d61fe2310b16737576bb03e09be27eba57d4d6f328e2a9de24e1a809c8dbce",
+    "size_bytes": 1225,
+    "src_py_files": [],
+    "uncompressed_bytes": 4333
+  }
+}

@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.10.18, pytest-9.0.3, pluggy-1.6.0
+rootdir: /Users/farhad/Code/PokerBot-laneA-postflop
+plugins: hypothesis-6.152.9
+collected 28 items
+
+tests/edge_cases/test_hardening_cases.py ......                          [ 21%]
+tests/edge_cases/test_legal_actions.py ...............                   [ 75%]
+tests/edge_cases/test_postflop_trap_v2.py ...                            [ 85%]
+tests/edge_cases/test_safe_fallback.py ....                              [100%]
+
+============================== 28 passed in 0.17s ==============================

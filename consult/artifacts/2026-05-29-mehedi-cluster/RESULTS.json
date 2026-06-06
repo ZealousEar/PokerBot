@@ -1,0 +1,866 @@
+{
+  "artifact_precheck": {
+    "best_green_sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "both_match_expected": true,
+    "expected_sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "v_final_sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "clusters": {
+    "A_last_decision_losing_hands_top10": [
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -5.72,
+        "board_texture": "preflop",
+        "chips": -114400,
+        "count": 572,
+        "position_label": "big_blind",
+        "rank": 1,
+        "share_of_net_deficit_pct": 63.56,
+        "street": "preflop",
+        "true_position_label": "heads_up_button"
+      },
+      {
+        "action": "all_in",
+        "action_class": "all_in",
+        "bb_per_100_scheduled": -3.7428,
+        "board_texture": "preflop",
+        "chips": -74856,
+        "count": 11,
+        "position_label": "big_blind",
+        "rank": 2,
+        "share_of_net_deficit_pct": 41.59,
+        "street": "preflop",
+        "true_position_label": "heads_up_button"
+      },
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -3.4903,
+        "board_texture": "5card_paired_two_tone_static",
+        "chips": -69806,
+        "count": 22,
+        "position_label": "big_blind",
+        "rank": 3,
+        "share_of_net_deficit_pct": 38.78,
+        "street": "river",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -3.44,
+        "board_texture": "preflop",
+        "chips": -68800,
+        "count": 688,
+        "position_label": "big_blind",
+        "rank": 4,
+        "share_of_net_deficit_pct": 38.22,
+        "street": "preflop",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "all_in",
+        "action_class": "all_in",
+        "bb_per_100_scheduled": -3.25895,
+        "board_texture": "preflop",
+        "chips": -65179,
+        "count": 10,
+        "position_label": "big_blind",
+        "rank": 5,
+        "share_of_net_deficit_pct": 36.21,
+        "street": "preflop",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -2.5384,
+        "board_texture": "5card_unpaired_two_tone_static",
+        "chips": -50768,
+        "count": 16,
+        "position_label": "heads_up_button",
+        "rank": 6,
+        "share_of_net_deficit_pct": 28.2,
+        "street": "river",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -2.5384,
+        "board_texture": "5card_unpaired_two_tone_static",
+        "chips": -50768,
+        "count": 16,
+        "position_label": "big_blind",
+        "rank": 7,
+        "share_of_net_deficit_pct": 28.2,
+        "street": "river",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -1.61565,
+        "board_texture": "5card_paired_two_tone_static",
+        "chips": -32313,
+        "count": 11,
+        "position_label": "heads_up_button",
+        "rank": 8,
+        "share_of_net_deficit_pct": 17.95,
+        "street": "river",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "all_in",
+        "action_class": "all_in",
+        "bb_per_100_scheduled": -0.52375,
+        "board_texture": "5card_paired_two_tone_static",
+        "chips": -10475,
+        "count": 4,
+        "position_label": "heads_up_button",
+        "rank": 9,
+        "share_of_net_deficit_pct": 5.82,
+        "street": "river",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "all_in",
+        "action_class": "all_in",
+        "bb_per_100_scheduled": -0.4925,
+        "board_texture": "preflop",
+        "chips": -9850,
+        "count": 1,
+        "position_label": "heads_up_button",
+        "rank": 10,
+        "share_of_net_deficit_pct": 5.47,
+        "street": "preflop",
+        "true_position_label": "heads_up_button"
+      }
+    ],
+    "B_every_decision_losing_hands_top10": [
+      {
+        "action": "call",
+        "action_class": "call_le_3/4pot",
+        "bb_per_100_scheduled": -14.52875,
+        "board_texture": "preflop",
+        "chips": -290575,
+        "count": 105,
+        "position_label": "big_blind",
+        "rank": 1,
+        "share_of_net_deficit_pct": 161.43,
+        "street": "preflop",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "raise",
+        "action_class": "raise_min",
+        "bb_per_100_scheduled": -12.53,
+        "board_texture": "preflop",
+        "chips": -250600,
+        "count": 670,
+        "position_label": "heads_up_button",
+        "rank": 2,
+        "share_of_net_deficit_pct": 139.22,
+        "street": "preflop",
+        "true_position_label": "heads_up_button"
+      },
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -5.72,
+        "board_texture": "preflop",
+        "chips": -114400,
+        "count": 572,
+        "position_label": "big_blind",
+        "rank": 3,
+        "share_of_net_deficit_pct": 63.56,
+        "street": "preflop",
+        "true_position_label": "heads_up_button"
+      },
+      {
+        "action": "raise",
+        "action_class": "raise_le_2/3pot",
+        "bb_per_100_scheduled": -4.7009,
+        "board_texture": "4card_unpaired_two_tone_static",
+        "chips": -94018,
+        "count": 30,
+        "position_label": "big_blind",
+        "rank": 4,
+        "share_of_net_deficit_pct": 52.23,
+        "street": "turn",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "raise",
+        "action_class": "raise_le_2/3pot",
+        "bb_per_100_scheduled": -3.8076,
+        "board_texture": "5card_paired_two_tone_static",
+        "chips": -76152,
+        "count": 24,
+        "position_label": "big_blind",
+        "rank": 5,
+        "share_of_net_deficit_pct": 42.31,
+        "street": "river",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "all_in",
+        "action_class": "all_in",
+        "bb_per_100_scheduled": -3.7428,
+        "board_texture": "preflop",
+        "chips": -74856,
+        "count": 11,
+        "position_label": "big_blind",
+        "rank": 6,
+        "share_of_net_deficit_pct": 41.59,
+        "street": "preflop",
+        "true_position_label": "heads_up_button"
+      },
+      {
+        "action": "raise",
+        "action_class": "raise_le_2/3pot",
+        "bb_per_100_scheduled": -3.5426,
+        "board_texture": "4card_unpaired_two_tone_static",
+        "chips": -70852,
+        "count": 25,
+        "position_label": "heads_up_button",
+        "rank": 7,
+        "share_of_net_deficit_pct": 39.36,
+        "street": "turn",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -3.4903,
+        "board_texture": "5card_paired_two_tone_static",
+        "chips": -69806,
+        "count": 22,
+        "position_label": "big_blind",
+        "rank": 8,
+        "share_of_net_deficit_pct": 38.78,
+        "street": "river",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -3.44,
+        "board_texture": "preflop",
+        "chips": -68800,
+        "count": 688,
+        "position_label": "big_blind",
+        "rank": 9,
+        "share_of_net_deficit_pct": 38.22,
+        "street": "preflop",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "all_in",
+        "action_class": "all_in",
+        "bb_per_100_scheduled": -3.25895,
+        "board_texture": "preflop",
+        "chips": -65179,
+        "count": 10,
+        "position_label": "big_blind",
+        "rank": 10,
+        "share_of_net_deficit_pct": 36.21,
+        "street": "preflop",
+        "true_position_label": "big_blind"
+      }
+    ],
+    "C_street_only_last_decision": [
+      {
+        "bb_per_100_scheduled": -16.7133,
+        "chips": -334266,
+        "count": 1303,
+        "share_of_net_deficit_pct": 185.7,
+        "street": "preflop"
+      },
+      {
+        "bb_per_100_scheduled": -15.2192,
+        "chips": -304384,
+        "count": 103,
+        "share_of_net_deficit_pct": 169.1,
+        "street": "river"
+      },
+      {
+        "bb_per_100_scheduled": -1.356,
+        "chips": -27120,
+        "count": 27,
+        "share_of_net_deficit_pct": 15.07,
+        "street": "turn"
+      },
+      {
+        "bb_per_100_scheduled": -1.02075,
+        "chips": -20415,
+        "count": 62,
+        "share_of_net_deficit_pct": 11.34,
+        "street": "flop"
+      }
+    ],
+    "D_board_texture_last_decision": [
+      {
+        "bb_per_100_scheduled": -16.7133,
+        "board_texture": "preflop",
+        "chips": -334266,
+        "count": 1303,
+        "share_of_net_deficit_pct": 185.7
+      },
+      {
+        "bb_per_100_scheduled": -7.1782,
+        "board_texture": "5card_paired_two_tone_static",
+        "chips": -143564,
+        "count": 47,
+        "share_of_net_deficit_pct": 79.76
+      },
+      {
+        "bb_per_100_scheduled": -6.89395,
+        "board_texture": "5card_unpaired_two_tone_static",
+        "chips": -137879,
+        "count": 48,
+        "share_of_net_deficit_pct": 76.6
+      },
+      {
+        "bb_per_100_scheduled": -0.9884,
+        "board_texture": "5card_paired_two_tone_connected",
+        "chips": -19768,
+        "count": 7,
+        "share_of_net_deficit_pct": 10.98
+      },
+      {
+        "bb_per_100_scheduled": -0.7438,
+        "board_texture": "4card_unpaired_two_tone_static",
+        "chips": -14876,
+        "count": 15,
+        "share_of_net_deficit_pct": 8.26
+      },
+      {
+        "bb_per_100_scheduled": -0.4079,
+        "board_texture": "4card_paired_two_tone_static",
+        "chips": -8158,
+        "count": 7,
+        "share_of_net_deficit_pct": 4.53
+      },
+      {
+        "bb_per_100_scheduled": -0.25915,
+        "board_texture": "3card_unpaired_two_tone_static",
+        "chips": -5183,
+        "count": 15,
+        "share_of_net_deficit_pct": 2.88
+      },
+      {
+        "bb_per_100_scheduled": -0.19415,
+        "board_texture": "3card_unpaired_rainbow_static",
+        "chips": -3883,
+        "count": 12,
+        "share_of_net_deficit_pct": 2.16
+      },
+      {
+        "bb_per_100_scheduled": -0.15865,
+        "board_texture": "5card_unpaired_two_tone_connected",
+        "chips": -3173,
+        "count": 1,
+        "share_of_net_deficit_pct": 1.76
+      },
+      {
+        "bb_per_100_scheduled": -0.15,
+        "board_texture": "3card_unpaired_two_tone_connected",
+        "chips": -3000,
+        "count": 10,
+        "share_of_net_deficit_pct": 1.67
+      },
+      {
+        "bb_per_100_scheduled": -0.1343,
+        "board_texture": "4card_paired_two_tone_connected",
+        "chips": -2686,
+        "count": 3,
+        "share_of_net_deficit_pct": 1.49
+      },
+      {
+        "bb_per_100_scheduled": -0.13245,
+        "board_texture": "3card_unpaired_rainbow_connected",
+        "chips": -2649,
+        "count": 6,
+        "share_of_net_deficit_pct": 1.47
+      },
+      {
+        "bb_per_100_scheduled": -0.09,
+        "board_texture": "3card_paired_rainbow_static",
+        "chips": -1800,
+        "count": 6,
+        "share_of_net_deficit_pct": 1.0
+      },
+      {
+        "bb_per_100_scheduled": -0.075,
+        "board_texture": "3card_paired_rainbow_connected",
+        "chips": -1500,
+        "count": 5,
+        "share_of_net_deficit_pct": 0.83
+      },
+      {
+        "bb_per_100_scheduled": -0.06,
+        "board_texture": "3card_paired_two_tone_connected",
+        "chips": -1200,
+        "count": 4,
+        "share_of_net_deficit_pct": 0.67
+      },
+      {
+        "bb_per_100_scheduled": -0.045,
+        "board_texture": "3card_unpaired_monotone_connected",
+        "chips": -900,
+        "count": 3,
+        "share_of_net_deficit_pct": 0.5
+      },
+      {
+        "bb_per_100_scheduled": -0.035,
+        "board_texture": "4card_unpaired_two_tone_connected",
+        "chips": -700,
+        "count": 1,
+        "share_of_net_deficit_pct": 0.39
+      },
+      {
+        "bb_per_100_scheduled": -0.035,
+        "board_texture": "4card_unpaired_rainbow_static",
+        "chips": -700,
+        "count": 1,
+        "share_of_net_deficit_pct": 0.39
+      },
+      {
+        "bb_per_100_scheduled": -0.015,
+        "board_texture": "3card_unpaired_monotone_static",
+        "chips": -300,
+        "count": 1,
+        "share_of_net_deficit_pct": 0.17
+      }
+    ],
+    "E_top10_by_abs_scheduled_bb100_impact_last_decision": [
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -5.72,
+        "board_texture": "preflop",
+        "chips": -114400,
+        "count": 572,
+        "position_label": "big_blind",
+        "rank": 1,
+        "share_of_net_deficit_pct": 63.56,
+        "street": "preflop",
+        "true_position_label": "heads_up_button"
+      },
+      {
+        "action": "all_in",
+        "action_class": "all_in",
+        "bb_per_100_scheduled": -3.7428,
+        "board_texture": "preflop",
+        "chips": -74856,
+        "count": 11,
+        "position_label": "big_blind",
+        "rank": 2,
+        "share_of_net_deficit_pct": 41.59,
+        "street": "preflop",
+        "true_position_label": "heads_up_button"
+      },
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -3.4903,
+        "board_texture": "5card_paired_two_tone_static",
+        "chips": -69806,
+        "count": 22,
+        "position_label": "big_blind",
+        "rank": 3,
+        "share_of_net_deficit_pct": 38.78,
+        "street": "river",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -3.44,
+        "board_texture": "preflop",
+        "chips": -68800,
+        "count": 688,
+        "position_label": "big_blind",
+        "rank": 4,
+        "share_of_net_deficit_pct": 38.22,
+        "street": "preflop",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "all_in",
+        "action_class": "all_in",
+        "bb_per_100_scheduled": -3.25895,
+        "board_texture": "preflop",
+        "chips": -65179,
+        "count": 10,
+        "position_label": "big_blind",
+        "rank": 5,
+        "share_of_net_deficit_pct": 36.21,
+        "street": "preflop",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -2.5384,
+        "board_texture": "5card_unpaired_two_tone_static",
+        "chips": -50768,
+        "count": 16,
+        "position_label": "heads_up_button",
+        "rank": 6,
+        "share_of_net_deficit_pct": 28.2,
+        "street": "river",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -2.5384,
+        "board_texture": "5card_unpaired_two_tone_static",
+        "chips": -50768,
+        "count": 16,
+        "position_label": "big_blind",
+        "rank": 7,
+        "share_of_net_deficit_pct": 28.2,
+        "street": "river",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "fold",
+        "action_class": "fold",
+        "bb_per_100_scheduled": -1.61565,
+        "board_texture": "5card_paired_two_tone_static",
+        "chips": -32313,
+        "count": 11,
+        "position_label": "heads_up_button",
+        "rank": 8,
+        "share_of_net_deficit_pct": 17.95,
+        "street": "river",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "all_in",
+        "action_class": "all_in",
+        "bb_per_100_scheduled": -0.52375,
+        "board_texture": "5card_paired_two_tone_static",
+        "chips": -10475,
+        "count": 4,
+        "position_label": "heads_up_button",
+        "rank": 9,
+        "share_of_net_deficit_pct": 5.82,
+        "street": "river",
+        "true_position_label": "big_blind"
+      },
+      {
+        "action": "all_in",
+        "action_class": "all_in",
+        "bb_per_100_scheduled": -0.4925,
+        "board_texture": "preflop",
+        "chips": -9850,
+        "count": 1,
+        "position_label": "heads_up_button",
+        "rank": 10,
+        "share_of_net_deficit_pct": 5.47,
+        "street": "preflop",
+        "true_position_label": "heads_up_button"
+      }
+    ],
+    "note": "All cluster chips are losing-hand attribution, so category totals are diagnostic and are not a decomposition of net chip delta because winning hands offset losses."
+  },
+  "comparison_to_toby": {
+    "broad_shape_totals": {
+      "combined_toby_river_shapes": {
+        "bb_per_100_scheduled": -6.5205,
+        "chips": -130410,
+        "count": 42,
+        "name": "combined_toby_river_shapes",
+        "ranks": [
+          11,
+          12,
+          3,
+          8,
+          14,
+          35
+        ],
+        "share_of_net_deficit_pct": 72.45
+      },
+      "mehedi_top_preflop_pressure_shape": {
+        "bb_per_100_scheduled": -9.4628,
+        "chips": -189256,
+        "count": 583,
+        "name": "mehedi_top_preflop_pressure_shape",
+        "ranks": [
+          1,
+          2
+        ],
+        "share_of_net_deficit_pct": 105.14
+      },
+      "toby_paired_river_fold_shape": {
+        "bb_per_100_scheduled": -5.5686,
+        "chips": -111372,
+        "count": 36,
+        "name": "toby_paired_river_fold_shape",
+        "ranks": [
+          3,
+          8,
+          14,
+          35
+        ],
+        "share_of_net_deficit_pct": 61.87
+      },
+      "toby_unpaired_river_raise_shape": {
+        "bb_per_100_scheduled": -0.9519,
+        "chips": -19038,
+        "count": 6,
+        "name": "toby_unpaired_river_raise_shape",
+        "ranks": [
+          11,
+          12
+        ],
+        "share_of_net_deficit_pct": 10.58
+      }
+    },
+    "interpretation": "Mehedi shares a material paired-board river-fold component, but the strongest Mehedi last-decision clusters are preflop pressure folds/all-ins and Toby rank-1 unpaired river raise is small; classify as a different leak, not the same full Toby trap.",
+    "tag_semantics": {
+      "absent": "no matching street/action/board trap family",
+      "different": "only low-rank/low-material partial overlap or different top driver",
+      "same_partial": "same street/action/board trap family is present materially, but exact label/rank differs"
+    },
+    "toby_top3_rows": [
+      {
+        "mehedi_broad_shape": {
+          "bb_per_100_scheduled": -0.9519,
+          "chips": -19038,
+          "count": 6,
+          "ranks": [
+            11,
+            12
+          ],
+          "representative": {
+            "action": "raise",
+            "action_class": "raise_le_2/3pot",
+            "bb_per_100_scheduled": -0.47595,
+            "board_texture": "5card_unpaired_two_tone_static",
+            "chips": -9519,
+            "count": 3,
+            "position_label": "heads_up_button",
+            "rank": 11,
+            "share_of_net_deficit_pct": 5.29,
+            "street": "river",
+            "true_position_label": "big_blind"
+          },
+          "share_of_net_deficit_pct": 10.58
+        },
+        "mehedi_exact_match": null,
+        "note": "The unpaired river 2/3-pot raise shape exists only as ranks 11/12 combined; it is not a top-three Mehedi driver.",
+        "tag": "different",
+        "toby_cluster": {
+          "action": "raise",
+          "action_class": "raise_le_2/3pot",
+          "bb_per_100_scheduled": -2.7896,
+          "board_texture": "5card_unpaired_two_tone_static",
+          "chips": -55792,
+          "count": 22,
+          "position_label": "heads_up_button",
+          "rank": 1,
+          "share_of_net_deficit_pct": 31.0,
+          "street": "river",
+          "true_position_label": "heads_up_button"
+        },
+        "toby_rank": 1
+      },
+      {
+        "mehedi_broad_shape": {
+          "bb_per_100_scheduled": -5.5686,
+          "chips": -111372,
+          "count": 36,
+          "ranks": [
+            3,
+            8,
+            14,
+            35
+          ],
+          "representative": {
+            "action": "fold",
+            "action_class": "fold",
+            "bb_per_100_scheduled": -3.4903,
+            "board_texture": "5card_paired_two_tone_static",
+            "chips": -69806,
+            "count": 22,
+            "position_label": "big_blind",
+            "rank": 3,
+            "share_of_net_deficit_pct": 38.78,
+            "street": "river",
+            "true_position_label": "big_blind"
+          },
+          "share_of_net_deficit_pct": 61.87
+        },
+        "mehedi_exact_match": {
+          "bb_per_100_scheduled": -0.381,
+          "chips": -7620,
+          "count": 2,
+          "ranks": [
+            14
+          ],
+          "representative": {
+            "action": "fold",
+            "action_class": "fold",
+            "bb_per_100_scheduled": -0.381,
+            "board_texture": "5card_paired_two_tone_static",
+            "chips": -7620,
+            "count": 2,
+            "position_label": "big_blind",
+            "rank": 14,
+            "share_of_net_deficit_pct": 4.23,
+            "street": "river",
+            "true_position_label": "heads_up_button"
+          },
+          "share_of_net_deficit_pct": 4.23
+        },
+        "note": "The paired-board river fold shape is material in Mehedi, but the exact Toby HU labels are diluted/shifted and Mehedi\u2019s two largest clusters are preflop.",
+        "tag": "same_partial",
+        "toby_cluster": {
+          "action": "fold",
+          "action_class": "fold",
+          "bb_per_100_scheduled": -2.6628,
+          "board_texture": "5card_paired_two_tone_static",
+          "chips": -53256,
+          "count": 21,
+          "position_label": "big_blind",
+          "rank": 2,
+          "share_of_net_deficit_pct": 29.59,
+          "street": "river",
+          "true_position_label": "heads_up_button"
+        },
+        "toby_rank": 2
+      },
+      {
+        "mehedi_broad_shape": {
+          "bb_per_100_scheduled": -5.5686,
+          "chips": -111372,
+          "count": 36,
+          "ranks": [
+            3,
+            8,
+            14,
+            35
+          ],
+          "representative": {
+            "action": "fold",
+            "action_class": "fold",
+            "bb_per_100_scheduled": -3.4903,
+            "board_texture": "5card_paired_two_tone_static",
+            "chips": -69806,
+            "count": 22,
+            "position_label": "big_blind",
+            "rank": 3,
+            "share_of_net_deficit_pct": 38.78,
+            "street": "river",
+            "true_position_label": "big_blind"
+          },
+          "share_of_net_deficit_pct": 61.87
+        },
+        "mehedi_exact_match": {
+          "bb_per_100_scheduled": -0.08165,
+          "chips": -1633,
+          "count": 1,
+          "ranks": [
+            35
+          ],
+          "representative": {
+            "action": "fold",
+            "action_class": "fold",
+            "bb_per_100_scheduled": -0.08165,
+            "board_texture": "5card_paired_two_tone_static",
+            "chips": -1633,
+            "count": 1,
+            "position_label": "heads_up_button",
+            "rank": 35,
+            "share_of_net_deficit_pct": 0.91,
+            "street": "river",
+            "true_position_label": "heads_up_button"
+          },
+          "share_of_net_deficit_pct": 0.91
+        },
+        "note": "The paired-board river fold shape is material in Mehedi, but the exact Toby HU labels are diluted/shifted and Mehedi\u2019s two largest clusters are preflop.",
+        "tag": "same_partial",
+        "toby_cluster": {
+          "action": "fold",
+          "action_class": "fold",
+          "bb_per_100_scheduled": -2.59035,
+          "board_texture": "5card_paired_two_tone_static",
+          "chips": -51807,
+          "count": 21,
+          "position_label": "heads_up_button",
+          "rank": 3,
+          "share_of_net_deficit_pct": 28.78,
+          "street": "river",
+          "true_position_label": "heads_up_button"
+        },
+        "toby_rank": 3
+      }
+    ],
+    "top3_toby_specific_tags": [
+      "rank_1=different",
+      "rank_2=same_partial",
+      "rank_3=same_partial"
+    ]
+  },
+  "created_at": "2026-05-29T14:56:34Z",
+  "files_written": [
+    "consult/artifacts/2026-05-29-mehedi-cluster/instrumented_h2h.py",
+    "consult/artifacts/2026-05-29-mehedi-cluster/decision_log.jsonl",
+    "consult/artifacts/2026-05-29-mehedi-cluster/logs/mehedi_mybot_instrumented_s142.json",
+    "consult/artifacts/2026-05-29-mehedi-cluster/logs/mehedi_mybot_clusters_s142.json",
+    "consult/artifacts/2026-05-29-mehedi-cluster/RESULTS.json",
+    "consult/artifacts/2026-05-29-mehedi-cluster/MEHEDI_CLUSTER_REPORT.md",
+    "consult/artifacts/2026-05-29-mehedi-cluster/STATUS_BLOCK.md"
+  ],
+  "h2h_summary": {
+    "actual_hands": 3767,
+    "actual_to_scheduled_ratio": 0.18835,
+    "hero_bb_per_100_actual": -47.783382,
+    "hero_bb_per_100_scheduled": -9.0,
+    "hero_chip_delta": -180000,
+    "hero_decision_records": 4232,
+    "hero_errors": 0,
+    "match_len": 500,
+    "opp_errors": 0,
+    "orientation_summary": {
+      "0": {
+        "actual_hands": 1842,
+        "hero_bb_per_100_scheduled": -10.0,
+        "hero_chip_delta": -100000,
+        "hero_errors": 0,
+        "opp_errors": 0,
+        "scheduled_hands": 10000
+      },
+      "1": {
+        "actual_hands": 1925,
+        "hero_bb_per_100_scheduled": -8.0,
+        "hero_chip_delta": -80000,
+        "hero_errors": 0,
+        "opp_errors": 0,
+        "scheduled_hands": 10000
+      }
+    },
+    "paths": {
+      "cluster_json": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-mehedi-cluster/logs/mehedi_mybot_clusters_s142.json",
+      "decisions_jsonl": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-mehedi-cluster/decision_log.jsonl",
+      "match_json": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-mehedi-cluster/logs/mehedi_mybot_instrumented_s142.json"
+    },
+    "scheduled_hands": 20000,
+    "seed_base": 142,
+    "seed_stride": 1000
+  },
+  "opponent_validation": {
+    "command": ".venv/bin/python ext/fullhouse-engine/sandbox/validator.py consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/mehedi_mybot.zip",
+    "validator": "PASS",
+    "zip": "consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/mehedi_mybot.zip"
+  },
+  "upload_recommendation": "SHIP_LOCKED_ARTIFACT",
+  "verdict": "DIFFERENT_LEAK",
+  "verdict_line": "DIFFERENT_LEAK \u2014 top Mehedi loss clusters are preflop facing re-raise fold/all-in; Toby-like river paired-fold is secondary and the unpaired river raise trap is not a top driver."
+}

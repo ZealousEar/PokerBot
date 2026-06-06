@@ -1,0 +1,47 @@
+[h2h] Mehedi-dev-2404/fullhouse-engine|main|bots/mybot/bot.py triage=20000
+[h2h] Mehedi-dev-2404/fullhouse-engine|main|bots/mybot/bot.py escalate extra=80000 reasons=mean<=0,ci_low<=-10,surprising_early_bust_actual_ratio<0.40,surprising_early_bust_rate>=0.75
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7/bot.py triage=20000
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.1/bot.py triage=20000
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.1/bot.py escalate extra=80000 reasons=mean<=0,surprising_early_bust_actual_ratio<0.40,surprising_early_bust_rate>=0.75
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.10/bot.py triage=20000
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.11/bot.py triage=20000
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.12/bot.py triage=20000
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.13/bot.py triage=20000
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.3/bot.py triage=20000
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.3/bot.py escalate extra=80000 reasons=surprising_early_bust_rate>=0.75
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.4/bot.py triage=20000
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.5/bot.py triage=20000
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.5/bot.py escalate extra=80000 reasons=surprising_early_bust_rate>=0.75
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.6/bot.py triage=20000
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.7/bot.py triage=20000
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.8/bot.py triage=20000
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.9/bot.py triage=20000
+[h2h] Pav1602/fullhouse-engine|main|bots/skantbot7.9/bot.py escalate extra=80000 reasons=mean<=0
+[h2h] TobyCoad/fullhouse-engine|main|bots/bluff_heavy/bot.py triage=20000
+[h2h] TobyCoad/fullhouse-engine|main|bots/bluff_heavy/bot.py escalate extra=80000 reasons=mean<=0,surprising_early_bust_actual_ratio<0.40,surprising_early_bust_rate>=0.75
+[h2h] TobyCoad/fullhouse-engine|main|bots/loose_aggressive/bot.py triage=20000
+[h2h] TobyCoad/fullhouse-engine|main|bots/loose_aggressive/bot.py escalate extra=80000 reasons=mean<=0,ci_low<=-10,surprising_early_bust_actual_ratio<0.40,surprising_early_bust_rate>=0.75
+[h2h] TobyCoad/fullhouse-engine|main|bots/loose_passive/bot.py triage=20000
+[h2h] TobyCoad/fullhouse-engine|main|bots/loose_passive/bot.py escalate extra=80000 reasons=mean<=0,ci_low<=-10,surprising_early_bust_actual_ratio<0.40,surprising_early_bust_rate>=0.75
+[h2h] TobyCoad/fullhouse-engine|main|bots/master/bot.py triage=20000
+[h2h] TobyCoad/fullhouse-engine|main|bots/master/bot.py escalate extra=80000 reasons=mean<=0,ci_low<=-10,surprising_early_bust_actual_ratio<0.40,surprising_early_bust_rate>=0.75
+[h2h] TobyCoad/fullhouse-engine|main|bots/position_exploiter/bot.py triage=20000
+[h2h] TobyCoad/fullhouse-engine|main|bots/position_exploiter/bot.py escalate extra=80000 reasons=surprising_early_bust_actual_ratio<0.40,surprising_early_bust_rate>=0.75
+[h2h] TobyCoad/fullhouse-engine|main|bots/pure_pot_odds/bot.py triage=20000
+[h2h] TobyCoad/fullhouse-engine|main|bots/pure_pot_odds/bot.py escalate extra=80000 reasons=surprising_early_bust_actual_ratio<0.40,surprising_early_bust_rate>=0.75
+[h2h] TobyCoad/fullhouse-engine|main|bots/random_bot/bot.py triage=20000
+[h2h] TobyCoad/fullhouse-engine|main|bots/random_bot/bot.py escalate extra=80000 reasons=surprising_early_bust_actual_ratio<0.40,surprising_early_bust_rate>=0.75
+[h2h] TobyCoad/fullhouse-engine|main|bots/stack_pressure/bot.py triage=20000
+[h2h] TobyCoad/fullhouse-engine|main|bots/stack_pressure/bot.py escalate extra=80000 reasons=mean<=0,ci_low<=-10,surprising_early_bust_actual_ratio<0.40,surprising_early_bust_rate>=0.75
+[h2h] TobyCoad/fullhouse-engine|main|bots/tight_aggressive/bot.py triage=20000
+[h2h] TobyCoad/fullhouse-engine|main|bots/tight_aggressive/bot.py escalate extra=80000 reasons=surprising_early_bust_actual_ratio<0.40,surprising_early_bust_rate>=0.75
+[h2h] TobyCoad/fullhouse-engine|main|bots/tight_passive/bot.py triage=20000
+[h2h] TobyCoad/fullhouse-engine|main|bots/tight_passive/bot.py escalate extra=80000 reasons=surprising_early_bust_actual_ratio<0.40,surprising_early_bust_rate>=0.75
+[h2h] TobyCoad/fullhouse-engine|main|bots/trap_slow_player/bot.py triage=20000
+[h2h] TobyCoad/fullhouse-engine|main|bots/trap_slow_player/bot.py escalate extra=80000 reasons=surprising_early_bust_rate>=0.75
+[h2h] stoppedtime24/fullhouse-engine|main|bots/mybot/bot.py triage=20000
+[h2h] stoppedtime24/fullhouse-engine|main|bots/mybot/bot.py escalate extra=80000 reasons=surprising_early_bust_actual_ratio<0.40,surprising_early_bust_rate>=0.75
+{
+  "wrote": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/RESULTS.json",
+  "results": 29
+}

@@ -1,0 +1,19 @@
+[scan] base=900 s900 delta=+11350 bust=0
+[scan] base=900 s901 delta=-10000 bust=1
+[scan] base=900 s902 delta=+14310 bust=0
+[scan] base=900 s903 delta=+13500 bust=0
+[scan] base=900 s904 delta=+6850 bust=0
+[scan] base=900 s905 delta=-10000 bust=1
+[scan] base=900 s906 delta=+4487 bust=0
+[scan] base=900 s907 delta=-10000 bust=1
+[scan] base=900 s908 delta=-10000 bust=1
+[scan] base=900 s909 delta=+4517 bust=0
+[scan] base=900 s910 delta=-10000 bust=1
+[scan] base=900 s911 delta=-10000 bust=1
+[scan] base=900 s912 delta=-10000 bust=1
+[scan] base=900 s913 delta=+6217 bust=0
+[scan] === base=900: bust_rate=0.5 p50=-2756.5 off_floor=True ===
+[scan] wrote /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/batch2/recalib-codex/seedbase_900_14seed_run3.json
+
+[scan] RANKING (lowest bust first):
+  base=900 bust_rate=0.5 p50=-2756.5 mean=-626.4

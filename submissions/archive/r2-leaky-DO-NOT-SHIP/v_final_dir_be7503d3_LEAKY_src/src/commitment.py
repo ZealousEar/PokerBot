@@ -1,0 +1,62 @@
+"""Postflop commitment and large-call permission gates.
+
+Large raises/stack-offs use board-aware nuttedness, while calls use range-aware
+pot odds plus a commitment-fraction cap. This keeps the Qual-II >=40%-stack
+leak fix while allowing priced-in calls that are not safe stack-offs.
+
+# Source: [[Libratus-Brown-Sandholm-2017]] — range-aware refinement.
+"""
+
+from src.hand_features import classify_board, classify_hand
+
+
+COMMIT_FRACTION = 0.40
+PAIRED_EQ_THRESHOLD = 0.80
+FLUSH_EQ_THRESHOLD = 0.92
+SAFE_EQ_THRESHOLD = 0.55
+LARGE_CALL_MAX_OWED_FRACTION = 0.25
+CALL_EQUITY_BUFFER = 0.03
+
+
+def _float(value, default: float = 0.0) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def can_commit_raise(hole, board, eq_strong) -> bool:
+    """Return True if a large raise/stack-off is allowed.
+
+    Ordering is intentional: full-house-or-better first, then paired boards,
+    then unpaired flush boards. A nut flush on a paired board is *not* an
+    automatic stack-off because it can be drawing dead to a boat.
+    """
+    eq = _float(eq_strong)
+    board_info = classify_board(board)
+    hand_info = classify_hand(hole, board)
+
+    if hand_info.get("full_house_or_better"):
+        return True
+    if board_info.get("paired"):
+        return eq >= PAIRED_EQ_THRESHOLD
+    if board_info.get("flush_suit") is not None:
+        return bool(hand_info.get("nut_flush")) or eq >= FLUSH_EQ_THRESHOLD
+    return eq >= SAFE_EQ_THRESHOLD
+
+
+def can_call_large(eq_strong, pot_odds, owed_frac) -> bool:
+    """Return True if a call is allowed when a large raise is not.
+
+    Calls are priced by range-aware equity, not by the stricter nuttedness gate.
+    The owed-fraction cap preserves the rule #1 leak fix: dominated hands still
+    fold when the call itself commits too much of the remaining stack.
+    """
+    owed = _float(owed_frac, default=1.0)
+    if owed <= 0.0:
+        return True
+    if owed > LARGE_CALL_MAX_OWED_FRACTION:
+        return False
+    odds = _float(pot_odds)
+    eq = _float(eq_strong)
+    return eq >= odds + CALL_EQUITY_BUFFER

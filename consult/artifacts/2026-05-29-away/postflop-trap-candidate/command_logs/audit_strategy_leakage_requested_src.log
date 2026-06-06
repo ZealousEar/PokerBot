@@ -1,0 +1,2 @@
+usage: audit_strategy_leakage.py [-h] [--zip ZIP]
+audit_strategy_leakage.py: error: unrecognized arguments: --src src/

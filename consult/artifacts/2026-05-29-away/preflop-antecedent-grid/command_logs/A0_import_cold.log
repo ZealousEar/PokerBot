@@ -1,0 +1,10 @@
+command: /Users/farhad/Code/PokerBot/.venv/bin/python -c import resource, sys, time; sys.path.insert(0, '.'); t0=time.monotonic(); import bot; dt=time.monotonic()-t0; rss=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss; print(f'{dt:.4f} {rss}')
+cwd: /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/preflop-antecedent-grid/tmp/import_A0
+exit_code: 0
+elapsed_s: 0.104
+
+[stdout]
+0.0834 35733504
+
+
+[stderr]

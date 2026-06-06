@@ -1,0 +1,19 @@
+# zip: consult/artifacts/2026-06-04-camp2-search/zips/cand_A-3bet.zip
+# zip sha256: 0a3a1180a014d28d90c296f6dad58537a019101d8f279b77344978ecc67c83f6
+STRATEGY LEAKAGE DETECTED:
+  src/bot.py:257: v0_wired
+  src/bot.py:257: snapshot
+  src/equity.py:15: seed
+  src/equity.py:16: seed
+  src/equity.py:17: seed
+  src/equity.py:193: seed
+  src/equity.py:195: seed
+  src/equity.py:229: seed
+  src/opponent_model.py:10: seed
+  src/preflop_lookup.py:65: v1_blueprint
+  src/preflop_lookup.py:65: snapshot
+  src/preflop_lookup.py:78: v_final
+  src/preflop_lookup.py:79: v3_hardened
+  src/preflop_lookup.py:79: snapshot
+  src/ranges.py:187: v1_blueprint
+  src/ranges.py:188: snapshot

@@ -1,0 +1,15 @@
+# zip: submissions/v_qual2_ship_d54640e0.zip
+# zip sha256: d54640e081eb6d1113ab70238c3b6f37e3d8457898b9e80cdc28d7c2a71f4421
+STRATEGY LEAKAGE DETECTED:
+  bot.py:8: snapshot
+  src/bot.py:221: branch
+  src/equity.py:15: seed
+  src/equity.py:16: seed
+  src/equity.py:17: seed
+  src/equity.py:136: seed
+  src/equity.py:138: seed
+  src/equity.py:172: seed
+  src/opponent_model.py:19: seed
+  src/opponent_model.py:158: aggressor
+  src/ranges.py:187: v1_blueprint
+  src/ranges.py:188: snapshot

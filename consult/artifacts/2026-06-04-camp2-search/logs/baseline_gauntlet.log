@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "results": "consult/artifacts/2026-06-04-camp2-search/baseline/live_b108eff5/results/deployed_gauntlet_results.json",
+  "bot_sha256": "b108eff59b46b713fdfb1530f73eaeaa924f5dd9cb5ed72d3e63512a9ce3c36b",
+  "opponents": 12,
+  "probes": 0,
+  "match_summaries": 12
+}
+real 134.50
+user 280.22
+sys 470.15

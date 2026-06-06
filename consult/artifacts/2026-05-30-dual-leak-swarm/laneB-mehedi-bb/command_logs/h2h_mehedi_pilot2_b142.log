@@ -1,0 +1,3 @@
+mehedi_pilot2_b142 seed=142 o=0 locked=+10000/211 cand=-10000/282 delta_bb100=-50.00 err_locked=0/0 err_cand=0/0
+mehedi_pilot2_b142 seed=142 o=1 locked=-10000/48 cand=-10000/48 delta_bb100=+0.00 err_locked=0/0 err_cand=0/0
+mehedi_pilot2_b142 seed=1142 o=0 locked=-10000/58 cand=+10000/228 delta_bb100=+50.00 err_locked=0/0 err_cand=0/0

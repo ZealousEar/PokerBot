@@ -1,0 +1,21 @@
+command: /Users/farhad/Code/PokerBot/.venv/bin/python /Users/farhad/Code/PokerBot/tools/smoke_run.py --zip /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/preflop-antecedent-grid/zips/preflop_antecedent_A3.zip --opponent template --hands 200 --seed 42
+cwd: /Users/farhad/Code/PokerBot
+exit_code: 0
+elapsed_s: 3.900
+
+[stdout]
+{
+  "n_hands": 200,
+  "expected_hands": 200,
+  "chip_delta": {
+    "preflop_antecedent_A3": 8250,
+    "template": -8250
+  },
+  "errors": {},
+  "duration_s": 3.33
+}
+
+
+[stderr]
+[smoke_run] docker shim: translating --no-new-privileges to --security-opt no-new-privileges
+[smoke_run] OK

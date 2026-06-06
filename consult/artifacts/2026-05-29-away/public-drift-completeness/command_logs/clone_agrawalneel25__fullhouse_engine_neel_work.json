@@ -1,0 +1,20 @@
+{
+  "label": "clone_agrawalneel25/fullhouse-engine_neel-work",
+  "cmd": [
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "--branch",
+    "neel-work",
+    "https://github.com/agrawalneel25/fullhouse-engine.git",
+    "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/agrawalneel25__fullhouse_engine__neel_work"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot",
+  "started_at": "2026-05-29T15:14:48Z",
+  "finished_at": "2026-05-29T15:14:49Z",
+  "elapsed_s": 0.677,
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "Cloning into '/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/agrawalneel25__fullhouse_engine__neel_work'...\n"
+}

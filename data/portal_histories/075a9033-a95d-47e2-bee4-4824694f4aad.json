@@ -1,0 +1,56 @@
+{
+  "match_id": "075a9033-a95d-47e2-bee4-4824694f4aad",
+  "tournament": "INTERNAL-Extra-B-1780396372",
+  "round": 1,
+  "status": "queued",
+  "started_at": null,
+  "completed_at": null,
+  "n_hands_target": 400,
+  "seed": null,
+  "bots": [
+    {
+      "bot_id": "1c0abfd8-c355-471b-8c7b-e5e75800ce04",
+      "bot_name": "Thorp",
+      "seat": 4,
+      "final_stack": null,
+      "chip_delta": null,
+      "bot_errors": []
+    },
+    {
+      "bot_id": "7804cc02-c147-46f4-9dc1-1d96f7eaf8a4",
+      "bot_name": "rrbot",
+      "seat": 2,
+      "final_stack": null,
+      "chip_delta": null
+    },
+    {
+      "bot_id": "b74a7044-4bf0-41f7-ad49-36253070a9c9",
+      "bot_name": "Eigen",
+      "seat": 1,
+      "final_stack": null,
+      "chip_delta": null
+    },
+    {
+      "bot_id": "c2c04d09-8233-4e3d-ab4f-29c270b8fb5f",
+      "bot_name": "jotaro",
+      "seat": 5,
+      "final_stack": null,
+      "chip_delta": null
+    },
+    {
+      "bot_id": "c30344b0-413d-4122-9733-491b14f70378",
+      "bot_name": "TungTungTungSahur3",
+      "seat": 0,
+      "final_stack": null,
+      "chip_delta": null
+    },
+    {
+      "bot_id": "cfb31549-776b-49f6-b5d0-b6e16bd935b6",
+      "bot_name": "The Monty Python",
+      "seat": 3,
+      "final_stack": null,
+      "chip_delta": null
+    }
+  ],
+  "hands": []
+}

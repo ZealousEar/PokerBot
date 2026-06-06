@@ -1,0 +1,320 @@
+[
+  {
+    "actions": [
+      {
+        "ok": true
+      }
+    ],
+    "description": "Runner warmup call should return ok without warmup_exception.",
+    "errors": [],
+    "latency_ms": {
+      "max": 111.13066598773003,
+      "mean": 111.13066598773003,
+      "min": 111.13066598773003
+    },
+    "name": "warmup_exception",
+    "repeat": 1,
+    "runner_stderr_tail": "",
+    "shape_ok": true,
+    "unique_actions": [
+      "{\"ok\": true}"
+    ]
+  },
+  {
+    "actions": [
+      {
+        "action": "fold"
+      }
+    ],
+    "description": "Two pair on paired Broadway river facing a large bet; known Round-1 class.",
+    "errors": [],
+    "latency_ms": {
+      "max": 7.313000038266182,
+      "mean": 7.313000038266182,
+      "min": 7.313000038266182
+    },
+    "name": "near_drawing_dead_stackoff",
+    "repeat": 1,
+    "runner_stderr_tail": "",
+    "shape_ok": true,
+    "unique_actions": [
+      "{\"action\": \"fold\"}"
+    ]
+  },
+  {
+    "actions": [
+      {
+        "action": "fold"
+      }
+    ],
+    "description": "Under-boat/full-house cooler class from the extended edge harness; large commit is unsafe.",
+    "errors": [],
+    "latency_ms": {
+      "max": 13.38733290322125,
+      "mean": 13.38733290322125,
+      "min": 13.38733290322125
+    },
+    "name": "dominated_underboat_near_dead_commitment",
+    "repeat": 1,
+    "runner_stderr_tail": "",
+    "shape_ok": true,
+    "unique_actions": [
+      "{\"action\": \"fold\"}"
+    ]
+  },
+  {
+    "actions": [
+      {
+        "action": "call"
+      }
+    ],
+    "description": "Four-way wet monotone connected flop; tests HU-biased opponent seat selection.",
+    "errors": [],
+    "latency_ms": {
+      "max": 9.01466584764421,
+      "mean": 9.01466584764421,
+      "min": 9.01466584764421
+    },
+    "name": "multiway_wet_board",
+    "repeat": 1,
+    "runner_stderr_tail": "",
+    "shape_ok": true,
+    "unique_actions": [
+      "{\"action\": \"call\"}"
+    ]
+  },
+  {
+    "actions": [
+      {
+        "action": "fold"
+      }
+    ],
+    "description": "Weak pair facing large river bet.",
+    "errors": [],
+    "latency_ms": {
+      "max": 12.008500052616,
+      "mean": 12.008500052616,
+      "min": 12.008500052616
+    },
+    "name": "river_facing_large_bet",
+    "repeat": 1,
+    "runner_stderr_tail": "",
+    "shape_ok": true,
+    "unique_actions": [
+      "{\"action\": \"fold\"}"
+    ]
+  },
+  {
+    "actions": [
+      {
+        "action": "fold"
+      }
+    ],
+    "description": "Turn jam with overcards/no made hand and poor immediate pot odds.",
+    "errors": [],
+    "latency_ms": {
+      "max": 9.024417027831078,
+      "mean": 9.024417027831078,
+      "min": 9.024417027831078
+    },
+    "name": "turn_jam_poor_pot_odds",
+    "repeat": 1,
+    "runner_stderr_tail": "",
+    "shape_ok": true,
+    "unique_actions": [
+      "{\"action\": \"fold\"}"
+    ]
+  },
+  {
+    "actions": [
+      {
+        "action": "fold"
+      }
+    ],
+    "description": "BB with dominated Kx facing a 3-bet.",
+    "errors": [],
+    "latency_ms": {
+      "max": 0.5167089402675629,
+      "mean": 0.5167089402675629,
+      "min": 0.5167089402675629
+    },
+    "name": "blind_defense_vs_3bet",
+    "repeat": 1,
+    "runner_stderr_tail": "",
+    "shape_ok": true,
+    "unique_actions": [
+      "{\"action\": \"fold\"}"
+    ]
+  },
+  {
+    "actions": [
+      {
+        "action": "all_in"
+      }
+    ],
+    "description": "Side-pot style state with one all-in player and one active covering bettor.",
+    "errors": [],
+    "latency_ms": {
+      "max": 9.523249929770827,
+      "mean": 9.523249929770827,
+      "min": 9.523249929770827
+    },
+    "name": "all_in_side_pot_state",
+    "repeat": 1,
+    "runner_stderr_tail": "",
+    "shape_ok": true,
+    "unique_actions": [
+      "{\"action\": \"all_in\"}"
+    ]
+  },
+  {
+    "actions": [
+      {
+        "action": "check"
+      }
+    ],
+    "description": "Contradictory state says can_check=True while amount_owed/current_bet are nonzero.",
+    "errors": [],
+    "latency_ms": {
+      "max": 6.708292057737708,
+      "mean": 6.708292057737708,
+      "min": 6.708292057737708
+    },
+    "name": "contradictory_legal_actions",
+    "repeat": 1,
+    "runner_stderr_tail": "",
+    "shape_ok": true,
+    "unique_actions": [
+      "{\"action\": \"check\"}"
+    ]
+  },
+  {
+    "actions": [
+      {
+        "action": "all_in"
+      }
+    ],
+    "description": "Premium hand where min_raise_to exceeds remaining stack; should use all_in/call, not illegal raise.",
+    "errors": [],
+    "latency_ms": {
+      "max": 1.2100001331418753,
+      "mean": 1.2100001331418753,
+      "min": 1.2100001331418753
+    },
+    "name": "raise_amount_min_max_ambiguity",
+    "repeat": 1,
+    "runner_stderr_tail": "",
+    "shape_ok": true,
+    "unique_actions": [
+      "{\"action\": \"all_in\"}"
+    ]
+  },
+  {
+    "actions": [
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      },
+      {
+        "action": "call"
+      }
+    ],
+    "description": "Repeated flop facing-bet branch forces hand_strength plus equity_vs_range calls.",
+    "errors": [],
+    "latency_ms": {
+      "max": 19.96679208241403,
+      "mean": 10.738816655551394,
+      "min": 7.3688330594450235
+    },
+    "name": "timeout_expensive_equity_branch",
+    "repeat": 30,
+    "runner_stderr_tail": "",
+    "shape_ok": true,
+    "unique_actions": [
+      "{\"action\": \"call\"}"
+    ]
+  }
+]

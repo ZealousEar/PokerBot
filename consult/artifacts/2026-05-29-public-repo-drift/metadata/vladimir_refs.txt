@@ -1,0 +1,54 @@
+Vlad refs
+./bots/vlad/deep_cfr_cpp/CMakeLists.txt:56:# Python (bots/vlad/deep_cfr/train.py) and calls into the C++ MCCFR via pybind.
+./bots/vlad/deep_cfr_cpp/src/train.hpp:9:// Python (bots/vlad/deep_cfr/train.py) — this is the only entry point the
+./bots/vlad/deep_cfr_cpp/src/binding.cpp:101:    // prefetch from Python: submit this in a ThreadPoolExecutor while the main
+./bots/vlad/deep_cfr_cpp/src/config.hpp:28:// _build_feature_vector in bots/vlad/bot.py byte-for-byte.
+./bots/vlad/deep_cfr_cpp/src/features.cpp:42:// Mirror exactly in bots/vlad/bot.py — any drift silently corrupts inference.
+./bots/vlad/bot.py:35:    - Total submission (bot.py + data/) <= 250 MB
+./bots/vlad/deep_cfr/config.py:32:# _build_feature_vector in bots/vlad/bot.py byte-for-byte — any drift silently
+./bots/vlad/deep_cfr/train.py:8:    bots/vlad/data/gto_strategy.npz   -- numpy weights for the production bot
+./bots/vlad/deep_cfr/train.py:77:            "Build it: cmake --build bots/vlad/deep_cfr_cpp/build --target deep_cfr_gen"
+./bots/vlad/deep_cfr/train.py:114:        fut = pool.submit(cpp_buffers.sample_regret_into,
+./bots/vlad/deep_cfr/train.py:120:                fut = pool.submit(cpp_buffers.sample_regret_into,
+./bots/vlad/deep_cfr/train.py:165:        fut = pool.submit(cpp_buffers.sample_strategy_into,
+./bots/vlad/deep_cfr/train.py:171:                fut = pool.submit(cpp_buffers.sample_strategy_into,
+./bots/vlad/deep_cfr/train.py:220:            "Build it: cmake --build bots/vlad/deep_cfr_cpp/build --target deep_cfr_gen"
+./bots/template/bot.py:39:    - Total submission (bot.py + data/) <= 250 MB
+./Makefile:88:	cmake -S bots/vlad/deep_cfr_cpp -B bots/vlad/deep_cfr_cpp/build \
+./Makefile:92:	cmake --build bots/vlad/deep_cfr_cpp/build --config Release -j
+./Makefile:95:	rm -rf bots/vlad/deep_cfr_cpp/build
+./README.md:12:You submit one file — `bot.py` — with one function:
+./README.md:100:- **No collusion.** If you and a friend both register, your bots must play independently. Coordinated soft-play, chip-dumping, or sharing live game state between submissions is grounds for both bots being DQ'd and forfeit of any prize.
+./README.md:102:- **No reflection escape attempts.** `__import__('socket')`, `getattr(__builtins__, 'open')`, `eval()`, `exec()`, `compile()` are all flagged by the validator and rejected. Don't try clever obfuscation either — `__import__('so'+'cket')` etc. fails the AST check at submission time.
+./README.md:153:Hand histories from your D1 matches are downloadable as JSON. You can submit one updated bot before D5.
+./.gitignore:23:bots/vlad/deep_cfr_cpp/build/
+./.gitignore:28:# Local backup / submission zips
+./.gitignore:29:bots/vlad - Copy/
+./.gitignore:30:bots/vlad - Copy.zip
+./.gitignore:31:bots/vlad.zip
+./sandbox/validator.py:42:# Imports that are not allowed in submitted bots.
+./sandbox/validator.py:415:def _resolve_submission(bot_path):
+./sandbox/validator.py:500:    return None, None, cleanup_dir, ["Unsupported submission (must be .py, .zip, or directory): " + bot_path]
+./sandbox/validator.py:504:    """Full validation of a bot submission (.py file, directory, or .zip).
+./sandbox/validator.py:516:    bot_py, data_dir, cleanup_dir, package_errors = _resolve_submission(bot_path)
+./sandbox/validator.py:566:    parser = argparse.ArgumentParser(description="Validate a Fullhouse bot submission")
+./db/schema.sql:55:  submitted_at  timestamptz not null default now(),
+./demo.py:30:    "Vlad Bot": "bots/vlad/bot.py",
+./CLAUDE.md:7:This is a fork of the Fullhouse poker bot competition engine. The competition runs 1–5 June 2026. Work happens in `bots/vlad/` — a No-Limit Texas Hold'em bot competing in a Swiss-system tournament. All other engine files (`engine/`, `sandbox/`, `demo.py`) are frozen and should not be modified.
+./CLAUDE.md:23:# Validate bot before submission
+./CLAUDE.md:24:make validate BOT=bots/vlad/bot.py
+./CLAUDE.md:45:**`sandbox/validator.py`** — Static + dynamic pre-submission checks. Forbidden imports: `socket`, `requests`, `subprocess`, `multiprocessing`, `pickle`, `eval`, `exec`, `compile`.
+./CLAUDE.md:68:### `bots/vlad/bot.py` — Current Implementation
+./CLAUDE.md:70:Loads a pre-trained GTO strategy network at import time (`bots/vlad/data/gto_strategy.npz`). Falls back to Monte Carlo equity if the model is unavailable.
+./CLAUDE.md:75:### `bots/vlad/deep_cfr/` — Deep CFR Training System
+./CLAUDE.md:77:Offline training pipeline (not used at runtime). Produces `bots/vlad/data/gto_strategy.npz`.
+./CLAUDE.md:113:Output: `bots/vlad/data/gto_strategy.npz` (3.6 MB, read-only at runtime).
+./CLAUDE.md:117:## Hardware Constraints (bots/vlad/)
+./CLAUDE.md:119:All code in `bots/vlad/` must operate within these production sandbox limits:
+./CLAUDE.md:129:| Total submission | 250 MB |
+./CLAUDE.md:135:A valid submission is either:
+./CLAUDE.md:136:- `bots/vlad/bot.py` (single file, ≤ 5 MB)
+./CLAUDE.md:137:- `bots/vlad/bot.zip` containing `bot.py` at root + optional `data/` subdirectory (≤ 200 MB)
+
+log
+f8b8723 Checkpoint strategy net and always train 6-player

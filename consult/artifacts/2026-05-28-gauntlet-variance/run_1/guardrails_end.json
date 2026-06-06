@@ -1,0 +1,13 @@
+{
+  "bad_hashes": {},
+  "canonical_head": "050b058d733b17418f68d3b846948b27caa13c40",
+  "engine_commit": "adc23b9813338d0e1e56e0158f18644b2b9ad234",
+  "gauntlet_head": "a00561cfadf18d3bc2b03ef2403e55346207670c",
+  "hashes": {
+    "canonical_best_green": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "canonical_v_final": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "gauntlet_best_green": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "gauntlet_v_final": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "hashes_ok": true
+}

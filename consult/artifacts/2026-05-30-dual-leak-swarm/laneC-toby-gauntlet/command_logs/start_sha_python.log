@@ -1,0 +1,21 @@
+# start protected sha
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = "C.UTF-8",
+	LC_CTYPE = "en_US.UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  /Users/farhad/Code/PokerBot/submissions/v_final.zip
+e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598  /Users/farhad/Code/PokerBot/submissions/best_green.zip
+# candidate sha
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LC_ALL = "C.UTF-8",
+	LC_CTYPE = "en_US.UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+d042c977f7c29b01d3cc50f98d56edbf93c4de7b1e0ef7e73a76de1b6c6345bf  /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneA-postflop-v2/zips/v_postflop_trap_v2_p2_already_clean.zip
+# python
+Python 3.10.18

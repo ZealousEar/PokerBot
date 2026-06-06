@@ -1,0 +1,16 @@
+{
+  "label": "validator_Pav1602/fullhouse-engine_main_skantbot7.1",
+  "cmd": [
+    "/Users/farhad/Code/PokerBot/.venv/bin/python",
+    "/Users/farhad/Code/PokerBot/ext/fullhouse-engine/sandbox/validator.py",
+    "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/opponent_zips/Pav1602__fullhouse_engine__main__skantbot7_1.zip",
+    "--json"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot",
+  "started_at": "2026-05-29T15:15:10Z",
+  "finished_at": "2026-05-29T15:15:10Z",
+  "elapsed_s": 0.088,
+  "returncode": 0,
+  "stdout": "{\n  \"bot_path\": \"/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/opponent_zips/Pav1602__fullhouse_engine__main__skantbot7_1.zip\",\n  \"passed\": true,\n  \"errors\": [],\n  \"warnings\": [],\n  \"tests\": [\n    {\n      \"test\": \"preflop_call_or_fold\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 201\n      },\n      \"elapsed\": 0.0\n    },\n    {\n      \"test\": \"postflop_can_check\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"check\"\n      },\n      \"elapsed\": 0.001\n    },\n    {\n      \"test\": \"river_facing_large_bet\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"fold\"\n      },\n      \"elapsed\": 0.001\n    },\n    {\n      \"test\": \"short_stack_all_in_decision\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"fold\"\n      },\n      \"elapsed\": 0.0\n    }\n  ],\n  \"data_dir\": null\n}\n",
+  "stderr": ""
+}

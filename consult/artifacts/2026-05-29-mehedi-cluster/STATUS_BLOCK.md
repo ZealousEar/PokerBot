@@ -1,0 +1,11 @@
+## 2026-05-29 — Mehedi public-drift decision-cluster analysis — GREEN
+- Classification: DIFFERENT_LEAK; Mehedi top clusters are preflop pressure fold/all-in, not Toby's full river trap.
+- Artifact invariant: v_final.zip and best_green.zip sha256 `e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598` confirmed before/report-write; no submissions edits.
+- Opponent validator: PASS for `consult/artifacts/2026-05-29-public-repo-drift/opponent_zips/mehedi_mybot.zip`.
+- H2H: 20,000 scheduled / 3,767 actual, hero `-180,000` chips, `-9.00 bb/100` scheduled, `-47.78 bb/100` actual.
+- Errors/decisions: hero errors 0, opponent errors 0, hero decision records 4,232.
+- Top last-decision clusters: preflop BB/true-HU-button fold `-5.72`; preflop BB/true-HU-button all-in `-3.74`; river BB/BB paired two-tone fold `-3.49` bb/100 scheduled.
+- Toby comparison: rank1 unpaired river 2/3-pot raise is low-rank in Mehedi (`-0.95` pooled); paired river fold is material (`-5.57` pooled) but secondary to preflop pressure.
+- Upload recommendation: SHIP_LOCKED_ARTIFACT; no PATCH_CANDIDATE.
+- Files changed: `consult/artifacts/2026-05-29-mehedi-cluster/{instrumented_h2h.py,decision_log.jsonl,RESULTS.json,MEHEDI_CLUSTER_REPORT.md,STATUS_BLOCK.md,logs/mehedi_mybot_instrumented_s142.json,logs/mehedi_mybot_clusters_s142.json}`.
+- Forbidden areas untouched: `submissions/`, `src/`, `data/`, `tools/`, `tests/`, `ext/fullhouse-engine/`, `ext/public-bots/`.

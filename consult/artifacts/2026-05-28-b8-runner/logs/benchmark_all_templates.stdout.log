@@ -1,0 +1,5 @@
+TODO (G2/G3): benchmark 200 hands vs template; --min-bb 0.0
+TODO (G2/G3): benchmark 200 hands vs aggressor; --min-bb 0.0
+TODO (G2/G3): benchmark 200 hands vs mathematician; --min-bb 0.0
+TODO (G2/G3): benchmark 200 hands vs shark; --min-bb 0.0
+TODO (G2/G3): benchmark 200 hands vs ref_bot_2; --min-bb 0.0

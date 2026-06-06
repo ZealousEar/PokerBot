@@ -1,0 +1,17 @@
+{
+  "label": "repo_commit_date_TobyCoad__fullhouse_engine__main",
+  "cmd": [
+    "git",
+    "show",
+    "-s",
+    "--format=%cI",
+    "HEAD"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/TobyCoad__fullhouse_engine__main",
+  "started_at": "2026-05-29T15:14:47Z",
+  "finished_at": "2026-05-29T15:14:47Z",
+  "elapsed_s": 0.006,
+  "returncode": 0,
+  "stdout": "2026-05-13T22:19:58+01:00\n",
+  "stderr": ""
+}

@@ -1,0 +1,22 @@
+# zip: consult/artifacts/2026-05-31-scratch-improve/sibling-gate/claude.zip
+# zip sha256: a5a52d973e4f1191c74082cf0848dd30f8f98b3ed423f55d7d62cae2c1d97387
+STRATEGY LEAKAGE DETECTED:
+  bot.py:8: snapshot
+  src/bot.py:153: branch
+  src/bot.py:154: branch
+  src/bot.py:307: branch
+  src/equity.py:15: seed
+  src/equity.py:16: seed
+  src/equity.py:17: seed
+  src/equity.py:136: seed
+  src/equity.py:138: seed
+  src/equity.py:172: seed
+  src/opponent_model.py:10: seed
+  src/opponent_model.py:149: v3_hardened
+  src/opponent_model.py:149: v_final
+  src/opponent_model.py:150: snapshot
+  src/opponent_model.py:163: aggressor
+  src/preflop_lookup.py:66: branch
+  src/preflop_lookup.py:111: branch
+  src/ranges.py:187: v1_blueprint
+  src/ranges.py:188: snapshot

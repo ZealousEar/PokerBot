@@ -1,0 +1,132 @@
+{
+  "verdict": "NO_PATCH",
+  "reason": "phase_a_localized_material_toby_loss_to_forbidden_postflop_surface; no material allowed seam",
+  "canonical_artifact": {
+    "path": "submissions/v_final.zip",
+    "sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "unchanged": true
+  },
+  "best_green_artifact": {
+    "path": "submissions/best_green.zip",
+    "sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "unchanged": true
+  },
+  "candidate_artifact": {
+    "path": "submissions/v_public_drift_candidate.zip",
+    "created": false,
+    "deleted": false,
+    "reason": "Phase B not entered"
+  },
+  "phase_a": {
+    "status": "GREEN_LOCALIZATION_BUT_NO_PATCH",
+    "opponent": {
+      "repo": "TobyCoad/fullhouse-engine",
+      "bot_path": "bots/master/bot.py",
+      "head_sha": "93516f33675d32beaeb3228a554c1323926cd71d"
+    },
+    "probe": {
+      "script": "consult/artifacts/2026-05-29-public-drift-patch/instrumented_h2h.py",
+      "command": ".venv/bin/python consult/artifacts/2026-05-29-public-drift-patch/instrumented_h2h.py --hands 20000",
+      "scheduled_hands": 20000,
+      "actual_hands": 963,
+      "hero_chip_delta": -260000,
+      "hero_bb_per_100_scheduled": -13.0,
+      "hero_bb_per_100_actual": -269.98961578400827,
+      "hero_errors": 0,
+      "opponent_errors": 0,
+      "hero_decision_records": 3481,
+      "outputs": {
+        "decision_jsonl": "consult/artifacts/2026-05-29-public-drift-patch/logs/toby_master_decisions_s142.jsonl",
+        "full_json": "consult/artifacts/2026-05-29-public-drift-patch/logs/toby_master_instrumented_s142.json",
+        "cluster_json": "consult/artifacts/2026-05-29-public-drift-patch/logs/toby_master_clusters_s142.json"
+      }
+    },
+    "top_losing_last_decision_clusters": [
+      {
+        "rank": 1,
+        "street": "river",
+        "position_label": "heads_up_button",
+        "true_position_label": "heads_up_button",
+        "action": "raise",
+        "sizing_bucket": "raise_le_2/3pot",
+        "board_texture_tag": "5card_unpaired_two_tone_static",
+        "count": 22,
+        "chips": -55792,
+        "bb_per_100_scheduled": -2.7896,
+        "mbb_per_game_scheduled": -27.896,
+        "source_lines": ["src/postflop.py:38-44"],
+        "allowed_scope": false
+      },
+      {
+        "rank": 2,
+        "street": "river",
+        "position_label": "big_blind",
+        "true_position_label": "heads_up_button",
+        "action": "fold",
+        "sizing_bucket": "fold",
+        "board_texture_tag": "5card_paired_two_tone_static",
+        "count": 21,
+        "chips": -53256,
+        "bb_per_100_scheduled": -2.6628,
+        "mbb_per_game_scheduled": -26.628,
+        "source_lines": ["src/postflop.py:46-53"],
+        "allowed_scope": false
+      },
+      {
+        "rank": 3,
+        "street": "river",
+        "position_label": "heads_up_button",
+        "true_position_label": "heads_up_button",
+        "action": "fold",
+        "sizing_bucket": "fold",
+        "board_texture_tag": "5card_paired_two_tone_static",
+        "count": 21,
+        "chips": -51807,
+        "bb_per_100_scheduled": -2.59035,
+        "mbb_per_game_scheduled": -25.9035,
+        "source_lines": ["src/postflop.py:46-53"],
+        "allowed_scope": false
+      }
+    ],
+    "allowed_seam_findings": {
+      "preflop_pressure_overlay": {
+        "status": "not_material",
+        "evidence": "preflop all_in last-losing cluster occurred once for -10 chips (-0.001 bb/100 scheduled); preflop folds after raise_count>=2 were about -1.03 bb/100 scheduled",
+        "source_lines": ["src/bot.py:158-180", "src/opponent_model.py:50-54"]
+      },
+      "six_max_position_labeling": {
+        "status": "not_localized",
+        "evidence": "Toby H2H is heads-up; position labels are not consumed by decide_postflop and facing-aggression preflop branch is position-independent",
+        "source_lines": ["src/bot.py:102-120"]
+      },
+      "limp_iso_raise_counting": {
+        "status": "not_applicable_in_heads_up_probe",
+        "evidence": "No multiway limp+iso sequences exist in Toby H2H",
+        "source_lines": ["src/preflop_lookup.py:37-53"]
+      },
+      "illegal_check_facing_bet": {
+        "status": "not_evidenced",
+        "evidence": "Top clusters were direct postflop raise/fold decisions; no evidence of check legalized to call",
+        "source_lines": ["src/bot.py:60-63"]
+      }
+    }
+  },
+  "gates": {
+    "phase_a_decision_cluster": {
+      "status": "PASS_FOR_ANALYSIS_BLOCKED_FOR_PATCH",
+      "details": "Toby deficit reproduced and localized; material localization is forbidden postflop surface"
+    },
+    "phase_b_minimal_patch": {"status": "SKIPPED", "reason": "No allowed-scope material seam"},
+    "import_audit": {"status": "SKIPPED", "reason": "No candidate zip"},
+    "edge_cases": {"status": "SKIPPED", "reason": "No candidate zip"},
+    "validator": {"status": "SKIPPED", "reason": "No candidate zip"},
+    "smoke": {"status": "SKIPPED", "reason": "No candidate zip"},
+    "leakage": {"status": "SKIPPED", "reason": "No candidate zip"},
+    "exploit_check": {"status": "SKIPPED", "reason": "No candidate zip"},
+    "all_template_benchmark": {"status": "SKIPPED", "reason": "No candidate zip"},
+    "h2h_toby_candidate_vs_canonical": {"status": "SKIPPED", "reason": "No candidate zip"},
+    "h2h_mehedi_non_regression": {"status": "SKIPPED", "reason": "No candidate zip"},
+    "h2h_regression_check_public_matrix": {"status": "SKIPPED", "reason": "No candidate zip"}
+  },
+  "promotion_recommendation": "keep v_final.zip locked"
+}

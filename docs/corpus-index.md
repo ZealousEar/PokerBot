@@ -15,10 +15,10 @@ If you want a `/research`-shaped note for any source, run that skill manually wi
 3. [[Pluribus-Brown-Sandholm-2019]] — *Pluribus* (Science). Lever: 6-max blueprint, depth-limited solving, discrete sizing tree.
 4. [[Cepheus-Bowling-2015]] — *Heads-up limit hold'em is solved*. Lever: CFR+ trainer + abstraction (bucketing) for the flop strategy.
 5. [[MCCFR-Lanctot-2009]] — *Monte Carlo Sampling for Regret Minimization*. Lever: external-sampling MCCFR for both `tools/train_preflop.py` and `tools/train_flop.py`.
-6. [[DeepCFR-Brown-2019]] — *Deep CFR*. Read-only — out of scope for our timeline (no PyTorch/TF in the sandbox); note documents *why* we skip it.
+6. [[DeepCFR-Brown-2019]] — *Deep CFR*. Read-only as a SHIP candidate (skip rationale corrected 2026-05-27 consult: not infrastructure-bound — runtime PyTorch still forbidden but `.npz`+numpy inference is proven feasible by vladimir's `bots/vlad/bot.py`; the binding constraint is calendar/validation — 9 days cannot train, integrate, gauntlet, and statistically prove a new neural policy beats the locked artifact). Adjacent use allowed: SHADOW-CFR-1 red-team / sparring opponent only — see `docs/plans/qualifier-finals-rollout-2026-05-27.md` Phase D.
 7. [[Engine-Fullhouse]] — Engine sandbox + reference bot characterisation (`template`, `aggressor`, `mathematician`, `shark`, `ref_bot_2`) with exploitable holes and counter-strategies. Lever: G1 wiring + G3 exploit-overlay targets.
 8. (Billings/Davidson/Schauenberg opponent-modeling note was planned but not built — the engine reference note covers per-bot exploitable holes adequately for G3.)
 
 ## Why this set
 
-These eight cover the technique families we will actually use (precomputed blueprint + abstraction + opponent modeling) and one excluded family (Deep CFR — too costly to implement here). The plan caps corpus reading at 8 sources / 6 hours so the budget goes to hardening, not bibliography.
+These eight cover the technique families we will actually use (precomputed blueprint + abstraction + opponent modeling) and one excluded-as-ship-candidate family (Deep CFR — calendar-bound, not infrastructure-bound; usable as a red-team sparring lane per Phase D). The plan caps corpus reading at 8 sources / 6 hours so the budget goes to hardening, not bibliography.

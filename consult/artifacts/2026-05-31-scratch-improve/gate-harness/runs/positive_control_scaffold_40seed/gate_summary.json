@@ -1,0 +1,196 @@
+{
+  "candidate": {
+    "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/scaffold_candidate.zip",
+    "sha256": "8266cb49fd6ce7c32ae2c7db90737fd33788423f5525c0f155ddcfd51f7c9b5f"
+  },
+  "config": {
+    "allow_small_seeds": false,
+    "bust_tol": 0.15,
+    "hands": 400,
+    "jobs": 1,
+    "p50_tol": 6000.0,
+    "pods": [
+      "C0",
+      "C1"
+    ],
+    "pythonhashseed": "0",
+    "seed_base": 142,
+    "seeds": 40,
+    "skip_stage1": true,
+    "skip_stage2": true,
+    "use_docker": false
+  },
+  "died_at_stage": null,
+  "expected_protected_sha": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+  "generated_at": "2026-05-31T01:16:48Z",
+  "locked": {
+    "path": "submissions/v_final.zip",
+    "sha256": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "opponent_zips": {
+    "aggressor": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/aggressor.zip",
+      "sha256": "62db39f64a8121e860c718c6e9ddbb3119e7ced4dc2fd6a7d8e0dd9d2687b7c8",
+      "source": "ext/fullhouse-engine/bots/aggressor"
+    },
+    "mathematician": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/mathematician.zip",
+      "sha256": "4fd347a4a46efbc7c3de79bca7333109462ceb4d16e456e1e5b3ad3703dae664",
+      "source": "ext/fullhouse-engine/bots/mathematician"
+    },
+    "ref_bot_2": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/ref_bot_2.zip",
+      "sha256": "88bf4ad82cba016ada5ee7d9508b9d18066c478569d31ee8b73f4670318af635",
+      "source": "ext/fullhouse-engine/bots/ref_bot_2"
+    },
+    "shark": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/shark.zip",
+      "sha256": "6f1301cbc36c8696ba0ac56ac30509adcb2cc9b8d6001bb5c4d04d63752eb5bd",
+      "source": "ext/fullhouse-engine/bots/shark"
+    },
+    "template": {
+      "kind": "built_reference_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/template.zip",
+      "sha256": "f06ebf9bae229f3854d61b6d13e321f9cd63f79455c664cc32c6dbf06dee1087",
+      "source": "ext/fullhouse-engine/bots/template"
+    },
+    "toby_master": {
+      "kind": "copied_zip",
+      "path": "consult/artifacts/2026-05-31-scratch-improve/gate-harness/opponent_zips/toby_master.zip",
+      "sha256": "d09ad23f6f76a3f8e05cc57561af6a75bd554da73c67c476307689842f8b3508",
+      "source": "consult/artifacts/2026-05-29-public-drift-patch/opponent_zips/toby_master.zip"
+    }
+  },
+  "pods": {
+    "all_pods_pass": false,
+    "any_incomplete": false,
+    "compositions": {
+      "C0": {
+        "bust_rate_delta_candidate_minus_locked": -0.4,
+        "bust_regression": false,
+        "candidate_bust_rate": 0.25,
+        "candidate_busts": 10,
+        "candidate_chip_delta": {
+          "count": 40,
+          "max": -3300.0,
+          "mean": -6775.0,
+          "min": -10000.0,
+          "p10": -10000.0,
+          "p25": -9025.0,
+          "p50": -6075.0,
+          "p75": -5000.0,
+          "p90": -4380.0,
+          "stdev": 2221.0
+        },
+        "candidate_hero_action_errors": 0,
+        "candidate_hero_decisions": 21539,
+        "candidate_hero_p99_decide_latency_ms": 1.414,
+        "complete": true,
+        "locked_bust_rate": 0.65,
+        "locked_busts": 26,
+        "locked_chip_delta": {
+          "count": 40,
+          "max": 32606.0,
+          "mean": -2764.38,
+          "min": -10000.0,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": -10000.0,
+          "p75": 4638.75,
+          "p90": 14500.3,
+          "stdev": 11338.63
+        },
+        "marginal_p50_delta_candidate_minus_locked": 3925.0,
+        "missing_candidate_seeds": [],
+        "missing_locked_seeds": [],
+        "p50_regression": false,
+        "paired_count": 40,
+        "paired_diff_candidate_minus_locked": {
+          "count": 40,
+          "max": 6700.0,
+          "mean": -4010.62,
+          "min": -42606.0,
+          "p10": -20463.3,
+          "p25": -9019.75,
+          "p50": 0.0,
+          "p75": 3787.5,
+          "p90": 5055.0,
+          "stdev": 11514.05
+        },
+        "pod_pass": true,
+        "scheduled_count": 40
+      },
+      "C1": {
+        "bust_rate_delta_candidate_minus_locked": -0.125,
+        "bust_regression": false,
+        "candidate_bust_rate": 0.275,
+        "candidate_busts": 11,
+        "candidate_chip_delta": {
+          "count": 40,
+          "max": -3200.0,
+          "mean": -9303.75,
+          "min": -10000.0,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": -9550.0,
+          "p75": -9037.5,
+          "p90": -8630.0,
+          "stdev": 1131.96
+        },
+        "candidate_hero_action_errors": 0,
+        "candidate_hero_decisions": 20888,
+        "candidate_hero_p99_decide_latency_ms": 1.93,
+        "complete": true,
+        "locked_bust_rate": 0.4,
+        "locked_busts": 16,
+        "locked_chip_delta": {
+          "count": 40,
+          "max": 45894.0,
+          "mean": 7726.73,
+          "min": -10000.0,
+          "p10": -10000.0,
+          "p25": -10000.0,
+          "p50": 2487.5,
+          "p75": 23966.75,
+          "p90": 36955.4,
+          "stdev": 18515.48
+        },
+        "marginal_p50_delta_candidate_minus_locked": -12037.5,
+        "missing_candidate_seeds": [],
+        "missing_locked_seeds": [],
+        "p50_regression": true,
+        "paired_count": 40,
+        "paired_diff_candidate_minus_locked": {
+          "count": 40,
+          "max": 1550.0,
+          "mean": -17030.47,
+          "min": -55044.0,
+          "p10": -46372.6,
+          "p25": -32861.25,
+          "p50": -11962.5,
+          "p75": 0.0,
+          "p90": 550.0,
+          "stdev": 18294.52
+        },
+        "pod_pass": false,
+        "scheduled_count": 40
+      }
+    }
+  },
+  "protected_sha_after": {
+    "submissions/best_green.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "submissions/v_final.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "protected_sha_before": {
+    "submissions/best_green.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598",
+    "submissions/v_final.zip": "e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598"
+  },
+  "protected_sha_ok": true,
+  "stages": [],
+  "verdict": "GATE_FAIL_POD_REGRESSION",
+  "verdict_note": "NOTHING AUTO-PROMOTES. GATE_CLEAR only FLAGS the candidate for a human MODIFY decision; submissions/v_final.zip stays the upload target unless a human explicitly overrides."
+}

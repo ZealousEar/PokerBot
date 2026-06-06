@@ -1,0 +1,19 @@
+# zip: consult/artifacts/2026-06-04-finals-ship/candidates/candidate_A.zip
+# zip sha256: ff5eaf106fb2019a0d34811e415274c0fb6139a74858451222f140ea32b87b61
+STRATEGY LEAKAGE DETECTED:
+  src/bot.py:257: v0_wired
+  src/bot.py:257: snapshot
+  src/equity.py:15: seed
+  src/equity.py:16: seed
+  src/equity.py:17: seed
+  src/equity.py:193: seed
+  src/equity.py:195: seed
+  src/equity.py:229: seed
+  src/opponent_model.py:10: seed
+  src/preflop_lookup.py:65: v1_blueprint
+  src/preflop_lookup.py:65: snapshot
+  src/preflop_lookup.py:78: v_final
+  src/preflop_lookup.py:79: v3_hardened
+  src/preflop_lookup.py:79: snapshot
+  src/ranges.py:187: v1_blueprint
+  src/ranges.py:188: snapshot

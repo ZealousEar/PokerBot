@@ -1,0 +1,166 @@
+diff --git a/src/postflop.py b/src/postflop.py
+index 790178b..7d50d06 100644
+--- a/src/postflop.py
++++ b/src/postflop.py
+@@ -26,16 +26,92 @@ if _strategy_path.exists():
+     with np.load(_strategy_path, allow_pickle=False) as data:
+         _flop_strategy = data["strategy"].astype(float)
+ 
++_RANKS = "23456789TJQKA"
++_RANK_VALUE = {rank: idx for idx, rank in enumerate(_RANKS, start=2)}
++
++
++def _rank(card) -> str:
++    text = str(card or "")
++    return text[0] if text else ""
++
++
++def _suit(card) -> str:
++    text = str(card or "")
++    return text[1:2] if len(text) > 1 else ""
++
++
++def _counts(items) -> dict:
++    out = {}
++    for item in items:
++        if item:
++            out[item] = out.get(item, 0) + 1
++    return out
++
++
++def _board_texture(board: list) -> tuple[bool, bool, bool]:
++    ranks = [_rank(card) for card in board if card]
++    suits = [_suit(card) for card in board if card]
++    rank_counts = _counts(ranks)
++    suit_counts = _counts(suits)
++    paired = any(count >= 2 for count in rank_counts.values())
++    max_suit = max(suit_counts.values()) if suit_counts else 0
++    two_tone = bool(suits) and 2 <= max_suit < len(suits)
++    values = sorted(_RANK_VALUE.get(rank, 0) for rank in ranks)
++    static = len(values) < 3 or values[-1] - values[0] > 5
++    return paired, two_tone, static
++
++
++def _has_straight(cards: list, board: list) -> bool:
++    values = {_RANK_VALUE.get(_rank(card), 0) for card in cards + board}
++    values.discard(0)
++    if 14 in values:
++        values.add(1)
++    hero_values = {_RANK_VALUE.get(_rank(card), 0) for card in cards}
++    if 14 in hero_values:
++        hero_values.add(1)
++    for start in range(1, 11):
++        run = set(range(start, start + 5))
++        if run.issubset(values) and run.intersection(hero_values):
++            return True
++    return False
++
++
++def _clear_river_value(cards: list, board: list) -> bool:
++    hero_ranks = [_rank(card) for card in cards if card]
++    all_ranks = [_rank(card) for card in cards + board if card]
++    counts = _counts(all_ranks)
++    if any(counts.get(rank, 0) >= 3 for rank in hero_ranks):
++        return True
++
++    if len(hero_ranks) == 2 and hero_ranks[0] == hero_ranks[1]:
++        board_paired = any(count >= 2 for count in _counts([_rank(card) for card in board]).values())
++        if board_paired or _RANK_VALUE.get(hero_ranks[0], 0) >= 10:
++            return True
++
++    hero_suits = {_suit(card) for card in cards if card}
++    all_suits = _counts([_suit(card) for card in cards + board if card])
++    if any(suit and all_suits.get(suit, 0) >= 5 for suit in hero_suits):
++        return True
++
++    return _has_straight(cards, board)
++
+ 
+ def decide_postflop(game_state: dict) -> dict:
+     """Return a low-cost postflop action for the G2 deterministic baseline."""
+     # Source: [[Engine-Fullhouse]]
++    street = game_state.get("street")
+     pot = int(game_state.get("pot") or 0)
+     min_raise_to = int(game_state.get("min_raise_to") or 0)
+     already_in = int(game_state.get("your_bet_this_street") or 0)
+     stack_total = int(game_state.get("your_stack") or 0) + already_in
++    cards = game_state.get("your_cards") or []
++    board = game_state.get("community_cards") or []
+ 
+     if game_state.get("can_check"):
++        if street == "river":
++            _, two_tone, static = _board_texture(board)
++            if two_tone and static and not _clear_river_value(cards, board):
++                return {"action": "check"}
+         if pot >= 200 and stack_total > min_raise_to:
+             amount = max(min_raise_to, already_in + (pot * 2) // 3)
+             amount = min(amount, stack_total)
+@@ -44,8 +120,11 @@ def decide_postflop(game_state: dict) -> dict:
+         return {"action": "check"}
+ 
+     owed = int(game_state.get("amount_owed") or 0)
+-    cards = game_state.get("your_cards") or []
+-    board = game_state.get("community_cards") or []
++    if street == "river" and already_in > 0:
++        board_paired, two_tone, static = _board_texture(board)
++        if board_paired and two_tone and static and _clear_river_value(cards, board):
++            return {"action": "call"}
++
+     ranks = [str(c)[0] for c in cards if c] + [str(c)[0] for c in board if c]
+     paired = any(ranks.count(rank) >= 2 for rank in {str(c)[0] for c in cards if c})
+     if paired and owed <= max(100, pot // 3):
+diff --git a/tests/edge_cases/test_postflop_trap_v2.py b/tests/edge_cases/test_postflop_trap_v2.py
+new file mode 100644
+index 0000000..9f14527
+--- /dev/null
++++ b/tests/edge_cases/test_postflop_trap_v2.py
+@@ -0,0 +1,49 @@
++"""Lane A postflop trap guard regression tests."""
++
++from src.postflop import decide_postflop
++
++
++_RIVER_STATIC_TWO_TONE = {
++    "type": "action_request",
++    "street": "river",
++    "pot": 600,
++    "community_cards": ["2s", "2h", "7s", "9d", "Qc"],
++    "current_bet": 0,
++    "min_raise_to": 100,
++    "amount_owed": 0,
++    "can_check": True,
++    "your_stack": 9400,
++    "your_bet_this_street": 0,
++}
++
++
++def test_weak_hand_checks_static_two_tone_river_instead_of_autoraising():
++    state = dict(_RIVER_STATIC_TWO_TONE, your_cards=["Ah", "Kd"])
++
++    assert decide_postflop(state) == {"action": "check"}
++
++
++def test_clear_value_can_call_paired_static_two_tone_river_after_investment():
++    state = dict(
++        _RIVER_STATIC_TWO_TONE,
++        can_check=False,
++        current_bet=700,
++        amount_owed=500,
++        your_bet_this_street=200,
++        your_cards=["As", "Ac"],
++    )
++
++    assert decide_postflop(state) == {"action": "call"}
++
++
++def test_weak_hand_folds_large_river_bet_without_clear_value():
++    state = dict(
++        _RIVER_STATIC_TWO_TONE,
++        can_check=False,
++        current_bet=700,
++        amount_owed=500,
++        your_bet_this_street=200,
++        your_cards=["Ah", "Kd"],
++    )
++
++    assert decide_postflop(state) == {"action": "fold"}

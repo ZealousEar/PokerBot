@@ -1,0 +1,20 @@
+=== probe start ===
+release scorer materialized:      507 lines
+--- lbr_check.py argparse lines ---
+50:import argparse
+494:    p = argparse.ArgumentParser(description=__doc__,
+495:                                formatter_class=argparse.RawDescriptionHelpFormatter)
+496:    p.add_argument("--bot", type=Path,
+498:    p.add_argument("--hands", type=int, default=4000)
+499:    p.add_argument("--rollouts", type=int, default=80,
+501:    p.add_argument("--seed-base", type=int, default=42)
+502:    p.add_argument("--max-preflop-mbb", type=float, default=100.0)
+503:    p.add_argument("--max-aggregate-mbb", type=float, default=200.0)
+504:    p.add_argument("--json-out", type=Path, default=None)
+--- release exploit_check.py argparse lines ---
+12:import argparse
+453:    p = argparse.ArgumentParser()
+454:    p.add_argument("--bot", type=Path, default=ROOT / "submissions" / "v_final.zip")
+455:    p.add_argument("--max-preflop-mbb", type=float, default=100.0)
+456:    p.add_argument("--max-aggregate-mbb", type=float, default=200.0)
+=== probe end ===

@@ -1,0 +1,10 @@
+
+✅ PASSED  —  /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/postflop-trap-candidate/zips/v_postflop_trap_candidate.zip
+
+
+Test results:
+  ✓ [0.040s] preflop_call_or_fold: {'action': 'raise', 'amount': 200}
+  ✓ [0.018s] postflop_can_check: {'action': 'raise', 'amount': 200}
+  ✓ [0.000s] river_facing_large_bet: {'action': 'fold'}
+  ✓ [0.000s] short_stack_all_in_decision: {'action': 'all_in'}
+

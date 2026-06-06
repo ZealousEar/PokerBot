@@ -1,0 +1,6 @@
+[pods] hero=codex.zip sha=e2ba542b79ca out=repro_codex comps=C0D_DETERMINISTIC_SUBSET hands=400 seeds=900..902 jobs=1 pending=3 resumed=0
+[pods] C0D_DETERMINISTIC_SUBSET s900 hands=400 delta=+11020 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s901 hands=400 delta=+5610 bust=0
+[pods] C0D_DETERMINISTIC_SUBSET s902 hands=400 delta=+8950 bust=0
+[pods] wrote /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/batch2/recalib-codex/repro_codex/summary.json
+[pods] C0D_DETERMINISTIC_SUBSET n=3 p50=8950.0 bust=0.0 mean=8526.7 err=0/1578

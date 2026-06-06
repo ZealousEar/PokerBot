@@ -1,0 +1,15 @@
+{
+  "label": "rev_parse_agrawalneel25__fullhouse_engine__neel_work",
+  "cmd": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-29-away/public-drift-completeness/_clones/agrawalneel25__fullhouse_engine__neel_work",
+  "started_at": "2026-05-29T15:14:49Z",
+  "finished_at": "2026-05-29T15:14:49Z",
+  "elapsed_s": 0.006,
+  "returncode": 0,
+  "stdout": "071d54c302cbd2d9d5fcc773260e7f5f894c642f\n",
+  "stderr": ""
+}

@@ -1,0 +1,2 @@
+mix,thorp_seat,seed,hands_played,duration_s,thorp_delta,thorp_final_stack,decisions,fold_defaults,illegal_action_names,timeouts,exceptions,busted,bust_hand,bust_street
+reference_field,0,42,2,0.31,-250,9750,3,0,0,0,0,False,,

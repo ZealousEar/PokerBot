@@ -1,0 +1,233 @@
+{
+  "regime": "exact_paired_deterministic_subset C0D_DETERMINISTIC_SUBSET=[hero,template,mathematician,shark,ref_bot_2]",
+  "n": 24,
+  "seeds": [
+    700,
+    701,
+    702,
+    703,
+    704,
+    705,
+    706,
+    707,
+    708,
+    709,
+    710,
+    711,
+    712,
+    713,
+    714,
+    715,
+    716,
+    717,
+    718,
+    719,
+    720,
+    721,
+    722,
+    723
+  ],
+  "jobs": 1,
+  "seed_base": 700,
+  "hands": 400,
+  "candidate_sha": null,
+  "n_seeds_byte_identical_outcome": 0,
+  "candidate": {
+    "p50": 13900.0,
+    "mean": 12357.2,
+    "bust": 2,
+    "bust_rate": 0.0833,
+    "action_errors": 0
+  },
+  "locked": {
+    "p50": 12000.0,
+    "mean": 11800.7,
+    "bust": 1,
+    "bust_rate": 0.0417,
+    "action_errors": 0
+  },
+  "paired_diff": {
+    "p10": -14329.999999999996,
+    "p25": -3704.25,
+    "p50": 2250.0,
+    "p75": 5325.0,
+    "p90": 11234.999999999995,
+    "mean": 556.5,
+    "stdev": 10780.6,
+    "min": -24850,
+    "max": 26900,
+    "sum": 13356
+  },
+  "marginal_p50_delta_cand_minus_lock": 1900.0,
+  "bust_delta_cand_minus_lock": 0.0417,
+  "per_seed": {
+    "700": {
+      "candidate": 22150,
+      "locked": 16250,
+      "diff": 5900,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "701": {
+      "candidate": 15490,
+      "locked": 12150,
+      "diff": 3340,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "702": {
+      "candidate": 12725,
+      "locked": 13300,
+      "diff": -575,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "703": {
+      "candidate": 6000,
+      "locked": 11100,
+      "diff": -5100,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "704": {
+      "candidate": 15900,
+      "locked": 10500,
+      "diff": 5400,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "705": {
+      "candidate": 13800,
+      "locked": 11100,
+      "diff": 2700,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "706": {
+      "candidate": 11950,
+      "locked": 12200,
+      "diff": -250,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "707": {
+      "candidate": 13700,
+      "locked": 14950,
+      "diff": -1250,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "708": {
+      "candidate": 5700,
+      "locked": 9867,
+      "diff": -4167,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "709": {
+      "candidate": -10000,
+      "locked": 8750,
+      "diff": -18750,
+      "cand_bust": true,
+      "lock_bust": false
+    },
+    "710": {
+      "candidate": 25050,
+      "locked": 10600,
+      "diff": 14450,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "711": {
+      "candidate": 17000,
+      "locked": 10700,
+      "diff": 6300,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "712": {
+      "candidate": 14300,
+      "locked": 12100,
+      "diff": 2200,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "713": {
+      "candidate": 5750,
+      "locked": 12800,
+      "diff": -7050,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "714": {
+      "candidate": 10900,
+      "locked": 14450,
+      "diff": -3550,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "715": {
+      "candidate": 15950,
+      "locked": 12250,
+      "diff": 3700,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "716": {
+      "candidate": 16900,
+      "locked": -10000,
+      "diff": 26900,
+      "cand_bust": false,
+      "lock_bust": true
+    },
+    "717": {
+      "candidate": 11408,
+      "locked": 10650,
+      "diff": 758,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "718": {
+      "candidate": 15850,
+      "locked": 10550,
+      "diff": 5300,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "719": {
+      "candidate": 15650,
+      "locked": 11900,
+      "diff": 3750,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "720": {
+      "candidate": 26250,
+      "locked": 12900,
+      "diff": 13350,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "721": {
+      "candidate": -10000,
+      "locked": 14850,
+      "diff": -24850,
+      "cand_bust": true,
+      "lock_bust": false
+    },
+    "722": {
+      "candidate": 14000,
+      "locked": 11700,
+      "diff": 2300,
+      "cand_bust": false,
+      "lock_bust": false
+    },
+    "723": {
+      "candidate": 10150,
+      "locked": 27600,
+      "diff": -17450,
+      "cand_bust": false,
+      "lock_bust": false
+    }
+  }
+}

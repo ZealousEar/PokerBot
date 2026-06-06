@@ -1,0 +1,56 @@
+{
+  "match_id": "c72169ca-9b5f-40a2-83fe-770c0947dab8",
+  "tournament": "INTERNAL-Extra-A-1780396368",
+  "round": 1,
+  "status": "failed",
+  "started_at": null,
+  "completed_at": null,
+  "n_hands_target": 400,
+  "seed": null,
+  "bots": [
+    {
+      "bot_id": "1c0abfd8-c355-471b-8c7b-e5e75800ce04",
+      "bot_name": "Thorp",
+      "seat": 4,
+      "final_stack": null,
+      "chip_delta": null,
+      "bot_errors": []
+    },
+    {
+      "bot_id": "2c36438e-1fa6-458b-b1f0-edff4e79fe31",
+      "bot_name": "DanielNegreanu",
+      "seat": 5,
+      "final_stack": null,
+      "chip_delta": null
+    },
+    {
+      "bot_id": "62eab0cc-45c6-4d9b-a7e6-13f6d8fefee3",
+      "bot_name": "BottomDestroyer",
+      "seat": 0,
+      "final_stack": null,
+      "chip_delta": null
+    },
+    {
+      "bot_id": "db316693-e221-4c8b-967b-5470aa74248d",
+      "bot_name": "Bot1",
+      "seat": 3,
+      "final_stack": null,
+      "chip_delta": null
+    },
+    {
+      "bot_id": "e7832cb2-6d76-4c82-9aae-0c0fd52d2641",
+      "bot_name": "bav",
+      "seat": 1,
+      "final_stack": null,
+      "chip_delta": null
+    },
+    {
+      "bot_id": "ebdcc4f2-3f16-4061-b5dd-321b5c452d8f",
+      "bot_name": "Quant",
+      "seat": 2,
+      "final_stack": null,
+      "chip_delta": null
+    }
+  ],
+  "hands": []
+}

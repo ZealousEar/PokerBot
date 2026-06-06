@@ -1,0 +1,61 @@
+[
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "tools/import_audit.py"
+    ],
+    "duration_s": 0.042,
+    "label": "import_audit_canonical_src",
+    "returncode": 0,
+    "stderr_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/import_audit_canonical_src.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/import_audit_canonical_src.stdout.log",
+    "stdout_tail": "cold import: 0.000s, RSS: 10.3 MB\n"
+  },
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "-m",
+      "pytest",
+      "tests/edge_cases",
+      "-x"
+    ],
+    "duration_s": 0.449,
+    "label": "edge_cases_canonical_src",
+    "returncode": 1,
+    "stderr_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/edge_cases_canonical_src.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/edge_cases_canonical_src.stdout.log",
+    "stdout_tail": "============================= test session starts ==============================\nplatform darwin -- Python 3.10.18, pytest-9.0.3, pluggy-1.6.0\nrootdir: /Users/farhad/Code/PokerBot\nplugins: hypothesis-6.152.9\ncollected 14 items\n\ntests/edge_cases/test_package_and_harness_contracts.py ......            [ 42%]\ntests/edge_cases/test_runner_contract_extended.py .F\n\n=================================== FAILURES ===================================\n__________ test_subjects_do_not_large_commit_near_dead_postflop_spots __________\n\nbot_subjects = [BotSpec(name='canonical_src', path=PosixPath('/private/var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/pytest-of-farh...l2_d54640e0', path=PosixPath('/Users/farhad/Code/PokerBot/submissions/v_qual2_ship_d54640e0.zip'), lineage='DEPLOYED')]\n\n    def test_subjects_do_not_large_commit_near_dead_postflop_spots(bot_subjects):\n        vulnerable = [\n            (name, state)\n            for name, state in expensive_edge_states()\n            if name in LARGE_COMMITMENT_GUARD_STATES\n        ]\n        failures = []\n    \n        for spec in bot_subjects:\n            with RunnerClient(spec.path) as runner:\n                warmup = runner.send({\"type\": \"warmup\"})\n                if warmup.payload.get(\"ok\") is not True:\n                    failures.append(f\"{spec.name}:warmup_failed:{warmup.payload}\")\n                    continue\n                for name, state in vulnerable:\n                    result = runner.send(state)\n                    action = result.payload\n                    if is_large_commit(action, state, threshold=0.40):\n                        failures.append(\n                            f\"{spec.name}:{name}:large_commit:\"\n                            f\"{commitment_fraction(action, state):.3f}:action={action}\"\n                        )\n    \n>       assert failures == []\nE       assert [\"deployed_qu...': 'all_in'}\"] == []\nE         \nE         Left contains one more item: \"deployed_qual2_d54640e0:near_dead_postflop_commitment:large_commit:1.000:action={'action': 'all_in'}\"\nE         Use -v to get more diff\n\ntests/edge_cases/test_runner_contract_extended.py:74: AssertionError\n=========================== short test summary info ============================\nFAILED tests/edge_cases/test_runner_contract_extended.py::test_subjects_do_not_large_commit_near_dead_postflop_spots\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n========================= 1 failed, 7 passed in 0.32s ==========================\n"
+  },
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "ext/fullhouse-engine/sandbox/validator.py",
+      "submissions/v_qual2_ship_d54640e0.zip",
+      "--json"
+    ],
+    "duration_s": 0.066,
+    "label": "validator_deployed_zip",
+    "returncode": 0,
+    "stderr_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/validator_deployed_zip.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/validator_deployed_zip.stdout.log",
+    "stdout_tail": "{\n  \"bot_path\": \"submissions/v_qual2_ship_d54640e0.zip\",\n  \"passed\": true,\n  \"errors\": [],\n  \"warnings\": [],\n  \"tests\": [\n    {\n      \"test\": \"preflop_call_or_fold\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 250\n      },\n      \"elapsed\": 0.0\n    },\n    {\n      \"test\": \"postflop_can_check\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 150\n      },\n      \"elapsed\": 0.002\n    },\n    {\n      \"test\": \"river_facing_large_bet\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"call\"\n      },\n      \"elapsed\": 0.004\n    },\n    {\n      \"test\": \"short_stack_all_in_decision\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"all_in\"\n      },\n      \"elapsed\": 0.0\n    }\n  ],\n  \"data_dir\": \"/var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/fhval_zog2imnp/data\"\n}\n"
+  },
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "tools/audit_strategy_leakage.py",
+      "--zip",
+      "submissions/v_qual2_ship_d54640e0.zip"
+    ],
+    "duration_s": 0.024,
+    "label": "audit_strategy_leakage_deployed_zip",
+    "returncode": 1,
+    "stderr_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/audit_strategy_leakage_deployed_zip.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-03-deployed-gauntlet/logs/audit_strategy_leakage_deployed_zip.stdout.log",
+    "stdout_tail": "# zip: submissions/v_qual2_ship_d54640e0.zip\n# zip sha256: d54640e081eb6d1113ab70238c3b6f37e3d8457898b9e80cdc28d7c2a71f4421\nSTRATEGY LEAKAGE DETECTED:\n  bot.py:8: snapshot\n  src/bot.py:221: branch\n  src/equity.py:15: seed\n  src/equity.py:16: seed\n  src/equity.py:17: seed\n  src/equity.py:136: seed\n  src/equity.py:138: seed\n  src/equity.py:172: seed\n  src/opponent_model.py:19: seed\n  src/opponent_model.py:158: aggressor\n  src/ranges.py:187: v1_blueprint\n  src/ranges.py:188: snapshot\n"
+  }
+]

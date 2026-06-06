@@ -1,0 +1,48 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.10.18, pytest-9.0.3, pluggy-1.6.0
+rootdir: /Users/farhad/Code/PokerBot
+plugins: hypothesis-6.152.9
+collected 14 items
+
+tests/edge_cases/test_package_and_harness_contracts.py ......            [ 42%]
+tests/edge_cases/test_runner_contract_extended.py .F
+
+=================================== FAILURES ===================================
+__________ test_subjects_do_not_large_commit_near_dead_postflop_spots __________
+
+bot_subjects = [BotSpec(name='canonical_src', path=PosixPath('/private/var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/pytest-of-farh...l2_d54640e0', path=PosixPath('/Users/farhad/Code/PokerBot/submissions/v_qual2_ship_d54640e0.zip'), lineage='DEPLOYED')]
+
+    def test_subjects_do_not_large_commit_near_dead_postflop_spots(bot_subjects):
+        vulnerable = [
+            (name, state)
+            for name, state in expensive_edge_states()
+            if name in LARGE_COMMITMENT_GUARD_STATES
+        ]
+        failures = []
+    
+        for spec in bot_subjects:
+            with RunnerClient(spec.path) as runner:
+                warmup = runner.send({"type": "warmup"})
+                if warmup.payload.get("ok") is not True:
+                    failures.append(f"{spec.name}:warmup_failed:{warmup.payload}")
+                    continue
+                for name, state in vulnerable:
+                    result = runner.send(state)
+                    action = result.payload
+                    if is_large_commit(action, state, threshold=0.40):
+                        failures.append(
+                            f"{spec.name}:{name}:large_commit:"
+                            f"{commitment_fraction(action, state):.3f}:action={action}"
+                        )
+    
+>       assert failures == []
+E       assert ["deployed_qu...': 'all_in'}"] == []
+E         
+E         Left contains one more item: "deployed_qual2_d54640e0:near_dead_postflop_commitment:large_commit:1.000:action={'action': 'all_in'}"
+E         Use -v to get more diff
+
+tests/edge_cases/test_runner_contract_extended.py:72: AssertionError
+=========================== short test summary info ============================
+FAILED tests/edge_cases/test_runner_contract_extended.py::test_subjects_do_not_large_commit_near_dead_postflop_spots
+!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!
+========================= 1 failed, 7 passed in 0.31s ==========================

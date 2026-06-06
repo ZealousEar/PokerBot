@@ -1,0 +1,25 @@
+GO_UPLOAD_LOCKED_V_FINAL
+
+Protected artifact hashes:
+- PASS submissions/v_final.zip sha256 e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598
+- PASS submissions/best_green.zip sha256 e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598
+
+Rehearsal command summaries:
+- PASS shasum -a 256 submissions/v_final.zip submissions/best_green.zip: both protected zips matched the required SHA; final post-rehearsal check also matched.
+- PASS .venv/bin/python tools/smoke_run.py --zip submissions/v_final.zip --hands 200: exit 0; requested_hands=200, actual_hands=136, hero_errors=[], chip_delta v_final=+10000, early_termination_reason="normal_bust: fewer than two bots remain; busted=template".
+- PASS .venv/bin/python ext/fullhouse-engine/sandbox/validator.py submissions/v_final.zip: validator accepted v_final.zip; all 4 built-in decision probes passed.
+- PASS .venv/bin/python tools/import_audit.py --max-seconds 1.5 --max-mb 400: cold import 0.001s, RSS 10.9 MB.
+- PASS .venv/bin/python tools/audit_strategy_leakage.py --zip submissions/v_final.zip: audit_strategy_leakage PASS; zip SHA matched required hash.
+- PASS du -h submissions/v_final.zip: reported 28K.
+- PASS unzip -l submissions/v_final.zip | tail -20: archive listing succeeded; 14 files, total 42354 bytes.
+- PASS git status --short: command completed; expected visible entries include M tools/smoke_run.py and the untracked consult/artifacts/2026-05-29-away/ tree containing this report.
+
+smoke_run.py fix:
+- Minimal patch, not revert.
+- Changed smoke_run.py to report requested_hands and actual_hands separately, infer/log early_termination_reason from final_stacks, require hero_errors == 0, keep bot_errors and match.py nonzero exits as failures, and stop failing normal early busts solely because actual_hands < requested_hands.
+- Justification: git restore was unsafe/insufficient because the committed version still contained the short-hand-count failure threshold and would remove the existing Docker flag shim instead of restoring the desired smoke semantics.
+
+Non-fatal observations:
+- Initial and final protected SHA checks matched e4b4a8f11f801ecef2eca53629241e83cc9bace8ec74004f19368375f22d9598 for both protected zips; no submission artifact was rebuilt, copied, promoted, or replaced.
+- The first non-login shasum attempt hit the local unsupported C.UTF-8 Perl locale issue and exited 9 before producing hashes; rerunning with the supported locale produced the PASS hash output above.
+- git status had pre-existing unrelated modified/untracked entries before this task (AGENTS.md, KANBAN.md, STATUS.md, docs/*, and broad consult artifact trees). This task only edited tools/smoke_run.py and this ship-day GO_NO_GO.txt file.

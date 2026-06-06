@@ -1,0 +1,134 @@
+########## EXPERIMENT BATCH START ##########
+## SHA guard (pre): e4b4a8f11f801ece
+
+===== 2C: RELEASE SYNTHETIC-SPOT ANCHOR (exploit_check.py --bot v_final) =====
+$ python consult/artifacts/2026-05-31-finals-infra-scratch/diag-01/release_anchor/tools/exploit_check.py --bot v_final.zip
+Traceback (most recent call last):
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-finals-infra-scratch/diag-01/release_anchor/tools/exploit_check.py", line 507, in <module>
+    sys.exit(main())
+  File "/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-finals-infra-scratch/diag-01/release_anchor/tools/exploit_check.py", line 487, in main
+    "bot": str(bot_path.relative_to(ROOT)),
+  File "/Users/farhad/.local/share/uv/python/cpython-3.10.18-macos-aarch64-none/lib/python3.10/pathlib.py", line 818, in relative_to
+    raise ValueError("{!r} is not in the subpath of {!r}"
+ValueError: '/Users/farhad/Code/PokerBot/submissions/v_final.zip' is not in the subpath of '/Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-finals-infra-scratch/diag-01/release_anchor' OR one path is relative and the other is absolute.
+RC=1
+
+===== 2D: SCRATCH LBR DEFAULT-OLD-BUDGET repro (hands=400 rollouts=20 seed=42) =====
+{
+  "aggregate_detail": {
+    "hands": 400,
+    "hero_busts": 15,
+    "hero_net_chips": 113930.0,
+    "villain_busts": 30,
+    "villain_chips_per_hand": -284.825,
+    "villain_mbb_g": -2848.2499999999995,
+    "villain_net_chips": -113930.0
+  },
+  "aggregate_mbb_g": -2848.25,
+  "aggregate_pass": true,
+  "bot": "/Users/farhad/Code/PokerBot/submissions/v_final.zip",
+  "elapsed_aggregate_s": 1.8,
+  "elapsed_preflop_s": 2.4,
+  "max_aggregate_mbb": 200.0,
+  "max_preflop_mbb": 100.0,
+  "n_hands": 400,
+  "passed": true,
+  "preflop_detail": {
+    "hands": 400,
+    "hero_busts": 4,
+    "hero_net_chips": 3156.0,
+    "villain_busts": 5,
+    "villain_chips_per_hand": -7.89,
+    "villain_mbb_g": -78.89999999999999,
+    "villain_net_chips": -3156.0
+  },
+  "preflop_mbb_g": -78.9,
+  "preflop_pass": true,
+  "rollouts": 20,
+  "seed_base": 42
+}
+
+LBR preflop=-78.9 mbb/g (cap 100) aggregate=-2848.2 mbb/g (cap 200) over 400 hands x 20 rollouts
+exploit_check PASS
+RC=0
+
+===== 2D/seed-stability: SCRATCH LBR (hands=400 rollouts=20 seed=123) =====
+{
+  "aggregate_detail": {
+    "hands": 400,
+    "hero_busts": 12,
+    "hero_net_chips": 17259.0,
+    "villain_busts": 18,
+    "villain_chips_per_hand": -43.1475,
+    "villain_mbb_g": -431.475,
+    "villain_net_chips": -17259.0
+  },
+  "aggregate_mbb_g": -431.48,
+  "aggregate_pass": true,
+  "bot": "/Users/farhad/Code/PokerBot/submissions/v_final.zip",
+  "elapsed_aggregate_s": 1.7,
+  "elapsed_preflop_s": 2.4,
+  "max_aggregate_mbb": 200.0,
+  "max_preflop_mbb": 100.0,
+  "n_hands": 400,
+  "passed": false,
+  "preflop_detail": {
+    "hands": 400,
+    "hero_busts": 2,
+    "hero_net_chips": -94326.0,
+    "villain_busts": 3,
+    "villain_chips_per_hand": 235.815,
+    "villain_mbb_g": 2358.15,
+    "villain_net_chips": 94326.0
+  },
+  "preflop_mbb_g": 2358.15,
+  "preflop_pass": false,
+  "rollouts": 20,
+  "seed_base": 123
+}
+
+LBR preflop=2358.2 mbb/g (cap 100) aggregate=-431.5 mbb/g (cap 200) over 400 hands x 20 rollouts
+exploit_check FAIL
+RC=1
+
+===== 2E: SCRATCH LBR BUDGET ESCALATION (hands=4000 rollouts=80 seed=42 — docstring target) =====
+{
+  "aggregate_detail": {
+    "hands": 4000,
+    "hero_busts": 108,
+    "hero_net_chips": 25958.0,
+    "villain_busts": 162,
+    "villain_chips_per_hand": -6.4895,
+    "villain_mbb_g": -64.895,
+    "villain_net_chips": -25958.0
+  },
+  "aggregate_mbb_g": -64.89,
+  "aggregate_pass": true,
+  "bot": "/Users/farhad/Code/PokerBot/submissions/v_final.zip",
+  "elapsed_aggregate_s": 74.0,
+  "elapsed_preflop_s": 96.4,
+  "max_aggregate_mbb": 200.0,
+  "max_preflop_mbb": 100.0,
+  "n_hands": 4000,
+  "passed": false,
+  "preflop_detail": {
+    "hands": 4000,
+    "hero_busts": 25,
+    "hero_net_chips": -357181.0,
+    "villain_busts": 28,
+    "villain_chips_per_hand": 89.29525,
+    "villain_mbb_g": 892.9524999999999,
+    "villain_net_chips": 357181.0
+  },
+  "preflop_mbb_g": 892.95,
+  "preflop_pass": false,
+  "rollouts": 80,
+  "seed_base": 42
+}
+
+LBR preflop=893.0 mbb/g (cap 100) aggregate=-64.9 mbb/g (cap 200) over 4000 hands x 80 rollouts
+exploit_check FAIL
+RC=1
+
+## SHA guard (post): e4b4a8f11f801ece
+########## EXPERIMENT BATCH END ##########

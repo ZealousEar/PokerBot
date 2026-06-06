@@ -1,0 +1,100 @@
+{
+  "cap010": {
+    "bust": 0,
+    "mean": 12188.2,
+    "p50": 11925.0,
+    "seeds_differing_from_locked": 6,
+    "sum_paired_delta_vs_locked": -8350
+  },
+  "cap015": {
+    "bust": 1,
+    "mean": 11163.2,
+    "p50": 11925.0,
+    "seeds_differing_from_locked": 4,
+    "sum_paired_delta_vs_locked": -32950
+  },
+  "locked": {
+    "bust": 0,
+    "mean": 12536.1,
+    "p50": 12025.0
+  },
+  "n": 24,
+  "per_seed_diffs": {
+    "702": {
+      "cap010": 11400,
+      "cap010_bust": false,
+      "cap015": 13300,
+      "cap015_bust": false,
+      "locked": 13300
+    },
+    "706": {
+      "cap010": 14050,
+      "cap010_bust": false,
+      "cap015": 14050,
+      "cap015_bust": false,
+      "locked": 12200
+    },
+    "715": {
+      "cap010": 10350,
+      "cap010_bust": false,
+      "cap015": 12250,
+      "cap015_bust": false,
+      "locked": 12250
+    },
+    "716": {
+      "cap010": 14600,
+      "cap010_bust": false,
+      "cap015": -10000,
+      "cap015_bust": true,
+      "locked": 4750
+    },
+    "720": {
+      "cap010": 12900,
+      "cap010_bust": false,
+      "cap015": 11000,
+      "cap015_bust": false,
+      "locked": 11000
+    },
+    "721": {
+      "cap010": 14850,
+      "cap010_bust": false,
+      "cap015": 12950,
+      "cap015_bust": false,
+      "locked": 14850
+    },
+    "723": {
+      "cap010": 9650,
+      "cap010_bust": false,
+      "cap015": 9650,
+      "cap015_bust": false,
+      "locked": 27800
+    }
+  },
+  "regime": "exact_paired_deterministic_subset C0D=[hero,template,mathematician,shark,ref_bot_2]",
+  "seeds": [
+    700,
+    701,
+    702,
+    703,
+    704,
+    705,
+    706,
+    707,
+    708,
+    709,
+    710,
+    711,
+    712,
+    713,
+    714,
+    715,
+    716,
+    717,
+    718,
+    719,
+    720,
+    721,
+    722,
+    723
+  ]
+}

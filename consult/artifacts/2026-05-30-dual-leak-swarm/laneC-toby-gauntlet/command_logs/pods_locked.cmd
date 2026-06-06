@@ -1,0 +1,1 @@
+/Users/farhad/Code/PokerBot/.venv/bin/python /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-30-dual-leak-swarm/laneC-toby-gauntlet/pods_locked/run_pods.py --force --hands 400 --seed-base 142 --seeds 100 --jobs 3 --compositions C0_BASELINE_RECHECK C1_SINGLE_TOBY_WEAK_FIELD C3_TOBY_MEHEDI_WEAK_FIELD C4_PUBLIC_NIGHTMARE

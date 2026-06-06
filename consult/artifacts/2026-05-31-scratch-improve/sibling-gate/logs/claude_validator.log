@@ -1,0 +1,10 @@
+
+✅ PASSED  —  /Users/farhad/Code/PokerBot/consult/artifacts/2026-05-31-scratch-improve/sibling-gate/claude.zip
+
+
+Test results:
+  ✓ [0.000s] preflop_call_or_fold: {'action': 'raise', 'amount': 250}
+  ✓ [0.003s] postflop_can_check: {'action': 'raise', 'amount': 150}
+  ✓ [0.002s] river_facing_large_bet: {'action': 'call'}
+  ✓ [0.000s] short_stack_all_in_decision: {'action': 'all_in'}
+
