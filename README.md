@@ -11,8 +11,8 @@
 
 > [!NOTE]
 > **Branches.** This branch (`main`) is the **post-finals patched** build, maintained after the
-> competition. The exact, unmodified finals artifact — including the original `v_final.zip` — is
-> preserved on the [`finals-as-submitted`](../../tree/finals-as-submitted) branch.
+> competition. The exact, unmodified finals artifact, including the original `v_final.zip`, lives
+> on the [`finals-as-submitted`](../../tree/finals-as-submitted) branch.
 
 ## At a glance
 
@@ -28,9 +28,9 @@
 
 ## Overview
 
-A poker bot that plays 6-max no-limit hold'em inside a locked-down 2-second / 0.5-CPU sandbox: a solver-trained near-Nash core, plus a bounded, opponent-adaptive overlay that exploits weak fields without opening itself to counter-exploitation.
+A poker bot for 6-max no-limit hold'em that runs inside a locked-down 2-second / 0.5-CPU sandbox. It pairs a solver-trained near-Nash core with a bounded, opponent-adaptive overlay that punishes weak fields while staying hard to counter-exploit.
 
-Built for the first [**Fullhouse Hackathon 2026**](https://fullhousehackathon.com/) (lead sponsor [Quadrature Capital](https://www.quadrature.ai/); £4,000+ prize pool). The tournament runs in two regimes that pull in opposite directions and dictate the architecture below:
+Built for the first [**Fullhouse Hackathon 2026**](https://fullhousehackathon.com/) (lead sponsor [Quadrature Capital](https://www.quadrature.ai/); £4,000+ prize pool). It runs in two regimes that reward opposite styles:
 
 | When           | Stage                       | Format                                                                                                            |
 | -------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -41,7 +41,7 @@ Built for the first [**Fullhouse Hackathon 2026**](https://fullhousehackathon.co
 
 ## Results
 
-Qualified for the finals of the Fullhouse Hackathon 2026 — the UK's first quantitative poker hackathon.
+Qualified for the finals of the Fullhouse Hackathon 2026, the UK's first quantitative poker hackathon.
 
 - **Qualifiers** — two Swiss rounds ranked by cumulative chip delta. Finished in the top 64 and advanced to the finals.
 - **Finals** — a fresh Swiss/cumulative competition among the 64 qualifiers (standings reset to equal footing). Finished in the top 40.
@@ -50,7 +50,7 @@ Qualified for the finals of the Fullhouse Hackathon 2026 — the UK's first quan
 
 ## Strategy
 
-A two-regime tournament dictates a two-layer strategy:
+To cover both regimes, the bot runs two layers:
 
 - **Blueprint** (`src/preflop_lookup.py` + `src/postflop.py`) — approximates Nash over an abstracted game: external-sampling MCCFR for preflop and CFR+ over flop buckets for postflop. This is the floor.
 - **Overlay** (`src/opponent_model.py`) — deviates from the blueprint toward best-response against the inferred opponent type; magnitude is bounded so a worst-case counter-exploit costs less than the expected gain.
@@ -101,7 +101,7 @@ We replace Libratus-style real-time subgame solving (compute-prohibitive at 0.5 
 
 ## Known limitations
 
-The bounded overlay above is a deliberate trade-off, and the shipped build sits on the cautious end of it — it plays a tight, polarized line and folds rather than bluff-catching thin. Post-competition analysis isolated the expected concrete instance: against an opponent that applies sustained multi-street pressure and bet-folds to resistance, that fold-leaning profile surrenders some pots it could defend. The effect was small and measurable, but did not produce a net loss against the exploiter probes run so far. Widening the calling range is the natural next revision — but it is a strategy-shape change that reopens the full verification surface (exploitability, paired benchmarks, mechanism-matched counter-exploit probes), so it was deferred to a proper cycle rather than hot-patched into a frozen submission.
+The bounded overlay above is a deliberate trade-off, and the shipped build sits on the cautious end of it. It plays a tight, polarized line and folds rather than bluff-catching thin. After the competition we measured exactly that: against an opponent that applies sustained multi-street pressure and bet-folds to resistance, the fold-leaning profile surrenders some pots it could defend. The effect was small but measurable. It did not produce a net loss in the exploiter probes we have run so far. Widening the calling range is the natural next revision. Because it changes the strategy shape, shipping it would mean re-running the full verification surface: exploitability, paired benchmarks, and mechanism-matched counter-exploit probes. We deferred that to a proper cycle rather than hot-patching a frozen submission.
 
 ---
 
@@ -156,7 +156,7 @@ These run in a clean clone, with no engine required:
 | Edge cases       | `pytest tests/edge_cases`                                        |
 | Build submission | `python tools/package.py --output submissions/bot.zip --strict` |
 
-**Engine-backed steps** (require the official engine cloned into `ext/fullhouse-engine/` — a separate, gitignored checkout that provides the sandbox, validator, and local match driver):
+**Engine-backed steps** (require the official engine cloned into `ext/fullhouse-engine/`, a separate gitignored checkout containing the sandbox, validator, and local match driver):
 
 | Step              | Command                                                                         |
 | ----------------- | ------------------------------------------------------------------------------- |
@@ -169,7 +169,7 @@ These run in a clean clone, with no engine required:
 
 ## Sandbox Invariants
 
-Sourced from `ext/fullhouse-engine/sandbox/{validator.py,Dockerfile,runner.py}` — these are hard constraints:
+These are hard constraints, taken from `ext/fullhouse-engine/sandbox/{validator.py,Dockerfile,runner.py}`:
 
 - **Runtime:** Python 3.10
 - **Pinned libraries:** `eval7==0.1.7`, `numpy==1.26.4`, `scipy==1.13.0`, `treys==0.1.8`, `scikit-learn==1.5.2`
@@ -194,7 +194,7 @@ Invalid actions default to fold; the runner emits `{"action": "fold", "error": .
 
 ## Development Gates
 
-The bot was built in verified stages, each closed only after its checks passed:
+We built the bot in verified stages, closing each only after its checks passed:
 
 ```mermaid
 flowchart LR
@@ -211,13 +211,13 @@ flowchart LR
     class G5 verified;
 ```
 
-Each gate was held to numeric evidence — import audit, edge-case sweep, benchmark, and an exploitability (LBR) check — before the next one started.
+Each gate cleared the same numeric checks before the next one started: an import audit, an edge-case sweep, a benchmark, and an exploitability (LBR) check.
 
 ---
 
 ## Corpus
 
-Architectural decisions anchor to academic work indexed in [`docs/corpus-index.md`](docs/corpus-index.md):
+We anchor each architectural decision to academic work indexed in [`docs/corpus-index.md`](docs/corpus-index.md):
 
 <details>
 <summary><b>Corpus</b> — academic anchors for each design lever</summary>
@@ -233,13 +233,13 @@ Architectural decisions anchor to academic work indexed in [`docs/corpus-index.m
 
 </details>
 
-Implementations cite their source at the call site.
+Each implementation names its source at the call site.
 
 ---
 
 ## Acknowledgements
 
-Built for the [Fullhouse Hackathon 2026](https://fullhousehackathon.com/) — the UK's first
+Built for the [Fullhouse Hackathon 2026](https://fullhousehackathon.com/), the UK's first
 quantitative poker bot hackathon (£4,000 prize pool). Lead sponsor
 [Quadrature Capital](https://www.quadrature.ai/), with Jane Street, Five Rings, Teza
 Technologies, QRT, Jump Trading, Da Vinci, and Susquehanna.
