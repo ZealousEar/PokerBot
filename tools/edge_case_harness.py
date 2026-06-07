@@ -30,7 +30,7 @@ from typing import Iterable
 
 ROOT = Path(__file__).resolve().parent.parent
 RUNNER_PATH = ROOT / "ext" / "fullhouse-engine" / "sandbox" / "runner.py"
-DEPLOYED_ZIP = ROOT / "submissions" / "v_qual2_ship_d54640e0.zip"
+DEPLOYED_ZIP = ROOT / "submissions" / "v_final.zip"
 
 _VENV_PYTHON = ROOT / ".venv" / "bin" / "python"
 RUNNER_PYTHON = Path(os.environ.get("POKERBOT_RUNNER_PYTHON", _VENV_PYTHON if _VENV_PYTHON.exists() else sys.executable))
@@ -124,7 +124,7 @@ def candidate_zip_paths(include_deployed: bool = True) -> list[BotSpec]:
     specs: list[BotSpec] = []
     seen: set[Path] = set()
     if include_deployed and DEPLOYED_ZIP.exists():
-        specs.append(BotSpec("deployed_qual2_d54640e0", DEPLOYED_ZIP, "DEPLOYED"))
+        specs.append(BotSpec("finals_submission", DEPLOYED_ZIP, "DEPLOYED"))
         seen.add(DEPLOYED_ZIP.resolve())
 
     env_values = []
