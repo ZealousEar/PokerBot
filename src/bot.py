@@ -120,22 +120,14 @@ def _infer_position(state: dict) -> str:
         bb_seat = (sb_seat + 1) % n
     btn_seat = (sb_seat - 1) % n
     offset = (seat - btn_seat) % n
-    # Position is keyed on distance from the button. The cutoff is ALWAYS the
-    # seat immediately right of the button (offset n-1), not a fixed list index
-    # — the previous fixed `labels` list mislabeled CO as MP in 6-max. Map by
-    # offset so it stays correct as the table shrinks (n<6 after busts):
-    #   0=BTN 1=SB 2=BB 3=UTG  (n-1)=CO  middle=MP/HJ(->MP)
-    if offset == 0:
-        return "BTN"
-    if offset == 1:
-        return "SB"
-    if offset == 2:
-        return "BB"
-    if offset == 3:
+    # offset: 0=BTN, 1=SB, 2=BB, 3=UTG, 4=MP, 5=CO (and continuing for >6)
+    labels = ["BTN", "SB", "BB", "UTG", "MP", "HJ", "CO"]
+    if offset >= len(labels):
         return "UTG"
-    if offset == n - 1:
-        return "CO"
-    return "MP"
+    label = labels[offset]
+    if label == "HJ":
+        return "MP"
+    return label
 
 
 def _action_sequence_preflop(state: dict) -> tuple:

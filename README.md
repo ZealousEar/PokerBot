@@ -9,7 +9,7 @@
 
 </div>
 
-> **Versions.** This branch (`main`) is the **post-finals patched** build, maintained after the competition. The exact, unmodified artifact submitted to the finals — including the original `v_final.zip` — is preserved on the [`finals-as-submitted`](../../tree/finals-as-submitted) branch.
+> **You are on the `finals-as-submitted` branch.** This preserves the exact, unmodified bot submitted to the Fullhouse Hackathon 2026 finals — the artifact `submissions/v_final.zip` (sha256 `b108eff5…`) together with its extracted `src/` and `data/`. The maintained, **post-finals patched** version lives on [`main`](../../tree/main).
 
 ```
        ╭──────────────────────────────────────────────────╮
