@@ -91,6 +91,31 @@ The architectural answer is the **blueprint + refinement** pattern from Brown & 
 ## Status protocol
 Append a timestamped section to `STATUS.md` at every gate, with: gate id, GREEN/AMBER/RED, exact benchmark numbers, files changed, next action. Also surface the compact proof-of-green block (see `PROMPT.shared.md`) in the chat transcript — `/goal` evaluator only reads the transcript and auto-summarisation can erase STATUS.md evidence.
 
+## Premise-tagged decisions (HARD — added 2026-06-06 post-finals)
+Every PHASE-START and ship/no-ship STATUS entry MUST list its load-bearing premises as named, checkable assertions, e.g.:
+
+```text
+PREMISES: FORMAT=swiss-cumulative [verified: portal 2026-06-04 / AGENTS.md Finals FORMAT];
+          DOMINANT-LOSS=preflop [verified: thorp_leak_report.md:24-35 + run artifact path];
+          OBJECTIVE=max-extraction [verified: AGENTS.md Finals FORMAT]
+```
+
+Rules:
+1. A decision is GREEN only if EVERY premise is reconciled against the current external announcement/source of truth, and every empirical premise is backed by >=1 run test artifact path. Purely documentary premises such as format, scoring, deadline, or upload policy cite the authoritative portal/rules artifact.
+2. Premises are checked at PHASE-START, at every ship/no-ship gate, and immediately after any external announcement change (format, scoring, deadline, field, upload policy). Any unverified, stale, or contradicted premise => AMBER; it may not ship until the cheapest confirming check/test has run and is logged.
+3. When a premise changes, open a PREMISE-CHANGE review that RE-DERIVES the rationale of every still-standing decision that cited the old premise. Re-deciding the action is not sufficient; reconcile the written record with strike/correct edits or a dated replacement entry.
+4. Named exploitable hole -> mechanism-matched probe is a HARD PAIRING. A risk named "potentially dominant", "exploitable hole", "unverified", or equivalent in any artifact is blocking AMBER until the mechanism-matched probe is committed and its result artifact is logged. A hole is not "known", "handled", or "covered" by prose.
+5. Mechanism-match rule: the probe must exercise the SAME mechanism the risk names. A maniac/value-spewer does NOT discharge an over-folding risk; an over-folding exploiter must attack the call-frequency hole. A postflop disaster-spot probe does NOT discharge a preflop risk; a preflop probe must exercise the preflop path. Same numeric-gate discipline as candidate promotions: prose caveats do not gate; committed mechanism-matched tests gate.
+
+## Freeze discipline (HARD — added 2026-06-06 post-finals)
+There are two freeze lanes:
+
+1. **STRATEGY-SHAPE changes** — polarization level, calling-range width, bluff/value mix, sizing-tree shape, overlay cap, or other changes that alter the bot's strategic distribution — must be locked EARLY after early verification. They reopen the full verification surface: validator/import/edge/smoke, all-template paired benchmarks, exploitability/LBR, mechanism-matched counter-exploiter probes, and manual rationale review. Do not attempt a late strategy-shape change in a 90-minute ship window. The Thorp over-fold shape (call 6.4% / fold 58.9%) could not be safely de-polarized in the 2026-06-04 90-minute window because widening calls changes strategy shape and requires the full gauntlet.
+2. **HOTFIXES** — specific, narrowly-scoped bug fixes with an identified failure mode and minimal blast radius — may be considered late if they have a targeted failing probe, pass the smallest relevant regression suite, and do not alter strategy shape beyond the bug path.
+
+## Reconciliation sweep (HARD — added 2026-06-06 post-finals)
+When correcting a load-bearing premise in one doc, propagate the correction to every dependent doc, prompt, STATUS entry, postmortem, and playbook that still carries the old rationale. Never leave two contradictory rationales coexisting; if a historical section must remain, mark the stale premise OBSOLETE with a dated replacement.
+
 ## Artifact policy
 Always preserve `submissions/best_green.zip` — the latest validator-passing, edge-case-passing, smoke-run-passing artifact. After each gate, if the new build clears every check, promote it: `cp submissions/<new>.zip submissions/best_green.zip` (and commit). A `.githooks/pre-commit` hook refuses commits to `submissions/` that break verification; activate per-clone with `git config core.hooksPath .githooks`. Override with `FORCE_COMMIT=1 git commit ...` only for explicit rollbacks.
 

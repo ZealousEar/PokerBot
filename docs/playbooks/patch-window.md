@@ -22,7 +22,7 @@ sha256sum submissions/v_final.zip submissions/best_green.zip
 # 2. The analyzer tool is present and importable.
 python -c "import importlib.util as u; print(u.find_spec('tools.analyze_hand_histories'))"
 ls -la tools/analyze_hand_histories.py
-# Expected: file exists; spec resolves; per CLAUDE.md it lives under tools/.
+# Expected: file exists; spec resolves; per AGENTS.md it lives under tools/.
 
 # 3. Synthetic-priors fallback is reachable.
 ls -la consults/2026-05-27-overnight-D/priors/V*_priors.npz 2>/dev/null \
@@ -149,7 +149,7 @@ If two or more fields are outside their expected ranges, **assume schema mismatc
 
 ## Phase 4 — Update only the overlay; do NOT touch baseline strategy (60 min)
 
-The shipped overlay reads from `data/finals_priors.npz` at module-import (warmup) time. Per CLAUDE.md and the existing patch-window contract:
+The shipped overlay reads from `data/finals_priors.npz` at module-import (warmup) time. Per AGENTS.md and the existing patch-window contract:
 
 - **Allowed edits:** `src/opponent_model.py` threshold tweaks, range adjustments in `src/preflop_lookup.py` *if* the priors show a population VPIP very different from our baseline assumption, and the analyzer's `data/finals_priors.npz` itself.
 - **Forbidden edits:** `src/postflop.py` flop strategy, `src/bot.py` blueprint logic, `src/equity.py` Monte Carlo wiring, `src/sizing.py` sizing tree, any solver re-training.
@@ -175,6 +175,15 @@ python tools/audit_strategy_leakage.py --src src/
 ```
 
 Wall-clock budget for this phase: 60 min. If you find yourself rewriting `decide_blueprint_only` or the postflop module, you are out of scope — revert and ship the qualifier `v_final.zip` unchanged.
+
+### Patch-window freeze lanes (HARD — added 2026-06-06 post-finals)
+
+Classify every proposed edit before touching code:
+
+1. **STRATEGY-SHAPE changes** — polarization level, calling-range width, bluff/value mix, sizing-tree shape, overlay cap, or any change that alters the strategic distribution — must be locked early after early verification. These reopen the full verification surface: validator/import/edge/smoke, all-template paired benchmarks, LBR/exploitability, mechanism-matched counter-exploiter probes, and manual rationale review. They are not safe late-window edits. The Thorp over-fold shape (call 6.4% / fold 58.9%) could not be safely de-polarized in the 2026-06-04 90-minute window because widening the calling range is a strategy-shape change, not a hotfix.
+2. **HOTFIXES** — specific, narrowly-scoped bug fixes with an identified failing behavior and minimal blast radius — may be considered late if they have a targeted failing probe, pass the smallest relevant regression suite, and do not change strategy shape outside the bug path.
+
+If an edit cannot be classified cleanly, treat it as STRATEGY-SHAPE and require early-lock/full-gauntlet treatment.
 
 ---
 
@@ -234,7 +243,7 @@ If any of 1–4 fails, **revert and ship qualifier `v_final.zip`**. The finals a
 
 ## Phase 7 — Regression benchmark (90 min — longest single step)
 
-This is the load-bearing acceptance gate. The patched artifact must not regress on any of the canonical reference templates, and it must hold its own against the LBR exploitability bound.
+This is the load-bearing acceptance gate. The patched artifact must not regress on any of the canonical reference templates, must hold its own against the LBR exploitability bound, and must include at least one adaptive/sharp counter-exploiter in the gauntlet — not only maniacs, fixed templates, and reference bots. Before any promote or ship-as-is decision, every named exploitable hole must have a mechanism-matched probe result logged, or the gate is AMBER.
 
 ```bash
 # 1. All-templates benchmark, artifact-bound.
@@ -281,13 +290,39 @@ python tools/exploit_check.py --zip submissions/v_finals.zip \
 | Overlay ablation gain | ≥ +3 bb/100 | +32.53 |
 | LBR preflop | ≤ 100 mbb/g | 18.0 |
 | LBR aggregate | ≤ 200 mbb/g | 7.4 |
+| Adaptive/sharp counter-exploiter | >=1 gauntlet opponent attacks named holes adaptively or sharply; maniacs/fixed templates/reference bots alone do not satisfy this | n/a |
+| Mechanism-matched probes | Every named "potentially dominant" / "exploitable hole" / "unverified" risk has a logged result artifact and numeric gate; otherwise AMBER | n/a |
 | Validator | PASSED 4/4 | PASSED |
 | Smoke | 200/200, 0 errors | 200/200, +14 500 chips |
 | Edge cases | 25/25 | 25/25 |
 | Import audit | < 1.5 s / < 400 MB | 0.079 s / 33.8 MB |
 | Leakage audit | PASS, 0 hits | PASS |
 
-If **any** acceptance criterion fails, the rollback rule fires (Phase 9).
+### Mechanism-matched counter-exploiter gate (HARD — added 2026-06-06 post-finals)
+
+The gauntlet must include at least one **adaptive/sharp counter-exploiter** opponent so that over-folding, polarization, and other exploitable-shape risks are measurable. A named hole is not "known", "handled", or "covered" until its mechanism-matched probe is committed and the result is logged with an artifact path and numeric outcome.
+
+Mechanism match is literal: a maniac/value-spewer does **not** discharge an over-folding risk; the probe must attack the low-call/high-fold mechanism. A postflop disaster-spot probe does **not** discharge a preflop risk; the probe must exercise the preflop path. Before any ship-as-is entry, if any named exploitable hole lacks a mechanism-matched probe result, mark the entry AMBER.
+
+### Worked gate entry — Thorp over-fold risk (template)
+
+```text
+## GATE: THORP-OVERFOLD-PREMISE/PROBE 2026-06-07
+STATUS: AMBER until sibling probe result is consolidated; may become GREEN/RED only after the numeric bleed result is logged.
+
+PREMISES:
+- FORMAT=swiss-cumulative [VERIFIED: portal 2026-06-04 20:00-deadline announcement; mirrored in AGENTS.md Finals FORMAT]
+- OBJECTIVE=max-extraction [VERIFIED: finals Phase 1 ranks by cumulative chip performance in AGENTS.md Finals FORMAT]
+- NAMED-HOLE=sharp seed bet-folds a 6.4%-caller off pots [VERIFIED: docs/investigations/why-predicted-risk-shipped-2026-06-06.md §7; exact bleed magnitude PENDING]
+
+PROBE PAIRING:
+- Required mechanism: over-fold exploiter that bets/bluffs/bet-folds to profit from Thorp's low call frequency.
+- Non-discharging evidence: aggressor/maniac/value-spew wins, fixed templates, reference bots, and postflop disaster-spot probes; these do not exercise the over-fold mechanism.
+- Probe artifact location: consult/artifacts/2026-06-07-overfold-probe/ [VERIFIED path reserved by sibling workstream; numeric bleed result PENDING consolidation]
+- Decision rule: ship-as-is cannot be GREEN until the over-fold exploiter result is logged here with bb/100 or chip/100 bleed and an explicit threshold disposition.
+```
+
+If **any** acceptance criterion fails, including a missing mechanism-matched probe for a named hole, the rollback rule fires (Phase 9).
 
 ---
 
