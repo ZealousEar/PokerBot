@@ -9,6 +9,8 @@
 
 </div>
 
+> **Versions.** This branch (`main`) is the **post-finals patched** build, maintained after the competition. The exact, unmodified artifact submitted to the finals — including the original `v_final.zip` — is preserved on the [`finals-as-submitted`](../../tree/finals-as-submitted) branch.
+
 ```
        ╭──────────────────────────────────────────────────╮
        │                                                  │
@@ -105,7 +107,7 @@ PokerBot/
 ├── data/                         *.npz blueprints (gitignored, regen via tools/)
 ├── docs/                         tournament spec · API cheatsheet · corpus index
 ├── ext/fullhouse-engine/         official engine clone (separate, gitignored)
-├── submissions/                  built bot.zip artifacts (gitignored)
+├── submissions/                  finals submission artifact — v_final.zip
 ├── LICENSE                       MIT
 ├── requirements.txt              pinned dependencies
 └── README.md                     this file
