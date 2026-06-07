@@ -10,6 +10,8 @@ GTO Wizard 100 BB charts, lightly widened for hackathon-style passive fields).
 # Source: [[Pluribus-Brown-Sandholm-2019]] (open-size tree)
 #         + [[Engine-Fullhouse]] (reference-bot exploit holes — most field is
 #         passive, so we open wider than pure GTO)
+# Status: SHIPPED — these frozenset range tables ARE the running blueprint
+#         (hand-tuned from public solver charts; MCCFR training is intended).
 """
 from typing import FrozenSet
 

@@ -10,6 +10,8 @@ the 2 s decision budget with abundant headroom.
 # Source: [[Cepheus-Bowling-2015]] — bucket-style state abstraction; the
 #         heuristic plays the role of the abstracted bucket lookup until G3
 #         CFR+ training replaces it (gated by AGENTS.md solver policy).
+# Status: SHIPPED — heuristic flop buckets are the running policy; CFR+-trained
+#         buckets are INTENDED (offline), not shipped.
 """
 from typing import List
 
@@ -166,6 +168,7 @@ def decide_postflop(game_state: dict, *, blueprint_only: bool = False) -> dict:
     # target and gate every LARGE raise on board-aware nuttedness. Calls use a
     # separate range-aware pot-odds permission.
     # Source: [[Libratus-Brown-Sandholm-2017]] — range-aware refinement.
+    # Status: SHIPPED — heuristic range-aware gating (not Libratus real-time solving).
     commit_frac = COMMIT_FRACTION
     eq_strong = equity_vs_range(hole, board, PRIOR_RANGE_TIGHT, trials=base_trials)
     commit_ok = can_commit_raise(hole, board, eq_strong)

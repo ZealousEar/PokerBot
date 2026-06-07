@@ -8,6 +8,8 @@ the bot has no other channel to opponent history.
 
 # Source: [[Libratus-Brown-Sandholm-2017]] — opponent fingerprint refinement
 #         + [[Engine-Fullhouse]] — field-level exploit holes seed the priors
+# Status: SHIPPED — bounded frequency overlay (per-seat VPIP/PFR/AF tracking,
+#         deviation capped at MAX_DEVIATION_PP), not Libratus-scale refinement.
 """
 from collections import defaultdict
 import os

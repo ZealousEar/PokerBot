@@ -4,6 +4,7 @@ Discrete sizings: 1/3 pot, 2/3 pot, pot, 2x pot, all-in. The engine wants
 the TOTAL chips put in (`amount`), not the increment-over-current-bet.
 
 # Source: [[Pluribus-Brown-Sandholm-2019]] — discrete sizing tree
+# Status: SHIPPED — the discrete sizing tree is the running sizing logic.
 """
 SIZINGS = ("third_pot", "two_third_pot", "pot", "two_x_pot", "all_in")
 

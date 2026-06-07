@@ -5,6 +5,8 @@ pot odds plus a commitment-fraction cap. This keeps the Qual-II >=40%-stack
 leak fix while allowing priced-in calls that are not safe stack-offs.
 
 # Source: [[Libratus-Brown-Sandholm-2017]] — range-aware refinement.
+# Status: SHIPPED as a heuristic commitment gate. Libratus-style real-time range
+#         refinement is INTENDED/dropped (compute-prohibitive at 0.5 CPU / 2 s).
 """
 
 from src.hand_features import classify_board, classify_hand, full_house_dominated

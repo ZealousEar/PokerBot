@@ -5,6 +5,8 @@ training). Routes (position, hand, action_seq) → decision tag. The bot module
 converts the tag into a legal action via `src.sizing`.
 
 # Source: [[Pluribus-Brown-Sandholm-2019]] — blueprint shape (position × hand × action-seq)
+# Status: SHIPPED — hand-tuned range tables (see module docstring above). The
+#         MCCFR-trained blueprint is INTENDED, not the running policy.
 """
 from typing import Tuple
 

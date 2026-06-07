@@ -9,6 +9,9 @@ module import — the engine's one-shot 30 s warmup call covers them so live
 2 s decisions stay fast.
 
 # Source: [[Pluribus-Brown-Sandholm-2019]] — blueprint + bounded overlay
+# Status: SHIPPED architecture (blueprint + bounded overlay). The Pluribus-style
+#         MCCFR/CFR+ blueprint *training* is INTENDED, not the running policy;
+#         the shipped blueprint is hand-tuned (see src/ranges.py, src/preflop_lookup.py).
 """
 import os
 import sys

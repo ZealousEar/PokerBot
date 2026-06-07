@@ -4,6 +4,7 @@ Budget: ≤ 5 ms per call at default trials. Pre-warm eval7 LUTs at module
 import so the live 2 s decisions do not pay a cold-start cost.
 
 # Source: [[Pluribus-Brown-Sandholm-2019]] — depth-limited heuristic in lieu of full solve
+# Status: SHIPPED — eval7 Monte-Carlo equity is the running depth-limited heuristic.
 """
 import hashlib
 import random

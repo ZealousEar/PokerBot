@@ -16,3 +16,7 @@ A short reading list of the academic work the architecture draws on. Each entry 
 ## Why this set
 
 These cover the technique families actually used — a precomputed blueprint, state/action abstraction, and frequency-based opponent modeling — plus one family evaluated but not adopted for the final policy (Deep CFR, calendar-bound rather than infrastructure-bound). The reading list is deliberately small so effort goes to hardening rather than bibliography.
+
+## Shipped vs intended
+
+The **shipped** public policy is a hand-tuned heuristic blueprint — preflop range tables distilled from public solver charts (`src/ranges.py`) plus flop-bucket postflop rules — combined with eval7 Monte-Carlo equity (`src/equity.py`) and a bounded frequency overlay (`src/opponent_model.py`). The MCCFR (5) and CFR+ (4) *training* lines are the **intended** offline-trained replacement for that blueprint, not the running policy; Libratus-style real-time refinement (2) is referenced but dropped (compute-prohibitive at 0.5 CPU / 2 s). Each `src/*.py` module tags its `# Source` reference with a `# Status: SHIPPED | INTENDED` marker recording which it is.
