@@ -308,18 +308,20 @@ Mechanism match is literal: a maniac/value-spewer does **not** discharge an over
 
 ```text
 ## GATE: THORP-OVERFOLD-PREMISE/PROBE 2026-06-07
-STATUS: AMBER until sibling probe result is consolidated; may become GREEN/RED only after the numeric bleed result is logged.
+STATUS: PROBE COMMITTED (git tag overfold-probe-2026-06-07). Mechanism CONFIRMED; net-negative NOT reproduced by a fixed HU exploiter -> diagnosis PARTIALLY VALIDATED, flagged for a stronger/adaptive/multiway exploiter before the hole is treated as fully characterized.
 
 PREMISES:
 - FORMAT=swiss-cumulative [VERIFIED: portal 2026-06-04 20:00-deadline announcement; mirrored in AGENTS.md Finals FORMAT]
 - OBJECTIVE=max-extraction [VERIFIED: finals Phase 1 ranks by cumulative chip performance in AGENTS.md Finals FORMAT]
-- NAMED-HOLE=sharp seed bet-folds a 6.4%-caller off pots [VERIFIED: docs/investigations/why-predicted-risk-shipped-2026-06-06.md §7; exact bleed magnitude PENDING]
+- NAMED-HOLE=sharp seed bet-folds a 6.4%-caller off pots [VERIFIED: docs/investigations/why-predicted-risk-shipped-2026-06-06.md §7; bleed magnitude MEASURED -12.43 bb/100 isolated, 1023 flop/turn pressure-folds]
 
 PROBE PAIRING:
 - Required mechanism: over-fold exploiter that bets/bluffs/bet-folds to profit from Thorp's low call frequency.
 - Non-discharging evidence: aggressor/maniac/value-spew wins, fixed templates, reference bots, and postflop disaster-spot probes; these do not exercise the over-fold mechanism.
-- Probe artifact location: consult/artifacts/2026-06-07-overfold-probe/ [VERIFIED path reserved by sibling workstream; numeric bleed result PENDING consolidation]
-- Decision rule: ship-as-is cannot be GREEN until the over-fold exploiter result is logged here with bb/100 or chip/100 bleed and an explicit threshold disposition.
+- Probe artifact location: consult/artifacts/2026-06-07-overfold-probe/REPORT.md [VERIFIED; run vs b108eff5 sha b108eff5..., 25 paired seeds x2 HU, 9998 hands]
+- Result: isolated fold-to-pressure bleed -12.43 bb/100 (CI-backed), BUT net Thorp delta +18.85 bb/100 vs this fixed HU exploiter. The mechanism is real and quantified; the fixed HU policy does not make it dominate Thorp's EV.
+- Disposition: PARTIAL. The over-fold mechanism is now measurable and confirmed present; the original 'mean EV vs a strong seed may be negative' claim is NOT reproduced by a fixed HU exploiter and remains OPEN -- a fully adaptive and/or 6-max multiway exploiter is the next mechanism-matched escalation. Per Rule 4, the hole stays AMBER (not 'known/handled') until an adaptive/multiway probe either reproduces net-negative or bounds it.
+- Decision rule (demonstrated): ship-as-is cannot be GREEN while a named hole's mechanism-matched probe is missing OR inconclusive on the dominant regime (here: 6-max multiway, which this HU probe did not cover).
 ```
 
 If **any** acceptance criterion fails, including a missing mechanism-matched probe for a named hole, the rollback rule fires (Phase 9).
