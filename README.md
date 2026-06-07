@@ -176,6 +176,7 @@ every claim to its source and says whether it is reproducible here.
 
 What *is* reproducible in a clean clone, engine-free:
 
+- [`notebooks/decision_walkthrough.ipynb`](notebooks/decision_walkthrough.ipynb) — a pre-executed end-to-end `decide()` walkthrough
 - `python tools/plot_preflop_heatmap.py` — the shipped RFI ranges as 13×13 grids
 - `python tools/overfold_probe.py` — postflop fold/call/raise frequencies (see [`docs/results/overfold-postmortem.md`](docs/results/overfold-postmortem.md))
 - `pytest tests/unit` — bounded-overlay clamp contract + MC-equity accuracy

@@ -12,3 +12,7 @@ scikit-learn==1.5.2
 # Dev-only (not present in sandbox).
 pytest>=8.0.0
 hypothesis>=6.100.0
+# Dev-only: figures + the decision-walkthrough notebook (engine-free showcase).
+matplotlib>=3.7
+jupyter>=1.0
+nbconvert>=7.0

@@ -18,9 +18,10 @@ import sys
 from pathlib import Path
 
 import matplotlib
-
-matplotlib.use("Agg")  # headless / deterministic
 import matplotlib.pyplot as plt  # noqa: E402
+# NB: the backend is left untouched at import so this module is safe to import
+# from a notebook (which uses the inline backend). The CLI entry point forces
+# the headless Agg backend in main().
 
 ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
@@ -82,6 +83,7 @@ def render(out_path: Path | None = DEFAULT_OUT):
 
 
 def main() -> int:
+    matplotlib.use("Agg")  # headless CLI rendering
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("-o", "--out", default=str(DEFAULT_OUT), help="output PNG path")
     args = p.parse_args()
