@@ -1,31 +1,36 @@
 <div align="center">
 
-# PokerBot
+<img src="docs/assets/hero.svg" width="800" alt="PokerBot — Fullhouse Hackathon 2026 finalist entry">
 
-**A Fullhouse Hackathon 2026 entry**
-*6-max no-limit Texas hold'em — blueprint + bounded exploit overlay*
-
-`Python 3.10`  ·  `eval7`  ·  `numpy`  ·  `scipy`  ·  `treys`  ·  `scikit-learn`
+![Python 3.10](https://img.shields.io/badge/python-3.10-3776AB?logo=python&logoColor=white)
+![License: MIT](https://img.shields.io/badge/license-MIT-22272e)
+![Fullhouse Hackathon 2026](https://img.shields.io/badge/Fullhouse_Hackathon-2026-6f42c1)
+![libraries](https://img.shields.io/badge/numpy_·_scipy_·_eval7-1.x-013243)
 
 </div>
 
-> **Versions.** This branch (`main`) is the **post-finals patched** build, maintained after the competition. The exact, unmodified artifact submitted to the finals — including the original `v_final.zip` — is preserved on the [`finals-as-submitted`](../../tree/finals-as-submitted) branch.
+> [!NOTE]
+> **Branches.** This branch (`main`) is the **post-finals patched** build, maintained after the
+> competition. The exact, unmodified finals artifact — including the original `v_final.zip` — is
+> preserved on the [`finals-as-submitted`](../../tree/finals-as-submitted) branch.
 
-```
-       ╭──────────────────────────────────────────────────╮
-       │                                                  │
-       │    near-Nash blueprint  +  bounded overlay       │
-       │                                                  │
-       │    2 s / decide   ·   0.5 CPU   ·   768 MB RAM   │
-       │                                                  │
-       ╰──────────────────────────────────────────────────╯
-```
+## At a glance
+
+| | |
+|---|---|
+| **What** | 6-max no-limit hold'em bot, near-Nash blueprint + bounded exploit overlay |
+| **Constraints** | 2 s / decide · 0.5 CPU · 768 MB · no network · pinned libs |
+| **Methods** | MCCFR preflop · CFR+ flop buckets · LBR exploitability cap |
+| **Result** | Qualified for the finals (Fullhouse Hackathon 2026) — see [Results](#results) |
+| **Verify** | `python tools/import_audit.py && pytest tests/edge_cases` |
 
 ---
 
 ## Overview
 
-A 6-max no-limit Texas hold'em bot built for the first **Fullhouse Hackathon 2026** (lead sponsor Quadrature Capital; £4,000+ prize pool). The tournament runs in two regimes that pull in opposite directions and dictate the architecture below:
+A poker bot that plays 6-max no-limit hold'em inside a locked-down 2-second / 0.5-CPU sandbox: a solver-trained near-Nash core, plus a bounded, opponent-adaptive overlay that exploits weak fields without opening itself to counter-exploitation.
+
+Built for the first [**Fullhouse Hackathon 2026**](https://fullhousehackathon.com/) (lead sponsor [Quadrature Capital](https://www.quadrature.ai/); £4,000+ prize pool). The tournament runs in two regimes that pull in opposite directions and dictate the architecture below:
 
 | When           | Stage                       | Format                                                                                                            |
 | -------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -36,37 +41,44 @@ A 6-max no-limit Texas hold'em bot built for the first **Fullhouse Hackathon 202
 
 ## Results
 
-- **Qualifiers** — two Swiss rounds ranked by cumulative chip delta. Finished in the **top 64** and advanced to the finals.
-- **Finals** — a fresh Swiss/cumulative competition among the 64 qualifiers (standings reset to equal footing). Finished in the **top 40**.
+Qualified for the finals of the Fullhouse Hackathon 2026 — the UK's first quantitative poker hackathon.
+
+- **Qualifiers** — two Swiss rounds ranked by cumulative chip delta. Finished in the top 64 and advanced to the finals.
+- **Finals** — a fresh Swiss/cumulative competition among the 64 qualifiers (standings reset to equal footing). Finished in the top 40.
 
 ---
 
-## Strategy in One Paragraph
+## Strategy
 
-Two-regime tournament dictates a two-layer strategy. The **blueprint** (`src/preflop_lookup.py` + `src/postflop.py`) approximates Nash over an abstracted game — external-sampling MCCFR for preflop and CFR+ over flop buckets for postflop. The **overlay** (`src/opponent_model.py`) deviates from the blueprint toward best-response against the inferred opponent type; magnitude is bounded so a worst-case counter-exploit costs us less than the expected gain. The leverage point is abstraction: a discrete sizing tree `{1/3 pot, 2/3 pot, pot, 2× pot, all_in}` (Pluribus 2019) and flop bucketing capped at 200 buckets × 50 hand-strength bins (Cepheus 2015). The safety metric is exploitability via Local Best-Response over a fixed 20-spot suite (Lisý & Bowling 2017), capped at ≤ 100 mbb/g preflop and ≤ 200 mbb/g aggregate.
+A two-regime tournament dictates a two-layer strategy:
+
+- **Blueprint** (`src/preflop_lookup.py` + `src/postflop.py`) — approximates Nash over an abstracted game: external-sampling MCCFR for preflop and CFR+ over flop buckets for postflop. This is the floor.
+- **Overlay** (`src/opponent_model.py`) — deviates from the blueprint toward best-response against the inferred opponent type; magnitude is bounded so a worst-case counter-exploit costs less than the expected gain.
+- **Leverage point — abstraction** — a discrete sizing tree `{1/3 pot, 2/3 pot, pot, 2× pot, all_in}` (Pluribus 2019) and flop bucketing capped at 200 buckets × 50 hand-strength bins (Cepheus 2015).
+- **Safety metric — exploitability** — Local Best-Response over a fixed 20-spot suite (Lisý & Bowling 2017), capped at ≤ 100 mbb/g preflop and ≤ 200 mbb/g aggregate.
 
 ---
 
 ## Architecture
 
-```
-                          ┌──────────────────────────────┐
-                          │         decide(state)        │
-                          └───────────────┬──────────────┘
-                                          │
-                          ┌───────────────┴────────────────┐
-                          ▼                                ▼
-                 ┌─────────────────┐              ┌─────────────────┐
-                 │    Blueprint    │   overlay    │ Opponent Model  │
-                 │   (near-Nash)   │ ◄──shift──── │  (frequency,    │
-                 │                 │              │   bounded)      │
-                 └────────┬────────┘              └─────────────────┘
-                          │
-                 ┌────────┴─────────┐
-                 ▼                  ▼
-          preflop_lookup        postflop
-          (MCCFR table)        (CFR+ buckets
-                                + eval7 equity)
+```mermaid
+flowchart TD
+    D["decide(state)"]
+    BP["Blueprint<br/>near-Nash"]
+    OM["Opponent Model<br/>frequency-based, bounded"]
+    PF["preflop_lookup<br/>MCCFR table"]
+    POST["postflop<br/>CFR+ buckets + eval7 equity"]
+    D --> BP
+    D --> OM
+    OM -. "bounded shift" .-> BP
+    BP --> PF
+    BP --> POST
+    classDef core fill:#1f6feb,color:#ffffff,stroke:#1f6feb;
+    classDef leaf fill:#21262d,color:#e6edf3,stroke:#30363d;
+    classDef overlay fill:#6e40c9,color:#ffffff,stroke:#6e40c9;
+    class D core;
+    class BP,PF,POST leaf;
+    class OM overlay;
 ```
 
 ---
@@ -138,7 +150,7 @@ These run in a clean clone, with no engine required:
 | Edge cases       | `pytest tests/edge_cases`                                        |
 | Build submission | `python tools/package.py --output submissions/bot.zip --strict` |
 
-The remaining steps need the official engine cloned into `ext/fullhouse-engine/` — a separate, gitignored checkout that provides the sandbox, validator, and local match driver:
+**Engine-backed steps** (require the official engine cloned into `ext/fullhouse-engine/` — a separate, gitignored checkout that provides the sandbox, validator, and local match driver):
 
 | Step              | Command                                                                         |
 | ----------------- | ------------------------------------------------------------------------------- |
@@ -178,13 +190,19 @@ Invalid actions default to fold; the runner emits `{"action": "fold", "error": .
 
 The bot was built in verified stages, each closed only after its checks passed:
 
-```
-G0  Scaffold      ── Repo + tooling skeleton
-G1  Wired         ── decide() returns legal actions in the engine
-G2  Preflop       ── Blueprint preflop range table
-G3  Postflop      ── CFR+ flop buckets + overlay
-G4  Hardened      ── Edge-case sweep + smoke validation
-G5  Verified      ── LBR cap + ablation + self-play ratchet
+```mermaid
+flowchart LR
+    G0["G0 · Scaffold<br/>repo + tooling"]
+    G1["G1 · Wired<br/>legal actions in engine"]
+    G2["G2 · Preflop<br/>blueprint range table"]
+    G3["G3 · Postflop<br/>CFR+ buckets + overlay"]
+    G4["G4 · Hardened<br/>edge-case sweep + smoke"]
+    G5["G5 · Verified<br/>LBR cap + ablation + ratchet"]
+    G0 --> G1 --> G2 --> G3 --> G4 --> G5
+    classDef gate fill:#21262d,color:#e6edf3,stroke:#30363d;
+    classDef verified fill:#238636,color:#ffffff,stroke:#238636;
+    class G0,G1,G2,G3,G4 gate;
+    class G5 verified;
 ```
 
 Each gate was held to numeric evidence — import audit, edge-case sweep, benchmark, and an exploitability (LBR) check — before the next one started.
@@ -195,6 +213,9 @@ Each gate was held to numeric evidence — import audit, edge-case sweep, benchm
 
 Architectural decisions anchor to academic work indexed in [`docs/corpus-index.md`](docs/corpus-index.md):
 
+<details>
+<summary><b>Corpus</b> — academic anchors for each design lever</summary>
+
 | Note                                 | Lever                                  |
 | ------------------------------------ | -------------------------------------- |
 | CFR (Zinkevich 2007)                 | Offline blueprint solver mechanics     |
@@ -204,7 +225,18 @@ Architectural decisions anchor to academic work indexed in [`docs/corpus-index.m
 | LBR (Lisý & Bowling 2017)            | Exploitability audit as safety metric  |
 | Pluribus (Brown & Sandholm 2019)     | Discrete sizing tree; 6-max blueprint  |
 
+</details>
+
 Implementations cite their source at the call site.
+
+---
+
+## Acknowledgements
+
+Built for the [Fullhouse Hackathon 2026](https://fullhousehackathon.com/) — the UK's first
+quantitative poker bot hackathon (£4,000 prize pool). Lead sponsor
+[Quadrature Capital](https://www.quadrature.ai/), with Jane Street, Five Rings, Teza
+Technologies, QRT, Jump Trading, Da Vinci, and Susquehanna.
 
 ---
 
