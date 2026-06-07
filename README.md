@@ -167,6 +167,24 @@ These run in a clean clone, with no engine required:
 
 ---
 
+## Reproducibility & Provenance
+
+Some figures in this write-up — the bb/100 benchmarks, the LBR exploitability
+caps, the variance estimate — were produced on a private engine harness and are
+**not** reproduced in this public repo. [`PROVENANCE.md`](PROVENANCE.md) maps
+every claim to its source and says whether it is reproducible here.
+
+What *is* reproducible in a clean clone, engine-free:
+
+- `python tools/plot_preflop_heatmap.py` — the shipped RFI ranges as 13×13 grids
+- `python tools/overfold_probe.py` — postflop fold/call/raise frequencies (see [`docs/results/overfold-postmortem.md`](docs/results/overfold-postmortem.md))
+- `pytest tests/unit` — bounded-overlay clamp contract + MC-equity accuracy
+
+The committed finals artifact's integrity is pinned — verify with
+`( cd submissions && shasum -a 256 -c v_final.zip.sha256 )`.
+
+---
+
 ## Sandbox Invariants
 
 These are hard constraints, taken from `ext/fullhouse-engine/sandbox/{validator.py,Dockerfile,runner.py}`:

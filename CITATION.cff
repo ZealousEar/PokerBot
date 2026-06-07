@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you reference this project, please cite it as below."
+title: "PokerBot — Fullhouse Hackathon 2026 entry"
+abstract: >-
+  A 6-max no-limit Texas hold'em bot for the Fullhouse Hackathon 2026: a
+  hand-tuned near-Nash heuristic blueprint with eval7 Monte-Carlo equity and a
+  bounded, opponent-adaptive exploit overlay, run inside a 2 s / 0.5 CPU sandbox.
+type: software
+authors:
+  - family-names: Farhad
+    alias: ZealousEar
+version: "1.0.0"
+license: MIT
+repository-code: "https://github.com/ZealousEar/PokerBot"
+url: "https://github.com/ZealousEar/PokerBot"
+date-released: "2026-06-05"
+keywords:
+  - poker
+  - game-theory
+  - counterfactual-regret-minimization
+  - no-limit-holdem
+  - 6-max
