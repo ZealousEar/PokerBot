@@ -2,6 +2,14 @@
 
 <img src="docs/assets/hero.svg" width="800" alt="PokerBot — Fullhouse Hackathon 2026 finalist entry">
 
+<img src="docs/assets/fullhouse-banner.svg" width="700" alt="Full House Hackathon 2026 — Powered by Quadrature, 01.06.26–05.06.26">
+
+Built for the **[Full House Hackathon 2026](https://fullhousehackathon.com/)** — the UK's first quantitative poker bot hackathon · £4,000 prize pool
+<br><br>
+`// our sponsors`
+<br>
+**[Quadrature Capital](https://www.quadrature.ai/)** *(lead)*  ·  Jane Street  ·  Five Rings  ·  Teza Technologies  ·  QRT  ·  Jump Trading  ·  Da Vinci  ·  Susquehanna
+
 [![CI](https://github.com/ZealousEar/PokerBot/actions/workflows/ci.yml/badge.svg)](https://github.com/ZealousEar/PokerBot/actions/workflows/ci.yml)
 ![Python 3.10](https://img.shields.io/badge/python-3.10-3776AB?logo=python&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/license-MIT-22272e)
@@ -252,22 +260,6 @@ We anchor each architectural decision to academic work indexed in [`docs/corpus-
 </details>
 
 Each implementation names its source at the call site.
-
----
-
-## Acknowledgements
-
-<div align="center">
-
-<img src="docs/assets/fullhouse-banner.svg" width="680" alt="Full House Hackathon 2026 — Powered by Quadrature, 01.06.26–05.06.26">
-
-Built for the **[Full House Hackathon 2026](https://fullhousehackathon.com/)** — the UK's first quantitative poker bot hackathon · £4,000 prize pool
-<br><br>
-`// our sponsors`
-<br>
-**[Quadrature Capital](https://www.quadrature.ai/)** *(lead)*  ·  Jane Street  ·  Five Rings  ·  Teza Technologies  ·  QRT  ·  Jump Trading  ·  Da Vinci  ·  Susquehanna
-
-</div>
 
 ---
 
