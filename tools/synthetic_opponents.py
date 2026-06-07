@@ -1,0 +1,477 @@
+"""Deterministic synthetic opponents for edge-case match smoke tests.
+
+These are not strategy benchmarks. They are pressure fixtures designed to
+trigger runner failure classes: all-in pressure, pot-odds calls, river value
+thresholds, TAG pressure, and LAG pressure. The generated bots avoid randomness
+so paired-seed reproducibility failures point at the subject bot or harness.
+"""
+from __future__ import annotations
+
+import argparse
+from pathlib import Path
+
+
+COMMON_HELPERS = r'''
+RANK_ORDER = "23456789TJQKA"
+
+
+def _num(state, key, default=0):
+    try:
+        return int(state.get(key, default) or 0)
+    except Exception:
+        return default
+
+
+def _cards(state):
+    cards = state.get("your_cards") or []
+    if len(cards) != 2:
+        return ["2c", "7d"]
+    return cards
+
+
+def _ranks(cards):
+    return [c[0] for c in cards if isinstance(c, str) and c]
+
+
+def _rank_value(rank):
+    try:
+        return RANK_ORDER.index(rank)
+    except ValueError:
+        return 0
+
+
+def _has_pair_or_better(state):
+    ranks = _ranks(_cards(state)) + _ranks(state.get("community_cards") or [])
+    return any(ranks.count(r) >= 2 for r in ranks)
+
+
+def _hole_strength(state):
+    ranks = _ranks(_cards(state))
+    if len(ranks) < 2:
+        return 0
+    values = sorted((_rank_value(r) for r in ranks), reverse=True)
+    paired = ranks[0] == ranks[1]
+    suited = _cards(state)[0][-1:] == _cards(state)[1][-1:]
+    score = values[0] * 4 + values[1]
+    if paired:
+        score += 40
+    if suited:
+        score += 5
+    return score
+
+
+def _can_check(state):
+    return bool(state.get("can_check")) or _num(state, "amount_owed") <= 0
+
+
+def _safe_passive(state):
+    if _can_check(state):
+        return {"action": "check"}
+    return {"action": "fold"}
+
+
+def _raise_to(state, multiple=3):
+    stack = _num(state, "your_stack")
+    already = _num(state, "your_bet_this_street")
+    cap = stack + already
+    min_raise = _num(state, "min_raise_to", _num(state, "current_bet") + 100)
+    if cap <= 0:
+        return {"action": "fold"}
+    if cap <= min_raise:
+        return {"action": "all_in"}
+    target = max(min_raise, min(cap - 1, min_raise * multiple))
+    return {"action": "raise", "amount": target}
+'''
+
+
+OPPONENT_SOURCES = {
+    "maniac_all_in": COMMON_HELPERS + r'''
+def decide(state):
+    if state.get("type") == "warmup":
+        return {"action": "check"}
+    if _num(state, "your_stack") > 0:
+        return {"action": "all_in"}
+    return _safe_passive(state)
+''',
+    "pot_odds_threshold": COMMON_HELPERS + r'''
+def decide(state):
+    if state.get("type") == "warmup":
+        return {"action": "check"}
+    owed = _num(state, "amount_owed")
+    pot = max(_num(state, "pot"), 1)
+    if _can_check(state):
+        return {"action": "check"}
+    if owed > 0 and pot / max(owed, 1) >= 2.75:
+        return {"action": "call"}
+    return {"action": "fold"}
+''',
+    "river_value_threshold": COMMON_HELPERS + r'''
+def decide(state):
+    if state.get("type") == "warmup":
+        return {"action": "check"}
+    street = state.get("street")
+    owed = _num(state, "amount_owed")
+    pot = max(_num(state, "pot"), 1)
+    if street == "river" and _has_pair_or_better(state):
+        if _can_check(state):
+            return _raise_to(state, 2)
+        if owed / pot <= 0.35:
+            return {"action": "call"}
+    return _safe_passive(state)
+''',
+    "tight_aggressive": COMMON_HELPERS + r'''
+def decide(state):
+    if state.get("type") == "warmup":
+        return {"action": "check"}
+    street = state.get("street")
+    strength = _hole_strength(state)
+    owed = _num(state, "amount_owed")
+    pot = max(_num(state, "pot"), 1)
+    if street == "preflop":
+        if strength >= 82:
+            return _raise_to(state, 3)
+        if strength >= 55 and owed / pot <= 0.20:
+            return {"action": "call"}
+        return _safe_passive(state)
+    if _has_pair_or_better(state):
+        if _can_check(state):
+            return _raise_to(state, 2)
+        if owed / pot <= 0.25:
+            return {"action": "call"}
+    return _safe_passive(state)
+''',
+    "loose_aggressive": COMMON_HELPERS + r'''
+def decide(state):
+    if state.get("type") == "warmup":
+        return {"action": "check"}
+    street = state.get("street")
+    strength = _hole_strength(state)
+    owed = _num(state, "amount_owed")
+    pot = max(_num(state, "pot"), 1)
+    hand_id = str(state.get("hand_id", ""))
+    deterministic_mix = sum(ord(ch) for ch in hand_id) % 5
+    if street == "preflop" and strength >= 35:
+        return _raise_to(state, 2)
+    if _can_check(state):
+        if deterministic_mix in (0, 2, 4):
+            return _raise_to(state, 2)
+        return {"action": "check"}
+    if owed / pot <= 0.45:
+        return {"action": "call"}
+    if deterministic_mix == 1 and _num(state, "your_stack") > owed:
+        return _raise_to(state, 2)
+    return {"action": "fold"}
+''',
+    "overfold_exploiter": COMMON_HELPERS + r'''
+def _mix(state, modulo=10):
+    token = str(state.get("hand_id", "")) + str(state.get("street", ""))
+    for card in _cards(state):
+        token += str(card)
+    return sum(ord(ch) for ch in token) % max(1, int(modulo))
+
+
+def _pressure_raise(state, frac):
+    stack = _num(state, "your_stack")
+    already = _num(state, "your_bet_this_street")
+    current = _num(state, "current_bet")
+    pot = max(_num(state, "pot"), 1)
+    min_raise = _num(state, "min_raise_to", current + 100)
+    target = current + max(100, int(pot * frac))
+    cap = already + max(1, int(stack * 0.55))
+    target = min(target, cap)
+    if target < min_raise:
+        if min_raise - already >= int(stack * 0.55):
+            return _safe_passive(state)
+        target = min_raise
+    if target - already >= stack:
+        return {"action": "all_in"}
+    return {"action": "raise", "amount": target}
+
+
+def _two_pair_or_better(state):
+    ranks = _ranks(_cards(state)) + _ranks(state.get("community_cards") or [])
+    counts = [ranks.count(r) for r in set(ranks)]
+    return any(count >= 3 for count in counts) or sum(1 for count in counts if count >= 2) >= 2
+
+
+def decide(state):
+    if state.get("type") == "warmup":
+        return {"action": "check"}
+    street = state.get("street")
+    strength = _hole_strength(state)
+    owed = _num(state, "amount_owed")
+    pot = max(_num(state, "pot"), 1)
+    stack = _num(state, "your_stack")
+    price = owed / float(pot + owed) if pot + owed > 0 else 1.0
+    mix = _mix(state, 10)
+    made = _has_pair_or_better(state)
+
+    if street == "preflop":
+        if _can_check(state):
+            if strength >= 28 or mix <= 7:
+                return _pressure_raise(state, 0.80)
+            return {"action": "check"}
+        if strength >= 70:
+            if owed <= max(300, int(stack * 0.18)) and mix <= 4:
+                return _pressure_raise(state, 0.85)
+            return {"action": "call"} if owed <= max(600, int(stack * 0.24)) else {"action": "fold"}
+        if strength >= 32 and price <= 0.26 and owed <= max(350, int(stack * 0.09)):
+            return {"action": "call"}
+        return {"action": "fold"}
+
+    if owed > 0:
+        # Pressure extractor, not a maniac: bet-folds weak holdings to resistance.
+        if _two_pair_or_better(state) and price <= 0.18 and owed <= max(250, int(stack * 0.16)):
+            return {"action": "call"}
+        return _safe_passive(state)
+
+    if street == "flop":
+        if made or mix <= 8:
+            return _pressure_raise(state, 0.62)
+        return {"action": "check"}
+    if street == "turn":
+        if made or mix <= 7:
+            return _pressure_raise(state, 0.72)
+        return {"action": "check"}
+    if street == "river":
+        if _two_pair_or_better(state) and mix <= 4:
+            return _pressure_raise(state, 0.42)
+        return {"action": "check"}
+    return _safe_passive(state)
+''',
+    "adaptive_overfold_exploiter": COMMON_HELPERS + r'''
+_ADAPT_PRESSURE_ATTEMPTS = 0
+_ADAPT_PRESSURE_FOLDS = 0
+_ADAPT_PRESSURE_CONTINUES = 0
+_ADAPT_SEEN_PRESSURES = {}
+
+
+def _mix(state, modulo=100):
+    token = str(state.get("hand_id", "")) + str(state.get("street", ""))
+    for card in _cards(state):
+        token += str(card)
+    return sum(ord(ch) for ch in token) % max(1, int(modulo))
+
+
+def _active_opponent_count(state):
+    my_seat = _num(state, "seat_to_act", -999)
+    count = 0
+    for player in state.get("players") or []:
+        if not isinstance(player, dict):
+            continue
+        if _num(player, "seat", -1) == my_seat:
+            continue
+        if player.get("is_folded") or str(player.get("state", "")).lower() == "folded":
+            continue
+        count += 1
+    return max(1, count)
+
+
+def _observe_pressure(state):
+    global _ADAPT_PRESSURE_ATTEMPTS, _ADAPT_PRESSURE_FOLDS, _ADAPT_PRESSURE_CONTINUES
+    my_seat = _num(state, "seat_to_act", -999)
+    hand_id = str(state.get("hand_id", ""))
+    log = state.get("action_log") or []
+    for index, entry in enumerate(log):
+        if not isinstance(entry, dict):
+            continue
+        if _num(entry, "seat", -1) != my_seat:
+            continue
+        if str(entry.get("action", "")).lower() not in {"raise", "all_in"}:
+            continue
+        key = hand_id + ":" + str(index)
+        if _ADAPT_SEEN_PRESSURES.get(key):
+            continue
+        response = ""
+        for later in log[index + 1:]:
+            if not isinstance(later, dict):
+                continue
+            later_seat = _num(later, "seat", -1)
+            later_action = str(later.get("action", "")).lower()
+            if later_seat == my_seat:
+                break
+            if later_action == "fold":
+                response = "fold"
+                break
+            if later_action in {"call", "raise", "all_in"}:
+                response = "continue"
+                break
+        if not response:
+            continue
+        _ADAPT_SEEN_PRESSURES[key] = 1
+        _ADAPT_PRESSURE_ATTEMPTS += 1
+        if response == "fold":
+            _ADAPT_PRESSURE_FOLDS += 1
+        else:
+            _ADAPT_PRESSURE_CONTINUES += 1
+
+
+def _fold_rate():
+    return float(_ADAPT_PRESSURE_FOLDS + 2) / float(_ADAPT_PRESSURE_ATTEMPTS + 4)
+
+
+def _pressure_threshold(base, state):
+    threshold = int(base)
+    rate = _fold_rate()
+    if _ADAPT_PRESSURE_ATTEMPTS >= 12 and rate >= 0.66:
+        threshold += 30
+    elif _ADAPT_PRESSURE_ATTEMPTS >= 6 and rate >= 0.58:
+        threshold += 18
+    elif _ADAPT_PRESSURE_ATTEMPTS >= 10 and rate <= 0.44:
+        threshold -= 18
+    active = _active_opponent_count(state)
+    if active > 1:
+        threshold -= min(24, 8 * (active - 1))
+    if threshold < 0:
+        return 0
+    if threshold > 96:
+        return 96
+    return threshold
+
+
+def _pressure_raise(state, frac):
+    stack = _num(state, "your_stack")
+    already = _num(state, "your_bet_this_street")
+    current = _num(state, "current_bet")
+    pot = max(_num(state, "pot"), 1)
+    min_raise = _num(state, "min_raise_to", current + 100)
+    target = current + max(100, int(pot * frac))
+    cap = already + max(1, int(stack * 0.52))
+    target = min(target, cap)
+    if target < min_raise:
+        if min_raise - already >= int(stack * 0.52):
+            return _safe_passive(state)
+        target = min_raise
+    if target - already >= stack:
+        return {"action": "all_in"}
+    return {"action": "raise", "amount": target}
+
+
+def _rank_counts(state):
+    ranks = _ranks(_cards(state)) + _ranks(state.get("community_cards") or [])
+    counts = {}
+    for rank in ranks:
+        counts[rank] = counts.get(rank, 0) + 1
+    return counts
+
+
+def _made_rank(state):
+    counts = list(_rank_counts(state).values())
+    pairs = sum(1 for count in counts if count >= 2)
+    if any(count >= 4 for count in counts):
+        return 4
+    if any(count >= 3 for count in counts):
+        return 3
+    if pairs >= 2:
+        return 2
+    if pairs == 1:
+        return 1
+    return 0
+
+
+def _wide_pressure_open(state):
+    strength = _hole_strength(state)
+    cards = _cards(state)
+    ranks = _ranks(cards)
+    values = sorted((_rank_value(r) for r in ranks), reverse=True)
+    suited = cards[0][-1:] == cards[1][-1:]
+    connector = len(values) == 2 and abs(values[0] - values[1]) <= 2
+    return strength >= 34 or ranks[0] == ranks[1] or ranks[0] in "AKQJ" or (suited and connector and strength >= 24)
+
+
+def _adaptive_pressure(state, base, frac):
+    if _mix(state, 100) < _pressure_threshold(base, state):
+        return _pressure_raise(state, frac)
+    return {"action": "check"}
+
+
+def decide(state):
+    if state.get("type") == "warmup":
+        return {"action": "check"}
+    _observe_pressure(state)
+    street = state.get("street")
+    owed = _num(state, "amount_owed")
+    pot = max(_num(state, "pot"), 1)
+    stack = _num(state, "your_stack")
+    price = owed / float(pot + owed) if pot + owed > 0 else 1.0
+    made_rank = _made_rank(state)
+    made = made_rank >= 1
+    strong = made_rank >= 2
+    fold_rate = _fold_rate()
+    multiway = _active_opponent_count(state) > 1
+
+    if street == "preflop":
+        if _can_check(state):
+            if _wide_pressure_open(state) and _mix(state, 100) < _pressure_threshold(54 if not multiway else 34, state):
+                return _pressure_raise(state, 0.70)
+            return {"action": "check"}
+        if _hole_strength(state) >= 78:
+            if owed <= max(300, int(stack * 0.16)) and _mix(state, 100) < 38:
+                return _pressure_raise(state, 0.78)
+            return {"action": "call"} if owed <= max(650, int(stack * 0.25)) else {"action": "fold"}
+        if _wide_pressure_open(state) and price <= 0.23 and owed <= max(300, int(stack * 0.075)):
+            return {"action": "call"}
+        return {"action": "fold"}
+
+    if owed > 0:
+        # Pressure extractor, not a payoff bot: continue only with strong value
+        # or very cheap made hands after counter-pressure.
+        if made_rank >= 3 and price <= 0.38 and owed <= max(500, int(stack * 0.35)):
+            return {"action": "call"}
+        if made_rank >= 2 and price <= 0.27 and owed <= max(350, int(stack * 0.22)):
+            return {"action": "call"}
+        if made and price <= 0.11 and owed <= max(150, int(stack * 0.06)):
+            return {"action": "call"}
+        return _safe_passive(state)
+
+    if street == "flop":
+        if strong:
+            return _pressure_raise(state, 0.70)
+        if made:
+            return _pressure_raise(state, 0.58 if multiway else 0.64)
+        return _adaptive_pressure(state, 50 if multiway else 68, 0.55 if fold_rate < 0.60 else 0.68)
+    if street == "turn":
+        if strong:
+            return _pressure_raise(state, 0.76)
+        if made and _mix(state, 100) < _pressure_threshold(56 if not multiway else 34, state):
+            return _pressure_raise(state, 0.68)
+        return _adaptive_pressure(state, 30 if multiway else 46, 0.62 if fold_rate < 0.62 else 0.78)
+    if street == "river":
+        if strong:
+            return _pressure_raise(state, 0.48)
+        if (not multiway) and _ADAPT_PRESSURE_ATTEMPTS >= 12 and fold_rate >= 0.68 and _mix(state, 100) < 16:
+            return _pressure_raise(state, 0.34)
+        return {"action": "check"}
+    return _safe_passive(state)
+''',
+}
+
+
+def write_opponents(target_dir: Path, names: list[str] | None = None) -> dict[str, Path]:
+    target_dir = Path(target_dir)
+    target_dir.mkdir(parents=True, exist_ok=True)
+    selected = names or sorted(OPPONENT_SOURCES)
+    paths: dict[str, Path] = {}
+    for name in selected:
+        if name not in OPPONENT_SOURCES:
+            raise KeyError(f"unknown synthetic opponent {name!r}")
+        bot_dir = target_dir / name
+        bot_dir.mkdir(parents=True, exist_ok=True)
+        (bot_dir / "bot.py").write_text(OPPONENT_SOURCES[name])
+        paths[name] = bot_dir
+    return paths
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--names", nargs="*", default=None)
+    args = parser.parse_args()
+    paths = write_opponents(args.output, args.names)
+    for name, path in sorted(paths.items()):
+        print(f"{name}: {path / 'bot.py'}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

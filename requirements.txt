@@ -1,0 +1,14 @@
+# Pinned to ext/fullhouse-engine/sandbox/Dockerfile (verified 2026-05-22).
+# Local install: eval7 needs Cython<3 at build time and --no-build-isolation.
+#   pip install "Cython<3"
+#   pip install --no-build-isolation eval7==0.1.7
+#   pip install -r requirements.txt
+eval7==0.1.7
+numpy==1.26.4
+scipy==1.13.0
+treys==0.1.8
+scikit-learn==1.5.2
+
+# Dev-only (not present in sandbox).
+pytest>=8.0.0
+hypothesis>=6.100.0
