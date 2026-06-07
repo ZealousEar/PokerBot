@@ -103,8 +103,8 @@ def _early_termination_reason(actual_hands: int, requested_hands: int, final_sta
 
 def main() -> int:
     p = argparse.ArgumentParser()
-    p.add_argument("--zip", default="submissions/best_green.zip",
-                   help="Submission archive (defaults to submissions/best_green.zip)")
+    p.add_argument("--zip", default="submissions/v_final.zip",
+                   help="Submission archive (defaults to submissions/v_final.zip)")
     p.add_argument("--opponent", default="template",
                    help="Reference bot under ext/fullhouse-engine/bots/")
     p.add_argument("--hands", type=int, default=200)
