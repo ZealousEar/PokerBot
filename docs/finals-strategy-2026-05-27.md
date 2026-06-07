@@ -1,6 +1,8 @@
-# Finals Strategy — 2026-06-05 Bracket Plan
+# Finals Strategy — 2026-06-05 Bracket Plan (OBSOLETE format premise)
 
 Written 2026-05-27, four days before the qualifier, eight days before the finals. Anchors every strategic claim in the offline corpus (`docs/corpus-index.md`). Decisions are conditional on data that has not yet landed (overnight lanes ship 2026-05-28 morning; competitor hand histories ship 2026-06-02 morning) — read this together with `docs/morning-promotion-checklist.md` and `docs/playbooks/patch-window.md`.
+
+**2026-06-06 reconciliation:** this document's original single-elim/bracket-survival frame is superseded by `AGENTS.md` "Finals FORMAT" and the 17:32 consult (`prompt-exports/2026-06-04-173203-plan-optimise-next-90min-finals-bot.md`:9,14). Finals reset equal; Phase 1 is Swiss-paired 6-max cumulative chip performance with shrinkage on the top-6 cut. Treat all struck bracket/underdog/variance-as-survival claims below as historical, not live rationale. Under the corrected frame, gratuitous high variance is a liability under shrinkage; Thorp's call-6.4% / fold-58.9% polarization is an over-folding policy bleed vs sharp bet-folding opponents, not a preflop stack-off bug.
 
 ---
 
@@ -8,19 +10,19 @@ Written 2026-05-27, four days before the qualifier, eight days before the finals
 
 | Dimension | Qualifier (2026-06-01) | Finals (2026-06-05) |
 |---|---|---|
-| Format | Swiss-system, online, 6-bot tables | Single-elimination bracket of top 64, in-person at UCL East |
-| Sample size per matchup | 400 hands per Swiss round | 400 hands per bracket match |
-| Number of rounds | Many (depends on field size) | log₂(64) = 6 maximum |
-| Selection criterion | Cumulative chip delta across rounds | Win each bracket match or eliminated |
-| Field composition | Whoever entered | Top 64 by qualifier delta — the strongest entrants only |
-| Variance tolerance | High — bad rounds get averaged out | **Low — one bad round eliminates you** |
+| Format | Swiss-system, online, 6-bot tables | ~~Single-elimination bracket of top 64~~ Fresh finals: Phase 1 "The Bubble" is Swiss-paired 6-max; Phase 2 is final table |
+| Sample size per matchup | 400 hands per Swiss round | ~~400 hands per bracket match~~ 800 hands per Phase 1 match; up to 5000 in Phase 2 |
+| Number of rounds | Many (depends on field size) | ~~log₂(64) = 6 maximum~~ ~40 Phase 1 Swiss-paired matches per bot, then top-6 final table |
+| Selection criterion | Cumulative chip delta across rounds | ~~Win each bracket match or eliminated~~ cumulative chip performance with shrinkage for the top-6 cut; qualifier standings do not carry |
+| Field composition | Whoever entered | Same finalist field selected from qualifier results, but every finalist starts equal in finals |
+| Variance tolerance | High — bad rounds get averaged out | ~~Low because one bad round eliminates you~~ avoid gratuitous high variance because cumulative scoring plus shrinkage penalizes unstable chip extraction |
 
 The strategic implication is asymmetric:
 
 - In Swiss, the metric is `Σ edge(opponent) × hands`. A +71.82 bb/100 win vs the median field and a −15 bb/100 loss vs a strong opponent average out positively, and we still bank chips toward the top-64 cut. Maximum chip extraction wins, even if it leaves us exploitable to a sharper counter — most rounds we're not facing that counter.
-- In the bracket, the metric is `P(win 6 consecutive matches)`. Even if we have +5 bb/100 edge in every match (very strong), 6 matches at 400 hands each gives meaningful variance, and the field is hand-selected to be sharp. Downside protection matters more than upside maximization.
+- ~~In the bracket, the metric is `P(win 6 consecutive matches)`. Even if we have +5 bb/100 edge in every match (very strong), 6 matches at 400 hands each gives meaningful variance, and the field is hand-selected to be sharp. Downside protection matters more than upside maximization.~~ **Corrected:** in finals Phase 1, the metric is cumulative chip extraction across Swiss-paired 6-max 800-hand matches, with shrinkage on the top-6 cut. Best-response pressure can still create EV, but unstable polarization/over-folding is a liability when sharp opponents can bet-fold us off pots.
 
-The corpus is explicit on this tradeoff. **[[Libratus-Brown-Sandholm-2017]]**'s bounded-exploitability frame: a wider best-response deviation harvests more chips against the weak slice of the field but pays a counter-exploit cost when met with a sharp opponent who is themselves best-responding. The Swiss field is mostly weak; the bracket field is mostly sharp.
+The bounded-exploitability tradeoff still applies, but the source is not single-elim survival. **[[Libratus-Brown-Sandholm-2017]]**'s frame says a wider best-response deviation harvests more chips against weak opponents but pays a counter-exploit cost when met with a sharp opponent who is themselves best-responding. Under the corrected finals format, that cost shows up as cumulative chip bleed and shrinkage drag, especially for over-folding polarization.
 
 **[[Pluribus-Brown-Sandholm-2019]]** designed for 6-max specifically and showed that the blueprint + small-deviation overlay holds up across opponent types, but their search budget allowed real-time depth-limited subgame solving on top. We do not have that compute (0.5 CPU, 2 s budget) — the blueprint we ship is the floor, and only the overlay magnitude is tunable.
 
@@ -32,8 +34,8 @@ The corpus is explicit on this tradeoff. **[[Libratus-Brown-Sandholm-2017]]**'s 
 
 Ship the qualifier artifact for finals **unless** one of the following criteria fires.
 
-1. **Lane B / V data (lands 2026-05-28) shows a single-opponent RED matchup** against an opponent we expect to face in the bracket. Specifically, a stat-sig loss with CI excluding 0 AND magnitude > 50 bb/100, against a publicly known competitor likely to qualify (the public-bot field of vladimir, dominic, famadeo, neel; Vladimir is the highest-risk per `consults/2026-05-27-overnight-P/vladimir_analysis.md`).
-2. **Qualifier hand histories (2026-06-02) reveal the bracket field contains a posture our overlay cannot answer** — e.g., a deep-CFR-trained sharp 3-bet defender that punishes our wide-open ranges (the `sharp_3bet_punisher` archetype recorded a −3.36 bb/100 in the X1-repair AMBER findings; an actual deployed bot in this style would matter).
+1. **Lane B / V data (lands 2026-05-28) shows a single-opponent RED matchup** against an opponent we expect in the finalist field. Specifically, a stat-sig loss with CI excluding 0 AND magnitude > 50 bb/100, against a publicly known competitor likely to qualify (the public-bot field of vladimir, dominic, famadeo, neel; Vladimir is the highest-risk per `consults/2026-05-27-overnight-P/vladimir_analysis.md`).
+2. **Qualifier hand histories (2026-06-02) reveal the finalist field contains a posture our overlay cannot answer** — e.g., a deep-CFR-trained sharp 3-bet defender that punishes our wide-open ranges (the `sharp_3bet_punisher` archetype recorded a −3.36 bb/100 in the X1-repair AMBER findings; an actual deployed bot in this style would matter).
 3. **Lane A (2026-05-28) promotes a candidate that beats the baseline aggregate AND lowers LBR** — i.e., it offers more edge AND less exploitability. This is the rare strict Pareto improvement. If found, the finals artifact is the Lane A candidate, not the qualifier baseline.
 
 If none of (1)–(3) fires, **ship the qualifier `v_final.zip` for finals as well**. There is no penalty for shipping the same artifact twice, and the qualifier artifact's full G1–G11 gauntlet is already in `consult/artifacts/release/gauntlet.log` — it's the most-validated bot we own.
@@ -42,14 +44,14 @@ If none of (1)–(3) fires, **ship the qualifier `v_final.zip` for finals as wel
 
 The qualifier artifact carries `MAX_DEVIATION_PP = 0.20` (20 percentage points off the blueprint frequency, in either direction). The Lane A overnight sweep tests `{0.10, 0.15, 0.20, 0.25, 0.30}`.
 
-For finals — assuming the bracket field is sharper — the corpus argues for a **lower** cap, not a higher one. **[[Libratus-Brown-Sandholm-2017]]** §3.2 (paraphrased): the worst-case counter-exploit penalty scales super-linearly with overlay magnitude when the opponent's own deviation strategy is good. A 0.30 deviation against a Nash-baseline opponent costs `O(d²)` rather than `O(d)`.
+For finals — under the corrected Swiss/cumulative format and selected finalist field — the corpus still argues for a **controlled** cap, not a wider variance-seeking one. **[[Libratus-Brown-Sandholm-2017]]** §3.2 (paraphrased): the worst-case counter-exploit penalty scales super-linearly with overlay magnitude when the opponent's own deviation strategy is good. A 0.30 deviation against a Nash-baseline opponent costs `O(d²)` rather than `O(d)`; under shrinkage, that avoidable counter-exploit bleed is a liability.
 
 **Decision rule:**
 - If Lane A finds `MAX_DEVIATION_PP = 0.15` (or 0.10) beats the baseline at qualifier and ALSO holds LBR aggregate ≤ 100 mbb/g (vs the qualifier 7.4 mbb/g — even tighter), promote it for finals.
-- If Lane A finds a higher deviation (`0.25`, `0.30`) beats baseline at qualifier, **do not promote it for finals** even if it qualifies for qualifier ship per the morning checklist. Keep the qualifier artifact (which uses 0.20) for the bracket.
+- If Lane A finds a higher deviation (`0.25`, `0.30`) beats baseline at qualifier, **do not promote it for finals** even if it qualifies for qualifier ship per the morning checklist. Keep the qualifier artifact (which uses 0.20) for finals unless a corrected-format gate proves the wider deviation improves cumulative chip EV without over-folding bleed.
 - If Lane A returns nothing usable, the qualifier 0.20 ships for finals. We do not retune via 06-02 patch window beyond what the hand-history priors suggest.
 
-This is the principled split between "qualifier is a max-exploit pass" and "finals needs Nash-baseline downside protection," anchored in **[[Libratus-Brown-Sandholm-2017]]** + **[[Pluribus-Brown-Sandholm-2019]]**.
+This is the corrected split between "qualifier is a max-exploit pass" and "finals Phase 1 still needs bounded-exploit downside protection under cumulative scoring/shrinkage," anchored in **[[Libratus-Brown-Sandholm-2017]]** + **[[Pluribus-Brown-Sandholm-2019]]**.
 
 ---
 
@@ -61,7 +63,7 @@ Read `docs/tournament-spec.md` line "**Patch window:** 2026-06-02 — hand histo
 
 Standard hackathon convention: each entrant downloads their own match histories, no one else's. The patch window is for you to learn from your own qualifier play, not from the field's behavior.
 
-**Strategic implication:** Bracket opponents have not seen our hand traces. They do not know what overlay shape we carry. Treat the bracket field as the prior — sharp by default per **[[Libratus-Brown-Sandholm-2017]]** + **[[Pluribus-Brown-Sandholm-2019]]**, and play near-Nash. **No behavior-shift is needed** to dodge counter-prep that doesn't exist.
+**Strategic implication:** Finals opponents have not seen our hand traces. They do not know what overlay shape we carry. Treat the finalist field as the prior — sharp by selection per **[[Libratus-Brown-Sandholm-2017]]** + **[[Pluribus-Brown-Sandholm-2019]]**, and keep the bounded near-Nash floor. **No behavior-shift is needed** to dodge counter-prep that doesn't exist.
 
 This is the default branch. Probability ~0.7 based on hackathon convention; confirm by inspection at Phase 1 of the patch-window playbook.
 
@@ -69,7 +71,7 @@ This is the default branch. Probability ~0.7 based on hackathon convention; conf
 
 Less common but possible: organizer publishes all matches (or at least the top-64 matches) for transparency. The patch window becomes a meta-game where each finalist can see every other finalist's qualifier behavior.
 
-**Strategic implication:** Our qualifier behavior is now a **read** for every bracket opponent. They know our 3-bet frequency, c-bet frequency, river bluff frequency, position-specific posture, etc. A sharp opponent will best-respond to those observed frequencies in the bracket.
+**Strategic implication:** Our qualifier behavior is now a **read** for every finals opponent. They know our 3-bet frequency, c-bet frequency, river bluff frequency, position-specific posture, etc. A sharp opponent will best-respond to those observed frequencies in finals.
 
 The counter-prep play is to **flip 2–4 overlay shifts** for finals, so the read is wrong:
 
@@ -105,7 +107,7 @@ These four decisions cannot be made now because the supporting evidence has not 
 **Criteria for promoting a different artifact (must hold ALL):**
 - We made the top 64 (otherwise moot).
 - Patch window's Phase 7 regression bench shows the patched artifact ≥ qualifier mean across all 5 templates AND CI low > 0 on each.
-- Lane B competitor h2h showed a real (non-Vladimir) RED matchup against a competitor confirmed to be in the bracket.
+- Lane B competitor h2h showed a real (non-Vladimir) RED matchup against a competitor confirmed to be in the finalist field.
 - LBR aggregate for the patched artifact ≤ 100 mbb/g (half the validator-spec cap of 200; qualifier baseline already posts 7.4 mbb/g, so there is headroom) — finals is sharper, exploitability margin must be tighter.
 
 **Default:** ship the same `v_final.zip` (sha `e4b4a8f1…598`) for finals.
@@ -172,7 +174,7 @@ For quick reference. Every claim in Sections 1–5 cites at least one of these.
 
 | Claim | Corpus anchor |
 |---|---|
-| Variance tolerance drops from Swiss to bracket | **[[Libratus-Brown-Sandholm-2017]]** + general first-principles |
+| Corrected: finals Phase 1 is Swiss/cumulative; variance-as-underdog/bracket-survival rationale is obsolete, and unstable over-polar variance is a liability under shrinkage | `AGENTS.md` "Finals FORMAT" + 17:32 consult (`prompt-exports/2026-06-04-173203-plan-optimise-next-90min-finals-bot.md`:9,14) + **[[Libratus-Brown-Sandholm-2017]]** |
 | Bounded best-response (blueprint floor + overlay) is the right shape | **[[Libratus-Brown-Sandholm-2017]]** + **[[Pluribus-Brown-Sandholm-2019]]** |
 | 6-max blueprint + small-deviation overlay holds across opponent types | **[[Pluribus-Brown-Sandholm-2019]]** |
 | Sharp opponents make `MAX_DEVIATION_PP` lower, not higher | **[[Libratus-Brown-Sandholm-2017]]** §3.2 paraphrased |

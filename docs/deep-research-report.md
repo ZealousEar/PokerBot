@@ -25,8 +25,10 @@ flowchart LR
     C --> D[Per-match chip delta over 400 hands]
     D --> E[Three Swiss rounds against improving pods]
     E --> F[Top 64 cutoff]
-    F --> G[Finals bracket]
+    F --> G[Finals competition (format corrected 2026-06-04)]
 ```
+
+**2026-06-06 reconciliation:** "Finals competition" above replaces stale bracket wording; source of truth for corrected finals format is `AGENTS.md` "Finals FORMAT" + 17:32 consult (`prompt-exports/2026-06-04-173203-plan-optimise-next-90min-finals-bot.md`:9,14).
 
 One public ambiguity matters enough to treat as a priority gap: the organiser site says qualification is by **chip EV**, while the public README says ranking is by **cumulative chip delta**. Those are closely related, but not automatically identical if normalisation, tie-breaks, or aggregation differ. If qualification is effectively cumulative chip delta, the incentive to pursue aggressive skewed lines is higher than under a more normalised chip-EV definition. That ambiguity is small in wording but large in strategic consequence. citeturn52view0turn53view0turn54view2
 

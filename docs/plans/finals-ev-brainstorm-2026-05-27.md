@@ -1,7 +1,9 @@
 # Finals-EV Brainstorm — 2026-05-27
 
 ## Goal
-Surface the highest-EV improvements for the finals candidate across three linked areas — PATCH-2A bounded postflop EV veto, vladimir-specific exploits operationalized into concrete patches, and finals-bracket-specific overlays — and triage to a top-3 in each area plus 2–3 wildcards. Each idea is grounded in `file:line` and triaged by (impact × implementability × low-regression-risk). The brainstorm is codex-primary (`PokerBot-codex/`), and every top-3 item names what would need to migrate to `PokerBot/` (main) before the finals upload.
+Surface the highest-EV improvements for the finals candidate across three linked areas — PATCH-2A bounded postflop EV veto, vladimir-specific exploits operationalized into concrete patches, and finals-specific overlays — and triage to a top-3 in each area plus 2–3 wildcards. Each idea is grounded in `file:line` and triaged by (impact × implementability × low-regression-risk). The brainstorm is codex-primary (`PokerBot-codex/`), and every top-3 item names what would need to migrate to `PokerBot/` (main) before the finals upload.
+
+**2026-06-06 reconciliation:** this is a pre-format-change brainstorm. Any "bracket" or single-elim variance label is historical unless explicitly re-derived under the corrected source of truth: `AGENTS.md` "Finals FORMAT" + 17:32 consult (`prompt-exports/2026-06-04-173203-plan-optimise-next-90min-finals-bot.md`:9,14). Corrected Phase 1 objective is Swiss/cumulative chip extraction with shrinkage; gratuitous variance and Thorp's over-folding polarization are liabilities to test, not underdog assets.
 
 ## Background
 
@@ -31,9 +33,9 @@ Surface the highest-EV improvements for the finals candidate across three linked
 - **B3 priors consumer not landed**: no `np.load("finals_priors.npz")`, no priors-loading scaffold anywhere in `opponent_model.py` (no `numpy`/`json`/`os` imports at module level). Nearest precedent for import-time `.npz` loading: `preflop_lookup.py:20-30` and `postflop.py:28-59`.
 - Test invariants to preserve: `tests/edge_cases/test_archetype_posterior.py` (uniform below threshold, peaked above), `test_overlay_bounded.py` (overlay sum ≤ `deviation_bound` ≤ 4.0; no overlay-induced all_in; `POKERBOT_DISABLE_OVERLAY=1` clean disable).
 
-### Game-state inputs & bracket-state limits
-- Engine passes only intra-match hand state per `PokerBot/docs/api-cheatsheet.md:13-28` and `ext/public-bots/vladimir/engine/game.py:555-574`: `hand_id`, `street`, `seat_to_act`, `pot`, `community_cards`, `current_bet`, `min_raise_to`, `amount_owed`, `can_check`, `your_cards`, `your_stack`, `your_bet_this_street`, `players`, `action_log`. **No `hand_index`, `total_hands`, `time_bank`, blinds, `multiway_count`, or bracket-round signal**. Multiway count must be derived from `len(players)`.
-- Match harness injects `match_action_log` with `hand_num`, `seat`, `bot_id`, `action`, `amount` per `ext/public-bots/vladimir/sandbox/match.py:219-222, 299-305`. **Hand-within-match is derivable from `max(hand_num)` in match_action_log; bracket round is not.**
+### Game-state inputs & tournament-state limits ("bracket" wording historical)
+- Engine passes only intra-match hand state per `PokerBot/docs/api-cheatsheet.md:13-28` and `ext/public-bots/vladimir/engine/game.py:555-574`: `hand_id`, `street`, `seat_to_act`, `pot`, `community_cards`, `current_bet`, `min_raise_to`, `amount_owed`, `can_check`, `your_cards`, `your_stack`, `your_bet_this_street`, `players`, `action_log`. **No `hand_index`, `total_hands`, `time_bank`, blinds, `multiway_count`, tournament-phase, or cross-match signal**. Multiway count must be derived from `len(players)`. The old "bracket-round" framing is obsolete after the 2026-06-04 format correction.
+- Match harness injects `match_action_log` with `hand_num`, `seat`, `bot_id`, `action`, `amount` per `ext/public-bots/vladimir/sandbox/match.py:219-222, 299-305`. **Hand-within-match is derivable from `max(hand_num)` in match_action_log; tournament phase / cross-match standing is not.**
 - Current bot extracts: stack-total at `bot.py:87-94` (`your_stack + your_bet_this_street`); position from `players`/`seat_to_act` at `bot.py:114-131`. **No existing hand-index / stack-ratio / match-phase axis** in `opponent_model.py` or `postflop.py`.
 
 ### Vladimir already-documented weaknesses (operationalize, don't re-derive)
@@ -44,8 +46,8 @@ Surface the highest-EV improvements for the finals candidate across three linked
 - Training cost prohibitive to replicate (per same analysis, `:30-34`) — we should **not** try to train his net; we exploit at runtime.
 
 ### Finals strategy prior (already in repo)
-- `PokerBot/docs/finals-strategy-2026-05-27.md:64-82` argues "sharper bracket field → narrower bounded deviation" because (a) private histories → opponents have no read on us, default to Nash baseline; (b) public histories → our visible patterns get best-responded, **still** stay inside the cap.
-- Brainstorm should steelman both narrower-finals and variance-seeking ideas side-by-side; the impact × implementability gate picks the survivor.
+- `PokerBot/docs/finals-strategy-2026-05-27.md:64-82` was a pre-format-change prior; its "sharper bracket field → narrower bounded deviation" wording is now superseded. Corrected carry-forward: the finalist field may still be sharp by selection, but the rationale is cumulative chip bleed + shrinkage + over-folding counter-exploit risk, not single-elim bracket survival.
+- Historical instruction: brainstorm originally steelmanned both narrower-finals and variance-seeking ideas side-by-side. After the 2026-06-04 format correction, variance-seeking/underdog rationales are obsolete unless re-derived under Swiss/cumulative chip EV and shrinkage.
 
 ### Tooling for acceptance tests (canonical: main worktree)
 - `PokerBot/tools/h2h.py` exists in `PokerBot/tools/`; **absent in `PokerBot-codex/tools/`**. Acceptance tests must invoke from main worktree against codex zip artifacts.
@@ -121,7 +123,7 @@ Surface the highest-EV improvements for the finals candidate across three linked
 7. Pre-river commit guard: when `_effective_spr ≤ 1.0` AND street ∈ {flop, turn}, downgrade raise to call — his MAX_DEPTH=200/MAX_RAISES=4 tree bound (`config.hpp:51-52`) means his commit-with-marginal is undertrained.
 8. Recursive-aggression detector: derive `recent_raise_actor` from `action_log` last 3 actions; if the same villain has raised twice and we haven't, his net is in a deep recursion branch — fold marginal calls instead of float.
 9. Multiway-flag input to `OpponentModel.archetype_features` at `PokerBot-codex/src/opponent_model.py:79-141`: append `mw_count` to `current_pressure` at `:189` and tilt posterior toward `risk_gated_conservative` when `mw ≥ 4` AND `top_archetype == blueprint_threshold_exploit`.
-10. Bracket-context posterior weight: when `match_action_log` shows villain's raise rate has shifted >1.5σ from his first-50-hand baseline, posterior favors his "one-step MC" mode over "GTO" mode; thin patch in `_posterior_from_rates` at `PokerBot-codex/src/opponent_model.py:166-186`.
+10. Tournament-context posterior weight (old label: "bracket-context," now obsolete): when `match_action_log` shows villain's raise rate has shifted >1.5σ from his first-50-hand baseline, posterior favors his "one-step MC" mode over "GTO" mode; thin patch in `_posterior_from_rates` at `PokerBot-codex/src/opponent_model.py:166-186`.
 11. All-in skepticism vs vlad-class: when posterior peaks at `monte_carlo_basic` or `blueprint_threshold_exploit` AND villain's `current_bet ≥ 0.5 × stack`, demand `equity ≥ 0.65` for call inside `_equity_turn_river_action` at `:355-365`.
 12. Wet-multiway dual-veto: combine A-T1 veto with B1 multiway tax — when `_board_wetness AND mw ≥ 3 AND vladimir-shaped posterior`, set veto `safety_cap_mbb` to 2× base (e.g., `large=360`, `huge=520`); compound effect against his most undertrained surface.
 13. Posterior-driven postflop tighten (postflop-side only, since `src/preflop_lookup.py` is forbidden per `PokerBot/docs/playbooks/patch-window.md` Phase 4): plumb posterior to `decide_postflop` and when posterior peaks at high-aggression, demote our flop continuation to check/fold in the first 25% of the flop blueprint cells.
@@ -159,11 +161,13 @@ Surface the highest-EV improvements for the finals candidate across three linked
 
 ---
 
-## C. Finals-bracket overlays (intra-match phase + stack-ratio only; no bracket-round signal)
+## C. Finals-bracket overlays (pre-format-change brainstorm; bracket premise superseded)
+
+**2026-06-06 reconciliation:** ideas below were brainstormed before the 2026-06-04 format correction. Source of truth is `AGENTS.md` "Finals FORMAT" + 17:32 consult (`prompt-exports/2026-06-04-173203-plan-optimise-next-90min-finals-bot.md`:9,14): finals reset equal; Phase 1 is Swiss/cumulative, not single-elim. Treat bracket/variance-seeking premises here as historical unless explicitly re-derived under cumulative chip performance and shrinkage.
 
 ### 15 candidate ideas
 1. Postflop posterior plumbing seam: extend `decide_postflop(game_state, posterior=None)` at `PokerBot-codex/src/postflop.py:366`, and at the call site `PokerBot-codex/src/bot.py:104-110` derive `features = _OPPONENT_MODEL.archetype_features(state)` then pass `posterior=features`; structural prerequisite for every other overlay below.
-2. Narrower bracket-context deviation: in `PokerBot-codex/src/opponent_model.py:99` set `deviation_bound = MAX_DEVIATION_BOUND_PP * confidence * 0.7` when `top_probability ≥ 0.55`; respects `PokerBot/docs/finals-strategy-2026-05-27.md:64-82` (sharper field → narrower overlay).
+2. Narrower finalist-field deviation (old label: bracket-context): in `PokerBot-codex/src/opponent_model.py:99` set `deviation_bound = MAX_DEVIATION_BOUND_PP * confidence * 0.7` when `top_probability ≥ 0.55`; this must be justified under corrected cumulative/shrinkage risk, not bracket survival.
 3. Hand-index-aware overlay weight: derive `hand_in_match = max(item["hand_num"] for item in match_action_log)` per `ext/public-bots/vladimir/sandbox/match.py:219-222` inside `PokerBot-codex/src/opponent_model.py:_observed_actions`, scale `deviation_bound` by 0.6 in `hand_in_match < 30`, 1.0 in `30..300`, 0.7 in `> 300`.
 4. Stack-pressure scaling: in `_pressure_preflop_overlay` at `PokerBot-codex/src/bot.py:149-152, 176-223`, if `your_stack > 2 × STARTING_STACK` OR `< 0.5 × STARTING_STACK`, scale `deviation_bound` by 0.5 — both extremes argue for blueprint-truer play.
 5. `finals_priors.npz` consumer in `PokerBot-codex/src/opponent_model.py` at module top, mirroring the `np.load` pattern at `PokerBot-codex/src/postflop.py:28-59`: load `data/finals_priors.npz` with `try/except` no-op fallback, expose `_FINALS_PRIORS` dict; covers the Phase B3 P0.
@@ -171,17 +175,17 @@ Surface the highest-EV improvements for the finals candidate across three linked
 7. Field-fold-to-cbet-driven safety cap: if `_FINALS_PRIORS['fold_to_cbet'] > 0.55`, raise the A-T1 `safety_cap_mbb[bucket]` by 30% (their over-folds make our veto cheaper); modulation in `PokerBot-codex/src/postflop.py:128+`.
 8. Adaptive top-archetype tie-break: in `_top_posterior` at `PokerBot-codex/src/opponent_model.py:117-126`, when `top_probability < 0.30` (no clear archetype), set `deviation_bound = 0` regardless of confidence; matches sharper-field-narrower-overlay.
 9. Sample-size floor escalation: introduce `FINALS_MIN_OBSERVATIONS = 60` at `PokerBot-codex/src/opponent_model.py:23-25`, consumed only when `_FINALS_PRIORS` is loaded; default `MIN_ARCHETYPE_OBSERVATIONS=20` stays to preserve qualifier behavior.
-10. Variance-cap on committed-chip ratio: in `decide_postflop` (newly threaded with posterior per #1), if `your_bet_this_street / max(1, your_stack + your_bet_this_street) > 0.30` AND we're not facing all-in, downgrade `raise` → `call`; tighter variance for bracket survival.
+10. Variance-cap on committed-chip ratio: in `decide_postflop` (newly threaded with posterior per #1), if `your_bet_this_street / max(1, your_stack + your_bet_this_street) > 0.30` AND we're not facing all-in, downgrade `raise` → `call`; only valid if re-derived as reducing cumulative chip bleed / shrinkage exposure, not as bracket survival.
 11. Posterior-bounded veto strength in A-T1: scale A-T1's `safety_cap_mbb[bucket]` by `(1.0 + 0.3 × (top_probability − 0.5))` when `top_archetype == risk_gated_conservative`; expensive vetos when posterior says villain rarely commits.
-12. Multiway-fold-suppression: at `_pressure_preflop_overlay` (`PokerBot-codex/src/bot.py:149-152`), when `len(players) ≥ 4` AND `top_archetype != blueprint_threshold_exploit`, scale `open_shift_pp` by 0.5; reduces overlay-induced opens against unknown bracket fields.
+12. Multiway-fold-suppression: at `_pressure_preflop_overlay` (`PokerBot-codex/src/bot.py:149-152`), when `len(players) ≥ 4` AND `top_archetype != blueprint_threshold_exploit`, scale `open_shift_pp` by 0.5; reduces overlay-induced opens against unknown finalist fields.
 13. Aggression-burst auto-narrow: derive `recent_raises = sum(1 for a in match_action_log[-20:] if a.get("action") == "raise")`; if `≥ 6`, set `deviation_bound = min(deviation_bound, 2.0)`.
-14. Bracket-quiet overlay floor: at `PokerBot-codex/src/bot.py:181` (existing `< 0.75` micro-shift skip), raise the floor to `1.20` when `_FINALS_PRIORS` is loaded; suppresses micro-shifts that look like reads.
-15. Variance-seeking when-behind (steelman counter to #2/#4): when `your_stack < 0.4 × STARTING_STACK` AND `hand_in_match > 250`, **widen** `deviation_bound` by `1.25` and bias toward `aggressive` archetype overrides; single-elim variance argument — we need a coin-flip more than we need Nash.
+14. Finals-quiet overlay floor (old label: bracket-quiet): at `PokerBot-codex/src/bot.py:181` (existing `< 0.75` micro-shift skip), raise the floor to `1.20` when `_FINALS_PRIORS` is loaded; suppresses micro-shifts that look like reads.
+15. ~~Variance-seeking when-behind (steelman counter to #2/#4): when `your_stack < 0.4 × STARTING_STACK` AND `hand_in_match > 250`, **widen** `deviation_bound` by `1.25` and bias toward `aggressive` archetype overrides; single-elim variance argument — we need a coin-flip more than we need Nash.~~ **OBSOLETE after 2026-06-04 format correction.** Under Swiss/cumulative Phase 1 with shrinkage, gratuitous variance is a liability; over-folding polarization must be measured with a mechanism-matched exploiter, not justified as underdog variance.
 
 ### Top 3 (impact × implementability × low-regression-risk)
 
-#### C-T1 — Narrower bracket-context deviation bound (#2 + #4)
-- **Pitch.** Highest-leverage finals overlay with the lowest blast radius: a two-axis scale (posterior confidence × stack ratio) tightens our overlay where the bracket field is sharpest, with one constant edit and one helper across `opponent_model.py` + `bot.py`.
+#### C-T1 — Narrower finalist-field deviation bound (#2 + #4; old bracket-context label superseded)
+- **Pitch.** Highest-leverage finals overlay with the lowest blast radius: a two-axis scale (posterior confidence × stack ratio) tightens our overlay where corrected-format cumulative bleed / shrinkage / over-folding counter-exploit risk is highest, with one constant edit and one helper across `opponent_model.py` + `bot.py`.
 - **Sketch.** In `PokerBot-codex/src/opponent_model.py:99`:
   ```
   deviation_bound = MAX_DEVIATION_BOUND_PP * confidence
@@ -197,7 +201,7 @@ Surface the highest-EV improvements for the finals candidate across three linked
   ```
   (`STARTING_STACK = 10000` per engine convention.)
 - **Acceptance.** `pytest tests/edge_cases/test_overlay_bounded.py -x` must still pass (existing `test_posterior_deviation_is_hard_bounded_for_each_peak` invariant still holds because we scale down, not up); plus `python tools/benchmark.py --all-templates --hands 10000 --paired-seed-base 42` showing no template regresses, and a new `tests/edge_cases/test_finals_overlay_narrower.py` asserting `top_probability=0.60` + `stack_ratio=2.5` ⇒ final `deviation_bound ≤ MAX_DEVIATION_BOUND_PP × 0.7 × 0.5 = 1.4`.
-- **Risk.** Narrower overlay against weak qualifier-tier opponents who appear in the bracket leaves EV on the table — but bracket field is sharper by selection (`PokerBot/docs/finals-strategy-2026-05-27.md:64-82`), so asymmetric risk favors narrower; mitigated by keeping the `MAX_DEVIATION_BOUND_PP=4.0` ceiling intact, so we strictly subset qualifier behavior, never extend it. Note: #15 (variance-seeking when behind) is the explicit steelman counter — it lost the triage because the bracket-round signal that would make it precise is unavailable (we can only see hand-in-match, not bracket-round depth), so widening on shaky inputs invites LBR exploit.
+- **Risk.** Narrower overlay against weak qualifier-tier opponents who appear in the finalist field leaves EV on the table — but the corrected rationale favors narrower only when cumulative chip bleed / shrinkage / over-folding counter-exploit risk outweighs that EV loss. Mitigated by keeping the `MAX_DEVIATION_BOUND_PP=4.0` ceiling intact, so we strictly subset qualifier behavior, never extend it. Note: #15 (variance-seeking when behind) is now obsolete after the format correction; widening on shaky inputs invites LBR exploit and is not justified by an underdog bracket premise.
 - **Migration.** `PokerBot-codex/src/opponent_model.py` 1 conditional + `PokerBot-codex/src/bot.py` 3-line stack-ratio block → `PokerBot/src/opponent_model.py` + `PokerBot/src/bot.py`; main worktree on `release/v_final-e4b4a8f1` has both files at post-X1 state, so this is a small patch-style migration.
 
 #### C-T2 — Postflop posterior plumbing seam (#1)

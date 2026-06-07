@@ -2,11 +2,13 @@
 
 Authoritative source: `ext/fullhouse-engine/README.md` + `sandbox/Dockerfile` + `sandbox/validator.py` + `sandbox/runner.py`. Re-read at G1 start and at patch-window opening; any drift gets flagged in STATUS.md.
 
+**2026-06-06 reconciliation:** the original finals lines in this spec used a stale single-elimination bracket premise. For finals format/scoring, `AGENTS.md` "Finals FORMAT" and the 17:32 consult (`prompt-exports/2026-06-04-173203-plan-optimise-next-90min-finals-bot.md`:9,14) supersede older notes: finals reset equal, Phase 1 is Swiss/cumulative, and variance-as-underdog rationale is obsolete.
+
 ## Event
 - **Name:** Fullhouse Hackathon 2026, London
 - **Qualifier:** 2026-06-01 — Swiss-system online; 400 hands per match; 6-bot tables; top 64 advance
 - **Patch window:** 2026-06-02 — hand histories downloadable as JSON; one updated bot allowed before finals
-- **Finals:** 2026-06-05 — single-elimination bracket at UCL East
+- **Finals:** 2026-06-05 — fresh competition; Phase 1 "The Bubble" is ~40 Swiss-paired 6-max matches per bot, 800 hands each, ranked by cumulative chip performance with shrinkage on the top-6 cut; Phase 2 is the final table.
 - **Prize pool:** £4,000+, lead sponsor Quadrature Capital
 
 ## API contract
@@ -54,5 +56,5 @@ Authoritative source: `ext/fullhouse-engine/README.md` + `sandbox/Dockerfile` + 
 
 ## Scoring
 - Qualifier: cumulative chip delta across Swiss rounds; top 64 advance.
-- Finals: single-elimination bracket seeded from qualifier standings.
+- Finals: fresh Swiss/cumulative Phase 1; qualifier standings do **not** carry, every finalist starts equal, and the top-6 cut is by cumulative chip performance with shrinkage. Phase 2 is the final table.
 - 400 hands per qualifier match (engine README §"Tournament format" notes this is double the demo's 150 hands and is intentional to tilt the field toward skill over variance).

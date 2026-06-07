@@ -65,7 +65,7 @@ Main worktree (`PokerBot/tools/`) is mostly stubs. `PokerBot-codex/tools/` holds
 ### Tournament spec invariants (`docs/tournament-spec.md`)
 
 - Qualifier 2026-06-01: Swiss-system online, 400 hands/match, 6-bot tables, top 64 advance, ranked by cumulative chip delta (`:6-8, 54-56`). **Round count not stated in spec** — assumption of 3 rounds needs verification.
-- Finals 2026-06-05: single-elim bracket, UCL East, seeded from qualifier (`:9, 56`).
+- Finals 2026-06-05: ~~single-elim bracket, UCL East, seeded from qualifier (`:9, 56`)~~ **OBSOLETE.** Corrected 2026-06-06: finals reset equal; Phase 1 is Swiss-paired 6-max cumulative chip performance with shrinkage on the top-6 cut, then Phase 2 final table (source of truth: `AGENTS.md` "Finals FORMAT" + 17:32 consult `prompt-exports/2026-06-04-173203-plan-optimise-next-90min-finals-bot.md`:9,14).
 - Patch window 2026-06-02: JSON hand histories downloadable; one updated bot allowed before finals (`:8`).
 - Runtime: Python 3.10, no network, 768MB, 0.5 CPU, read-only, 2s/decide, one 30s warmup (`:18-23`).
 - Data: read from `data/` only at module import via `BOT_DATA_DIR` (`:23`).

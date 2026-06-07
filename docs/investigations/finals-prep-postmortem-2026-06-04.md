@@ -59,7 +59,7 @@ Our submission timeline (portal `bots`, user 506b8ff6):
 
 ## Finalist Field - Playstyle & Stats
 
-**Thorp combined finals rank: #57 / 64.** Top of field: jew (#1, +6000 c/100), CallMeMaybe (#2), SevenDeuces (#3), NecessarySkew (#4), Looper257 (#5).
+**Thorp combined qualifier-derived rank: #57 / 64 (HISTORICAL ONLY).** Finals reset to equal footing under the corrected Swiss/cumulative format; do not use #57 as a live underdog/seed premise (source of truth: `AGENTS.md` "Finals FORMAT" + 17:32 consult `prompt-exports/2026-06-04-173203-plan-optimise-next-90min-finals-bot.md`:9,14). Top of historical qualifier field: jew (#1, +6000 c/100), CallMeMaybe (#2), SevenDeuces (#3), NecessarySkew (#4), Looper257 (#5).
 
 ### A. Combined finals ranking (all 64) + playstyle
 
@@ -156,11 +156,13 @@ Two independent failures compounded:
 
 ## Finals Strategy (decision)
 
-**SHIP the patched `b108eff5` baseline as-is. Freeze the code. Verify, then human-gated upload before 18:00 UTC.** (Oracle synthesis `new-chat-1FB6CB`, 2026-06-04.)
+**2026-06-06 reconciliation note:** the next bullet preserves the original FINALS-RECON rationale as struck historical text and corrects it in place. Source of truth is `AGENTS.md` "Finals FORMAT" plus the 17:32 premise-change consult (`prompt-exports/2026-06-04-173203-plan-optimise-next-90min-finals-bot.md`:9,14). The risk is the over-folding bleed from Thorp's `call 6.4% / fold 58.9%` polarization — a policy property exploitable by sharp bet-folding opponents — not a preflop stack-off bug.
 
-- **Why not de-risk toward Nash (lower variance):** we are the #57/64 underdog in a single-elim bracket; lower variance helps the favorite. Our high-variance aggression (AF 5.45) is an asset when we must beat specific opponents. Also would require firing repeatedly-gated-off CFR code under deadline. **Hard no.**
-- **Why not hand-tune field exploits in code:** the exploitation overlay already ships — `opponent_model.exploit_shift()` returns bounded per-cluster shifts (`MAX_DEVIATION_PP=0.20`) after a 30-hand warmup vs `field_priors.npz`, consumed by `postflop.decide_postflop`. In 400-hand matches the tight field (Looper257 fold 70.5%, TheHouse 74.2%, winning 74.5%, G-Forge 73.1%, TheQuantBot 69.1%; stations CrimsonBot/Khan't Fold) gets punished for free. Editing an unbenchmarked, uncommitted, leakage-flagged artifact repeats the R2 discipline failure. **No.**
-- **Honest caveat (do not oversell variance):** `call 6.4% / fold 58.9%` is *extreme* polarization. It prints vs the over-folding majority but is a real exploitable hole vs a sharp counter-exploiting seed (likely R1 draw), who can bet-fold us off pots — mean EV vs a strong seed may be negative. (a) keeps us *alive*; it is not "winning," and we can't safely de-polarize today.
+**SHIP the patched `b108eff5` baseline as-is. Freeze the code. Verify, then human-gated upload before 18:00 UTC.** (Oracle synthesis `new-chat-1FB6CB`, 2026-06-04; action later re-reviewed under the corrected Swiss/cumulative premise, but this paragraph originally carried the obsolete rationale below.)
+
+- **Why not de-risk toward Nash (lower variance) — corrected 2026-06-06:** ~~we are the #57/64 underdog in a single-elim bracket; lower variance helps the favorite. Our high-variance aggression (AF 5.45) is an asset when we must beat specific opponents.~~ **OBSOLETE premise.** Finals reset equal and Phase 1 is Swiss-paired 6-max cumulative chip performance, with shrinkage on the top-6 cut. Re-derived: chip EV still matters, but gratuitous variance is a **liability** under shrinkage; the call-6.4% / fold-58.9% polarization is an over-folding policy bleed vs sharp opponents who can bet-fold us off pots. The freeze rationale that survived was not "variance is an asset"; it was that CFR/de-polarization was not safely buildable/gated in the window and staged fixes had cratered. **Do not reuse the struck rationale.**
+- **Why not hand-tune field exploits in code:** the exploitation overlay already ships — `opponent_model.exploit_shift()` returns bounded per-cluster shifts (`MAX_DEVIATION_PP=0.20`) after a 30-hand warmup vs `field_priors.npz`, consumed by `postflop.decide_postflop`. In 800-hand Swiss/cumulative finals Phase 1 matches, pressure may still extract chips from over-folding opponents, but the correction above means this is an EV claim to test, not a single-elim underdog variance justification. Editing an unbenchmarked, uncommitted, leakage-flagged artifact repeats the R2 discipline failure. **No.**
+- **Honest caveat (correct risk statement):** `call 6.4% / fold 58.9%` is *extreme* polarization: an over-folding policy bleed. It may print vs the over-folding majority, but sharp opponents can bet-fold us off pots — mean EV vs a strong seed may be negative. This is not a preflop stack-off bug; the missing gate was a mechanism-matched over-folding counter-exploiter, and we could not safely de-polarize today.
 
 ### Residual leaks in the patched gate (code-verified, `patched_src/src/commitment.py`)
 | # | Texture | Mechanism | Severity / Freq |

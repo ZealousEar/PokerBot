@@ -3,7 +3,7 @@
 Read this every turn. Pull deeper context from `docs/corpus-index.md`, `docs/tournament-spec.md`, `docs/api-cheatsheet.md`, and `PLAN.md` before editing strategy code.
 
 ## Mission
-Win the Fullhouse Hackathon 2026 by submitting `submissions/v_final.zip` that finishes #1 by cumulative chip delta in the Swiss qualifier (2026-06-01) and #1 in the finals bracket (2026-06-05). Prize pool £4,000+, lead sponsor Quadrature Capital.
+Win the Fullhouse Hackathon 2026 by submitting `submissions/v_final.zip` that finishes #1 by cumulative chip delta in the Swiss qualifier (2026-06-01) and #1 in the finals competition (2026-06-05; see corrected Finals FORMAT below). Prize pool £4,000+, lead sponsor Quadrature Capital.
 
 ## Finals FORMAT (updated 2026-06-04 20:00-deadline announcement — READ FIRST, overrides older finals notes)
 - **Finals are a FRESH competition. Q1/Q2 standings do NOT carry.** The "#57/64 underdog / bottom of bracket" framing below is OBSOLETE — every finalist starts equal. Ignore old combined rank for strategy.
@@ -63,7 +63,7 @@ Invalid actions default to fold; the runner emits `{"action": "fold", "error": .
 Two-regime tournament dictates a two-layer strategy.
 
 - **Qualifier (Swiss, 400-hand matches vs mostly weak field):** maximum chip extraction wins → bias toward best-response against the inferred opponent type.
-- **Finals (single-elim bracket of top 64):** survivors include sharp opponents who will counter-exploit naive max-exploit play → need a near-Nash baseline that bounds our downside.
+- **Finals (corrected 2026-06-04 fresh Swiss/cumulative Phase 1; see Finals FORMAT above):** standings reset and cumulative chip extraction decides the Bubble cut; shrinkage makes gratuitous high variance a liability, and sharp opponents can still counter-exploit naive max-exploit play → keep a near-Nash baseline plus bounded overlay that caps downside. The older single-elim/#57-underdog/variance-as-asset rationale is obsolete (17:32 consult: `prompt-exports/2026-06-04-173203-plan-optimise-next-90min-finals-bot.md`:9,14).
 
 The architectural answer is the **blueprint + refinement** pattern from Brown & Sandholm:
 

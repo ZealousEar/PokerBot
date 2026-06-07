@@ -66,7 +66,7 @@ Multi-thread investigation triggered by user: dberweger DeepCFR comparison, vlad
 - **Coverage strongest:** CFR/MCCFR/Pluribus framing.
 - **Coverage gaps (relevant to our work):**
   - **LBR (Lisý & Bowling 2017, arXiv:1612.07547)** — only inline references; no dedicated note despite `tools/exploit_check.py` depending on the concept.
-  - **ICM / bracket survival** — completely missing; relevant for single-elim finals payout asymmetry.
+  - **ICM / bracket survival** — completely missing; ~~relevant for single-elim finals payout asymmetry~~ **OBSOLETE for finals Phase 1 after the 2026-06-04 format correction**. Correct source of truth: `AGENTS.md` "Finals FORMAT" + 17:32 consult (`prompt-exports/2026-06-04-173203-plan-optimise-next-90min-finals-bot.md`:9,14): Phase 1 is Swiss/cumulative with shrinkage; ICM/bracket-survival only remains relevant, if at all, to the Phase 2 final table.
   - **Bayesian opponent modeling** (Billings/Davidson/Schauenberg, Bayes' Bluff arXiv:1207.1411) — planned but explicitly dropped from corpus.
   - **Public-belief / range-conditioned equity (DeepStack continual resolving)** — missing; directly relevant to the famadeo technique we want to port.
   - **Recent Deep CFR variants** (HDCFR, SD-CFR, knowledge-distillation Deep CFR, 2025/2026 discounted/predictive neural CFR).
@@ -85,11 +85,11 @@ Multi-thread investigation triggered by user: dberweger DeepCFR comparison, vlad
 ### 2. Confidence interval audit — Lane E's 99.94% is fiction
 - Three unmeasured load-bearing assumptions: entrant count (Lane E used 128, real range 100–300), Swiss rounds (assumed 10, range 6–12), edge vs median entrant (sampled from 9 selection-biased data points).
 - **P(top 64) realistic range: 40% (pessimistic: 250 entrants, edge ≈ 0) to 90% (optimistic: 128 entrants, edge ≈ +20).** Refuse to give a point estimate — that's the mistake Lane E made.
-- **P(win finals) realistic: 1–15%.** Upper bound 5–15% at +5 bb/100 edge per bracket match; lower bound <1% if Lane T's −135 vs v5 reproduces against a real entrant.
+- **P(win finals) realistic: 1–15%.** ~~Upper bound 5–15% at +5 bb/100 edge per bracket match; lower bound <1% if Lane T's −135 vs v5 reproduces against a real entrant.~~ **HISTORICAL / OBSOLETE bracket model.** Do not reuse this as a live finals estimate after the 2026-06-04 correction; finals Phase 1 is Swiss/cumulative with shrinkage, not six single-elim matches (source: `AGENTS.md` "Finals FORMAT" + 17:32 consult `prompt-exports/2026-06-04-173203-plan-optimise-next-90min-finals-bot.md`:9,14).
 
 ### 3. Light-3-bet prevalence
-- P(≥1 bracket opponent 3-bets competently) ≈ **95%** — basic poker hygiene.
-- P(facing a v5-class ADVERSARIAL light-3-bettor) ≈ **25–40%** across 6 bracket matches — not 88%.
+- ~~P(≥1 bracket opponent 3-bets competently) ≈ **95%** — basic poker hygiene.~~ **HISTORICAL / OBSOLETE bracket model.** Reframe as finalist-field exposure risk under Swiss/cumulative tables; no six-match bracket probability should be treated as live.
+- ~~P(facing a v5-class ADVERSARIAL light-3-bettor) ≈ **25–40%** across 6 bracket matches — not 88%.~~ **HISTORICAL / OBSOLETE bracket model.** Corrected format requires Phase 1 exposure estimates over ~40 Swiss-paired 6-max matches, not six single-elim bracket matches.
 - Distinguish "competent 3-bet" (we may handle) from "adversarial 12% BB defense" (Lane T's hole).
 
 ### 4. Cheapest material finals-EV move — CONFIRM BEFORE PATCHING
