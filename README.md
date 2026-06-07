@@ -99,6 +99,12 @@ We replace Libratus-style real-time subgame solving (compute-prohibitive at 0.5 
 
 ---
 
+## Known limitations
+
+The bounded overlay above is a deliberate trade-off, and the shipped build sits on the cautious end of it — it plays a tight, polarized line and folds rather than bluff-catching thin. Post-competition analysis isolated the expected concrete instance: against an opponent that applies sustained multi-street pressure and bet-folds to resistance, that fold-leaning profile surrenders some pots it could defend. The effect was small and measurable, but did not produce a net loss against the exploiter probes run so far. Widening the calling range is the natural next revision — but it is a strategy-shape change that reopens the full verification surface (exploitability, paired benchmarks, mechanism-matched counter-exploit probes), so it was deferred to a proper cycle rather than hot-patched into a frozen submission.
+
+---
+
 ## Repository Layout
 
 ```
