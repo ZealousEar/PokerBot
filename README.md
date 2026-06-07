@@ -102,7 +102,7 @@ We replace Libratus-style real-time subgame solving (compute-prohibitive at 0.5 
 
 ## Known limitations
 
-The bounded overlay above is a deliberate trade-off, and the shipped build sits on the cautious end of it. It plays a tight, polarized line and folds rather than bluff-catching thin. After the competition we measured exactly that: against an opponent that applies sustained multi-street pressure and bet-folds to resistance, the fold-leaning profile surrenders some pots it could defend. The effect was small but measurable. It did not produce a net loss in the exploiter probes we have run so far. Widening the calling range is the natural next revision. Because it changes the strategy shape, shipping it would mean re-running the full verification surface: exploitability, paired benchmarks, and mechanism-matched counter-exploit probes. We deferred that to a proper cycle rather than hot-patching a frozen submission.
+The bounded overlay above is a deliberate trade-off, and the shipped build sits on the cautious end of it. It plays a tight, polarized line and folds marginal hands under sustained postflop pressure rather than bluff-catching thin. We quantified that tendency as **decision frequencies** — not EV — in the [over-fold post-mortem](docs/results/overfold-postmortem.md): fold frequency rises with the size of the bet faced and concentrates in the marginal tier, while strong hands keep raising. Widening the calling range is the natural next revision. Because it changes the strategy shape, shipping it would mean re-running the full verification surface: exploitability, paired benchmarks, and mechanism-matched counter-exploit probes. We deferred that to a proper cycle rather than hot-patching a frozen submission.
 
 ---
 
