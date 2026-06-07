@@ -23,8 +23,9 @@ left untouched; bug fixes and improvements live only on `main`.
 This was a 6-max no-limit hold'em bot built for the first
 [**Fullhouse Hackathon 2026**](https://fullhousehackathon.com/) (lead sponsor
 [Quadrature Capital](https://www.quadrature.ai/)). It qualified for the finals — the UK's first
-quantitative poker hackathon. The design pairs a solver-trained near-Nash blueprint with a
-bounded, opponent-adaptive exploit overlay, running inside a locked-down sandbox.
+quantitative poker hackathon. The design pairs a hand-tuned near-Nash heuristic blueprint
+(distilled from public solver charts) with a bounded, opponent-adaptive exploit overlay,
+running inside a locked-down sandbox.
 
 ## Sandbox constraints it was built for
 
@@ -35,7 +36,7 @@ bounded, opponent-adaptive exploit overlay, running inside a locked-down sandbox
 ## Build & verify (no engine required)
 
 ```bash
-pip install "Cython<3"
+pip install "Cython<3" wheel
 pip install --no-build-isolation eval7==0.1.7
 pip install -r requirements.txt
 python tools/import_audit.py
