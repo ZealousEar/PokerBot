@@ -20,7 +20,7 @@
 |---|---|
 | **What** | 6-max no-limit hold'em bot, near-Nash blueprint + bounded exploit overlay |
 | **Constraints** | 2 s / decide · 0.5 CPU · 768 MB · no network · pinned libs |
-| **Methods** | MCCFR preflop · CFR+ flop buckets · LBR exploitability cap |
+| **Methods** | Shipped: hand-tuned heuristic blueprint · eval7 Monte-Carlo equity · bounded frequency overlay. Intended: MCCFR/CFR+ offline training |
 | **Result** | Qualified for the finals (Fullhouse Hackathon 2026) — see [Results](#results) |
 | **Verify** | `python tools/import_audit.py && pytest tests/edge_cases` |
 
@@ -28,7 +28,7 @@
 
 ## Overview
 
-A poker bot for 6-max no-limit hold'em that runs inside a locked-down 2-second / 0.5-CPU sandbox. It pairs a solver-trained near-Nash core with a bounded, opponent-adaptive overlay that punishes weak fields while staying hard to counter-exploit.
+A poker bot for 6-max no-limit hold'em that runs inside a locked-down 2-second / 0.5-CPU sandbox. It pairs a hand-tuned near-Nash core (a heuristic blueprint distilled from public solver charts) with a bounded, opponent-adaptive overlay that punishes weak fields while staying hard to counter-exploit.
 
 Built for the first [**Fullhouse Hackathon 2026**](https://fullhousehackathon.com/) (lead sponsor [Quadrature Capital](https://www.quadrature.ai/); £4,000+ prize pool). It runs in two regimes that reward opposite styles:
 
@@ -52,10 +52,10 @@ Qualified for the finals of the Fullhouse Hackathon 2026, the UK's first quantit
 
 To cover both regimes, the bot runs two layers:
 
-- **Blueprint** (`src/preflop_lookup.py` + `src/postflop.py`) — approximates Nash over an abstracted game: external-sampling MCCFR for preflop and CFR+ over flop buckets for postflop. This is the floor.
+- **Blueprint** (`src/preflop_lookup.py` + `src/postflop.py`) — approximates Nash over an abstracted game. The **shipped** policy is a hand-tuned heuristic blueprint: preflop range tables distilled from public solver charts (`src/ranges.py`) plus flop-bucket postflop rules. External-sampling MCCFR for preflop and CFR+ over flop buckets are the **intended offline-trained replacement**, not the running policy. Either way this is the floor.
 - **Overlay** (`src/opponent_model.py`) — deviates from the blueprint toward best-response against the inferred opponent type; magnitude is bounded so a worst-case counter-exploit costs less than the expected gain.
 - **Leverage point — abstraction** — a discrete sizing tree `{1/3 pot, 2/3 pot, pot, 2× pot, all_in}` (Pluribus 2019) and flop bucketing capped at 200 buckets × 50 hand-strength bins (Cepheus 2015).
-- **Safety metric — exploitability** — Local Best-Response over a fixed 20-spot suite (Lisý & Bowling 2017), capped at ≤ 100 mbb/g preflop and ≤ 200 mbb/g aggregate.
+- **Safety metric — exploitability** — Local Best-Response over a fixed 20-spot suite (Lisý & Bowling 2017). The ≤ 100 mbb/g preflop / ≤ 200 mbb/g aggregate caps are **intended targets measured on the private engine harness**; they are not reproduced in this public repo.
 
 ---
 
@@ -66,8 +66,8 @@ flowchart TD
     D["decide(state)"]
     BP["Blueprint<br/>near-Nash"]
     OM["Opponent Model<br/>frequency-based, bounded"]
-    PF["preflop_lookup<br/>MCCFR table"]
-    POST["postflop<br/>CFR+ buckets + eval7 equity"]
+    PF["preflop_lookup<br/>hand-tuned table<br/>(MCCFR intended)"]
+    POST["postflop<br/>heuristic buckets + eval7 equity<br/>(CFR+ intended)"]
     D --> BP
     D --> OM
     OM -. "bounded shift" .-> BP
@@ -111,7 +111,7 @@ The bounded overlay above is a deliberate trade-off, and the shipped build sits 
 PokerBot/
 ├── src/                          strategy modules
 │   ├── bot.py                    decide() entry — legalizes actions, timeout fallback
-│   ├── preflop_lookup.py         offline-trained preflop range
+│   ├── preflop_lookup.py         hand-tuned preflop range (MCCFR intended)
 │   ├── ranges.py                 6-max range representation
 │   ├── postflop.py               flop bucketing + turn/river play
 │   ├── commitment.py             stack-off / commitment gating
@@ -162,8 +162,8 @@ These run in a clean clone, with no engine required:
 | ----------------- | ------------------------------------------------------------------------------- |
 | Self-play         | `python tools/self_play.py --opponent <name> --hands <N>`                       |
 | Benchmark         | `python tools/benchmark.py --all-templates --hands 10000 --paired-seed-base 42` |
-| Engine validator  | `python ext/fullhouse-engine/sandbox/validator.py submissions/bot.zip`          |
-| Sandbox smoke run | `python tools/smoke_run.py --zip submissions/bot.zip --hands 200`               |
+| Engine validator  | `python ext/fullhouse-engine/sandbox/validator.py submissions/v_final.zip`       |
+| Sandbox smoke run | `python tools/smoke_run.py --zip submissions/v_final.zip --hands 200`            |
 
 ---
 
@@ -201,17 +201,15 @@ flowchart LR
     G0["G0 · Scaffold<br/>repo + tooling"]
     G1["G1 · Wired<br/>legal actions in engine"]
     G2["G2 · Preflop<br/>blueprint range table"]
-    G3["G3 · Postflop<br/>CFR+ buckets + overlay"]
+    G3["G3 · Postflop<br/>flop buckets + overlay"]
     G4["G4 · Hardened<br/>edge-case sweep + smoke"]
-    G5["G5 · Verified<br/>LBR cap + ablation + ratchet"]
+    G5["G5 · Intended<br/>LBR cap + ablation + ratchet<br/>(private harness)"]
     G0 --> G1 --> G2 --> G3 --> G4 --> G5
     classDef gate fill:#21262d,color:#e6edf3,stroke:#30363d;
-    classDef verified fill:#238636,color:#ffffff,stroke:#238636;
-    class G0,G1,G2,G3,G4 gate;
-    class G5 verified;
+    class G0,G1,G2,G3,G4,G5 gate;
 ```
 
-Each gate cleared the same numeric checks before the next one started: an import audit, an edge-case sweep, a benchmark, and an exploitability (LBR) check.
+Gates G1–G4 cleared a reproducible check set — an import audit and an edge-case sweep that run in this repo. The G5 surface (LBR exploitability cap, overlay ablation, self-play ratchet) and the bb/100 benchmarks ran on the **private engine harness** and are not reproduced in this public repo, so G5 is shown as *intended* rather than verified here.
 
 ---
 

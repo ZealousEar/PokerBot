@@ -20,12 +20,7 @@ python tools/benchmark.py --all-templates --hands 10000 --min-bb 5
 ```
 All four reference templates (`template`, `aggressor`, `mathematician`, `shark`): ≥ +5 bb/100, 95 % CI above zero.
 
-## 4. Coarse exploitability
-```bash
-python tools/exploit_check.py --max-mbb 80
-```
-
-## 5. Build & validate package
+## 4. Build & validate package
 ```bash
 python tools/package.py --output submissions/bot.zip --strict
 python ext/fullhouse-engine/sandbox/validator.py submissions/bot.zip
@@ -34,7 +29,7 @@ du -sh submissions/bot.zip
 ```
 Engine validator must report PASSED. `bot.py` ≤ 5 MB at root, `data/` ≤ 200 MB, total ≤ 250 MB. No other `.py` at root, no `.py` inside `data/`, no symlinks.
 
-## 6. Sandbox dry-run (optional but recommended)
+## 5. Sandbox dry-run (optional but recommended)
 ```bash
 # Build the engine's image once
 docker build -t fullhouse-engine ext/fullhouse-engine/sandbox/
