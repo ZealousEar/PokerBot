@@ -1,0 +1,871 @@
+{
+  "blind_tail_after_commitment_count": 4,
+  "clean_bust_rows": [
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "flop",
+      "file": "0b97d6a0-76d7-4d4d-b166-da51ed82a056.json",
+      "final_stack": 0,
+      "hand_count": 98,
+      "last_positive_action": {
+        "action": "all_in",
+        "action_index": 11,
+        "amount": 10963,
+        "board_cards": [
+          "2d",
+          "8d",
+          "Ah",
+          "3h",
+          "Jh"
+        ],
+        "committing_street": "flop",
+        "hand_final_street": "river",
+        "hand_num": 97,
+        "increment": 10963
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "all_in",
+        "action_index": 11,
+        "amount": 10963,
+        "board_cards": [
+          "2d",
+          "8d",
+          "Ah",
+          "3h",
+          "Jh"
+        ],
+        "committing_street": "flop",
+        "hand_final_street": "river",
+        "hand_num": 97,
+        "increment": 10963
+      },
+      "match_id": "0b97d6a0-76d7-4d4d-b166-da51ed82a056",
+      "thorp_seat": 1
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "river",
+      "file": "165d6a88-532c-4063-bd85-c22bd7ec3085.json",
+      "final_stack": 0,
+      "hand_count": 334,
+      "last_positive_action": {
+        "action": "raise",
+        "action_index": 5,
+        "amount": 1072,
+        "board_cards": [
+          "2s",
+          "4s",
+          "4d",
+          "5d",
+          "Td"
+        ],
+        "committing_street": "river",
+        "hand_final_street": "river",
+        "hand_num": 333,
+        "increment": 1072
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "raise",
+        "action_index": 5,
+        "amount": 1072,
+        "board_cards": [
+          "2s",
+          "4s",
+          "4d",
+          "5d",
+          "Td"
+        ],
+        "committing_street": "river",
+        "hand_final_street": "river",
+        "hand_num": 333,
+        "increment": 1072
+      },
+      "match_id": "165d6a88-532c-4063-bd85-c22bd7ec3085",
+      "thorp_seat": 1
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "preflop",
+      "file": "17547f83-154b-49af-a2f8-40055bf85d11.json",
+      "final_stack": 0,
+      "hand_count": 175,
+      "last_positive_action": {
+        "action": "call",
+        "action_index": 3,
+        "amount": 81,
+        "board_cards": [
+          "Tc",
+          "5s",
+          "4d",
+          "5d",
+          "Jd"
+        ],
+        "committing_street": "preflop",
+        "hand_final_street": "river",
+        "hand_num": 119,
+        "increment": 81
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "call",
+        "action_index": 3,
+        "amount": 81,
+        "board_cards": [
+          "Tc",
+          "5s",
+          "4d",
+          "5d",
+          "Jd"
+        ],
+        "committing_street": "preflop",
+        "hand_final_street": "river",
+        "hand_num": 119,
+        "increment": 81
+      },
+      "match_id": "17547f83-154b-49af-a2f8-40055bf85d11",
+      "thorp_seat": 3
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "river",
+      "file": "24921a46-1d7d-4997-a92b-76c0400fc3e9.json",
+      "final_stack": 0,
+      "hand_count": 294,
+      "last_positive_action": {
+        "action": "all_in",
+        "action_index": 15,
+        "amount": 11561,
+        "board_cards": [
+          "Qh",
+          "3s",
+          "Ah",
+          "Ts",
+          "2d"
+        ],
+        "committing_street": "river",
+        "hand_final_street": "river",
+        "hand_num": 293,
+        "increment": 11561
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "all_in",
+        "action_index": 15,
+        "amount": 11561,
+        "board_cards": [
+          "Qh",
+          "3s",
+          "Ah",
+          "Ts",
+          "2d"
+        ],
+        "committing_street": "river",
+        "hand_final_street": "river",
+        "hand_num": 293,
+        "increment": 11561
+      },
+      "match_id": "24921a46-1d7d-4997-a92b-76c0400fc3e9",
+      "thorp_seat": 1
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "river",
+      "file": "2fe4f29d-0bdb-42de-8292-8d50049a2e86.json",
+      "final_stack": 0,
+      "hand_count": 151,
+      "last_positive_action": {
+        "action": "raise",
+        "action_index": 8,
+        "amount": 4730,
+        "board_cards": [
+          "3c",
+          "3s",
+          "8s",
+          "Js",
+          "7c"
+        ],
+        "committing_street": "river",
+        "hand_final_street": "river",
+        "hand_num": 150,
+        "increment": 4730
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "raise",
+        "action_index": 8,
+        "amount": 4730,
+        "board_cards": [
+          "3c",
+          "3s",
+          "8s",
+          "Js",
+          "7c"
+        ],
+        "committing_street": "river",
+        "hand_final_street": "river",
+        "hand_num": 150,
+        "increment": 4730
+      },
+      "match_id": "2fe4f29d-0bdb-42de-8292-8d50049a2e86",
+      "thorp_seat": 1
+    },
+    {
+      "blind_tail_after_commitment": true,
+      "chip_delta": -10000,
+      "committing_street": "preflop",
+      "file": "39b7c369-6e40-4cbc-8bf4-3bcb172e69c0.json",
+      "final_stack": 0,
+      "hand_count": 450,
+      "last_positive_action": {
+        "action": "call",
+        "action_index": 2,
+        "amount": 50,
+        "board_cards": [
+          "Jd",
+          "5c",
+          "2c",
+          "As",
+          "3d"
+        ],
+        "committing_street": "preflop",
+        "hand_final_street": "river",
+        "hand_num": 445,
+        "increment": 50
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "small_blind",
+        "action_index": 0,
+        "amount": 50,
+        "board_cards": [],
+        "committing_street": "preflop",
+        "hand_final_street": "preflop",
+        "hand_num": 449,
+        "increment": 50
+      },
+      "match_id": "39b7c369-6e40-4cbc-8bf4-3bcb172e69c0",
+      "thorp_seat": 1
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "river",
+      "file": "3ea9e91a-5e67-4a04-9670-6278bce9c7ad.json",
+      "final_stack": 0,
+      "hand_count": 93,
+      "last_positive_action": {
+        "action": "call",
+        "action_index": 12,
+        "amount": 23378,
+        "board_cards": [
+          "4h",
+          "Tc",
+          "Jh",
+          "9d",
+          "6s"
+        ],
+        "committing_street": "river",
+        "hand_final_street": "river",
+        "hand_num": 92,
+        "increment": 23378
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "call",
+        "action_index": 12,
+        "amount": 23378,
+        "board_cards": [
+          "4h",
+          "Tc",
+          "Jh",
+          "9d",
+          "6s"
+        ],
+        "committing_street": "river",
+        "hand_final_street": "river",
+        "hand_num": 92,
+        "increment": 23378
+      },
+      "match_id": "3ea9e91a-5e67-4a04-9670-6278bce9c7ad",
+      "thorp_seat": 1
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "river",
+      "file": "4350d16f-c103-45c6-909e-89d65efb2d2e.json",
+      "final_stack": 0,
+      "hand_count": 328,
+      "last_positive_action": {
+        "action": "all_in",
+        "action_index": 11,
+        "amount": 15260,
+        "board_cards": [
+          "2s",
+          "7h",
+          "Ac",
+          "4h",
+          "6s"
+        ],
+        "committing_street": "river",
+        "hand_final_street": "river",
+        "hand_num": 189,
+        "increment": 15260
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "all_in",
+        "action_index": 11,
+        "amount": 15260,
+        "board_cards": [
+          "2s",
+          "7h",
+          "Ac",
+          "4h",
+          "6s"
+        ],
+        "committing_street": "river",
+        "hand_final_street": "river",
+        "hand_num": 189,
+        "increment": 15260
+      },
+      "match_id": "4350d16f-c103-45c6-909e-89d65efb2d2e",
+      "thorp_seat": 2
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "flop",
+      "file": "4c3ca124-33e7-4747-8597-46cb2e0effb1.json",
+      "final_stack": 0,
+      "hand_count": 450,
+      "last_positive_action": {
+        "action": "raise",
+        "action_index": 6,
+        "amount": 275,
+        "board_cards": [
+          "8d",
+          "6h",
+          "7h"
+        ],
+        "committing_street": "flop",
+        "hand_final_street": "flop",
+        "hand_num": 449,
+        "increment": 275
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "raise",
+        "action_index": 6,
+        "amount": 275,
+        "board_cards": [
+          "8d",
+          "6h",
+          "7h"
+        ],
+        "committing_street": "flop",
+        "hand_final_street": "flop",
+        "hand_num": 449,
+        "increment": 275
+      },
+      "match_id": "4c3ca124-33e7-4747-8597-46cb2e0effb1",
+      "thorp_seat": 1
+    },
+    {
+      "blind_tail_after_commitment": true,
+      "chip_delta": -10000,
+      "committing_street": "preflop",
+      "file": "50f11273-6e7c-41b1-b069-73ed23311f54.json",
+      "final_stack": 0,
+      "hand_count": 225,
+      "last_positive_action": {
+        "action": "raise",
+        "action_index": 4,
+        "amount": 875,
+        "board_cards": [],
+        "committing_street": "preflop",
+        "hand_final_street": "preflop",
+        "hand_num": 219,
+        "increment": 825
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "small_blind",
+        "action_index": 0,
+        "amount": 50,
+        "board_cards": [],
+        "committing_street": "preflop",
+        "hand_final_street": "preflop",
+        "hand_num": 223,
+        "increment": 50
+      },
+      "match_id": "50f11273-6e7c-41b1-b069-73ed23311f54",
+      "thorp_seat": 0
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "flop",
+      "file": "61bd4863-1849-495c-a243-6634345319bd.json",
+      "final_stack": 0,
+      "hand_count": 800,
+      "last_positive_action": {
+        "action": "raise",
+        "action_index": 5,
+        "amount": 100,
+        "board_cards": [
+          "Td",
+          "Js",
+          "6d"
+        ],
+        "committing_street": "flop",
+        "hand_final_street": "flop",
+        "hand_num": 799,
+        "increment": 100
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "raise",
+        "action_index": 5,
+        "amount": 100,
+        "board_cards": [
+          "Td",
+          "Js",
+          "6d"
+        ],
+        "committing_street": "flop",
+        "hand_final_street": "flop",
+        "hand_num": 799,
+        "increment": 100
+      },
+      "match_id": "61bd4863-1849-495c-a243-6634345319bd",
+      "thorp_seat": 1
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "turn",
+      "file": "7d3b9b57-b35c-4833-af95-03aea986d7aa.json",
+      "final_stack": 0,
+      "hand_count": 422,
+      "last_positive_action": {
+        "action": "call",
+        "action_index": 12,
+        "amount": 19332,
+        "board_cards": [
+          "2d",
+          "8s",
+          "6s",
+          "Qd",
+          "Tc"
+        ],
+        "committing_street": "turn",
+        "hand_final_street": "river",
+        "hand_num": 421,
+        "increment": 19332
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "call",
+        "action_index": 12,
+        "amount": 19332,
+        "board_cards": [
+          "2d",
+          "8s",
+          "6s",
+          "Qd",
+          "Tc"
+        ],
+        "committing_street": "turn",
+        "hand_final_street": "river",
+        "hand_num": 421,
+        "increment": 19332
+      },
+      "match_id": "7d3b9b57-b35c-4833-af95-03aea986d7aa",
+      "thorp_seat": 1
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "preflop",
+      "file": "848c2996-823c-4c1f-933d-04d427ab1c02.json",
+      "final_stack": 0,
+      "hand_count": 200,
+      "last_positive_action": {
+        "action": "raise",
+        "action_index": 2,
+        "amount": 200,
+        "board_cards": [],
+        "committing_street": "preflop",
+        "hand_final_street": "preflop",
+        "hand_num": 199,
+        "increment": 150
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "raise",
+        "action_index": 2,
+        "amount": 200,
+        "board_cards": [],
+        "committing_street": "preflop",
+        "hand_final_street": "preflop",
+        "hand_num": 199,
+        "increment": 150
+      },
+      "match_id": "848c2996-823c-4c1f-933d-04d427ab1c02",
+      "thorp_seat": 1
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "turn",
+      "file": "916e393e-a737-4bab-8512-7d0d7ef9d48f.json",
+      "final_stack": 0,
+      "hand_count": 796,
+      "last_positive_action": {
+        "action": "all_in",
+        "action_index": 8,
+        "amount": 2521,
+        "board_cards": [
+          "Kd",
+          "7d",
+          "4h",
+          "5c",
+          "8d"
+        ],
+        "committing_street": "turn",
+        "hand_final_street": "river",
+        "hand_num": 795,
+        "increment": 2521
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "all_in",
+        "action_index": 8,
+        "amount": 2521,
+        "board_cards": [
+          "Kd",
+          "7d",
+          "4h",
+          "5c",
+          "8d"
+        ],
+        "committing_street": "turn",
+        "hand_final_street": "river",
+        "hand_num": 795,
+        "increment": 2521
+      },
+      "match_id": "916e393e-a737-4bab-8512-7d0d7ef9d48f",
+      "thorp_seat": 1
+    },
+    {
+      "blind_tail_after_commitment": true,
+      "chip_delta": -10000,
+      "committing_street": "flop",
+      "file": "af502fa1-df14-49b3-93b9-6c76ad70b9af.json",
+      "final_stack": 0,
+      "hand_count": 125,
+      "last_positive_action": {
+        "action": "call",
+        "action_index": 6,
+        "amount": 372,
+        "board_cards": [
+          "Js",
+          "Kh",
+          "2s",
+          "3s"
+        ],
+        "committing_street": "flop",
+        "hand_final_street": "turn",
+        "hand_num": 122,
+        "increment": 372
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "big_blind",
+        "action_index": 1,
+        "amount": 100,
+        "board_cards": [],
+        "committing_street": "preflop",
+        "hand_final_street": "preflop",
+        "hand_num": 124,
+        "increment": 100
+      },
+      "match_id": "af502fa1-df14-49b3-93b9-6c76ad70b9af",
+      "thorp_seat": 1
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "turn",
+      "file": "b3a8d013-38cd-446c-b71d-512a498127d9.json",
+      "final_stack": 0,
+      "hand_count": 726,
+      "last_positive_action": {
+        "action": "raise",
+        "action_index": 10,
+        "amount": 1452,
+        "board_cards": [
+          "5d",
+          "5c",
+          "9d",
+          "Ts"
+        ],
+        "committing_street": "turn",
+        "hand_final_street": "turn",
+        "hand_num": 193,
+        "increment": 1452
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "raise",
+        "action_index": 10,
+        "amount": 1452,
+        "board_cards": [
+          "5d",
+          "5c",
+          "9d",
+          "Ts"
+        ],
+        "committing_street": "turn",
+        "hand_final_street": "turn",
+        "hand_num": 193,
+        "increment": 1452
+      },
+      "match_id": "b3a8d013-38cd-446c-b71d-512a498127d9",
+      "thorp_seat": 4
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "flop",
+      "file": "ba0eca41-199f-4bbc-9272-e764285af0e2.json",
+      "final_stack": 0,
+      "hand_count": 800,
+      "last_positive_action": {
+        "action": "all_in",
+        "action_index": 8,
+        "amount": 225,
+        "board_cards": [
+          "3h",
+          "Qd",
+          "Kc",
+          "Th",
+          "7d"
+        ],
+        "committing_street": "flop",
+        "hand_final_street": "river",
+        "hand_num": 239,
+        "increment": 225
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "all_in",
+        "action_index": 8,
+        "amount": 225,
+        "board_cards": [
+          "3h",
+          "Qd",
+          "Kc",
+          "Th",
+          "7d"
+        ],
+        "committing_street": "flop",
+        "hand_final_street": "river",
+        "hand_num": 239,
+        "increment": 225
+      },
+      "match_id": "ba0eca41-199f-4bbc-9272-e764285af0e2",
+      "thorp_seat": 4
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "preflop",
+      "file": "bfd481fc-cc91-4daf-bd9c-414a72abb23f.json",
+      "final_stack": 0,
+      "hand_count": 800,
+      "last_positive_action": {
+        "action": "all_in",
+        "action_index": 8,
+        "amount": 10973,
+        "board_cards": [
+          "9c",
+          "4d",
+          "3d",
+          "8s",
+          "7s"
+        ],
+        "committing_street": "preflop",
+        "hand_final_street": "river",
+        "hand_num": 501,
+        "increment": 10973
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "all_in",
+        "action_index": 8,
+        "amount": 10973,
+        "board_cards": [
+          "9c",
+          "4d",
+          "3d",
+          "8s",
+          "7s"
+        ],
+        "committing_street": "preflop",
+        "hand_final_street": "river",
+        "hand_num": 501,
+        "increment": 10973
+      },
+      "match_id": "bfd481fc-cc91-4daf-bd9c-414a72abb23f",
+      "thorp_seat": 3
+    },
+    {
+      "blind_tail_after_commitment": true,
+      "chip_delta": -10000,
+      "committing_street": "flop",
+      "file": "c2a30cb6-bb93-406f-aca1-688ef0dcc776.json",
+      "final_stack": 0,
+      "hand_count": 250,
+      "last_positive_action": {
+        "action": "raise",
+        "action_index": 7,
+        "amount": 275,
+        "board_cards": [
+          "4d",
+          "2s",
+          "Kh"
+        ],
+        "committing_street": "flop",
+        "hand_final_street": "flop",
+        "hand_num": 245,
+        "increment": 275
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "small_blind",
+        "action_index": 0,
+        "amount": 50,
+        "board_cards": [],
+        "committing_street": "preflop",
+        "hand_final_street": "preflop",
+        "hand_num": 248,
+        "increment": 50
+      },
+      "match_id": "c2a30cb6-bb93-406f-aca1-688ef0dcc776",
+      "thorp_seat": 1
+    },
+    {
+      "blind_tail_after_commitment": false,
+      "chip_delta": -10000,
+      "committing_street": "turn",
+      "file": "e1039da3-21c7-43a4-bc15-c45fe0bf5196.json",
+      "final_stack": 0,
+      "hand_count": 210,
+      "last_positive_action": {
+        "action": "all_in",
+        "action_index": 8,
+        "amount": 7031,
+        "board_cards": [
+          "Qs",
+          "7h",
+          "7c",
+          "Ah",
+          "6c"
+        ],
+        "committing_street": "turn",
+        "hand_final_street": "river",
+        "hand_num": 209,
+        "increment": 7031
+      },
+      "literal_last_positive_action_including_blinds": {
+        "action": "all_in",
+        "action_index": 8,
+        "amount": 7031,
+        "board_cards": [
+          "Qs",
+          "7h",
+          "7c",
+          "Ah",
+          "6c"
+        ],
+        "committing_street": "turn",
+        "hand_final_street": "river",
+        "hand_num": 209,
+        "increment": 7031
+      },
+      "match_id": "e1039da3-21c7-43a4-bc15-c45fe0bf5196",
+      "thorp_seat": 1
+    }
+  ],
+  "clean_busts": 20,
+  "clean_thorp_matches": 36,
+  "clean_thorp_non_bust_matches": 16,
+  "excluded_nonclean_bust_entries": 2,
+  "nonclean_thorp_matches": [
+    {
+      "clean": false,
+      "clean_reason": "len(seats)=9",
+      "file": "9a7ec45b-f0dc-461c-bb43-d8a7711fbda8.json",
+      "hand_count": 648,
+      "match_id": "9a7ec45b-f0dc-461c-bb43-d8a7711fbda8",
+      "seat_count": 9,
+      "thorp_final_stacks": [
+        0
+      ],
+      "thorp_seats": [
+        1
+      ]
+    },
+    {
+      "clean": false,
+      "clean_reason": "len(seats)=18",
+      "file": "9c4639db-f5de-4427-bfeb-66d4cdfe3319.json",
+      "hand_count": 600,
+      "match_id": "9c4639db-f5de-4427-bfeb-66d4cdfe3319",
+      "seat_count": 18,
+      "thorp_final_stacks": [
+        null
+      ],
+      "thorp_seats": [
+        2
+      ]
+    },
+    {
+      "clean": false,
+      "clean_reason": "len(seats)=17",
+      "file": "f0682cba-d662-42ce-9599-2f8b42396a0b.json",
+      "hand_count": 785,
+      "match_id": "f0682cba-d662-42ce-9599-2f8b42396a0b",
+      "seat_count": 17,
+      "thorp_final_stacks": [
+        0
+      ],
+      "thorp_seats": [
+        5
+      ]
+    },
+    {
+      "clean": false,
+      "clean_reason": "len(seats)=18",
+      "file": "f28f7f32-b69c-46aa-ba47-854b09bc1b91.json",
+      "hand_count": 122,
+      "match_id": "f28f7f32-b69c-46aa-ba47-854b09bc1b91",
+      "seat_count": 18,
+      "thorp_final_stacks": [
+        null
+      ],
+      "thorp_seats": [
+        1
+      ]
+    }
+  ],
+  "postflop_breakdown": {
+    "flop": 6,
+    "river": 5,
+    "turn": 4
+  },
+  "postflop_count": 15,
+  "postflop_percent": 75.0,
+  "preflop_count": 5,
+  "preflop_percent": 25.0,
+  "raw_dir": "consult/artifacts/2026-06-04-finals-recon/raw/hands",
+  "raw_file_count": 1919,
+  "street_counts": {
+    "flop": 6,
+    "preflop": 5,
+    "river": 5,
+    "turn": 4
+  },
+  "thorp_match_files": 40,
+  "total_thorp_bust_seat_entries": 22
+}
