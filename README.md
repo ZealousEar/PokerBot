@@ -137,8 +137,8 @@ PokerBot/
 ## Setup
 
 ```bash
-# eval7 needs Cython<3 and --no-build-isolation
-pip install "Cython<3"
+# eval7 needs Cython<3 + wheel and --no-build-isolation
+pip install "Cython<3" wheel
 pip install --no-build-isolation eval7==0.1.7
 pip install -r requirements.txt
 ```
