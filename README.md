@@ -257,10 +257,17 @@ Each implementation names its source at the call site.
 
 ## Acknowledgements
 
-Built for the [Fullhouse Hackathon 2026](https://fullhousehackathon.com/), the UK's first
-quantitative poker bot hackathon (£4,000 prize pool). Lead sponsor
-[Quadrature Capital](https://www.quadrature.ai/), with Jane Street, Five Rings, Teza
-Technologies, QRT, Jump Trading, Da Vinci, and Susquehanna.
+<div align="center">
+
+<img src="docs/assets/fullhouse-banner.svg" width="680" alt="Full House Hackathon 2026 — Powered by Quadrature, 01.06.26–05.06.26">
+
+Built for the **[Full House Hackathon 2026](https://fullhousehackathon.com/)** — the UK's first quantitative poker bot hackathon (£4,000 prize pool).
+
+`// our sponsors`
+
+**[Quadrature Capital](https://www.quadrature.ai/)** *(lead)*  ·  Jane Street  ·  Five Rings  ·  Teza Technologies  ·  QRT  ·  Jump Trading  ·  Da Vinci  ·  Susquehanna
+
+</div>
 
 ---
 
