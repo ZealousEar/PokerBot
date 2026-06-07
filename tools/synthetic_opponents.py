@@ -162,6 +162,83 @@ def decide(state):
         return _raise_to(state, 2)
     return {"action": "fold"}
 ''',
+    "overfold_exploiter": COMMON_HELPERS + r'''
+def _mix(state, modulo=10):
+    token = str(state.get("hand_id", "")) + str(state.get("street", ""))
+    for card in _cards(state):
+        token += str(card)
+    return sum(ord(ch) for ch in token) % max(1, int(modulo))
+
+
+def _pressure_raise(state, frac):
+    stack = _num(state, "your_stack")
+    already = _num(state, "your_bet_this_street")
+    current = _num(state, "current_bet")
+    pot = max(_num(state, "pot"), 1)
+    min_raise = _num(state, "min_raise_to", current + 100)
+    target = current + max(100, int(pot * frac))
+    cap = already + max(1, int(stack * 0.55))
+    target = min(target, cap)
+    if target < min_raise:
+        if min_raise - already >= int(stack * 0.55):
+            return _safe_passive(state)
+        target = min_raise
+    if target - already >= stack:
+        return {"action": "all_in"}
+    return {"action": "raise", "amount": target}
+
+
+def _two_pair_or_better(state):
+    ranks = _ranks(_cards(state)) + _ranks(state.get("community_cards") or [])
+    counts = [ranks.count(r) for r in set(ranks)]
+    return any(count >= 3 for count in counts) or sum(1 for count in counts if count >= 2) >= 2
+
+
+def decide(state):
+    if state.get("type") == "warmup":
+        return {"action": "check"}
+    street = state.get("street")
+    strength = _hole_strength(state)
+    owed = _num(state, "amount_owed")
+    pot = max(_num(state, "pot"), 1)
+    stack = _num(state, "your_stack")
+    price = owed / float(pot + owed) if pot + owed > 0 else 1.0
+    mix = _mix(state, 10)
+    made = _has_pair_or_better(state)
+
+    if street == "preflop":
+        if _can_check(state):
+            if strength >= 28 or mix <= 7:
+                return _pressure_raise(state, 0.80)
+            return {"action": "check"}
+        if strength >= 70:
+            if owed <= max(300, int(stack * 0.18)) and mix <= 4:
+                return _pressure_raise(state, 0.85)
+            return {"action": "call"} if owed <= max(600, int(stack * 0.24)) else {"action": "fold"}
+        if strength >= 32 and price <= 0.26 and owed <= max(350, int(stack * 0.09)):
+            return {"action": "call"}
+        return {"action": "fold"}
+
+    if owed > 0:
+        # Pressure extractor, not a maniac: bet-folds weak holdings to resistance.
+        if _two_pair_or_better(state) and price <= 0.18 and owed <= max(250, int(stack * 0.16)):
+            return {"action": "call"}
+        return _safe_passive(state)
+
+    if street == "flop":
+        if made or mix <= 8:
+            return _pressure_raise(state, 0.62)
+        return {"action": "check"}
+    if street == "turn":
+        if made or mix <= 7:
+            return _pressure_raise(state, 0.72)
+        return {"action": "check"}
+    if street == "river":
+        if _two_pair_or_better(state) and mix <= 4:
+            return _pressure_raise(state, 0.42)
+        return {"action": "check"}
+    return _safe_passive(state)
+''',
 }
 
 

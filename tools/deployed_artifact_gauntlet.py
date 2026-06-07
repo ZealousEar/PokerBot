@@ -52,6 +52,7 @@ SYNTHETIC_STYLES = (
     "loose_aggressive",
     "pot_odds_threshold",
     "river_value_threshold",
+    "overfold_exploiter",
 )
 
 VALID_ACTIONS = {"fold", "check", "call", "raise", "all_in"}
@@ -110,13 +111,70 @@ def _broadway_or_pair(tag):
     return tag[0] in "AKQJ" or (len(tag) > 1 and tag[1] in "AKQJ")
 
 
-def _has_pair_or_better(state):
+def _tag_score(tag):
+    if not tag:
+        return 0
+    if len(tag) == 2 and tag[0] == tag[1]:
+        return 100 + max(0, RANKS.find(tag[0])) * 4
+    hi = max(0, RANKS.find(tag[0]))
+    lo = max(0, RANKS.find(tag[1])) if len(tag) > 1 else 0
+    suited_bonus = 8 if tag.endswith("s") else 0
+    connector_bonus = 4 if abs(hi - lo) <= 2 else 0
+    return hi * 4 + lo + suited_bonus + connector_bonus
+
+
+def _wide_pressure_open(tag):
+    if not tag:
+        return False
+    if len(tag) == 2 and tag[0] == tag[1]:
+        return RANKS.find(tag[0]) >= RANKS.find("4")
+    return _tag_score(tag) >= 47 or tag[0] in "AKQJ" or tag[:2] in {"T9", "98", "87", "76", "65"}
+
+
+def _deterministic_mix(state, modulo=10):
+    token = str(state.get("hand_id", "")) + str(state.get("street", ""))
+    for card in state.get("your_cards") or []:
+        token += str(card)
+    total = 0
+    for ch in token:
+        total += ord(ch)
+    return total % max(1, int(modulo))
+
+
+def _pressure_raise(state, frac=0.66):
+    stack = int(state.get("your_stack") or 0)
+    my_bet = int(state.get("your_bet_this_street") or 0)
+    current = int(state.get("current_bet") or 0)
+    min_raise = int(state.get("min_raise_to") or 0)
+    pot = int(state.get("pot") or 0)
+    if stack <= 0:
+        return _fold_or_check(state)
+    raw_target = current + max(100, int(pot * frac))
+    commit_cap = my_bet + max(1, int(stack * 0.55))
+    target = min(raw_target, commit_cap)
+    if target < min_raise:
+        if min_raise - my_bet >= int(stack * 0.55):
+            return _call_or_check(state)
+        target = min_raise
+    return _raise_to(state, target)
+
+
+def _rank_counts(state):
     cards = list(state.get("your_cards") or []) + list(state.get("community_cards") or [])
     ranks = [c[0] for c in cards if isinstance(c, str) and len(c) >= 2]
-    for r in set(ranks):
-        if ranks.count(r) >= 2:
-            return True
-    return False
+    counts = {}
+    for r in ranks:
+        counts[r] = counts.get(r, 0) + 1
+    return counts
+
+
+def _has_pair_or_better(state):
+    return any(count >= 2 for count in _rank_counts(state).values())
+
+
+def _two_pair_or_better(state):
+    counts = list(_rank_counts(state).values())
+    return any(count >= 3 for count in counts) or sum(1 for count in counts if count >= 2) >= 2
 
 
 def _raise_to(state, target):
@@ -200,6 +258,44 @@ def decide(state):
             return {"action": "check"}
         threshold = owed / float(pot + owed) if pot + owed > 0 else 1.0
         return {"action": "call"} if threshold <= 0.22 else {"action": "fold"}
+
+    if STYLE == "overfold_exploiter":
+        mix = _deterministic_mix(state, 10)
+        threshold = owed / float(pot + owed) if pot + owed > 0 else 1.0
+        made = _has_pair_or_better(state)
+
+        if street == "preflop":
+            if can_check:
+                if _wide_pressure_open(tag) or mix <= 7:
+                    return _pressure_raise(state, 0.80)
+                return {"action": "check"}
+            if _premium(tag):
+                if owed <= max(300, int(stack * 0.18)) and mix <= 4:
+                    return _pressure_raise(state, 0.85)
+                return {"action": "call"} if owed <= max(600, int(stack * 0.24)) else {"action": "fold"}
+            if _wide_pressure_open(tag) and threshold <= 0.26 and owed <= max(350, int(stack * 0.09)):
+                return {"action": "call"}
+            return {"action": "fold"}
+
+        if owed > 0:
+            # Bet-fold discipline: this bot pressures folds but does not pay off
+            # counter-pressure with weak showdown value.
+            if _two_pair_or_better(state) and threshold <= 0.18 and owed <= max(250, int(stack * 0.16)):
+                return {"action": "call"}
+            return _fold_or_check(state)
+
+        if street == "flop":
+            if made or mix <= 8:
+                return _pressure_raise(state, 0.62)
+            return {"action": "check"}
+        if street == "turn":
+            if made or mix <= 7:
+                return _pressure_raise(state, 0.72)
+            return {"action": "check"}
+        if street == "river":
+            if _two_pair_or_better(state) and mix <= 4:
+                return _pressure_raise(state, 0.42)
+            return {"action": "check"}
 
     return _fold_or_check(state)
 '''.lstrip()
@@ -466,13 +562,106 @@ def hand_diagnostics(result: dict[str, Any], opponent: str, seed: int, orientati
     return rows
 
 
+def pressure_kind(street: str, first_aggression_on_street: bool, bot_id: str, flop_pressure_bots: set[str]) -> str:
+    if street == "flop" and first_aggression_on_street:
+        return "flop_cbet_or_probe"
+    if street == "turn" and first_aggression_on_street and bot_id in flop_pressure_bots:
+        return "turn_barrel"
+    if street == "turn" and first_aggression_on_street:
+        return "turn_probe"
+    return "postflop_raise_pressure"
+
+
+def pressure_bleed_diagnostics(result: dict[str, Any], opponent: str, seed: int, orientation: int) -> list[dict[str, Any]]:
+    """Rows where hero folds flop/turn immediately after opponent pressure.
+
+    The mechanism under test is over-folding under pressure, not generic loss.
+    A row is emitted only when the engine event log shows a non-hero raise/all-in
+    on flop or turn and the next relevant hero action on that street is fold.
+    """
+    rows: list[dict[str, Any]] = []
+    prev_stack = STARTING_STACK
+    for hand in result.get("hands", []):
+        final_stack = int(hand.get("final_stacks", {}).get("hero", prev_stack))
+        hero_delta = final_stack - prev_stack
+        prev_stack = final_stack
+        street_aggression_seen: dict[str, bool] = {}
+        flop_pressure_bots: set[str] = set()
+        last_pressure: dict[str, Any] | None = None
+        for index, event in enumerate(hand.get("events") or []):
+            if event.get("type") != "action":
+                continue
+            street = str(event.get("street") or "")
+            bot_id = str(event.get("bot_id") or "")
+            action = str(event.get("action") or "")
+            if street in {"flop", "turn"} and bot_id != "hero" and action in {"raise", "all_in"}:
+                first = not street_aggression_seen.get(street, False)
+                street_aggression_seen[street] = True
+                kind = pressure_kind(street, first, bot_id, flop_pressure_bots)
+                if street == "flop":
+                    flop_pressure_bots.add(bot_id)
+                last_pressure = {
+                    "street": street,
+                    "pressure_kind": kind,
+                    "pressure_bot": bot_id,
+                    "pressure_action": action,
+                    "pressure_amount": int(event.get("amount") or 0),
+                    "pressure_pot_after": int(event.get("pot_after") or event.get("pot") or 0),
+                    "pressure_event_index": index,
+                }
+                continue
+            if street in {"flop", "turn"} and bot_id == "hero" and action == "fold" and last_pressure and last_pressure["street"] == street:
+                rows.append({
+                    "opponent": opponent,
+                    "seed": seed,
+                    "orientation": orientation,
+                    "hand_num": hand.get("hand_num"),
+                    "hand_id": hand.get("hand_id"),
+                    **last_pressure,
+                    "fold_event_index": index,
+                    "fold_pot": int(event.get("pot") or 0),
+                    "hero_delta": hero_delta,
+                    "hero_chip_loss": max(0, -hero_delta),
+                    "final_street": hand.get("street"),
+                    "final_pot": hand.get("pot"),
+                    "showdown": hand.get("showdown"),
+                    "community_cards": " ".join(hand.get("community_cards") or []),
+                    "action_log": json.dumps(hand.get("action_log") or [], sort_keys=True),
+                })
+                break
+    return rows
+
+
+def summarize_pressure_bleed(rows: list[dict[str, Any]], hands: int) -> dict[str, Any]:
+    by_street: dict[str, int] = {}
+    by_kind: dict[str, int] = {}
+    for row in rows:
+        by_street[str(row.get("street"))] = by_street.get(str(row.get("street")), 0) + 1
+        by_kind[str(row.get("pressure_kind"))] = by_kind.get(str(row.get("pressure_kind")), 0) + 1
+    chip_loss = sum(int(row.get("hero_chip_loss") or 0) for row in rows)
+    net_delta = sum(int(row.get("hero_delta") or 0) for row in rows)
+    surrendered_pot = sum(int(row.get("pressure_pot_after") or 0) for row in rows)
+    return {
+        "postflop_pressure_fold_count": len(rows),
+        "postflop_pressure_fold_loss_chips": chip_loss,
+        "postflop_pressure_fold_net_delta_chips": net_delta,
+        "postflop_pressure_fold_loss_bb100": bb100(-chip_loss, hands),
+        "pressure_pot_after_surrendered_chips": surrendered_pot,
+        "pressure_pot_after_surrendered_bb100": bb100(-surrendered_pot, hands),
+        "by_street": by_street,
+        "by_pressure_kind": by_kind,
+    }
+
+
 def run_opponent_suite(hero_zip: Path, opponents: dict[str, Path], hands_per_opponent: int, match_len: int, seed_base: int) -> dict[str, Any]:
     summaries: list[dict[str, Any]] = []
     all_diagnostics: list[dict[str, Any]] = []
+    all_pressure_bleed: list[dict[str, Any]] = []
     n_seeds = max(1, math.ceil(hands_per_opponent / float(match_len * 2)))
     for name, opp_path in opponents.items():
         samples: list[dict[str, Any]] = []
         errors: list[dict[str, Any]] = []
+        pressure_rows: list[dict[str, Any]] = []
         for k in range(n_seeds):
             seed = seed_base + k
             orientations = [
@@ -506,6 +695,7 @@ def run_opponent_suite(hero_zip: Path, opponents: dict[str, Path], hands_per_opp
                     if hero_errors or opp_errors:
                         errors.append(sample)
                     all_diagnostics.extend(hand_diagnostics(result, name, seed, orientation))
+                    pressure_rows.extend(pressure_bleed_diagnostics(result, name, seed, orientation))
                 except Exception as exc:
                     errors.append({
                         "opponent": name,
@@ -531,6 +721,7 @@ def run_opponent_suite(hero_zip: Path, opponents: dict[str, Path], hands_per_opp
             "actual_bb100": bb100(chips, actual),
             "scheduled_ci": bootstrap_ci(samples, "requested_hands", seed_base ^ len(name)),
             "actual_ci": bootstrap_ci(samples, "actual_hands", seed_base ^ (len(name) << 4)),
+            "pressure_bleed": summarize_pressure_bleed(pressure_rows, actual),
             "hero_error_count": hero_error_count,
             "opponent_error_count": opponent_error_count,
             "mean_chip_delta_per_sample": statistics.mean(sample_chips) if sample_chips else None,
@@ -538,8 +729,14 @@ def run_opponent_suite(hero_zip: Path, opponents: dict[str, Path], hands_per_opp
             "max_chip_delta_sample": max(sample_chips) if sample_chips else None,
             "errors": errors,
         })
+        all_pressure_bleed.extend(pressure_rows)
     all_diagnostics.sort(key=lambda r: int(r["hero_delta"]))
-    return {"summaries": summaries, "diagnostic_hands": all_diagnostics[:50]}
+    all_pressure_bleed.sort(key=lambda r: (str(r.get("opponent")), int(r.get("seed") or 0), int(r.get("orientation") or 0), int(r.get("hand_num") or 0)))
+    return {
+        "summaries": summaries,
+        "diagnostic_hands": all_diagnostics[:50],
+        "pressure_bleed_hands": all_pressure_bleed,
+    }
 
 
 def base_players(n: int, hero_stack: int, villain_stack: int = 10000) -> list[dict[str, Any]]:
@@ -829,6 +1026,22 @@ def write_diagnostic_csv(path: Path, rows: list[dict[str, Any]]) -> None:
             writer.writerow({field: row.get(field) for field in fields})
 
 
+def write_pressure_bleed_csv(path: Path, rows: list[dict[str, Any]]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fields = [
+        "opponent", "seed", "orientation", "hand_num", "hand_id", "street",
+        "pressure_kind", "pressure_bot", "pressure_action", "pressure_amount",
+        "pressure_pot_after", "pressure_event_index", "fold_event_index",
+        "fold_pot", "hero_delta", "hero_chip_loss", "final_street",
+        "final_pot", "showdown", "community_cards", "action_log",
+    ]
+    with path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fields)
+        writer.writeheader()
+        for row in rows:
+            writer.writerow({field: row.get(field) for field in fields})
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--bot", type=Path, default=ROOT / "submissions" / "v_qual2_ship_d54640e0.zip")
@@ -838,6 +1051,7 @@ def main() -> int:
     parser.add_argument("--hands-per-opponent", type=int, default=800)
     parser.add_argument("--match-len", type=int, default=200)
     parser.add_argument("--seed-base", type=int, default=42)
+    parser.add_argument("--opponents", nargs="*", default=None, help="Optional opponent names to run; default runs the full suite.")
     parser.add_argument("--python", default=str(ROOT / ".venv" / "bin" / "python"))
     parser.add_argument("--skip-matches", action="store_true")
     parser.add_argument("--skip-probes", action="store_true")
@@ -875,11 +1089,17 @@ def main() -> int:
 
     synthetic_paths = create_synthetic_opponents(outdir)
     opponents = {**REFERENCE_BOTS, **synthetic_paths}
-    match_results: dict[str, Any] = {"summaries": [], "diagnostic_hands": []}
+    if args.opponents:
+        missing = [name for name in args.opponents if name not in opponents]
+        if missing:
+            parser.error(f"unknown --opponents values: {', '.join(missing)}")
+        opponents = {name: opponents[name] for name in args.opponents}
+    match_results: dict[str, Any] = {"summaries": [], "diagnostic_hands": [], "pressure_bleed_hands": []}
     if not args.skip_matches:
         match_results = run_opponent_suite(bot, opponents, args.hands_per_opponent, args.match_len, args.seed_base)
     write_json(results_dir / "match_results.json", match_results)
     write_diagnostic_csv(results_dir / "diagnostic_hands.csv", match_results.get("diagnostic_hands", []))
+    write_pressure_bleed_csv(results_dir / "pressure_bleed_hands.csv", match_results.get("pressure_bleed_hands", []))
 
     probes: list[dict[str, Any]] = []
     if not args.skip_probes:
@@ -898,6 +1118,7 @@ def main() -> int:
             "hands_per_opponent": args.hands_per_opponent,
             "match_len": args.match_len,
             "seed_base": args.seed_base,
+            "opponents": list(opponents),
             "paired_orientations": True,
         },
         "match_results": match_results,

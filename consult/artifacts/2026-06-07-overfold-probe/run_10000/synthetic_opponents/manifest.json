@@ -1,0 +1,186 @@
+{
+  "all_in_maniac": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1869,
+        "file_size": 7914,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/run_10000/synthetic_opponents/zips/all_in_maniac.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "f76ba90ffd5a44cb5ef55f11bf3fc72029881284bd60735358996a4d8fb5fc9c",
+    "size_bytes": 1979,
+    "src_py_files": [],
+    "uncompressed_bytes": 7914
+  },
+  "loose_aggressive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1875,
+        "file_size": 7917,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/run_10000/synthetic_opponents/zips/loose_aggressive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "8288d3a1b858d587bac4adeb7db1817fda2827bfdbdafb88553b1fe8beef3389",
+    "size_bytes": 1985,
+    "src_py_files": [],
+    "uncompressed_bytes": 7917
+  },
+  "loose_passive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1870,
+        "file_size": 7914,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/run_10000/synthetic_opponents/zips/loose_passive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "1b1a60aaf8379625932ad7062b6329bc0e8acb4e47e8e1f6bb19cd39999513c9",
+    "size_bytes": 1980,
+    "src_py_files": [],
+    "uncompressed_bytes": 7914
+  },
+  "overfold_exploiter": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1873,
+        "file_size": 7919,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/run_10000/synthetic_opponents/zips/overfold_exploiter.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "ad8ca05e1cf36f541ce0f307346f71f849bd5f9b94d7d8e258df186b563e72e7",
+    "size_bytes": 1983,
+    "src_py_files": [],
+    "uncompressed_bytes": 7919
+  },
+  "pot_odds_threshold": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1873,
+        "file_size": 7919,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/run_10000/synthetic_opponents/zips/pot_odds_threshold.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "fe8eec6e87653feb27e061b800bfc2aa08cb0ba6bd4e49384d3bb251654f39a2",
+    "size_bytes": 1983,
+    "src_py_files": [],
+    "uncompressed_bytes": 7919
+  },
+  "river_value_threshold": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1872,
+        "file_size": 7922,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/run_10000/synthetic_opponents/zips/river_value_threshold.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "cf3924e01eea7c9caf4797ab258fa8db7c1c3d8e86e0ba9ed4b789cf7feb7177",
+    "size_bytes": 1982,
+    "src_py_files": [],
+    "uncompressed_bytes": 7922
+  },
+  "tight_aggressive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1873,
+        "file_size": 7917,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/run_10000/synthetic_opponents/zips/tight_aggressive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "c2d88c271d995fda62a5b292e680743ffad4010fb1f6909ba416ac1c9a6901fb",
+    "size_bytes": 1983,
+    "src_py_files": [],
+    "uncompressed_bytes": 7917
+  },
+  "tight_passive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 1870,
+        "file_size": 7914,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/run_10000/synthetic_opponents/zips/tight_passive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "0ffd90977beda6e546a39112deb553b5e646ba25be387efd3aa69458cd6e9176",
+    "size_bytes": 1980,
+    "src_py_files": [],
+    "uncompressed_bytes": 7914
+  }
+}
