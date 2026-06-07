@@ -12,6 +12,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ENGINE_DIR = ROOT / "ext" / "fullhouse-engine"
+# Mirror tests/conftest.py: probe the sandbox runner file, not just the dir,
+# so a partial checkout without the sandbox is also caught.
+ENGINE_RUNNER = ENGINE_DIR / "sandbox" / "runner.py"
 
 
 def main() -> int:
@@ -23,15 +26,26 @@ def main() -> int:
                    help="Exit nonzero on any crash, illegal action, or timeout")
     args = p.parse_args()
 
-    if not ENGINE_DIR.exists():
-        print(f"FAIL: engine not cloned at {ENGINE_DIR}")
+    # Engine guard (fires first): self-play drives the engine's match runner,
+    # which lives in the separate ext/fullhouse-engine checkout (gitignored,
+    # absent in this public repo).
+    if not ENGINE_RUNNER.is_file():
+        print(
+            f"self_play.py requires the engine clone at {ENGINE_DIR} (absent in "
+            "this public repo). Self-play matches ran on the private engine "
+            "harness and are not reproduced here.",
+            file=sys.stderr,
+        )
         return 4
 
-    # TODO (G1): import sandbox.match, instantiate a 2-bot match (ours vs opponent),
-    # drive N hands, parse runner stderr for "TIMEOUT" / "BOT EXCEPTION" / "BAD JSON",
-    # count illegal-action defaults. In --strict mode, exit 1 on any incident.
-    print(f"TODO (G1): run {args.hands} hands vs {args.opponent} (strict={args.strict})")
-    return 0
+    # Driving matches through the engine match driver is not implemented in this
+    # public repo; it ran on the private engine harness.
+    print(
+        f"self-play vs {args.opponent} is not implemented in this public repo; "
+        "matches ran on the private engine harness.",
+        file=sys.stderr,
+    )
+    return 2
 
 
 if __name__ == "__main__":

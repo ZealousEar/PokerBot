@@ -26,15 +26,24 @@ on a single 10k run without paired-seed support.
 """
 import argparse
 import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+# Mirror tests/conftest.py: the engine clone is a separate, gitignored
+# checkout. Its sandbox runner is the authoritative "is the engine here?" probe.
+ENGINE_RUNNER = ROOT / "ext" / "fullhouse-engine" / "sandbox" / "runner.py"
 
 # All five reference bots in ext/fullhouse-engine/bots/.
 TEMPLATES = ("template", "aggressor", "mathematician", "shark", "ref_bot_2")
 
-# Biased-opponent suite for --ablate-overlay (synthetic seats; see
-# tests/integration/test_biased_opponents.py at G5).
+# Intended overlay-ablation lineup (synthetic biased seats). The ablation is
+# part of the offline verification architecture; it ran on the private engine
+# harness and is not built in this public repo.
 BIASED_SUITE = ("tight_passive", "loose_passive", "tight_aggressive", "loose_aggressive")
 
-# Prior gate snapshots checked by --self-play --vs-prior.
+# Intended self-play ratchet lineup. These prior gate snapshots are not
+# committed to the public repo (only submissions/v_final.zip is); the ratchet
+# ran on the private engine harness.
 PRIOR_SNAPSHOTS = (
     "submissions/v0_wired.zip",
     "submissions/v1_blueprint.zip",
@@ -68,28 +77,48 @@ def main() -> int:
                    help="K for --paired-seed-base (default 10).")
     args = p.parse_args()
 
+    # Engine guard: benchmarking drives the engine's match runner, which lives
+    # in the separate ext/fullhouse-engine checkout (gitignored, absent here).
+    # Fail loudly rather than print a fake-success TODO — the bb/100 figures
+    # quoted in the docs came from the private engine harness, not this repo.
+    if not ENGINE_RUNNER.is_file():
+        print(
+            "benchmark.py requires the engine clone at ext/fullhouse-engine/ "
+            "(absent in this public repo). The bb/100 figures and CIs were "
+            "produced on the private engine harness and are not reproduced here.",
+            file=sys.stderr,
+        )
+        return 3
+
     if args.all_templates:
         targets = list(TEMPLATES)
     elif args.ablate_overlay:
-        # TODO (G5): for each biased seat in BIASED_SUITE, run hands of with-overlay
-        # and blueprint-only, report (with - blueprint) margin per seat.
-        print(f"TODO (G5): ablate overlay over {len(BIASED_SUITE)} biased seats × {args.hands} hands; --min-bb {args.min_bb}")
-        return 0
+        print(
+            "overlay ablation is not implemented in this public repo; it ran "
+            "on the private engine harness.",
+            file=sys.stderr,
+        )
+        return 2
     elif args.self_play and args.vs_prior:
-        # TODO (G5): for each prior snapshot, run v_final vs prior, report margin.
-        print(f"TODO (G5): self-play v_final vs {len(PRIOR_SNAPSHOTS)} prior snapshots × {args.hands} hands; --min-bb {args.min_bb}")
-        return 0
+        print(
+            "the self-play ratchet is not implemented in this public repo; it "
+            "ran on the private engine harness.",
+            file=sys.stderr,
+        )
+        return 2
     elif args.opponent:
         targets = [args.opponent]
     else:
         p.error("Specify --opponent, --all-templates, --ablate-overlay, or --self-play --vs-prior")
 
-    # TODO (G2): for each target, run args.hands via sandbox/match.py, collect
-    # per-hand chip deltas, compute bb/100 + bootstrap 95% CI. Exit 1 if any
-    # target's lower CI bound < args.min_bb.
-    for t in targets:
-        print(f"TODO (G2/G3): benchmark {args.hands} hands vs {t}; --min-bb {args.min_bb}")
-    return 0
+    # Per-target benchmarking (chip deltas → bb/100 + bootstrap CI) runs through
+    # the engine match driver and is not implemented in this public repo.
+    print(
+        "benchmarking is not implemented in this public repo; the bb/100 "
+        f"figures vs {', '.join(targets)} came from the private engine harness.",
+        file=sys.stderr,
+    )
+    return 2
 
 
 if __name__ == "__main__":
