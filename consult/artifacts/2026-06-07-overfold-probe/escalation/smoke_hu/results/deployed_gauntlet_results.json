@@ -1,0 +1,1393 @@
+{
+  "baseline": {
+    "data_entries": [
+      "data/.gitkeep",
+      "data/field_priors.npz",
+      "data/flop_buckets.npz",
+      "data/flop_strategy.npz",
+      "data/preflop_blueprint.npz"
+    ],
+    "entries": [
+      {
+        "compress_size": 400,
+        "file_size": 654,
+        "is_dir": false,
+        "mode": 33152,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/.gitkeep"
+      },
+      {
+        "compress_size": 1290,
+        "file_size": 5394,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/field_priors.npz"
+      },
+      {
+        "compress_size": 463,
+        "file_size": 582,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_buckets.npz"
+      },
+      {
+        "compress_size": 16597,
+        "file_size": 17029,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_strategy.npz"
+      },
+      {
+        "compress_size": 1396,
+        "file_size": 2147,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/preflop_blueprint.npz"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 3241,
+        "file_size": 10088,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 1206,
+        "file_size": 2707,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/commitment.py"
+      },
+      {
+        "compress_size": 2945,
+        "file_size": 9719,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 2412,
+        "file_size": 7792,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/hand_features.py"
+      },
+      {
+        "compress_size": 3438,
+        "file_size": 10699,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 3020,
+        "file_size": 8129,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 1645,
+        "file_size": 4631,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 2389,
+        "file_size": 9110,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 1255,
+        "file_size": 3407,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      }
+    ],
+    "entry_count": 17,
+    "path": "submissions/v_final.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "b108eff59b46b713fdfb1530f73eaeaa924f5dd9cb5ed72d3e63512a9ce3c36b",
+    "size_bytes": 44274,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/commitment.py",
+      "src/equity.py",
+      "src/hand_features.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 93522
+  },
+  "bot": {
+    "data_entries": [
+      "data/.gitkeep",
+      "data/field_priors.npz",
+      "data/flop_buckets.npz",
+      "data/flop_strategy.npz",
+      "data/preflop_blueprint.npz"
+    ],
+    "entries": [
+      {
+        "compress_size": 400,
+        "file_size": 654,
+        "is_dir": false,
+        "mode": 33152,
+        "name": "bot.py"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/.gitkeep"
+      },
+      {
+        "compress_size": 1290,
+        "file_size": 5394,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/field_priors.npz"
+      },
+      {
+        "compress_size": 463,
+        "file_size": 582,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_buckets.npz"
+      },
+      {
+        "compress_size": 16597,
+        "file_size": 17029,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/flop_strategy.npz"
+      },
+      {
+        "compress_size": 1396,
+        "file_size": 2147,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "data/preflop_blueprint.npz"
+      },
+      {
+        "compress_size": 2,
+        "file_size": 0,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/__init__.py"
+      },
+      {
+        "compress_size": 3241,
+        "file_size": 10088,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/bot.py"
+      },
+      {
+        "compress_size": 1206,
+        "file_size": 2707,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/commitment.py"
+      },
+      {
+        "compress_size": 2945,
+        "file_size": 9719,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/equity.py"
+      },
+      {
+        "compress_size": 2412,
+        "file_size": 7792,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/hand_features.py"
+      },
+      {
+        "compress_size": 3438,
+        "file_size": 10699,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/opponent_model.py"
+      },
+      {
+        "compress_size": 3020,
+        "file_size": 8129,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/postflop.py"
+      },
+      {
+        "compress_size": 1645,
+        "file_size": 4631,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/preflop_lookup.py"
+      },
+      {
+        "compress_size": 2389,
+        "file_size": 9110,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/ranges.py"
+      },
+      {
+        "compress_size": 1255,
+        "file_size": 3407,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/sizing.py"
+      },
+      {
+        "compress_size": 685,
+        "file_size": 1434,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "src/timeout_guard.py"
+      }
+    ],
+    "entry_count": 17,
+    "path": "submissions/v_final.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "b108eff59b46b713fdfb1530f73eaeaa924f5dd9cb5ed72d3e63512a9ce3c36b",
+    "size_bytes": 44274,
+    "src_py_files": [
+      "src/__init__.py",
+      "src/bot.py",
+      "src/commitment.py",
+      "src/equity.py",
+      "src/hand_features.py",
+      "src/opponent_model.py",
+      "src/postflop.py",
+      "src/preflop_lookup.py",
+      "src/ranges.py",
+      "src/sizing.py",
+      "src/timeout_guard.py"
+    ],
+    "uncompressed_bytes": 93522
+  },
+  "extracted_dir": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final",
+  "match_config": {
+    "hands_per_opponent": 400,
+    "match_len": 200,
+    "opponents": [
+      "adaptive_overfold_exploiter"
+    ],
+    "paired_orientations": true,
+    "seed_base": 2026060719
+  },
+  "match_results": {
+    "diagnostic_hands": [
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 250, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 523, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 1830, \"seat\": 0}, {\"action\": \"call\", \"amount\": 1307, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 2342, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "7c 2h 6d",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0162",
+        "hand_num": 162,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -1830,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 6002,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "flop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 1}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 759, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 1520, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0173",
+        "hand_num": 173,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -759,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 2279,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"call\", \"amount\": 50, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 500, \"seat\": 1}, {\"action\": \"call\", \"amount\": 400, \"seat\": 0}, {\"action\": \"check\", \"amount\": 0, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 640, \"seat\": 0}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 1}]",
+        "community_cards": "3c 5c 4s",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o1_h0126",
+        "hand_num": 126,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -500,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 1,
+        "pot": 1640,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "flop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 0}, {\"action\": \"call\", \"amount\": 117, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 1}, {\"action\": \"call\", \"amount\": 217, \"seat\": 0}, {\"action\": \"check\", \"amount\": 0, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 659, \"seat\": 0}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 1}]",
+        "community_cards": "Qh Ad 5s Js",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o1_h0064",
+        "hand_num": 64,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -434,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 1,
+        "pot": 1527,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "turn"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 1}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 250, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 523, \"seat\": 0}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 1}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o1_h0031",
+        "hand_num": 31,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -250,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 1,
+        "pot": 773,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 1}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0003",
+        "hand_num": 3,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -100,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 317,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 1}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0049",
+        "hand_num": 49,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -100,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 317,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 1}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0057",
+        "hand_num": 57,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -100,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 317,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 1}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0061",
+        "hand_num": 61,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -100,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 317,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 1}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0109",
+        "hand_num": 109,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -100,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 317,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 1}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0121",
+        "hand_num": 121,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -100,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 317,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 1}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0143",
+        "hand_num": 143,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -100,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 317,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 0}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 1}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o1_h0050",
+        "hand_num": 50,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -100,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 1,
+        "pot": 317,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 0}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 1}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o1_h0182",
+        "hand_num": 182,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -100,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 1,
+        "pot": 317,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0000",
+        "hand_num": 0,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0002",
+        "hand_num": 2,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0004",
+        "hand_num": 4,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0006",
+        "hand_num": 6,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0008",
+        "hand_num": 8,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0010",
+        "hand_num": 10,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0012",
+        "hand_num": 12,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0016",
+        "hand_num": 16,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0018",
+        "hand_num": 18,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0020",
+        "hand_num": 20,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0028",
+        "hand_num": 28,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0030",
+        "hand_num": 30,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0036",
+        "hand_num": 36,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0038",
+        "hand_num": 38,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0040",
+        "hand_num": 40,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0044",
+        "hand_num": 44,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0046",
+        "hand_num": 46,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0048",
+        "hand_num": 48,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0052",
+        "hand_num": 52,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0056",
+        "hand_num": 56,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0058",
+        "hand_num": 58,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0062",
+        "hand_num": 62,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0066",
+        "hand_num": 66,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0068",
+        "hand_num": 68,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0070",
+        "hand_num": 70,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0072",
+        "hand_num": 72,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0078",
+        "hand_num": 78,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0082",
+        "hand_num": 82,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0084",
+        "hand_num": 84,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0086",
+        "hand_num": 86,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0092",
+        "hand_num": 92,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0096",
+        "hand_num": 96,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0098",
+        "hand_num": 98,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0106",
+        "hand_num": 106,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0108",
+        "hand_num": 108,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      },
+      {
+        "action_log_tail": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "",
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0112",
+        "hand_num": 112,
+        "hand_strength": null,
+        "hero_cards": "",
+        "hero_delta": -50,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pot": 150,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "preflop"
+      }
+    ],
+    "pressure_bleed_hands": [
+      {
+        "action_log": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 250, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 523, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 1830, \"seat\": 0}, {\"action\": \"call\", \"amount\": 1307, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 2342, \"seat\": 1}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 0}]",
+        "community_cards": "7c 2h 6d",
+        "final_pot": 6002,
+        "final_street": "flop",
+        "fold_event_index": 9,
+        "fold_pot": 6002,
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0_h0162",
+        "hand_num": 162,
+        "hero_chip_loss": 1830,
+        "hero_delta": -1830,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 0,
+        "pressure_action": "raise",
+        "pressure_amount": 2342,
+        "pressure_bot": "adaptive_overfold_exploiter",
+        "pressure_event_index": 8,
+        "pressure_kind": "flop_cbet_or_probe",
+        "pressure_pot_after": 6002,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "flop"
+      },
+      {
+        "action_log": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 0}, {\"action\": \"call\", \"amount\": 117, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 217, \"seat\": 1}, {\"action\": \"call\", \"amount\": 217, \"seat\": 0}, {\"action\": \"check\", \"amount\": 0, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 659, \"seat\": 0}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 1}]",
+        "community_cards": "Qh Ad 5s Js",
+        "final_pot": 1527,
+        "final_street": "turn",
+        "fold_event_index": 11,
+        "fold_pot": 1527,
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o1_h0064",
+        "hand_num": 64,
+        "hero_chip_loss": 434,
+        "hero_delta": -434,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 1,
+        "pressure_action": "raise",
+        "pressure_amount": 659,
+        "pressure_bot": "adaptive_overfold_exploiter",
+        "pressure_event_index": 10,
+        "pressure_kind": "turn_probe",
+        "pressure_pot_after": 1527,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "turn"
+      },
+      {
+        "action_log": "[{\"action\": \"small_blind\", \"amount\": 50, \"seat\": 0}, {\"action\": \"big_blind\", \"amount\": 100, \"seat\": 1}, {\"action\": \"call\", \"amount\": 50, \"seat\": 0}, {\"action\": \"raise\", \"amount\": 500, \"seat\": 1}, {\"action\": \"call\", \"amount\": 400, \"seat\": 0}, {\"action\": \"check\", \"amount\": 0, \"seat\": 1}, {\"action\": \"raise\", \"amount\": 640, \"seat\": 0}, {\"action\": \"fold\", \"amount\": 0, \"seat\": 1}]",
+        "community_cards": "3c 5c 4s",
+        "final_pot": 1640,
+        "final_street": "flop",
+        "fold_event_index": 9,
+        "fold_pot": 1640,
+        "hand_id": "deployed_adaptive_overfold_exploiter_s2026060719_o1_h0126",
+        "hand_num": 126,
+        "hero_chip_loss": 500,
+        "hero_delta": -500,
+        "opponent": "adaptive_overfold_exploiter",
+        "orientation": 1,
+        "pressure_action": "raise",
+        "pressure_amount": 640,
+        "pressure_bot": "adaptive_overfold_exploiter",
+        "pressure_event_index": 8,
+        "pressure_kind": "flop_cbet_or_probe",
+        "pressure_pot_after": 1640,
+        "seed": 2026060719,
+        "showdown": false,
+        "street": "flop"
+      }
+    ],
+    "summaries": [
+      {
+        "actual_bb100": 21.6175,
+        "actual_ci": {
+          "half_width": 9.5625,
+          "high": 31.18,
+          "low": 12.055,
+          "mean": 21.6175
+        },
+        "actual_hands": 400,
+        "errors": [],
+        "hero_chip_delta": 8647,
+        "hero_error_count": 0,
+        "max_chip_delta_sample": 6236,
+        "mean_chip_delta_per_sample": 4323.5,
+        "min_chip_delta_sample": 2411,
+        "opponent": "adaptive_overfold_exploiter",
+        "opponent_error_count": 0,
+        "opponent_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/adaptive_overfold_exploiter.zip",
+        "pressure_bleed": {
+          "by_pressure_kind": {
+            "flop_cbet_or_probe": 2,
+            "turn_probe": 1
+          },
+          "by_street": {
+            "flop": 2,
+            "turn": 1
+          },
+          "postflop_pressure_fold_count": 3,
+          "postflop_pressure_fold_loss_bb100": -6.91,
+          "postflop_pressure_fold_loss_chips": 2764,
+          "postflop_pressure_fold_net_delta_chips": -2764,
+          "pressure_pot_after_surrendered_bb100": -22.9225,
+          "pressure_pot_after_surrendered_chips": 9169
+        },
+        "sample_count": 2,
+        "samples": [
+          {
+            "actual_hands": 200,
+            "duration_s": 0.401,
+            "hero_chip_delta": 2411,
+            "hero_errors": [],
+            "hero_final_stack": 12411,
+            "match_id": "deployed_adaptive_overfold_exploiter_s2026060719_o0",
+            "opponent": "adaptive_overfold_exploiter",
+            "opponent_chip_delta": -2411,
+            "opponent_errors": [],
+            "opponent_final_stack": 7589,
+            "orientation": 0,
+            "requested_hands": 200,
+            "seed": 2026060719
+          },
+          {
+            "actual_hands": 200,
+            "duration_s": 0.425,
+            "hero_chip_delta": 6236,
+            "hero_errors": [],
+            "hero_final_stack": 16236,
+            "match_id": "deployed_adaptive_overfold_exploiter_s2026060719_o1",
+            "opponent": "adaptive_overfold_exploiter",
+            "opponent_chip_delta": -6236,
+            "opponent_errors": [],
+            "opponent_final_stack": 3764,
+            "orientation": 1,
+            "requested_hands": 200,
+            "seed": 2026060719
+          }
+        ],
+        "scheduled_bb100": 21.6175,
+        "scheduled_ci": {
+          "half_width": 9.5625,
+          "high": 31.18,
+          "low": 12.055,
+          "mean": 21.6175
+        },
+        "scheduled_hands": 400
+      }
+    ]
+  },
+  "probe_results": [],
+  "source_audit": {
+    "data_references": [
+      {
+        "line": 25,
+        "path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/bot.py",
+        "text": "\"BOT_DATA_DIR\","
+      },
+      {
+        "line": 51,
+        "path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/opponent_model.py",
+        "text": "return os.environ.get(\"BOT_DATA_DIR\", os.path.join(os.path.dirname(here), \"data\"))"
+      },
+      {
+        "line": 77,
+        "path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/opponent_model.py",
+        "text": "path = os.path.join(_data_dir(), \"field_priors.npz\")"
+      },
+      {
+        "line": 79,
+        "path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/opponent_model.py",
+        "text": "with np.load(path, allow_pickle=False) as data:"
+      }
+    ],
+    "forbidden_clean": true,
+    "imports": {
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/bot.py": [
+        "from src.bot",
+        "os",
+        "sys"
+      ],
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/__init__.py": [],
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/bot.py": [
+        "from src.equity",
+        "from src.opponent_model",
+        "from src.postflop",
+        "from src.preflop_lookup",
+        "from src.sizing",
+        "from src.timeout_guard",
+        "os",
+        "sys",
+        "time"
+      ],
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/commitment.py": [
+        "from src.hand_features"
+      ],
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/equity.py": [
+        "eval7",
+        "from typing",
+        "hashlib",
+        "random"
+      ],
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/hand_features.py": [
+        "from typing"
+      ],
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/opponent_model.py": [
+        "from collections",
+        "from typing",
+        "numpy",
+        "os"
+      ],
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/postflop.py": [
+        "from src.commitment",
+        "from src.equity",
+        "from src.opponent_model",
+        "from src.sizing",
+        "from typing"
+      ],
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/preflop_lookup.py": [
+        "from src.ranges",
+        "from typing",
+        "os"
+      ],
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/ranges.py": [
+        "from typing"
+      ],
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/sizing.py": [],
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/timeout_guard.py": [
+        "from contextlib",
+        "from typing",
+        "time"
+      ]
+    },
+    "issues": [],
+    "python_files": [
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/bot.py",
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/__init__.py",
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/bot.py",
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/commitment.py",
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/equity.py",
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/hand_features.py",
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/opponent_model.py",
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/postflop.py",
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/preflop_lookup.py",
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/ranges.py",
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/sizing.py",
+      "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/extracted/v_final/src/timeout_guard.py"
+    ]
+  },
+  "started_at": "2026-06-07T14:36:15Z",
+  "synthetic_opponents": {
+    "adaptive_overfold_exploiter": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/adaptive_overfold_exploiter.zip",
+    "all_in_maniac": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/all_in_maniac.zip",
+    "loose_aggressive": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/loose_aggressive.zip",
+    "loose_passive": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/loose_passive.zip",
+    "overfold_exploiter": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/overfold_exploiter.zip",
+    "pot_odds_threshold": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/pot_odds_threshold.zip",
+    "river_value_threshold": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/river_value_threshold.zip",
+    "tight_aggressive": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/tight_aggressive.zip",
+    "tight_passive": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/tight_passive.zip"
+  },
+  "verification_commands": [
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot/.venv/bin/python",
+        "tools/import_audit.py"
+      ],
+      "duration_s": 0.445,
+      "label": "import_audit_canonical_src",
+      "returncode": 0,
+      "stderr_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/import_audit_canonical_src.stderr.log",
+      "stderr_tail": "",
+      "stdout_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/import_audit_canonical_src.stdout.log",
+      "stdout_tail": "cold import: 0.268s, RSS: 38.0 MB\n"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests/edge_cases",
+        "-x"
+      ],
+      "duration_s": 1.928,
+      "label": "edge_cases_canonical_src",
+      "returncode": 0,
+      "stderr_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/edge_cases_canonical_src.stderr.log",
+      "stderr_tail": "",
+      "stdout_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/edge_cases_canonical_src.stdout.log",
+      "stdout_tail": "============================= test session starts ==============================\nplatform darwin -- Python 3.10.18, pytest-9.0.3, pluggy-1.6.0\nrootdir: /Users/farhad/Code/PokerBot\nplugins: hypothesis-6.152.9\ncollected 14 items\n\ntests/edge_cases/test_package_and_harness_contracts.py ......            [ 42%]\ntests/edge_cases/test_runner_contract_extended.py ....                   [ 71%]\ntests/edge_cases/test_safe_fallback.py ....                              [100%]\n\n=============================== warnings summary ===============================\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:149\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:149: PyparsingDeprecationWarning: 'setName' deprecated - use 'set_name'\n    suitedness = pyparsing.Word(\"os\", exact=1).setName(\"suitedness\")\n\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:150\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:150: PyparsingDeprecationWarning: 'setName' deprecated - use 'set_name'\n    card = pyparsing.Word(ranks_str, suits_str, exact=2).setName(\"card\")\n\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:152\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:152: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'\n    hand.setParseAction(lambda s, loc, toks: ''.join(toks))\n\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:160\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:160: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'\n    decimal.setParseAction(lambda s, loc, toks: ''.join(toks))\n\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:167\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:167: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'\n    handtype.setParseAction(lambda s, loc, toks: ''.join(toks))\n\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:175\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:175: PyparsingDeprecationWarning: 'delimitedList' deprecated - use 'DelimitedList'\n    hand_group_list = pyparsing.Group(pyparsing.delimitedList(handtype_group))\n\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:180\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:180: PyparsingDeprecationWarning: 'delimitedList' deprecated - use 'DelimitedList'\n    handrange = pyparsing.Optional(pyparsing.delimitedList(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n======================== 14 passed, 7 warnings in 1.77s ========================\n"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot/.venv/bin/python",
+        "ext/fullhouse-engine/sandbox/validator.py",
+        "submissions/v_final.zip",
+        "--json"
+      ],
+      "duration_s": 0.191,
+      "label": "validator_deployed_zip",
+      "returncode": 0,
+      "stderr_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/validator_deployed_zip.stderr.log",
+      "stderr_tail": "",
+      "stdout_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/validator_deployed_zip.stdout.log",
+      "stdout_tail": "{\n  \"bot_path\": \"submissions/v_final.zip\",\n  \"passed\": true,\n  \"errors\": [],\n  \"warnings\": [],\n  \"tests\": [\n    {\n      \"test\": \"preflop_call_or_fold\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 250\n      },\n      \"elapsed\": 0.003\n    },\n    {\n      \"test\": \"postflop_can_check\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 150\n      },\n      \"elapsed\": 0.016\n    },\n    {\n      \"test\": \"river_facing_large_bet\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"fold\"\n      },\n      \"elapsed\": 0.016\n    },\n    {\n      \"test\": \"short_stack_all_in_decision\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"all_in\"\n      },\n      \"elapsed\": 0.002\n    }\n  ],\n  \"data_dir\": \"/var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/fhval_ogt6qb9f/data\"\n}\n"
+    },
+    {
+      "command": [
+        "/Users/farhad/Code/PokerBot/.venv/bin/python",
+        "tools/audit_strategy_leakage.py",
+        "--zip",
+        "submissions/v_final.zip"
+      ],
+      "duration_s": 0.027,
+      "label": "audit_strategy_leakage_deployed_zip",
+      "returncode": 1,
+      "stderr_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/audit_strategy_leakage_deployed_zip.stderr.log",
+      "stderr_tail": "",
+      "stdout_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/audit_strategy_leakage_deployed_zip.stdout.log",
+      "stdout_tail": "# zip: submissions/v_final.zip\n# zip sha256: b108eff59b46b713fdfb1530f73eaeaa924f5dd9cb5ed72d3e63512a9ce3c36b\nSTRATEGY LEAKAGE DETECTED:\n  bot.py:8: snapshot\n  src/bot.py:257: v0_wired\n  src/bot.py:257: snapshot\n  src/equity.py:15: seed\n  src/equity.py:16: seed\n  src/equity.py:17: seed\n  src/equity.py:193: seed\n  src/equity.py:195: seed\n  src/equity.py:229: seed\n  src/opponent_model.py:10: seed\n  src/preflop_lookup.py:65: v1_blueprint\n  src/preflop_lookup.py:65: snapshot\n  src/preflop_lookup.py:78: v_final\n  src/preflop_lookup.py:79: v3_hardened\n  src/preflop_lookup.py:79: snapshot\n  src/ranges.py:187: v1_blueprint\n  src/ranges.py:188: snapshot\n"
+    }
+  ]
+}

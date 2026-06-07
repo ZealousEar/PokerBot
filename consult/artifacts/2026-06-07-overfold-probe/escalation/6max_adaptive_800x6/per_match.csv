@@ -1,0 +1,7 @@
+mix,thorp_seat,seed,hands_played,duration_s,thorp_delta,thorp_final_stack,pressure_fold_count,pressure_fold_loss_chips,pressure_fold_net_delta_chips,pressure_fold_loss_bb100,pressure_pot_after_surrendered_chips,pressure_pot_after_surrendered_bb100,decisions,fold_defaults,illegal_action_names,timeouts,exceptions,busted,bust_hand,bust_street
+adaptive_overfold_pressure,0,2026060730,800,2.06,17974,27974,7,1734,-1734,-2.1675,7047,-8.8087,721,0,0,0,0,False,,
+adaptive_overfold_pressure,1,2026060731,800,2.11,19499,29499,8,2591,-2591,-3.2388,9720,-12.15,731,0,0,0,0,False,,
+adaptive_overfold_pressure,2,2026060732,800,2.04,34894,44894,9,3059,-3059,-3.8237,11815,-14.7688,719,0,0,0,0,False,,
+adaptive_overfold_pressure,3,2026060733,800,1.96,17820,27820,5,6840,-6840,-8.55,21943,-27.4288,695,0,0,0,0,False,,
+adaptive_overfold_pressure,4,2026060734,800,2.04,3146,13146,9,3034,-3034,-3.7925,11842,-14.8025,726,0,0,0,0,False,,
+adaptive_overfold_pressure,5,2026060735,800,2.02,30907,40907,5,1484,-1484,-1.855,5964,-7.455,710,0,0,0,0,False,,

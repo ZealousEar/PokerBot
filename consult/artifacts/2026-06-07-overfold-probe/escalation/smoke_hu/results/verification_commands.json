@@ -1,0 +1,61 @@
+[
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "tools/import_audit.py"
+    ],
+    "duration_s": 0.445,
+    "label": "import_audit_canonical_src",
+    "returncode": 0,
+    "stderr_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/import_audit_canonical_src.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/import_audit_canonical_src.stdout.log",
+    "stdout_tail": "cold import: 0.268s, RSS: 38.0 MB\n"
+  },
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "-m",
+      "pytest",
+      "tests/edge_cases",
+      "-x"
+    ],
+    "duration_s": 1.928,
+    "label": "edge_cases_canonical_src",
+    "returncode": 0,
+    "stderr_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/edge_cases_canonical_src.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/edge_cases_canonical_src.stdout.log",
+    "stdout_tail": "============================= test session starts ==============================\nplatform darwin -- Python 3.10.18, pytest-9.0.3, pluggy-1.6.0\nrootdir: /Users/farhad/Code/PokerBot\nplugins: hypothesis-6.152.9\ncollected 14 items\n\ntests/edge_cases/test_package_and_harness_contracts.py ......            [ 42%]\ntests/edge_cases/test_runner_contract_extended.py ....                   [ 71%]\ntests/edge_cases/test_safe_fallback.py ....                              [100%]\n\n=============================== warnings summary ===============================\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:149\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:149: PyparsingDeprecationWarning: 'setName' deprecated - use 'set_name'\n    suitedness = pyparsing.Word(\"os\", exact=1).setName(\"suitedness\")\n\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:150\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:150: PyparsingDeprecationWarning: 'setName' deprecated - use 'set_name'\n    card = pyparsing.Word(ranks_str, suits_str, exact=2).setName(\"card\")\n\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:152\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:152: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'\n    hand.setParseAction(lambda s, loc, toks: ''.join(toks))\n\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:160\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:160: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'\n    decimal.setParseAction(lambda s, loc, toks: ''.join(toks))\n\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:167\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:167: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'\n    handtype.setParseAction(lambda s, loc, toks: ''.join(toks))\n\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:175\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:175: PyparsingDeprecationWarning: 'delimitedList' deprecated - use 'DelimitedList'\n    hand_group_list = pyparsing.Group(pyparsing.delimitedList(handtype_group))\n\n.venv/lib/python3.10/site-packages/eval7/rangestring.py:180\n  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:180: PyparsingDeprecationWarning: 'delimitedList' deprecated - use 'DelimitedList'\n    handrange = pyparsing.Optional(pyparsing.delimitedList(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n======================== 14 passed, 7 warnings in 1.77s ========================\n"
+  },
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "ext/fullhouse-engine/sandbox/validator.py",
+      "submissions/v_final.zip",
+      "--json"
+    ],
+    "duration_s": 0.191,
+    "label": "validator_deployed_zip",
+    "returncode": 0,
+    "stderr_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/validator_deployed_zip.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/validator_deployed_zip.stdout.log",
+    "stdout_tail": "{\n  \"bot_path\": \"submissions/v_final.zip\",\n  \"passed\": true,\n  \"errors\": [],\n  \"warnings\": [],\n  \"tests\": [\n    {\n      \"test\": \"preflop_call_or_fold\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 250\n      },\n      \"elapsed\": 0.003\n    },\n    {\n      \"test\": \"postflop_can_check\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"raise\",\n        \"amount\": 150\n      },\n      \"elapsed\": 0.016\n    },\n    {\n      \"test\": \"river_facing_large_bet\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"fold\"\n      },\n      \"elapsed\": 0.016\n    },\n    {\n      \"test\": \"short_stack_all_in_decision\",\n      \"passed\": true,\n      \"action\": {\n        \"action\": \"all_in\"\n      },\n      \"elapsed\": 0.002\n    }\n  ],\n  \"data_dir\": \"/var/folders/0z/6q5nv2s14fjd3jcn5n4cyys40000gn/T/fhval_ogt6qb9f/data\"\n}\n"
+  },
+  {
+    "command": [
+      "/Users/farhad/Code/PokerBot/.venv/bin/python",
+      "tools/audit_strategy_leakage.py",
+      "--zip",
+      "submissions/v_final.zip"
+    ],
+    "duration_s": 0.027,
+    "label": "audit_strategy_leakage_deployed_zip",
+    "returncode": 1,
+    "stderr_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/audit_strategy_leakage_deployed_zip.stderr.log",
+    "stderr_tail": "",
+    "stdout_path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/logs/audit_strategy_leakage_deployed_zip.stdout.log",
+    "stdout_tail": "# zip: submissions/v_final.zip\n# zip sha256: b108eff59b46b713fdfb1530f73eaeaa924f5dd9cb5ed72d3e63512a9ce3c36b\nSTRATEGY LEAKAGE DETECTED:\n  bot.py:8: snapshot\n  src/bot.py:257: v0_wired\n  src/bot.py:257: snapshot\n  src/equity.py:15: seed\n  src/equity.py:16: seed\n  src/equity.py:17: seed\n  src/equity.py:193: seed\n  src/equity.py:195: seed\n  src/equity.py:229: seed\n  src/opponent_model.py:10: seed\n  src/preflop_lookup.py:65: v1_blueprint\n  src/preflop_lookup.py:65: snapshot\n  src/preflop_lookup.py:78: v_final\n  src/preflop_lookup.py:79: v3_hardened\n  src/preflop_lookup.py:79: snapshot\n  src/ranges.py:187: v1_blueprint\n  src/ranges.py:188: snapshot\n"
+  }
+]

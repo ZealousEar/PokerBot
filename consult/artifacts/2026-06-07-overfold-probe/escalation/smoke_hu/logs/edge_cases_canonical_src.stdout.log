@@ -1,0 +1,41 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.10.18, pytest-9.0.3, pluggy-1.6.0
+rootdir: /Users/farhad/Code/PokerBot
+plugins: hypothesis-6.152.9
+collected 14 items
+
+tests/edge_cases/test_package_and_harness_contracts.py ......            [ 42%]
+tests/edge_cases/test_runner_contract_extended.py ....                   [ 71%]
+tests/edge_cases/test_safe_fallback.py ....                              [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.10/site-packages/eval7/rangestring.py:149
+  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:149: PyparsingDeprecationWarning: 'setName' deprecated - use 'set_name'
+    suitedness = pyparsing.Word("os", exact=1).setName("suitedness")
+
+.venv/lib/python3.10/site-packages/eval7/rangestring.py:150
+  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:150: PyparsingDeprecationWarning: 'setName' deprecated - use 'set_name'
+    card = pyparsing.Word(ranks_str, suits_str, exact=2).setName("card")
+
+.venv/lib/python3.10/site-packages/eval7/rangestring.py:152
+  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:152: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+    hand.setParseAction(lambda s, loc, toks: ''.join(toks))
+
+.venv/lib/python3.10/site-packages/eval7/rangestring.py:160
+  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:160: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+    decimal.setParseAction(lambda s, loc, toks: ''.join(toks))
+
+.venv/lib/python3.10/site-packages/eval7/rangestring.py:167
+  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:167: PyparsingDeprecationWarning: 'setParseAction' deprecated - use 'set_parse_action'
+    handtype.setParseAction(lambda s, loc, toks: ''.join(toks))
+
+.venv/lib/python3.10/site-packages/eval7/rangestring.py:175
+  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:175: PyparsingDeprecationWarning: 'delimitedList' deprecated - use 'DelimitedList'
+    hand_group_list = pyparsing.Group(pyparsing.delimitedList(handtype_group))
+
+.venv/lib/python3.10/site-packages/eval7/rangestring.py:180
+  /Users/farhad/Code/PokerBot/.venv/lib/python3.10/site-packages/eval7/rangestring.py:180: PyparsingDeprecationWarning: 'delimitedList' deprecated - use 'DelimitedList'
+    handrange = pyparsing.Optional(pyparsing.delimitedList(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 14 passed, 7 warnings in 1.77s ========================

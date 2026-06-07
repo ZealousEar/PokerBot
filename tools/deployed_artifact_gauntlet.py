@@ -53,6 +53,7 @@ SYNTHETIC_STYLES = (
     "pot_odds_threshold",
     "river_value_threshold",
     "overfold_exploiter",
+    "adaptive_overfold_exploiter",
 )
 
 VALID_ACTIONS = {"fold", "check", "call", "raise", "all_in"}
@@ -201,6 +202,115 @@ def _fold_or_check(state):
     return {"action": "check"} if state.get("can_check") else {"action": "fold"}
 
 
+_ADAPT_PRESSURE_ATTEMPTS = 0
+_ADAPT_PRESSURE_FOLDS = 0
+_ADAPT_PRESSURE_CONTINUES = 0
+_ADAPT_SEEN_PRESSURES = {}
+
+
+def _safe_int(value, default=0):
+    try:
+        return int(value)
+    except Exception:
+        return default
+
+
+def _active_opponent_count(state):
+    my_seat = _safe_int(state.get("seat_to_act"), -999)
+    count = 0
+    for player in state.get("players") or []:
+        if not isinstance(player, dict):
+            continue
+        if _safe_int(player.get("seat"), -1) == my_seat:
+            continue
+        if player.get("is_folded") or str(player.get("state", "")).lower() == "folded":
+            continue
+        count += 1
+    return max(1, count)
+
+
+def _observe_adaptive_pressure(state):
+    global _ADAPT_PRESSURE_ATTEMPTS, _ADAPT_PRESSURE_FOLDS, _ADAPT_PRESSURE_CONTINUES
+    my_seat = _safe_int(state.get("seat_to_act"), -999)
+    hand_id = str(state.get("hand_id", ""))
+    log = state.get("action_log") or []
+    for index, entry in enumerate(log):
+        if not isinstance(entry, dict):
+            continue
+        if _safe_int(entry.get("seat"), -1) != my_seat:
+            continue
+        if str(entry.get("action", "")).lower() not in {"raise", "all_in"}:
+            continue
+        key = hand_id + ":" + str(index)
+        if _ADAPT_SEEN_PRESSURES.get(key):
+            continue
+        response = ""
+        for later in log[index + 1:]:
+            if not isinstance(later, dict):
+                continue
+            later_seat = _safe_int(later.get("seat"), -1)
+            later_action = str(later.get("action", "")).lower()
+            if later_seat == my_seat:
+                break
+            if later_action == "fold":
+                response = "fold"
+                break
+            if later_action in {"call", "raise", "all_in"}:
+                response = "continue"
+                break
+        if not response:
+            continue
+        _ADAPT_SEEN_PRESSURES[key] = 1
+        _ADAPT_PRESSURE_ATTEMPTS += 1
+        if response == "fold":
+            _ADAPT_PRESSURE_FOLDS += 1
+        else:
+            _ADAPT_PRESSURE_CONTINUES += 1
+
+
+def _adaptive_fold_rate():
+    return float(_ADAPT_PRESSURE_FOLDS + 2) / float(_ADAPT_PRESSURE_ATTEMPTS + 4)
+
+
+def _made_rank(state):
+    counts = list(_rank_counts(state).values())
+    pairs = sum(1 for count in counts if count >= 2)
+    if any(count >= 4 for count in counts):
+        return 4
+    if any(count >= 3 for count in counts):
+        return 3
+    if pairs >= 2:
+        return 2
+    if pairs == 1:
+        return 1
+    return 0
+
+
+def _pressure_threshold(base, state):
+    rate = _adaptive_fold_rate()
+    threshold = int(base)
+    if _ADAPT_PRESSURE_ATTEMPTS >= 12 and rate >= 0.66:
+        threshold += 30
+    elif _ADAPT_PRESSURE_ATTEMPTS >= 6 and rate >= 0.58:
+        threshold += 18
+    elif _ADAPT_PRESSURE_ATTEMPTS >= 10 and rate <= 0.44:
+        threshold -= 18
+    active = _active_opponent_count(state)
+    if active > 1:
+        threshold -= min(24, 8 * (active - 1))
+    if threshold < 0:
+        return 0
+    if threshold > 96:
+        return 96
+    return threshold
+
+
+def _adaptive_pressure(state, base, frac):
+    if _deterministic_mix(state, 100) < _pressure_threshold(base, state):
+        return _pressure_raise(state, frac)
+    return {"action": "check"}
+
+
 def decide(state):
     if not isinstance(state, dict):
         return {"action": "fold"}
@@ -295,6 +405,62 @@ def decide(state):
         if street == "river":
             if _two_pair_or_better(state) and mix <= 4:
                 return _pressure_raise(state, 0.42)
+            return {"action": "check"}
+
+    if STYLE == "adaptive_overfold_exploiter":
+        _observe_adaptive_pressure(state)
+        price = owed / float(pot + owed) if pot + owed > 0 else 1.0
+        made_rank = _made_rank(state)
+        made = made_rank >= 1
+        strong = made_rank >= 2
+        fold_rate = _adaptive_fold_rate()
+        multiway = _active_opponent_count(state) > 1
+
+        if street == "preflop":
+            if can_check:
+                if _wide_pressure_open(tag) and (_deterministic_mix(state, 100) < _pressure_threshold(54 if not multiway else 34, state)):
+                    return _pressure_raise(state, 0.70)
+                return {"action": "check"}
+            if _premium(tag):
+                if owed <= max(300, int(stack * 0.16)) and _deterministic_mix(state, 100) < 38:
+                    return _pressure_raise(state, 0.78)
+                return {"action": "call"} if owed <= max(650, int(stack * 0.25)) else {"action": "fold"}
+            if _wide_pressure_open(tag) and price <= 0.23 and owed <= max(300, int(stack * 0.075)):
+                return {"action": "call"}
+            return {"action": "fold"}
+
+        if owed > 0:
+            # Sharp-defensive response: keep pressure edge, but do not pay off
+            # obvious value or stack off weak made hands after resistance.
+            if made_rank >= 3 and price <= 0.38 and owed <= max(500, int(stack * 0.35)):
+                return {"action": "call"}
+            if made_rank >= 2 and price <= 0.27 and owed <= max(350, int(stack * 0.22)):
+                return {"action": "call"}
+            if made and price <= 0.11 and owed <= max(150, int(stack * 0.06)):
+                return {"action": "call"}
+            return _fold_or_check(state)
+
+        if street == "flop":
+            if strong:
+                return _pressure_raise(state, 0.70)
+            if made:
+                return _pressure_raise(state, 0.58 if multiway else 0.64)
+            base = 50 if multiway else 68
+            frac = 0.55 if fold_rate < 0.60 else 0.68
+            return _adaptive_pressure(state, base, frac)
+        if street == "turn":
+            if strong:
+                return _pressure_raise(state, 0.76)
+            if made and _deterministic_mix(state, 100) < _pressure_threshold(56 if not multiway else 34, state):
+                return _pressure_raise(state, 0.68)
+            base = 30 if multiway else 46
+            frac = 0.62 if fold_rate < 0.62 else 0.78
+            return _adaptive_pressure(state, base, frac)
+        if street == "river":
+            if strong:
+                return _pressure_raise(state, 0.48)
+            if (not multiway) and _ADAPT_PRESSURE_ATTEMPTS >= 12 and fold_rate >= 0.68 and _deterministic_mix(state, 100) < 16:
+                return _pressure_raise(state, 0.34)
             return {"action": "check"}
 
     return _fold_or_check(state)

@@ -1,0 +1,2 @@
+mix,thorp_seat,seed,hands_played,duration_s,thorp_delta,thorp_final_stack,pressure_fold_count,pressure_fold_loss_chips,pressure_fold_net_delta_chips,pressure_fold_loss_bb100,pressure_pot_after_surrendered_chips,pressure_pot_after_surrendered_bb100,decisions,fold_defaults,illegal_action_names,timeouts,exceptions,busted,bust_hand,bust_street
+adaptive_overfold_pressure,0,2026060729,50,0.45,1250,11250,0,0,0,0.0,0,0.0,46,0,0,0,0,False,,

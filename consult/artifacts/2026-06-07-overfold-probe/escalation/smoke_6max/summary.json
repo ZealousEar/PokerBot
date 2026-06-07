@@ -1,0 +1,126 @@
+{
+  "created_at_epoch": 1780843032.2578611,
+  "duration_s": 0.44,
+  "hands": 50,
+  "pressure_bleed_hands": [],
+  "python": "/Users/farhad/Code/PokerBot/.venv/bin/python",
+  "rows": [
+    {
+      "bot_errors_all": {
+        "adaptive_overfold_1": [],
+        "adaptive_overfold_2": [],
+        "adaptive_overfold_3": [],
+        "adaptive_overfold_4": [],
+        "adaptive_overfold_5": [],
+        "thorp": []
+      },
+      "bot_ids": [
+        "thorp",
+        "adaptive_overfold_1",
+        "adaptive_overfold_2",
+        "adaptive_overfold_3",
+        "adaptive_overfold_4",
+        "adaptive_overfold_5"
+      ],
+      "bust_hand": null,
+      "bust_street": null,
+      "busted": false,
+      "chip_delta_all": {
+        "adaptive_overfold_1": -550,
+        "adaptive_overfold_2": -50,
+        "adaptive_overfold_3": -500,
+        "adaptive_overfold_4": 0,
+        "adaptive_overfold_5": -150,
+        "thorp": 1250
+      },
+      "decisions": 46,
+      "duration_s": 0.42,
+      "exceptions": 0,
+      "fold_defaults": 0,
+      "hands_played": 50,
+      "hands_requested": 50,
+      "illegal_action_names": 0,
+      "load_failed": 0,
+      "mix": "adaptive_overfold_pressure",
+      "pressure_bleed": {
+        "by_pressure_kind": {},
+        "by_street": {},
+        "postflop_pressure_fold_count": 0,
+        "postflop_pressure_fold_loss_bb100": 0.0,
+        "postflop_pressure_fold_loss_chips": 0,
+        "postflop_pressure_fold_net_delta_chips": 0,
+        "pressure_pot_after_surrendered_bb100": 0.0,
+        "pressure_pot_after_surrendered_chips": 0
+      },
+      "pressure_by_kind": {},
+      "pressure_by_street": {},
+      "pressure_fold_count": 0,
+      "pressure_fold_loss_bb100": 0.0,
+      "pressure_fold_loss_chips": 0,
+      "pressure_fold_net_delta_chips": 0,
+      "pressure_pot_after_surrendered_bb100": 0.0,
+      "pressure_pot_after_surrendered_chips": 0,
+      "protocol_coercions": {
+        "amount_parse_error": 0,
+        "check_when_owed": 0,
+        "raise_below_min": 0,
+        "raise_to_nonpositive": 0,
+        "raise_without_amount": 0
+      },
+      "runner_errors": {},
+      "seed": 2026060729,
+      "thorp_delta": 1250,
+      "thorp_final_stack": 11250,
+      "thorp_seat": 0,
+      "timeouts": 0,
+      "warmup_exception": 0,
+      "warmup_timeout": 0
+    }
+  ],
+  "seed_base": 2026060729,
+  "sha256": "b108eff59b46b713fdfb1530f73eaeaa924f5dd9cb5ed72d3e63512a9ce3c36b",
+  "sha_prefix_expected": "b108eff5",
+  "sha_prefix_match": true,
+  "summaries": [
+    {
+      "bust_rate": 0.0,
+      "bust_streets": {},
+      "busts": 0,
+      "exceptions": 0,
+      "fold_defaults": 0,
+      "hands_total": 50,
+      "illegal_action_names": 0,
+      "matches": 1,
+      "mix": "adaptive_overfold_pressure",
+      "pressure_by_kind": {},
+      "pressure_by_street": {},
+      "pressure_fold_count": 0,
+      "pressure_fold_loss_bb100": 0.0,
+      "pressure_fold_loss_chips": 0,
+      "pressure_fold_net_delta_chips": 0,
+      "pressure_pot_after_surrendered_bb100": 0.0,
+      "pressure_pot_after_surrendered_chips": 0,
+      "protocol_coercions": {
+        "amount_parse_error": 0,
+        "check_when_owed": 0,
+        "raise_below_min": 0,
+        "raise_to_nonpositive": 0,
+        "raise_without_amount": 0
+      },
+      "runner_errors": {},
+      "seats": [
+        0
+      ],
+      "seeds": [
+        2026060729
+      ],
+      "thorp_bb100": 25.0,
+      "thorp_chip_per_100_hands": 2500.0,
+      "thorp_decisions": 46,
+      "thorp_delta_avg_per_match": 1250.0,
+      "thorp_delta_sum": 1250,
+      "timeouts": 0
+    }
+  ],
+  "v_final_zip": "/Users/farhad/Code/PokerBot/submissions/v_final.zip"
+}

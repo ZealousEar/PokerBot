@@ -1,0 +1,20 @@
+# zip: submissions/v_final.zip
+# zip sha256: b108eff59b46b713fdfb1530f73eaeaa924f5dd9cb5ed72d3e63512a9ce3c36b
+STRATEGY LEAKAGE DETECTED:
+  bot.py:8: snapshot
+  src/bot.py:257: v0_wired
+  src/bot.py:257: snapshot
+  src/equity.py:15: seed
+  src/equity.py:16: seed
+  src/equity.py:17: seed
+  src/equity.py:193: seed
+  src/equity.py:195: seed
+  src/equity.py:229: seed
+  src/opponent_model.py:10: seed
+  src/preflop_lookup.py:65: v1_blueprint
+  src/preflop_lookup.py:65: snapshot
+  src/preflop_lookup.py:78: v_final
+  src/preflop_lookup.py:79: v3_hardened
+  src/preflop_lookup.py:79: snapshot
+  src/ranges.py:187: v1_blueprint
+  src/ranges.py:188: snapshot

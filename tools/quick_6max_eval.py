@@ -11,6 +11,7 @@ import csv
 import hashlib
 import json
 import os
+import random
 import shutil
 import sys
 import tempfile
@@ -27,10 +28,17 @@ REF_BOTS = ENGINE / "bots"
 DEFAULT_OUT = ROOT / "consult" / "artifacts" / "2026-06-04-finals-ship" / "6max_evidence"
 THORP_ZIP = ROOT / "submissions" / "v_final.zip"
 EXPECTED_SHA_PREFIX = "b108eff5"
+SYNTHETIC_MIX_STYLES = {"adaptive_overfold_pressure": "adaptive_overfold_exploiter"}
+MIX_CHOICES = ("adaptive_overfold_pressure", "aggro_collision", "balanced_heavy", "reference_field")
 
 sys.path.insert(0, str(SANDBOX))
 sys.path.insert(0, str(ENGINE))
 import match as match_mod  # noqa: E402
+from engine.game import BIG_BLIND, STARTING_STACK  # noqa: E402
+try:  # noqa: E402
+    import synthetic_opponents  # type: ignore  # noqa: E402
+except ModuleNotFoundError:  # pragma: no cover - import path differs under package imports
+    from tools import synthetic_opponents  # type: ignore  # noqa: E402
 
 VALID_ACTIONS = {"fold", "check", "call", "raise", "all_in"}
 ACTION_RECORDS: List[Dict[str, Any]] = []
@@ -113,8 +121,8 @@ def safe_extract_zip(zip_path: Path, dest: Path) -> None:
         raise ValueError(f"{zip_path} did not extract to root bot.py")
 
 
-def table_mixes() -> Dict[str, List[Tuple[str, Path]]]:
-    return {
+def table_mixes(synthetic_paths: Dict[str, Path] | None = None) -> Dict[str, List[Tuple[str, Path]]]:
+    mixes: Dict[str, List[Tuple[str, Path]]] = {
         "reference_field": [
             ("aggressor", REF_BOTS / "aggressor"),
             ("mathematician", REF_BOTS / "mathematician"),
@@ -137,6 +145,13 @@ def table_mixes() -> Dict[str, List[Tuple[str, Path]]]:
             ("template", REF_BOTS / "template"),
         ],
     }
+    if synthetic_paths:
+        adaptive = synthetic_paths.get("adaptive_overfold_exploiter")
+        if adaptive is not None:
+            mixes["adaptive_overfold_pressure"] = [
+                (f"adaptive_overfold_{idx}", adaptive) for idx in range(1, 6)
+            ]
+    return mixes
 
 
 def build_seated_paths(thorp_dir: Path, opponents: List[Tuple[str, Path]], thorp_seat: int, copy_root: Path) -> OrderedDict[str, str]:
@@ -225,6 +240,97 @@ def compact_result(result: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
+def bb100(chips: int | float, hands: int | float) -> float:
+    return round((float(chips) / BIG_BLIND) / (float(hands) / 100.0), 4) if hands else 0.0
+
+
+def pressure_kind(street: str, first_aggression_on_street: bool, bot_id: str, flop_pressure_bots: set[str]) -> str:
+    if street == "flop" and first_aggression_on_street:
+        return "flop_cbet_or_probe"
+    if street == "turn" and first_aggression_on_street and bot_id in flop_pressure_bots:
+        return "turn_barrel"
+    if street == "turn" and first_aggression_on_street:
+        return "turn_probe"
+    return "postflop_raise_pressure"
+
+
+def pressure_bleed_diagnostics(result: Dict[str, Any], mix_name: str, seed: int, thorp_seat: int, hero_id: str = "thorp") -> List[Dict[str, Any]]:
+    """Rows where Thorp folds flop/turn after non-Thorp pressure in 6-max.
+
+    This mirrors the HU gauntlet's mechanism-matched metric and uses engine
+    `events`, not raw win-rate or runner response logs.
+    """
+    rows: List[Dict[str, Any]] = []
+    prev_stack = STARTING_STACK
+    for hand in result.get("hands", []):
+        final_stack = int((hand.get("final_stacks") or {}).get(hero_id, prev_stack))
+        hero_delta = final_stack - prev_stack
+        prev_stack = final_stack
+        street_aggression_seen: Dict[str, bool] = {}
+        flop_pressure_bots: set[str] = set()
+        last_pressure: Dict[str, Any] | None = None
+        for index, event in enumerate(hand.get("events") or []):
+            if event.get("type") != "action":
+                continue
+            street = str(event.get("street") or "")
+            bot_id = str(event.get("bot_id") or "")
+            action = str(event.get("action") or "")
+            if street in {"flop", "turn"} and bot_id != hero_id and action in {"raise", "all_in"}:
+                first = not street_aggression_seen.get(street, False)
+                street_aggression_seen[street] = True
+                kind = pressure_kind(street, first, bot_id, flop_pressure_bots)
+                if street == "flop":
+                    flop_pressure_bots.add(bot_id)
+                last_pressure = {
+                    "street": street,
+                    "pressure_kind": kind,
+                    "pressure_bot": bot_id,
+                    "pressure_action": action,
+                    "pressure_amount": int(event.get("amount") or 0),
+                    "pressure_pot_after": int(event.get("pot_after") or event.get("pot") or 0),
+                    "pressure_event_index": index,
+                }
+                continue
+            if street in {"flop", "turn"} and bot_id == hero_id and action == "fold" and last_pressure and last_pressure["street"] == street:
+                rows.append({
+                    "mix": mix_name,
+                    "seed": seed,
+                    "thorp_seat": thorp_seat,
+                    "hand_num": hand.get("hand_num"),
+                    "hand_id": hand.get("hand_id"),
+                    **last_pressure,
+                    "fold_event_index": index,
+                    "fold_pot": int(event.get("pot") or 0),
+                    "hero_delta": hero_delta,
+                    "hero_chip_loss": max(0, -hero_delta),
+                    "final_street": hand.get("street"),
+                    "final_pot": hand.get("pot"),
+                    "showdown": hand.get("showdown"),
+                    "community_cards": " ".join(hand.get("community_cards") or []),
+                    "action_log": json.dumps(hand.get("action_log") or [], sort_keys=True),
+                })
+                break
+    return rows
+
+
+def summarize_pressure_bleed(rows: List[Dict[str, Any]], hands: int) -> Dict[str, Any]:
+    by_street = Counter(str(row.get("street")) for row in rows)
+    by_kind = Counter(str(row.get("pressure_kind")) for row in rows)
+    chip_loss = sum(int(row.get("hero_chip_loss") or 0) for row in rows)
+    net_delta = sum(int(row.get("hero_delta") or 0) for row in rows)
+    surrendered_pot = sum(int(row.get("pressure_pot_after") or 0) for row in rows)
+    return {
+        "postflop_pressure_fold_count": len(rows),
+        "postflop_pressure_fold_loss_chips": chip_loss,
+        "postflop_pressure_fold_net_delta_chips": net_delta,
+        "postflop_pressure_fold_loss_bb100": bb100(-chip_loss, hands),
+        "pressure_pot_after_surrendered_chips": surrendered_pot,
+        "pressure_pot_after_surrendered_bb100": bb100(-surrendered_pot, hands),
+        "by_street": dict(by_street),
+        "by_pressure_kind": dict(by_kind),
+    }
+
+
 def run_one(mix_name: str, opponents: List[Tuple[str, Path]], thorp_dir: Path, thorp_seat: int, seed: int, hands: int, out_dir: Path) -> Dict[str, Any]:
     global ACTION_RECORDS
     ACTION_RECORDS = []
@@ -238,6 +344,8 @@ def run_one(mix_name: str, opponents: List[Tuple[str, Path]], thorp_dir: Path, t
         result = match_mod.run_match(match_id, bot_paths, n_hands=hands, verbose=False, seed=seed)
         elapsed = round(time.time() - started, 2)
 
+    pressure_rows = pressure_bleed_diagnostics(result, mix_name, seed, thorp_seat)
+    pressure_summary = summarize_pressure_bleed(pressure_rows, int(result.get("n_hands") or 0))
     metrics = classify_records(ACTION_RECORDS, "thorp")
     busts = summarize_busts(result, "thorp")
     row = {
@@ -249,6 +357,16 @@ def run_one(mix_name: str, opponents: List[Tuple[str, Path]], thorp_dir: Path, t
         "duration_s": result.get("duration_s", elapsed),
         "thorp_delta": result.get("chip_delta", {}).get("thorp"),
         "thorp_final_stack": result.get("final_stacks", {}).get("thorp"),
+        "pressure_bleed": pressure_summary,
+        "pressure_fold_count": pressure_summary["postflop_pressure_fold_count"],
+        "pressure_fold_loss_chips": pressure_summary["postflop_pressure_fold_loss_chips"],
+        "pressure_fold_net_delta_chips": pressure_summary["postflop_pressure_fold_net_delta_chips"],
+        "pressure_fold_loss_bb100": pressure_summary["postflop_pressure_fold_loss_bb100"],
+        "pressure_pot_after_surrendered_chips": pressure_summary["pressure_pot_after_surrendered_chips"],
+        "pressure_pot_after_surrendered_bb100": pressure_summary["pressure_pot_after_surrendered_bb100"],
+        "pressure_by_street": pressure_summary["by_street"],
+        "pressure_by_kind": pressure_summary["by_pressure_kind"],
+        "_pressure_bleed_hands": pressure_rows,
         **metrics,
         **busts,
         "bot_errors_all": result.get("bot_errors", {}),
@@ -256,14 +374,40 @@ def run_one(mix_name: str, opponents: List[Tuple[str, Path]], thorp_dir: Path, t
         "chip_delta_all": result.get("chip_delta", {}),
     }
 
+    raw_row = dict(row)
+    raw_row.pop("_pressure_bleed_hands", None)
     raw_path = out_dir / f"{match_id}.json"
     raw_path.write_text(json.dumps({
-        "row": row,
+        "row": raw_row,
         "compact_result": compact_result(result),
+        "pressure_bleed_hands": pressure_rows,
         "thorp_action_records": [r for r in ACTION_RECORDS if r.get("bot_id") == "thorp"],
         "all_action_error_records": [r for r in ACTION_RECORDS if r.get("runner_error") or r.get("invalid_name")],
     }, indent=2, sort_keys=True), encoding="utf-8")
     return row
+
+
+def bootstrap_bb100_ci(rows: List[Dict[str, Any]], seed: int, draws: int = 2000) -> Dict[str, float]:
+    if not rows:
+        return {"mean": 0.0, "low": 0.0, "high": 0.0, "half_width": 0.0}
+    rnd = random.Random(seed)
+    vals: List[float] = []
+    n = len(rows)
+    for _ in range(draws):
+        sample = [rows[rnd.randrange(n)] for _ in range(n)]
+        chips = sum(int(r.get("thorp_delta") or 0) for r in sample)
+        hands = sum(int(r.get("hands_played") or 0) for r in sample)
+        vals.append(bb100(chips, hands))
+    vals.sort()
+    low = vals[int(0.025 * (draws - 1))]
+    high = vals[int(0.975 * (draws - 1))]
+    mean = sum(vals) / len(vals)
+    return {
+        "mean": round(mean, 4),
+        "low": round(low, 4),
+        "high": round(high, 4),
+        "half_width": round((high - low) / 2.0, 4),
+    }
 
 
 def aggregate(rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -282,11 +426,20 @@ def aggregate(rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         total_timeouts = sum(int(r.get("timeouts") or 0) for r in mix_rows)
         total_exceptions = sum(int(r.get("exceptions") or 0) for r in mix_rows)
         busts = sum(1 for r in mix_rows if r.get("busted"))
+        total_pressure_fold_count = sum(int(r.get("pressure_fold_count") or 0) for r in mix_rows)
+        total_pressure_fold_loss = sum(int(r.get("pressure_fold_loss_chips") or 0) for r in mix_rows)
+        total_pressure_fold_net = sum(int(r.get("pressure_fold_net_delta_chips") or 0) for r in mix_rows)
+        total_pressure_pot_surrendered = sum(int(r.get("pressure_pot_after_surrendered_chips") or 0) for r in mix_rows)
         runner_errors = Counter()
         coercions = Counter()
+        pressure_streets = Counter()
+        pressure_kinds = Counter()
         for r in mix_rows:
             runner_errors.update(r.get("runner_errors", {}))
             coercions.update(r.get("protocol_coercions", {}))
+            pressure_streets.update(r.get("pressure_by_street", {}))
+            pressure_kinds.update(r.get("pressure_by_kind", {}))
+        ci_seed = sum(ord(ch) for ch in mix) ^ total_hands ^ n
         summaries.append({
             "mix": mix,
             "matches": n,
@@ -294,6 +447,16 @@ def aggregate(rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             "thorp_delta_sum": total_delta,
             "thorp_delta_avg_per_match": round(total_delta / n, 2) if n else 0.0,
             "thorp_chip_per_100_hands": round(total_delta * 100.0 / total_hands, 2) if total_hands else 0.0,
+            "thorp_bb100": bb100(total_delta, total_hands),
+            "thorp_bb100_ci": bootstrap_bb100_ci(mix_rows, ci_seed),
+            "pressure_fold_count": total_pressure_fold_count,
+            "pressure_fold_loss_chips": total_pressure_fold_loss,
+            "pressure_fold_net_delta_chips": total_pressure_fold_net,
+            "pressure_fold_loss_bb100": bb100(-total_pressure_fold_loss, total_hands),
+            "pressure_pot_after_surrendered_chips": total_pressure_pot_surrendered,
+            "pressure_pot_after_surrendered_bb100": bb100(-total_pressure_pot_surrendered, total_hands),
+            "pressure_by_street": dict(pressure_streets),
+            "pressure_by_kind": dict(pressure_kinds),
             "thorp_decisions": total_decisions,
             "fold_defaults": total_fold_defaults,
             "illegal_action_names": total_illegal,
@@ -318,6 +481,17 @@ def write_csv(path: Path, rows: List[Dict[str, Any]], fieldnames: List[str]) -> 
             writer.writerow(row)
 
 
+def write_pressure_bleed_csv(path: Path, rows: List[Dict[str, Any]]) -> None:
+    fields = [
+        "mix", "seed", "thorp_seat", "hand_num", "hand_id", "street",
+        "pressure_kind", "pressure_bot", "pressure_action", "pressure_amount",
+        "pressure_pot_after", "pressure_event_index", "fold_event_index",
+        "fold_pot", "hero_delta", "hero_chip_loss", "final_street",
+        "final_pot", "showdown", "community_cards", "action_log",
+    ]
+    write_csv(path, rows, fields)
+
+
 def write_markdown(path: Path, sha: str, rows: List[Dict[str, Any]], summaries: List[Dict[str, Any]], hands: int, seed_base: int) -> None:
     lines = []
     lines.append("# Finals 6-max evidence: v_final.zip")
@@ -331,24 +505,27 @@ def write_markdown(path: Path, sha: str, rows: List[Dict[str, Any]], summaries: 
     lines.append("")
     lines.append("## Per-mix summary")
     lines.append("")
-    lines.append("| mix | matches | hands | Thorp delta sum | avg/match | chip/100 | decisions | fold-defaults | illegal names | timeouts | exceptions | busts | bust streets |")
-    lines.append("|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|")
+    lines.append("| mix | matches | hands | Thorp delta sum | avg/match | chip/100 | bb/100 | bb/100 CI | pressure folds | pressure loss chips | pressure loss bb/100 | decisions | fold-defaults | illegal names | timeouts | exceptions | busts | bust streets |")
+    lines.append("|---|---:|---:|---:|---:|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|")
     for s in summaries:
         lines.append(
             f"| {s['mix']} | {s['matches']} | {s['hands_total']} | {s['thorp_delta_sum']} | "
-            f"{s['thorp_delta_avg_per_match']} | {s['thorp_chip_per_100_hands']} | {s['thorp_decisions']} | "
-            f"{s['fold_defaults']} | {s['illegal_action_names']} | {s['timeouts']} | {s['exceptions']} | "
+            f"{s['thorp_delta_avg_per_match']} | {s['thorp_chip_per_100_hands']} | {s['thorp_bb100']} | "
+            f"`{json.dumps(s['thorp_bb100_ci'], sort_keys=True)}` | "
+            f"{s['pressure_fold_count']} | {s['pressure_fold_loss_chips']} | {s['pressure_fold_loss_bb100']} | "
+            f"{s['thorp_decisions']} | {s['fold_defaults']} | {s['illegal_action_names']} | {s['timeouts']} | {s['exceptions']} | "
             f"{s['busts']} | `{json.dumps(s['bust_streets'], sort_keys=True)}` |"
         )
     lines.append("")
     lines.append("## Per-seat rows")
     lines.append("")
-    lines.append("| mix | seat | seed | hands | delta | final stack | decisions | fold-defaults | illegal names | timeouts | exceptions | busted | bust street |")
-    lines.append("|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---|")
+    lines.append("| mix | seat | seed | hands | delta | final stack | pressure folds | pressure loss chips | pressure loss bb/100 | decisions | fold-defaults | illegal names | timeouts | exceptions | busted | bust street |")
+    lines.append("|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---|")
     for r in rows:
         lines.append(
             f"| {r['mix']} | {r['thorp_seat']} | {r['seed']} | {r['hands_played']} | "
-            f"{r['thorp_delta']} | {r['thorp_final_stack']} | {r['decisions']} | {r['fold_defaults']} | "
+            f"{r['thorp_delta']} | {r['thorp_final_stack']} | {r['pressure_fold_count']} | "
+            f"{r['pressure_fold_loss_chips']} | {r['pressure_fold_loss_bb100']} | {r['decisions']} | {r['fold_defaults']} | "
             f"{r['illegal_action_names']} | {r['timeouts']} | {r['exceptions']} | {r['busted']} | {r['bust_street']} |"
         )
     lines.append("")
@@ -360,7 +537,7 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--hands", type=int, default=800)
     p.add_argument("--seed-base", type=int, default=42)
     p.add_argument("--out-dir", type=Path, default=DEFAULT_OUT)
-    p.add_argument("--mix", choices=sorted(table_mixes().keys()), action="append", help="Limit to a mix; repeatable")
+    p.add_argument("--mix", choices=sorted(MIX_CHOICES), action="append", help="Limit to a mix; repeatable")
     p.add_argument("--seat", type=int, choices=range(6), action="append", help="Limit to a Thorp seat; repeatable")
     p.add_argument("--fail-on-sha-mismatch", action="store_true")
     return p.parse_args()
@@ -376,12 +553,17 @@ def main() -> int:
     if args.fail_on_sha_mismatch and not sha.startswith(EXPECTED_SHA_PREFIX):
         raise SystemExit(f"sha mismatch: {sha} does not start with {EXPECTED_SHA_PREFIX}")
 
-    mixes = table_mixes()
-    selected_mixes = args.mix or list(mixes.keys())
+    selected_mixes = args.mix or list(table_mixes().keys())
     selected_seats = args.seat or list(range(6))
+    synthetic_needed = sorted({SYNTHETIC_MIX_STYLES[mix] for mix in selected_mixes if mix in SYNTHETIC_MIX_STYLES})
+    synthetic_paths: Dict[str, Path] = {}
+    if synthetic_needed:
+        synthetic_paths = synthetic_opponents.write_opponents(args.out_dir / "synthetic_opponents" / "src", synthetic_needed)
+    mixes = table_mixes(synthetic_paths)
 
     started = time.time()
     rows: List[Dict[str, Any]] = []
+    pressure_bleed_rows: List[Dict[str, Any]] = []
     with tempfile.TemporaryDirectory(prefix="fh6_thorp_") as tmp:
         thorp_dir = Path(tmp) / "thorp"
         thorp_dir.mkdir(parents=True, exist_ok=True)
@@ -392,10 +574,12 @@ def main() -> int:
                 seed = args.seed_base + seat
                 print(f"[quick_6max_eval] running mix={mix_name} thorp_seat={seat} seed={seed} hands={args.hands}", flush=True)
                 row = run_one(mix_name, opponents, thorp_dir, seat, seed, args.hands, raw_dir)
+                pressure_bleed_rows.extend(row.pop("_pressure_bleed_hands", []))
                 rows.append(row)
                 print(
                     f"[quick_6max_eval] done mix={mix_name} seat={seat}: "
-                    f"delta={row['thorp_delta']} decisions={row['decisions']} "
+                    f"delta={row['thorp_delta']} pressure_folds={row['pressure_fold_count']} "
+                    f"pressure_loss={row['pressure_fold_loss_chips']} decisions={row['decisions']} "
                     f"fold_defaults={row['fold_defaults']} errors={row['runner_errors']} busted={row['busted']}",
                     flush=True,
                 )
@@ -414,16 +598,22 @@ def main() -> int:
         "seed_base": args.seed_base,
         "rows": rows,
         "summaries": summaries,
+        "pressure_bleed_hands": pressure_bleed_rows,
     }
     (args.out_dir / "summary.json").write_text(json.dumps(manifest, indent=2, sort_keys=True), encoding="utf-8")
     write_csv(args.out_dir / "per_match.csv", rows, [
         "mix", "thorp_seat", "seed", "hands_played", "duration_s", "thorp_delta", "thorp_final_stack",
+        "pressure_fold_count", "pressure_fold_loss_chips", "pressure_fold_net_delta_chips", "pressure_fold_loss_bb100",
+        "pressure_pot_after_surrendered_chips", "pressure_pot_after_surrendered_bb100",
         "decisions", "fold_defaults", "illegal_action_names", "timeouts", "exceptions", "busted", "bust_hand", "bust_street",
     ])
     write_csv(args.out_dir / "per_mix.csv", summaries, [
-        "mix", "matches", "hands_total", "thorp_delta_sum", "thorp_delta_avg_per_match", "thorp_chip_per_100_hands",
+        "mix", "matches", "hands_total", "thorp_delta_sum", "thorp_delta_avg_per_match", "thorp_chip_per_100_hands", "thorp_bb100", "thorp_bb100_ci",
+        "pressure_fold_count", "pressure_fold_loss_chips", "pressure_fold_net_delta_chips", "pressure_fold_loss_bb100",
+        "pressure_pot_after_surrendered_chips", "pressure_pot_after_surrendered_bb100",
         "thorp_decisions", "fold_defaults", "illegal_action_names", "timeouts", "exceptions", "busts", "bust_rate", "bust_streets",
     ])
+    write_pressure_bleed_csv(args.out_dir / "pressure_bleed_hands.csv", pressure_bleed_rows)
     write_markdown(args.out_dir / "REPORT.md", sha, rows, summaries, args.hands, args.seed_base)
 
     print(f"[quick_6max_eval] wrote {args.out_dir / 'REPORT.md'}")

@@ -1,0 +1,209 @@
+{
+  "adaptive_overfold_exploiter": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 3020,
+        "file_size": 14032,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/adaptive_overfold_exploiter.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "760cdf724b9759fca52c8faace495ce154c2fb37c839470377f6e295f3a81023",
+    "size_bytes": 3130,
+    "src_py_files": [],
+    "uncompressed_bytes": 14032
+  },
+  "all_in_maniac": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 3011,
+        "file_size": 14018,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/all_in_maniac.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "760b4d6cc1243c6732af7b7b7725ccb40b6d5beaa92945a1d70c4c320646644d",
+    "size_bytes": 3121,
+    "src_py_files": [],
+    "uncompressed_bytes": 14018
+  },
+  "loose_aggressive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 3019,
+        "file_size": 14021,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/loose_aggressive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "b16b4565ff69bc6100520f4df554e2b59dfc54999cce86883741080178e3aeb9",
+    "size_bytes": 3129,
+    "src_py_files": [],
+    "uncompressed_bytes": 14021
+  },
+  "loose_passive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 3015,
+        "file_size": 14018,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/loose_passive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "28232660779a133796f8b8c81bf02a615413aa561e146db79c201a9f1902a8c5",
+    "size_bytes": 3125,
+    "src_py_files": [],
+    "uncompressed_bytes": 14018
+  },
+  "overfold_exploiter": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 3014,
+        "file_size": 14023,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/overfold_exploiter.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "b239deaee5f346954a499e073169af370d72629d27608e9356f6807ad520ba56",
+    "size_bytes": 3124,
+    "src_py_files": [],
+    "uncompressed_bytes": 14023
+  },
+  "pot_odds_threshold": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 3018,
+        "file_size": 14023,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/pot_odds_threshold.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "8c400023ec71dbe52342fa5162711ba61ef1d8222ce04c2e8747640baaa99322",
+    "size_bytes": 3128,
+    "src_py_files": [],
+    "uncompressed_bytes": 14023
+  },
+  "river_value_threshold": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 3016,
+        "file_size": 14026,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/river_value_threshold.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "79259ca4b42de1588c4567a62c174a3bd1495984761dd93f0dc79c4cf126c547",
+    "size_bytes": 3126,
+    "src_py_files": [],
+    "uncompressed_bytes": 14026
+  },
+  "tight_aggressive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 3016,
+        "file_size": 14021,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/tight_aggressive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "32c5af43ab428bf97533c48aa24d4780d7d0ba6fcde61676d840d47ef8ceab43",
+    "size_bytes": 3126,
+    "src_py_files": [],
+    "uncompressed_bytes": 14021
+  },
+  "tight_passive": {
+    "data_entries": [],
+    "entries": [
+      {
+        "compress_size": 3013,
+        "file_size": 14018,
+        "is_dir": false,
+        "mode": 33188,
+        "name": "bot.py"
+      }
+    ],
+    "entry_count": 1,
+    "path": "consult/artifacts/2026-06-07-overfold-probe/escalation/smoke_hu/synthetic_opponents/zips/tight_passive.zip",
+    "py_in_data": [],
+    "root_bot_py": true,
+    "root_py_files": [
+      "bot.py"
+    ],
+    "sha256": "955441fc3ac80f4b7d7b83dcfe60bf1926f23b7176bb1db6b48207177e76b10d",
+    "size_bytes": 3123,
+    "src_py_files": [],
+    "uncompressed_bytes": 14018
+  }
+}
