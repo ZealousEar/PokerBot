@@ -2,6 +2,7 @@
 
 <img src="docs/assets/hero.svg" width="800" alt="PokerBot — Fullhouse Hackathon 2026 finalist entry">
 
+[![CI](https://github.com/ZealousEar/PokerBot/actions/workflows/ci.yml/badge.svg)](https://github.com/ZealousEar/PokerBot/actions/workflows/ci.yml)
 ![Python 3.10](https://img.shields.io/badge/python-3.10-3776AB?logo=python&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/license-MIT-22272e)
 ![Fullhouse Hackathon 2026](https://img.shields.io/badge/Fullhouse_Hackathon-2026-6f42c1)
