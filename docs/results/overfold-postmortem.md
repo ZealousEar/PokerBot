@@ -43,17 +43,17 @@ the "strong" bucket and the bluff-catcher zone sits in "medium"/"weak".
 
 | Action | Count | Share |
 | --- | --- | --- |
-| fold | 49 | 25.5% |
-| call | 47 | 24.5% |
+| fold | 47 | 24.5% |
+| call | 49 | 25.5% |
 | check | 0 | 0.0% |
 | raise+ | 96 | 50.0% |
 
-Overall fold frequency: **25.5%**.
+Overall fold frequency: **24.5%**.
 
 | Bet faced (× pot) | Spots | Fold % |
 | --- | --- | --- |
 | 0.33 | 48 | 16.7% |
-| 0.66 | 48 | 27.1% |
+| 0.66 | 48 | 22.9% |
 | 1 | 48 | 29.2% |
 | 1.5 | 48 | 29.2% |
 
@@ -61,11 +61,11 @@ Overall fold frequency: **25.5%**.
 | --- | --- | --- |
 | flop | 64 | 23.4% |
 | turn | 64 | 28.1% |
-| river | 64 | 25.0% |
+| river | 64 | 21.9% |
 
 | Hand strength (equity vs random) | Spots | Fold % |
 | --- | --- | --- |
-| medium (0.45-0.65) | 28 | 67.9% |
+| medium (0.45-0.65) | 28 | 60.7% |
 | strong (>=0.65) | 156 | 14.1% |
 | weak (<0.45) | 8 | 100.0% |
 
@@ -75,17 +75,27 @@ Overall fold frequency: **25.5%**.
 
 - Fold frequency rises monotonically with the bet size faced (16.7% → 29.2%):
   the strategy bet-folds to resistance, as described.
-- The folding concentrates in the marginal tier — **67.9%** of medium-strength
+- The folding concentrates in the marginal tier — **60.7%** of medium-strength
   spots fold — while strong hands raise. That is the bluff-catcher gap: hands
-  that could profitably continue against some pressuring ranges are folded.
+  that could profitably continue against some pressuring ranges are folded. This
+  revision narrowed that gap from a prior 67.9% by easing the range-aware call
+  buffer (see below); it is reduced, not eliminated.
 - Strong hands are not over-folded (14.1%); this is a marginal-hand-under-
   pressure shape, not blanket passivity.
 
-## Why it ships this way
+## What this revision changed
 
-Widening the calling range is the natural next revision, but it changes the
-strategy *shape* and so reopens the full verification surface (exploitability,
-paired benchmarks, mechanism-matched counter-exploit probes). Per the project's
-freeze discipline, that belongs in a proper cycle rather than a hot-patch to a
-frozen submission. This probe is the mechanism-matched instrument that a future
-revision would have to move.
+This revision eases the range-aware call buffer (`CALL_EQUITY_BUFFER` 0.03 →
+0.015 in `src/commitment.py`), which governs marginal-tier calls once a hand has
+cleared the base equity threshold. Marginal-tier fold frequency drops from 67.9%
+to **60.7%** (call frequency 32.1% → 39.3%); weak and strong tiers are unchanged.
+The stack-off leak-fix cap (`LARGE_CALL_MAX_OWED_FRACTION = 0.25`) is untouched,
+so large-commitment calls still fold regardless of price.
+
+This lands on the maintained `main` build, not the frozen finals submission.
+Widening the calling range changes the strategy *shape*, so the full verification
+surface (exploitability, paired benchmarks, mechanism-matched counter-exploit
+probes) requires the private engine harness, which is not part of this public
+tree. That verification must be re-run before this change is promoted into any
+submission. This probe is the mechanism-matched instrument the change was tuned
+against; it is necessary but not sufficient on its own.

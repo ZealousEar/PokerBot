@@ -1,7 +1,6 @@
 # Provenance
 
-This repository is a public, recruiter-facing snapshot of a Fullhouse Hackathon
-2026 entry. Some numbers in the architecture write-up were produced on a
+This repository is a public snapshot of a Fullhouse Hackathon 2026 entry. Some numbers in the architecture write-up were produced on a
 **private engine harness** — the competition sandbox plus local match and
 exploitability (LBR) tooling — that is not part of this public tree. This file
 states, for each claim, where it came from and whether you can reproduce it
@@ -28,6 +27,7 @@ policy. `decide()` runs with no `data/*.npz` and no engine clone.
 | Shipped policy shape | hand-tuned blueprint + eval7 equity + bounded overlay | `src/` | Yes |
 | Bounded-overlay cap | per-knob shift ∈ [−0.20, +0.20] | `tests/unit/test_overlay_clamp.py` | Yes |
 | Over-fold tendency | decision frequencies under synthetic pressure (no EV) | `tools/overfold_probe.py` · `docs/results/overfold-postmortem.md` | Yes |
+| Marginal-call buffer & stack-off cap | `CALL_EQUITY_BUFFER` = 0.015; calls still fold above 25% owed-fraction | `tests/unit/test_call_equity_buffer.py` · `src/commitment.py` | Yes |
 | MC-equity accuracy | MC → exact enumeration; AKs vs QQ ≈ 46% | `tests/unit/test_equity_accuracy.py` · `tools/equity_study.py` | Yes |
 | Preflop RFI ranges | 13×13 grids straight from `src.ranges` | `tools/plot_preflop_heatmap.py` | Yes |
 | Decision pipeline | legalize → blueprint → equity → overlay → sizing | `notebooks/decision_walkthrough.ipynb` | Yes |
