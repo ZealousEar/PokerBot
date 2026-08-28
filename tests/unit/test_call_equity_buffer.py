@@ -1,4 +1,4 @@
-"""Pins the widened marginal-call gate (CALL_EQUITY_BUFFER) and the leak-fix cap.
+"""Pins range-aware call pricing without an arbitrary stack-fraction cap.
 
 Engine-free: exercises src.commitment.can_call_large directly.
 """
@@ -22,8 +22,9 @@ def test_marginal_hand_now_calls_at_widened_buffer():
     assert can_call_large(pot_odds + 0.01, pot_odds, owed_frac) is False
 
 
-def test_leak_fix_stack_cap_still_folds_big_commitments():
-    # The Qual-II leak fix must survive: any call committing more than the cap
-    # folds regardless of price, even a strong-equity hand.
-    assert LARGE_CALL_MAX_OWED_FRACTION == 0.25
-    assert can_call_large(0.99, 0.10, LARGE_CALL_MAX_OWED_FRACTION + 0.01) is False
+def test_priced_in_all_in_call_is_not_blocked_by_old_25pct_cap():
+    assert LARGE_CALL_MAX_OWED_FRACTION == 1.0
+    # With no future street, an all-in call realizes all equity and needs no
+    # arbitrary 1.5-point realization buffer.
+    assert can_call_large(0.31, 0.30, 1.0) is True
+    assert can_call_large(0.29, 0.30, 1.0) is False

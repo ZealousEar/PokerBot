@@ -37,9 +37,9 @@ jobs:
 
       - name: Tests
         # The engine clone (ext/fullhouse-engine) is not present in CI, so the
-        # engine-backed suites skip via the `requires_engine` marker; the
-        # engine-free edge cases and unit tests run.
-        run: pytest tests/edge_cases tests/unit
+        # engine-backed suites skip via the `requires_engine` marker; every
+        # engine-free unit, integration, and edge test still runs.
+        run: pytest -q
 
       - name: Execute decision notebook
         # Re-runs the notebook end to end (engine-free) and fails on any cell

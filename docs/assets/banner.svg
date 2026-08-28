@@ -16,7 +16,7 @@
   </g>
   <text x="56" y="82" font-family="'Neue Haas Grotesk Display Pro', 'Neue Haas Grotesk Display', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="48" font-weight="700" fill="#e6edf3" letter-spacing="0.5">PokerBot</text>
   <text x="58" y="118" font-family="'Neue Haas Grotesk Display Pro', 'Neue Haas Grotesk Display', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="18" fill="#adbac7">Qualified for the finals of the UK&#8217;s first quantitative poker hackathon</text>
-  <text x="58" y="146" font-family="'Neue Haas Grotesk Display Pro', 'Neue Haas Grotesk Display', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#768390">6-max NLHE &#183; near-Nash blueprint + bounded exploit overlay</text>
+  <text x="58" y="146" font-family="'Neue Haas Grotesk Display Pro', 'Neue Haas Grotesk Display', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="13" fill="#768390">6-max NLHE &#183; trained mixed lookup + bounded exploit overlay</text>
   <line x1="40" y1="196" x2="780" y2="196" stroke="#00cc55" stroke-opacity="0.28" stroke-width="1"/>
   <rect x="36" y="216" width="748" height="177" rx="10" fill="#080b0a" stroke="#00cc55" stroke-opacity="0.5" stroke-width="1.5"/>
   <g fill="#103a22" fill-opacity="0.5">

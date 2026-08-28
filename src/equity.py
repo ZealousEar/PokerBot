@@ -1,14 +1,19 @@
-"""Monte Carlo equity vs range using eval7.
+"""Collision-free heads-up and multiway equity using eval7.
 
-Budget: ≤ 5 ms per call at default trials. Pre-warm eval7 LUTs at module
-import so the live 2 s decisions do not pay a cold-start cost.
+Complete tractable rivers are enumerated exactly; other streets use
+deterministic adaptive Monte Carlo against per-opponent weighted ranges.
+Trial caps account for opponent count and remain comfortably inside the live
+2-second decision budget. eval7 LUTs are pre-warmed at module import.
 
 # Source: [[Pluribus-Brown-Sandholm-2019]] — depth-limited heuristic in lieu of full solve
-# Status: SHIPPED — eval7 Monte-Carlo equity is the running depth-limited heuristic.
+# Status: SHIPPED — joint range equity is the running depth-limited heuristic.
 """
 import hashlib
+import math
 import random
-from typing import Iterable, Sequence
+import time
+from numbers import Real
+from typing import Iterable, Mapping, Sequence
 
 import eval7
 
@@ -26,6 +31,15 @@ _ = eval7.evaluate(_WARM_DECK[:7])
 RANKS = "23456789TJQKA"
 SUITS = "shdc"
 _RANK_VAL = {r: i for i, r in enumerate(RANKS)}
+ALL_STARTING_HANDS = tuple(
+    [rank + rank for rank in RANKS]
+    + [
+        hi + lo + suitedness
+        for hi_index, hi in enumerate(RANKS)
+        for lo in RANKS[:hi_index]
+        for suitedness in ("s", "o")
+    ]
+)
 
 
 def parse_card(s: str) -> eval7.Card:
@@ -182,51 +196,397 @@ def range_to_combos(range_tags: Iterable[str], dead_cards: Sequence[str] = ()) -
     return combos
 
 
+def _card_text(card) -> str:
+    value = card if isinstance(card, str) else str(card)
+    return value if len(value) == 2 and value[0] in RANKS and value[1] in SUITS else ""
+
+
+def _explicit_combo(value):
+    """Normalize a concrete two-card combo, or return ``None``."""
+    if not isinstance(value, (tuple, list)) or len(value) != 2:
+        return None
+    c1, c2 = _card_text(value[0]), _card_text(value[1])
+    if not c1 or not c2 or c1 == c2:
+        return None
+    return eval7.Card(c1), eval7.Card(c2)
+
+
+def range_to_weighted_combos(range_spec, dead_cards: Sequence[str] = ()) -> list:
+    """Expand a range into ``[((card1, card2), weight), ...]``.
+
+    Accepted forms are intentionally liberal so existing unweighted callers
+    keep working:
+
+    * iterable of range tags (``["88+", "AT+"]``);
+    * mapping or pairs of ``range_tag -> weight``;
+    * concrete card pairs, weighted or unweighted.
+
+    Overlapping tags use the maximum supplied weight instead of double
+    counting the same physical holding.
+    """
+    dead = {_card_text(card) for card in (dead_cards or ())}
+    dead.discard("")
+    if isinstance(range_spec, Mapping):
+        items = list(range_spec.items())
+    elif isinstance(range_spec, str):
+        items = [range_spec]
+    else:
+        try:
+            items = list(range_spec or ())
+        except TypeError:
+            items = []
+
+    weighted = {}
+
+    def add(combo, weight):
+        try:
+            numeric_weight = float(weight)
+        except (TypeError, ValueError, OverflowError):
+            return
+        if not math.isfinite(numeric_weight) or numeric_weight <= 0.0:
+            return
+        normalized = _explicit_combo(combo)
+        if normalized is None:
+            return
+        c1, c2 = normalized
+        s1, s2 = str(c1), str(c2)
+        if s1 in dead or s2 in dead:
+            return
+        key = tuple(sorted((s1, s2)))
+        previous = weighted.get(key)
+        if previous is None or numeric_weight > previous[1]:
+            weighted[key] = ((c1, c2), numeric_weight)
+
+    for item in items:
+        weight = 1.0
+        value = item
+        if isinstance(item, (tuple, list)) and len(item) == 2 and isinstance(item[1], Real):
+            value, weight = item
+        elif isinstance(item, (tuple, list)) and len(item) == 3 and isinstance(item[2], Real):
+            value, weight = item[:2], item[2]
+
+        combo = _explicit_combo(value)
+        if combo is not None:
+            add(combo, weight)
+            continue
+        if not isinstance(value, str):
+            continue
+        for combo in range_to_combos([value], dead):
+            add(combo, weight)
+
+    return list(weighted.values())
+
+
+def _valid_known_cards(hero_cards: Sequence[str], board: Sequence[str]) -> bool:
+    cards = [_card_text(card) for card in list(hero_cards or ()) + list(board or ())]
+    return (
+        len(hero_cards or ()) == 2
+        and len(board or ()) <= 5
+        and all(cards)
+        and len(cards) == len(set(cards))
+    )
+
+
+def _showdown_share(hero, villains, full_board) -> float:
+    hero_score = eval7.evaluate(list(hero) + list(full_board))
+    scores = [eval7.evaluate(list(villain) + list(full_board)) for villain in villains]
+    best = max([hero_score] + scores)
+    if hero_score != best:
+        return 0.0
+    return 1.0 / (1 + sum(score == best for score in scores))
+
+
+def _uniform_weights(options) -> bool:
+    if not options:
+        return False
+    first = options[0][1]
+    return all(abs(weight - first) <= 1e-12 for _, weight in options)
+
+
+def _native_heads_up_equity(hero, board_cards, options, trials, seed, *, exact=False):
+    """Use eval7's Cython range evaluator only where its assumptions hold."""
+    if not options or not _uniform_weights(options):
+        return None
+    native_options = [(combo, 1.0) for combo, _ in options]
+    try:
+        if exact and len(board_cards) == 5:
+            return float(eval7.py_hand_vs_range_exact(hero, native_options, board_cards))
+        # Native MC is safe only when we can seed eval7's private xorshift RNG;
+        # otherwise reproducible paired-seed benchmarks would be broken.
+        from eval7 import xorshift_rand
+        xorshift_rand.seed(int(seed))
+        return float(eval7.py_hand_vs_range_monte_carlo(
+            hero, native_options, board_cards, int(trials)
+        ))
+    except Exception:
+        return None
+
+
+def _exact_river_equity(hero, board_cards, option_sets, limit: int = 100000):
+    """Weighted, collision-free exact river equity when the state is small."""
+    if len(board_cards) != 5 or not option_sets:
+        return None
+    state_space = 1
+    for options in option_sets:
+        state_space *= max(len(options), 1)
+        if state_space > limit:
+            return None
+
+    total_weight = 0.0
+    total_share = 0.0
+
+    def visit(index, used, villains, weight):
+        nonlocal total_weight, total_share
+        if index == len(option_sets):
+            total_weight += weight
+            total_share += weight * _showdown_share(hero, villains, board_cards)
+            return
+        for combo, combo_weight in option_sets[index]:
+            names = (str(combo[0]), str(combo[1]))
+            if names[0] in used or names[1] in used:
+                continue
+            visit(index + 1, used | set(names), villains + [combo], weight * combo_weight)
+
+    visit(0, set(), [], 1.0)
+    return total_share / total_weight if total_weight > 0.0 else None
+
+
+def _choice(options, cumulative, total, rng):
+    needle = rng.random() * total
+    lo, hi = 0, len(cumulative) - 1
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if needle <= cumulative[mid]:
+            hi = mid
+        else:
+            lo = mid + 1
+    return options[lo][0]
+
+
+def _weighted_tables(option_sets):
+    tables = []
+    for options in option_sets:
+        cumulative = []
+        total = 0.0
+        for _, weight in options:
+            total += weight
+            cumulative.append(total)
+        tables.append((options, cumulative, total))
+    return tables
+
+
+def _sample_collision_free(tables, base_dead, rng):
+    """Joint rejection sample from independent ranges, conditioned on blockers."""
+    for _ in range(16):
+        villains = []
+        used = set(base_dead)
+        valid = True
+        for options, cumulative, total in tables:
+            combo = _choice(options, cumulative, total, rng)
+            names = (str(combo[0]), str(combo[1]))
+            if names[0] in used or names[1] in used:
+                valid = False
+                break
+            used.update(names)
+            villains.append(combo)
+        if valid:
+            return villains, used
+
+    # Extremely tight overlapping ranges can make whole-tuple rejection slow.
+    # Bounded sequential fallback keeps the live decision safe. Randomizing the
+    # assignment order avoids consistently privileging the first opponent.
+    order = list(range(len(tables)))
+    rng.shuffle(order)
+    chosen = [None] * len(tables)
+    used = set(base_dead)
+    for index in order:
+        options, _, _ = tables[index]
+        legal = [entry for entry in options
+                 if str(entry[0][0]) not in used and str(entry[0][1]) not in used]
+        if not legal:
+            return None, None
+        cumulative = []
+        total = 0.0
+        for _, weight in legal:
+            total += weight
+            cumulative.append(total)
+        combo = _choice(legal, cumulative, total, rng)
+        chosen[index] = combo
+        used.update((str(combo[0]), str(combo[1])))
+    return chosen, used
+
+
+def adaptive_trial_cap(board: Sequence[str], opponents: int) -> int:
+    """Live-safe default rollout cap, increasing with unresolved board cards."""
+    base = {0: 1000, 3: 720, 4: 560, 5: 0}.get(len(board or ()), 640)
+    # Each extra opponent adds an evaluation per rollout; cap total evaluations.
+    return max(180, int(base * 2 / max(opponents + 1, 2))) if base else 0
+
+
+def equity_vs_ranges(hero_cards: Sequence[str],
+                     board: Sequence[str],
+                     villain_ranges,
+                     trials: int = None,
+                     rng: random.Random = None,
+                     *,
+                     threshold: float = None,
+                     target_se: float = 0.02,
+                     exact_limit: int = 100000,
+                     time_budget_ms: float = None,
+                     adaptive: bool = True,
+                     use_native: bool = True) -> float:
+    """Hero's joint pot-share equity against multiple weighted ranges.
+
+    Opponent holdings are sampled jointly and collision-free. Ties award the
+    appropriate fractional pot share (not the heads-up-only one half). River
+    states are exact when their collision-free product is tractable; uniform
+    heads-up river ranges use eval7's native exact evaluator. Monte Carlo may
+    stop early once its standard error is small or its 95% interval clears a
+    supplied decision threshold.
+    """
+    try:
+        ranges = list(villain_ranges or ())
+    except TypeError:
+        ranges = []
+    ranges = ranges[:5]
+    if not _valid_known_cards(hero_cards, board) or not ranges:
+        return 0.5
+
+    hero = [eval7.Card(_card_text(card)) for card in hero_cards]
+    board_cards = [eval7.Card(_card_text(card)) for card in board]
+    dead = [_card_text(card) for card in list(hero_cards) + list(board)]
+    option_sets = [range_to_weighted_combos(spec, dead) for spec in ranges]
+    if any(not options for options in option_sets):
+        # A malformed/totally blocked action range should be neutral rather
+        # than turn a live decision into an exception or false certainty.
+        return 0.5
+
+    if len(option_sets) == 1 and len(board_cards) == 5 and use_native:
+        seed = _stable_seed("native_exact", tuple(hero_cards), tuple(board))
+        native = _native_heads_up_equity(
+            hero, board_cards, option_sets[0], 0, seed, exact=True
+        )
+        if native is not None:
+            return min(max(native, 0.0), 1.0)
+
+    exact = _exact_river_equity(hero, board_cards, option_sets, limit=exact_limit)
+    if exact is not None:
+        return min(max(exact, 0.0), 1.0)
+
+    if trials is None:
+        trials = adaptive_trial_cap(board, len(option_sets))
+    try:
+        max_trials = max(int(trials), 1)
+    except (TypeError, ValueError, OverflowError):
+        max_trials = max(adaptive_trial_cap(board, len(option_sets)), 1)
+
+    seed = _stable_seed(
+        "eq_vs_ranges", tuple(hero_cards), tuple(board), max_trials,
+        tuple(tuple((str(c1), str(c2), round(weight, 8))
+                    for (c1, c2), weight in options)
+              for options in option_sets),
+    )
+    if rng is None:
+        rng = random.Random(seed)
+
+    if (use_native and not adaptive and len(option_sets) == 1
+            and _uniform_weights(option_sets[0])):
+        native = _native_heads_up_equity(
+            hero, board_cards, option_sets[0], max_trials, seed, exact=False
+        )
+        if native is not None:
+            return min(max(native, 0.0), 1.0)
+
+    tables = _weighted_tables(option_sets)
+    base_dead = set(dead)
+    full_deck = [eval7.Card(rank + suit) for rank in RANKS for suit in SUITS]
+    needed = 5 - len(board_cards)
+    minimum = min(max_trials, max(96, 32 * len(option_sets)))
+    started = time.perf_counter()
+    total = 0.0
+    total_sq = 0.0
+    completed = 0
+
+    for _ in range(max_trials):
+        villains, used = _sample_collision_free(tables, base_dead, rng)
+        if villains is None:
+            continue
+        if needed:
+            available = [card for card in full_deck if str(card) not in used]
+            runout = rng.sample(available, needed)
+        else:
+            runout = []
+        share = _showdown_share(hero, villains, board_cards + runout)
+        total += share
+        total_sq += share * share
+        completed += 1
+
+        if completed < minimum or completed % 32:
+            continue
+        if time_budget_ms is not None:
+            elapsed_ms = (time.perf_counter() - started) * 1000.0
+            if elapsed_ms >= max(float(time_budget_ms), 1.0):
+                break
+        if not adaptive:
+            continue
+        mean = total / completed
+        variance = max(total_sq / completed - mean * mean, 0.0)
+        se = math.sqrt(variance / completed)
+        if target_se and se <= max(float(target_se), 0.0):
+            break
+        if threshold is not None and completed >= 128:
+            margin = 1.96 * se
+            if mean + margin < threshold or mean - margin > threshold:
+                break
+
+    return total / completed if completed else 0.5
+
+
+joint_multiway_equity = equity_vs_ranges
+
+
 def equity_vs_range(hero_cards: Sequence[str],
                     board: Sequence[str],
                     villain_range: Iterable[str],
                     trials: int = 300,
                     rng: random.Random = None) -> float:
-    """Hero equity vs a random combo drawn from villain_range, over `trials`
-    Monte Carlo rollouts. Returns float in [0, 1]. Tunable trials lets postflop
-    callers stay within budget."""
-    if rng is None:
-        # Seed deterministically from (hand, board) so identical inputs give
-        # identical equity — required for reproducible benchmarks.
-        rng = random.Random(_stable_seed("eq_vs_range", tuple(hero_cards),
-                                          tuple(board), trials))
-    hero = [eval7.Card(c) for c in hero_cards]
-    board_cards = [eval7.Card(c) for c in board]
-    dead = list(hero_cards) + list(board)
-    combos = range_to_combos(villain_range, dead)
-    if not combos:
+    """Backward-compatible deterministic heads-up equity API.
+
+    Explicit trial counts run to completion so accuracy studies retain their
+    old coarse/fine semantics. Complete boards still take the safe native-exact
+    fast path.
+    """
+    return equity_vs_ranges(
+        hero_cards,
+        board,
+        [villain_range],
+        trials=trials,
+        rng=rng,
+        target_se=0.0,
+        adaptive=False,
+        use_native=len(board or ()) == 5,
+    )
+
+
+def hand_strength(hero_cards: Sequence[str], board: Sequence[str], trials: int = 200,
+                  opponents: int = 1) -> float:
+    """Equity versus one or more uniformly random collision-free holdings."""
+    try:
+        n_opponents = min(max(int(opponents), 1), 5)
+    except (TypeError, ValueError, OverflowError):
+        n_opponents = 1
+    if n_opponents > 1:
+        return equity_vs_ranges(
+            hero_cards,
+            board,
+            [ALL_STARTING_HANDS] * n_opponents,
+            trials=trials,
+            target_se=0.0,
+            adaptive=False,
+            use_native=False,
+        )
+    if not _valid_known_cards(hero_cards, board):
         return 0.5
-    deck = [eval7.Card(r + s) for r in RANKS for s in SUITS
-            if (r + s) not in dead]
-    needed = 5 - len(board_cards)
-    wins = 0.0
-    n = 0
-    for _ in range(trials):
-        vc1, vc2 = rng.choice(combos)
-        if str(vc1) in dead or str(vc2) in dead:
-            continue
-        local_deck = [c for c in deck if c != vc1 and c != vc2]
-        rng.shuffle(local_deck)
-        runout = local_deck[:needed]
-        full_board = board_cards + runout
-        hero_score = eval7.evaluate(hero + full_board)
-        vill_score = eval7.evaluate([vc1, vc2] + full_board)
-        if hero_score > vill_score:
-            wins += 1.0
-        elif hero_score == vill_score:
-            wins += 0.5
-        n += 1
-    return wins / n if n else 0.5
-
-
-def hand_strength(hero_cards: Sequence[str], board: Sequence[str], trials: int = 200) -> float:
-    """Equity vs a uniformly-random 2-card villain holding. Cheap baseline
-    metric for postflop decisions when no read is available."""
     rng = random.Random(_stable_seed("hand_strength", tuple(hero_cards),
                                       tuple(board), trials))
     hero = [eval7.Card(c) for c in hero_cards]
@@ -250,3 +610,9 @@ def hand_strength(hero_cards: Sequence[str], board: Sequence[str], trials: int =
             wins += 0.5
         n += 1
     return wins / n if n else 0.5
+
+
+def joint_hand_strength(hero_cards: Sequence[str], board: Sequence[str],
+                        opponents: int, trials: int = 400) -> float:
+    """Named convenience wrapper for uniform multiway equity."""
+    return hand_strength(hero_cards, board, trials=trials, opponents=opponents)

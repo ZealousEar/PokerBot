@@ -27,17 +27,17 @@ Built for the **[Full House Hackathon 2026](https://fullhousehackathon.com/)** �
 
 | | |
 |---|---|
-| **What** | 6-max no-limit hold'em bot, near-Nash blueprint + bounded exploit overlay |
+| **What** | 6-max no-limit hold'em bot, conservative safety charts + trained mixed sizing |
 | **Constraints** | 2 s / decide · 0.5 CPU · 768 MB · no network · pinned libs |
-| **Methods** | Shipped: hand-tuned heuristic blueprint · eval7 Monte-Carlo equity · bounded frequency overlay. Intended: MCCFR/CFR+ offline training |
+| **Methods** | Priced preflop replay · offline abstract CFR lookup · action-conditioned multiway equity · identity-stable opponent model |
 | **Result** | Qualified for the finals (Fullhouse Hackathon 2026) — see [Results](#results) |
-| **Verify** | `python tools/import_audit.py && pytest tests/edge_cases` |
+| **Verify** | `python tools/import_audit.py && pytest -q` |
 
 ---
 
 ## Overview
 
-A poker bot for 6-max no-limit hold'em that runs inside a locked-down 2-second / 0.5-CPU sandbox. It pairs a hand-tuned near-Nash core (a heuristic blueprint distilled from public solver charts) with a bounded, opponent-adaptive overlay that punishes weak fields while staying hard to counter-exploit.
+A poker bot for 6-max no-limit hold'em that runs inside a locked-down 2-second / 0.5-CPU sandbox. The maintained build combines conservative chart and commitment gates with a compact offline-trained mixed sizing policy, action-conditioned joint multiway equity, and an idempotent opponent model keyed by stable bot identity.
 
 Built for the first [**Fullhouse Hackathon 2026**](https://fullhousehackathon.com/) (lead sponsor [Quadrature Capital](https://www.quadrature.ai/); £4,000+ prize pool). It runs in two regimes that reward opposite styles:
 
@@ -59,11 +59,12 @@ Qualified for the finals of the Fullhouse Hackathon 2026, the UK's first quantit
 
 ## Strategy
 
-To cover both regimes, the bot runs two layers:
+To cover both regimes, the maintained bot uses four cooperating components:
 
-- **Blueprint** (`src/preflop_lookup.py` + `src/postflop.py`) — approximates Nash over an abstracted game. The **shipped** policy is a hand-tuned heuristic blueprint: preflop range tables distilled from public solver charts (`src/ranges.py`) plus flop-bucket postflop rules. External-sampling MCCFR for preflop and CFR+ over flop buckets are the **intended offline-trained replacement**, not the running policy. Either way this is the floor.
-- **Overlay** (`src/opponent_model.py`) — deviates from the blueprint toward best-response against the inferred opponent type; magnitude is bounded so a worst-case counter-exploit costs less than the expected gain.
-- **Leverage point — abstraction** — a discrete sizing tree `{1/3 pot, 2/3 pot, pot, 2× pot, all_in}` (Pluribus 2019) and flop bucketing capped at 200 buckets × 50 hand-strength bins (Cepheus 2015).
+- **Safety envelope** (`src/preflop_lookup.py` + `src/postflop.py`) — reconstructs normalized betting state, prices calls by effective stack and pot odds, and prevents a coarse model from widening chart folds or bypassing postflop commitment gates.
+- **Mixed lookup** (`src/blueprint_policy.py` + `data/blueprint_policy_v1.json`) — 1,170 average-strategy rows trained for 1,200 deterministic vanilla-CFR iterations per public context. It mixes permitted preflop and postflop sizes. The solved game is explicitly small: one representative responder, five ordinal strength buckets, and one fold/call response after aggression; it is not a six-player NLHE equilibrium.
+- **Overlay** (`src/opponent_model.py`) — consumes each cumulative hand snapshot incrementally, keys profiles by `bot_id`, shrinks estimates toward priors, and bounds every shift. The public tree intentionally ships no `field_priors.npz`, so exploit shifts fail neutral until a validated prior table is supplied.
+- **Multiway layer** (`src/equity.py` + `src/commitment.py`) — samples all active opponent holdings jointly without card collisions, conditions ranges on current-street action, and prices effective stacks, SPR, short calls, and publicly reconstructable side pots.
 - **Safety metric — exploitability** — Local Best-Response over a fixed 20-spot suite (Lisý & Bowling 2017). The ≤ 100 mbb/g preflop / ≤ 200 mbb/g aggregate caps are **intended targets measured on the private engine harness**; they are not reproduced in this public repo.
 
 ---
@@ -73,10 +74,10 @@ To cover both regimes, the bot runs two layers:
 ```mermaid
 flowchart TD
     D["decide(state)"]
-    BP["Blueprint<br/>near-Nash"]
-    OM["Opponent Model<br/>frequency-based, bounded"]
-    PF["preflop_lookup<br/>hand-tuned table<br/>(MCCFR intended)"]
-    POST["postflop<br/>heuristic buckets + eval7 equity<br/>(CFR+ intended)"]
+    BP["Policy core<br/>safe actions + mixed sizes"]
+    OM["Opponent Model<br/>idempotent, bot-ID keyed"]
+    PF["preflop_lookup<br/>priced safety charts"]
+    POST["postflop<br/>joint equity + stack gates"]
     D --> BP
     D --> OM
     OM -. "bounded shift" .-> BP
@@ -96,8 +97,8 @@ flowchart TD
 
 | Regime                      | Field        | Bias                              | Why                                                          |
 | --------------------------- | ------------ | --------------------------------- | ------------------------------------------------------------ |
-| Qualifier (Swiss)           | Mostly weak  | Max exploit                       | Overlay dominates — chip extraction wins                     |
-| Finals (Swiss / cumulative) | Strong field | Near-Nash floor + bounded overlay | Cumulative extraction; shrinkage penalizes variance, so cap the downside |
+| Qualifier (Swiss)           | Mostly weak  | Bounded exploit when evidence is valid | Extract chips without trusting cold/noisy profiles        |
+| Finals (Swiss / cumulative) | Strong field | Conservative floor + small deviations | Shrinkage and hard gates cap adaptation risk              |
 
 We replace Libratus-style real-time subgame solving (compute-prohibitive at 0.5 CPU / 2 s) with a frequency-based overlay whose deviation magnitude is bounded.
 
@@ -110,7 +111,11 @@ We replace Libratus-style real-time subgame solving (compute-prohibitive at 0.5 
 
 ## Known limitations
 
-The bounded overlay above is a deliberate trade-off, and the shipped build sits on the cautious end of it. It plays a tight, polarized line and folds marginal hands under sustained postflop pressure rather than bluff-catching thin. We quantified that tendency as **decision frequencies** — not EV — in the [over-fold post-mortem](docs/results/overfold-postmortem.md): fold frequency rises with the size of the bet faced and concentrates in the marginal tier, while strong hands keep raising. This revision eases that tendency: lowering the range-aware call buffer (`CALL_EQUITY_BUFFER` 0.03 → 0.015) cuts marginal-tier (equity 0.45–0.65) fold frequency from 67.9% to 60.7% on the same probe (call frequency 32.1% → 39.3%), with weak and strong tiers unchanged. It lands on the maintained `main` build, not the frozen finals submission. Because it changes the strategy shape, the full verification surface (engine exploitability and paired benchmarks, which are not runnable in this public tree) must be re-run before it is promoted into any submission.
+- The trained lookup is a collection of small one-decision games, not a coherent solved six-max game. Its output controls sizing only inside the maintained action and commitment gates.
+- The public build collects clean opponent statistics but ships without the private `field_priors.npz`; its exploit overlay therefore remains neutral by default.
+- The engine exposes current-street contributions, not lifetime per-hand contributions. Side-pot eligibility is exact for the current street and conservative for layers created on earlier streets.
+- The [over-fold post-mortem](docs/results/overfold-postmortem.md) describes an earlier maintained revision. Its decision-frequency figures are historical, not an EV claim for this candidate.
+- The paired harness is now runnable, but no full 400/800-hand, multi-seed promotion result is committed here. Do not infer an EV improvement from unit tests or tiny smoke runs.
 
 ---
 
@@ -120,18 +125,19 @@ The bounded overlay above is a deliberate trade-off, and the shipped build sits 
 PokerBot/
 ├── src/                          strategy modules
 │   ├── bot.py                    decide() entry — legalizes actions, timeout fallback
-│   ├── preflop_lookup.py         hand-tuned preflop range (MCCFR intended)
+│   ├── blueprint_policy.py       validated mixed-policy artifact loader
+│   ├── preflop_lookup.py         priced preflop action safety charts
 │   ├── ranges.py                 6-max range representation
-│   ├── postflop.py               flop bucketing + turn/river play
+│   ├── postflop.py               action-conditioned multiway postflop play
 │   ├── commitment.py             stack-off / commitment gating
 │   ├── hand_features.py          board-texture + hand classifiers
-│   ├── equity.py                 eval7-backed Monte Carlo equity
-│   ├── opponent_model.py         frequency-based exploit overlay
+│   ├── equity.py                 exact/adaptive eval7 multiway equity
+│   ├── opponent_model.py         idempotent bot-ID frequency model
 │   ├── sizing.py                 discrete bet-sizing tree
 │   └── timeout_guard.py          2 s budget enforcement
 ├── tools/                        benchmark · package · import-audit · self-play
 ├── tests/                        edge-case + integration suites
-├── data/                         *.npz blueprints (gitignored, regen via tools/)
+├── data/                         trained mixed-policy JSON + integrity digest
 ├── docs/                         tournament spec · API cheatsheet · corpus index
 ├── ext/fullhouse-engine/         official engine clone (separate, gitignored)
 ├── submissions/                  finals submission artifact — v_final.zip
@@ -159,36 +165,49 @@ pip install -r requirements.txt
 
 These run in a clean clone, with no engine required:
 
-| Step             | Command                                                           |
-| ---------------- | ---------------------------------------------------------------- |
-| Import audit     | `python tools/import_audit.py`                                   |
-| Edge cases       | `pytest tests/edge_cases`                                        |
-| Build submission | `python tools/package.py --output submissions/bot.zip --strict` |
+| Step               | Command                                                                                       |
+| ------------------ | --------------------------------------------------------------------------------------------- |
+| Rebuild blueprint  | `python tools/train_blueprint.py --iterations 1200 --output data/blueprint_policy_v1.json`       |
+| Import audit       | `python tools/import_audit.py`                                                                 |
+| Full test suite    | `pytest -q`                                                                                     |
+| Build submission   | `python tools/package.py --output submissions/bot.zip --strict`                                 |
 
 **Engine-backed steps** (require the official engine cloned into `ext/fullhouse-engine/`, a separate gitignored checkout containing the sandbox, validator, and local match driver):
 
-| Step              | Command                                                                         |
-| ----------------- | ------------------------------------------------------------------------------- |
-| Self-play         | `python tools/self_play.py --opponent <name> --hands <N>`                       |
-| Benchmark         | `python tools/benchmark.py --all-templates --hands 10000 --paired-seed-base 42` |
-| Engine validator  | `python ext/fullhouse-engine/sandbox/validator.py submissions/v_final.zip`       |
-| Sandbox smoke run | `python tools/smoke_run.py --zip submissions/v_final.zip --hands 200`            |
+| Step               | Command                                                                                                                                                         |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Self-play          | `python tools/self_play.py --opponent template --candidate submissions/bot.zip --hands 400 --seed-count 10`                                                   |
+| Paired benchmark   | `python tools/benchmark.py --all-templates --candidate submissions/bot.zip --baseline submissions/v_final.zip --hands 800 --paired-seed-base 42`                  |
+| Qualifier analysis | `python tools/qualifier_replay.py --history /path/to/history.json --hero-id BOT_ID`                                                                                 |
+| Engine validator   | `python ext/fullhouse-engine/sandbox/validator.py submissions/bot.zip`                                                                                             |
+| Sandbox smoke run  | `python tools/smoke_run.py --zip submissions/bot.zip --hands 200`                                                                                                  |
+
+Successful evaluation runs persist a manifest, append-only raw engine results,
+and a summary with seed-clustered bootstrap confidence intervals. Official raw
+histories can be analyzed directly; counterfactual decision replay additionally
+requires an instrumented history that captured each action-request state.
 
 ---
 
 ## Reproducibility & Provenance
 
-Some figures in this write-up — the bb/100 benchmarks, the LBR exploitability
-caps, the variance estimate — were produced on a private engine harness and are
-**not** reproduced in this public repo. [`PROVENANCE.md`](PROVENANCE.md) maps
-every claim to its source and says whether it is reproducible here.
+Historical bb/100 figures, the LBR exploitability caps, and the old variance
+estimate came from a private harness and are **not** reproduced here. The
+maintained tree now contains an executable official-engine driver, but not the
+expensive promotion-run outputs. [`PROVENANCE.md`](PROVENANCE.md) distinguishes
+the implementation, smoke checks, historical numbers, and unrun gates.
 
 What *is* reproducible in a clean clone, engine-free:
 
 - [`notebooks/decision_walkthrough.ipynb`](notebooks/decision_walkthrough.ipynb) — a pre-executed end-to-end `decide()` walkthrough
 - `python tools/plot_preflop_heatmap.py` — the shipped RFI ranges as 13×13 grids
 - `python tools/overfold_probe.py` — postflop fold/call/raise frequencies (see [`docs/results/overfold-postmortem.md`](docs/results/overfold-postmortem.md))
-- `pytest tests/unit` — bounded-overlay clamp contract + MC-equity accuracy
+- `python tools/train_blueprint.py --iterations 1200` — deterministic abstract CFR artifact
+- `pytest -q` — betting replay, overlay idempotence, mixed-policy liveness, multiway equity, stack math, tooling, and edge contracts
+
+With the separate official engine checkout, paired six-max evaluation and
+qualifier-history analysis are also reproducible. The old private numeric
+results remain unverified because their original raw runs are not committed.
 
 The committed finals artifact's integrity is pinned — verify with
 `( cd submissions && shasum -a 256 -c v_final.zip.sha256 )`.
@@ -231,13 +250,16 @@ flowchart LR
     G2["G2 · Preflop<br/>blueprint range table"]
     G3["G3 · Postflop<br/>flop buckets + overlay"]
     G4["G4 · Hardened<br/>edge-case sweep + smoke"]
-    G5["G5 · Intended<br/>LBR cap + ablation + ratchet<br/>(private harness)"]
+    G5["G5 · Evaluation<br/>paired CI + replay artifacts"]
     G0 --> G1 --> G2 --> G3 --> G4 --> G5
     classDef gate fill:#21262d,color:#e6edf3,stroke:#30363d;
     class G0,G1,G2,G3,G4,G5 gate;
 ```
 
-Gates G1–G4 cleared a reproducible check set — an import audit and an edge-case sweep that run in this repo. The G5 surface (LBR exploitability cap, overlay ablation, self-play ratchet) and the bb/100 benchmarks ran on the **private engine harness** and are not reproduced in this public repo, so G5 is shown as *intended* rather than verified here.
+Gates G1–G5 now have public, executable plumbing and regression coverage. This
+does not certify a promotion: a full tournament-length paired run and the
+private LBR exploitability check still have to clear their thresholds before a
+new archive should replace the frozen finals artifact.
 
 ---
 

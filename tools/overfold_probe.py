@@ -1,20 +1,18 @@
-"""Over-fold probe — quantifies the shipped bot's fold-leaning tendency under
-synthetic postflop pressure, as DECISION FREQUENCIES.
+"""Historical over-fold probe over a fixed synthetic pressure grid.
 
-This is the mechanism-matched companion to the README "Known limitations"
-note: the bot plays a tight, polarized line and, facing sustained postflop
-pressure with marginal holdings, folds rather than bluff-catching thin. Here we
-*measure how often* it folds across a fixed grid of pressure spots.
+The linked post-mortem records an earlier maintained revision. Running this
+tool today measures the current source policy on the same grid; it does not
+reproduce the historical percentages after strategy changes.
 
 What this is NOT
 ----------------
 This reports action frequencies only. It does **not** estimate EV, chip deltas,
 or bb/100 — those require the engine match harness and a real opponent
-distribution, neither of which is in this public repo. A high fold frequency on
+distribution. A high fold frequency on
 marginal hands is a description of the strategy's shape, not a loss figure.
 
-Engine-free and deterministic: decide() needs no data/*.npz and no engine; the
-eval7 equity it calls is seeded from the (hand, board) inputs.
+Engine-free and deterministic: decide() loads the committed JSON sizing policy
+(or falls back safely) and needs no engine; equity is stably seeded.
 
 Usage:
     python tools/overfold_probe.py            # markdown report to stdout
