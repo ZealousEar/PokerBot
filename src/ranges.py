@@ -10,13 +10,29 @@ GTO Wizard 100 BB charts, lightly widened for hackathon-style passive fields).
 # Source: [[Pluribus-Brown-Sandholm-2019]] (open-size tree)
 #         + [[Engine-Fullhouse]] (reference-bot exploit holes — most field is
 #         passive, so we open wider than pure GTO)
-# Status: SHIPPED — these frozenset range tables ARE the running blueprint
-#         (hand-tuned from public solver charts; MCCFR training is intended).
+# Status: SHIPPED — these tables bound the running action categories; a compact
+#         trained lookup mixes permitted sizes without widening these ranges.
 """
 from typing import FrozenSet
 
-# Position labels in seat order around the button (relative to actor).
+# Position labels by clockwise offset from the button.  The engine rebuilds a
+# compact seat list after eliminations, so positions must be derived from the
+# two blind posts on every hand rather than from an original seat number.
+# Heads-up is the exception: the button is also the small blind.
+POSITIONS_BY_TABLE_SIZE = {
+    2: ("SB", "BB"),
+    3: ("BTN", "SB", "BB"),
+    4: ("BTN", "SB", "BB", "CO"),
+    5: ("BTN", "SB", "BB", "MP", "CO"),
+    6: ("BTN", "SB", "BB", "UTG", "MP", "CO"),
+    7: ("BTN", "SB", "BB", "UTG", "MP", "MP", "CO"),
+    8: ("BTN", "SB", "BB", "UTG", "UTG", "MP", "MP", "CO"),
+    9: ("BTN", "SB", "BB", "UTG", "UTG", "UTG", "MP", "MP", "CO"),
+}
+
 POSITIONS = ("UTG", "MP", "CO", "BTN", "SB", "BB")
+EARLY_POSITIONS = frozenset({"UTG", "MP"})
+LATE_POSITIONS = frozenset({"CO", "BTN", "SB"})
 
 
 def _expand(tags):
@@ -334,6 +350,109 @@ CALL_VS_THREEBET: FrozenSet[str] = _expand([
     "JJ", "TT", "99",
     "AQs", "AJs", "ATs", "AQo",
     "KQs",
+])
+
+
+# --- Price- and stack-aware continuation ranges ---------------------------
+# These are deliberately conservative tournament ranges.  They prevent the
+# normal 100 BB flatting charts from being reused against oversized raises or
+# shoves, while retaining explicit short-stack push/fold and reshove paths.
+
+THREEBET_VS_EARLY_OPEN: FrozenSet[str] = _expand([
+    "AA", "KK", "QQ", "JJ",
+    "AKs", "AQs", "AKo",
+])
+
+SQUEEZE_VALUE: FrozenSet[str] = _expand([
+    "AA", "KK", "QQ", "JJ", "TT",
+    "AKs", "AQs", "AKo",
+])
+
+FLAT_VS_EARLY_OPEN: FrozenSet[str] = _expand([
+    "TT", "99", "88", "77",
+    "AQs", "AJs", "ATs", "AQo",
+    "KQs", "QJs", "JTs",
+])
+
+MULTIWAY_FLAT: FrozenSet[str] = _expand([
+    "JJ", "TT", "99", "88", "77", "66", "55", "44", "33", "22",
+    "AQs", "AJs", "ATs", "KQs", "KJs", "QJs", "JTs",
+    "T9s", "98s", "87s", "76s", "65s",
+])
+
+FOURBET_VALUE: FrozenSet[str] = _expand([
+    "AA", "KK", "QQ", "AKs", "AKo",
+])
+
+COLD_FOURBET: FrozenSet[str] = _expand([
+    "AA", "KK", "QQ", "AKs", "AKo",
+])
+
+LARGE_RAISE_CONTINUE: FrozenSet[str] = _expand([
+    "AA", "KK", "QQ", "JJ", "AKs", "AKo", "AQs",
+])
+
+PUSH_FOLD_TIGHT: FrozenSet[str] = _expand([
+    "AA", "KK", "QQ", "JJ", "TT", "99", "88", "77",
+    "AKs", "AQs", "AJs", "ATs", "AKo", "AQo", "AJo",
+    "KQs",
+])
+
+PUSH_FOLD_STANDARD: FrozenSet[str] = _expand([
+    "AA", "KK", "QQ", "JJ", "TT", "99", "88", "77", "66", "55", "44",
+    "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s",
+    "AKo", "AQo", "AJo", "ATo",
+    "KQs", "KJs", "KTs", "KQo",
+    "QJs", "QTs", "JTs", "T9s",
+])
+
+PUSH_FOLD_WIDE: FrozenSet[str] = _expand([
+    "AA", "KK", "QQ", "JJ", "TT", "99", "88", "77", "66", "55", "44", "33", "22",
+    "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s",
+    "AKo", "AQo", "AJo", "ATo", "A9o", "A8o",
+    "KQs", "KJs", "KTs", "K9s", "K8s", "KQo", "KJo", "KTo",
+    "QJs", "QTs", "Q9s", "QJo",
+    "JTs", "J9s", "JTo",
+    "T9s", "T8s", "98s", "87s", "76s", "65s",
+])
+
+RESHOVE_10BB: FrozenSet[str] = _expand([
+    "AA", "KK", "QQ", "JJ", "TT", "99", "88", "77", "66", "55",
+    "AKs", "AQs", "AJs", "ATs", "A9s", "AKo", "AQo", "AJo", "ATo",
+    "KQs",
+])
+
+RESHOVE_15BB: FrozenSet[str] = _expand([
+    "AA", "KK", "QQ", "JJ", "TT", "99", "88", "77",
+    "AKs", "AQs", "AJs", "AKo", "AQo",
+    "KQs",
+])
+
+RESHOVE_20BB: FrozenSet[str] = _expand([
+    "AA", "KK", "QQ", "JJ", "TT", "99",
+    "AKs", "AQs", "AKo",
+])
+
+CALL_OFF_5BB: FrozenSet[str] = _expand([
+    "AA", "KK", "QQ", "JJ", "TT", "99", "88", "77", "66", "55", "44", "33", "22",
+    "AKs", "AQs", "AJs", "ATs", "A9s", "A8s", "A7s", "A6s", "A5s", "A4s", "A3s", "A2s",
+    "AKo", "AQo", "AJo", "ATo", "A9o", "A8o",
+    "KQs", "KJs", "KTs", "KQo", "KJo",
+    "QJs", "QTs", "QJo", "JTs",
+])
+
+CALL_OFF_10BB: FrozenSet[str] = RESHOVE_10BB
+
+CALL_OFF_15BB: FrozenSet[str] = RESHOVE_15BB
+
+CALL_OFF_20BB: FrozenSet[str] = RESHOVE_20BB
+
+CALL_OFF_30BB: FrozenSet[str] = _expand([
+    "AA", "KK", "QQ", "JJ", "AKs", "AKo",
+])
+
+CALL_OFF_DEEP: FrozenSet[str] = _expand([
+    "AA", "KK",
 ])
 
 

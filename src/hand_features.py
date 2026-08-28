@@ -145,6 +145,48 @@ def _has_straight(cards: Sequence[str]) -> bool:
     return False
 
 
+def straight_completion_ranks(hole: Sequence[str], board: Sequence[str]) -> tuple:
+    """Ranks which make a straight on the next card.
+
+    This is deliberately rank based: one entry means four physical outs, not
+    one.  It is cheap enough to use while weighting every candidate holding in
+    an opponent range and handles wheel draws through ``_has_straight``.
+    """
+    cards = _combined(hole, board)
+    if len(_cards(board)) >= 5 or _has_straight(cards):
+        return ()
+    present = {c[0] for c in cards}
+    return tuple(
+        rank for rank in _DESC_RANKS
+        if rank not in present and _has_straight(cards + [rank + "s"])
+    )
+
+
+def flush_draw_suit(hole: Sequence[str], board: Sequence[str]) -> Optional[str]:
+    """Suit with exactly four combined cards and at least one card to come."""
+    if len(_cards(board)) >= 5 or made_flush(hole, board):
+        return None
+    counts = _suit_counts(_combined(hole, board))
+    for suit in SUITS:
+        if counts.get(suit, 0) == 4:
+            return suit
+    return None
+
+
+def draw_features(hole: Sequence[str], board: Sequence[str]) -> dict:
+    """Return inexpensive made-draw features for range conditioning."""
+    straight_out_ranks = straight_completion_ranks(hole, board)
+    flush_suit_value = flush_draw_suit(hole, board)
+    return {
+        "flush_draw_suit": flush_suit_value,
+        "has_flush_draw": flush_suit_value is not None,
+        "straight_out_ranks": straight_out_ranks,
+        "open_ended": len(straight_out_ranks) >= 2,
+        "gutshot": len(straight_out_ranks) == 1,
+        "combo_draw": flush_suit_value is not None and bool(straight_out_ranks),
+    }
+
+
 def made_flush(hole: Sequence[str], board: Sequence[str], suit: Optional[str] = None) -> bool:
     """True if the 7-card hand contains a five-card flush."""
     cards = _combined(hole, board)
@@ -219,6 +261,12 @@ def full_house_dominated(hole: Sequence[str], board: Sequence[str]) -> bool:
     """
     if category(hole, board) != "full_house":
         return False
+    # On a trip board (KKKQ2), a pocket-pair full house is behind any opponent
+    # holding the fourth board rank. If hero held that card our best category
+    # would already be quads, so every remaining full house is potentially
+    # dominated and must go through range equity rather than auto-stack-off.
+    if any(n == 3 for n in _rank_counts(board).values()):
+        return True
     combined = _combined(hole, board)
     trips = [_RANK_VAL[r] for r, n in _rank_counts(combined).items() if n >= 3]
     if not trips:
@@ -240,6 +288,7 @@ def hand_features(hole: Sequence[str], board: Sequence[str]) -> dict:
         "full_house_or_better": cat in {"full_house", "four_kind", "straight_flush"},
         "category": cat,
     })
+    features.update(draw_features(hole, board))
     return features
 
 
